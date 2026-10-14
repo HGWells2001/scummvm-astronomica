@@ -1,0 +1,44 @@
+[2026-09-18 11:07:43] ScummVM 2026.3.1git
+[2026-09-18 11:07:43] RGB SDL2 
+[2026-09-18 11:07:43] --- Log opened.
+[2026-09-18 11:07:43] Using SDL Video Driver "dummy"
+[2026-09-18 11:07:43] Using SDL Audio Driver "dummy"
+[2026-09-18 11:07:43] Output sample rate: 44100 Hz
+[2026-09-18 11:07:43] Output buffer size: 1024 samples
+[2026-09-18 11:07:43] Output channels: 2
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_START' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-09-18 11:07:44] CPU extensions:
+[2026-09-18 11:07:44] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-09-18 11:07:44] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-09-18 11:07:44] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-09-18 11:07:44] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_A' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_B' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_Y' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_X' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_UP' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_DOWN' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_LEFT' not known
+[2026-09-18 11:07:44] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-09-18 11:07:44] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-09-18 11:07:44] WARNING: Couldn't load font 'helvb12.bdf'/'LiberationSans-Bold.ttf'!
+[2026-09-18 11:07:44] 
+[2026-09-18 11:07:44]   File <File Stream>, line 155:
+[2026-09-18 11:07:44] <language id = '*'   scalable_file = 'LiberationSans-Bold.ttf'/>
+[2026-09-18 11:07:44] 		</font>
+[2026-09-18 11:07:44] 
+[2026-09-18 11:07:44] Parser error: Error loading localized Font in theme engine.
+[2026-09-18 11:07:44] 
+[2026-09-18 11:07:44] WARNING: Failed to parse STX file 'remastered_gfx.stx'!
+[2026-09-18 11:07:44] WARNING: Failed to load theme 'SCUMMREMASTERED.ZIP'!
+[2026-09-18 11:07:45] Astronomica resource explorer: P511; nav 0,0,0
+[2026-09-18 11:07:45] Astronomica static sprites: P511, 17 drawn
+[2026-09-18 11:07:45] Astronomica P511 introduction: S302.WAV
+[2026-09-18 11:08:06] Astronomica P511 entry scripts: 5 queued, 0 skipped
+[2026-09-18 11:08:18] Astronomica P511 loop: S0.WAV

@@ -1,0 +1,34 @@
+{
+  "files": {
+    "S0.WAV": {
+      "sha256": "081a8bc5378d9b4ef74a67f4ea3a111f163da8acb4b20939301fc9a08a20be78",
+      "frames": 96032,
+      "rate": 11025,
+      "channels": 1,
+      "seconds": 8.710385487528345
+    },
+    "S1.WAV": {
+      "sha256": "3f46120b51709af3c59f28fd4a85387eded35dd040ade420bbf3719c6aadc0d2",
+      "frames": 72789,
+      "rate": 11025,
+      "channels": 1,
+      "seconds": 6.602176870748299
+    },
+    "S302.WAV": {
+      "sha256": "3f46120b51709af3c59f28fd4a85387eded35dd040ade420bbf3719c6aadc0d2",
+      "frames": 72789,
+      "rate": 11025,
+      "channels": 1,
+      "seconds": 6.602176870748299
+    }
+  },
+  "scene_intro": 302,
+  "default_loop": 0,
+  "evidence": {
+    "loop": "9:156b writes 0 to DS:01bb for mode 0",
+    "intro": "9:1c45 pushes direct intro ID; 9:1c4b calls _playSound",
+    "wait": "9:2f22-2fa5 waits for intro playback when movie count is zero",
+    "help_exception": "9:1c26 skips intro when previous scene is 408"
+  },
+  "scope": "Mode-0 interactive entry; other scene modes and save-restore counter behavior remain outside this implementation"
+}

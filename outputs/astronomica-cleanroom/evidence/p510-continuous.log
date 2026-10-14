@@ -1,0 +1,52 @@
+[2026-10-02 22:13:15] ScummVM 2026.3.1git
+[2026-10-02 22:13:15] RGB SDL2 
+[2026-10-02 22:13:15] --- Log opened.
+[2026-10-02 22:13:15] Using SDL Video Driver "dummy"
+[2026-10-02 22:13:15] Using SDL Audio Driver "dummy"
+[2026-10-02 22:13:15] Output sample rate: 44100 Hz
+[2026-10-02 22:13:15] Output buffer size: 1024 samples
+[2026-10-02 22:13:15] Output channels: 2
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_START' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-02 22:13:16] CPU extensions:
+[2026-10-02 22:13:16] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-02 22:13:16] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-10-02 22:13:16] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-02 22:13:16] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_A' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_B' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_Y' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_X' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_UP' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-02 22:13:16] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-02 22:13:16] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-02 22:13:16] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-10-02 22:13:16] 
+[2026-10-02 22:13:16]   File <Memory Stream>, line 1:
+[2026-10-02 22:13:16] <language id='*' file='helvb12.bdf'/></font>
+[2026-10-02 22:13:16] 
+[2026-10-02 22:13:16] Parser error: Error loading localized Font in theme engine.
+[2026-10-02 22:13:16] 
+[2026-10-02 22:13:16] WARNING: Failed to load theme 'builtin'!
+[2026-10-02 22:13:17] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-02 22:13:17] Astronomica P510 original callback comparison: PASS (432 cases, 33d6e7a1)
+[2026-10-02 22:13:17] Audio Codec FourCC: 'raw '
+[2026-10-02 22:13:17] stsd version =0
+[2026-10-02 22:13:17] Astronomica P510 movie: 320x240, scale 30, duration 11340
+[2026-10-02 22:13:17] Astronomica resource explorer: P510; nav 0,0,0
+[2026-10-02 22:13:17] Astronomica static sprites: P510, 13 drawn
+[2026-10-02 22:13:17] Astronomica P510 movie started at 261,33
+[2026-10-02 22:13:17] P510 startup: 4 queued, mode 1, event 20, playing 1
+[2026-10-02 22:15:36] Astronomica movie closed while playing: 179 frames, time 377901, end 378000
+[2026-10-02 22:15:36] Astronomica resource explorer: P136; nav 141,0,131
+[2026-10-02 22:15:36] Astronomica static sprites: P136, 1 drawn
+[2026-10-02 22:15:36] Astronomica P510 route 0: PASS (mode 1, 11 transitions, P136, 1 solved, 1060 frames)
+[2026-10-02 22:15:36] Astronomica P510 interaction verification: PASS
+[2026-10-02 22:15:36] --- Log closed successfully.

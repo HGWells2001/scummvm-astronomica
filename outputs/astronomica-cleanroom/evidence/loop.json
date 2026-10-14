@@ -1,0 +1,9 @@
+[
+  {
+    "path": "PLACES/P511/S11.WAV",
+    "sha256": "61344bd2e9602f2fed16daef499b5ad64316412f4224ea0b010c10b7ebe4be0a",
+    "rate": 11025,
+    "samples": 28252,
+    "pcm16le_fnv1a": "0d45829a"
+  }
+]

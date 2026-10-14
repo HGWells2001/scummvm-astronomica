@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "original_roundtrips": 5,
+  "global_values": 100,
+  "native_prefix_bytes": 424,
+  "truncations": 424,
+  "corruptions": 424,
+  "destination_guard": true,
+  "physical_slot": true,
+  "startup": true,
+  "metadata_list": true,
+  "standard_menu": true,
+  "pause": true,
+  "full_suite": true,
+  "scope": "Settled mode1 exploration scenes; no mid-puzzle saves or gamestat import",
+  "manual_confirmation": false,
+  "native_version": 2,
+  "legacy_inactive_version1": true,
+  "saved_clock": true
+}

@@ -1,0 +1,56 @@
+{
+  "movie": "PLACES/P408/MENTORS.MOV",
+  "sha256": "51ac5abc9b421f3a88b91ebcbbac86bfb47d027509eecd01685c0816ebd54a4b",
+  "timescale": 30,
+  "duration_ticks": 67222,
+  "start_tick": 55407,
+  "length_ticks": 1274,
+  "start_seconds": 1846.9,
+  "length_seconds": 42.46666666666667,
+  "position": [
+    240,
+    130
+  ],
+  "destination": 537,
+  "transition_ms": 44000,
+  "commands": [
+    {
+      "offset": 1758,
+      "opcode": 37,
+      "name": "op_37",
+      "args": [
+        0,
+        55407,
+        1274
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 1778,
+      "opcode": 3,
+      "name": "play_quicktime",
+      "args": [
+        0,
+        240,
+        130,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 1802,
+      "opcode": 5,
+      "name": "new_place",
+      "args": [
+        537
+      ],
+      "delay": 44000
+    }
+  ],
+  "evidence": [
+    "9:2651-266f redirects P520 to P408",
+    "15:023d-02c6 invokes _SetMovieActiveSegment",
+    "17:05d3-0600 sets selection start and duration",
+    "17:0209 _PlayMovie positions and starts playback"
+  ]
+}

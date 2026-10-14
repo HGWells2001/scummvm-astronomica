@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "place": 29,
+  "both_control_orders": true,
+  "duplicate_controls": true,
+  "decode_positions": 4,
+  "redraw": true,
+  "timed_lock_release": true,
+  "no_replay": true,
+  "context_guard": true,
+  "full_suite": true,
+  "manual_confirmation": false,
+  "continuous_movie": true,
+  "cursor_note": "Native cursor constrained below movie; automated test checks state, no manual pointer review"
+}

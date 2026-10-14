@@ -1,0 +1,70 @@
+{
+  "scene": 518,
+  "resource_sha256": "235de8b0fbb86b6cc1a8337779d6c6f7804e8455bce0dc607ea00092f3f6ffbd",
+  "custom12": "4:2427-2664",
+  "modes": {
+    "0": 9322,
+    "1": 9639
+  },
+  "callbacks": {
+    "_fxm_set_idplanet": {
+      "segment": 3,
+      "offset": "0x15fd",
+      "length": 52,
+      "sha256": "f86e4161bdd1adbdbe95a93143a5a9126328e307d2029f75ac0320eda21c6b7e"
+    },
+    "_fxm_move_idplanet": {
+      "segment": 3,
+      "offset": "0x2036",
+      "length": 637,
+      "sha256": "4b54c35b12faaf2790f1bc19e29495e787d03acf94ef04399ec80ef99b6e9d74"
+    }
+  },
+  "launcher_sprite": 9,
+  "planet_sprite": "local2+9",
+  "answers": {
+    "1": [
+      9,
+      10
+    ],
+    "2": [
+      8,
+      11
+    ],
+    "3": [
+      7,
+      12
+    ],
+    "4": [
+      6,
+      13
+    ],
+    "5": [
+      5,
+      14
+    ],
+    "6": [
+      4,
+      15
+    ],
+    "7": [
+      3
+    ],
+    "8": [
+      2
+    ],
+    "9": [
+      1
+    ]
+  },
+  "success_global": 34,
+  "destination": 388,
+  "semantics": {
+    "follow": "proposed point uses previous delta; callback copies sprite9 velocity for next step",
+    "release": "set delta(-2,0); retain runtime period and timestamp",
+    "arrival": "old rectangle center, after bounce velocity update",
+    "correct": "direct S10; stop movement, retain visibility and animation",
+    "wrong": "direct S9; hide and subtract 2^(id-1) from local1",
+    "success_count": "local3 incremented at release, before arrival"
+  }
+}

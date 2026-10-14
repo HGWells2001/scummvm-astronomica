@@ -1,0 +1,147 @@
+[
+  {
+    "scene": 501,
+    "handler": "4:56df",
+    "global_id": 20
+  },
+  {
+    "scene": 504,
+    "handler": "4:5700",
+    "global_id": 21
+  },
+  {
+    "scene": 505,
+    "handler": "4:5721",
+    "global_id": 22
+  },
+  {
+    "scene": 506,
+    "handler": "4:5742",
+    "global_id": 23
+  },
+  {
+    "scene": 508,
+    "handler": "4:5763",
+    "global_id": 24
+  },
+  {
+    "scene": 509,
+    "handler": "4:5784",
+    "global_id": 25
+  },
+  {
+    "scene": 510,
+    "handler": "4:57a5",
+    "global_id": 26
+  },
+  {
+    "scene": 511,
+    "handler": "4:57c6",
+    "global_id": 27
+  },
+  {
+    "scene": 512,
+    "handler": "4:57e7",
+    "global_id": 28
+  },
+  {
+    "scene": 514,
+    "handler": "4:5829",
+    "global_id": 30
+  },
+  {
+    "scene": 516,
+    "handler": "4:586f",
+    "global_id": 32
+  },
+  {
+    "scene": 517,
+    "handler": "4:5892",
+    "global_id": 33
+  },
+  {
+    "scene": 518,
+    "handler": "4:58b5",
+    "global_id": 34
+  },
+  {
+    "scene": 519,
+    "handler": "4:58d8",
+    "global_id": 35
+  },
+  {
+    "scene": 520,
+    "handler": "4:58fb",
+    "global_id": 36
+  },
+  {
+    "scene": 521,
+    "handler": "4:591e",
+    "global_id": 37
+  },
+  {
+    "scene": 522,
+    "handler": "4:5941",
+    "global_id": 38
+  },
+  {
+    "scene": 523,
+    "handler": "4:5964",
+    "global_id": 39
+  },
+  {
+    "scene": 524,
+    "handler": "4:5987",
+    "global_id": 40
+  },
+  {
+    "scene": 525,
+    "handler": "4:59aa",
+    "global_id": 41
+  },
+  {
+    "scene": 526,
+    "handler": "4:59cd",
+    "global_id": 42
+  },
+  {
+    "scene": 527,
+    "handler": "4:59f0",
+    "global_id": 43
+  },
+  {
+    "scene": 528,
+    "handler": "4:5a12",
+    "global_id": 44
+  },
+  {
+    "scene": 531,
+    "handler": "4:5742",
+    "global_id": 23
+  },
+  {
+    "scene": 532,
+    "handler": "4:5742",
+    "global_id": 23
+  },
+  {
+    "scene": 533,
+    "handler": "4:5742",
+    "global_id": 23
+  },
+  {
+    "scene": 534,
+    "handler": "4:5742",
+    "global_id": 23
+  },
+  {
+    "scene": 535,
+    "handler": "4:5742",
+    "global_id": 23
+  },
+  {
+    "scene": 536,
+    "handler": "4:584c",
+    "global_id": 31
+  }
+]

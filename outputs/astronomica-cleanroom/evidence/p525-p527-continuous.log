@@ -1,0 +1,75 @@
+[2026-09-24 20:19:47] ScummVM 2026.3.1git
+[2026-09-24 20:19:47] RGB SDL2 
+[2026-09-24 20:19:47] --- Log opened.
+[2026-09-24 20:19:47] Using SDL Video Driver "dummy"
+[2026-09-24 20:19:47] Using SDL Audio Driver "wasapi"
+[2026-09-24 20:19:47] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-09-24 20:19:47] Output sample rate: 44100 Hz
+[2026-09-24 20:19:47] Output buffer size: 1024 samples
+[2026-09-24 20:19:47] Output channels: 2
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_START' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-09-24 20:19:48] CPU extensions:
+[2026-09-24 20:19:48] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-09-24 20:19:48] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-09-24 20:19:48] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-09-24 20:19:48] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_A' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_B' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_Y' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_X' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_UP' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_DOWN' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_LEFT' not known
+[2026-09-24 20:19:48] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-09-24 20:19:48] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-09-24 20:19:48] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-09-24 20:19:48] 
+[2026-09-24 20:19:48]   File <Memory Stream>, line 1:
+[2026-09-24 20:19:48] <language id='*' file='helvb12.bdf'/></font>
+[2026-09-24 20:19:48] 
+[2026-09-24 20:19:48] Parser error: Error loading localized Font in theme engine.
+[2026-09-24 20:19:48] 
+[2026-09-24 20:19:48] WARNING: Failed to load theme 'builtin'!
+[2026-09-24 20:19:49] Astronomica resource explorer: P1; nav 0,0,0
+[2026-09-24 20:19:49] Audio Codec FourCC: 'raw '
+[2026-09-24 20:19:49] stsd version =0
+[2026-09-24 20:19:49] Astronomica P525 movie: 320x240, scale 30, duration 2402
+[2026-09-24 20:19:49] Astronomica resource explorer: P525; nav 0,0,0
+[2026-09-24 20:19:49] Astronomica static sprites: P525, 5 drawn
+[2026-09-24 20:19:49] Astronomica P525 movie started at 160,40
+[2026-09-24 20:19:55] Astronomica movie segment finished: 42 frames drawn
+[2026-09-24 20:19:55] Astronomica continuous P525 segment 0: PASS (42 frames, 5991 ms, expected 5966)
+[2026-09-24 20:19:55] Astronomica P525 movie started at 160,40
+[2026-09-24 20:20:02] Astronomica movie segment finished: 94 frames drawn
+[2026-09-24 20:20:02] Astronomica continuous P525 segment 1: PASS (52 frames, 6990 ms, expected 6966)
+[2026-09-24 20:20:02] Astronomica P525 movie started at 160,40
+[2026-09-24 20:20:17] Astronomica movie segment finished: 226 frames drawn
+[2026-09-24 20:20:17] Astronomica continuous P525 segment 2: PASS (132 frames, 15087 ms, expected 15066)
+[2026-09-24 20:20:17] Astronomica P525 movie started at 160,40
+[2026-09-24 20:20:33] Astronomica movie segment finished: 326 frames drawn
+[2026-09-24 20:20:33] Astronomica continuous P525 segment 3: PASS (100 frames, 16023 ms, expected 16000)
+[2026-09-24 20:20:33] Audio Codec FourCC: 'raw '
+[2026-09-24 20:20:33] stsd version =0
+[2026-09-24 20:20:33] Astronomica P527 movie: 320x240, scale 30, duration 3618
+[2026-09-24 20:20:33] Astronomica resource explorer: P527; nav 0,0,0
+[2026-09-24 20:20:33] Astronomica static sprites: P527, 9 drawn
+[2026-09-24 20:20:33] Astronomica P527 movie started at 10,10
+[2026-09-24 20:20:53] Astronomica movie segment finished: 526 frames drawn
+[2026-09-24 20:20:53] Astronomica continuous P527 segment 0: PASS (200 frames, 19976 ms, expected 19966)
+[2026-09-24 20:20:53] Astronomica P527 movie started at 10,10
+[2026-09-24 20:21:25] Astronomica movie segment finished: 805 frames drawn
+[2026-09-24 20:21:25] Astronomica continuous P527 segment 1: PASS (279 frames, 31979 ms, expected 31966)
+[2026-09-24 20:21:25] Astronomica P527 movie started at 10,10
+[2026-09-24 20:21:55] Astronomica movie segment finished: 1105 frames drawn
+[2026-09-24 20:21:55] Astronomica continuous P527 segment 2: PASS (300 frames, 30001 ms, expected 29966)
+[2026-09-24 20:21:55] Astronomica P527 movie started at 10,10
+[2026-09-24 20:22:25] Astronomica movie segment finished: 1405 frames drawn
+[2026-09-24 20:22:25] Astronomica continuous P527 segment 3: PASS (300 frames, 29998 ms, expected 29966)
+[2026-09-24 20:22:25] Astronomica continuous movie verification: PASS (eight full segments, no seek acceleration)
+[2026-09-24 20:22:25] --- Log closed successfully.

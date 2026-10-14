@@ -1,0 +1,22 @@
+{
+  "scene": 530,
+  "resource_sha256": "2056a7305ba91e8d06ad4f4ce309ea0dadf7d789633ae12d28bb43293f096631",
+  "success_handler": "4:5a64-5a88",
+  "handler_sha256": "7357c9d9f6dbad91046631def11a7d264981e6d11b2d5d2268fb1cf20e03bbdd",
+  "success_global": 46,
+  "sound": 912,
+  "sound_only_when_flag_zero": true,
+  "increments_puzzle_counter": false,
+  "global_sound_12_synchronous": "9:3b62-3b85 selects flags 2",
+  "completion_gate": {
+    "local": 13,
+    "value": 3
+  },
+  "destination": 228,
+  "random_choice": {
+    "mask_local": 11,
+    "value_local": 9,
+    "width": 5
+  },
+  "status": "Original evidence; implemented route verified separately by native runtime tests"
+}

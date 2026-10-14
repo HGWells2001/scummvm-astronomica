@@ -1,0 +1,10 @@
+{
+  "driver": "dummy",
+  "wall_seconds": 12.000272299999779,
+  "audio_seconds": 9.659501133786849,
+  "ratio": 0.8049401623817342,
+  "samples": 425984,
+  "rate": 44100,
+  "buffer": 1024,
+  "scope": "Diagnostic only; no engine changes"
+}

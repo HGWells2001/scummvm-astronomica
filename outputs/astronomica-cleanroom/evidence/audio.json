@@ -1,0 +1,23 @@
+[
+  {
+    "path": "PLACES/P510/S1.WAV",
+    "sha256": "64456416a2366a91cdba8650bc3232df115a14d45b97f5bb29d46a781bde0b50",
+    "rate": 11025,
+    "samples": 127488,
+    "pcm16le_fnv1a": "6f7731d2"
+  },
+  {
+    "path": "PLACES/P510/S2.WAV",
+    "sha256": "4647840923173ccff69b60df013e527f013a2f048951b83362f3e0fed8fbec4c",
+    "rate": 11025,
+    "samples": 3627,
+    "pcm16le_fnv1a": "1c898683"
+  },
+  {
+    "path": "PLACES/P510/S5.WAV",
+    "sha256": "27015fe9145a55e89f2d68f35e6f5d9e8835e63e0e3bd15d1965f225189032d8",
+    "rate": 11025,
+    "samples": 19516,
+    "pcm16le_fnv1a": "0ad041f8"
+  }
+]

@@ -1,0 +1,1698 @@
+{
+  "status": "Original research; native integration tracked separately",
+  "scenes": [
+    {
+      "place": 29,
+      "sha256": "4dabc70adc6418f6384d56c6298ff088d2b00f3ebb6c87358140dae0b29afc30",
+      "mode": 1,
+      "layers": 1,
+      "movies": [
+        "FLAT29.MOV"
+      ],
+      "conditions": [
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "entry": [
+        [
+          {
+            "offset": 210846,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 210878,
+            "opcode": 17,
+            "name": "op_17",
+            "args": [
+              2
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 210890,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              1,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 210910,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 210918,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 210950,
+            "opcode": 16,
+            "name": "op_16",
+            "args": [
+              2
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 210962,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              1,
+              0,
+              1
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 210982,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 210990,
+            "opcode": 41,
+            "name": "op_41",
+            "args": [
+              0
+            ],
+            "delay": 600
+          }
+        ]
+      ],
+      "sprite_controls": [
+        {
+          "visible": 0,
+          "xy": [
+            447,
+            209
+          ],
+          "click_enabled": 0,
+          "auto_frame": 0,
+          "auto_move": 0
+        },
+        {
+          "visible": 1,
+          "xy": [
+            318,
+            294
+          ],
+          "click_enabled": 0,
+          "auto_frame": 0,
+          "auto_move": 0
+        },
+        {
+          "visible": 0,
+          "xy": [
+            440,
+            283
+          ],
+          "click_enabled": 0,
+          "auto_frame": 0,
+          "auto_move": 0
+        }
+      ],
+      "mouse_rects": [
+        {
+          "rect": [
+            193,
+            9,
+            473,
+            226
+          ],
+          "click": [
+            {
+              "offset": 211030,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211042,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211054,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211086,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211106,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 211114,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                2,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211146,
+              "opcode": 3,
+              "name": "play_quicktime",
+              "args": [
+                0,
+                213,
+                22,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211170,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211190,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                2,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211210,
+              "opcode": 23,
+              "name": "custom",
+              "args": [
+                29,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 65000
+            },
+            {
+              "offset": 211242,
+              "opcode": 35,
+              "name": "op_35",
+              "args": [],
+              "delay": 0
+            },
+            {
+              "offset": 211250,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 211258,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            189,
+            258,
+            480,
+            313
+          ],
+          "click": [
+            {
+              "offset": 211302,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211314,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                3
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211326,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211358,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                2,
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211378,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 211386,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211418,
+              "opcode": 3,
+              "name": "play_quicktime",
+              "args": [
+                0,
+                213,
+                22,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211442,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211462,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                2,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 211482,
+              "opcode": 23,
+              "name": "custom",
+              "args": [
+                29,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 65000
+            },
+            {
+              "offset": 211514,
+              "opcode": 35,
+              "name": "op_35",
+              "args": [],
+              "delay": 0
+            },
+            {
+              "offset": 211522,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 211530,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ]
+    },
+    {
+      "place": 82,
+      "sha256": "5a1e44e79c93de179edb13aeefcdcdab361a01c2dadb6a787abfaffba841ed5c",
+      "mode": 1,
+      "layers": 1,
+      "movies": [
+        "mov"
+      ],
+      "conditions": [
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "entry": [],
+      "sprite_controls": [
+        {
+          "visible": 1,
+          "xy": [
+            328,
+            241
+          ],
+          "click_enabled": 0,
+          "auto_frame": 1,
+          "auto_move": 0
+        }
+      ],
+      "mouse_rects": [
+        {
+          "rect": [
+            585,
+            118,
+            593,
+            126
+          ],
+          "click": [
+            {
+              "offset": 214578,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214590,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214622,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214642,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 214650,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214682,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214702,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 214710,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            544,
+            77,
+            552,
+            85
+          ],
+          "click": [
+            {
+              "offset": 214754,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214766,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214798,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214810,
+              "opcode": 3,
+              "name": "play_quicktime",
+              "args": [
+                0,
+                327,
+                240,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214834,
+              "opcode": 35,
+              "name": "op_35",
+              "args": [],
+              "delay": 10000
+            },
+            {
+              "offset": 214842,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214862,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 214870,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214902,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214922,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 214930,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            },
+            {
+              "offset": 214942,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                1
+              ],
+              "delay": 0
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            222,
+            277,
+            357,
+            290
+          ],
+          "click": [
+            {
+              "offset": 214986,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 214998,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 215018,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            239,
+            272,
+            343,
+            301
+          ],
+          "click": [
+            {
+              "offset": 215062,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 215074,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 215094,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ]
+    },
+    {
+      "place": 222,
+      "sha256": "b1aa104f0ca3433226af93243c2c4a2f0bef0c824a137d5bfc912a0873272b95",
+      "mode": 1,
+      "layers": 1,
+      "movies": [
+        "mov"
+      ],
+      "conditions": [
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "entry": [],
+      "sprite_controls": [
+        {
+          "visible": 1,
+          "xy": [
+            423,
+            255
+          ],
+          "click_enabled": 1,
+          "click": [
+            {
+              "offset": 209749,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 209761,
+              "opcode": 19,
+              "name": "op_19",
+              "args": [
+                2,
+                150,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 209785,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 209797,
+              "opcode": 30,
+              "name": "op_30",
+              "args": [
+                2
+              ],
+              "delay": 2000
+            },
+            {
+              "offset": 209809,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "auto_frame": 0,
+          "auto_move": 0
+        },
+        {
+          "visible": 0,
+          "xy": [
+            242,
+            182
+          ],
+          "click_enabled": 0,
+          "auto_frame": 0,
+          "auto_move": 0
+        }
+      ],
+      "mouse_rects": [
+        {
+          "rect": [
+            346,
+            291,
+            355,
+            295
+          ],
+          "click": [
+            {
+              "offset": 227640,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227652,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227684,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227704,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 227712,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227744,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227764,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 227772,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            230,
+            271,
+            236,
+            276
+          ],
+          "click": [
+            {
+              "offset": 227816,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227828,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227860,
+              "opcode": 3,
+              "name": "play_quicktime",
+              "args": [
+                0,
+                241,
+                182,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227884,
+              "opcode": 35,
+              "name": "op_35",
+              "args": [],
+              "delay": 10000
+            },
+            {
+              "offset": 227892,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227912,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 227920,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227952,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 227972,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 227980,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            345,
+            271,
+            351,
+            275
+          ],
+          "click": [
+            {
+              "offset": 228024,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228036,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                2,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228068,
+              "opcode": 3,
+              "name": "play_quicktime",
+              "args": [
+                0,
+                241,
+                182,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228092,
+              "opcode": 35,
+              "name": "op_35",
+              "args": [],
+              "delay": 10000
+            },
+            {
+              "offset": 228100,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 228108,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228128,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            222,
+            277,
+            357,
+            290
+          ],
+          "click": [
+            {
+              "offset": 228172,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228184,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228204,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            239,
+            272,
+            343,
+            301
+          ],
+          "click": [
+            {
+              "offset": 228248,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228260,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228280,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            142,
+            261,
+            216,
+            302
+          ],
+          "click": [
+            {
+              "offset": 228324,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228336,
+              "opcode": 5,
+              "name": "new_place",
+              "args": [
+                407
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 228348,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            243,
+            290,
+            252,
+            294
+          ],
+          "click": [],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            233,
+            290,
+            240,
+            294
+          ],
+          "click": [],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            228,
+            270,
+            235,
+            274
+          ],
+          "click": [],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ]
+    },
+    {
+      "place": 231,
+      "sha256": "1ae4d05c4dff62dbad876879b089438404408679fdf0c36a4aed7f2be1146c07",
+      "mode": 1,
+      "layers": 0,
+      "movies": [
+        "mov"
+      ],
+      "conditions": [
+        [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "entry": [],
+      "sprite_controls": [],
+      "mouse_rects": [
+        {
+          "rect": [
+            543,
+            46,
+            551,
+            54
+          ],
+          "click": [
+            {
+              "offset": 206474,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206486,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206518,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206538,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 206546,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206578,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206598,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 206606,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            110,
+            222,
+            120,
+            232
+          ],
+          "click": [
+            {
+              "offset": 206650,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206662,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206694,
+              "opcode": 3,
+              "name": "play_quicktime",
+              "args": [
+                0,
+                296,
+                109,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206718,
+              "opcode": 35,
+              "name": "op_35",
+              "args": [],
+              "delay": 16000
+            },
+            {
+              "offset": 206726,
+              "opcode": 23,
+              "name": "custom",
+              "args": [
+                29,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206758,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                2
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206778,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 206786,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206818,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206838,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 206846,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        },
+        {
+          "rect": [
+            96,
+            138,
+            114,
+            161
+          ],
+          "click": [
+            {
+              "offset": 206890,
+              "opcode": 28,
+              "name": "op_28",
+              "args": [
+                -1
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206902,
+              "opcode": 32,
+              "name": "set_condition",
+              "args": [
+                1,
+                1,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 206922,
+              "opcode": 29,
+              "name": "op_29",
+              "args": [
+                -1
+              ],
+              "delay": 150
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ]
+    }
+  ],
+  "custom29_calls": [
+    {
+      "flags": 0,
+      "segment": 13,
+      "offset": 3770,
+      "name": "_UpdateGame"
+    },
+    {
+      "flags": 0,
+      "segment": 6,
+      "offset": 1693,
+      "name": "_SWUpdateSpriteWorld"
+    }
+  ],
+  "command35": "Clears DS:01d1; command34 sets it; PlayMovie also sets it",
+  "cursor": "Mouse update 9:1035 clamps y below DS:0cc6 when DS:01d1 is set; PlayMovie sets bottom+5 at17:0265",
+  "redraw": "SWUpdateSpriteWorld copies background then visible sprites and invokes final display callback through world+0x18 at6:07ba; it does not stop the movie",
+  "regions_sha256": {
+    "4:688c-689c": "070cfa45d2b4716f9f14963179f403df573eefd60ab60fbd5cbe2b454aa5671e",
+    "13:0eba-0eda": "d81034ba92d18c90bb5db66d9226e2d22551dd2d58cffac9428ca930c2208014",
+    "6:069d-07c8": "81bd13ea93279c6a8d894e8893bc156d549d2384cf66f76cbf189d64fd72b257",
+    "9:1035-10b3": "dfde686b5cfe8d2a777a7d21b0b8a09d7882a8978057c61f4245622b0ac4445f",
+    "15:02e5-02f7": "5d892907d0c405af7029a2148712d2c98420281bb079cdee75a52130ec5d929a",
+    "17:0209-02e3": "e0e514f9dd1e781e69574edce2f5b32a664026e60ac1b969a72d6c6005d8057a"
+  }
+}

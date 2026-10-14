@@ -1,0 +1,135 @@
+[2026-10-03 20:24:25] ScummVM 2026.3.1git
+[2026-10-03 20:24:25] RGB SDL2 
+[2026-10-03 20:24:25] --- Log opened.
+[2026-10-03 20:24:25] Using SDL Video Driver "dummy"
+[2026-10-03 20:24:25] Using SDL Audio Driver "dummy"
+[2026-10-03 20:24:25] Output sample rate: 44100 Hz
+[2026-10-03 20:24:25] Output buffer size: 1024 samples
+[2026-10-03 20:24:25] Output channels: 2
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_START' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-03 20:24:26] CPU extensions:
+[2026-10-03 20:24:26] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-03 20:24:26] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-10-03 20:24:26] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-03 20:24:26] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_A' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_B' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_Y' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_X' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_UP' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-03 20:24:26] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-03 20:24:26] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-03 20:24:26] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-10-03 20:24:26] 
+[2026-10-03 20:24:26]   File <Memory Stream>, line 1:
+[2026-10-03 20:24:26] <language id='*' file='helvb12.bdf'/></font>
+[2026-10-03 20:24:26] 
+[2026-10-03 20:24:26] Parser error: Error loading localized Font in theme engine.
+[2026-10-03 20:24:26] 
+[2026-10-03 20:24:26] WARNING: Failed to load theme 'builtin'!
+[2026-10-03 20:24:27] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-03 20:24:27] Astronomica P523 callback comparison: PASS (262656 cases, explicit event8 ABI repair, f8ea0405)
+[2026-10-03 20:24:27] Astronomica P523 controls comparison: PASS (5899 states, 35394 transitions, 40e80615)
+[2026-10-03 20:24:27] Astronomica P523 position comparison: PASS (100 exact x87 cases)
+[2026-10-03 20:24:27] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:27] stsd version =0
+[2026-10-03 20:24:27] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:27] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:27] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:27] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:29] Astronomica resource explorer: P524; nav 0,0,0
+[2026-10-03 20:24:29] Astronomica static sprites: P524, 13 drawn
+[2026-10-03 20:24:29] Astronomica P523 route 0: PASS (P524, 17 callbacks, solved 1, 0 frames)
+[2026-10-03 20:24:29] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:29] stsd version =0
+[2026-10-03 20:24:29] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:29] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:29] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:29] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:30] Astronomica resource explorer: P524; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P524, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 route 1: PASS (P524, 17 callbacks, solved 1, 0 frames)
+[2026-10-03 20:24:30] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:30] stsd version =0
+[2026-10-03 20:24:30] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:30] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-03 20:24:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-03 20:24:30] Astronomica P523 route 2: PASS (P117, 3 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:30] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:30] stsd version =0
+[2026-10-03 20:24:30] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:30] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-03 20:24:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-03 20:24:30] Astronomica P523 route 3: PASS (P117, 6 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:30] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:30] stsd version =0
+[2026-10-03 20:24:30] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:30] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-03 20:24:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-03 20:24:30] Astronomica P523 route 4: PASS (P117, 9 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:30] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:30] stsd version =0
+[2026-10-03 20:24:30] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:30] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-03 20:24:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-03 20:24:30] Astronomica P523 route 5: PASS (P117, 12 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:30] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:30] stsd version =0
+[2026-10-03 20:24:30] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:30] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-03 20:24:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-03 20:24:30] Astronomica P523 route 6: PASS (P117, 15 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:30] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:30] stsd version =0
+[2026-10-03 20:24:30] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:30] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:30] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:30] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:33] Astronomica resource explorer: P524; nav 0,0,0
+[2026-10-03 20:24:33] Astronomica static sprites: P524, 13 drawn
+[2026-10-03 20:24:33] Astronomica P523 route 7: PASS (P524, 17 callbacks, solved 1, 0 frames)
+[2026-10-03 20:24:33] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:33] stsd version =0
+[2026-10-03 20:24:33] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:33] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:33] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:33] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:34] Astronomica movie closed while playing: 0 frames, time 4, end 20066
+[2026-10-03 20:24:34] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-03 20:24:34] Astronomica static sprites: P117, 1 drawn
+[2026-10-03 20:24:34] Astronomica P523 route 8: PASS (P117, 0 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:34] Audio Codec FourCC: 'raw '
+[2026-10-03 20:24:34] stsd version =0
+[2026-10-03 20:24:34] Astronomica P523 movie: 320x240, scale 30, duration 6275
+[2026-10-03 20:24:34] Astronomica resource explorer: P523; nav 0,0,0
+[2026-10-03 20:24:34] Astronomica static sprites: P523, 13 drawn
+[2026-10-03 20:24:34] Astronomica P523 movie started at 160,37
+[2026-10-03 20:24:35] Astronomica movie closed while playing: 0 frames, time 7, end 20066
+[2026-10-03 20:24:35] Astronomica resource explorer: P408; nav 0,0,0
+[2026-10-03 20:24:35] Astronomica static sprites: P408, 7 drawn
+[2026-10-03 20:24:35] Astronomica P523 route 9: PASS (P408, 0 callbacks, solved 0, 0 frames)
+[2026-10-03 20:24:35] Astronomica P523 interaction verification: PASS
+[2026-10-03 20:24:35] --- Log closed successfully.

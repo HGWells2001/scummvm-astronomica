@@ -1,0 +1,359 @@
+[
+  {
+    "opcode": 1,
+    "entry": 12358,
+    "reads": []
+  },
+  {
+    "opcode": 2,
+    "entry": 12361,
+    "reads": []
+  },
+  {
+    "opcode": 3,
+    "entry": 12364,
+    "reads": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 4,
+    "entry": 12367,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 5,
+    "entry": 12379,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 6,
+    "entry": 12385,
+    "reads": []
+  },
+  {
+    "opcode": 7,
+    "entry": 12388,
+    "reads": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 8,
+    "entry": 12394,
+    "reads": []
+  },
+  {
+    "opcode": 9,
+    "entry": 12397,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 10,
+    "entry": 12399,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 11,
+    "entry": 12512,
+    "reads": []
+  },
+  {
+    "opcode": 12,
+    "entry": 12515,
+    "reads": []
+  },
+  {
+    "opcode": 13,
+    "entry": 12518,
+    "reads": []
+  },
+  {
+    "opcode": 14,
+    "entry": 12521,
+    "reads": []
+  },
+  {
+    "opcode": 15,
+    "entry": 12524,
+    "reads": [
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 16,
+    "entry": 12563,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 17,
+    "entry": 12566,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 18,
+    "entry": 12760,
+    "reads": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 19,
+    "entry": 12757,
+    "reads": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 20,
+    "entry": 12569,
+    "reads": [
+      255,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 21,
+    "entry": 12752,
+    "reads": []
+  },
+  {
+    "opcode": 23,
+    "entry": 12755,
+    "reads": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 24,
+    "entry": 12925,
+    "reads": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 25,
+    "entry": 12458,
+    "reads": []
+  },
+  {
+    "opcode": 26,
+    "entry": 12461,
+    "reads": []
+  },
+  {
+    "opcode": 27,
+    "entry": 12464,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 28,
+    "entry": 12928,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 29,
+    "entry": 12931,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 30,
+    "entry": 12934,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 31,
+    "entry": 12937,
+    "reads": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 32,
+    "entry": 13158,
+    "reads": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 33,
+    "entry": 13160,
+    "reads": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 35,
+    "entry": 13280,
+    "reads": []
+  },
+  {
+    "opcode": 36,
+    "entry": 12376,
+    "reads": [
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 37,
+    "entry": 12373,
+    "reads": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 38,
+    "entry": 12370,
+    "reads": [
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 39,
+    "entry": 13162,
+    "reads": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 40,
+    "entry": 13164,
+    "reads": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 41,
+    "entry": 13271,
+    "reads": [
+      4
+    ]
+  },
+  {
+    "opcode": 42,
+    "entry": 13134,
+    "reads": []
+  },
+  {
+    "opcode": 43,
+    "entry": 13143,
+    "reads": []
+  },
+  {
+    "opcode": 44,
+    "entry": 13146,
+    "reads": []
+  },
+  {
+    "opcode": 45,
+    "entry": 13149,
+    "reads": []
+  },
+  {
+    "opcode": 46,
+    "entry": 13254,
+    "reads": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 47,
+    "entry": 12391,
+    "reads": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 48,
+    "entry": 12560,
+    "reads": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "opcode": 49,
+    "entry": 12749,
+    "reads": []
+  },
+  {
+    "opcode": 50,
+    "entry": 12682,
+    "reads": [
+      255
+    ]
+  },
+  {
+    "opcode": 51,
+    "entry": 12382,
+    "reads": []
+  }
+]

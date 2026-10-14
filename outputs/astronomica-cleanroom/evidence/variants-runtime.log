@@ -1,0 +1,142 @@
+[2026-09-25 21:16:00] ScummVM 2026.3.1git
+[2026-09-25 21:16:00] RGB SDL2 
+[2026-09-25 21:16:00] --- Log opened.
+[2026-09-25 21:16:00] Using SDL Video Driver "dummy"
+[2026-09-25 21:16:00] Using SDL Audio Driver "dummy"
+[2026-09-25 21:16:00] Output sample rate: 44100 Hz
+[2026-09-25 21:16:00] Output buffer size: 1024 samples
+[2026-09-25 21:16:00] Output channels: 2
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_START' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-09-25 21:16:01] CPU extensions:
+[2026-09-25 21:16:01] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-09-25 21:16:01] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-09-25 21:16:01] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-09-25 21:16:01] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_A' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_B' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_Y' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_X' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_UP' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_DOWN' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_LEFT' not known
+[2026-09-25 21:16:01] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-09-25 21:16:01] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-09-25 21:16:01] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-09-25 21:16:01] 
+[2026-09-25 21:16:01]   File <Memory Stream>, line 1:
+[2026-09-25 21:16:01] <language id='*' file='helvb12.bdf'/></font>
+[2026-09-25 21:16:01] 
+[2026-09-25 21:16:01] Parser error: Error loading localized Font in theme engine.
+[2026-09-25 21:16:01] 
+[2026-09-25 21:16:01] WARNING: Failed to load theme 'builtin'!
+[2026-09-25 21:16:02] Astronomica resource explorer: P1; nav 0,0,0
+[2026-09-25 21:16:02] Astronomica resource explorer: P506; nav 0,0,0
+[2026-09-25 21:16:02] Astronomica static sprites: P506, 9 drawn
+[2026-09-25 21:16:02] Astronomica resource explorer: P531; nav 0,0,0
+[2026-09-25 21:16:02] Astronomica static sprites: P531, 9 drawn
+[2026-09-25 21:16:02] Astronomica variant route 0 stage 0: PASS (P506 -> P531, round 1)
+[2026-09-25 21:16:02] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:02] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:02] Astronomica variant route 0 stage 1: PASS (P531 -> P534, round 2)
+[2026-09-25 21:16:02] Astronomica resource explorer: P535; nav 0,0,0
+[2026-09-25 21:16:02] Astronomica static sprites: P535, 8 drawn
+[2026-09-25 21:16:02] Astronomica variant route 0 stage 2: PASS (P534 -> P535, round 3)
+[2026-09-25 21:16:09] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:09] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:09] Astronomica variant route 0 stage 3: PASS (P535 -> P519, round 0)
+[2026-09-25 21:16:09] Astronomica resource explorer: P531; nav 0,0,0
+[2026-09-25 21:16:09] Astronomica static sprites: P531, 9 drawn
+[2026-09-25 21:16:09] Astronomica resource explorer: P531; nav 0,0,0
+[2026-09-25 21:16:09] Astronomica static sprites: P531, 9 drawn
+[2026-09-25 21:16:09] Astronomica variant route 1 stage 0: PASS (P531 -> P531, round 1)
+[2026-09-25 21:16:09] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:09] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:09] Astronomica variant route 1 stage 1: PASS (P531 -> P534, round 2)
+[2026-09-25 21:16:09] Astronomica resource explorer: P532; nav 0,0,0
+[2026-09-25 21:16:09] Astronomica static sprites: P532, 8 drawn
+[2026-09-25 21:16:09] Astronomica variant route 1 stage 2: PASS (P534 -> P532, round 3)
+[2026-09-25 21:16:17] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:17] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:17] Astronomica variant route 1 stage 3: PASS (P532 -> P519, round 0)
+[2026-09-25 21:16:17] Astronomica resource explorer: P532; nav 0,0,0
+[2026-09-25 21:16:17] Astronomica static sprites: P532, 8 drawn
+[2026-09-25 21:16:17] Astronomica resource explorer: P531; nav 0,0,0
+[2026-09-25 21:16:17] Astronomica static sprites: P531, 9 drawn
+[2026-09-25 21:16:17] Astronomica variant route 2 stage 0: PASS (P532 -> P531, round 1)
+[2026-09-25 21:16:17] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:17] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:17] Astronomica variant route 2 stage 1: PASS (P531 -> P534, round 2)
+[2026-09-25 21:16:17] Astronomica resource explorer: P533; nav 0,0,0
+[2026-09-25 21:16:17] Astronomica static sprites: P533, 8 drawn
+[2026-09-25 21:16:17] Astronomica variant route 2 stage 2: PASS (P534 -> P533, round 3)
+[2026-09-25 21:16:24] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:24] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:24] Astronomica variant route 2 stage 3: PASS (P533 -> P519, round 0)
+[2026-09-25 21:16:24] Astronomica resource explorer: P533; nav 0,0,0
+[2026-09-25 21:16:24] Astronomica static sprites: P533, 8 drawn
+[2026-09-25 21:16:24] Astronomica resource explorer: P531; nav 0,0,0
+[2026-09-25 21:16:24] Astronomica static sprites: P531, 9 drawn
+[2026-09-25 21:16:24] Astronomica variant route 3 stage 0: PASS (P533 -> P531, round 1)
+[2026-09-25 21:16:24] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:24] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:24] Astronomica variant route 3 stage 1: PASS (P531 -> P534, round 2)
+[2026-09-25 21:16:25] Astronomica resource explorer: P535; nav 0,0,0
+[2026-09-25 21:16:25] Astronomica static sprites: P535, 8 drawn
+[2026-09-25 21:16:25] Astronomica variant route 3 stage 2: PASS (P534 -> P535, round 3)
+[2026-09-25 21:16:32] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:32] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:32] Astronomica variant route 3 stage 3: PASS (P535 -> P519, round 0)
+[2026-09-25 21:16:32] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:32] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:32] Astronomica resource explorer: P532; nav 0,0,0
+[2026-09-25 21:16:32] Astronomica static sprites: P532, 8 drawn
+[2026-09-25 21:16:32] Astronomica variant route 4 stage 0: PASS (P534 -> P532, round 1)
+[2026-09-25 21:16:32] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:32] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:32] Astronomica variant route 4 stage 1: PASS (P532 -> P534, round 2)
+[2026-09-25 21:16:32] Astronomica resource explorer: P506; nav 0,0,0
+[2026-09-25 21:16:32] Astronomica static sprites: P506, 9 drawn
+[2026-09-25 21:16:32] Astronomica variant route 4 stage 2: PASS (P534 -> P506, round 3)
+[2026-09-25 21:16:39] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:39] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:39] Astronomica variant route 4 stage 3: PASS (P506 -> P519, round 0)
+[2026-09-25 21:16:39] Astronomica resource explorer: P535; nav 0,0,0
+[2026-09-25 21:16:39] Astronomica static sprites: P535, 8 drawn
+[2026-09-25 21:16:40] Astronomica resource explorer: P532; nav 0,0,0
+[2026-09-25 21:16:40] Astronomica static sprites: P532, 8 drawn
+[2026-09-25 21:16:40] Astronomica variant route 5 stage 0: PASS (P535 -> P532, round 1)
+[2026-09-25 21:16:40] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:40] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:40] Astronomica variant route 5 stage 1: PASS (P532 -> P534, round 2)
+[2026-09-25 21:16:40] Astronomica resource explorer: P533; nav 0,0,0
+[2026-09-25 21:16:40] Astronomica static sprites: P533, 8 drawn
+[2026-09-25 21:16:40] Astronomica variant route 5 stage 2: PASS (P534 -> P533, round 3)
+[2026-09-25 21:16:47] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:47] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:47] Astronomica variant route 5 stage 3: PASS (P533 -> P519, round 0)
+[2026-09-25 21:16:47] Astronomica resource explorer: P506; nav 0,0,0
+[2026-09-25 21:16:47] Astronomica static sprites: P506, 9 drawn
+[2026-09-25 21:16:47] Astronomica resource explorer: P532; nav 0,0,0
+[2026-09-25 21:16:47] Astronomica static sprites: P532, 8 drawn
+[2026-09-25 21:16:47] Astronomica variant route 6 stage 0: PASS (P506 -> P532, round 1)
+[2026-09-25 21:16:47] Astronomica resource explorer: P534; nav 0,0,0
+[2026-09-25 21:16:47] Astronomica static sprites: P534, 11 drawn
+[2026-09-25 21:16:47] Astronomica variant route 6 stage 1: PASS (P532 -> P534, round 2)
+[2026-09-25 21:16:47] Astronomica resource explorer: P535; nav 0,0,0
+[2026-09-25 21:16:47] Astronomica static sprites: P535, 8 drawn
+[2026-09-25 21:16:47] Astronomica variant route 6 stage 2: PASS (P534 -> P535, round 3)
+[2026-09-25 21:16:51] Astronomica resource explorer: P519; nav 0,0,0
+[2026-09-25 21:16:51] Astronomica static sprites: P519, 4 drawn
+[2026-09-25 21:16:51] Astronomica variant route 6 stage 3: PASS (P535 -> P519, round 0)
+[2026-09-25 21:16:51] Astronomica resource explorer: P506; nav 0,0,0
+[2026-09-25 21:16:51] Astronomica static sprites: P506, 9 drawn
+[2026-09-25 21:16:52] Astronomica resource explorer: P281; nav 286,0,276
+[2026-09-25 21:16:52] Astronomica static sprites: P281, 1 drawn
+[2026-09-25 21:16:52] Astronomica variant puzzle verification: PASS (six starting scenes, three nonrepeating variants, repeat success, unsolved exit)
+[2026-09-25 21:16:52] --- Log closed successfully.

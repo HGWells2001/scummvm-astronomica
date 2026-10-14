@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "original_cases": 1900,
+  "undefined_cases": 10,
+  "undefined_policy": "unavailable hint",
+  "decoded_selections": 170,
+  "source_scene_returns": 37,
+  "continuous_completion": true,
+  "p523_help_return": true,
+  "full_suite": true,
+  "windows_help_book": false,
+  "manual_confirmation": false
+}

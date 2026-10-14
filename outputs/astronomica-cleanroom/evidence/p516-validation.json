@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "setup_cases": 128,
+  "motion_ms": 20000,
+  "orbit_sprites": 8,
+  "original_collision_fixtures": 64,
+  "documented_api_edge_cases": 4,
+  "image_compositions": 3,
+  "click_routes": 4,
+  "full_suite": true,
+  "manual_confirmation": false
+}

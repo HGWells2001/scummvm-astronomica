@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scenes": [
+    432,
+    433,
+    0
+  ],
+  "continuous_movies": [
+    432,
+    433
+  ],
+  "motion_and_stop": true,
+  "timed_transitions": true,
+  "logo_menu_and_exit": true,
+  "full_suite": true,
+  "manual_confirmation": false
+}

@@ -1,0 +1,34 @@
+{
+  "source": "Original HLP independently decoded in probe_help_compression.py",
+  "record_count": 2117,
+  "record_hash_fnv32": "2cab83c0",
+  "hash_layout": "For each record: uint8 kind, uint32le virtual address, expanded Windows-1252 text including NUL runs",
+  "search_cases": [
+    {
+      "query": "",
+      "count": 781,
+      "hash_fnv32": "1f4fa2cf"
+    },
+    {
+      "query": "a.u.",
+      "count": 1,
+      "hash_fnv32": "c40bf6cc"
+    },
+    {
+      "query": "moon",
+      "count": 24,
+      "hash_fnv32": "eaecb450"
+    },
+    {
+      "query": "MERCURY",
+      "count": 9,
+      "hash_fnv32": "134d50bf"
+    },
+    {
+      "query": "xyz-no-such-article",
+      "count": 0,
+      "hash_fnv32": "811c9dc5"
+    }
+  ],
+  "search_hash_layout": "FNV32 over each returned article index as a whole uint32 value, in original order"
+}

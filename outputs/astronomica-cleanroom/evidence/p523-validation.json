@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "callback_cases": 262656,
+  "compatibility_repair": "event8 malformed original movie arguments restored to3721/80",
+  "control_states": 5899,
+  "control_transitions": 35394,
+  "position_cases": 100,
+  "click_routes": 10,
+  "continuous_winning_route": true,
+  "real_input_delays": true,
+  "full_suite": true,
+  "manual_confirmation": false
+}

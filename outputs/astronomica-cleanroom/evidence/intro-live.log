@@ -1,0 +1,49 @@
+[2026-10-10 18:48:59] ScummVM 2026.3.1git
+[2026-10-10 18:48:59] RGB SDL2 
+[2026-10-10 18:48:59] --- Log opened.
+[2026-10-10 18:48:59] Using SDL Video Driver "dummy"
+[2026-10-10 18:48:59] Using SDL Audio Driver "dummy"
+[2026-10-10 18:48:59] Output sample rate: 44100 Hz
+[2026-10-10 18:48:59] Output buffer size: 1024 samples
+[2026-10-10 18:48:59] Output channels: 2
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_START' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-10 18:49:00] CPU extensions:
+[2026-10-10 18:49:00] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-10 18:49:00] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-10 18:49:00] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-10 18:49:00] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_A' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_B' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_Y' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_X' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_UP' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-10 18:49:00] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-10 18:49:00] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-10 18:49:01] Audio Codec FourCC: 'raw '
+[2026-10-10 18:49:01] stsd version =0
+[2026-10-10 18:49:01] Astronomica P2 movie: 400x200, scale 30, duration 8524
+[2026-10-10 18:49:01] Astronomica resource explorer: P2; nav 0,0,0
+[2026-10-10 18:49:01] Astronomica P2 entry scripts: 1 queued, 0 skipped
+[2026-10-10 18:49:01] Astronomica P2 movie started at 120,140
+[2026-10-10 18:51:50] Astronomica native RGB palette command: OPEN2_b
+[2026-10-10 18:52:29] Astronomica movie closed while playing: 1542 frames, time 156054, end 206266
+[2026-10-10 18:52:29] Astronomica resource explorer: P3; nav 0,0,0
+[2026-10-10 18:52:29] Astronomica P3 entry scripts: 10 queued, 0 skipped
+[2026-10-10 18:52:29] Astronomica P3 loop: S0.WAV
+[2026-10-10 18:53:37] Audio Codec FourCC: 'raw '
+[2026-10-10 18:53:37] stsd version =0
+[2026-10-10 18:53:37] Astronomica P4 movie: 400x200, scale 600, duration 42660
+[2026-10-10 18:53:37] Astronomica resource explorer: P4; nav 0,0,0
+[2026-10-10 18:53:37] Astronomica P4 entry scripts: 1 queued, 0 skipped
+[2026-10-10 18:53:37] Astronomica P4 movie started at 120,140
+[2026-10-10 18:54:47] Astronomica movie closed while playing: 2041 frames, time 57741, end 71100
+[2026-10-10 18:54:47] Astronomica resource explorer: P27; nav 28,0,30
+[2026-10-10 18:54:47] Astronomica P27 entry scripts: 0 queued, 0 skipped

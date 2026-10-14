@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "status": "PASS",
+  "format": "Original text GAMESTAT,102 signed decimal values",
+  "original_payload_cases": 15,
+  "truncated_token_cases": 102,
+  "malformed_numeric_cases": 8,
+  "extra_token_or_oversize_cases": 3,
+  "signed_int32_limits": true,
+  "whitespace_forms": [
+    "LF",
+    "CRLF",
+    "spaces/tabs",
+    "vertical tab/form feed"
+  ],
+  "disk_fixture_discovery": true,
+  "missing_and_invalid_file_preserve_state": true,
+  "fixture_unchanged": true,
+  "mode1_exploration_import": true,
+  "restored_fields": [
+    "scene",
+    "completion count",
+    "100 globals"
+  ],
+  "native_resave": true,
+  "original_menu_flow": true,
+  "scoped_custom33": true,
+  "full_suite": true,
+  "policy": [
+    "Read gamestat/GAMESTAT only from selected game directory. No original files overwritten.",
+    "Reject active countdown modes1/2 with nonzero global8; the original file contains no recoverable clock epoch.",
+    "Reject unsupported destinations and puzzle/mentor/movie scenes before changing live game state."
+  ],
+  "limitations": [
+    "No binary gamestat import",
+    "No arbitrary mid-puzzle restore",
+    "Valid decimal-value changes cannot be detected without an original checksum",
+    "Manual end-to-end gameplay remains pending"
+  ]
+}

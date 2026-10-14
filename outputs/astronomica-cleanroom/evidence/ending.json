@@ -1,0 +1,230 @@
+{
+  "scene": 511,
+  "script": 0,
+  "commands": [
+    {
+      "offset": 632047,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        5,
+        7,
+        0,
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 632079,
+      "opcode": 32,
+      "name": "set_condition",
+      "args": [
+        1,
+        5,
+        8
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 632099,
+      "opcode": 28,
+      "name": "op_28",
+      "args": [
+        -1
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 632111,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        6
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 632123,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        7
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 632135,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        5,
+        0,
+        170
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 632155,
+      "opcode": 27,
+      "name": "op_27",
+      "args": [
+        12
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 632167,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        190,
+        220
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 632187,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        220,
+        215
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632207,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        250,
+        210
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632227,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        280,
+        205
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632247,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        310,
+        205
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632267,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        340,
+        210
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632287,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        370,
+        210
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632307,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        20,
+        400,
+        215
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 632327,
+      "opcode": 23,
+      "name": "custom",
+      "args": [
+        25,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 5000
+    },
+    {
+      "offset": 632359,
+      "opcode": 5,
+      "name": "new_place",
+      "args": [
+        388
+      ],
+      "delay": 1000
+    },
+    {
+      "offset": 632371,
+      "opcode": 45,
+      "name": "else",
+      "args": [],
+      "delay": -1
+    },
+    {
+      "offset": 632379,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 632411,
+      "opcode": 29,
+      "name": "op_29",
+      "args": [
+        -1
+      ],
+      "delay": 75
+    },
+    {
+      "offset": 632423,
+      "opcode": 42,
+      "name": "end_condition",
+      "args": [],
+      "delay": -1
+    }
+  ],
+  "solved_input": {
+    "local_5": 7
+  },
+  "destination": 388
+}

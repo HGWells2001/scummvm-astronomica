@@ -1,0 +1,52 @@
+{
+  "opcode": 24,
+  "handler": "15:0a94-0b2a",
+  "handler_sha256": "9dc20e7890662fc7d34ff436d6472b4f1e6a31972551e5122ecedb12a1e8179f",
+  "resource_sha256": "64187c16330172e257aca4ff8b2499cc98fdd8a556bdbba8946c51d406dad1b1",
+  "call_sites": [
+    [
+      21,
+      291,
+      131,
+      5
+    ],
+    [
+      21,
+      286,
+      125,
+      4
+    ],
+    [
+      21,
+      281,
+      112,
+      3
+    ],
+    [
+      21,
+      282,
+      115,
+      3
+    ],
+    [
+      21,
+      277,
+      110,
+      2
+    ],
+    [
+      21,
+      270,
+      94,
+      1
+    ],
+    [
+      21,
+      263,
+      82,
+      0
+    ]
+  ],
+  "semantics": "absolute move; store full coordinates; set frame; preserve visibility and animation state",
+  "scope": "Command verification, not a complete P525 solution"
+}

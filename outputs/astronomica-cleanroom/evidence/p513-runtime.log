@@ -1,0 +1,67 @@
+[2026-09-28 14:54:20] ScummVM 2026.3.1git
+[2026-09-28 14:54:20] RGB SDL2 
+[2026-09-28 14:54:20] --- Log opened.
+[2026-09-28 14:54:20] Using SDL Video Driver "dummy"
+[2026-09-28 14:54:20] Using SDL Audio Driver "dummy"
+[2026-09-28 14:54:20] Output sample rate: 44100 Hz
+[2026-09-28 14:54:20] Output buffer size: 1024 samples
+[2026-09-28 14:54:20] Output channels: 2
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_START' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-09-28 14:54:21] CPU extensions:
+[2026-09-28 14:54:21] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-09-28 14:54:21] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-09-28 14:54:21] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-09-28 14:54:21] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_A' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_B' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_Y' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_X' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_UP' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_DOWN' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_LEFT' not known
+[2026-09-28 14:54:21] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-09-28 14:54:21] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-09-28 14:54:21] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-09-28 14:54:21] 
+[2026-09-28 14:54:21]   File <Memory Stream>, line 1:
+[2026-09-28 14:54:21] <language id='*' file='helvb12.bdf'/></font>
+[2026-09-28 14:54:21] 
+[2026-09-28 14:54:21] Parser error: Error loading localized Font in theme engine.
+[2026-09-28 14:54:21] 
+[2026-09-28 14:54:21] WARNING: Failed to load theme 'builtin'!
+[2026-09-28 14:54:22] Astronomica resource explorer: P1; nav 0,0,0
+[2026-09-28 14:54:22] Astronomica P513 original comparison: PASS (126 answers, nine photon trajectories)
+[2026-09-28 14:54:22] Astronomica resource explorer: P513; nav 0,0,0
+[2026-09-28 14:54:22] Astronomica static sprites: P513, 11 drawn
+[2026-09-28 14:54:24] Astronomica resource explorer: P197; nav 194,0,203
+[2026-09-28 14:54:24] Astronomica static sprites: P197, 1 drawn
+[2026-09-28 14:54:24] Astronomica P513 route 0 attempts 7: PASS
+[2026-09-28 14:54:24] Astronomica resource explorer: P513; nav 0,0,0
+[2026-09-28 14:54:24] Astronomica static sprites: P513, 11 drawn
+[2026-09-28 14:54:24] Astronomica resource explorer: P197; nav 194,0,203
+[2026-09-28 14:54:24] Astronomica static sprites: P197, 1 drawn
+[2026-09-28 14:54:24] Astronomica P513 route 1 attempts 14: PASS
+[2026-09-28 14:54:24] Astronomica resource explorer: P513; nav 0,0,0
+[2026-09-28 14:54:24] Astronomica static sprites: P513, 11 drawn
+[2026-09-28 14:54:25] Astronomica resource explorer: P197; nav 194,0,203
+[2026-09-28 14:54:25] Astronomica static sprites: P197, 1 drawn
+[2026-09-28 14:54:25] Astronomica P513 route 2 attempts 7: PASS
+[2026-09-28 14:54:25] Astronomica resource explorer: P513; nav 0,0,0
+[2026-09-28 14:54:25] Astronomica static sprites: P513, 11 drawn
+[2026-09-28 14:54:25] Astronomica resource explorer: P197; nav 194,0,203
+[2026-09-28 14:54:25] Astronomica static sprites: P197, 1 drawn
+[2026-09-28 14:54:25] Astronomica P513 route 3 attempts 10: PASS
+[2026-09-28 14:54:25] Astronomica resource explorer: P513; nav 0,0,0
+[2026-09-28 14:54:25] Astronomica static sprites: P513, 11 drawn
+[2026-09-28 14:54:25] Astronomica resource explorer: P197; nav 194,0,203
+[2026-09-28 14:54:25] Astronomica static sprites: P197, 1 drawn
+[2026-09-28 14:54:25] Astronomica resource explorer: P513; nav 0,0,0
+[2026-09-28 14:54:25] Astronomica static sprites: P513, 11 drawn
+[2026-09-28 14:54:25] Astronomica P513 interaction verification: PASS (fourteen scenarios, seven correct/all selected/ten errors, nine animations, limits, repeated success, silent counter, unsolved exit)
+[2026-09-28 14:54:25] --- Log closed successfully.

@@ -1,0 +1,9 @@
+{
+  "status": "Original instruction reference, not native results",
+  "callback_cases": 262656,
+  "compatibility_repair": "event8 failure: original word arguments 3721/80 replace malformed 32-bit call",
+  "callback_hash": "0xf8ea0405",
+  "spread_states": 5899,
+  "spread_edges": 35394,
+  "spread_hash": "0x40e80615"
+}

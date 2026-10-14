@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "original_cases": 2436,
+  "comparison_fnv": "d253e90a",
+  "boundary_cases": 42,
+  "boundary_fnv": "662a3a5a",
+  "world_interaction_scenes": [
+    35,
+    85,
+    98,
+    352,
+    359,
+    388,
+    407,
+    422,
+    425
+  ],
+  "full_suite": true,
+  "manual_confirmation": false,
+  "legacy_resume": false,
+  "p409_advice_integrated": true
+}

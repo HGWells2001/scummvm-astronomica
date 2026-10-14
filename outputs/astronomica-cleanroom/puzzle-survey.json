@@ -1,0 +1,537 @@
+{
+  "scope": "Existing resources P500..P537, not one scene per distinct puzzle",
+  "rows": [
+    {
+      "scene": 501,
+      "commands": 259,
+      "entry_scripts": 1,
+      "sprites": 27,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        7,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 502,
+      "commands": 145,
+      "entry_scripts": 2,
+      "sprites": 35,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        8
+      ],
+      "trailing_bytes": 83184,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 503,
+      "commands": 237,
+      "entry_scripts": 2,
+      "sprites": 48,
+      "drag_handlers": 0,
+      "layers": 2,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        8
+      ],
+      "trailing_bytes": 165284,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 504,
+      "commands": 225,
+      "entry_scripts": 3,
+      "sprites": 45,
+      "drag_handlers": 0,
+      "layers": 2,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        8,
+        25
+      ],
+      "trailing_bytes": 148864,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 505,
+      "commands": 222,
+      "entry_scripts": 3,
+      "sprites": 18,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 506,
+      "commands": 156,
+      "entry_scripts": 2,
+      "sprites": 14,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        17
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 507,
+      "commands": 96,
+      "entry_scripts": 2,
+      "sprites": 30,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        11
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 508,
+      "commands": 169,
+      "entry_scripts": 3,
+      "sprites": 23,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 509,
+      "commands": 312,
+      "entry_scripts": 6,
+      "sprites": 19,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 510,
+      "commands": 79,
+      "entry_scripts": 4,
+      "sprites": 14,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        23
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 511,
+      "commands": 221,
+      "entry_scripts": 5,
+      "sprites": 35,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 512,
+      "commands": 326,
+      "entry_scripts": 6,
+      "sprites": 64,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        24,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 513,
+      "commands": 231,
+      "entry_scripts": 4,
+      "sprites": 32,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        10,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 514,
+      "commands": 139,
+      "entry_scripts": 2,
+      "sprites": 20,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        16,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 515,
+      "commands": 1075,
+      "entry_scripts": 7,
+      "sprites": 60,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 516,
+      "commands": 133,
+      "entry_scripts": 2,
+      "sprites": 37,
+      "drag_handlers": 0,
+      "layers": 2,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        9,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 517,
+      "commands": 178,
+      "entry_scripts": 2,
+      "sprites": 11,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 518,
+      "commands": 111,
+      "entry_scripts": 3,
+      "sprites": 32,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        12,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 519,
+      "commands": 282,
+      "entry_scripts": 3,
+      "sprites": 27,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 520,
+      "commands": 4,
+      "entry_scripts": 1,
+      "sprites": 0,
+      "drag_handlers": 0,
+      "layers": 0,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 521,
+      "commands": 175,
+      "entry_scripts": 1,
+      "sprites": 27,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 522,
+      "commands": 69,
+      "entry_scripts": 11,
+      "sprites": 18,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        15,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 523,
+      "commands": 41,
+      "entry_scripts": 1,
+      "sprites": 44,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        1,
+        4,
+        5,
+        20
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 524,
+      "commands": 329,
+      "entry_scripts": 5,
+      "sprites": 32,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25,
+        28
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 525,
+      "commands": 316,
+      "entry_scripts": 5,
+      "sprites": 22,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 526,
+      "commands": 274,
+      "entry_scripts": 2,
+      "sprites": 23,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        13,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 527,
+      "commands": 82,
+      "entry_scripts": 1,
+      "sprites": 9,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 528,
+      "commands": 133,
+      "entry_scripts": 0,
+      "sprites": 9,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        18,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 529,
+      "commands": 143,
+      "entry_scripts": 3,
+      "sprites": 11,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 530,
+      "commands": 581,
+      "entry_scripts": 11,
+      "sprites": 29,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 531,
+      "commands": 157,
+      "entry_scripts": 2,
+      "sprites": 14,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        17
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 532,
+      "commands": 138,
+      "entry_scripts": 2,
+      "sprites": 12,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        17
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 533,
+      "commands": 123,
+      "entry_scripts": 2,
+      "sprites": 12,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        17
+      ],
+      "trailing_bytes": 12288,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 534,
+      "commands": 232,
+      "entry_scripts": 2,
+      "sprites": 18,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        17
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 535,
+      "commands": 123,
+      "entry_scripts": 2,
+      "sprites": 12,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        17
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 536,
+      "commands": 1088,
+      "entry_scripts": 7,
+      "sprites": 60,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    },
+    {
+      "scene": 537,
+      "commands": 118,
+      "entry_scripts": 1,
+      "sprites": 48,
+      "drag_handlers": 0,
+      "layers": 1,
+      "unsupported_opcode_ids": [],
+      "custom_operations": [
+        14,
+        25
+      ],
+      "trailing_bytes": 0,
+      "status": "Completabile: non verificato"
+    }
+  ],
+  "opcode_scene_counts": {}
+}

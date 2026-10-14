@@ -1,0 +1,573 @@
+{
+  "status": "Original bitmap decode research; native help images not yet rendered",
+  "source_sha256": "ac495a6798969cb66b31087402d388f5426ad2f03da0f247907a33255e73de02",
+  "image_count": 31,
+  "lz_images": 30,
+  "raw_images": 1,
+  "images": [
+    {
+      "index": 0,
+      "width": 180,
+      "height": 132,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 8761,
+      "decoded_bytes": 23760,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "b0a58a5c9dac2097f09f99b7b374eed4dbcbb7aaf3ab950a6113d00af720e2b3",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 1,
+      "width": 180,
+      "height": 125,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 9715,
+      "decoded_bytes": 22500,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "cce22bdf32aa1367d89ff5fd82133352df90ab56c4bf4d38fb1ffa26a502516c",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 2,
+      "width": 180,
+      "height": 212,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 10016,
+      "decoded_bytes": 38160,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "e84fb5dc981b87e9379f72a2b77bddbddcb2ee69f041c3ee068f5c4341e17e05",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 3,
+      "width": 180,
+      "height": 238,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 30824,
+      "decoded_bytes": 42840,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "634393a3e7da545b589b3c78ba746ad6406489430f2321d6b281c1f03acec152",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 4,
+      "width": 180,
+      "height": 159,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 18183,
+      "decoded_bytes": 28620,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "6ab2142f3035f4a60e8ea786e8058c73adff7e38bce042f0c9e2b03e312a1a4b",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 5,
+      "width": 180,
+      "height": 51,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 1716,
+      "decoded_bytes": 9180,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "e2583e4da28c5c8faadd8fb17493b5b52c9b21482b1b3e1e8872a3bf3b0262d2",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 6,
+      "width": 180,
+      "height": 134,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 8968,
+      "decoded_bytes": 24120,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "4ec10a661db2fe7c0200be3bc11b18ee24cd0a8ee8e378ccf3c45c8247112f89",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 7,
+      "width": 180,
+      "height": 240,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 22713,
+      "decoded_bytes": 43200,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "a79520505ce4b437390414bd1dde9d78aa598d88a0022f1986681c84c0521d65",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 8,
+      "width": 180,
+      "height": 85,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 6989,
+      "decoded_bytes": 15300,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "b17bd554fda003cf04ef411ed40ff5d3538f53d6bda85a898376d8ad53210f04",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 9,
+      "width": 180,
+      "height": 101,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 7835,
+      "decoded_bytes": 18180,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "c30115ff9aec76fe2ce79527c22fa35ef39e140f905b81a1047548c433baec27",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 10,
+      "width": 180,
+      "height": 192,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 18158,
+      "decoded_bytes": 34560,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "9b30583663a4f29cb0c4022ed151a0921f62cf9a7f4f8c8e40600618518d7286",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 11,
+      "width": 180,
+      "height": 162,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 16994,
+      "decoded_bytes": 29160,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "4da44ad7cc46e6c0bcea5e59bca7c57faaa5bdc3c3137e2bf223141da9412d76",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 12,
+      "width": 180,
+      "height": 169,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 0,
+      "compressed_bytes": 30420,
+      "decoded_bytes": 30420,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "7307977ccf175e2ec2216aaa337c626621341c1e77de3565154aa246c2f74472",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 13,
+      "width": 180,
+      "height": 147,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 8493,
+      "decoded_bytes": 26460,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "54f32b7bdad0ef7389e262ad5b9387bf59e0f33be7e030b6aae494218021d5c0",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 14,
+      "width": 180,
+      "height": 115,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 9694,
+      "decoded_bytes": 20700,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "b6c3840c999622e9a2e7ef43e0299cedbc52369627f4cdc9a626b56e36ee0630",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 15,
+      "width": 180,
+      "height": 85,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 12497,
+      "decoded_bytes": 15300,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "82aa4c6361cf8dfe45eff51e1e634a7dadeb2b4e5f812d7817ae2a304d7786ee",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 16,
+      "width": 180,
+      "height": 133,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 15267,
+      "decoded_bytes": 23940,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "3a80583b522f9ede7ad31cb2eb6b1e38619b6e584e662cc10ad8b98d6398319b",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 17,
+      "width": 180,
+      "height": 95,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 8591,
+      "decoded_bytes": 17100,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "80f207defa15a70bc928de082ee96e10c1c15e485fead6f249628de87e0b40b1",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 18,
+      "width": 180,
+      "height": 97,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 8913,
+      "decoded_bytes": 17460,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "0147c98365c746cc3a1297a451ad5659d54ddf98785f9fa9cad0a65237a168d8",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 19,
+      "width": 180,
+      "height": 110,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 8676,
+      "decoded_bytes": 19800,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "a666818d6c495a0bbb6be55c585dc4bed0cc981a1149d4d9ea34da461d40d7d4",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 20,
+      "width": 180,
+      "height": 223,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 32173,
+      "decoded_bytes": 40140,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "50856cfb355eef8bae90383d13486ecd440f5169b0ae131bfb5f7f9213c2d48c",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 21,
+      "width": 180,
+      "height": 223,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 17780,
+      "decoded_bytes": 40140,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "3800ade2e632806e2ff1f2cc7c699b5ee206b9ffe34d4358cd0c2400c949eed8",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 22,
+      "width": 180,
+      "height": 218,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 18886,
+      "decoded_bytes": 39240,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "9f985d4babd02d9dd4bcba77b55c511d3ac37461ed8c3a37256cc5b11e738d45",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 23,
+      "width": 180,
+      "height": 152,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 12891,
+      "decoded_bytes": 27360,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "9d6d97dc6b8730de090ebf00770c918d340dbe15f4d3e772d2cdd1f5095eb2d8",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 24,
+      "width": 180,
+      "height": 99,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 4032,
+      "decoded_bytes": 17820,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "985a46a2a952a6aa009367384c7feec3fc9836449c286549a65ee00837d2f8c5",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 25,
+      "width": 180,
+      "height": 163,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 19563,
+      "decoded_bytes": 29340,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "b4eabb22913b2920724d04563e633236b1760571b57f280cc349723969cd9ea7",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 26,
+      "width": 180,
+      "height": 190,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 31829,
+      "decoded_bytes": 34200,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "450a3b30ae195755def32023e1d8088c0e9d999b6a8a39b2f457deee075b2818",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 27,
+      "width": 180,
+      "height": 134,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 11195,
+      "decoded_bytes": 24120,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "a6d9921795be6bfd6ea9e2dbcec1417668176a0b5d0f533abf389f4538ea14bf",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 28,
+      "width": 180,
+      "height": 82,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 11667,
+      "decoded_bytes": 14760,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "45472d2c8b01b5c58e170c672f2fa459c2bd1eea3508de4b9d614f92952d4630",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 29,
+      "width": 180,
+      "height": 79,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 9757,
+      "decoded_bytes": 14220,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "8b145343b229abaf0cd152687f9385e654996d816c1281d38a6adac6156a6d98",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    },
+    {
+      "index": 30,
+      "width": 180,
+      "height": 288,
+      "pitch": 180,
+      "bit_depth": 8,
+      "dpi": [
+        72,
+        72
+      ],
+      "compression": 2,
+      "compressed_bytes": 29597,
+      "decoded_bytes": 51840,
+      "palette_sha256": "cc5113d566e067cb06b3fe924fcdad87dbe77375e7da90a45fac623eb816b73a",
+      "pixels_sha256": "75a257096df44ef656e14c3597fd3880258591bfd74456eadc3a7d8cb9850614",
+      "orientation": "Bottom-up DIB; preview of bitmap0 inspected",
+      "palette_format": "256 BGRA entries"
+    }
+  ],
+  "findings": [
+    "Packed32 fields use16 bits unless low bit is1, then32; packed16 uses8 or16. Values shift right1.",
+    "Image type6, planes1,8 bits per pixel,256 palette entries. Image group has one image at offset8.",
+    "Compression2 uses the same bounded LZ token scheme as help topics. Bitmap12 uses compression0 (raw).",
+    "All stream extents, palette boundaries and decoded pitch*height sizes match. No hotspot payloads."
+  ]
+}

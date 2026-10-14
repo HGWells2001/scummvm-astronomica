@@ -1,0 +1,110 @@
+{
+  "scene": 514,
+  "region_grid_cases": 17161,
+  "region_hash": "0xd08a891a",
+  "traces": [
+    {
+      "sprite": 17,
+      "width": 52,
+      "height": 54,
+      "ticks": 1000,
+      "fnv1a32": "0x12bc0440",
+      "first": [
+        [
+          302,
+          284,
+          2,
+          0,
+          0
+        ],
+        [
+          304,
+          284,
+          2,
+          0,
+          0
+        ],
+        [
+          306,
+          284,
+          2,
+          0,
+          0
+        ],
+        [
+          308,
+          284,
+          2,
+          0,
+          0
+        ]
+      ],
+      "last": [
+        249,
+        3,
+        -2,
+        0,
+        0
+      ],
+      "instructions": 142448
+    },
+    {
+      "sprite": 19,
+      "width": 56,
+      "height": 56,
+      "ticks": 1000,
+      "fnv1a32": "0x56d15423",
+      "first": [
+        [
+          154,
+          170,
+          0,
+          2,
+          7
+        ],
+        [
+          154,
+          172,
+          0,
+          2,
+          7
+        ],
+        [
+          155,
+          174,
+          0,
+          2,
+          7
+        ],
+        [
+          155,
+          176,
+          0,
+          2,
+          7
+        ]
+      ],
+      "last": [
+        423,
+        72,
+        -2,
+        0,
+        1
+      ],
+      "instructions": 167457
+    }
+  ],
+  "constants": {
+    "268": 1.732,
+    "276": 0.577,
+    "284": -1.732,
+    "292": -0.577
+  },
+  "collision": {
+    "cases": 224,
+    "hits": 120,
+    "fnv1a32": "0x1fc8c7fd",
+    "probe_y": "ship.right; moved sprite20 is not the tested sprite19",
+    "code_sha256": "a673d14b64383f2b9d15169209b8bd6d9edecb6ad07a9cf1726b48d9bca544ef"
+  }
+}

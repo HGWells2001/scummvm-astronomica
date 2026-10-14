@@ -1,0 +1,30 @@
+{
+  "movie": "PLACES/P527/FLATRING.MOV",
+  "sha256": "f33e62405662875f3fd1d85087f19954f4d334a3235d528f53facd404dd3b4f3",
+  "timescale": 30,
+  "duration_ticks": 3618,
+  "segments": [
+    [
+      1800,
+      599
+    ],
+    [
+      2568,
+      959
+    ],
+    [
+      900,
+      899
+    ],
+    [
+      0,
+      899
+    ]
+  ],
+  "position": [
+    10,
+    10
+  ],
+  "success_global": 43,
+  "destination": 174
+}

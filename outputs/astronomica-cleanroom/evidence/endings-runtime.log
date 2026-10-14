@@ -1,0 +1,504 @@
+[2026-10-10 18:34:43] ScummVM 2026.3.1git
+[2026-10-10 18:34:43] RGB SDL2 
+[2026-10-10 18:34:43] --- Log opened.
+[2026-10-10 18:34:43] Using SDL Video Driver "dummy"
+[2026-10-10 18:34:43] Using SDL Audio Driver "dummy"
+[2026-10-10 18:34:43] Output sample rate: 44100 Hz
+[2026-10-10 18:34:43] Output buffer size: 1024 samples
+[2026-10-10 18:34:43] Output channels: 2
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_START' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-10 18:34:44] CPU extensions:
+[2026-10-10 18:34:44] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-10 18:34:44] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-10 18:34:44] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-10 18:34:44] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_A' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_B' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_Y' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_X' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_UP' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-10 18:34:44] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-10 18:34:44] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-10 18:34:45] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 1 frames, time 6, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P424 movie: 400x200, scale 30, duration 2132
+[2026-10-10 18:34:45] Astronomica resource explorer: P424; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P424 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 56865, end 71066
+[2026-10-10 18:34:45] Astronomica resource explorer: P425; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica ending choice 1: PASS (film P424 to credits)
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 6 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 7 frames, time 7, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P435 movie: 400x200, scale 30, duration 2132
+[2026-10-10 18:34:45] Astronomica resource explorer: P435; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P435 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 56854, end 71066
+[2026-10-10 18:34:45] Astronomica resource explorer: P425; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica ending choice 2: PASS (film P435 to credits)
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 12 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 13 frames, time 4, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P436 movie: 400x200, scale 30, duration 2132
+[2026-10-10 18:34:45] Astronomica resource explorer: P436; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P436 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 56854, end 71066
+[2026-10-10 18:34:45] Astronomica resource explorer: P425; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica ending choice 3: PASS (film P436 to credits)
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 1, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 18 frames, time 0, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 19 frames, time 7, end 22133
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P437 movie: 400x200, scale 30, duration 2132
+[2026-10-10 18:34:45] Astronomica resource explorer: P437; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P437 movie started at 120,140
+[2026-10-10 18:34:45] Astronomica movie closed while playing: 24 frames, time 56854, end 71066
+[2026-10-10 18:34:45] Astronomica resource explorer: P425; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica ending choice 4: PASS (film P437 to credits)
+[2026-10-10 18:34:45] Audio Codec FourCC: 'raw '
+[2026-10-10 18:34:45] stsd version =0
+[2026-10-10 18:34:45] Astronomica P423 movie: 400x200, scale 30, duration 664
+[2026-10-10 18:34:45] Astronomica resource explorer: P423; nav 0,0,0
+[2026-10-10 18:34:45] Astronomica P423 movie started at 120,140
+[2026-10-10 18:35:12] Astronomica movie segment finished: 245 frames drawn
+[2026-10-10 18:35:12] Astronomica ending continuous playback: PASS (221 frames, wall 26718 ms, movie 26713 ms, end 22133 ms)
+[2026-10-10 18:35:12] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-10 18:35:12] Astronomica endings interaction verification: PASS (four original choices, five movies, timed credit transitions)
+[2026-10-10 18:35:12] --- Log closed successfully.

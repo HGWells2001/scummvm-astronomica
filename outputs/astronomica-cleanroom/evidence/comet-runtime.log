@@ -1,0 +1,103 @@
+[2026-10-01 16:13:30] ScummVM 2026.3.1git
+[2026-10-01 16:13:30] RGB SDL2 
+[2026-10-01 16:13:30] --- Log opened.
+[2026-10-01 16:13:30] Using SDL Video Driver "dummy"
+[2026-10-01 16:13:30] Using SDL Audio Driver "dummy"
+[2026-10-01 16:13:30] Output sample rate: 44100 Hz
+[2026-10-01 16:13:30] Output buffer size: 1024 samples
+[2026-10-01 16:13:30] Output channels: 2
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_START' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-01 16:13:30] CPU extensions:
+[2026-10-01 16:13:30] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-01 16:13:30] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-10-01 16:13:30] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-01 16:13:30] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_A' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_B' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_Y' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_X' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_UP' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-01 16:13:30] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-01 16:13:31] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-01 16:13:31] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-10-01 16:13:31] 
+[2026-10-01 16:13:31]   File <Memory Stream>, line 1:
+[2026-10-01 16:13:31] <language id='*' file='helvb12.bdf'/></font>
+[2026-10-01 16:13:31] 
+[2026-10-01 16:13:31] Parser error: Error loading localized Font in theme engine.
+[2026-10-01 16:13:31] 
+[2026-10-01 16:13:31] WARNING: Failed to load theme 'builtin'!
+[2026-10-01 16:13:31] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-01 16:13:31] Astronomica comet original motion comparison: PASS (30 trajectories)
+[2026-10-01 16:13:31] Astronomica comet original setup comparison: PASS (1920 display/launch states)
+[2026-10-01 16:13:31] Astronomica resource explorer: P502; nav 0,0,0
+[2026-10-01 16:13:31] Astronomica static sprites: P502, 18 drawn
+[2026-10-01 16:13:31] Astronomica resource explorer: P502; nav 0,0,0
+[2026-10-01 16:13:31] Astronomica static sprites: P502, 18 drawn
+[2026-10-01 16:13:31] Astronomica resource explorer: P502; nav 0,0,0
+[2026-10-01 16:13:31] Astronomica static sprites: P502, 18 drawn
+[2026-10-01 16:13:31] Astronomica resource explorer: P503; nav 0,0,0
+[2026-10-01 16:13:31] Astronomica static sprites: P503, 15 drawn
+[2026-10-01 16:13:31] Astronomica resource explorer: P503; nav 0,0,0
+[2026-10-01 16:13:31] Astronomica static sprites: P503, 15 drawn
+[2026-10-01 16:13:32] Astronomica resource explorer: P503; nav 0,0,0
+[2026-10-01 16:13:32] Astronomica static sprites: P503, 15 drawn
+[2026-10-01 16:13:32] Astronomica resource explorer: P504; nav 0,0,0
+[2026-10-01 16:13:32] Astronomica static sprites: P504, 15 drawn
+[2026-10-01 16:13:32] Astronomica resource explorer: P504; nav 0,0,0
+[2026-10-01 16:13:32] Astronomica static sprites: P504, 15 drawn
+[2026-10-01 16:13:32] Astronomica resource explorer: P504; nav 0,0,0
+[2026-10-01 16:13:32] Astronomica static sprites: P504, 15 drawn
+[2026-10-01 16:13:32] Astronomica comet original composition comparison: PASS (nine layer/clone/bottom-bound images)
+[2026-10-01 16:13:32] Astronomica resource explorer: P502; nav 0,0,0
+[2026-10-01 16:13:32] Astronomica static sprites: P502, 18 drawn
+[2026-10-01 16:13:34] Astronomica resource explorer: P503; nav 0,0,0
+[2026-10-01 16:13:34] Astronomica static sprites: P503, 15 drawn
+[2026-10-01 16:13:34] Astronomica comet route 0 P502 transition: PASS (P503)
+[2026-10-01 16:13:41] Astronomica resource explorer: P504; nav 0,0,0
+[2026-10-01 16:13:41] Astronomica static sprites: P504, 15 drawn
+[2026-10-01 16:13:41] Astronomica comet route 0 P503 transition: PASS (P504)
+[2026-10-01 16:13:49] Audio Codec FourCC: 'raw '
+[2026-10-01 16:13:49] stsd version =0
+[2026-10-01 16:13:49] Astronomica P527 movie: 320x240, scale 30, duration 3618
+[2026-10-01 16:13:49] Astronomica resource explorer: P527; nav 0,0,0
+[2026-10-01 16:13:49] Astronomica static sprites: P527, 9 drawn
+[2026-10-01 16:13:49] Astronomica comet route 0 P504 transition: PASS (P527)
+[2026-10-01 16:13:49] Astronomica comet complete route 0: PASS
+[2026-10-01 16:13:49] Astronomica resource explorer: P503; nav 0,0,0
+[2026-10-01 16:13:49] Astronomica static sprites: P503, 15 drawn
+[2026-10-01 16:13:55] Astronomica resource explorer: P504; nav 0,0,0
+[2026-10-01 16:13:55] Astronomica static sprites: P504, 15 drawn
+[2026-10-01 16:13:55] Astronomica comet route 1 P503 transition: PASS (P504)
+[2026-10-01 16:14:01] Audio Codec FourCC: 'raw '
+[2026-10-01 16:14:01] stsd version =0
+[2026-10-01 16:14:01] Astronomica P527 movie: 320x240, scale 30, duration 3618
+[2026-10-01 16:14:01] Astronomica resource explorer: P527; nav 0,0,0
+[2026-10-01 16:14:01] Astronomica static sprites: P527, 9 drawn
+[2026-10-01 16:14:01] Astronomica comet route 1 P504 transition: PASS (P527)
+[2026-10-01 16:14:01] Astronomica comet complete route 1: PASS
+[2026-10-01 16:14:01] Astronomica resource explorer: P502; nav 0,0,0
+[2026-10-01 16:14:01] Astronomica static sprites: P502, 18 drawn
+[2026-10-01 16:14:01] Astronomica resource explorer: P174; nav 179,0,169
+[2026-10-01 16:14:01] Astronomica static sprites: P174, 1 drawn
+[2026-10-01 16:14:01] Astronomica comet P502 failure/exit route: PASS
+[2026-10-01 16:14:01] Astronomica resource explorer: P503; nav 0,0,0
+[2026-10-01 16:14:01] Astronomica static sprites: P503, 15 drawn
+[2026-10-01 16:14:02] Astronomica resource explorer: P174; nav 179,0,169
+[2026-10-01 16:14:02] Astronomica static sprites: P174, 1 drawn
+[2026-10-01 16:14:02] Astronomica comet P503 failure/exit route: PASS
+[2026-10-01 16:14:02] Astronomica resource explorer: P504; nav 0,0,0
+[2026-10-01 16:14:02] Astronomica static sprites: P504, 15 drawn
+[2026-10-01 16:14:03] Astronomica resource explorer: P174; nav 179,0,169
+[2026-10-01 16:14:03] Astronomica static sprites: P174, 1 drawn
+[2026-10-01 16:14:03] Astronomica comet P504 failure/exit route: PASS
+[2026-10-01 16:14:03] Astronomica comet interaction verification: PASS (P502-P504 transitions, repeated success, low/high speed, wrong direction, exit)
+[2026-10-01 16:14:03] --- Log closed successfully.

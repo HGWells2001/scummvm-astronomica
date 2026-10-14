@@ -1,0 +1,35 @@
+{
+  "original_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "ne_import_modules": {
+    "1": "GDI",
+    "2": "KERNEL",
+    "3": "MMSYSTEM",
+    "4": "USER",
+    "5": "WIN87EM",
+    "6": "BC40RTL"
+  },
+  "clock_call": {
+    "segment": 15,
+    "offset": "1b48",
+    "module": 3,
+    "ordinal": 607,
+    "api": "timeGetTime",
+    "unit": "milliseconds"
+  },
+  "call_opcode": {
+    "opcode": 41,
+    "segment": 15,
+    "offset": "118b",
+    "operation": "zero-based table lookup, _pend_command"
+  },
+  "evidence": [
+    "evidence/interpreter/_handle_pending.asm",
+    "evidence/interpreter/_execute_command.asm",
+    "evidence/interpreter/_copy_command.asm"
+  ],
+  "abi_sources": [
+    "https://raw.githubusercontent.com/wine-mirror/wine/master/dlls/mmsystem.dll16/mmsystem.dll16.spec",
+    "https://learn.microsoft.com/en-us/windows/win32/api/timeapi/nf-timeapi-timegettime"
+  ],
+  "limitation": "Called templates with a positive first delay are rejected; their timestamp lifecycle is not yet implemented."
+}

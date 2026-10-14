@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "symbol": "_read_command_mem",
+      "address": "9:341b",
+      "bytes": "6626894730",
+      "meaning": "Store timeGetTime result at command +0x30 during reading"
+    },
+    {
+      "symbol": "_copy_command",
+      "address": "15:1ad4",
+      "bytes": "c45e0666268b4730c45e0a6626894730",
+      "meaning": "Copy timestamp unchanged"
+    },
+    {
+      "symbol": "_execute_command",
+      "address": "15:118b",
+      "bytes": "c45e06268b5f04c1e302ffb7da0cffb7d80c900ee8f80783c404",
+      "meaning": "Opcode 41 queues the original template without replacing its timestamp"
+    },
+    {
+      "symbol": "_handle_pending",
+      "address": "15:1b89",
+      "bytes": "c45ef2668b46e666262b4730c45ef266263b4734",
+      "meaning": "Compare elapsed time against command delay"
+    }
+  ],
+  "implementation": "Scene template registration epoch is captured before entry audio. Delayed heads use that epoch; continuation timers remain relative to execution."
+}

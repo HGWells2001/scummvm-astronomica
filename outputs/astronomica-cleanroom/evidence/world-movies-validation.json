@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "places": [
+    29,
+    82,
+    222,
+    231
+  ],
+  "continuous_movies": [
+    29,
+    82,
+    222,
+    231
+  ],
+  "original_controller_boundary_cases": 762,
+  "completed_movie_replay": true,
+  "in_range_resume": true,
+  "arm_toggle": true,
+  "unarmed_rejection": true,
+  "decoded_positions": 4,
+  "timed_input_release": true,
+  "p222_sprite_animation_and_exit": true,
+  "full_suite": true,
+  "manual_confirmation": false,
+  "audio_backend": "Windows WASAPI",
+  "cursor_note": "Cursor state verified; manual pointer review pending"
+}

@@ -1,0 +1,70 @@
+# Exploration saves, 4 October 2026
+
+Correction11 October: custom33 uses the TEXT reader9:4275, not the binary
+reader described below. See HELP-RESEARCH.md and evidence/menu-services.json.
+Both original formats are real; they must not be conflated.
+
+Original ASTRO.EXE routines9:41b3-4275 and9:433e-43d0 write/read gamestat.
+probe_save_layout.py executes the successful writer/reader bodies, recording
+I/O at the original wrappers. Five roundtrips verify102 DWORDs/408 bytes:
+place, completed-puzzle counter DS:0153, and100 global values. Original
+P408/P409 saves substitute the previous place. The payload does not contain
+local conditions, sprite state, pending scripts, movie time or random state.
+The probe leaves original files and player saves untouched.
+
+Native support currently saves only settled exploration screens (mode1),
+outside a variant-puzzle sequence. It does not claim arbitrary mid-puzzle
+restoration or import original gamestat files. F5 opens ScummVM's standard
+menu; slots and launcher/command-line startup loading use the standard APIs.
+Detection no longer disables launcher loading; the engine remains experimental.
+
+Native version1:ASVM magic, LE version1, original-style102 DWORD payload,
+FNV word checksum, followed by ScummVM's extended metadata/thumbnail.
+The native prefix is420 bytes. The loader validates the entire prefix and
+destination resource/mode before changing live globals. It rolls back globals
+and completion count if scene loading fails. Loading an exploration save
+clears an abandoned variant-puzzle sequence. The menu pauses both video and
+the script clock; elapsed menu time does not advance puzzle deadlines.
+
+Scoped native checks pass:100-value/counter roundtrip, all420 truncated
+lengths,420 single-byte corruptions, valid-checksum unsupported destination,
+disabled puzzle saves, video/clock pause, physical ScummVM slot, description
+listing, startup state before test setup, and opening/closing the standard
+menu. File tests use work/fresh-20260913/save-regression, never player slots.
+The menu regression uses the builtin English theme; manual GUI/audio review
+and saves inside puzzles remain unverified. Full-suite evidence is recorded
+only after record_saves_checkpoint.py passes its guards.
+
+
+## Exploration saves checkpoint, 4 October 2026
+
+Native saves now preserve exploration location, completed-puzzle counter and
+100 globals. F5 opens the standard ScummVM menu. Startup loading, slot listing,
+metadata and menu opening/closing pass.840 truncated/corrupted payload checks
+pass; unsupported destinations do not change the active game. Video and script
+time pause in the menu. The full regression suite passes with these changes.
+Saves are currently limited to settled mode1 exploration screens. No original
+gamestat import or arbitrary mid-puzzle restoration is claimed. See
+SAVE-RESEARCH.md.35 puzzle-route scenes remain verified; whole-game completion
+is not measured. Windows help book and manual audiovisual playthrough remain.
+
+
+## Advice checkpoint, 5 October 2026
+
+P409 custom27/32 and world countdown are integrated and verified against
+34800/108/10530 original cases. Native interaction, seven warning sounds,
+expiry and continuous advice playback pass. Saves now use version2 (424
+byte prefix) with clock epoch; inactive version1 remains readable. See
+P409-RESEARCH.md. Four ending routes423/424/435..437 now play five movies and reach credits.
+Full suite PASS; no global completion percentage claimed.
+
+
+## Original text GAMESTAT import, 13 October 2026
+
+The native engine reads gamestat/GAMESTAT from the selected game directory without modifying it. It validates all102 signed decimal values and the destination before enabling the original P1 saved-game choice. Custom33 restores the exploration scene, completed count and100 globals. Imported games can then use ordinary ScummVM saves. Original drive-root/current-directory fallbacks are not searched. The decoded snapshot stays stable during the menu interaction. Binary gamestat belongs to another original routine and is not imported.
+
+Active countdown modes1/2 with nonzero global8 remain rejected. The original text writer stores the timestamp, not the current epoch or elapsed time. Two original countdown executions with the same saved timestamp produce different results at different current clocks; see legacy-resume-original.json. No timestamp is guessed from file dates and no countdown is reset. Only mode1 exploration destinations are admitted; arbitrary puzzle state cannot be reconstructed from the global-only file.
+
+Build,15 original payload comparisons,102 token-boundary truncations, signed bounds, malformed/oversized inputs, file discovery, missing/invalid files, atomic rejection, original menu clicks, native resave, native slot startup, all781 help article openings and full WASAPI regression PASS. The fixture original file is unchanged. Syntactically valid altered numbers cannot be recognized as corruption because the original format has no checksum. No manual full-game completion claim.
+
+Future puzzle saves: probe_puzzle_save_requirements.py inventories the 35 verified route resources, including local conditions, sprite frames/clones, automatic motion, movie references, script delays and custom handlers. Uninterpreted resource tails are hashed separately; they are not discarded or claimed decoded. This is a static inventory, not a save implementation. A scene reload plus globals cannot restore mutable sprite state, local conditions, pending work or per-puzzle/random state. Continuation tests must compare uninterrupted and restored runs at intermediate states. See evidence/puzzle-save-requirements.json.

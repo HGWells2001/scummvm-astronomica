@@ -1,0 +1,21 @@
+{
+  "resources": [
+    {
+      "scene": 517,
+      "resource_sha256": "e93efcc68f117117b4f64c6b99f20b575e7ed5492098165aa32c1e8b321ec5d1",
+      "command_count": 178,
+      "entry_templates": 2
+    },
+    {
+      "scene": 519,
+      "resource_sha256": "772484008fdd71dd69e31e3257f55314636b9426225a9bcbe9db2e6e2a46eb10",
+      "command_count": 282,
+      "entry_templates": 3
+    }
+  ],
+  "animation_entry": "15:0827",
+  "stop_entry": "15:0b2d",
+  "flash_entry": "18:1652",
+  "flash_sha256": "3985b45ece800bf183624a9722b09fff9b42822bc63347af40544cdfedf92997",
+  "runtime_evidence": "runtime.log: P517/P519 interaction verification"
+}

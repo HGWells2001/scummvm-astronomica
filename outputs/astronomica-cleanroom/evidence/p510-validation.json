@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_callback_cases": 432,
+  "original_events": 27,
+  "click_routes": 8,
+  "random_starts": 3,
+  "continuous_winning_route": true,
+  "full_suite": true,
+  "manual_confirmation": false
+}

@@ -1,0 +1,158 @@
+{
+  "scene": 507,
+  "status": "Original evidence; native checks recorded separately",
+  "region_grid_cases": 68121,
+  "region_hash": "0xdf3f8b45",
+  "counts": [
+    24217,
+    3705,
+    3660,
+    3704,
+    3611,
+    3660,
+    3705,
+    3612,
+    3660,
+    3611,
+    3704,
+    3660,
+    3612
+  ],
+  "points": [
+    {
+      "region": 1,
+      "x": 465,
+      "y": 88,
+      "sprite": 18
+    },
+    {
+      "region": 2,
+      "x": 501,
+      "y": 108,
+      "sprite": 19
+    },
+    {
+      "region": 3,
+      "x": 521,
+      "y": 144,
+      "sprite": 20
+    },
+    {
+      "region": 4,
+      "x": 521,
+      "y": 186,
+      "sprite": 21
+    },
+    {
+      "region": 5,
+      "x": 501,
+      "y": 222,
+      "sprite": 22
+    },
+    {
+      "region": 6,
+      "x": 465,
+      "y": 242,
+      "sprite": 23
+    },
+    {
+      "region": 7,
+      "x": 423,
+      "y": 242,
+      "sprite": 24
+    },
+    {
+      "region": 8,
+      "x": 387,
+      "y": 222,
+      "sprite": 25
+    },
+    {
+      "region": 9,
+      "x": 367,
+      "y": 186,
+      "sprite": 26
+    },
+    {
+      "region": 10,
+      "x": 367,
+      "y": 144,
+      "sprite": 27
+    },
+    {
+      "region": 11,
+      "x": 387,
+      "y": 108,
+      "sprite": 28
+    },
+    {
+      "region": 12,
+      "x": 423,
+      "y": 88,
+      "sprite": 29
+    }
+  ],
+  "edges": [
+    {
+      "x": 444,
+      "y": 165,
+      "region": 0
+    },
+    {
+      "x": 473,
+      "y": 165,
+      "region": 0
+    },
+    {
+      "x": 474,
+      "y": 165,
+      "region": 3
+    },
+    {
+      "x": 566,
+      "y": 165,
+      "region": 3
+    },
+    {
+      "x": 567,
+      "y": 165,
+      "region": 0
+    },
+    {
+      "x": 444,
+      "y": 135,
+      "region": 1
+    },
+    {
+      "x": 444,
+      "y": 43,
+      "region": 1
+    },
+    {
+      "x": 322,
+      "y": 165,
+      "region": 10
+    },
+    {
+      "x": 444,
+      "y": 287,
+      "region": 6
+    }
+  ],
+  "images": [
+    "sag",
+    "scorp",
+    "libra",
+    "virgo",
+    "leo",
+    "can",
+    "gem",
+    "taurus",
+    "aries",
+    "pisces",
+    "aquar",
+    "cap"
+  ],
+  "custom": "11: use last accepted click coordinates; region0 leaves local0 unchanged; other regions play S6 and show sprite17+region",
+  "resource_sha256": "74e505222611ae89181229168d8b1cdda8ee4139781296e54bfebd1b5cd087e6"
+}

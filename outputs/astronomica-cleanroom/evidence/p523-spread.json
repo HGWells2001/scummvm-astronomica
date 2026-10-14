@@ -1,0 +1,326 @@
+{
+  "status": "Original instruction research only; P523 not enabled",
+  "code_sha256": "471dc618fbf30cd6517e9fa0002df8829975357bc1f1fa46e4f2bea4bd9fdc6d",
+  "states": 5899,
+  "transitions": 35394,
+  "graph_sha256": "84b5370179e5c528924f8c3dc4cdcdefa33c30f483287e71cf1c7b6b9be48293",
+  "possible_sums": [
+    98,
+    99
+  ],
+  "samples": [
+    {
+      "state": [
+        33,
+        33,
+        33
+      ],
+      "button": 1,
+      "result": [
+        23,
+        38,
+        38
+      ]
+    },
+    {
+      "state": [
+        33,
+        33,
+        33
+      ],
+      "button": 2,
+      "result": [
+        38,
+        23,
+        38
+      ]
+    },
+    {
+      "state": [
+        33,
+        33,
+        33
+      ],
+      "button": 3,
+      "result": [
+        38,
+        38,
+        23
+      ]
+    },
+    {
+      "state": [
+        33,
+        33,
+        33
+      ],
+      "button": 4,
+      "result": [
+        43,
+        28,
+        28
+      ]
+    },
+    {
+      "state": [
+        33,
+        33,
+        33
+      ],
+      "button": 5,
+      "result": [
+        28,
+        43,
+        28
+      ]
+    },
+    {
+      "state": [
+        33,
+        33,
+        33
+      ],
+      "button": 6,
+      "result": [
+        28,
+        28,
+        43
+      ]
+    },
+    {
+      "state": [
+        99,
+        0,
+        0
+      ],
+      "button": 1,
+      "result": [
+        89,
+        5,
+        5
+      ]
+    },
+    {
+      "state": [
+        99,
+        0,
+        0
+      ],
+      "button": 2,
+      "result": [
+        99,
+        0,
+        0
+      ]
+    },
+    {
+      "state": [
+        99,
+        0,
+        0
+      ],
+      "button": 3,
+      "result": [
+        99,
+        0,
+        0
+      ]
+    },
+    {
+      "state": [
+        99,
+        0,
+        0
+      ],
+      "button": 4,
+      "result": [
+        99,
+        0,
+        0
+      ]
+    },
+    {
+      "state": [
+        99,
+        0,
+        0
+      ],
+      "button": 5,
+      "result": [
+        89,
+        10,
+        0
+      ]
+    },
+    {
+      "state": [
+        99,
+        0,
+        0
+      ],
+      "button": 6,
+      "result": [
+        89,
+        0,
+        10
+      ]
+    },
+    {
+      "state": [
+        0,
+        99,
+        0
+      ],
+      "button": 1,
+      "result": [
+        0,
+        99,
+        0
+      ]
+    },
+    {
+      "state": [
+        0,
+        99,
+        0
+      ],
+      "button": 2,
+      "result": [
+        5,
+        89,
+        5
+      ]
+    },
+    {
+      "state": [
+        0,
+        99,
+        0
+      ],
+      "button": 3,
+      "result": [
+        0,
+        99,
+        0
+      ]
+    },
+    {
+      "state": [
+        0,
+        99,
+        0
+      ],
+      "button": 4,
+      "result": [
+        10,
+        89,
+        0
+      ]
+    },
+    {
+      "state": [
+        0,
+        99,
+        0
+      ],
+      "button": 5,
+      "result": [
+        0,
+        99,
+        0
+      ]
+    },
+    {
+      "state": [
+        0,
+        99,
+        0
+      ],
+      "button": 6,
+      "result": [
+        0,
+        89,
+        10
+      ]
+    },
+    {
+      "state": [
+        0,
+        0,
+        99
+      ],
+      "button": 1,
+      "result": [
+        0,
+        0,
+        99
+      ]
+    },
+    {
+      "state": [
+        0,
+        0,
+        99
+      ],
+      "button": 2,
+      "result": [
+        0,
+        0,
+        99
+      ]
+    },
+    {
+      "state": [
+        0,
+        0,
+        99
+      ],
+      "button": 3,
+      "result": [
+        5,
+        5,
+        89
+      ]
+    },
+    {
+      "state": [
+        0,
+        0,
+        99
+      ],
+      "button": 4,
+      "result": [
+        10,
+        0,
+        89
+      ]
+    },
+    {
+      "state": [
+        0,
+        0,
+        99
+      ],
+      "button": 5,
+      "result": [
+        0,
+        10,
+        89
+      ]
+    },
+    {
+      "state": [
+        0,
+        0,
+        99
+      ],
+      "button": 6,
+      "result": [
+        0,
+        0,
+        99
+      ]
+    }
+  ],
+  "states_sha256": "e8a0f9f1adb2b792c5d933966330176b1adea3d55669d14616b8c83391c6b353"
+}

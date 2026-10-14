@@ -1,0 +1,10 @@
+{
+  "runtime_sha256": "c507feb53847e86d6d596ae3ca668fb3e3e9fb0259bfcbcbb544b44fac4c5809",
+  "runtime_ordinal_632": "_pow",
+  "executable_ds_0726_float": 2.0,
+  "handler": "15:0f08",
+  "global_set": "15:0f87 OR",
+  "global_clear": "15:0fec TEST then 15:1040 SUB",
+  "local_set": "15:10ae OR",
+  "local_clear": "15:1115 TEST then 15:116b SUB"
+}

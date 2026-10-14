@@ -1,0 +1,55 @@
+{
+  "mode": 1,
+  "navigation": [
+    101,
+    0,
+    98
+  ],
+  "background": {
+    "offset": 28,
+    "size": 205748,
+    "width": 640,
+    "height": 320,
+    "bpp": 8,
+    "compression": 0,
+    "sha256": "6115f56c122b3922cef2c70a42f7c8b8b62adb80b99435395cd7af712005061d"
+  },
+  "control": null,
+  "intro_sound": 0,
+  "layers": 0,
+  "sprite_count": 0,
+  "sound_count": 0,
+  "movie_count": 0,
+  "cursor_count": 0,
+  "legacy_name": "-1",
+  "sprites": [],
+  "sounds": [],
+  "movies": [],
+  "scripts": [],
+  "mouse_rects": [
+    {
+      "rect": [
+        311,
+        61,
+        552,
+        155
+      ],
+      "click": [
+        {
+          "offset": 206087,
+          "opcode": 5,
+          "name": "new_place",
+          "args": [
+            126
+          ],
+          "delay": 0
+        }
+      ],
+      "mouse_in": [],
+      "mouse_out": []
+    }
+  ],
+  "conditions": [],
+  "consumed": 206115,
+  "size": 206115
+}

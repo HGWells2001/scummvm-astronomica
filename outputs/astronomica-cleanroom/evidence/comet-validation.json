@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Integrated native comet routes; manual playtesting pending",
+  "native_trajectories": 30,
+  "native_setup_cases": 1920,
+  "native_compositions": 9,
+  "complete_routes": 2,
+  "failure_exit_routes": 3,
+  "transition_chain": [
+    502,
+    503,
+    504,
+    527
+  ],
+  "full_suite": true,
+  "manual_confirmation": false
+}

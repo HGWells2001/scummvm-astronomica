@@ -1,0 +1,10 @@
+from pathlib import Path
+import subprocess,os,sys
+base=Path('work/fresh-20260913').resolve();cfg=base/'verify-help.ini'
+cfg.write_text('[scummvm]\nconfirm_exit=false\nenable_unsupported_game_warning=false\ngui_theme=builtin\ngui_language=en\n[astro-verify]\nengineid=astronomica\ngameid=astronomica\npath=D:\\astro\nastronomica_verify_help=true\n')
+cfg.write_text(cfg.read_text()+'astronomica_verify_help_ui='+base.as_posix()+'\n')
+env={k.upper():v for k,v in os.environ.items()};env.update(SDL_VIDEODRIVER='dummy');env.pop('SDL_AUDIODRIVER',None)
+cmd=[str(base/'build/Releasex64/scummvm.exe'),'--config='+str(cfg),'--logfile='+str(base/'help.log'),'--extrapath='+str(base/'fonts'),'--savepath='+str(base),'--debuglevel=1','astro-verify']
+try:
+ p=subprocess.run(cmd,env=env,cwd=base,capture_output=True,text=True,timeout=600);(base/'help-console.log').write_text(p.stdout+p.stderr);print('exit',p.returncode);print((p.stdout+p.stderr)[-1600:]);sys.exit(p.returncode)
+except subprocess.TimeoutExpired as e:print('TIMEOUT',str(e)[-800:]);sys.exit(1)

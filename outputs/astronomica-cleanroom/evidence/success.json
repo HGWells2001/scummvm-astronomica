@@ -1,0 +1,9 @@
+[
+  {
+    "path": "SOUNDS/S12.WAV",
+    "sha256": "0f6ae457c4de027503a1027212e9eccc949fac17d39eb4d6b181f66a39b1377c",
+    "rate": 11025,
+    "samples": 24320,
+    "pcm16le_fnv1a": "3dcde548"
+  }
+]

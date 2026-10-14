@@ -1,0 +1,280 @@
+Feature CDTOONS is disabled as unused by enabled engines
+Feature ENet networking support is disabled as unused by enabled engines
+Feature FM-TOWNS/PC98 audio is disabled as unused by enabled engines
+Feature libgif support is disabled as unused by enabled engines
+Feature HMI Infinite Audio is disabled as unused by enabled engines
+Feature HNM is disabled as unused by enabled engines
+Feature Dear ImGui based debugger is disabled as unused by enabled engines
+Feature Indeo 3 is disabled as unused by enabled engines
+Feature Indeo 4&5 is disabled as unused by enabled engines
+Feature JYV1 is disabled as unused by enabled engines
+Feature Lua is disabled as unused by enabled engines
+Feature Mac Toolbox is disabled as unused by enabled engines
+Feature MFC is disabled as unused by enabled engines
+Feature VP8/VP9 decoding support is disabled as unused by enabled engines
+Feature Theora decoding support is disabled as unused by enabled engines
+Feature MIDI synthesis is disabled as unused by enabled engines
+Feature Musepack support is disabled as unused by enabled engines
+Feature MPEG-2 support is disabled as unused by enabled engines
+Feature Microsoft MPEG-4 v3 is disabled as unused by enabled engines
+Feature QDM2 is disabled as unused by enabled engines
+Feature SID audio is disabled as unused by enabled engines
+Feature Sorenson Video 1 is disabled as unused by enabled engines
+Feature TinyGL support (software) in 3d games is disabled as unused by enabled engines
+Feature TrueMotion 1 is disabled as unused by enabled engines
+Feature External Tracker Libraries is disabled as unused by enabled engines
+Feature UNP64 is disabled as unused by enabled engines
+Feature VGMTrans Soundfont audio is disabled as unused by enabled engines
+Feature XAN is disabled as unused by enabled engines
+
+Disabling mt32emu, fluidsynth and fluidlite because MIDI is unused by enabled engines
+Disabling MikMod and OpenMPT because Universal Tracker playback is unused by enabled engines
+
+Enabled engines:
+
+    Astronomica (experimental resource explorer)
+
+Disabled engines:
+
+    SCUMM
+    v7 & v8 games
+    HE71+ games
+    Rebel Assault II PlayStation
+    Access
+    ADL
+    AGDS (Black Mirror and NiBiRu)
+    AGI
+    AGOS
+    AGOS 2 games
+    Adventure Game Studio
+    Alcachofa
+    American Laser Games
+    Sanitarium
+    Lord Avalot d'Argent
+    Another World
+    BAGEL
+    Beavis and Butthead in Virtual Stupidity
+    Blade Runner
+    Bolt
+    The Journeyman Project 2: Buried in Time
+    CGE
+    CGE2
+    Chamber
+    Chewy: Esc from F5
+    Cinematique evo 1
+    The Colony
+    Magic Composer
+    CRAB
+    Cinematique evo 2
+    Lost Eden
+    Cryo Omni3D games
+    Versailles 1685
+    Darkseed
+    Dynamix Game Development System
+    Macromedia Director
+    Dungeon Master
+    Dragon History
+    Blazing Dragons
+    Drascula: The Vampire Strikes Back
+    Dreamweb
+    Eagle Eye Mysteries
+    Escape From Hell
+    The Fool's Errand
+    Freescape
+    Gamos
+    Glk Interactive Fiction games
+    UFOs
+    Gobli*ns
+    Got
+    The Griffon Legend
+    Grim
+    Escape from Monkey Island
+    Groovie
+    Groovie 2 games
+    Hades Challenge
+    Harvester
+    Hyperspace Delivery Boy!
+    Hopkins FBI
+    Hpl1
+    Hugo Trilogy
+    Hypnotix Inc.
+    In Cold Blood
+    Illusions Engine
+    The Immortal
+    Kingdom: The Far Reaches
+    Kyra
+    Lands of Lore
+    Eye of the Beholder
+    Labyrinth of Time
+    The Last Express
+    Lilliput
+    Lure of the Temptress
+    M4
+    Macs2
+    MacVenture
+    MADE
+    MADS
+    Media Station
+    Might and Magic
+    Might and Magic 1
+    Might and Magic Xeen
+    Mohawk
+    Where in Time is Carmen Sandiego?
+    Riven: The Sequel to Myst
+    Myst
+    Myst ME
+    Mortevielle
+    mTropolis
+    Mutation of JB
+    Myst 3
+    Nancy Drew
+    Neverhood
+    Nikita Game Interface
+    Parallaction
+    The Journeyman Project: Pegasus Prime
+    Alfred Pelrock
+    Red Comrades
+    Phoenix VR
+    Pink Panther
+    Playground 3D: the testing and playground environment for 3d renderers
+    Plumbers Don't Wear Ties
+    The Prince and The Coward
+    Private Eye
+    QD Engine
+    Flight of the Amazon Queen
+    SAGA
+    IHNM
+    SAGA2
+    SCI
+    SCI32 games
+    The Lost Files of Sherlock Holmes
+    Beneath a Steel Sky
+    Sludge
+    The Longest Journey
+    Star Trek 25th Anniversary/Judgment Rites
+    Mission Supernova
+    Broken Sword
+    Broken Sword II
+    Broken Sword 2.5
+    Teen Agent
+    TestBed: the Testing framework
+    Tetraedge
+    Tinsel
+    Starship Titanic
+    3 Skulls of the Toltecs
+    Tony Tough and the Night of Roasted Moths
+    Toonstruck
+    Tot
+    Touche: The Adventures of the Fifth Musketeer
+    Trecision Adventure Module
+    TsAGE
+    Ringworld: Revenge of the Patriarch
+    Blue Force
+    Return to Ringworld
+    Bud Tucker in Double Trouble
+    Little Big Adventure
+    Thimbleweed Park
+    Ultima
+    Akalabeth
+    Ultima I - The First Age of Darkness
+    Ultima IV - Quest of the Avatar
+    Ultima VI = The False Prophet
+    Ultima VIII - Pagan
+    V-Cruise
+    Voyeur
+    WAGE
+    The Watchmaker
+    Wayne's World
+    Wintermute
+    Wintermute3D
+    FoxTail
+    HeroCraft
+    Z-Vision
+
+Enabled features:
+
+    Scalers
+    Aspect ratio correction
+    16bit color support
+    high resolution
+    Translation support
+    include resources (e.g. engine data, fonts) into the binary
+    Static linking of detection objects for engines.
+
+Disabled features:
+
+    zlib (compression) support
+    libmad (MP3) support
+    BiDi support
+    Ogg support
+    Vorbis support
+    Tremor support
+    FLAC support
+    libpng support
+    libgif support
+    AAC support
+    libmikmod support
+    libopenmpt support
+    MPEG-2 support
+    Theora decoding support
+    VP8/VP9 decoding support
+    FreeType support
+    libjpeg support
+    FluidSynth support
+    FluidLite support
+    libcurl support
+    SDL_net support
+    Discord support
+    RetroWave OPL3 support
+    Nokturnal nFM OPL2/OPL3 support
+    ATSC A/52 support
+    Musepack support
+    Bink video support
+    HQ scalers
+    Edge scalers
+    3D rendering
+    integrated MT-32 emulator
+    IA-32 assembly support
+    OpenGL support
+    OpenGL support (classic) in 3d games
+    OpenGL support (shaders) in 3d games
+    TinyGL support (software) in 3d games
+    Taskbar integration support
+    HTTP client support
+    Basic network support
+    Cloud integration support
+    ENet networking support
+    Virtual keyboard support
+    Event recorder support
+    Printing support
+    Updates support
+    System dialogs support
+    System language detection support
+    Text console debugger
+    Text to speech support
+    Include detection objects for all engines
+    CDTOONS
+    FM-TOWNS/PC98 audio
+    HMI Infinite Audio
+    HNM
+    Dear ImGui based debugger
+    Indeo 3
+    Indeo 4&5
+    JYV1
+    Lua
+    Mac Toolbox
+    MFC
+    MIDI synthesis
+    Microsoft MPEG-4 v3
+    QDM2
+    SID audio
+    Sorenson Video 1
+    TrueMotion 1
+    External Tracker Libraries
+    UNP64
+    VGMTrans Soundfont audio
+    XAN
+
+Building against SDL 2
+
+WARNING: imgui requires opengl, freetype2 and sdl2+

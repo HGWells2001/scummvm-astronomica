@@ -1,0 +1,1097 @@
+{
+  "scene": 513,
+  "status": "Original evidence; native checks recorded separately",
+  "cases": 168,
+  "normal_cases": 126,
+  "fnv1a32": "0xa8180d31",
+  "required": {
+    "1": 7,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 8,
+    "6": 1,
+    "7": 8,
+    "8": 7,
+    "9": 6,
+    "10": 2,
+    "11": 5,
+    "12": 9,
+    "13": 4,
+    "14": 5
+  },
+  "rows": [
+    {
+      "scenario": 1,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 1,
+      "setting": 7,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 1,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 1,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 1,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 2,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 2,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 2,
+      "setting": 2,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 2,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 2,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 3,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 3,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 3,
+      "setting": 2,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 3,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 3,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 4,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 4,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 4,
+      "setting": 2,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 4,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 4,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 5,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 5,
+      "setting": 8,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 5,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 5,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 6,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 6,
+      "setting": 1,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 6,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 6,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 7,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 7,
+      "setting": 8,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 7,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 7,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 8,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 8,
+      "setting": 7,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 8,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 8,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 8,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 9,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 9,
+      "setting": 6,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 9,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 9,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 9,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 9,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 10,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 10,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 10,
+      "setting": 2,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 10,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 10,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 11,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 11,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 11,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 11,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 11,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 11,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 11,
+      "setting": 5,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 11,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 11,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 11,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 11,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 11,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 12,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 12,
+      "setting": 9,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 12,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 13,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 13,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 13,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 13,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 13,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 13,
+      "setting": 4,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 13,
+      "setting": 5,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 13,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 13,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 13,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 13,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 13,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 14,
+      "setting": -1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 14,
+      "setting": 0,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 14,
+      "setting": 1,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 14,
+      "setting": 2,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 14,
+      "setting": 3,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 14,
+      "setting": 4,
+      "accepted": 0,
+      "sound": 10
+    },
+    {
+      "scenario": 14,
+      "setting": 5,
+      "accepted": 1,
+      "sound": null
+    },
+    {
+      "scenario": 14,
+      "setting": 6,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 14,
+      "setting": 7,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 14,
+      "setting": 8,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 14,
+      "setting": 9,
+      "accepted": 0,
+      "sound": 11
+    },
+    {
+      "scenario": 14,
+      "setting": 10,
+      "accepted": 0,
+      "sound": 11
+    }
+  ],
+  "success_cases": [
+    {
+      "initial_flag": -1,
+      "initial_counter": 0,
+      "flag": 1,
+      "counter": 0
+    },
+    {
+      "initial_flag": 1,
+      "initial_counter": 29,
+      "flag": 1,
+      "counter": 29
+    },
+    {
+      "initial_flag": 0,
+      "initial_counter": 0,
+      "flag": 1,
+      "counter": 1
+    },
+    {
+      "initial_flag": 1,
+      "initial_counter": 29,
+      "flag": 1,
+      "counter": 29
+    },
+    {
+      "initial_flag": 1,
+      "initial_counter": 0,
+      "flag": 1,
+      "counter": 0
+    },
+    {
+      "initial_flag": 1,
+      "initial_counter": 29,
+      "flag": 1,
+      "counter": 29
+    },
+    {
+      "initial_flag": 2,
+      "initial_counter": 0,
+      "flag": 1,
+      "counter": 0
+    },
+    {
+      "initial_flag": 1,
+      "initial_counter": 29,
+      "flag": 1,
+      "counter": 29
+    }
+  ],
+  "original_quirks": [
+    "Setting3/scenario11 comparisons have no accepting branch; correct setting is5",
+    "Success custom25 at4:5808 increments counter directly and sets global29; no common success sound",
+    "Seven correct answers OR all14 scenario bits win; ten wrong answers exit"
+  ],
+  "motion": {
+    "callback": "3:06ee",
+    "sprite": 32,
+    "period_ms": 10,
+    "delta_x": "10-local0",
+    "finish": "proposed x>442 and visible"
+  },
+  "resource_sha256": "ca2219d2a44dbed6f42ff2badccc87613941488c3a2f4ef7e62ff981395dbc87",
+  "code_sha256": "cd98a26f043505e17582e9d2d86b9c2e238720936057858c621dff908d3160ce"
+}

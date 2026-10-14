@@ -1,0 +1,23 @@
+{
+  "status": "Independent original resource composition; native comparison separate",
+  "rows": [
+    {
+      "scene": 516,
+      "variant": 0,
+      "rgb888": "0x781fc19",
+      "rgb565": "0x23191a12"
+    },
+    {
+      "scene": 516,
+      "variant": 1,
+      "rgb888": "0xeb2035e0",
+      "rgb565": "0x98c6efd5"
+    },
+    {
+      "scene": 516,
+      "variant": 2,
+      "rgb888": "0x21ca9a99",
+      "rgb565": "0xac7b70bc"
+    }
+  ]
+}

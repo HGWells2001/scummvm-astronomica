@@ -1,0 +1,102 @@
+# Ripresa: immagini nel testo e formule aiuto, 13 ottobre 2026
+
+Build e suite completa PASS:35 scene con percorsi verificati, non35 puzzle.
+P523:dieci percorsi e filmato continuo; aiuto/ritorno con reset verificato.
+P408:1900 confronti originali,170 selezioni video,37 ritorni e filmato continuo.
+Leggere P408-RESEARCH.md e P523-RESEARCH.md per le correzioni esplicite ai casi
+originali con dati non inizializzati. Conferma manuale solo P508.
+Percentuale globale non misurata;94.2% si riferisce solo ai template accettati.
+
+Salvataggi nativi: F5, slot ScummVM, caricamento iniziale; solo schermate
+di esplorazione modo1 ferme. Leggere SAVE-RESEARCH.md. Test mirati e suite PASS.
+Custom26 integrato:2436 casi e42 limiti originali/native PASS.
+P359/P352 oggetto persistente, P35/P85 porta, P98 contatore, P388 indicatori,
+P407/P422 tastiere e P425 crediti verificati. Leggere GAME-STATE-RESEARCH.md.
+P409 custom27/32 integrati:34800+108 casi originali/native PASS.
+Conto alla rovescia:10530 casi, sette WAV e passaggio427 verificati.
+Salvataggi versione2 conservano il clock; versione1 inattiva compatibile.
+Leggere P409-RESEARCH.md. Test consigli:check_advice.py.
+Finali423/424/435..437:quattro scelte, cinque filmati e crediti verificati.
+P432/P433:movimento, stop e playback continuo PASS. P0:logo/menu/uscita PASS.
+P1->P2->P3->P4->P27:pulsante nuova partita, filmati e nove immagini PASS.
+Palette50:adattamento RGB documentato in P409-RESEARCH.md.
+Percorso introduzione P2->P3->P4->P27: PASS nel normale ciclo del motore.
+Scarto intro risolto: artefatto SDL dummy, riprodotto senza gioco.
+WASAPI: P2 termina naturalmente; P4 avanza69.994s in70s. Nessuna modifica al clock.
+P29 filmato interattivo integrato: due ordini, clic ripetuti, quattro posizioni video,
+ridisegno, rilascio cursore e sblocco input verificati; suite completa WASAPI PASS.
+P82/P222/P231: filmati integrati; replay dopo fine e ripresa a meta verificati.
+P222: animazione sprite per2s e uscita407 PASS. Playback continuo29/82/222/231 PASS.
+Hover integrato in P1/P505/P519/P526:32 coppie, quattro suoni,256 casi,
+sovrapposizione e ordine audio, condizioni, reset e suite completa PASS.
+Leggere HOVER-RESEARCH.md e HELP-RESEARCH.md.
+Aiuto/custom22 integrato come lettura nel motore:781 articoli,812 keyword,
+2008 riferimenti; file HLP originale letto direttamente. Ricerca, menuP1,
+mentoriP408, pausa e ritorno, dati corrotti, catture GUI e suite completa PASS.
+Le31 immagini originali sono consultabili da20 articoli tramite Images;
+tutte le palette/pixel e41 corruzioni verificate. Decodificati1335 record
+di formato e11455 comandi, incluse304 righe di tabelle; hashb5265663.
+Grassetto/corsivo, paragrafi e celle sono resi nel lettore nativo.
+Correzione: nessun opcode hyperlink nei1335 record originali; i rimandi
+See sono testo. Non inventare collegamenti mancanti.
+Le 31 immagini sono ora nella sequenza originale di testo e didascalie.
+Pixel, scroll, rotellina, trascinamento e ridimensionamento PASS.
+Nessun font Symbol usato; flag 4/33 senza testo non vuoto.
+Arial Super: 13 esponenti resi come ^(valore), formule Keplero/relativita PASS.
+Prossimo: tipografia e misure originali di paragrafi/tabelle; prova integrale.
+Leggere HELP-RESEARCH.md, probe_help_format.py, help-format.json e
+help-image-articles.json. Test check_help.py; checkpoint finish_help_inline.py.
+Custom33/import GAMESTAT testuale integrato per esplorazione modo1 e
+conto alla rovescia inattivo. Lettura sola dalla cartella del gioco;
+menu originale,102 valori,15 confronti,102 troncamenti e native resave PASS.
+I timer attivi restano rifiutati: il file originale non conserva il clock
+corrente, quindi il tempo residuo non e ricostruibile dal solo GAMESTAT.
+Non stimarlo dalla data del file e non azzerare il timer.
+Restano salvataggi interni ai puzzle e percorso integrale manuale.
+Inventario preliminare delle35 scene: puzzle-save-requirements.json;
+include condizioni locali, sprite, script, filmati e code non interpretate.
+Non dimostra ripristinabilita: servono snapshot e prove di continuazione.
+Leggere SAVE-RESEARCH.md e legacy-validation.json. Test check_legacy.py.
+Nessuna percentuale globale attendibile.
+Ricerca:probe_movie_controller.py,762 casi del ramo originale QCMC.
+Test:check_world_movies.py; suite completa runtime_test.py --real-audio.
+Restano verifica audiovisiva manuale, completamento aiuto, import originali con timer attivo, salvataggi
+interni ai puzzle e percorso integrale. I pannelli mondo non aumentano la
+metrica delle35 scene di puzzle; conferma manuale sempre soloP508.
+Regole transizione:47520 casi originali/native PASS; nove passaggi condizionati,
+voci S10/S11, P429->P427->P425 e immagini crediti verificati automaticamente. probe_save_layout.py verifica il formato originale:102 DWORD,
+408 byte, scena/contatore/100 globals; formato binario distinto dal GAMESTAT
+testuale ora importabile entro i limiti descritti sopra.
+P520 ha filmato e transizione verificati; non e contato come puzzle aggiuntivo.
+P507 e interattiva. Mancano prove manuali audiovisive e un percorso integrale.
+
+Sorgenti:outputs/astronomica-cleanroom/engine/astronomica.
+Mirror:work/fresh-20260913/scummvm/engines/astronomica.
+Build:work/fresh-20260913/build/Releasex64/scummvm.exe.
+build.py NON copia i sorgenti: sincronizzare cpp/h prima di compilare.
+Test:check_mentors.py,check_p523.py,check_p523_continuous.py,runtime_test.py.
+Test salvataggi:check_saves.py. Test progressione:check_transitions.py. Test stato:check_game_state.py. Checkpoint:finish_help_inline.py; verify_development_evidence.py.
+Non rieseguire vecchi record_*: sovrascrivono lo stato con riepiloghi superati.
+finish_legacy.py e il finalizzatore gia eseguito del 13 ottobre: non rilanciarlo
+sul documento aggiornato. Per controllare questo checkpoint usare
+verify_development_evidence.py. Comprende ora anche import originale,
+prove su file e hash dei 35 originali dell'inventario salvataggi nei puzzle.
+
+Automazione di questa chat:controllo quota ogni5 minuti; prima attesa conclusa.
+Riprendere dopo il reset quota, senza duplicare automazioni.
+Fermarsi vicino all'1%, lasciando margine per checkpoint e verifiche.
+Non riscattare reset e non acquistare crediti.
+
+Il test check_intro_live.py --real-audio ora richiede anche timing video valido;
+intro_timing.py distingue avanzamento scene da sincronizzazione del filmato.
+Guardia verificata sui log reali e su tre alterazioni negative.
+
+Hover P505: operandi audio12..15 diventano indici11..14 (decremento del reader).
+I WAV originali S11..S14 esistono. I record303..306 della tabella suoni non sono
+nomi di file; rispettare openSound e la mappatura gia verificata. Questi suoni
+non sono fra gli id2..10 bloccanti di P505: preservare il comportamento asincrono.
+
+Ultimo checkpoint: finish_help_inline.py, 13 ottobre 2026.
+La verifica ripetibile e verify_development_evidence.py; comprende
+immagini nel testo, 13 esponenti, import originale e salvataggi nativi.
+Non ricreare un vecchio checkpoint tramite i finalizzatori precedenti.

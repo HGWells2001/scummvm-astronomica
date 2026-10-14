@@ -1,0 +1,68 @@
+[2026-10-10 18:38:01] ScummVM 2026.3.1git
+[2026-10-10 18:38:01] RGB SDL2 
+[2026-10-10 18:38:01] --- Log opened.
+[2026-10-10 18:38:01] Using SDL Video Driver "dummy"
+[2026-10-10 18:38:02] Using SDL Audio Driver "dummy"
+[2026-10-10 18:38:02] Output sample rate: 44100 Hz
+[2026-10-10 18:38:02] Output buffer size: 1024 samples
+[2026-10-10 18:38:02] Output channels: 2
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_START' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-10 18:38:02] CPU extensions:
+[2026-10-10 18:38:02] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-10 18:38:02] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-10 18:38:02] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-10 18:38:02] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_A' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_B' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_Y' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_X' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_UP' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-10 18:38:02] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-10 18:38:03] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-10 18:38:03] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-10 18:38:03] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-10 18:38:03] Astronomica static sprites: P1, 3 drawn
+[2026-10-10 18:38:03] Audio Codec FourCC: 'raw '
+[2026-10-10 18:38:03] stsd version =0
+[2026-10-10 18:38:03] Astronomica P2 movie: 400x200, scale 30, duration 8524
+[2026-10-10 18:38:03] Astronomica resource explorer: P2; nav 0,0,0
+[2026-10-10 18:38:03] Astronomica new-game menu verification: PASS
+[2026-10-10 18:38:03] Audio Codec FourCC: 'raw '
+[2026-10-10 18:38:03] stsd version =0
+[2026-10-10 18:38:03] Astronomica P2 movie: 400x200, scale 30, duration 8524
+[2026-10-10 18:38:03] Astronomica resource explorer: P2; nav 0,0,0
+[2026-10-10 18:38:03] Astronomica P2 movie started at 120,140
+[2026-10-10 18:38:03] Astronomica native RGB palette command: OPEN2_b
+[2026-10-10 18:38:03] Astronomica movie closed while playing: 5 frames, time 165014, end 206266
+[2026-10-10 18:38:03] Astronomica resource explorer: P3; nav 0,0,0
+[2026-10-10 18:38:03] Astronomica intro P2 timing: PASS
+[2026-10-10 18:38:03] Audio Codec FourCC: 'raw '
+[2026-10-10 18:38:03] stsd version =0
+[2026-10-10 18:38:03] Astronomica P4 movie: 400x200, scale 600, duration 42660
+[2026-10-10 18:38:03] Astronomica resource explorer: P4; nav 0,0,0
+[2026-10-10 18:38:03] Astronomica P4 movie started at 120,140
+[2026-10-10 18:38:03] Astronomica movie closed while playing: 10 frames, time 56882, end 71100
+[2026-10-10 18:38:03] Astronomica resource explorer: P27; nav 28,0,30
+[2026-10-10 18:38:03] Astronomica intro P4 timing: PASS
+[2026-10-10 18:38:03] Astronomica resource explorer: P3; nav 0,0,0
+[2026-10-10 18:38:04] Audio Codec FourCC: 'raw '
+[2026-10-10 18:38:04] stsd version =0
+[2026-10-10 18:38:04] Astronomica P4 movie: 400x200, scale 600, duration 42660
+[2026-10-10 18:38:04] Astronomica resource explorer: P4; nav 0,0,0
+[2026-10-10 18:38:04] Astronomica resource explorer: P3; nav 0,0,0
+[2026-10-10 18:38:04] Audio Codec FourCC: 'raw '
+[2026-10-10 18:38:04] stsd version =0
+[2026-10-10 18:38:04] Astronomica P4 movie: 400x200, scale 600, duration 42660
+[2026-10-10 18:38:04] Astronomica resource explorer: P4; nav 0,0,0
+[2026-10-10 18:38:04] Astronomica intro cards verification: PASS (nine images, timed and clicked exit)
+[2026-10-10 18:38:04] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-10 18:38:04] Astronomica intro verification: PASS (two RGB movies, P4 directory redirect, palette adaptation, original delays)
+[2026-10-10 18:38:04] --- Log closed successfully.

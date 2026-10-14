@@ -1,0 +1,4171 @@
+{
+  "date": "2026-10-13",
+  "scope": "Static original resource inventory for 35 verified puzzle-route scenes; no mid-puzzle save implementation or completion percentage",
+  "trailing_note": "Only the known scene prefix is inventoried. Trailing data is preserved and hashed, not interpreted; see probe_remaining_scenes.py for original loader boundary evidence.",
+  "original_global_only_payload": "102 values omit local conditions, mutable sprites, pending scripts, movie progress, per-puzzle native state and random state.",
+  "rows": [
+    {
+      "place": 501,
+      "source_sha256": "fe46b4707b6c4bb1f8df9e31fed8b7af103e3839702d88c5e30c331f71877b41",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 1
+        }
+      ],
+      "parsed_bytes": 786726,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 27,
+      "sprite_frames": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        2,
+        6,
+        12,
+        3
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        7,
+        25
+      ],
+      "positive_delays": 53,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        18,
+        30
+      ],
+      "script_count": 13,
+      "command_count": 259
+    },
+    {
+      "place": 502,
+      "source_sha256": "880df2452622db2f9377793ef660cbc16ef534d6251394548bbebfacf2e8b020",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 2
+        },
+        {
+          "index": 1,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 20,
+          "initial": 10
+        },
+        {
+          "index": 3,
+          "width": 20,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 586447,
+      "trailing_bytes": 83184,
+      "trailing_sha256": "490792195eb49ebedddac45900bea46b009065ca809b339f0a3807e8341b6cf7",
+      "sprites": 35,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        6,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        2,
+        2,
+        2,
+        12,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        10,
+        10,
+        10,
+        10,
+        10,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        8
+      ],
+      "positive_delays": 15,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        30
+      ],
+      "script_count": 13,
+      "command_count": 145
+    },
+    {
+      "place": 503,
+      "source_sha256": "0b6e4b9afa8bafa670b19d8e79cbdb6bab7f675166aabfe27f9d421d9ed3447f",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 20,
+          "initial": 5
+        },
+        {
+          "index": 3,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 20,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 617311,
+      "trailing_bytes": 165284,
+      "trailing_sha256": "b1854c0f3f76470a4672e174d4ff11bf38e26f572ff67771a23ed58425aa64c7",
+      "sprites": 48,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        6,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        14,
+        14,
+        14,
+        14,
+        14,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        28,
+        27,
+        26,
+        25,
+        24,
+        -1,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "automatic_frames": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        32
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        8
+      ],
+      "positive_delays": 20,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        30
+      ],
+      "script_count": 18,
+      "command_count": 237
+    },
+    {
+      "place": 504,
+      "source_sha256": "dde86ef89aa520e16d006b41ddefece537f81901ad3e8db13c5a3bbe5e6009ba",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 20,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 656595,
+      "trailing_bytes": 148864,
+      "trailing_sha256": "3c129f7eb2f5e335d0c451db0a0df36be13f0a642fe41776f86cb5f38ebbc0de",
+      "sprites": 45,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        6,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        11,
+        11,
+        null,
+        null,
+        null,
+        null,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        13,
+        13,
+        13,
+        13,
+        13,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        26,
+        25,
+        24,
+        23,
+        -1,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "automatic_frames": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        29
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        8,
+        25
+      ],
+      "positive_delays": 21,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        30
+      ],
+      "script_count": 18,
+      "command_count": 225
+    },
+    {
+      "place": 505,
+      "source_sha256": "5cf85faa5b838f23045d674a081322ea37207ef21f7cb0bb35d6d6055935907d",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 1
+        }
+      ],
+      "parsed_bytes": 608951,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 18,
+      "sprite_frames": [
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 33,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17
+      ],
+      "script_count": 43,
+      "command_count": 222
+    },
+    {
+      "place": 506,
+      "source_sha256": "bc7bf0b66ba3644f6066d4978f9a2dff609571cbb50e7a88b2fad937b9741826",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 599847,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 14,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        17
+      ],
+      "positive_delays": 20,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 15,
+      "command_count": 156
+    },
+    {
+      "place": 508,
+      "source_sha256": "e2567a3d1ec267d6cd06ac923dc89d364875a91c705d40658b6a303e6deeaf6e",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 18,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 18,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 10,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 593865,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 23,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 22,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17
+      ],
+      "script_count": 9,
+      "command_count": 169
+    },
+    {
+      "place": 509,
+      "source_sha256": "053c47d65ba963ed0b1f4fc78f088fa1678586ed6a02c6c1178772e22f572e44",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 7,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 9,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 10,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 11,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 12,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 13,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 14,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 15,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 16,
+          "width": 3,
+          "initial": 2
+        }
+      ],
+      "parsed_bytes": 713948,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 19,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [
+        10
+      ],
+      "automatic_moves": [
+        10
+      ],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 44,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 22,
+      "command_count": 312
+    },
+    {
+      "place": 510,
+      "source_sha256": "c02ffb9b00da37a0d6d081746250b38b84b3be970ea942009baaf2c349ee97b0",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 12,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 52,
+          "initial": 52
+        },
+        {
+          "index": 2,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 8,
+          "initial": 3
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 6,
+          "width": 3,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 439846,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 14,
+      "sprite_frames": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        8,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [
+        1
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [
+        "FLATPLOT.MOV"
+      ],
+      "customs": [
+        23
+      ],
+      "positive_delays": 14,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17,
+        47
+      ],
+      "script_count": 14,
+      "command_count": 79
+    },
+    {
+      "place": 511,
+      "source_sha256": "c3e2e2c92289a076b686e8f6a408d9fc13fe9fdf4fad2934aaca57b4ffd7df3f",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 52,
+          "initial": 52
+        },
+        {
+          "index": 1,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 8,
+          "initial": 4
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 5,
+          "width": 3,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 635643,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 35,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        4,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        4,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "automatic_frames": [
+        4,
+        19,
+        20
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 16,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        47,
+        48
+      ],
+      "script_count": 17,
+      "command_count": 221
+    },
+    {
+      "place": 512,
+      "source_sha256": "0a870dea63fae0ea1732f40c627a63bc659a2c88d1a4cc2edfab4497d814c952",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 373384,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 64,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        5,
+        6,
+        7,
+        5,
+        6,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [
+        "FLATPHEN.MOV"
+      ],
+      "customs": [
+        24,
+        25
+      ],
+      "positive_delays": 17,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17
+      ],
+      "script_count": 17,
+      "command_count": 326
+    },
+    {
+      "place": 513,
+      "source_sha256": "ca2219d2a44dbed6f42ff2badccc87613941488c3a2f4ef7e62ff981395dbc87",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 18,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 14,
+          "initial": 1
+        },
+        {
+          "index": 2,
+          "width": 14,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 14,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 14,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 556374,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 32,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        10,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        9,
+        9,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        10,
+        25
+      ],
+      "positive_delays": 15,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        16,
+        17
+      ],
+      "script_count": 12,
+      "command_count": 231
+    },
+    {
+      "place": 514,
+      "source_sha256": "df7e496d2258169662ef23985ed1d8ec99ef5d24a23153903c6d48ba8b173afd",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 19,
+          "initial": -1
+        },
+        {
+          "index": 2,
+          "width": 2,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 52,
+          "initial": 54
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 5,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 586435,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 20,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        16,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        3,
+        12,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        16,
+        25
+      ],
+      "positive_delays": 16,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17,
+        24,
+        30
+      ],
+      "script_count": 10,
+      "command_count": 139
+    },
+    {
+      "place": 515,
+      "source_sha256": "d740db8e67a1ca6d600df71f0f1b6ed3b9e703ac2f2659c0ceba74a8fbd20360",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 5,
+          "initial": 24
+        },
+        {
+          "index": 1,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 7,
+          "initial": 6
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 9,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 10,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 11,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 12,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 730413,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 60,
+      "sprite_frames": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        17,
+        17,
+        17,
+        -1,
+        -1,
+        -1,
+        23,
+        23,
+        23,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        32,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 180,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        47
+      ],
+      "script_count": 39,
+      "command_count": 1075
+    },
+    {
+      "place": 516,
+      "source_sha256": "fae86ac8d36038046a9d387f8fbc28d822d2cdcacc2cdb0ab4d941d55b58ced6",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 0,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 563403,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 37,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        12,
+        1,
+        1,
+        1,
+        3,
+        null,
+        null,
+        null,
+        null,
+        1,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        17,
+        16,
+        15,
+        14,
+        -1,
+        -1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "automatic_frames": [
+        13,
+        16,
+        17,
+        20
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        9,
+        25
+      ],
+      "positive_delays": 11,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17,
+        30
+      ],
+      "script_count": 13,
+      "command_count": 133
+    },
+    {
+      "place": 517,
+      "source_sha256": "e93efcc68f117117b4f64c6b99f20b575e7ed5492098165aa32c1e8b321ec5d1",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 4,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 14,
+          "initial": 4
+        }
+      ],
+      "parsed_bytes": 870949,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 11,
+      "sprite_frames": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        4,
+        4,
+        2
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 13,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        16,
+        17,
+        19,
+        30
+      ],
+      "script_count": 8,
+      "command_count": 178
+    },
+    {
+      "place": 518,
+      "source_sha256": "235de8b0fbb86b6cc1a8337779d6c6f7804e8455bce0dc607ea00092f3f6ffbd",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 20,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 9,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 9,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 20,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 489731,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 32,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        3,
+        3,
+        11,
+        11,
+        3,
+        1,
+        1,
+        1,
+        3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "automatic_frames": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "automatic_moves": [
+        8
+      ],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        12,
+        25
+      ],
+      "positive_delays": 13,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17
+      ],
+      "script_count": 10,
+      "command_count": 111
+    },
+    {
+      "place": 519,
+      "source_sha256": "772484008fdd71dd69e31e3257f55314636b9426225a9bcbe9db2e6e2a46eb10",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 1,
+          "initial": 1
+        }
+      ],
+      "parsed_bytes": 662444,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 27,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        3
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 23,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 37,
+      "command_count": 282
+    },
+    {
+      "place": 521,
+      "source_sha256": "fd9e9e50e785604aec367a90213c5454c179fa5f93e81da50bed1cf095017f47",
+      "mode": 0,
+      "local_conditions": [],
+      "parsed_bytes": 717441,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 27,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        14,
+        3,
+        null,
+        null,
+        null,
+        null,
+        3,
+        null,
+        null,
+        null,
+        null,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        14,
+        14,
+        14,
+        14,
+        -1,
+        19,
+        19,
+        19,
+        19,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [
+        11
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 76,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17,
+        18,
+        19,
+        24,
+        30
+      ],
+      "script_count": 10,
+      "command_count": 175
+    },
+    {
+      "place": 522,
+      "source_sha256": "10477394e818671cf284e3d65638f07ba29bcc069152411b66599a8b34a9a40e",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 2
+        },
+        {
+          "index": 1,
+          "width": 8,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 483379,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 18,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        12,
+        10,
+        null,
+        null,
+        null,
+        2,
+        11,
+        11,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        10,
+        10,
+        10,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [
+        14,
+        15
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        15,
+        25
+      ],
+      "positive_delays": 15,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16
+      ],
+      "script_count": 20,
+      "command_count": 69
+    },
+    {
+      "place": 523,
+      "source_sha256": "caef593058f9206bec5417d364288bee81e54315580273a970bbcc7a3fd655bc",
+      "mode": 0,
+      "local_conditions": [],
+      "parsed_bytes": 627978,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 44,
+      "sprite_frames": [
+        1,
+        1,
+        null,
+        null,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        2,
+        2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        36,
+        36,
+        -1,
+        39,
+        39,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [
+        6
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [
+        "DANGERS.MOV"
+      ],
+      "customs": [
+        1,
+        4,
+        5,
+        20
+      ],
+      "positive_delays": 11,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [],
+      "script_count": 12,
+      "command_count": 41
+    },
+    {
+      "place": 524,
+      "source_sha256": "d227d980fe5fe34d4bbec39ae5d302ef19e538f4a3c137bc2aa6949640c56c0d",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 4,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 786622,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 32,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        8
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25,
+        28
+      ],
+      "positive_delays": 45,
+      "local_snapshot_custom28": [
+        "program0",
+        "sprite30.click"
+      ],
+      "sprite_mutation_opcodes": [
+        16,
+        17,
+        19,
+        30
+      ],
+      "script_count": 18,
+      "command_count": 329
+    },
+    {
+      "place": 525,
+      "source_sha256": "64187c16330172e257aca4ff8b2499cc98fdd8a556bdbba8946c51d406dad1b1",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 8,
+          "initial": 1
+        },
+        {
+          "index": 1,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 504748,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 22,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        10,
+        null,
+        null,
+        null,
+        null,
+        7,
+        2
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        14,
+        -1,
+        16,
+        16,
+        16,
+        16,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [
+        "FSUN.MOV"
+      ],
+      "customs": [
+        25
+      ],
+      "positive_delays": 97,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        24,
+        47
+      ],
+      "script_count": 11,
+      "command_count": 316
+    },
+    {
+      "place": 526,
+      "source_sha256": "ce86ed46b0384efb726abd31be8346ad2bf6c3c314cebbbbd294b9c218e51812",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 9,
+          "initial": 1
+        },
+        {
+          "index": 2,
+          "width": 6,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 6,
+          "initial": 1
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 598225,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 23,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        12,
+        1,
+        12,
+        1,
+        12,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [
+        17,
+        19,
+        21
+      ],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        13,
+        25
+      ],
+      "positive_delays": 37,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        19,
+        30
+      ],
+      "script_count": 25,
+      "command_count": 274
+    },
+    {
+      "place": 527,
+      "source_sha256": "03df944bdc8dffc6780ba324c6879b7cd91529e741637dd7c59acde220aad6a4",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 52,
+          "initial": 52
+        },
+        {
+          "index": 1,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 5,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 0,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 0,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 348102,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 9,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [
+        "FLATRING.MOV"
+      ],
+      "customs": [
+        25
+      ],
+      "positive_delays": 18,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15
+      ],
+      "script_count": 10,
+      "command_count": 82
+    },
+    {
+      "place": 528,
+      "source_sha256": "983378eabde54a37346037706520f201508274ccf58e195e4b4d9ca0c786bf30",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 13,
+          "initial": 11
+        },
+        {
+          "index": 1,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 589255,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 9,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        12,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        18,
+        25
+      ],
+      "positive_delays": 15,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        24
+      ],
+      "script_count": 7,
+      "command_count": 133
+    },
+    {
+      "place": 529,
+      "source_sha256": "7a202c3b6f8d11299a20590d01d725ccf068d5c5fff6f6143a25e878b8e32888",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 16,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 4,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 282102,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 11,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        16,
+        10,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        9,
+        9
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [
+        "FUNIV.MOV"
+      ],
+      "customs": [
+        25
+      ],
+      "positive_delays": 15,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        19
+      ],
+      "script_count": 10,
+      "command_count": 143
+    },
+    {
+      "place": 530,
+      "source_sha256": "2056a7305ba91e8d06ad4f4ce309ea0dadf7d789633ae12d28bb43293f096631",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 9,
+          "width": 5,
+          "initial": 1
+        },
+        {
+          "index": 10,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 11,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 12,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 13,
+          "width": 5,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 727160,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 29,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 98,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        16,
+        17
+      ],
+      "script_count": 28,
+      "command_count": 581
+    },
+    {
+      "place": 531,
+      "source_sha256": "6de49090d61e83e4d9dc86785c4d3730c4edca483eb236779987b87b77a4ec8e",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 4,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 619103,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 14,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        17
+      ],
+      "positive_delays": 19,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 16,
+      "command_count": 157
+    },
+    {
+      "place": 532,
+      "source_sha256": "838463fd8438127804ec5074829301fe8993a3a583cb8b37c5809aef709a159f",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 604623,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 12,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        17
+      ],
+      "positive_delays": 20,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 14,
+      "command_count": 138
+    },
+    {
+      "place": 533,
+      "source_sha256": "58857a2d8668b6a5c6daebbde39610eb49dc486cb7bf3ec743ad9f4dd3e6ed5b",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 549411,
+      "trailing_bytes": 12288,
+      "trailing_sha256": "a97db0b56e1022501a57750ac3e406d5d751460a066ea1b4482bbcb640d5bba5",
+      "sprites": 12,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        17
+      ],
+      "positive_delays": 16,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 14,
+      "command_count": 123
+    },
+    {
+      "place": 534,
+      "source_sha256": "9bc2673d8b40b971aee1ea9175f1828313961bed54cd66f2df98d601dcfaf277",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 8,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 583667,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 18,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        17
+      ],
+      "positive_delays": 28,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 19,
+      "command_count": 232
+    },
+    {
+      "place": 535,
+      "source_sha256": "efffde1379147d487e2f933eb9593e48624d50026186b426a2fd05780ec2f270",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 3,
+          "initial": 0
+        },
+        {
+          "index": 1,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 2,
+          "width": 1,
+          "initial": 1
+        },
+        {
+          "index": 3,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 554651,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 12,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        17
+      ],
+      "positive_delays": 16,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        15,
+        16,
+        17
+      ],
+      "script_count": 14,
+      "command_count": 123
+    },
+    {
+      "place": 536,
+      "source_sha256": "2427a16a916e53affdf0c7a7590f858f96492784d11eb1a7b3632b804e35d554",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 5,
+          "initial": 7
+        },
+        {
+          "index": 1,
+          "width": 5,
+          "initial": 2
+        },
+        {
+          "index": 2,
+          "width": 5,
+          "initial": 0
+        },
+        {
+          "index": 3,
+          "width": 6,
+          "initial": 0
+        },
+        {
+          "index": 4,
+          "width": 7,
+          "initial": 6
+        },
+        {
+          "index": 5,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 6,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 7,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 8,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 9,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 10,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 11,
+          "width": 1,
+          "initial": 0
+        },
+        {
+          "index": 12,
+          "width": 1,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 730669,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 60,
+      "sprite_frames": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        17,
+        17,
+        17,
+        -1,
+        -1,
+        -1,
+        23,
+        23,
+        23,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        32,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        25
+      ],
+      "positive_delays": 188,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        7,
+        15,
+        16,
+        17,
+        47
+      ],
+      "script_count": 39,
+      "command_count": 1088
+    },
+    {
+      "place": 537,
+      "source_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
+      "mode": 0,
+      "local_conditions": [
+        {
+          "index": 0,
+          "width": 16,
+          "initial": 0
+        }
+      ],
+      "parsed_bytes": 746807,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sprites": 48,
+      "sprite_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        2,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sprite_clones": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        -1,
+        30,
+        30,
+        -1,
+        -1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "automatic_frames": [],
+      "automatic_moves": [],
+      "drag_controls": [],
+      "movies": [],
+      "customs": [
+        14,
+        25
+      ],
+      "positive_delays": 15,
+      "local_snapshot_custom28": [],
+      "sprite_mutation_opcodes": [
+        16,
+        17
+      ],
+      "script_count": 8,
+      "command_count": 118
+    }
+  ],
+  "conclusions": [
+    "No scene can be declared restorable from this static inventory alone.",
+    "Even without automatic motion or movies, frame/visibility/local state changes can encode puzzle progress.",
+    "Any native extension needs an explicit snapshot/restore contract and continuation tests, not just a scene reload.",
+    "Custom28 is the existing narrow local/global transfer used by P524 around mentor help; it is not a general save API."
+  ]
+}

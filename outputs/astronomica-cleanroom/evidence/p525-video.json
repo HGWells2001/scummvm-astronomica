@@ -1,0 +1,43 @@
+{
+  "scene": 525,
+  "resource_sha256": "64187c16330172e257aca4ff8b2499cc98fdd8a556bdbba8946c51d406dad1b1",
+  "movie": "PLACES/P525/FSUN.MOV",
+  "movie_sha256": "ff92ff4a4584a75af8cb6db9e1ffeb1a8310d64825d111652d28a29f3efe0684",
+  "timescale": 30,
+  "duration_ticks": 2402,
+  "segments": [
+    [
+      150,
+      179
+    ],
+    [
+      453,
+      209
+    ],
+    [
+      900,
+      452
+    ],
+    [
+      1800,
+      480
+    ]
+  ],
+  "position": [
+    160,
+    40
+  ],
+  "activation_rect": [
+    272,
+    389,
+    444,
+    456
+  ],
+  "intro": {
+    "file": "S300.WAV",
+    "handler": "9:1c51-1c8f",
+    "synchronous": true
+  },
+  "image_update": "49 -> _UpdateGame 13:0eba -> _SWUpdateSpriteWorld 6:069d, full world copy overwrites retained movie pixels",
+  "runtime_evidence": "runtime.log: P525 interaction verification; continuous playback checked separately"
+}

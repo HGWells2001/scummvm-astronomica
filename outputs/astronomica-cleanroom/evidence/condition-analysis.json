@@ -1,0 +1,114 @@
+{
+  "source": "Original ASTRO.EXE and strictly parsed original MEGAFILE.HYP files",
+  "tables": {
+    "scope": [
+      {
+        "value": 0,
+        "target": "15:0ca4"
+      },
+      {
+        "value": 1,
+        "target": "15:0d8d"
+      },
+      {
+        "value": 2,
+        "target": "15:0e7a"
+      },
+      {
+        "value": 3,
+        "target": "15:0e7c"
+      }
+    ],
+    "global_comparison": [
+      {
+        "value": 0,
+        "target": "15:0cd0"
+      },
+      {
+        "value": 1,
+        "target": "15:0cf5"
+      },
+      {
+        "value": 2,
+        "target": "15:0d19"
+      },
+      {
+        "value": 3,
+        "target": "15:0d3d"
+      }
+    ],
+    "local_comparison": [
+      {
+        "value": 0,
+        "target": "15:0db9"
+      },
+      {
+        "value": 1,
+        "target": "15:0ddf"
+      },
+      {
+        "value": 2,
+        "target": "15:0e04"
+      },
+      {
+        "value": 3,
+        "target": "15:0e29"
+      }
+    ],
+    "assignment_scope": [
+      {
+        "value": 0,
+        "target": "15:0ec4"
+      },
+      {
+        "value": 1,
+        "target": "15:0ee3"
+      },
+      {
+        "value": 2,
+        "target": "15:0f03"
+      }
+    ],
+    "addition_scope": [
+      {
+        "value": 0,
+        "target": "15:15c6"
+      },
+      {
+        "value": 1,
+        "target": "15:15fa"
+      },
+      {
+        "value": 2,
+        "target": "15:1630"
+      }
+    ]
+  },
+  "opcode_counts": {
+    "31": 1296,
+    "32": 738,
+    "42": 452,
+    "45": 844,
+    "46": 84
+  },
+  "scopes": {
+    "1": 2083,
+    "0": 35
+  },
+  "comparisons": {
+    "0": 1239,
+    "1": 24,
+    "2": 27,
+    "3": 6
+  },
+  "id_min": 0,
+  "id_max": 16,
+  "local_declarations": 280,
+  "excluded_scenes": {
+    "P406": "truncated at 0x18: need 4",
+    "P502": "trailing 83184 bytes at 0x8f2cf",
+    "P503": "trailing 165284 bytes at 0x96b5f",
+    "P504": "trailing 148864 bytes at 0xa04d3",
+    "P533": "trailing 12288 bytes at 0x86223"
+  }
+}

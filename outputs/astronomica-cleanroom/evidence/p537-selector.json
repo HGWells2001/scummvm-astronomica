@@ -1,0 +1,33 @@
+{
+  "resource_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
+  "initial_value": 0,
+  "minimum": 0,
+  "maximum": 15,
+  "decrement_sprite": 5,
+  "increment_sprite": 6,
+  "multi_frame_clones": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "frame_source_sprite": 9,
+  "original_copy_evidence": "_SWCloneSprite 7:0349-0358 copies 0x9d bytes of source sprite state",
+  "rocket_evidence": "p537-rocket.json: original custom command and three movement callbacks"
+}

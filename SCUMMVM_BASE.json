@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/scummvm/scummvm.git",
+  "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
+  "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
+  "validated_executable_sha256": "b42660313911bf05131c767c8af450dc5e3d22d02d6201a479ea192414a1f647",
+  "engine_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "bbf8af70023700555f19b85ef22c78d7e4962189ba1692aa6346bdda0f56c038",
+    "astronomica.h": "71811158521d42f81b5a85f8dc9f7fb3f942f731cd39d74976f7f46e7ca3c26d",
+    "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "a463b9acd56d4b0f5bacf0d3acdfb51180d37e140c1f524ba285bf156e4bd65e",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "7dad731ce521f8c43373e85cadc7d7a67e6cab5e63da47f2f144e31400c05714",
+    "script.h": "9588175d1b16ac4b3db30ae9251dd457abe5767fc36f17edae2b7e904c9bc3ea",
+    "sprites.cpp": "51a02e803cc9cd8793e517639bf56ed6563db501fa9c7f6af29252fe99261148",
+    "sprites.h": "9034a4708c2b690a660047528a23b94a5f80b04f267ad605386159546d946ddc",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  }
+}

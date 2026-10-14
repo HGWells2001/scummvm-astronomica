@@ -1,0 +1,103 @@
+{
+  "status": "Original relocation research only; opcode50 not integrated",
+  "region": "15:0721-080e",
+  "calls": {
+    "0x7f8": {
+      "name": null,
+      "target": [
+        4,
+        283
+      ],
+      "flags": 1
+    },
+    "0x7e5": {
+      "name": null,
+      "target": [
+        4,
+        282
+      ],
+      "flags": 1
+    },
+    "0x7c9": {
+      "name": "_error",
+      "target": [
+        2,
+        0
+      ],
+      "flags": 0
+    },
+    "0x7bc": {
+      "name": null,
+      "target": [
+        1,
+        69
+      ],
+      "flags": 1
+    },
+    "0x792": {
+      "name": "_ReadBM",
+      "target": [
+        18,
+        4087
+      ],
+      "flags": 0
+    },
+    "0x782": {
+      "name": null,
+      "target": [
+        2,
+        81
+      ],
+      "flags": 1
+    },
+    "0x771": {
+      "name": "_ReadBM",
+      "target": [
+        18,
+        4087
+      ],
+      "flags": 0
+    },
+    "0x75e": {
+      "name": null,
+      "target": [
+        2,
+        85
+      ],
+      "flags": 1
+    },
+    "0x74e": {
+      "name": null,
+      "target": [
+        6,
+        181
+      ],
+      "flags": 1
+    },
+    "0x735": {
+      "name": null,
+      "target": [
+        6,
+        176
+      ],
+      "flags": 1
+    },
+    "0x807": {
+      "name": null,
+      "target": [
+        1,
+        69
+      ],
+      "flags": 1
+    },
+    "0x801": {
+      "name": null,
+      "target": [
+        1,
+        69
+      ],
+      "flags": 1
+    }
+  },
+  "p4_redirect": "PLACES/P2/"
+}

@@ -1,0 +1,7 @@
+from pathlib import Path
+base=Path('outputs/astronomica-cleanroom/engine/astronomica')
+p=base/'module.mk';p.write_text(p.read_text().replace('astronomica.o metaengine.o','astronomica.o resource.o metaengine.o'))
+p=base/'astronomica.h';s=p.read_text().replace('#include "graphics/surface.h"','#include "graphics/surface.h"\n#include "astronomica/resource.h"').replace('Graphics::Surface _screen;','Graphics::Surface _screen;\n Scene _scene;');p.write_text(s)
+p=base/'astronomica.cpp';s=p.read_text().replace(' const int32 mode = file.readSint32LE();',' Scene parsed;\n ResourceReader reader(file);\n if (!reader.read(parsed)) return false;\n file.seek(0);\n const int32 mode = file.readSint32LE();').replace(' _place = place;', ' _scene = parsed;\n _place = place;').replace('  int loaded = 0;\n  for (int id = 0; id <= 537; ++id) if (loadPlace(id)) ++loaded;', '  int loaded = 0; uint32 bitmaps = 0, commands = 0, tails = 0;\n  for (int id = 0; id <= 537; ++id) if (loadPlace(id)) { ++loaded; bitmaps += _scene.bitmapCount; commands += _scene.commandCount; if (_scene.trailing) ++tails; }\n  debug("Astronomica parser verification: %u bitmaps, %u commands, %u trailing payloads", bitmaps, commands, tails);').replace('return loaded == 420 ?', 'return loaded == 420 && bitmaps == 3625 && tails == 4 ?');p.write_text(s)
+import shutil
+for p in base.iterdir():shutil.copy2(p,Path('work/fresh-20260913/scummvm/engines/astronomica')/p.name)

@@ -1,0 +1,44 @@
+Using configuration file: C:\Users\mgian\Documents\Codex\2026-09-13\d-astro-2\outputs\astronomica-cleanroom\bin\astronomica.ini
+Debuglevel (from command line): 1
+Using SDL Video Driver "dummy"
+Using SDL Audio Driver "dummy"
+Output sample rate: 44100 Hz
+Output buffer size: 1024 samples
+Output channels: 2
+HardwareInput with ID 'JOY_START' not known
+HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+CPU extensions:
+SSE2(not supported) AVX2(not supported) NEON(not supported)
+User picked target 'astronomica-p511' (engine ID 'astronomica', game ID 'astronomica')...
+Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+HardwareInput with ID 'JOY_A' not known
+HardwareInput with ID 'JOY_B' not known
+HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+HardwareInput with ID 'JOY_Y' not known
+HardwareInput with ID 'JOY_X' not known
+HardwareInput with ID 'JOY_UP' not known
+HardwareInput with ID 'JOY_DOWN' not known
+HardwareInput with ID 'JOY_LEFT' not known
+HardwareInput with ID 'JOY_RIGHT' not known
+Setting 640 x 480 -> 640 x 480 -- 1
+WARNING: Couldn't load font 'helvb12.bdf'/'LiberationSans-Bold.ttf'!
+
+  File <File Stream>, line 155:
+<language id = '*'   scalable_file = 'LiberationSans-Bold.ttf'/>
+		</font>
+
+Parser error: Error loading localized Font in theme engine.
+
+WARNING: Failed to parse STX file 'remastered_gfx.stx'!
+WARNING: Failed to load theme 'SCUMMREMASTERED.ZIP'!
+Astronomica resource explorer: P511; nav 0,0,0
+Astronomica static sprites: P511, 17 drawn
+Astronomica P511 introduction: S302.WAV
+Astronomica P511 entry scripts: 5 queued, 0 skipped
+Astronomica P511 loop: S0.WAV

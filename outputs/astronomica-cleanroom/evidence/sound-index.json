@@ -1,0 +1,25 @@
+{
+  "reader": "9:2ff2",
+  "dispatch": {
+    "9": "9:306d",
+    "10": "9:306f",
+    "27": "9:30b0"
+  },
+  "decrement": "9:30d3 DEC EAX",
+  "conversion": "serialized argument minus one; only command-derived ids",
+  "p508": {
+    "correct_answer": {
+      "command": 9,
+      "file": "PLACES/P508/S8.WAV"
+    },
+    "wrong_answer": {
+      "command": 8,
+      "file": "PLACES/P508/S7.WAV"
+    },
+    "loop": {
+      "command": 7,
+      "file": "PLACES/P508/S6.WAV"
+    }
+  },
+  "internal_success": "Direct _playSound(912) is not decremented; SOUNDS/S12.WAV"
+}

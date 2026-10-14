@@ -1,0 +1,1 @@
+Inline help images checkpoint verified 13 October 2026. Matching build, all 781 articles, 31 inline image pixel/scroll/reflow tests, native saves/import and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.

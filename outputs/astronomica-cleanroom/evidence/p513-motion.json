@@ -1,0 +1,135 @@
+{
+  "scene": 513,
+  "status": "Original evidence; native checks recorded separately",
+  "traces": [
+    {
+      "setting": 1,
+      "ticks": 30,
+      "last_x": 447,
+      "digits": [
+        0,
+        0,
+        5
+      ],
+      "shown": [
+        12
+      ],
+      "fnv1a32": "0x51035100"
+    },
+    {
+      "setting": 2,
+      "ticks": 34,
+      "last_x": 449,
+      "digits": [
+        0,
+        1,
+        1
+      ],
+      "shown": [
+        13
+      ],
+      "fnv1a32": "0x813a5992"
+    },
+    {
+      "setting": 3,
+      "ticks": 38,
+      "last_x": 443,
+      "digits": [
+        0,
+        0,
+        4
+      ],
+      "shown": [
+        14
+      ],
+      "fnv1a32": "0xb578cf61"
+    },
+    {
+      "setting": 4,
+      "ticks": 45,
+      "last_x": 447,
+      "digits": [
+        0,
+        3,
+        0
+      ],
+      "shown": [
+        14
+      ],
+      "fnv1a32": "0xbc82dffa"
+    },
+    {
+      "setting": 5,
+      "ticks": 54,
+      "last_x": 447,
+      "digits": [
+        0,
+        0,
+        2
+      ],
+      "shown": [
+        15
+      ],
+      "fnv1a32": "0xfd04397b"
+    },
+    {
+      "setting": 6,
+      "ticks": 67,
+      "last_x": 445,
+      "digits": [
+        1,
+        0,
+        0
+      ],
+      "shown": [
+        15
+      ],
+      "fnv1a32": "0x8a811924"
+    },
+    {
+      "setting": 7,
+      "ticks": 89,
+      "last_x": 444,
+      "digits": [
+        0,
+        0,
+        4
+      ],
+      "shown": [
+        16
+      ],
+      "fnv1a32": "0xcad832f6"
+    },
+    {
+      "setting": 8,
+      "ticks": 133,
+      "last_x": 443,
+      "digits": [
+        0,
+        5,
+        0
+      ],
+      "shown": [
+        16
+      ],
+      "fnv1a32": "0x515b7a06"
+    },
+    {
+      "setting": 9,
+      "ticks": 266,
+      "last_x": 443,
+      "digits": [
+        0,
+        1,
+        5
+      ],
+      "shown": [
+        17
+      ],
+      "fnv1a32": "0xa3fb9950"
+    }
+  ],
+  "boundary_cases": 36,
+  "source": "original callback instructions; observed SpriteWorld setters and hide_and_stop modeled",
+  "code_sha256": "c5573e29f8e794d07b6277abf87271751185716b19a5cb94f986d56149cd2511"
+}

@@ -1,0 +1,72 @@
+[2026-09-27 15:22:16] ScummVM 2026.3.1git
+[2026-09-27 15:22:16] RGB SDL2 
+[2026-09-27 15:22:16] --- Log opened.
+[2026-09-27 15:22:16] Using SDL Video Driver "dummy"
+[2026-09-27 15:22:16] Using SDL Audio Driver "dummy"
+[2026-09-27 15:22:16] Output sample rate: 44100 Hz
+[2026-09-27 15:22:16] Output buffer size: 1024 samples
+[2026-09-27 15:22:16] Output channels: 2
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_START' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-09-27 15:22:17] CPU extensions:
+[2026-09-27 15:22:17] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-09-27 15:22:17] Running Astronomica: The Quest for the Edge of the Universe (Resource explorer only/Windows/English)
+[2026-09-27 15:22:17] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-09-27 15:22:17] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_A' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_B' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_Y' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_X' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_UP' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_DOWN' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_LEFT' not known
+[2026-09-27 15:22:17] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-09-27 15:22:17] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-09-27 15:22:17] WARNING: Couldn't load font 'helvb12.bdf'/'(none)'!
+[2026-09-27 15:22:17] 
+[2026-09-27 15:22:17]   File <Memory Stream>, line 1:
+[2026-09-27 15:22:17] <language id='*' file='helvb12.bdf'/></font>
+[2026-09-27 15:22:17] 
+[2026-09-27 15:22:17] Parser error: Error loading localized Font in theme engine.
+[2026-09-27 15:22:17] 
+[2026-09-27 15:22:17] WARNING: Failed to load theme 'builtin'!
+[2026-09-27 15:22:18] Astronomica resource explorer: P1; nav 0,0,0
+[2026-09-27 15:22:18] Astronomica P514 original motion verification: PASS (two 1000-step x86 trajectories)
+[2026-09-27 15:22:18] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:18] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:18] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:18] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:18] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:18] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:18] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:18] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:21] Astronomica resource explorer: P388; nav 386,0,389
+[2026-09-27 15:22:21] Astronomica static sprites: P388, 9 drawn
+[2026-09-27 15:22:21] Astronomica P514 route 0: PASS (P388, solved 1)
+[2026-09-27 15:22:21] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:21] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:24] Astronomica resource explorer: P388; nav 386,0,389
+[2026-09-27 15:22:24] Astronomica static sprites: P388, 9 drawn
+[2026-09-27 15:22:24] Astronomica P514 route 1: PASS (P388, solved 1)
+[2026-09-27 15:22:25] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:25] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:25] Astronomica resource explorer: P388; nav 386,0,389
+[2026-09-27 15:22:25] Astronomica static sprites: P388, 9 drawn
+[2026-09-27 15:22:25] Astronomica P514 route 2: PASS (P388, solved 1)
+[2026-09-27 15:22:25] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:25] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:26] Astronomica resource explorer: P388; nav 386,0,389
+[2026-09-27 15:22:26] Astronomica static sprites: P388, 9 drawn
+[2026-09-27 15:22:26] Astronomica P514 route 3: PASS (P388, solved 0)
+[2026-09-27 15:22:26] Astronomica resource explorer: P514; nav 0,0,0
+[2026-09-27 15:22:26] Astronomica static sprites: P514, 16 drawn
+[2026-09-27 15:22:26] Astronomica resource explorer: P388; nav 386,0,389
+[2026-09-27 15:22:26] Astronomica static sprites: P388, 9 drawn
+[2026-09-27 15:22:26] Astronomica P514 route 4: PASS (P388, solved 0)
+[2026-09-27 15:22:26] Astronomica P514 interaction verification: PASS (224 original collision cases, queue cancellation, three speeds, clamped controls, docking, fuel exhaustion, unsolved exit, repeated success)
+[2026-09-27 15:22:26] --- Log closed successfully.

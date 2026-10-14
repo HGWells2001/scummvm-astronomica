@@ -1,0 +1,843 @@
+{
+  "status": "Original callback execution; external rectangle-test edges excluded; not native validation",
+  "cases": 64,
+  "rows": [
+    {
+      "input": [
+        14,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        1,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        14,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        1,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        15,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        1,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        16,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        1,
+        84,
+        84
+      ],
+      "solved": 1,
+      "stopped": [
+        17,
+        13
+      ],
+      "sounds": [
+        9
+      ],
+      "explosions": [
+        [
+          23,
+          52,
+          52,
+          10
+        ]
+      ]
+    },
+    {
+      "input": [
+        17,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        17,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        1,
+        84,
+        84
+      ],
+      "solved": 1,
+      "stopped": [
+        18,
+        13
+      ],
+      "sounds": [
+        9
+      ],
+      "explosions": [
+        [
+          23,
+          52,
+          52,
+          10
+        ]
+      ]
+    },
+    {
+      "input": [
+        18,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        18,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        1,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        19,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        1,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        20,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        0,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        0,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        0,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        0,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        1,
+        84,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        1,
+        130,
+        84
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        1,
+        84,
+        130
+      ],
+      "solved": 0,
+      "stopped": [],
+      "sounds": [],
+      "explosions": []
+    },
+    {
+      "input": [
+        21,
+        1,
+        650,
+        84
+      ],
+      "solved": 0,
+      "stopped": [
+        13
+      ],
+      "sounds": [],
+      "explosions": []
+    }
+  ],
+  "code_sha256": "0a068c36db7d3d593b6ebce8a4d7d55e2b4e5e65317666d1bdd733b488abe4e4"
+}

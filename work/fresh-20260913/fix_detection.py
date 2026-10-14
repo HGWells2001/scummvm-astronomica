@@ -1,0 +1,3 @@
+from pathlib import Path
+p=Path('outputs/astronomica-cleanroom/engine/astronomica/detection.cpp');s=p.read_text().replace('AD_ENTRY1s("GAMEDATA", "84099c2580e5c71beec97ca3e52a5967", 1604)','AD_ENTRY2s("GAMEDATA", "84099c2580e5c71beec97ca3e52a5967", 1604, "ASTRO.EXE", "14929fa8e52d7e3bc539244413703ecb", 418376)').replace('{"PLACES", nullptr}', '{"PLACES", "SETUP", nullptr}');p.write_text(s);Path('work/fresh-20260913/scummvm/engines/astronomica/detection.cpp').write_text(s)
+p=Path('work/fresh-20260913/runtime_test.py');s=p.read_text().replace('confirm_exit=false\\n','confirm_exit=false\\nenable_unsupported_game_warning=false\\ngui_theme=builtin\\n');p.write_text(s)

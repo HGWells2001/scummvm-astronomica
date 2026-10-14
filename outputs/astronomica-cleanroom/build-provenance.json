@@ -1,0 +1,9 @@
+{
+  "scummvm_commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
+  "scummvm_source": "https://github.com/scummvm/scummvm",
+  "SDL_version": "2.32.6",
+  "SDL_source": "https://libsdl.org/release/SDL2-devel-2.32.6-VC.zip",
+  "build": "Visual Studio 2026 MSVC v145 x64 Release",
+  "exe_sha256": "5024f6f01cc00820b2c7976bc1e1ae4b7a7071b599c066fa0f2c35e3f539e11a",
+  "game_original_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e"
+}

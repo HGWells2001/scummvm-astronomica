@@ -1,0 +1,11 @@
+{
+  "scene": "P29",
+  "sprites": 1,
+  "rgb_fnv1a_640x456": "ca004a3b",
+  "rgb565_fnv1a_640x456": "97802e24",
+  "hidden_fnv1a": {
+    "888": "a8aa76a9",
+    "565": "f46c822e"
+  },
+  "source": "Original bitmaps, independently decoded and composed with Pillow"
+}

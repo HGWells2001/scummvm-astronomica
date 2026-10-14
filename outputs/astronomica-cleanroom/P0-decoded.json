@@ -1,0 +1,173 @@
+{
+  "mode": 0,
+  "navigation": null,
+  "background": {
+    "offset": 16,
+    "size": 2102,
+    "width": 32,
+    "height": 32,
+    "bpp": 8,
+    "compression": 0,
+    "sha256": "080324d0c823c43bc02db42eb1741d41846c804c3420dd16602aa6266c39c8f0"
+  },
+  "control": null,
+  "intro_sound": 0,
+  "layers": 0,
+  "sprite_count": 0,
+  "sound_count": 0,
+  "movie_count": 1,
+  "cursor_count": 0,
+  "legacy_name": "-1",
+  "sprites": [],
+  "sounds": [],
+  "movies": [
+    "HQLOGO.MOV"
+  ],
+  "scripts": [
+    [
+      {
+        "offset": 2660,
+        "opcode": 23,
+        "name": "custom",
+        "args": [
+          26,
+          11,
+          0,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2692,
+        "opcode": 3,
+        "name": "play_quicktime",
+        "args": [
+          0,
+          160,
+          120,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2716,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2748,
+        "opcode": 32,
+        "name": "set_condition",
+        "args": [
+          1,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2768,
+        "opcode": 23,
+        "name": "custom",
+        "args": [
+          26,
+          11,
+          0,
+          1,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2800,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 2808,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2840,
+        "opcode": 5,
+        "name": "new_place",
+        "args": [
+          1
+        ],
+        "delay": 20000
+      },
+      {
+        "offset": 2852,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 2860,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 2892,
+        "opcode": 6,
+        "name": "quit_game",
+        "args": [],
+        "delay": 20000
+      },
+      {
+        "offset": 2900,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      }
+    ]
+  ],
+  "mouse_rects": [],
+  "conditions": [
+    [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ]
+  ],
+  "consumed": 2944,
+  "size": 2944
+}

@@ -1,0 +1,2626 @@
+{
+  "status": "Original instruction research; external calls recorded, P523 not enabled",
+  "cases": 262656,
+  "levels": [
+    0,
+    19,
+    20,
+    29,
+    30,
+    39,
+    40,
+    59,
+    60,
+    74,
+    75,
+    99
+  ],
+  "code_sha256": "954a920b6a8b0d827e6a583a202a668f2e23642eb256cb8147bc05ce16834059",
+  "comparison_sha256": "0fbbaa93906db52b9f6822c72b23d48df677f9c67afaf269b30a6e2fb30d703c",
+  "distinct_outcomes": 60,
+  "samples": [
+    {
+      "event": 1,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 23
+        },
+        {
+          "name": "_show",
+          "sprite": 24
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 602,
+          "duration": 111
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 708,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 1,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 23
+        },
+        {
+          "name": "_show",
+          "sprite": 24
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 602,
+          "duration": 111
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 708,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 1,
+      "channels": [
+        0,
+        0,
+        75
+      ],
+      "buttons": 1,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 721,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 2,
+          "flags": 0,
+          "time": 818,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 1,
+      "channels": [
+        0,
+        0,
+        75
+      ],
+      "buttons": 1,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 721,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 2,
+          "flags": 0,
+          "time": 818,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 1,
+      "channels": [
+        0,
+        0,
+        75
+      ],
+      "buttons": 2,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 841,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 2,
+          "flags": 0,
+          "time": 958,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 1,
+      "channels": [
+        0,
+        0,
+        75
+      ],
+      "buttons": 2,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 841,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 2,
+          "flags": 0,
+          "time": 958,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 2,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 961,
+          "duration": 602
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 4,
+          "flags": 0,
+          "time": 1560,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 14,
+          "flags": 0,
+          "time": 1470,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 17
+        },
+        {
+          "name": "_show",
+          "sprite": 9
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 2,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 961,
+          "duration": 602
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 4,
+          "flags": 0,
+          "time": 1560,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 14,
+          "flags": 0,
+          "time": 1470,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 17
+        },
+        {
+          "name": "_show",
+          "sprite": 9
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 3,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_StopMovie"
+        }
+      ],
+      "solved": 0,
+      "place": 117,
+      "change_place": 1,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 3,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_StopMovie"
+        }
+      ],
+      "solved": 1,
+      "place": 117,
+      "change_place": 1,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 4,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1561,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_show",
+          "sprite": 34
+        },
+        {
+          "name": "_show",
+          "sprite": 35
+        },
+        {
+          "name": "_show",
+          "sprite": 36
+        },
+        {
+          "name": "_show",
+          "sprite": 37
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 1658,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 4,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1561,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_show",
+          "sprite": 34
+        },
+        {
+          "name": "_show",
+          "sprite": 35
+        },
+        {
+          "name": "_show",
+          "sprite": 36
+        },
+        {
+          "name": "_show",
+          "sprite": 37
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 1658,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 4,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 1,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1681,
+          "duration": 220
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 5,
+          "flags": 0,
+          "time": 1898,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 4,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 1,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1681,
+          "duration": 220
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 5,
+          "flags": 0,
+          "time": 1898,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 4,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 2,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1921,
+          "duration": 240
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 5,
+          "flags": 0,
+          "time": 2158,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 4,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 2,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1921,
+          "duration": 240
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 5,
+          "flags": 0,
+          "time": 2158,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 5,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 2160,
+          "duration": 601
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 6,
+          "flags": 0,
+          "time": 2758,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 15,
+          "flags": 0,
+          "time": 2670,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 13
+        },
+        {
+          "name": "_show",
+          "sprite": 26
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 5,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 2160,
+          "duration": 601
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 6,
+          "flags": 0,
+          "time": 2758,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 15,
+          "flags": 0,
+          "time": 2670,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 13
+        },
+        {
+          "name": "_show",
+          "sprite": 26
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 6,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 2761,
+          "duration": 80
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 2838,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 6,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 2761,
+          "duration": 80
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 2838,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 6,
+      "channels": [
+        40,
+        20,
+        0
+      ],
+      "buttons": 1,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 2881,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 7,
+          "flags": 0,
+          "time": 2998,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 6,
+      "channels": [
+        40,
+        20,
+        0
+      ],
+      "buttons": 1,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 2881,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 7,
+          "flags": 0,
+          "time": 2998,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 6,
+      "channels": [
+        40,
+        20,
+        0
+      ],
+      "buttons": 2,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3001,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 7,
+          "flags": 0,
+          "time": 3118,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 6,
+      "channels": [
+        40,
+        20,
+        0
+      ],
+      "buttons": 2,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3001,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 7,
+          "flags": 0,
+          "time": 3118,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 7,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3121,
+          "duration": 601
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 8,
+          "flags": 0,
+          "time": 3718,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 16,
+          "flags": 0,
+          "time": 3630,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 12
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 7,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3121,
+          "duration": 601
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 8,
+          "flags": 0,
+          "time": 3718,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 16,
+          "flags": 0,
+          "time": 3630,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 12
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 8,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 25
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 5246601,
+          "duration": null,
+          "malformed_word_arguments": [
+            3721,
+            80
+          ],
+          "duration_source": "uninitialized caller stack"
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 3798,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 8,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 25
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 5246601,
+          "duration": null,
+          "malformed_word_arguments": [
+            3721,
+            80
+          ],
+          "duration_source": "uninitialized caller stack"
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 3798,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 8,
+      "channels": [
+        0,
+        0,
+        30
+      ],
+      "buttons": 1,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3841,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 9,
+          "flags": 0,
+          "time": 3938,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 8,
+      "channels": [
+        0,
+        0,
+        30
+      ],
+      "buttons": 1,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3841,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 9,
+          "flags": 0,
+          "time": 3938,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 8,
+      "channels": [
+        0,
+        0,
+        30
+      ],
+      "buttons": 2,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3961,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 9,
+          "flags": 0,
+          "time": 4078,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 8,
+      "channels": [
+        0,
+        0,
+        30
+      ],
+      "buttons": 2,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 3961,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 9,
+          "flags": 0,
+          "time": 4078,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 9,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4080,
+          "duration": 601
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 10,
+          "flags": 0,
+          "time": 4678,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 17,
+          "flags": 0,
+          "time": 4590,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 10
+        },
+        {
+          "name": "_show",
+          "sprite": 21
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 9,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4080,
+          "duration": 601
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 10,
+          "flags": 0,
+          "time": 4678,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 17,
+          "flags": 0,
+          "time": 4590,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 10
+        },
+        {
+          "name": "_show",
+          "sprite": 21
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 10,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4681,
+          "duration": 80
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_show",
+          "sprite": 34
+        },
+        {
+          "name": "_show",
+          "sprite": 35
+        },
+        {
+          "name": "_show",
+          "sprite": 36
+        },
+        {
+          "name": "_show",
+          "sprite": 37
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 4758,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 10,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4681,
+          "duration": 80
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_show",
+          "sprite": 34
+        },
+        {
+          "name": "_show",
+          "sprite": 35
+        },
+        {
+          "name": "_show",
+          "sprite": 36
+        },
+        {
+          "name": "_show",
+          "sprite": 37
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 3,
+          "flags": 0,
+          "time": 4758,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 10,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 1,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4801,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 11,
+          "flags": 0,
+          "time": 4898,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 10,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 1,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4801,
+          "duration": 100
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 11,
+          "flags": 0,
+          "time": 4898,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 10,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 2,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4921,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 11,
+          "flags": 0,
+          "time": 5038,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 10,
+      "channels": [
+        0,
+        75,
+        0
+      ],
+      "buttons": 2,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 4921,
+          "duration": 120
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 11,
+          "flags": 0,
+          "time": 5038,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 11,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 5040,
+          "duration": 641
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 12,
+          "flags": 0,
+          "time": 5678,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 18,
+          "flags": 0,
+          "time": 5540,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 14
+        },
+        {
+          "name": "_show",
+          "sprite": 20
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 11,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 5040,
+          "duration": 641
+        },
+        {
+          "name": "_StartMovie"
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 0,
+          "event": 12,
+          "flags": 0,
+          "time": 5678,
+          "scale": 30
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 18,
+          "flags": 0,
+          "time": 5540,
+          "scale": 30
+        },
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 7
+        },
+        {
+          "name": "_hide",
+          "sprite": 5
+        },
+        {
+          "name": "_hide",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 1
+        },
+        {
+          "name": "_show",
+          "sprite": 14
+        },
+        {
+          "name": "_show",
+          "sprite": 20
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 12,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_StopMovie"
+        },
+        {
+          "name": "_puzzle_successful"
+        }
+      ],
+      "solved": 1,
+      "place": 524,
+      "change_place": 1,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 12,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_StopMovie"
+        }
+      ],
+      "solved": 1,
+      "place": 524,
+      "change_place": 1,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 13,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 13,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 14,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 14,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 15,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 15,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 16,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 16,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 17,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 17,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 18,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        },
+        {
+          "name": "_show",
+          "sprite": 31
+        },
+        {
+          "name": "_show",
+          "sprite": 32
+        },
+        {
+          "name": "_show",
+          "sprite": 33
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 19,
+          "flags": 0,
+          "time": 5610,
+          "scale": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 18,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        },
+        {
+          "name": "_show",
+          "sprite": 31
+        },
+        {
+          "name": "_show",
+          "sprite": 32
+        },
+        {
+          "name": "_show",
+          "sprite": 33
+        },
+        {
+          "name": "_CallMeWhen",
+          "slot": 1,
+          "event": 19,
+          "flags": 0,
+          "time": 5610,
+          "scale": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 18,
+      "channels": [
+        0,
+        60,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 18,
+      "channels": [
+        0,
+        60,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_hide_em"
+        },
+        {
+          "name": "_show",
+          "sprite": 5
+        },
+        {
+          "name": "_show",
+          "sprite": 6
+        },
+        {
+          "name": "_show",
+          "sprite": 1
+        },
+        {
+          "name": "_hide",
+          "sprite": 7
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 19,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 0,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 27
+        },
+        {
+          "name": "_show",
+          "sprite": 28
+        },
+        {
+          "name": "_show",
+          "sprite": 29
+        },
+        {
+          "name": "_show",
+          "sprite": 30
+        }
+      ],
+      "solved": 0,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    },
+    {
+      "event": 19,
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "buttons": 0,
+      "previously_solved": 1,
+      "calls": [
+        {
+          "name": "_show",
+          "sprite": 27
+        },
+        {
+          "name": "_show",
+          "sprite": 28
+        },
+        {
+          "name": "_show",
+          "sprite": 29
+        },
+        {
+          "name": "_show",
+          "sprite": 30
+        }
+      ],
+      "solved": 1,
+      "place": 523,
+      "change_place": 0,
+      "flags": [
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "status": "Original save layout research only; native save support not implemented",
+  "filenames": [
+    "gamestat",
+    "gamestat"
+  ],
+  "original_reader_roundtrips": 5,
+  "writer": "9:41b3-4275",
+  "reader": "9:433e-43d0",
+  "writer_body_sha256": "893d45c4b8eb5cac499f2e831528516888122b0b71a33627acd85736d025fcb2",
+  "reader_sha256": "ff62fa1c0f4f60a2beea130d77eab96c0cd6d02ba233cf6c0ccde68c2ac8d276",
+  "cases": [
+    {
+      "place": 117,
+      "previous": 523,
+      "completed": 12,
+      "bytes": 408,
+      "saved_place": 117,
+      "sha256": "ade7713bb7f39023041e81f97c3f89b561cae1b93147eb29ae35024b3946bd4d"
+    },
+    {
+      "place": 408,
+      "previous": 523,
+      "completed": 31,
+      "bytes": 408,
+      "saved_place": 523,
+      "sha256": "74a627fad726c3580bc8f3c281e2e3a5cdc024dd98f96855f200249d4492ce21"
+    },
+    {
+      "place": 409,
+      "previous": 524,
+      "completed": 40,
+      "bytes": 408,
+      "saved_place": 524,
+      "sha256": "99f37b6b823b5262b0893e39408db75e1ac619bcf4132a3502c3f3d28e696e25"
+    },
+    {
+      "place": 523,
+      "previous": 117,
+      "completed": 0,
+      "bytes": 408,
+      "saved_place": 523,
+      "sha256": "ca84ebbef5b5516bb3fe5ed91c1f375371db6c33f2da77d0c8785a0e24f8c5f2"
+    },
+    {
+      "place": 1,
+      "previous": 408,
+      "completed": 0,
+      "bytes": 408,
+      "saved_place": 1,
+      "sha256": "0fbf30e02070ab32fb72554dc796d687343edf470b67c9efc2c5fcf1ba7ce332"
+    }
+  ],
+  "layout": [
+    "uint32le place (previous place for408/409)",
+    "uint32le completed puzzle count",
+    "100 uint32le global values"
+  ],
+  "omitted": [
+    "local conditions",
+    "sprite positions",
+    "movie time",
+    "pending script queue",
+    "process random state"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-14",
+  "included_files": 503,
+  "excluded_files": [
+    {
+      "path": "outputs/astronomica-cleanroom/astronomica-engine.patch",
+      "reason": "Extracted game content or superseded generated patch"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/backgrounds.png",
+      "reason": "Extracted game content or superseded generated patch"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/exe-strings.json",
+      "reason": "Extracted game content or superseded generated patch"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/P29-rendered.png",
+      "reason": "Extracted game content or superseded generated patch"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/P29-static-reference.png",
+      "reason": "Extracted game content or superseded generated patch"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/_CreateFrameFromMegaFile.asm",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/_execute_command.asm",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/_flash_white.asm",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/_load_game.asm",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/_load_place.asm",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/_read_command_mem.asm",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/detection.txt",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-article.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-compression.json",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-format.json",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-format1.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-format366.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-format38.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-image0.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-image12.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-image19.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-index.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-inline0.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-inline12.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    },
+    {
+      "path": "outputs/astronomica-cleanroom/evidence/help-inline19.png",
+      "reason": "Game imagery or extracted article corpus; regenerate from owned original files"
+    }
+  ],
+  "omitted_trees": [
+    "Original game D:/astro",
+    "ScummVM upstream checkout and Git history (pinned separately)",
+    "Compiler SDKs, dependencies, executables, user saves and local configuration"
+  ],
+  "evidence_note": "Historical manifests refer to some excluded game-derived files. Local full-checkpoint verification requires those original inputs and generated artifacts. Use tools/verify_export.py for this source export."
+}

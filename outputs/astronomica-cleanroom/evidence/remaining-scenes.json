@@ -1,0 +1,877 @@
+{
+  "status": "Original resource inventory only; these scenes have no verified complete native route",
+  "rows": [
+    {
+      "scene": 502,
+      "sha256": "880df2452622db2f9377793ef660cbc16ef534d6251394548bbebfacf2e8b020",
+      "layers": 1,
+      "sprites": 35,
+      "entry_scripts": 2,
+      "custom_commands": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "second_layer_sprites": [],
+      "movies": [],
+      "parsed_bytes": 586447,
+      "trailing_bytes": 83184,
+      "trailing_sha256": "490792195eb49ebedddac45900bea46b009065ca809b339f0a3807e8341b6cf7",
+      "trailing_embedded_bitmaps": [
+        {
+          "file_offset": 589273,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 590939,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 602021,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 603687,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 614769,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 616435,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 627517,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 629183,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 640265,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 641931,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 653013,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 654679,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 665761,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        }
+      ]
+    },
+    {
+      "scene": 503,
+      "sha256": "0b6e4b9afa8bafa670b19d8e79cbdb6bab7f675166aabfe27f9d421d9ed3447f",
+      "layers": 2,
+      "sprites": 48,
+      "entry_scripts": 2,
+      "custom_commands": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "second_layer_sprites": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "movies": [],
+      "parsed_bytes": 617311,
+      "trailing_bytes": 165284,
+      "trailing_sha256": "b1854c0f3f76470a4672e174d4ff11bf38e26f572ff67771a23ed58425aa64c7",
+      "trailing_embedded_bitmaps": [
+        {
+          "file_offset": 618361,
+          "size": 542,
+          "width": 60,
+          "height": 60,
+          "bpp": 1
+        },
+        {
+          "file_offset": 618907,
+          "size": 4678,
+          "width": 60,
+          "height": 60,
+          "bpp": 8
+        },
+        {
+          "file_offset": 623589,
+          "size": 542,
+          "width": 60,
+          "height": 60,
+          "bpp": 1
+        },
+        {
+          "file_offset": 624135,
+          "size": 4678,
+          "width": 60,
+          "height": 60,
+          "bpp": 8
+        },
+        {
+          "file_offset": 628817,
+          "size": 542,
+          "width": 60,
+          "height": 60,
+          "bpp": 1
+        },
+        {
+          "file_offset": 629443,
+          "size": 5558,
+          "width": 110,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 635005,
+          "size": 702,
+          "width": 110,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 635791,
+          "size": 5078,
+          "width": 39,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 640873,
+          "size": 862,
+          "width": 39,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 641819,
+          "size": 3678,
+          "width": 50,
+          "height": 50,
+          "bpp": 8
+        },
+        {
+          "file_offset": 645501,
+          "size": 462,
+          "width": 50,
+          "height": 50,
+          "bpp": 1
+        },
+        {
+          "file_offset": 646047,
+          "size": 1918,
+          "width": 28,
+          "height": 30,
+          "bpp": 8
+        },
+        {
+          "file_offset": 647969,
+          "size": 182,
+          "width": 28,
+          "height": 30,
+          "bpp": 1
+        },
+        {
+          "file_offset": 648155,
+          "size": 1918,
+          "width": 28,
+          "height": 30,
+          "bpp": 8
+        },
+        {
+          "file_offset": 650077,
+          "size": 182,
+          "width": 28,
+          "height": 30,
+          "bpp": 1
+        },
+        {
+          "file_offset": 650263,
+          "size": 1918,
+          "width": 28,
+          "height": 30,
+          "bpp": 8
+        },
+        {
+          "file_offset": 652185,
+          "size": 182,
+          "width": 28,
+          "height": 30,
+          "bpp": 1
+        },
+        {
+          "file_offset": 652807,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 663889,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 665555,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 676637,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 678303,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 689385,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 691051,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 702133,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 703799,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 714881,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 716547,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 727629,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 729295,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 740377,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 742043,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 753125,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 754791,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 765873,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 767539,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 778621,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        }
+      ]
+    },
+    {
+      "scene": 504,
+      "sha256": "dde86ef89aa520e16d006b41ddefece537f81901ad3e8db13c5a3bbe5e6009ba",
+      "layers": 2,
+      "sprites": 45,
+      "entry_scripts": 3,
+      "custom_commands": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "second_layer_sprites": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "movies": [],
+      "parsed_bytes": 656595,
+      "trailing_bytes": 148864,
+      "trailing_sha256": "3c129f7eb2f5e335d0c451db0a0df36be13f0a642fe41776f86cb5f38ebbc0de",
+      "trailing_embedded_bitmaps": [
+        {
+          "file_offset": 656683,
+          "size": 2678,
+          "width": 40,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 659365,
+          "size": 382,
+          "width": 40,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 659751,
+          "size": 2678,
+          "width": 40,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 662433,
+          "size": 382,
+          "width": 40,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 662819,
+          "size": 2678,
+          "width": 40,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 665501,
+          "size": 382,
+          "width": 40,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 665887,
+          "size": 2678,
+          "width": 40,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 668569,
+          "size": 382,
+          "width": 40,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 668955,
+          "size": 2678,
+          "width": 40,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 671637,
+          "size": 382,
+          "width": 40,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 672023,
+          "size": 2678,
+          "width": 40,
+          "height": 40,
+          "bpp": 8
+        },
+        {
+          "file_offset": 674705,
+          "size": 382,
+          "width": 40,
+          "height": 40,
+          "bpp": 1
+        },
+        {
+          "file_offset": 675451,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 686533,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 688199,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 699281,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 700947,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 712029,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 713695,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 724777,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 726443,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 737525,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 739191,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 750273,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 751939,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 763021,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 764687,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 775769,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 777435,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 788517,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        },
+        {
+          "file_offset": 790183,
+          "size": 11078,
+          "width": 100,
+          "height": 100,
+          "bpp": 8
+        },
+        {
+          "file_offset": 801265,
+          "size": 1662,
+          "width": 100,
+          "height": 100,
+          "bpp": 1
+        }
+      ]
+    },
+    {
+      "scene": 510,
+      "sha256": "c02ffb9b00da37a0d6d081746250b38b84b3be970ea942009baaf2c349ee97b0",
+      "layers": 1,
+      "sprites": 14,
+      "entry_scripts": 4,
+      "custom_commands": [
+        [
+          23,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          3,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "second_layer_sprites": [],
+      "movies": [
+        "FLATPLOT.MOV"
+      ],
+      "parsed_bytes": 439846,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "trailing_embedded_bitmaps": []
+    },
+    {
+      "scene": 516,
+      "sha256": "fae86ac8d36038046a9d387f8fbc28d822d2cdcacc2cdb0ab4d941d55b58ced6",
+      "layers": 2,
+      "sprites": 37,
+      "entry_scripts": 2,
+      "custom_commands": [
+        [
+          9,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "second_layer_sprites": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "movies": [],
+      "parsed_bytes": 563403,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "trailing_embedded_bitmaps": []
+    },
+    {
+      "scene": 523,
+      "sha256": "caef593058f9206bec5417d364288bee81e54315580273a970bbcc7a3fd655bc",
+      "layers": 1,
+      "sprites": 44,
+      "entry_scripts": 1,
+      "custom_commands": [
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          6,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "second_layer_sprites": [],
+      "movies": [
+        "DANGERS.MOV"
+      ],
+      "parsed_bytes": 627978,
+      "trailing_bytes": 0,
+      "trailing_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "trailing_embedded_bitmaps": []
+    }
+  ],
+  "trailing_note": "Contains real bitmap data. Original _load_place 9:2c87 is the final _getsome call; after the condition loop at2c97 it adds layers and initializes sprites without parsing another structure. Preserve tails; their historical purpose is not established."
+}

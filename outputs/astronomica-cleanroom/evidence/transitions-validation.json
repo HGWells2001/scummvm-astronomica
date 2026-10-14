@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "original_cases": 47520,
+  "comparison_fnv": "03a3e23b",
+  "world_gates": 9,
+  "denial_segments": 5,
+  "scene_exits": [
+    426,
+    427,
+    428,
+    429
+  ],
+  "credit_images": 7,
+  "full_suite": true,
+  "manual_confirmation": false,
+  "whole_game_completion_percent": null,
+  "remaining": "custom26 state transfers, other exploration movies, Windows help, full playthrough"
+}

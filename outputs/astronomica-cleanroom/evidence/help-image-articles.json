@@ -1,0 +1,441 @@
+{
+  "source_sha256": "ac495a6798969cb66b31087402d388f5426ad2f03da0f247907a33255e73de02",
+  "associations": [
+    {
+      "image": 0,
+      "article": 23,
+      "title": "Andromeda Galaxy",
+      "record": 18201
+    },
+    {
+      "image": 1,
+      "article": 54,
+      "title": "Armstrong, Neil Alden",
+      "record": 65687
+    },
+    {
+      "image": 2,
+      "article": 67,
+      "title": "Aurora",
+      "record": 100781
+    },
+    {
+      "image": 3,
+      "article": 67,
+      "title": "Aurora",
+      "record": 101082
+    },
+    {
+      "image": 4,
+      "article": 77,
+      "title": "Betelgeuse",
+      "record": 116020
+    },
+    {
+      "image": 5,
+      "article": 267,
+      "title": "Galaxy",
+      "record": 364174
+    },
+    {
+      "image": 6,
+      "article": 267,
+      "title": "Galaxy",
+      "record": 364260
+    },
+    {
+      "image": 7,
+      "article": 267,
+      "title": "Galaxy",
+      "record": 364396
+    },
+    {
+      "image": 8,
+      "article": 267,
+      "title": "Galaxy",
+      "record": 364506
+    },
+    {
+      "image": 9,
+      "article": 267,
+      "title": "Galaxy",
+      "record": 364669
+    },
+    {
+      "image": 10,
+      "article": 267,
+      "title": "Galaxy",
+      "record": 364669
+    },
+    {
+      "image": 11,
+      "article": 361,
+      "title": "Jupiter",
+      "record": 476493
+    },
+    {
+      "image": 12,
+      "article": 361,
+      "title": "Jupiter",
+      "record": 476493
+    },
+    {
+      "image": 13,
+      "article": 433,
+      "title": "Meteor",
+      "record": 544079
+    },
+    {
+      "image": 14,
+      "article": 441,
+      "title": "Milky Way",
+      "record": 558937
+    },
+    {
+      "image": 15,
+      "article": 441,
+      "title": "Milky Way",
+      "record": 559027
+    },
+    {
+      "image": 16,
+      "article": 444,
+      "title": "Mir",
+      "record": 560157
+    },
+    {
+      "image": 17,
+      "article": 451,
+      "title": "Moon",
+      "record": 574553
+    },
+    {
+      "image": 18,
+      "article": 451,
+      "title": "Moon",
+      "record": 574553
+    },
+    {
+      "image": 19,
+      "article": 451,
+      "title": "Moon",
+      "record": 574553
+    },
+    {
+      "image": 20,
+      "article": 462,
+      "title": "Nebula",
+      "record": 577602
+    },
+    {
+      "image": 21,
+      "article": 520,
+      "title": "Pinwheel Galaxy",
+      "record": 642718
+    },
+    {
+      "image": 22,
+      "article": 529,
+      "title": "Polaris",
+      "record": 659408
+    },
+    {
+      "image": 23,
+      "article": 529,
+      "title": "Polaris",
+      "record": 659494
+    },
+    {
+      "image": 24,
+      "article": 598,
+      "title": "Saturn",
+      "record": 775516
+    },
+    {
+      "image": 25,
+      "article": 639,
+      "title": "Solstice",
+      "record": 835671
+    },
+    {
+      "image": 26,
+      "article": 667,
+      "title": "Star Cluster",
+      "record": 903391
+    },
+    {
+      "image": 27,
+      "article": 679,
+      "title": "Supernova",
+      "record": 934379
+    },
+    {
+      "image": 28,
+      "article": 721,
+      "title": "Twilight",
+      "record": 985133
+    },
+    {
+      "image": 29,
+      "article": 731,
+      "title": "Ursa Major",
+      "record": 1016762
+    },
+    {
+      "image": 30,
+      "article": 763,
+      "title": "Whirlpool Galaxy",
+      "record": 1066566
+    }
+  ],
+  "native_references": [
+    {
+      "image": 0,
+      "article": 23,
+      "width": 180,
+      "height": 132,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 4231772639
+    },
+    {
+      "image": 1,
+      "article": 54,
+      "width": 180,
+      "height": 125,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 2172781132
+    },
+    {
+      "image": 2,
+      "article": 67,
+      "width": 180,
+      "height": 212,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3503800419
+    },
+    {
+      "image": 3,
+      "article": 67,
+      "width": 180,
+      "height": 238,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3083038739
+    },
+    {
+      "image": 4,
+      "article": 77,
+      "width": 180,
+      "height": 159,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 1373353377
+    },
+    {
+      "image": 5,
+      "article": 267,
+      "width": 180,
+      "height": 51,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 1278334484
+    },
+    {
+      "image": 6,
+      "article": 267,
+      "width": 180,
+      "height": 134,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 879284234
+    },
+    {
+      "image": 7,
+      "article": 267,
+      "width": 180,
+      "height": 240,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 167616516
+    },
+    {
+      "image": 8,
+      "article": 267,
+      "width": 180,
+      "height": 85,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3887014945
+    },
+    {
+      "image": 9,
+      "article": 267,
+      "width": 180,
+      "height": 101,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 2237598872
+    },
+    {
+      "image": 10,
+      "article": 267,
+      "width": 180,
+      "height": 192,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 4148548843
+    },
+    {
+      "image": 11,
+      "article": 361,
+      "width": 180,
+      "height": 162,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 1713635007
+    },
+    {
+      "image": 12,
+      "article": 361,
+      "width": 180,
+      "height": 169,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 698052025
+    },
+    {
+      "image": 13,
+      "article": 433,
+      "width": 180,
+      "height": 147,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 4002529726
+    },
+    {
+      "image": 14,
+      "article": 441,
+      "width": 180,
+      "height": 115,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3805365333
+    },
+    {
+      "image": 15,
+      "article": 441,
+      "width": 180,
+      "height": 85,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3358242078
+    },
+    {
+      "image": 16,
+      "article": 444,
+      "width": 180,
+      "height": 133,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3497292206
+    },
+    {
+      "image": 17,
+      "article": 451,
+      "width": 180,
+      "height": 95,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 190866373
+    },
+    {
+      "image": 18,
+      "article": 451,
+      "width": 180,
+      "height": 97,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 1539339377
+    },
+    {
+      "image": 19,
+      "article": 451,
+      "width": 180,
+      "height": 110,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 1340996163
+    },
+    {
+      "image": 20,
+      "article": 462,
+      "width": 180,
+      "height": 223,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 1845204404
+    },
+    {
+      "image": 21,
+      "article": 520,
+      "width": 180,
+      "height": 223,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3514606766
+    },
+    {
+      "image": 22,
+      "article": 529,
+      "width": 180,
+      "height": 218,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 2154006304
+    },
+    {
+      "image": 23,
+      "article": 529,
+      "width": 180,
+      "height": 152,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 974084224
+    },
+    {
+      "image": 24,
+      "article": 598,
+      "width": 180,
+      "height": 99,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 246389465
+    },
+    {
+      "image": 25,
+      "article": 639,
+      "width": 180,
+      "height": 163,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3665681782
+    },
+    {
+      "image": 26,
+      "article": 667,
+      "width": 180,
+      "height": 190,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 525078977
+    },
+    {
+      "image": 27,
+      "article": 679,
+      "width": 180,
+      "height": 134,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 4183024005
+    },
+    {
+      "image": 28,
+      "article": 721,
+      "width": 180,
+      "height": 82,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 2511519700
+    },
+    {
+      "image": 29,
+      "article": 731,
+      "width": 180,
+      "height": 79,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 172177367
+    },
+    {
+      "image": 30,
+      "article": 763,
+      "width": 180,
+      "height": 288,
+      "palette_fnv": 2150032837,
+      "pixels_fnv": 3427780316
+    }
+  ]
+}

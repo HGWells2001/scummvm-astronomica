@@ -1,0 +1,983 @@
+{
+  "status": "Original instructions executed independently of native engine",
+  "region": "9:0289-066c; CS switch table through078f",
+  "code_sha256": "0daaed5c9b86ec5b6865c4bffa809935263c3a7d4a0327143be43532c6285500",
+  "cases": 47520,
+  "native_comparison_fnv1a": "03a3e23b",
+  "examples": [
+    {
+      "previous": 307,
+      "requested": 414,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 307,
+      "requested": 414,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 307,
+      "requested": 414,
+      "permit": 1,
+      "result": [
+        414,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 307,
+      "requested": 414,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 414,
+      "requested": 307,
+      "permit": -1,
+      "result": [
+        307,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 414,
+      "requested": 307,
+      "permit": 0,
+      "result": [
+        307,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 414,
+      "requested": 307,
+      "permit": 1,
+      "result": [
+        307,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 414,
+      "requested": 307,
+      "permit": 2,
+      "result": [
+        307,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 271,
+      "requested": 298,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 271,
+      "requested": 298,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 271,
+      "requested": 298,
+      "permit": 1,
+      "result": [
+        298,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 271,
+      "requested": 298,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 298,
+      "requested": 271,
+      "permit": -1,
+      "result": [
+        271,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 298,
+      "requested": 271,
+      "permit": 0,
+      "result": [
+        271,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 298,
+      "requested": 271,
+      "permit": 1,
+      "result": [
+        271,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 298,
+      "requested": 271,
+      "permit": 2,
+      "result": [
+        271,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 284,
+      "requested": 289,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 284,
+      "requested": 289,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 284,
+      "requested": 289,
+      "permit": 1,
+      "result": [
+        289,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 284,
+      "requested": 289,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 289,
+      "requested": 284,
+      "permit": -1,
+      "result": [
+        284,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 289,
+      "requested": 284,
+      "permit": 0,
+      "result": [
+        284,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 289,
+      "requested": 284,
+      "permit": 1,
+      "result": [
+        284,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 289,
+      "requested": 284,
+      "permit": 2,
+      "result": [
+        284,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 324,
+      "requested": 329,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 324,
+      "requested": 329,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 324,
+      "requested": 329,
+      "permit": 1,
+      "result": [
+        329,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 324,
+      "requested": 329,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 329,
+      "requested": 324,
+      "permit": -1,
+      "result": [
+        324,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 329,
+      "requested": 324,
+      "permit": 0,
+      "result": [
+        324,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 329,
+      "requested": 324,
+      "permit": 1,
+      "result": [
+        324,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 329,
+      "requested": 324,
+      "permit": 2,
+      "result": [
+        324,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 101,
+      "requested": 110,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 101,
+      "requested": 110,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 101,
+      "requested": 110,
+      "permit": 1,
+      "result": [
+        110,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 101,
+      "requested": 110,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 110,
+      "requested": 101,
+      "permit": -1,
+      "result": [
+        101,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 110,
+      "requested": 101,
+      "permit": 0,
+      "result": [
+        101,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 110,
+      "requested": 101,
+      "permit": 1,
+      "result": [
+        101,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 110,
+      "requested": 101,
+      "permit": 2,
+      "result": [
+        101,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 120,
+      "requested": 144,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 120,
+      "requested": 144,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 120,
+      "requested": 144,
+      "permit": 1,
+      "result": [
+        144,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 120,
+      "requested": 144,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 144,
+      "requested": 120,
+      "permit": -1,
+      "result": [
+        120,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 144,
+      "requested": 120,
+      "permit": 0,
+      "result": [
+        120,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 144,
+      "requested": 120,
+      "permit": 1,
+      "result": [
+        120,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 144,
+      "requested": 120,
+      "permit": 2,
+      "result": [
+        120,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 177,
+      "requested": 182,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 177,
+      "requested": 182,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 177,
+      "requested": 182,
+      "permit": 1,
+      "result": [
+        182,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 177,
+      "requested": 182,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 182,
+      "requested": 177,
+      "permit": -1,
+      "result": [
+        177,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 182,
+      "requested": 177,
+      "permit": 0,
+      "result": [
+        177,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 182,
+      "requested": 177,
+      "permit": 1,
+      "result": [
+        177,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 182,
+      "requested": 177,
+      "permit": 2,
+      "result": [
+        177,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 139,
+      "requested": 151,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 139,
+      "requested": 151,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 139,
+      "requested": 151,
+      "permit": 1,
+      "result": [
+        151,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 139,
+      "requested": 151,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 151,
+      "requested": 139,
+      "permit": -1,
+      "result": [
+        139,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 151,
+      "requested": 139,
+      "permit": 0,
+      "result": [
+        139,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 151,
+      "requested": 139,
+      "permit": 1,
+      "result": [
+        139,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 151,
+      "requested": 139,
+      "permit": 2,
+      "result": [
+        139,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 160,
+      "requested": 168,
+      "permit": -1,
+      "result": [
+        429,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 160,
+      "requested": 168,
+      "permit": 0,
+      "result": [
+        429,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 160,
+      "requested": 168,
+      "permit": 1,
+      "result": [
+        168,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 160,
+      "requested": 168,
+      "permit": 2,
+      "result": [
+        429,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 168,
+      "requested": 160,
+      "permit": -1,
+      "result": [
+        160,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 168,
+      "requested": 160,
+      "permit": 0,
+      "result": [
+        160,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 168,
+      "requested": 160,
+      "permit": 1,
+      "result": [
+        160,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 168,
+      "requested": 160,
+      "permit": 2,
+      "result": [
+        160,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 208,
+      "requested": 117,
+      "permit": -1,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 208,
+      "requested": 117,
+      "permit": 0,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 208,
+      "requested": 117,
+      "permit": 1,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 208,
+      "requested": 117,
+      "permit": 2,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 208,
+      "permit": -1,
+      "result": [
+        208,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 208,
+      "permit": 0,
+      "result": [
+        208,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 208,
+      "permit": 1,
+      "result": [
+        208,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 208,
+      "permit": 2,
+      "result": [
+        208,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 387,
+      "requested": 117,
+      "permit": -1,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 387,
+      "requested": 117,
+      "permit": 0,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 387,
+      "requested": 117,
+      "permit": 1,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 387,
+      "requested": 117,
+      "permit": 2,
+      "result": [
+        117,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 387,
+      "permit": -1,
+      "result": [
+        387,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 387,
+      "permit": 0,
+      "result": [
+        387,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 387,
+      "permit": 1,
+      "result": [
+        387,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "previous": 117,
+      "requested": 387,
+      "permit": 2,
+      "result": [
+        387,
+        2,
+        0,
+        0
+      ]
+    }
+  ],
+  "result_fields": [
+    "destination",
+    "global57",
+    "deferred_failure_voice",
+    "immediate_direct_sound"
+  ]
+}

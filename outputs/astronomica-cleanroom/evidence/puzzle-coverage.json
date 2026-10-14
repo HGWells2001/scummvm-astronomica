@@ -1,0 +1,192 @@
+{
+  "metric": "Static canRun validation, audio enabled, animation disabled; not execution/playability",
+  "accepted": 114,
+  "total": 121,
+  "scenes": [
+    {
+      "scene": 501,
+      "accepted": 1,
+      "total": 1
+    },
+    {
+      "scene": 502,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 503,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 504,
+      "accepted": 3,
+      "total": 3
+    },
+    {
+      "scene": 505,
+      "accepted": 3,
+      "total": 3
+    },
+    {
+      "scene": 506,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 507,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 508,
+      "accepted": 3,
+      "total": 3
+    },
+    {
+      "scene": 509,
+      "accepted": 6,
+      "total": 6
+    },
+    {
+      "scene": 510,
+      "accepted": 4,
+      "total": 4
+    },
+    {
+      "scene": 511,
+      "accepted": 5,
+      "total": 5
+    },
+    {
+      "scene": 512,
+      "accepted": 6,
+      "total": 6
+    },
+    {
+      "scene": 513,
+      "accepted": 4,
+      "total": 4
+    },
+    {
+      "scene": 514,
+      "accepted": 0,
+      "total": 2
+    },
+    {
+      "scene": 515,
+      "accepted": 7,
+      "total": 7
+    },
+    {
+      "scene": 516,
+      "accepted": 1,
+      "total": 2
+    },
+    {
+      "scene": 517,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 518,
+      "accepted": 2,
+      "total": 3
+    },
+    {
+      "scene": 519,
+      "accepted": 3,
+      "total": 3
+    },
+    {
+      "scene": 520,
+      "accepted": 1,
+      "total": 1
+    },
+    {
+      "scene": 521,
+      "accepted": 1,
+      "total": 1
+    },
+    {
+      "scene": 522,
+      "accepted": 8,
+      "total": 11
+    },
+    {
+      "scene": 523,
+      "accepted": 1,
+      "total": 1
+    },
+    {
+      "scene": 524,
+      "accepted": 5,
+      "total": 5
+    },
+    {
+      "scene": 525,
+      "accepted": 5,
+      "total": 5
+    },
+    {
+      "scene": 526,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 527,
+      "accepted": 1,
+      "total": 1
+    },
+    {
+      "scene": 528,
+      "accepted": 0,
+      "total": 0
+    },
+    {
+      "scene": 529,
+      "accepted": 3,
+      "total": 3
+    },
+    {
+      "scene": 530,
+      "accepted": 11,
+      "total": 11
+    },
+    {
+      "scene": 531,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 532,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 533,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 534,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 535,
+      "accepted": 2,
+      "total": 2
+    },
+    {
+      "scene": 536,
+      "accepted": 7,
+      "total": 7
+    },
+    {
+      "scene": 537,
+      "accepted": 1,
+      "total": 1
+    }
+  ]
+}

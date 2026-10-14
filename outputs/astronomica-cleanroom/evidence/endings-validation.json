@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scenes": [
+    423,
+    424,
+    435,
+    436,
+    437
+  ],
+  "original_choices": 4,
+  "decoded_movies": 5,
+  "continuous_lead_in": true,
+  "credit_transitions": true,
+  "full_suite": true,
+  "manual_confirmation": false
+}

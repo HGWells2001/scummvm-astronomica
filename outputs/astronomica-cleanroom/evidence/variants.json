@@ -1,0 +1,275 @@
+{
+  "handler": "4:385b-3a39",
+  "handler_sha256": "dac98f7349de7f31cbca7a790340f56851b8154cf382a8c21feaa3717dd02d4b",
+  "initial_statics": {
+    "round": 0,
+    "mask": 0
+  },
+  "direct_static_references": [
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x3860",
+      "instruction": "cmp dword ptr [0x14b], 3"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x386a",
+      "instruction": "mov dword ptr [0x14b], 0"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x3873",
+      "instruction": "mov dword ptr [0x14f], 0"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x38fb",
+      "instruction": "sub ax, word ptr [0x14b]"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x3950",
+      "instruction": "test dword ptr [0x14f], eax"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x39a8",
+      "instruction": "mov eax, dword ptr [0x14f]"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x39c0",
+      "instruction": "mov dword ptr [0x14f], eax"
+    },
+    {
+      "function": "_do_custom",
+      "segment": 4,
+      "address": "0x3a34",
+      "instruction": "inc dword ptr [0x14b]"
+    },
+    {
+      "function": "_load_place",
+      "segment": 9,
+      "address": "0x1c31",
+      "instruction": "cmp dword ptr [0x14b], 1"
+    }
+  ],
+  "sequence": {
+    "initial_scene_counted": false,
+    "random_rounds": 3,
+    "random_pool": [
+      506,
+      531,
+      532,
+      533,
+      534,
+      535
+    ],
+    "initial_scene_may_repeat": true,
+    "success_global": 23,
+    "success_voice": 912,
+    "completion_voice": 922,
+    "destination": 519,
+    "delay_after_completion_voice_ms": 3000,
+    "reset": "round and mask reset only at custom17 completion in the named-function scan",
+    "intro": "9:1c31 suppresses introduction when round > 1"
+  },
+  "scenes": [
+    {
+      "scene": 506,
+      "resource_sha256": "bc7bf0b66ba3644f6066d4978f9a2dff609571cbb50e7a88b2fad937b9741826",
+      "trailing_bytes": 0,
+      "answers": [
+        {
+          "sprite": 12,
+          "choice": 3,
+          "bits": [
+            0
+          ]
+        },
+        {
+          "sprite": 13,
+          "choice": 4,
+          "bits": [
+            1
+          ]
+        },
+        {
+          "sprite": 14,
+          "choice": 5,
+          "bits": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 531,
+      "resource_sha256": "6de49090d61e83e4d9dc86785c4d3730c4edca483eb236779987b87b77a4ec8e",
+      "trailing_bytes": 0,
+      "answers": [
+        {
+          "sprite": 10,
+          "choice": 1,
+          "bits": [
+            0
+          ]
+        },
+        {
+          "sprite": 11,
+          "choice": 2,
+          "bits": [
+            1
+          ]
+        },
+        {
+          "sprite": 12,
+          "choice": 3,
+          "bits": [
+            2
+          ]
+        },
+        {
+          "sprite": 14,
+          "choice": 5,
+          "bits": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 532,
+      "resource_sha256": "838463fd8438127804ec5074829301fe8993a3a583cb8b37c5809aef709a159f",
+      "trailing_bytes": 0,
+      "answers": [
+        {
+          "sprite": 10,
+          "choice": 3,
+          "bits": [
+            1
+          ]
+        },
+        {
+          "sprite": 11,
+          "choice": 4,
+          "bits": [
+            2
+          ]
+        },
+        {
+          "sprite": 12,
+          "choice": 1,
+          "bits": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 533,
+      "resource_sha256": "58857a2d8668b6a5c6daebbde39610eb49dc486cb7bf3ec743ad9f4dd3e6ed5b",
+      "trailing_bytes": 12288,
+      "answers": [
+        {
+          "sprite": 9,
+          "choice": 1,
+          "bits": [
+            0
+          ]
+        },
+        {
+          "sprite": 10,
+          "choice": 2,
+          "bits": [
+            1
+          ]
+        },
+        {
+          "sprite": 11,
+          "choice": 3,
+          "bits": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 534,
+      "resource_sha256": "9bc2673d8b40b971aee1ea9175f1828313961bed54cd66f2df98d601dcfaf277",
+      "trailing_bytes": 0,
+      "answers": [
+        {
+          "sprite": 14,
+          "choice": 3,
+          "bits": [
+            0
+          ]
+        },
+        {
+          "sprite": 15,
+          "choice": 4,
+          "bits": [
+            1
+          ]
+        },
+        {
+          "sprite": 16,
+          "choice": 5,
+          "bits": [
+            2
+          ]
+        },
+        {
+          "sprite": 17,
+          "choice": 6,
+          "bits": [
+            3
+          ]
+        },
+        {
+          "sprite": 18,
+          "choice": 7,
+          "bits": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 535,
+      "resource_sha256": "efffde1379147d487e2f933eb9593e48624d50026186b426a2fd05780ec2f270",
+      "trailing_bytes": 0,
+      "answers": [
+        {
+          "sprite": 9,
+          "choice": 1,
+          "bits": [
+            0
+          ]
+        },
+        {
+          "sprite": 10,
+          "choice": 2,
+          "bits": [
+            1
+          ]
+        },
+        {
+          "sprite": 11,
+          "choice": 3,
+          "bits": [
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}

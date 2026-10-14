@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "advice_cases": 34800,
+  "advice_fnv": "bcb8ca85",
+  "clock_cases": 108,
+  "clock_fnv": "bf6ea917",
+  "countdown_cases": 10530,
+  "countdown_fnv": "0ae350b7",
+  "native_scenarios": 8,
+  "continuous_movie": true,
+  "world_timer_sounds": 7,
+  "saved_clock_wrap": true,
+  "full_suite": true,
+  "manual_confirmation": false
+}

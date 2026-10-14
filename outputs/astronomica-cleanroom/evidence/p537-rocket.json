@@ -1,0 +1,48 @@
+{
+  "command": 14,
+  "dispatch": "4:2e22",
+  "callbacks": [
+    {
+      "name": "_fxm_move_rocket_slow",
+      "segment": 3,
+      "start": 5681,
+      "end": 6491,
+      "sha256": "adc4ac45fb17e7302361a6da6ca5e236ab6ecfe887bbd42110dbbe621412fcc3"
+    },
+    {
+      "name": "_fxm_move_rocket",
+      "segment": 3,
+      "start": 6491,
+      "end": 7384,
+      "sha256": "f02dc42e60f3752fb68c1ff25c1c98fb86dd1d22603b29df3085ce6abbaaa448"
+    },
+    {
+      "name": "_fxm_move_rocket_fast",
+      "segment": 3,
+      "start": 7384,
+      "end": 8246,
+      "sha256": "b1ee30a9f13c504e5bbb10c0323d5777057f0ab4b4ae4ef888c640229c741f38"
+    }
+  ],
+  "success_global": 36,
+  "common_success_537_is_noop": true,
+  "settings": {
+    "slow": [
+      1,
+      10
+    ],
+    "orbit": [
+      11,
+      12
+    ],
+    "fast": [
+      13,
+      15
+    ]
+  },
+  "motion_period_ms": 10,
+  "frame_animation_ids": [
+    9,
+    29
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "resource_sha256": "7a202c3b6f8d11299a20590d01d725ccf068d5c5fff6f6143a25e878b8e32888",
+  "movie_sha256": "4f3abfd78671a3147825b8282e71b5f4b75e091bee281915703c016cef4541e0",
+  "movie": "PLACES/P529/FUNIV.MOV",
+  "timescale": 30,
+  "duration_ticks": 1261,
+  "segments": [
+    [
+      0,
+      359
+    ],
+    [
+      1029,
+      232
+    ],
+    [
+      720,
+      226
+    ],
+    [
+      360,
+      359
+    ]
+  ],
+  "position": [
+    160,
+    40
+  ],
+  "selector_range": [
+    0,
+    15
+  ],
+  "outcome_groups": [
+    [
+      1,
+      5
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      13,
+      15
+    ]
+  ],
+  "completed_mask": 15,
+  "early_success_group": [
+    6,
+    8
+  ],
+  "destination": 98,
+  "digit_timer_ms": 20,
+  "digit_stop_delay_ms": 4000,
+  "success_handler": "4:5a34-5a62",
+  "success_global": 45,
+  "additional_unlock_global": 60,
+  "success_handler_sha256": "bb5a7734efd2f1ac737e8cce57504bd14bc5d1133f23993aba274c7d7241bdaa"
+}

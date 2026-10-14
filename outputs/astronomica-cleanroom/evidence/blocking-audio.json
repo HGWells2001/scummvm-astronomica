@@ -1,0 +1,87 @@
+{
+  "address": "9:3bb5-3bf8",
+  "bytes": "66813e8c0cf9010000750a83fe027c0583fe0a7e1766813e8c0c00020000750583fe0e7407833e900700740a168d86fefe506a02eb08168d86fefe506a039affff0000",
+  "behavior": "P505 local 2..10 and P512 local 14 use sndPlaySound flags 2; ordinary local sounds use flags 3. File IDs have already been decremented by command reader.",
+  "files": [
+    {
+      "place": 505,
+      "file_id": 2,
+      "sha256": "e118ca5e8b10e75c4415e0abf7a33f5a4d213fe9830255ffb3e541bc29161ca2",
+      "frames": 42352,
+      "rate": 11025,
+      "seconds": 3.841451247165533
+    },
+    {
+      "place": 505,
+      "file_id": 3,
+      "sha256": "958e4e91f0ee8b5ccaee776da3e22321411e04ae30a29f9b804b86653f09392e",
+      "frames": 46848,
+      "rate": 11025,
+      "seconds": 4.249251700680272
+    },
+    {
+      "place": 505,
+      "file_id": 4,
+      "sha256": "0719c9b5392d86ca2b27eae06a0d5f99abe3955c2645dd8d67596ca9c41c3db0",
+      "frames": 40704,
+      "rate": 11025,
+      "seconds": 3.6919727891156464
+    },
+    {
+      "place": 505,
+      "file_id": 5,
+      "sha256": "9ac62e7a90d5a78291d28c4fc70e371baf99867224579b85fc8d4b5a98801024",
+      "frames": 39420,
+      "rate": 11025,
+      "seconds": 3.5755102040816324
+    },
+    {
+      "place": 505,
+      "file_id": 6,
+      "sha256": "6f6791209a94a7afd4d8a09d3e81cf902b5b37ace80300f6588e689a41c694c2",
+      "frames": 56320,
+      "rate": 11025,
+      "seconds": 5.108390022675737
+    },
+    {
+      "place": 505,
+      "file_id": 7,
+      "sha256": "2b766328e923b5d6ec0f2028a945b122e1f36a794e4abc0cf570496d2f349718",
+      "frames": 51456,
+      "rate": 11025,
+      "seconds": 4.667210884353741
+    },
+    {
+      "place": 505,
+      "file_id": 8,
+      "sha256": "b00ec112c589746ec4bd1d8d5785a3c3b985a55019f420a26e6a6d6100c146c4",
+      "frames": 44544,
+      "rate": 11025,
+      "seconds": 4.040272108843538
+    },
+    {
+      "place": 505,
+      "file_id": 9,
+      "sha256": "d4d73f96f7d279328b46ac463c2952eadd603104f52559e036fd09db6f19a41b",
+      "frames": 54272,
+      "rate": 11025,
+      "seconds": 4.922630385487528
+    },
+    {
+      "place": 505,
+      "file_id": 10,
+      "sha256": "913702ad0515f60c87be86762edca9cb8936e4811fb3691d775ddee2e787e43e",
+      "frames": 60672,
+      "rate": 11025,
+      "seconds": 5.50312925170068
+    },
+    {
+      "place": 512,
+      "file_id": 14,
+      "sha256": "8a4bb7d97def3ff51850b2cf43fdc12de0a8411665875450f0ebe2354b8babd9",
+      "frames": 8448,
+      "rate": 11025,
+      "seconds": 0.7662585034013606
+    }
+  ]
+}

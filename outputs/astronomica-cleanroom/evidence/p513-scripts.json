@@ -1,0 +1,2935 @@
+{
+  "scene": 513,
+  "status": "Original script evidence; native checks recorded separately",
+  "resource_sha256": "ca2219d2a44dbed6f42ff2badccc87613941488c3a2f4ef7e62ff981395dbc87",
+  "conditions": [
+    [
+      1,
+      0,
+      18,
+      1,
+      1,
+      18
+    ],
+    [
+      1,
+      1,
+      14,
+      1,
+      1,
+      14
+    ],
+    [
+      1,
+      2,
+      14,
+      0,
+      0,
+      32767
+    ],
+    [
+      1,
+      3,
+      14,
+      0,
+      0,
+      14
+    ],
+    [
+      1,
+      4,
+      4,
+      0,
+      0,
+      4
+    ],
+    [
+      1,
+      5,
+      14,
+      0,
+      0,
+      14
+    ]
+  ],
+  "templates": [
+    [
+      {
+        "offset": 554735,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 554767,
+        "opcode": 20,
+        "name": "load_background",
+        "args": [
+          "cube1",
+          177,
+          22
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555038,
+        "opcode": 49,
+        "name": "op_49",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555046,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      }
+    ],
+    [
+      {
+        "offset": 555058,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          18
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555070,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          19
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555082,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          20
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555094,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          21
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555106,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          22
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555118,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          23
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555130,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          24
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555142,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          25
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555154,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          26
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555166,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          27
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555178,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          28
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555190,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          29
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555202,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          30
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555214,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          31
+        ],
+        "delay": 0
+      }
+    ],
+    [
+      {
+        "offset": 555230,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          5,
+          7,
+          0,
+          1,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555262,
+        "opcode": 39,
+        "name": "op_39",
+        "args": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555286,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555294,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555326,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          18
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555338,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555346,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555378,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          19
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555390,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555398,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555430,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          20
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555442,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555450,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          4,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555482,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          21
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555494,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555502,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555534,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          22
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555546,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555554,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          6,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555586,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          23
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555598,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555606,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          7,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555638,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          24
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555650,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555658,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          8,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555690,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          25
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555702,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555710,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          9,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555742,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          26
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555754,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555762,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          10,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555794,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          27
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555806,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555814,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          11,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555846,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          28
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555858,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555866,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          12,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555898,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          29
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555910,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555918,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          13,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555950,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          30
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 555962,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 555970,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          1,
+          14,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 556002,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          31
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 556014,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      }
+    ],
+    [
+      {
+        "offset": 556026,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          2,
+          16383,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 556058,
+        "opcode": 23,
+        "name": "custom",
+        "args": [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 556090,
+        "opcode": 9,
+        "name": "op_9",
+        "args": [
+          17
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 556102,
+        "opcode": 5,
+        "name": "new_place",
+        "args": [
+          197
+        ],
+        "delay": 6500
+      },
+      {
+        "offset": 556114,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 556122,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          5,
+          7,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 556154,
+        "opcode": 23,
+        "name": "custom",
+        "args": [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 556186,
+        "opcode": 9,
+        "name": "op_9",
+        "args": [
+          17
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 556198,
+        "opcode": 5,
+        "name": "new_place",
+        "args": [
+          197
+        ],
+        "delay": 6500
+      },
+      {
+        "offset": 556210,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      }
+    ]
+  ],
+  "controls": [
+    {
+      "sprite": 1,
+      "xy": [
+        23,
+        365
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 305467,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 305479,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            3
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 305491,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "xy": [
+        23,
+        416
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 310307,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 310319,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            4
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 310331,
+          "opcode": 5,
+          "name": "new_place",
+          "args": [
+            197
+          ],
+          "delay": 500
+        },
+        {
+          "offset": 310343,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "xy": [
+        589,
+        365
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 315159,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 315171,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            6
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 315183,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            2
+          ],
+          "delay": 2000
+        },
+        {
+          "offset": 315195,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "xy": [
+        589,
+        416
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 320011,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            5
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 320023,
+          "opcode": 5,
+          "name": "new_place",
+          "args": [
+            408
+          ],
+          "delay": 700
+        }
+      ]
+    },
+    {
+      "sprite": 5,
+      "xy": [
+        334,
+        368
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 328847,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328859,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            7
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328871,
+          "opcode": 23,
+          "name": "custom",
+          "args": [
+            10,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328903,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328935,
+          "opcode": 41,
+          "name": "op_41",
+          "args": [
+            3
+          ],
+          "delay": 1000
+        },
+        {
+          "offset": 328947,
+          "opcode": 41,
+          "name": "op_41",
+          "args": [
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328959,
+          "opcode": 41,
+          "name": "op_41",
+          "args": [
+            2
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328971,
+          "opcode": 46,
+          "name": "op_46",
+          "args": [
+            1,
+            4,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 328991,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 328999,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            1,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 329031,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            14
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 329043,
+          "opcode": 46,
+          "name": "op_46",
+          "args": [
+            1,
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 329063,
+          "opcode": 41,
+          "name": "op_41",
+          "args": [
+            3
+          ],
+          "delay": 1000
+        },
+        {
+          "offset": 329075,
+          "opcode": 41,
+          "name": "op_41",
+          "args": [
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 329087,
+          "opcode": 41,
+          "name": "op_41",
+          "args": [
+            2
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 329099,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 329107,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            4,
+            10,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 329139,
+          "opcode": 5,
+          "name": "new_place",
+          "args": [
+            197
+          ],
+          "delay": 5000
+        },
+        {
+          "offset": 329151,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 329159,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 200
+        }
+      ]
+    },
+    {
+      "sprite": 6,
+      "xy": [
+        334,
+        410
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 337983,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 337995,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            8
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338007,
+          "opcode": 7,
+          "name": "op_7",
+          "args": [
+            32,
+            177,
+            147
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338027,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            32
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338039,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338051,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338063,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338075,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338087,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338099,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            14
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338111,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            15
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338123,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            16
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338135,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            17
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338147,
+          "opcode": 23,
+          "name": "custom",
+          "args": [
+            10,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 338179,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 200
+        }
+      ]
+    },
+    {
+      "sprite": 7,
+      "xy": [
+        280,
+        361
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 343555,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343567,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343579,
+          "opcode": 46,
+          "name": "op_46",
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343599,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343631,
+          "opcode": 32,
+          "name": "set_condition",
+          "args": [
+            1,
+            0,
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343651,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 343659,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343691,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube1_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 343962,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 343970,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube2",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 344241,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 344249,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 344257,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 344289,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube2_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 344560,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 344568,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube3",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 344839,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 344847,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 344855,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 344887,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube3_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 345158,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 345166,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube4",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 345437,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 345445,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 345453,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            5,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 345485,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube4_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 345756,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 345764,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube5",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 346035,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 346043,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 346051,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 346083,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube5_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 346354,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 346362,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube6",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 346633,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 346641,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 346649,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 346681,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube6_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 346952,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 346960,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube7",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 347231,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 347239,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 347247,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 347279,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube7_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 347550,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 347558,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube8",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 347829,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 347837,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 347845,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 347877,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube8_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 348148,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 348156,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube9",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 348427,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 348435,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 348443,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 200
+        }
+      ]
+    },
+    {
+      "sprite": 8,
+      "xy": [
+        280,
+        417
+      ],
+      "click_type": 2,
+      "script": [
+        {
+          "offset": 353819,
+          "opcode": 28,
+          "name": "op_28",
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 353831,
+          "opcode": 9,
+          "name": "op_9",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 353843,
+          "opcode": 46,
+          "name": "op_46",
+          "args": [
+            1,
+            0,
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 353863,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 353895,
+          "opcode": 32,
+          "name": "set_condition",
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 353915,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 353923,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 353955,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube8_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 354226,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 354234,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube8",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 354505,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 354513,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 354521,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 354553,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube7_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 354824,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 354832,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube7",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 355103,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 355111,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 355119,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 355151,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube6_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 355422,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 355430,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube6",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 355701,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 355709,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 355717,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            5,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 355749,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube5_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 356020,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 356028,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube5",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 356299,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 356307,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 356315,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 356347,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube4_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 356618,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 356626,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube4",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 356897,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 356905,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 356913,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 356945,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube3_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 357216,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 357224,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube3",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 357495,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 357503,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 357511,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 357543,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube2_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 357814,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 357822,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube2",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 358093,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 358101,
+          "opcode": 45,
+          "name": "else",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 358109,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 358141,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube1_50",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 358412,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 358420,
+          "opcode": 20,
+          "name": "load_background",
+          "args": [
+            "cube1",
+            177,
+            22
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 358691,
+          "opcode": 49,
+          "name": "op_49",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 358699,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        },
+        {
+          "offset": 358707,
+          "opcode": 29,
+          "name": "op_29",
+          "args": [
+            -1
+          ],
+          "delay": 200
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "sprite": 1,
+      "xy": [
+        23,
+        365
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 300719
+        },
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 303083
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "xy": [
+        23,
+        416
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 305559
+        },
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 307923
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "xy": [
+        589,
+        365
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 310411
+        },
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 312775
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "xy": [
+        589,
+        416
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 315263
+        },
+        {
+          "width": 28,
+          "height": 38,
+          "offset": 317627
+        }
+      ]
+    },
+    {
+      "sprite": 5,
+      "xy": [
+        334,
+        368
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 80,
+          "height": 35,
+          "offset": 320091
+        },
+        {
+          "width": 80,
+          "height": 35,
+          "offset": 324459
+        }
+      ]
+    },
+    {
+      "sprite": 6,
+      "xy": [
+        334,
+        410
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 80,
+          "height": 35,
+          "offset": 329227
+        },
+        {
+          "width": 80,
+          "height": 35,
+          "offset": 333595
+        }
+      ]
+    },
+    {
+      "sprite": 7,
+      "xy": [
+        280,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 36,
+          "height": 34,
+          "offset": 338247
+        },
+        {
+          "width": 36,
+          "height": 34,
+          "offset": 340891
+        }
+      ]
+    },
+    {
+      "sprite": 8,
+      "xy": [
+        280,
+        417
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 36,
+          "height": 34,
+          "offset": 348511
+        },
+        {
+          "width": 36,
+          "height": 34,
+          "offset": 351155
+        }
+      ]
+    },
+    {
+      "sprite": 9,
+      "xy": [
+        485,
+        390
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 358775
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 360139
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 361503
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 362867
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 364231
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 365595
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 366959
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 368323
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 369687
+        },
+        {
+          "width": 8,
+          "height": 18,
+          "offset": 371051
+        }
+      ]
+    },
+    {
+      "sprite": 10,
+      "xy": [
+        496,
+        390
+      ],
+      "clone": 9,
+      "frames": []
+    },
+    {
+      "sprite": 11,
+      "xy": [
+        507,
+        390
+      ],
+      "clone": 9,
+      "frames": []
+    },
+    {
+      "sprite": 12,
+      "xy": [
+        442,
+        413
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 122,
+          "height": 21,
+          "offset": 372611
+        }
+      ]
+    },
+    {
+      "sprite": 13,
+      "xy": [
+        442,
+        413
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 122,
+          "height": 21,
+          "offset": 376767
+        }
+      ]
+    },
+    {
+      "sprite": 14,
+      "xy": [
+        442,
+        413
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 122,
+          "height": 21,
+          "offset": 380923
+        }
+      ]
+    },
+    {
+      "sprite": 15,
+      "xy": [
+        442,
+        413
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 122,
+          "height": 21,
+          "offset": 385079
+        }
+      ]
+    },
+    {
+      "sprite": 16,
+      "xy": [
+        442,
+        413
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 122,
+          "height": 21,
+          "offset": 389235
+        }
+      ]
+    },
+    {
+      "sprite": 17,
+      "xy": [
+        442,
+        413
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 122,
+          "height": 21,
+          "offset": 393391
+        }
+      ]
+    },
+    {
+      "sprite": 18,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 397547
+        }
+      ]
+    },
+    {
+      "sprite": 19,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 408619
+        }
+      ]
+    },
+    {
+      "sprite": 20,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 419691
+        }
+      ]
+    },
+    {
+      "sprite": 21,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 430763
+        }
+      ]
+    },
+    {
+      "sprite": 22,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 441835
+        }
+      ]
+    },
+    {
+      "sprite": 23,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 452907
+        }
+      ]
+    },
+    {
+      "sprite": 24,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 463979
+        }
+      ]
+    },
+    {
+      "sprite": 25,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 475051
+        }
+      ]
+    },
+    {
+      "sprite": 26,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 486123
+        }
+      ]
+    },
+    {
+      "sprite": 27,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 497195
+        }
+      ]
+    },
+    {
+      "sprite": 28,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 508267
+        }
+      ]
+    },
+    {
+      "sprite": 29,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 519339
+        }
+      ]
+    },
+    {
+      "sprite": 30,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 530411
+        }
+      ]
+    },
+    {
+      "sprite": 31,
+      "xy": [
+        112,
+        361
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 112,
+          "height": 77,
+          "offset": 541483
+        }
+      ]
+    },
+    {
+      "sprite": 32,
+      "xy": [
+        177,
+        147
+      ],
+      "clone": -1,
+      "frames": [
+        {
+          "width": 34,
+          "height": 19,
+          "offset": 552555
+        }
+      ]
+    }
+  ]
+}

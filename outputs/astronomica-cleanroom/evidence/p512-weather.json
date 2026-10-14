@@ -1,0 +1,936 @@
+{
+  "scene": 512,
+  "status": "Original-file evidence; native engine validation recorded separately",
+  "cases": 24576,
+  "fnv1a32": "0x685e2531",
+  "modes": {
+    "0": "0x52bc",
+    "1": "0x5634",
+    "2": "0x5676",
+    "3": "0x569a"
+  },
+  "answers": [
+    {
+      "scenario": 1,
+      "entry": "0x52f1",
+      "setting_requirements": [
+        "0..8",
+        "0..8",
+        "15"
+      ],
+      "accepted": 81,
+      "wrong_sound_counts": {
+        "10": 1215,
+        "11": 1008,
+        "12": 1792
+      }
+    },
+    {
+      "scenario": 2,
+      "entry": "0x537c",
+      "setting_requirements": [
+        "15",
+        "0..8",
+        "0..8"
+      ],
+      "accepted": 81,
+      "wrong_sound_counts": {
+        "10": 63,
+        "11": 112,
+        "12": 3840
+      }
+    },
+    {
+      "scenario": 3,
+      "entry": "0x5407",
+      "setting_requirements": [
+        "15",
+        "0..8",
+        "0..8"
+      ],
+      "accepted": 81,
+      "wrong_sound_counts": {
+        "10": 63,
+        "11": 112,
+        "12": 3840
+      }
+    },
+    {
+      "scenario": 4,
+      "entry": "0x5492",
+      "setting_requirements": [
+        "15",
+        "0..8",
+        "0..8"
+      ],
+      "accepted": 81,
+      "wrong_sound_counts": {
+        "10": 63,
+        "11": 112,
+        "12": 3840
+      }
+    },
+    {
+      "scenario": 5,
+      "entry": "0x551d",
+      "setting_requirements": [
+        "0..8",
+        "15",
+        "0..8"
+      ],
+      "accepted": 81,
+      "wrong_sound_counts": {
+        "10": 63,
+        "11": 2160,
+        "12": 1792
+      }
+    },
+    {
+      "scenario": 6,
+      "entry": "0x55a8",
+      "setting_requirements": [
+        "0..8",
+        "15",
+        "15"
+      ],
+      "accepted": 9,
+      "wrong_sound_counts": {
+        "10": 135,
+        "11": 2160,
+        "12": 1792
+      }
+    }
+  ],
+  "wrong_sound_priority": "first wrong setting in order local0, local1, local2 -> direct S12, S11, S10",
+  "movie": "FLATPHEN.MOV",
+  "segments": [
+    [
+      0,
+      0,
+      150
+    ],
+    [
+      0,
+      150,
+      204
+    ],
+    [
+      0,
+      1272,
+      184
+    ],
+    [
+      0,
+      1456,
+      186
+    ],
+    [
+      0,
+      1642,
+      189
+    ],
+    [
+      0,
+      1834,
+      85
+    ]
+  ],
+  "movie_position": [
+    160,
+    57
+  ],
+  "movie_semantics": {
+    "1": "ShowMovie: position; MCActionPlay at preferred rate (17:0494); restore selected segment",
+    "2": "StartMovie: PlayMovie at existing position",
+    "3": "fxm_UpdateMovie: redraw current frame",
+    "opcode36": "SetMovieTimeValue: seek in movie time-scale units"
+  },
+  "show_movie_sha256": "d349ad127df96c5eec4a25d0e55dbef2eafd604d1197c059f8ae268bbbb2f4fa",
+  "quicktime_action_reference": "Apple Inside Macintosh QuickTime Components 1993, pp. 2-17/2-18; mcActionPlay=8, mcActionGoToTime=12. https://vintageapple.org/inside_r/pdf/QuickTime_Components_1993.pdf",
+  "resource_sha256": "0a870dea63fae0ea1732f40c627a63bc659a2c88d1a4cc2edfab4497d814c952",
+  "custom24_sha256": "488b62e8e75997fad262198adbb46ea58a9d671316bfd71486cd7d84da690dd4",
+  "buttons": [
+    {
+      "sprite": 1,
+      "xy": [
+        23,
+        365
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            3
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "xy": [
+        23,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            4
+          ],
+          "delay": 0
+        },
+        {
+          "op": 5,
+          "args": [
+            174
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "xy": [
+        589,
+        365
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            6
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            2
+          ],
+          "delay": 2000
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "xy": [
+        589,
+        416
+      ],
+      "commands": [
+        {
+          "op": 9,
+          "args": [
+            5
+          ],
+          "delay": 0
+        },
+        {
+          "op": 5,
+          "args": [
+            408
+          ],
+          "delay": 700
+        }
+      ]
+    },
+    {
+      "sprite": 5,
+      "xy": [
+        203,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            8
+          ],
+          "delay": 0
+        },
+        {
+          "op": 46,
+          "args": [
+            1,
+            0,
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            0,
+            -1,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            3
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 6,
+      "xy": [
+        279,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            7
+          ],
+          "delay": 0
+        },
+        {
+          "op": 46,
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            0,
+            15
+          ],
+          "delay": 0
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            3
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 8,
+      "xy": [
+        314,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            8
+          ],
+          "delay": 0
+        },
+        {
+          "op": 46,
+          "args": [
+            1,
+            1,
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            1,
+            -1,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            1,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            4
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 9,
+      "xy": [
+        390,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            7
+          ],
+          "delay": 0
+        },
+        {
+          "op": 46,
+          "args": [
+            1,
+            1,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            1,
+            16,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            1,
+            15
+          ],
+          "delay": 0
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            4
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 11,
+      "xy": [
+        424,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            8
+          ],
+          "delay": 0
+        },
+        {
+          "op": 46,
+          "args": [
+            1,
+            2,
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            2,
+            -1,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            2,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            5
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 12,
+      "xy": [
+        500,
+        416
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            7
+          ],
+          "delay": 0
+        },
+        {
+          "op": 46,
+          "args": [
+            1,
+            2,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            2,
+            16,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            2,
+            15
+          ],
+          "delay": 0
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            5
+          ],
+          "delay": 0
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 150
+        }
+      ]
+    },
+    {
+      "sprite": 14,
+      "xy": [
+        536,
+        373
+      ],
+      "commands": [
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0
+        },
+        {
+          "op": 9,
+          "args": [
+            9
+          ],
+          "delay": -1
+        },
+        {
+          "op": 23,
+          "args": [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            5,
+            1,
+            0,
+            0,
+            0
+          ],
+          "delay": 300
+        },
+        {
+          "op": 9,
+          "args": [
+            15
+          ],
+          "delay": -1
+        },
+        {
+          "op": 23,
+          "args": [
+            24,
+            2,
+            160,
+            57,
+            0,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 41,
+          "args": [
+            1
+          ],
+          "delay": 7500
+        },
+        {
+          "op": 39,
+          "args": [
+            1,
+            3,
+            1,
+            4
+          ],
+          "delay": 0
+        },
+        {
+          "op": 41,
+          "args": [
+            2
+          ],
+          "delay": -1
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 400
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            5,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 45,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            3,
+            127,
+            0,
+            0,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 28,
+          "args": [
+            -1
+          ],
+          "delay": -1
+        },
+        {
+          "op": 23,
+          "args": [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 5,
+          "args": [
+            157
+          ],
+          "delay": 3400
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            5,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 45,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 31,
+          "args": [
+            1,
+            3,
+            63,
+            0,
+            0,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "op": 32,
+          "args": [
+            1,
+            3,
+            127
+          ],
+          "delay": -1
+        },
+        {
+          "op": 42,
+          "args": [],
+          "delay": -1
+        },
+        {
+          "op": 29,
+          "args": [
+            -1
+          ],
+          "delay": 1900
+        }
+      ]
+    }
+  ]
+}

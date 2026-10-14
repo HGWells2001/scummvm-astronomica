@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "places": [
+    1,
+    505,
+    519,
+    526
+  ],
+  "paired_targets": 32,
+  "original_dispatch_cases": 256,
+  "native_dispatch_cases": 256,
+  "sounds": [
+    11,
+    12,
+    13,
+    14
+  ],
+  "original_overlap_order": true,
+  "queued_not_immediate": true,
+  "hidden_sprite_hits": true,
+  "stationary_no_repeat": true,
+  "click_lock_independent": true,
+  "condition_transitions": true,
+  "scene_reset": true,
+  "full_suite": true,
+  "audio_backend": "Windows WASAPI",
+  "manual_confirmation": false
+}

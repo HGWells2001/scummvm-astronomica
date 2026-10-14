@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "scenes": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "new_game_click": true,
+  "card_images": 9,
+  "p4_redirect": true,
+  "palette_adaptation": "RGB24 Cinepak needs no Win16 display-palette change; original palette BMP validated",
+  "timed_transitions": true,
+  "continuous_intro": true,
+  "full_suite": true,
+  "manual_confirmation": false,
+  "live_main_loop": true,
+  "headless": true,
+  "live_result": {
+    "status": "PASS: real main loop reached exploration",
+    "wall_seconds": 348.67,
+    "path": [
+      2,
+      3,
+      4,
+      27
+    ],
+    "native_verify_mode": false,
+    "entry_scripts": true,
+    "audio": true,
+    "headless": true,
+    "natural_ends": 0,
+    "timeline": [
+      "[2026-10-10 18:49:01] Astronomica resource explorer: P2; nav 0,0,0",
+      "[2026-10-10 18:51:50] Astronomica native RGB palette command: OPEN2_b",
+      "[2026-10-10 18:52:29] Astronomica movie closed while playing: 1542 frames, time 156054, end 206266",
+      "[2026-10-10 18:52:29] Astronomica resource explorer: P3; nav 0,0,0",
+      "[2026-10-10 18:53:37] Astronomica resource explorer: P4; nav 0,0,0",
+      "[2026-10-10 18:54:47] Astronomica movie closed while playing: 2041 frames, time 57741, end 71100",
+      "[2026-10-10 18:54:47] Astronomica resource explorer: P27; nav 28,0,30"
+    ],
+    "exe_sha256": "f774d41d7536ed8346b25f7d82ed48f154c48966070305a167f2e6d45e12c606",
+    "manual_confirmation": false
+  },
+  "timing_note": "Original P4 script changes scene at70s before71.1s movie end",
+  "audio_clock_diagnosis": "SDL dummy independently advances 9.66s in12s; WASAPI P2 ends naturally and P4 reaches69.994s at70s deadline",
+  "real_audio_result": {
+    "status": "PASS: real main loop reached exploration",
+    "wall_seconds": 349.01,
+    "path": [
+      2,
+      3,
+      4,
+      27
+    ],
+    "native_verify_mode": false,
+    "entry_scripts": true,
+    "audio": true,
+    "headless": true,
+    "natural_ends": 1,
+    "timeline": [
+      "[2026-10-11 00:02:11] Astronomica resource explorer: P2; nav 0,0,0",
+      "[2026-10-11 00:05:00] Astronomica native RGB palette command: OPEN2_b",
+      "[2026-10-11 00:05:37] Astronomica movie segment finished: 2044 frames drawn",
+      "[2026-10-11 00:05:39] Astronomica resource explorer: P3; nav 0,0,0",
+      "[2026-10-11 00:06:47] Astronomica resource explorer: P4; nav 0,0,0",
+      "[2026-10-11 00:07:57] Astronomica movie closed while playing: 2665 frames, time 69994, end 71100",
+      "[2026-10-11 00:07:57] Astronomica resource explorer: P27; nav 28,0,30"
+    ],
+    "exe_sha256": "f774d41d7536ed8346b25f7d82ed48f154c48966070305a167f2e6d45e12c606",
+    "manual_confirmation": false,
+    "audio_backend": "system default"
+  },
+  "timing_guard": {
+    "status": "PASS",
+    "scope": "Recorded WASAPI/dummy logs plus injected clock drift, missing natural completion and empty log",
+    "cases": 5,
+    "source_sha256": "752257d5761681ae4623bf6234c03fd6f2730befa9d42c2ed0e51fe272a23e0f",
+    "enforced_by": "check_intro_live.py --real-audio"
+  }
+}

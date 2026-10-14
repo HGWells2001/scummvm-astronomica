@@ -1,0 +1,1197 @@
+{
+  "status": "Original custom32 research only; not integrated",
+  "cases": 108,
+  "fnv1a": "bf6ea917",
+  "clock": "MMSYSTEM ordinal607 (timeGetTime)",
+  "code_sha256": "5724a12f27652c9a39ecd59f4d1e80c82176318a4f27809f0c4bb40d131cf130",
+  "rows": [
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 0,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 1,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 0,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        305419896,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        305419896,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        305419896,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 0,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        1,
+        1
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 1,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 1,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 0,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 1,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 0,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 1,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 0,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        0,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 0,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 1,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 1,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        1,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 0,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 1,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 305419896,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    },
+    {
+      "solved": 2,
+      "previous": 4294967295,
+      "flag": 2,
+      "now": 4294967295,
+      "result": [
+        4294967295,
+        2,
+        0
+      ]
+    }
+  ]
+}

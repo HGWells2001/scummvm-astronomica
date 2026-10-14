@@ -1,0 +1,44 @@
+# Astronomica for ScummVM
+
+Native experimental ScummVM engine for **Astronomica: The Quest for the Edge of the Universe** (Windows, 1994).
+
+This repository contains the engine, original-file research tools, regression drivers and development reports from the work restarted on 13 September 2026. It is a source overlay for the pinned ScummVM revision in [SCUMMVM_BASE.json](SCUMMVM_BASE.json). No original game files, media, user saves, compiler dependencies or executables are included.
+
+## Verified development state
+
+The local Windows x64 build passed its complete WASAPI regression on 13 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
+
+- Automatically verified routes in 35 puzzle scenes; these include variants, so this is **not** a count of distinct puzzles.
+- Navigation, original script execution, puzzle motion, audio, video, mentors, countdown and endings have dedicated checks.
+- Native ScummVM saves support settled exploration screens. Original text `GAMESTAT` import supports exploration with no active countdown.
+- The original help file supplies 781 readable articles, 31 pictures in 20 articles, search and tables. Pictures now scroll with their surrounding text. Thirteen original exponent runs use explicit `^(value)` notation.
+- Help checks cover all articles, image pixels, wheel/drag scrolling and narrow-width/height reflow. Save/import regressions passed on the same executable.
+
+The game is still experimental. Arbitrary mid-puzzle saves, exact help typography/layout and a complete manual audiovisual playthrough remain outstanding. There is **no measured total completion percentage**; the historical 94.2% refers only to 114 of 121 static entry-script templates.
+
+## Build and use
+
+See [BUILDING.md](BUILDING.md). You need your own original game files and a ScummVM build environment.
+
+```text
+python tools/verify_export.py
+python tools/prepare_scummvm.py
+```
+
+The second command retrieves the pinned upstream source and installs this engine. It does not download the game or compiler dependencies.
+
+## Repository layout
+
+- `outputs/astronomica-cleanroom/engine/astronomica/`: canonical native engine sources.
+- `outputs/astronomica-cleanroom/`: research tools, format descriptions and development notes.
+- `outputs/astronomica-cleanroom/evidence/`: recorded reference comparisons and runtime reports.
+- `work/fresh-20260913/*.py`: original local development and test drivers.
+- `tools/`: portable source-export verification and installation helpers.
+
+Start with [NEXT-STEPS.md](outputs/astronomica-cleanroom/NEXT-STEPS.md) and [HELP-RESEARCH.md](outputs/astronomica-cleanroom/HELP-RESEARCH.md). Older notes are retained as history. Old `implement_*`, `record_*`, `finish_*` and numbered revision scripts are **not an installation sequence** and may overwrite later work; do not run them indiscriminately. The current engine directory is authoritative, not historical patches embedded in scripts.
+
+[EXPORT-NOTES.json](EXPORT-NOTES.json) lists excluded derived game content. Some historical manifests reference those local-only files; [tools/verify_export.py](tools/verify_export.py) validates this exported snapshot without needing the game.
+
+## License
+
+Engine sources carry `GPL-3.0-or-later` identifiers. See [COPYING](COPYING). Original game content remains the property of its respective rights holders. This is an independent experimental project, not an official ScummVM release.

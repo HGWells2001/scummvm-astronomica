@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-27",
+  "scope": "Original-file research accompanying verified development checkpoint; P513 not enabled",
+  "sha256": {
+    "probe_builder.py": "30318565efe8ebace99b8b9bef0ed300882b1ad8efedaf4becca59fa22f34551",
+    "probe_p512_weather.py": "22320b202aaacdd982a63b685f05ade12a9e3ddaf13fe8098694ceb351e02308",
+    "probe_p513_answers.py": "56a87f620c690a3dc773e0711967c892462e8ee74e835f9a538ca9bf6c890ead",
+    "probe_p513_motion.py": "2a5b012c80283968c7044fcb196b1133a4102f47d4f0268b6b00ea519690c7b8",
+    "probe_p514_motion.py": "596a87ac56b1a1fcb5923978abc4df44a6151d38caeb0987ac0b1d4d8a63accd",
+    "probe_p526_motion.py": "52a0236fe914871181cf706ec4ca2760373b3ddcb158925b67321c27604722ad",
+    "evidence/builder.json": "1ebcd32fa8f535111b49999a76b942c4a11ba0ecb2ac47e40a3f1d877c57dc69",
+    "evidence/p512-weather.json": "8025ffd12fd589641d9c91bcc44f9c6d06090f81a4aa4f42d22768873a1aaadb",
+    "evidence/p513-answers.json": "5986f3a0489428beaf589bb3341388b60e3b8439006fca960825db349efa0d4a",
+    "evidence/p513-motion.json": "65d1aab78350eb238973e0b8e7e17308a4590ab5b19ba9d4cc3820605f0f30d6",
+    "evidence/p514-motion.json": "f4aeeae65f6d1eab9ce65be1ff5f79c080399fef71e48053f0bdfa92164eea78",
+    "evidence/p513-scripts.json": "ab3d0cb75552913a094bcd4a29d3511b225647f0017c0fc4a411cb924581298e"
+  }
+}

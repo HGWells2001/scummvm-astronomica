@@ -1,0 +1,305 @@
+{
+  "boundary_fnv1a": "662a3a5a",
+  "status": "Research only; original custom26 instruction execution",
+  "cases": 2436,
+  "native_comparison_fnv1a": "d253e90a",
+  "boundaries": [
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 0,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 1649999,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 1650000,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 1650001,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 2399999,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 2400000,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 0,
+      "availableBytes": 2400001,
+      "key13": 0,
+      "key14": 1
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 0,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 1649999,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 1650000,
+      "key13": 0,
+      "key14": 0
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 1650001,
+      "key13": 0,
+      "key14": 1
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 2399999,
+      "key13": 0,
+      "key14": 1
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 2400000,
+      "key13": 0,
+      "key14": 1
+    },
+    {
+      "setting": 0,
+      "help_running": 1,
+      "availableBytes": 2400001,
+      "key13": 0,
+      "key14": 1
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 0,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 1649999,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 1650000,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 1650001,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 2399999,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 2400000,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 0,
+      "availableBytes": 2400001,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 0,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 1649999,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 1650000,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 1650001,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 2399999,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 2400000,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 1,
+      "help_running": 1,
+      "availableBytes": 2400001,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 0,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 1649999,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 1650000,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 1650001,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 2399999,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 2400000,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 0,
+      "availableBytes": 2400001,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 0,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 1649999,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 1650000,
+      "key13": 1,
+      "key14": 0
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 1650001,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 2399999,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 2400000,
+      "key13": 1,
+      "key14": 1
+    },
+    {
+      "setting": 2,
+      "help_running": 1,
+      "availableBytes": 2400001,
+      "key13": 1,
+      "key14": 1
+    }
+  ],
+  "result_layout": "100 local values followed by100 globals",
+  "initial_values": "local[i]=0x45670000+i; global[i]=0x12340000+i",
+  "code_sha256": "e876443197968644a0db660b3c5fc7b1b00d0f500218fcbd522fb195ae52a53d"
+}

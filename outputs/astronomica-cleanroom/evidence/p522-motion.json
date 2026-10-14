@@ -1,0 +1,199 @@
+{
+  "status": "Original evidence; native checks recorded separately",
+  "calendar_ticks": 4128,
+  "calendar_hash": "0x865b4d54",
+  "years": [
+    {
+      "tick": 388,
+      "year": 1992,
+      "digits": [
+        1,
+        9,
+        9,
+        2
+      ]
+    },
+    {
+      "tick": 728,
+      "year": 1993,
+      "digits": [
+        1,
+        9,
+        9,
+        3
+      ]
+    },
+    {
+      "tick": 1068,
+      "year": 1994,
+      "digits": [
+        1,
+        9,
+        9,
+        4
+      ]
+    },
+    {
+      "tick": 1408,
+      "year": 1995,
+      "digits": [
+        1,
+        9,
+        9,
+        5
+      ]
+    },
+    {
+      "tick": 1748,
+      "year": 1996,
+      "digits": [
+        1,
+        9,
+        9,
+        6
+      ]
+    },
+    {
+      "tick": 2088,
+      "year": 1997,
+      "digits": [
+        1,
+        9,
+        9,
+        7
+      ]
+    },
+    {
+      "tick": 2428,
+      "year": 1998,
+      "digits": [
+        1,
+        9,
+        9,
+        8
+      ]
+    },
+    {
+      "tick": 2768,
+      "year": 1999,
+      "digits": [
+        1,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "tick": 3108,
+      "year": 2000,
+      "digits": [
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "tick": 3448,
+      "year": 2001,
+      "digits": [
+        2,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "tick": 3788,
+      "year": 2002,
+      "digits": [
+        2,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "tick": 4128,
+      "year": 2003,
+      "digits": [
+        2,
+        0,
+        0,
+        3
+      ]
+    }
+  ],
+  "launches": [
+    {
+      "year": 1991,
+      "month": 8,
+      "launch_tick": 257,
+      "end_tick": 527,
+      "state": 0,
+      "special": 0,
+      "hash": "0x32465abd",
+      "radius": 120,
+      "visible": 0
+    },
+    {
+      "year": 1992,
+      "month": 8,
+      "launch_tick": 597,
+      "end_tick": 870,
+      "state": 2,
+      "special": 1,
+      "hash": "0x24d79d40",
+      "radius": 226,
+      "visible": 1
+    },
+    {
+      "year": 1994,
+      "month": 10,
+      "launch_tick": 1315,
+      "end_tick": 1534,
+      "state": 2,
+      "special": 1,
+      "hash": "0x5be8c380",
+      "radius": 226,
+      "visible": 1
+    },
+    {
+      "year": 1997,
+      "month": 0,
+      "launch_tick": 2088,
+      "end_tick": 2335,
+      "state": 2,
+      "special": 1,
+      "hash": "0x9cf97e72",
+      "radius": 226,
+      "visible": 1
+    },
+    {
+      "year": 1999,
+      "month": 3,
+      "launch_tick": 2823,
+      "end_tick": 3105,
+      "state": 2,
+      "special": 1,
+      "hash": "0xf2830240",
+      "radius": 226,
+      "visible": 1
+    },
+    {
+      "year": 2001,
+      "month": 5,
+      "launch_tick": 3571,
+      "end_tick": 3880,
+      "state": 2,
+      "special": 1,
+      "hash": "0xc0478718",
+      "radius": 226,
+      "visible": 1
+    }
+  ],
+  "collision_cases": 66,
+  "collision_sha256": "99bafbf84a348028bb84b566a1d4418f9ae3d8bf9ff5e007938310b04aea8792",
+  "correction_cases": 108,
+  "correction_sha256": "2a7e827e552ee5ef363314cb2137ec3ec43c2e7b14a5088447936188b8200a2a"
+}

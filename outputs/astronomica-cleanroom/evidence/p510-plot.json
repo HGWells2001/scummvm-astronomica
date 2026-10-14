@@ -1,0 +1,291 @@
+{
+  "status": "Original research only; P510 not enabled",
+  "custom23_entry": "0x5163",
+  "custom23_end": "0x528e",
+  "custom23_sha256": "3d1e3ac7ba20044aa916a6634649a58ae199b6e865af1384ac788a2ad8af55d7",
+  "resource_sha256": "c02ffb9b00da37a0d6d081746250b38b84b3be970ea942009baaf2c349ee97b0",
+  "movies": [
+    "FLATPLOT.MOV"
+  ],
+  "conditions": [
+    [
+      1,
+      0,
+      12,
+      1,
+      1,
+      12
+    ],
+    [
+      1,
+      1,
+      52,
+      52,
+      0,
+      52
+    ],
+    [
+      1,
+      2,
+      3,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      3,
+      16,
+      0,
+      0,
+      15
+    ],
+    [
+      1,
+      4,
+      8,
+      3,
+      1,
+      4
+    ],
+    [
+      1,
+      5,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      6,
+      3,
+      0,
+      0,
+      7
+    ]
+  ],
+  "commands": [
+    {
+      "offset": 439214,
+      "opcode": 4,
+      "name": "op_4",
+      "args": [
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 439226,
+      "opcode": 36,
+      "name": "op_36",
+      "args": [
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 439298,
+      "opcode": 23,
+      "name": "custom",
+      "args": [
+        23,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 439370,
+      "opcode": 23,
+      "name": "custom",
+      "args": [
+        23,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 439442,
+      "opcode": 23,
+      "name": "custom",
+      "args": [
+        23,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 0
+    }
+  ],
+  "modes": [
+    {
+      "mode": 1,
+      "entry": "0x5196",
+      "calls": [
+        {
+          "name": "_SWMoveSprite",
+          "xy": [
+            52,
+            257
+          ]
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 0,
+          "duration": 359
+        },
+        {
+          "name": "_CallMeWhen",
+          "user_data": 20,
+          "flags": 0,
+          "time": 358,
+          "time_scale": 30,
+          "callback": "_qt_callme"
+        }
+      ]
+    },
+    {
+      "mode": 2,
+      "entry": "0x51e0",
+      "calls": [
+        {
+          "name": "_SWMoveSprite",
+          "xy": [
+            11,
+            208
+          ]
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 1800,
+          "duration": 359
+        },
+        {
+          "name": "_CallMeWhen",
+          "user_data": 21,
+          "flags": 0,
+          "time": 2158,
+          "time_scale": 30,
+          "callback": "_qt_callme"
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "entry": "0x522c",
+      "calls": [
+        {
+          "name": "_SWMoveSprite",
+          "xy": [
+            108,
+            230
+          ]
+        },
+        {
+          "name": "_SetMovieActiveSegment",
+          "start": 900,
+          "duration": 359
+        },
+        {
+          "name": "_CallMeWhen",
+          "user_data": 22,
+          "flags": 0,
+          "time": 1258,
+          "time_scale": 30,
+          "callback": "_qt_callme"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    "5163: lcall 0, 0xffff",
+    "5168: les bx, ptr [bp + 6]",
+    "516b: mov eax, dword ptr es:[bx + 8]",
+    "5170: mov dword ptr [bp - 0x82], eax",
+    "5175: mov cx, 3",
+    "5178: mov bx, 0x6d9c",
+    "517b: mov eax, dword ptr cs:[bx]",
+    "517f: cmp eax, dword ptr [bp - 0x82]",
+    "5184: je 0x518e",
+    "5186: add bx, 4",
+    "5189: loop 0x517b",
+    "518b: jmp 0x528b",
+    "518e: add cx, cx",
+    "5190: add bx, cx",
+    "5192: jmp word ptr cs:[bx + 6]",
+    "5196: push 0x101",
+    "5199: push 0x34",
+    "519b: les bx, ptr [0xc88]",
+    "519f: push word ptr es:[bx + 0x2a]",
+    "51a3: push word ptr es:[bx + 0x28]",
+    "51a7: lcall 0, 0xffff",
+    "51ac: add sp, 8",
+    "51af: push 0x167",
+    "51b5: push 0",
+    "51b8: les bx, ptr [0xc88]",
+    "51bc: push word ptr es:[bx + 0x36a]",
+    "51c1: push word ptr es:[bx + 0x368]",
+    "51c6: lcall 0, 0xffff",
+    "51cb: add sp, 0xc",
+    "51ce: push 0x1e",
+    "51d1: push 0x166",
+    "51d7: push 0",
+    "51da: push 0x14",
+    "51dd: jmp 0x5276",
+    "51e0: push 0xd0",
+    "51e3: push 0xb",
+    "51e5: les bx, ptr [0xc88]",
+    "51e9: push word ptr es:[bx + 0x2a]",
+    "51ed: push word ptr es:[bx + 0x28]",
+    "51f1: lcall 0, 0xffff",
+    "51f6: add sp, 8",
+    "51f9: push 0x167",
+    "51ff: push 0x708",
+    "5205: les bx, ptr [0xc88]",
+    "5209: push word ptr es:[bx + 0x36a]",
+    "520e: push word ptr es:[bx + 0x368]",
+    "5213: lcall 0, 0xffff",
+    "5218: add sp, 0xc",
+    "521b: push 0x1e",
+    "521e: push 0x86e",
+    "5224: push 0",
+    "5227: push 0x15",
+    "522a: jmp 0x5276",
+    "522c: push 0xe6",
+    "522f: push 0x6c",
+    "5231: les bx, ptr [0xc88]",
+    "5235: push word ptr es:[bx + 0x2a]",
+    "5239: push word ptr es:[bx + 0x28]",
+    "523d: lcall 0, 0xffff",
+    "5242: add sp, 8",
+    "5245: push 0x167",
+    "524b: push 0x384",
+    "5251: les bx, ptr [0xc88]",
+    "5255: push word ptr es:[bx + 0x36a]",
+    "525a: push word ptr es:[bx + 0x368]",
+    "525f: lcall 0, 0xffff",
+    "5264: add sp, 0xc",
+    "5267: push 0x1e",
+    "526a: push 0x4ea",
+    "5270: push 0",
+    "5273: push 0x16",
+    "5276: push 0xffff",
+    "5279: push 0xffff",
+    "527c: push dword ptr [0xb64]",
+    "5281: lcall 0, 0xffff",
+    "5286: add sp, 0x18",
+    "5289: jmp 0x528b",
+    "528b: jmp 0x6a10"
+  ]
+}
