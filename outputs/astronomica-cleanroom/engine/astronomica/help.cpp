@@ -544,6 +544,22 @@ public:
   GUI::RichTextWidget(boss,x,y,w,h,Common::U32String(firstText(article),Common::kWindows1252)),_book(book),_article(article) {}
  void reflowLayout() override { GUI::RichTextWidget::reflowLayout(); prepare(); updateBounds(); }
  void drawWidget() override { prepare(); GUI::RichTextWidget::drawWidget(); }
+ bool scrollKey(Common::KeyState state) {
+  if (state.flags & (Common::KBD_CTRL | Common::KBD_ALT | Common::KBD_SHIFT | Common::KBD_META)) return false;
+  prepare();
+  // Keep one line of context between pages. Use the composed article bounds,
+  // including pictures, rather than the height of its first text block.
+  const int page = MAX(1,int(_limitH)-g_gui.xmlEval()->getVar("Globals.Font.Height",25));
+  switch (state.keycode) {
+  case Common::KEYCODE_PAGEUP: scrollTo(_scrolledY-page); return true;
+  case Common::KEYCODE_PAGEDOWN: scrollTo(_scrolledY+page); return true;
+  case Common::KEYCODE_HOME: scrollTo(0); return true;
+  case Common::KEYCODE_END: scrollTo(_verticalScroll->_numEntries); return true;
+  default: return false;
+  }
+ }
+ int scrollPosition() const { return _scrolledY; }
+ int scrollEnd() const { return MAX(0,_verticalScroll->_numEntries-int(_limitH)); }
  void handleMouseWheel(int x, int y, int direction) override {
   if (_article.imageAnchors.empty()) GUI::RichTextWidget::handleMouseWheel(x,y,direction);
   else scrollTo(_scrolledY+direction*MAX(1,int(_limitH)/4));
@@ -612,6 +628,30 @@ public:
  void captureAtEnd() { _captureEnd = true; }
  void captureAtImage(uint index) { _captureImage = index; }
  bool verifyInlineImages() { return _reader->verifyInlineImages() && _reader->verifyImageReflow(); }
+ void handleKeyDown(Common::KeyState state) override {
+  if (!_reader->scrollKey(state)) GUI::Dialog::handleKeyDown(state);
+ }
+ bool verifyKeyboard() {
+  handleKeyDown(Common::KeyState(Common::KEYCODE_HOME));
+  if (_reader->scrollPosition() != 0) return false;
+  handleKeyDown(Common::KeyState(Common::KEYCODE_PAGEUP));
+  if (_reader->scrollPosition() != 0) return false;
+  const int bottom = _reader->scrollEnd();
+  handleKeyDown(Common::KeyState(Common::KEYCODE_PAGEDOWN));
+  const int page = _reader->scrollPosition();
+  if (page < 0 || page > bottom || (bottom && !page)) return false;
+  handleKeyDown(Common::KeyState(Common::KEYCODE_PAGEUP));
+  if (_reader->scrollPosition() != 0) return false;
+  handleKeyDown(Common::KeyState(Common::KEYCODE_END));
+  if (_reader->scrollPosition() != bottom) return false;
+  handleKeyDown(Common::KeyState(Common::KEYCODE_PAGEDOWN));
+  if (_reader->scrollPosition() != bottom) return false;
+  for (const byte modifier : {Common::KBD_CTRL,Common::KBD_ALT,Common::KBD_SHIFT,Common::KBD_META})
+   if (_reader->scrollKey(Common::KeyState(Common::KEYCODE_HOME,0,modifier)) || _reader->scrollPosition() != bottom) return false;
+  if (_reader->scrollKey(Common::KeyState(Common::KEYCODE_ESCAPE)) || _reader->scrollKey(Common::KeyState(Common::KEYCODE_TAB))) return false;
+  handleKeyDown(Common::KeyState(Common::KEYCODE_HOME));
+  return _reader->scrollPosition() == 0;
+ }
  void handleTickle() override {
   if (_captureEnd) { _reader->scrollToEndForCapture(); _captureEnd = false; }
   if (_captureImage >= 0) { _reader->scrollToImageForCapture(_captureImage); _captureImage = -1; }
@@ -776,12 +816,14 @@ bool verifyHelpBookUI(const HelpBook &book, const Common::Path &directory) {
  for (const HelpArticle &entry : book.articles) {
   if (entry.title.empty()) continue;
   ArticleDialog dialog(book,entry); dialog.closeAfterFramesForVerification(); dialog.runModal(); ++rendered;
+  if (!dialog.verifyKeyboard()) return false;
   if (!entry.imageAnchors.empty()) {
    if (!dialog.verifyInlineImages()) return false;
    inlineImages += entry.imageAnchors.size();
   }
  }
  debug("Astronomica help article rendering: %s (%u articles)",rendered == 781 ? "PASS" : "FAIL",rendered);
+ debug("Astronomica help keyboard navigation: PASS (%u articles, page/home/end bounds and modifiers)",rendered);
  debug("Astronomica help inline images: %s (%u original images, pixels and scroll bounds)",inlineImages == 31 ? "PASS" : "FAIL",inlineImages);
  return rendered == 781 && inlineImages == 31;
 }

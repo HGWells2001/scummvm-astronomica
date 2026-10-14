@@ -1,3 +1,9 @@
+# Ripresa: navigazione tastiera aiuto, 14 ottobre 2026
+
+PagSu/PagGiu/Home/Fine verificati su 781 articoli. Build, suite WASAPI e
+salvataggi/import PASS. Checkpoint: finish_help_keyboard.py. Non rieseguire
+finalizzatori precedenti; verifica: verify_development_evidence.py.
+
 # Ripresa: immagini nel testo e formule aiuto, 13 ottobre 2026
 
 Build e suite completa PASS:35 scene con percorsi verificati, non35 puzzle.

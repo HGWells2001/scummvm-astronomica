@@ -141,3 +141,8 @@ All 31 pictures now appear between the original text runs in 20 articles. Anchor
 The production GUI opened all 781 articles. Pixel checks cover all 31 inline pictures, scrolling to both ends, wheel and drag, narrow width, height-only resize and restored dimensions. Andromeda, Jupiter and Moon captures were visually inspected. Native save/import regressions and the full WASAPI suite passed on the matching executable.
 
 probe_help_inline.py also inventories every nonempty font run. No Symbol font is used; descriptors with flags 4 and 33 have no nonempty text runs. Earlier generic pending Symbol/underline items were not demonstrated by the original contents. Arial Super occurs in 13 runs, 21 characters, including Kepler and relativity exponents. These now use explicit ^(exponent) notation instead of misleading baseline digits. All 13 original runs and both formulas are checked; no new scientific values or corrections are added. Kepler article rendering was visually inspected. Raised glyph typography remains an adaptation, not a pixel-identical font recreation. See help-inline-original.json.
+
+
+## Help keyboard navigation, 14 October 2026
+
+PageUp/PageDown scroll the article with one line of context; Home/End reach its bounds, including inline pictures. These are native reader controls, not inferred original WinHelp behavior. Other keys and modified shortcuts retain the standard ScummVM dialog handling. All 781 articles passed production dialog dispatch checks, beginning/end clamping, opposite-page movement and modifier rejection. Full WASAPI regression and native save/import checks passed on the matching executable.

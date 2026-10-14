@@ -17,9 +17,11 @@ help_log=(root/'evidence/help-native-runtime.log').read_text()
 assert 'help inline images: PASS (31 original images' in help_log
 assert 'help original exponents: PASS (13 runs' in help_log
 assert 'help article rendering: PASS (781 articles)' in help_log
+assert 'help keyboard navigation: PASS (781 articles' in help_log
 assert 'FAIL' not in help_log and 'Log closed successfully' in help_log
 help_validation=json.loads((root/'evidence/help-native-validation.json').read_text())
 assert help_validation['inline_images']==31 and help_validation['original_exponent_runs']==13
+assert help_validation['keyboard_articles']==781
 legacy=json.loads((root/'evidence/legacy-validation.json').read_text())
 assert legacy['status']=='PASS' and legacy['full_suite'] and legacy['original_menu_flow']
 assert legacy['native_resave'] and legacy['fixture_unchanged']

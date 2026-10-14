@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "status": "PASS",
   "original_file": "HELP/ASTRONOM.HLP",
   "runtime_conversion_required": false,
@@ -50,5 +50,13 @@
     "scrollbar bounds, wheel and mouse drag",
     "narrow-width scaling and height-only resize, then original size restored"
   ],
-  "exponent_display": "Explicit ^(exponent) notation preserves original Arial Super runs with bitmap GUI fonts"
+  "exponent_display": "Explicit ^(exponent) notation preserves original Arial Super runs with bitmap GUI fonts",
+  "keyboard_articles": 781,
+  "keyboard_keys": [
+    "PageUp",
+    "PageDown",
+    "Home",
+    "End"
+  ],
+  "keyboard_validation": "Production dialog dispatch; both bounds, opposite pages, all article lengths, ignored modifiers and Escape/Tab forwarding"
 }

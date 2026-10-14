@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "scope": "Local development build; no new package",
   "research_manifest": "research-oct01.json",
   "engine_sha256": {
@@ -12,7 +12,7 @@
     "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
     "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
     "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
-    "help.cpp": "a463b9acd56d4b0f5bacf0d3acdfb51180d37e140c1f524ba285bf156e4bd65e",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
     "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
     "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
     "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
@@ -27,8 +27,8 @@
     "sprites.h": "9034a4708c2b690a660047528a23b94a5f80b04f267ad605386159546d946ddc",
     "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
   },
-  "exe_sha256": "b42660313911bf05131c767c8af450dc5e3d22d02d6201a479ea192414a1f647",
-  "runtime_log_sha256": "30ed4342e93a200c40fe7115f2dd59fb68b1a0ae11ab9ebbc70ed7f04a807918",
+  "exe_sha256": "129006c90016d2c7b15463842bbe6c17b5af4ee3417208bfee3f60f54a47d396",
+  "runtime_log_sha256": "99c194fcd634a5ec4370463107450bdac75b197e791d10b66e78874d1abee018",
   "build_exit": 0,
   "runtime_exit": 0,
   "complete_route_scenes": [

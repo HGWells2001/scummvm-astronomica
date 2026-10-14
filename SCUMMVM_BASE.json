@@ -2,7 +2,7 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "b42660313911bf05131c767c8af450dc5e3d22d02d6201a479ea192414a1f647",
+  "validated_executable_sha256": "129006c90016d2c7b15463842bbe6c17b5af4ee3417208bfee3f60f54a47d396",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
     "astronomica.cpp": "bbf8af70023700555f19b85ef22c78d7e4962189ba1692aa6346bdda0f56c038",
@@ -13,7 +13,7 @@
     "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
     "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
     "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
-    "help.cpp": "a463b9acd56d4b0f5bacf0d3acdfb51180d37e140c1f524ba285bf156e4bd65e",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
     "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
     "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
     "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
