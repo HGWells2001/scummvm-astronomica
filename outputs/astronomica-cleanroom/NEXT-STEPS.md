@@ -106,3 +106,5 @@ Ultimo checkpoint: finish_help_inline.py, 13 ottobre 2026.
 La verifica ripetibile e verify_development_evidence.py; comprende
 immagini nel testo, 13 esponenti, import originale e salvataggi nativi.
 Non ricreare un vecchio checkpoint tramite i finalizzatori precedenti.
+
+Preparazione salvataggi P508: leggere P508-SAVE-PLAN.md. Identificati i confini delle prove di continuazione; supporto salvataggi puzzle NON ancora abilitato.

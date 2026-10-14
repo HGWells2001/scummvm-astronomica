@@ -11,7 +11,7 @@ for name in manifest['sha256']:
     if name.startswith(('outputs/astronomica-cleanroom/','work/fresh-20260913/')):
         src=Path(name); assert src.is_file(),name
         shutil.copyfile(src,root/name)
-for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/update_github_export.py','outputs/astronomica-cleanroom/GITHUB-PUBLISH.md'):
+for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/update_github_export.py','outputs/astronomica-cleanroom/GITHUB-PUBLISH.md','outputs/astronomica-cleanroom/P508-SAVE-PLAN.md'):
     shutil.copyfile(name,root/name)
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
