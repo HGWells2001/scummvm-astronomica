@@ -53,10 +53,11 @@ private:
  bool verifyAdvice();
  void updateWorldAt(uint32 now);
  bool verifySaves();
- bool canSaveP508() const;
- Common::Error saveP508(Common::WriteStream *stream);
- Common::Error loadP508(Common::SeekableReadStream *stream);
+ bool canSaveQuestion() const;
+ Common::Error saveQuestion(Common::WriteStream *stream);
+ Common::Error loadQuestion(Common::SeekableReadStream *stream, uint32 version);
  bool verifyP508Saves();
+ bool verifyP505Saves();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.
@@ -109,7 +110,7 @@ private:
  Graphics::Surface _screen;
  Graphics::Surface _background;
  Scene _scene;
- Common::Array<Sprite> _p508SaveBaseline;
+ Common::Array<Sprite> _questionSaveBaseline;
  ScriptRunner _runner;
  Audio::SoundHandle _soundHandle;
  uint _soundsStarted = 0;

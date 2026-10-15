@@ -4,7 +4,7 @@ Stato verificato: 15 ottobre 2026. Motore ScummVM nativo in sviluppo; build loca
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali, ora inserite fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. P508 supporta ora salvataggi fra le domande. Restano salvataggi negli altri puzzle, fedelta tipografica e verifica manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. P505 e P508 supportano ora salvataggi fra le domande. Restano salvataggi negli altri puzzle, fedelta tipografica e verifica manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe dalla radice del workspace.
 
@@ -900,3 +900,10 @@ PageUp/PageDown scroll the article with one line of context; Home/End reach its 
 Native version3 now saves P508 between questions, including six locals, all global/local values and their known/width metadata, full32-bit RNG, program epoch, branch state, previous place, completion count, sprite visibility/frame selection and ambient audio state. Pending actions, foreground speech, staged images, moving sprites and button pulses are excluded. Original data confirms18 opaque508x108 pictures at(67,354); the selected picture reconstructs the background without storing media. Startup scripts and introduction are skipped on load. Ambient music restarts at the beginning, not at the exact saved sample.
 
 Three seeds and correct/wrong/mixed routes cover63 saved boundaries and 291 resumed answer steps, comparing screen pixels, script data, RNG, sound IDs/counts, destination and completion count with uninterrupted runs. Save/load/save data is stable except for the advancing clock. 2464 truncations,2464 byte corruptions and14 invalid checksummed states are rejected without changing the live state. Physical slot2 loads in a fresh process with the identical state/screen fingerprint and completes the seven remaining correct answers. Music/foreground guards and slot metadata pass. Exploration v1/v2 regressions, help and full WASAPI suite pass on the matching executable. Other puzzle saves remain unsupported.
+
+
+## P505 settled question saves, 15 October 2026
+
+Native v4 saves P505 between questions. It retains all script state, RNG, completion count, sprite visibility/frame selection, ambient state and entered flags for four sprite and ten rectangle hover targets. The original eight opaque 135x86 pictures at (254,362) reconstruct the current question. Loading skips startup and speech; remaining on a highlighted target does not replay its entry event. Foreground speech, queued work, staged pictures and button pulses exclude saving. Music restarts from its beginning.
+
+Two seeds and correct/wrong/mixed routes verify 38 saved boundaries and their 38 successor states against uninterrupted play, including screen, script/RNG, sound count/ID and hover exit. All 38 unchanged-hover checks pass. 2472 truncations, 2472 byte corruptions and 16 checksummed invalid states reject atomically. Physical slot 3 restores in a fresh process with the same fingerprint and finishes six remaining answers. P508 v3 (63 boundaries, 291 resumed steps), exploration v1/v2, original GAMESTAT import, help and full WASAPI regressions pass on the matching build. These are automated tests; manual audiovisual verification and saves in other puzzles remain outstanding.

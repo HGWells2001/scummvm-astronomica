@@ -1,3 +1,11 @@
+# Ripresa: salvataggi P505 e P508, 15 ottobre 2026
+
+P505 v4: 38 punti e confronti del passo successivo, hover, slot reale e nuovo processo PASS.
+P508 v3: 63 punti e 291 passi ripristinati PASS. Compatibilita v1/v2, import, aiuto e suite WASAPI PASS.
+Checkpoint: finish_p505_saves.py. Test: check_p505_saves.py e check_p508_saves.py.
+Prossimo: P519-SAVE-PLAN.md (due immagini originali bastano per lo sfondo; implementazione ancora assente), verifica audiovisiva manuale e tipografia aiuto.
+Nessuna percentuale globale attendibile. Le note successive sono storiche.
+
 # Ripresa: salvataggi P508 fra le domande, 15 ottobre 2026
 
 Formato nativo v3: 63 punti, 291 continuazioni, slot reale e nuovo processo PASS.

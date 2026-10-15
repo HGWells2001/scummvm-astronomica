@@ -34,6 +34,26 @@ assert original['status']=='PASS' and len(original['pictures'])==18
 assert digest(Path('D:/astro/PLACES/P508/MEGAFILE.HYP'))==original['source_sha256']
 for picture in original['pictures']:
  assert digest(Path('D:/astro/PLACES/P508')/picture['file'])==picture['sha256']
+p505=json.loads((root/'evidence/p505-saves-validation.json').read_text())
+assert json.loads((root/'evidence/p508-previous-slot-proof.json').read_text())['unchanged']
+assert 'P508 startup save: PASS' in (root/'evidence/p508-previous-slot.log').read_text()
+assert p505['status']=='PASS' and p505['boundaries']==38 and p505['successor_comparisons']==38 and p505['hover_resumptions']==38
+for name,marker in [('p505-saves-runtime.log','P505 saves: PASS (38 boundaries'),('p505-saves-startup.log','P505 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text()
+ assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+proof=json.loads((root/'evidence/p505-save-proof.json').read_text())
+assert proof['fresh_process_fingerprint']==p505['fresh_process_fingerprint'] and proof['metadata_listed']
+original=json.loads((root/'evidence/p505-save-original.json').read_text())
+assert original['status']=='PASS' and len(original['pictures'])==8
+assert digest(Path('D:/astro/PLACES/P505/MEGAFILE.HYP'))==original['source_sha256']
+for picture in original['pictures']:
+ assert digest(Path('D:/astro/PLACES/P505')/picture['file'])==picture['sha256']
+p519=json.loads((root/'evidence/p519-save-original.json').read_text())
+assert p519['status']=='PASS' and len(p519['images'])==10 and len(p519['image_commands'])==15
+assert p519['pixel_sequence_comparisons']==1000
+assert digest(Path('D:/astro/PLACES/P519/MEGAFILE.HYP'))==p519['source_sha256']
+for picture in p519['images']:
+ assert digest(Path('D:/astro/PLACES/P519')/picture['file'])==picture['sha256']
 legacy=json.loads((root/'evidence/legacy-validation.json').read_text())
 assert legacy['status']=='PASS' and legacy['full_suite'] and legacy['original_menu_flow']
 assert legacy['native_resave'] and legacy['fixture_unchanged']

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "format_version": 4,
+  "payload_bytes": 2472,
+  "scene": 505,
+  "scope": "Settled questions with idle scripts, static sprites and no foreground audio",
+  "boundaries": 38,
+  "successor_comparisons": 38,
+  "hover_resumptions": 38,
+  "seeds": [
+    1,
+    48879
+  ],
+  "routes": [
+    "eight correct",
+    "three wrong",
+    "eight questions with two errors"
+  ],
+  "truncations": 2472,
+  "byte_corruptions": 2472,
+  "invalid_checksummed_states": 16,
+  "fresh_process_slot": 3,
+  "fresh_process_fingerprint": "cf874c94",
+  "music": "Ambient restarts from beginning",
+  "compatibility": "Exploration v1/v2 and P508 v3 retained and retested",
+  "limitations": [
+    "Other puzzle saves unsupported",
+    "No full manual audiovisual playthrough"
+  ]
+}

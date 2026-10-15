@@ -1,0 +1,292 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "source_sha256": "772484008fdd71dd69e31e3257f55314636b9426225a9bcbe9db2e6e2a46eb10",
+  "local_conditions": [
+    [
+      1,
+      0,
+      5,
+      0,
+      1,
+      5
+    ],
+    [
+      1,
+      1,
+      5,
+      0,
+      1,
+      5
+    ],
+    [
+      1,
+      2,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      3,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      4,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      5,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      6,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      7,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "sprite_count": 27,
+  "rectangle_count": 10,
+  "sprite_mutation_opcodes": [
+    15,
+    16,
+    17
+  ],
+  "images": [
+    {
+      "file": "BLACK_B",
+      "x": 258,
+      "y": 356,
+      "width": 143,
+      "height": 108,
+      "sha256": "72e1af70214229781c9ddaed52eb2f0533af11222dce571ec2fb8daa91e711c4"
+    },
+    {
+      "file": "ASUPER",
+      "x": 258,
+      "y": 356,
+      "width": 143,
+      "height": 108,
+      "sha256": "88675253a6234403906c56fd5af624fbc8d4f78db417af46b864cca1107cdfca"
+    },
+    {
+      "file": "JUPNO",
+      "x": 282,
+      "y": 358,
+      "width": 99,
+      "height": 99,
+      "sha256": "ad0c933a9ec9f38457508e2f02380bb6e258de6bb7e0d05fab16a69000bf64e9"
+    },
+    {
+      "file": "M82NO",
+      "x": 282,
+      "y": 358,
+      "width": 99,
+      "height": 99,
+      "sha256": "e8b631b256543a0b19a04a8f2fea47e434a48aa0088d7a05b399ef1a8929d2f9"
+    },
+    {
+      "file": "M82VIEW",
+      "x": 258,
+      "y": 356,
+      "width": 143,
+      "height": 108,
+      "sha256": "e29298da4294e8cc0acdddd1929caa3e19e4a539614cc7fc90af3b6b5e490eb3"
+    },
+    {
+      "file": "LOSUN",
+      "x": 282,
+      "y": 358,
+      "width": 99,
+      "height": 99,
+      "sha256": "f4321fcc464b0106e9e06687d62f9c8873a6b360065f99a3aeedb88d7d80261b"
+    },
+    {
+      "file": "ASUN",
+      "x": 258,
+      "y": 356,
+      "width": 143,
+      "height": 108,
+      "sha256": "563948e107955348f0e10c6ceb5731f5abce65be1dcb62eda536aef8b1f4a72a"
+    },
+    {
+      "file": "MSUN",
+      "x": 282,
+      "y": 358,
+      "width": 99,
+      "height": 99,
+      "sha256": "830c03c9bf1844bfd27e67140658e365f303b121ac38dfbbf7919feb29474a20"
+    },
+    {
+      "file": "LOPULSAR",
+      "x": 282,
+      "y": 358,
+      "width": 99,
+      "height": 99,
+      "sha256": "5bcfbb0e688a6d1519a9ae54c52168f7c3cd3d49ae5beff2b4330041f2b98424"
+    },
+    {
+      "file": "APULSAR",
+      "x": 258,
+      "y": 356,
+      "width": 143,
+      "height": 108,
+      "sha256": "d72217869d475a634ad7187b318db146563a9533716e10d7b7ab8ddb4216347f"
+    }
+  ],
+  "image_commands": [
+    {
+      "source": "program0",
+      "offset": 653927,
+      "image": "black_b"
+    },
+    {
+      "source": "rect0.click",
+      "offset": 655586,
+      "image": "asuper"
+    },
+    {
+      "source": "rect1.click",
+      "offset": 656197,
+      "image": "jupno"
+    },
+    {
+      "source": "rect1.click",
+      "offset": 656632,
+      "image": "jupno"
+    },
+    {
+      "source": "rect2.click",
+      "offset": 657207,
+      "image": "m82no"
+    },
+    {
+      "source": "rect2.click",
+      "offset": 657538,
+      "image": "m82view"
+    },
+    {
+      "source": "rect2.click",
+      "offset": 657869,
+      "image": "m82no"
+    },
+    {
+      "source": "rect2.click",
+      "offset": 658332,
+      "image": "m82no"
+    },
+    {
+      "source": "rect3.click",
+      "offset": 658775,
+      "image": "losun"
+    },
+    {
+      "source": "rect3.click",
+      "offset": 659114,
+      "image": "asun"
+    },
+    {
+      "source": "rect3.click",
+      "offset": 659445,
+      "image": "msun"
+    },
+    {
+      "source": "rect4.click",
+      "offset": 660028,
+      "image": "lopulsar"
+    },
+    {
+      "source": "rect4.click",
+      "offset": 660359,
+      "image": "apulsar"
+    },
+    {
+      "source": "rect4.click",
+      "offset": 660762,
+      "image": "lopulsar"
+    },
+    {
+      "source": "rect4.click",
+      "offset": 661093,
+      "image": "lopulsar"
+    }
+  ],
+  "large_images": [
+    "black_b",
+    "asuper",
+    "m82view",
+    "asun",
+    "apulsar"
+  ],
+  "small_images": [
+    "jupno",
+    "m82no",
+    "losun",
+    "msun",
+    "lopulsar"
+  ],
+  "pixel_sequence_comparisons": 1000,
+  "distinct_composition_sha256": [
+    "087c8f99713ca6665734b2ab5e3cc25492b5a3a41ff6e5fb7d4f566634b4d04a",
+    "0b5422efda02453f35833e0061e3eb2c363f202c02a3916d568e154671513760",
+    "113a2fe2d3c873a77a4ddbfa9b9f4825ed7972192c114e470df9148cb2dd43bb",
+    "15a3f19fa3b52908d80b075a2c1b444039cacefa9b0bbf91f5d1e60645f826ea",
+    "28221b2431d4ecc807204645c3024bffc236b39c0af4dd206b47ddc8c8305b76",
+    "2c6f21f677a12738c456c6152e1b151b19a6cd58d66048bfb200afc7dc521e7d",
+    "2c93402d26470ea7eecfb6e5a107f98cd8388b9c9eb082b97df7190ffb12e652",
+    "31467803fd4d3f08d0f7c87f816db521ffa98d5cd02443297685eea9d0f9c5ae",
+    "38563f98e957e636fec9d2c4993994877bd46cf2208dae0f227095b958cdef72",
+    "4f4ee6aa070e3c4e2d13d1d516206d90bd6bcb8e3e313da0b0f1614a19b06c6a",
+    "67bc171a71fd5c1911d93f847f37d37bf6043e03e700c0d4cbf6a3a1b4998313",
+    "683f2e71d8a76a5fd370c52a5a0589c3db233faee765bd67c4811f9ee41e68fa",
+    "788cc2b10016c7decd6051e240da90a0548088367e6f6775ab49abaf1e244688",
+    "8801f0e1cbfa8f49eb87a647ba54a662b05ba2d9619d464d56f84bb8b4af09ac",
+    "8df32bad655092eca43aba15b2ebf0cc8dea5a57ad22cba410f9f9e3a8cbf662",
+    "904b1d9343064f8c367fe1c0a05bc27334b0d51cf680dc2428a5469580bbc956",
+    "949e88aa3a6e97c5f4a33f223442d600af1439d493c925cf4ef413314d54069f",
+    "97191c2fc243905d306e8c89bf1499f9ba420b510d3fa1b677831d2a45486d3d",
+    "9973441db82855365106f9c6243123e43c0da210893eedb635b204a5e4833da0",
+    "9cc5aedea68124bed180b678e0d507c14483cff7e7db6a500df339948ed49d69",
+    "9d9aced649046ebdbadf67743749efb964fc455493c50070a0ba56564200f22e",
+    "bd5f00b8320cb5289d4896369fbee4cea990cf2a50f1614f11b8dcc755ac045a",
+    "d15b846395cdbe376123ba799300c2fa94d44afc2258d0c2844ccb2abd08cd8a",
+    "d25539bd1af903f63e4015409aa79afbb27e486a77fa81b54d29603072c3bb3c",
+    "d57ec8ab6bebec32134f8f4cf77633a67924e3bbf1c4825c34c6f83a8ff7f3d4",
+    "d5b31c9c67e642a521e41f3c594d468e6aa284c7d9531b6806b0a4551129aab8",
+    "db8bf70533ad5129256c882fb640a3e2977ea4958197b4d9cee61ebfd567879b",
+    "e69a4e1bc4abd2821d9d986ecadd5b848dcd15bd6cdeedb1dca7768cb30fa65a",
+    "f9f9580194caa77053c5f0e921cd8b6ccb85b0bb428a8abcbaea359c1d0fe7ad",
+    "fd1af462a0cf2d9b760bbcb5825143a2cf5f373b903c9e01d065fa2ea6aba0ee"
+  ],
+  "background_contract": "Keep latest large image and latest small image since that large image, or none. Large image replaces all prior image pixels; small image replaces all prior small-image pixels.",
+  "remaining_requirements": [
+    "Track both image identities at opcode49 commit, not opcode20 staging",
+    "Store frame selections including frame2, visibility and hover entered flags",
+    "Reject queued work, blocking speech, button pulses and flash before admitting save",
+    "Validate atomic load and continuation at detector selection, target selection, errors and solved-pair boundaries"
+  ],
+  "limitation": "Resource proof and proposed contract only; P519 saves remain unsupported."
+}

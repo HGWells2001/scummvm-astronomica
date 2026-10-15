@@ -13,6 +13,11 @@ for name in manifest['sha256']:
         shutil.copyfile(src,root/name)
 for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/update_github_export.py','outputs/astronomica-cleanroom/GITHUB-PUBLISH.md','outputs/astronomica-cleanroom/P508-SAVE-PLAN.md',
  'work/fresh-20260913/check_p508_saves.py','work/fresh-20260913/finish_p508_saves.py','outputs/astronomica-cleanroom/probe_p508_save.py',
+ 'work/fresh-20260913/check_p505_saves.py','work/fresh-20260913/finish_p505_saves.py','outputs/astronomica-cleanroom/probe_p505_save.py',
+ 'work/fresh-20260913/check_question_regressions.py',
+ 'outputs/astronomica-cleanroom/probe_p519_save.py','outputs/astronomica-cleanroom/P519-SAVE-PLAN.md','outputs/astronomica-cleanroom/evidence/p519-save-original.json',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p508-previous-slot.log','p508-previous-slot-proof.json')],
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p505-save-original.json','p505-saves-validation.json','p505-save-proof.json','p505-saves-runtime.log','p505-saves-startup.log')],
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p508-save-original.json','p508-saves-validation.json','p508-save-proof.json','p508-saves-runtime.log','p508-saves-startup.log')]):
     shutil.copyfile(name,root/name)
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
@@ -21,6 +26,8 @@ j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha
 p=root/'README.md';s=p.read_text().replace('on 13 October 2026','on 15 October 2026').replace('on 14 October 2026','on 15 October 2026')
 s=s.replace('Native ScummVM saves support settled exploration screens.','Native ScummVM saves support settled exploration screens and P508 question boundaries. P508 continuation tests cover 63 boundaries, 291 answer steps and fresh-process slot loading; ambient music restarts from its beginning.')
 s=s.replace('Arbitrary mid-puzzle saves,','Saving during the other puzzles,')
+if 'P505 continuation tests' not in s:
+    s=s.replace('and P508 question boundaries.', 'and P505/P508 question boundaries. P505 continuation tests cover 38 boundaries and successor states, hover restoration, corrupt payload rejection and fresh-process slot loading.')
 if 'PageUp/PageDown/Home/End' not in s:
     s=s.replace('- Help checks cover', '- PageUp/PageDown/Home/End scroll the native help reader; all 781 articles pass keyboard navigation and boundary checks.\n- Help checks cover')
 p.write_text(s)

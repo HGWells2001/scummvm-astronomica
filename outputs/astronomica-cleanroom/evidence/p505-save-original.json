@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "source_sha256": "5cf85faa5b838f23045d674a081322ea37207ef21f7cb0bb35d6d6055935907d",
+  "local_conditions": [
+    [
+      1,
+      0,
+      8,
+      1,
+      1,
+      8
+    ],
+    [
+      1,
+      1,
+      8,
+      0,
+      0,
+      255
+    ],
+    [
+      1,
+      2,
+      4,
+      0,
+      0,
+      4
+    ],
+    [
+      1,
+      3,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "sprite_mutation_opcodes": [
+    16,
+    17
+  ],
+  "hover_sprite_indices": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "hover_rectangles": 10,
+  "pictures": [
+    {
+      "choice": 1,
+      "file": "APOLLO",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "54f537fa5dd4ac4e2fff7cae95505a82f21865e1f1b237a8a6f0f3776cb9162a"
+    },
+    {
+      "choice": 2,
+      "file": "CAVE",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "0a50300c3ec9e38cba1611419c17d99ace675b0ce888cdbe636036f40908765c"
+    },
+    {
+      "choice": 3,
+      "file": "COLUMBUS",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "895934921beb69388496f4df1980779fc5ba2c00809d3080ba0659dd9ada587b"
+    },
+    {
+      "choice": 4,
+      "file": "DINO",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "4a4494d44a696db9e8e67f3df7579cb49a030987d9a73b52de1734da08d237df"
+    },
+    {
+      "choice": 5,
+      "file": "HASTINGS",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "667c194b463e0774e088a8c7c1875f5043b788778652bd7a02d99c7e5a093d95"
+    },
+    {
+      "choice": 6,
+      "file": "LINDBERG",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "56f749622fa31bb0f0c0e63d61773957e2a303229028fedef9720ae934ab7154"
+    },
+    {
+      "choice": 7,
+      "file": "ROMAN",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "e3c1eba7d16cc84a34de17fd64f6a05c880bfc509f7be2cfdf9bbc323ce550af"
+    },
+    {
+      "choice": 8,
+      "file": "NOTHING",
+      "x": 254,
+      "y": 362,
+      "width": 135,
+      "height": 86,
+      "sha256": "539bd392d9c8c7609447af591d93b2e28693f25d049eedab0b4fe1298c7445b6"
+    }
+  ],
+  "conclusion": "Eight equal-footprint opaque pictures reconstruct settled questions. Preserve hover-enter state to avoid duplicate speech and stale highlights.",
+  "limitation": "Resource evidence requires native continuation and fresh-process validation."
+}

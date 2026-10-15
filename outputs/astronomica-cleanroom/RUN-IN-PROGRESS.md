@@ -1,1 +1,1 @@
-P508 settled-question save checkpoint verified 15 October 2026. Matching build, 63 boundaries, 291 continuation steps, corruption/slot/fresh-process checks, native exploration saves/import, help and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.
+P505/P508 settled-question saves verified 15 October 2026. Matching build, native continuation/hover/corruption/slot/fresh-process tests, exploration saves/import, help and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.
