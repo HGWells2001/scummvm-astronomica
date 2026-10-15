@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "format_version": 3,
+  "payload_bytes": 2464,
+  "scene": 508,
+  "scope": "Settled question boundaries only; no foreground speech, queued work, staged image, button pulse or motion",
+  "boundaries": 63,
+  "continuation_steps": 291,
+  "seeds": [
+    1,
+    48879,
+    65535
+  ],
+  "routes": [
+    "eight correct",
+    "three wrong",
+    "eight correct with two interleaved errors"
+  ],
+  "truncations": 2464,
+  "byte_corruptions": 2464,
+  "invalid_checksummed_states": 14,
+  "fresh_process_slot": 2,
+  "fresh_process_fingerprint": "01944964",
+  "music": "Ambient loop resumes from its beginning; exact sample phase is not saved",
+  "compatibility": "Exploration writes v2; v1/v2 loads retained",
+  "limitations": [
+    "Other puzzles still cannot be saved mid-puzzle",
+    "Full manual audiovisual playthrough remains outstanding"
+  ]
+}

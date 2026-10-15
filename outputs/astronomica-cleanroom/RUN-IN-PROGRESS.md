@@ -1,1 +1,1 @@
-Keyboard help checkpoint verified 14 October 2026. Matching build, all 781 article keyboard checks, inline images, native saves/import and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.
+P508 settled-question save checkpoint verified 15 October 2026. Matching build, 63 boundaries, 291 continuation steps, corruption/slot/fresh-process checks, native exploration saves/import, help and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.

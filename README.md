@@ -6,16 +6,16 @@ This repository contains the engine, original-file research tools, regression dr
 
 ## Verified development state
 
-The local Windows x64 build passed its complete WASAPI regression on 14 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
+The local Windows x64 build passed its complete WASAPI regression on 15 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
 
 - Automatically verified routes in 35 puzzle scenes; these include variants, so this is **not** a count of distinct puzzles.
 - Navigation, original script execution, puzzle motion, audio, video, mentors, countdown and endings have dedicated checks.
-- Native ScummVM saves support settled exploration screens. Original text `GAMESTAT` import supports exploration with no active countdown.
+- Native ScummVM saves support settled exploration screens and P508 question boundaries. P508 continuation tests cover 63 boundaries, 291 answer steps and fresh-process slot loading; ambient music restarts from its beginning. Original text `GAMESTAT` import supports exploration with no active countdown.
 - The original help file supplies 781 readable articles, 31 pictures in 20 articles, search and tables. Pictures now scroll with their surrounding text. Thirteen original exponent runs use explicit `^(value)` notation.
 - PageUp/PageDown/Home/End scroll the native help reader; all 781 articles pass keyboard navigation and boundary checks.
 - Help checks cover all articles, image pixels, wheel/drag scrolling and narrow-width/height reflow. Save/import regressions passed on the same executable.
 
-The game is still experimental. Arbitrary mid-puzzle saves, exact help typography/layout and a complete manual audiovisual playthrough remain outstanding. There is **no measured total completion percentage**; the historical 94.2% refers only to 114 of 121 static entry-script templates.
+The game is still experimental. Saving during the other puzzles, exact help typography/layout and a complete manual audiovisual playthrough remain outstanding. There is **no measured total completion percentage**; the historical 94.2% refers only to 114 of 121 static entry-script templates.
 
 ## Build and use
 

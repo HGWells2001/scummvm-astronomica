@@ -63,6 +63,29 @@ uint16 ScriptRunner::random15() {
  _randomState = _randomState * 0x015a4e35U + 1;
  return uint16((_randomState >> 16) & 0x7fff);
 }
+bool ScriptRunner::exportIdleState(Common::Array<uint32> &words) const {
+ if (!idle()) return false;
+ words.clear();
+ for (int scope = 0; scope < 2; ++scope) for (int i = 0; i < 100; ++i) {
+  words.push_back(uint32(_values[scope][i])); words.push_back(uint32(_widths[scope][i])); words.push_back(_known[scope][i]);
+ }
+ words.push_back(_randomState); words.push_back(_programLoadedAt); words.push_back(_lastTrue);
+ return true;
+}
+bool ScriptRunner::validIdleState(const Common::Array<uint32> &words) {
+ if (words.size() != kIdleStateWords || words[602] > 1) return false;
+ for (uint i = 2; i < 600; i += 3) if (words[i] > 1) return false;
+ return true;
+}
+bool ScriptRunner::importIdleState(const Common::Array<uint32> &words) {
+ if (!idle() || !validIdleState(words)) return false;
+ for (int scope = 0; scope < 2; ++scope) for (int i = 0; i < 100; ++i) {
+  const uint n = (scope*100+i)*3;
+  _values[scope][i] = int32(words[n]); _widths[scope][i] = int32(words[n+1]); _known[scope][i] = words[n+2] != 0;
+ }
+ _randomState = words[600]; _programLoadedAt = words[601]; _lastTrue = words[602] != 0;
+ return true;
+}
 void ScriptRunner::resetGlobals() {
  // _clear_globals 9:408c loops over indices 0..99, storing zero.
  for (int i = 0; i < 100; ++i) defineValue(0, i, 0);

@@ -80,6 +80,13 @@ public:
  void setLegacyResumeSupport(bool value) { _legacyResumeSupport = value; }
  void setHelpSupport(bool value) { _helpSupport = value; }
  uint pendingCount() const { return _pending.size(); }
+ // A settled snapshot contains data only. Programs and callbacks are rebuilt
+ // from the original scene; queued work must never be silently discarded.
+ enum { kIdleStateWords = 603 };
+ bool idle() const { return _pending.empty() && _actions.empty() && !_clicksBlocked && !_variantRound; }
+ bool exportIdleState(Common::Array<uint32> &words) const;
+ static bool validIdleState(const Common::Array<uint32> &words);
+ bool importIdleState(const Common::Array<uint32> &words);
  static bool supports(const Script &script, bool allowTimed = false);
 private:
  struct Pending { Script script; uint index; uint32 since; };

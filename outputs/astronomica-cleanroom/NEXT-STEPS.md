@@ -1,3 +1,13 @@
+# Ripresa: salvataggi P508 fra le domande, 15 ottobre 2026
+
+Formato nativo v3: 63 punti, 291 continuazioni, slot reale e nuovo processo PASS.
+Build, salvataggi v1/v2, aiuto, import GAMESTAT e suite WASAPI PASS.
+Leggere SAVE-RESEARCH.md e p508-saves-validation.json. Test: check_p508_saves.py.
+Checkpoint: finish_p508_saves.py; verifica: verify_development_evidence.py.
+Prossimo: salvataggi negli altri puzzle e verifica audiovisiva integrale.
+Le note precedenti sotto sono storiche: P508 ora fa eccezione al divieto di
+salvare nei puzzle; gli altri restano esclusi. Nessuna percentuale globale.
+
 # Ripresa: navigazione tastiera aiuto, 14 ottobre 2026
 
 PagSu/PagGiu/Home/Fine verificati su 781 articoli. Build, suite WASAPI e

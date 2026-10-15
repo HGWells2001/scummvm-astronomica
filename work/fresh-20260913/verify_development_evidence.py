@@ -22,6 +22,18 @@ assert 'FAIL' not in help_log and 'Log closed successfully' in help_log
 help_validation=json.loads((root/'evidence/help-native-validation.json').read_text())
 assert help_validation['inline_images']==31 and help_validation['original_exponent_runs']==13
 assert help_validation['keyboard_articles']==781
+p508=json.loads((root/'evidence/p508-saves-validation.json').read_text())
+assert p508['status']=='PASS' and p508['boundaries']==63 and p508['continuation_steps']==291
+for name,marker in [('p508-saves-runtime.log','P508 saves: PASS (63 boundaries'),('p508-saves-startup.log','P508 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text()
+ assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+proof=json.loads((root/'evidence/p508-save-proof.json').read_text())
+assert proof['fresh_process_fingerprint']==p508['fresh_process_fingerprint'] and proof['metadata_listed']
+original=json.loads((root/'evidence/p508-save-original.json').read_text())
+assert original['status']=='PASS' and len(original['pictures'])==18
+assert digest(Path('D:/astro/PLACES/P508/MEGAFILE.HYP'))==original['source_sha256']
+for picture in original['pictures']:
+ assert digest(Path('D:/astro/PLACES/P508')/picture['file'])==picture['sha256']
 legacy=json.loads((root/'evidence/legacy-validation.json').read_text())
 assert legacy['status']=='PASS' and legacy['full_suite'] and legacy['original_menu_flow']
 assert legacy['native_resave'] and legacy['fixture_unchanged']

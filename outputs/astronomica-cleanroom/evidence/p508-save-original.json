@@ -1,0 +1,232 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "source_sha256": "e2567a3d1ec267d6cd06ac923dc89d364875a91c705d40658b6a303e6deeaf6e",
+  "local_conditions": [
+    [
+      1,
+      0,
+      18,
+      1,
+      1,
+      18
+    ],
+    [
+      1,
+      1,
+      18,
+      0,
+      0,
+      100000
+    ],
+    [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      3,
+      3,
+      0,
+      0,
+      3
+    ],
+    [
+      1,
+      4,
+      8,
+      0,
+      0,
+      8
+    ],
+    [
+      1,
+      5,
+      10,
+      0,
+      0,
+      10
+    ]
+  ],
+  "sprite_mutation_opcodes": [
+    16,
+    17
+  ],
+  "button_frame_counts": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "other_sprite_frame_count": 1,
+  "pictures": [
+    {
+      "choice": 1,
+      "file": "LOGY1",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "185f7bb25f34e744ab22e9479ed7e89bdf18484b8489b274eb13ec5a20640f91"
+    },
+    {
+      "choice": 2,
+      "file": "LOGY3",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "ba548580ca9d034feb2f94da27911320efae131e59aac54bf04f4c4dd6654331"
+    },
+    {
+      "choice": 3,
+      "file": "LOGY4",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "a5b9bc5324970ce697d35e44f856dd95d4f8dd8081db20dda5835c6b830bd952"
+    },
+    {
+      "choice": 4,
+      "file": "LOGY5",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "d612f80362686acab59e10175e700a862cf64d3aeb93fc45adc96402548e1991"
+    },
+    {
+      "choice": 5,
+      "file": "LOGY6",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "bc96d5d3c2be6722375b8e9a4f4231824f9891e20ef4c3e7f69afaf24e17808c"
+    },
+    {
+      "choice": 6,
+      "file": "LOGY7",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "6410b7b74c2280da0333264652e6e1cf78da7f0e87c68050a695238aea8152f0"
+    },
+    {
+      "choice": 7,
+      "file": "LOGY8",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "6b2b76e440bd02df77f1b04b1e39ba6ad40f3ddd42b8f7c5f113fb3647dd98fe"
+    },
+    {
+      "choice": 8,
+      "file": "LOGY9",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "aa62d5b612945a4158658837d0392bb84ca3a2d6f141227471920b3470d877b8"
+    },
+    {
+      "choice": 9,
+      "file": "LOGY10",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "bc96d5d3c2be6722375b8e9a4f4231824f9891e20ef4c3e7f69afaf24e17808c"
+    },
+    {
+      "choice": 10,
+      "file": "LOGY11",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "1bc5c8c67ad9de70bff036d42179c4ed8a80afae845284f16612b305b667c7d6"
+    },
+    {
+      "choice": 11,
+      "file": "LOGY12",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "9b7ee3799ce6c75249303bb6f4b62b56ad0d2c26cea1c721aef413c5306e33c1"
+    },
+    {
+      "choice": 12,
+      "file": "LOGY13",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "876cf6a7b1f82300ac28f958ac56d418c79791546ac637ecfddea8d66c376c7b"
+    },
+    {
+      "choice": 13,
+      "file": "NOMY1",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "5134a73fade9de2844ffc93b470af7e7ae62eab90bdd4cefcecfa7656bd66fcb"
+    },
+    {
+      "choice": 14,
+      "file": "NOMY2",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "f4f9d52e9d0a001a20950422fa77550bdf1cb233baa443da8cdf1fc847fe12c7"
+    },
+    {
+      "choice": 15,
+      "file": "NOMY3",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "4485ed304076fd4a3fcfc06e119e988a68663eadb269302b8732eebb375aa0b5"
+    },
+    {
+      "choice": 16,
+      "file": "NOMY4",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "8c97e262b9f19eda6c430fa426cea1087db76eb4a23305b62322452900aa6239"
+    },
+    {
+      "choice": 17,
+      "file": "NOMY5",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "168020351cc24452c5b86c9f370ade1c54ab45af4e1f932399a517d3c9877f39"
+    },
+    {
+      "choice": 18,
+      "file": "NOMY6",
+      "x": 67,
+      "y": 354,
+      "width": 508,
+      "height": 108,
+      "sha256": "55088f4de1fe496f83ba8f242350f315251c6702dcdc40de989aced7e456bebb"
+    }
+  ],
+  "conclusion": "At settled question boundaries, each new opaque picture fully replaces the same original rectangle; no pixel history is needed. Only visibility is mutated by serialized sprite commands. Input button pulses must have completed.",
+  "limitation": "Static resource evidence does not replace continuation, corruption or fresh-process native save tests."
+}

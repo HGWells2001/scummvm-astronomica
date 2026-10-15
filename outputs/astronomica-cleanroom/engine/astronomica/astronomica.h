@@ -53,6 +53,10 @@ private:
  bool verifyAdvice();
  void updateWorldAt(uint32 now);
  bool verifySaves();
+ bool canSaveP508() const;
+ Common::Error saveP508(Common::WriteStream *stream);
+ Common::Error loadP508(Common::SeekableReadStream *stream);
+ bool verifyP508Saves();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.
@@ -105,6 +109,7 @@ private:
  Graphics::Surface _screen;
  Graphics::Surface _background;
  Scene _scene;
+ Common::Array<Sprite> _p508SaveBaseline;
  ScriptRunner _runner;
  Audio::SoundHandle _soundHandle;
  uint _soundsStarted = 0;
@@ -112,10 +117,11 @@ private:
  Audio::SeekableAudioStream *openSound(int id);
  void configureSounds();
  void configureImages();
- Graphics::Surface *openBackgroundImage(const Common::String &name);
+ Graphics::Surface *openBackgroundImage(const Common::String &name, int place = -1);
  bool stageBackgroundImage(const Common::String &name, int x, int y);
  void displayBackgroundImage();
  Graphics::Surface _pendingImage;
+ Common::String _pendingImageName, _displayedImageName;
  int _pendingImageX = 0, _pendingImageY = 0;
  bool playSound(int id, uint32 now = 0, bool looping = false);
  void resumeLoopAt(uint32 now);
@@ -165,7 +171,7 @@ private:
  uint renderStaticSprites(Common::SeekableReadStream &stream, const Scene &scene, Graphics::Surface &target);
  bool changePlace(int place);
  bool verifyTransitions();
- bool loadPlace(int place, bool keepSound = false);
+ bool loadPlace(int place, bool keepSound = false, bool restoring = false);
  bool readImage(Common::SeekableReadStream &stream, Graphics::Surface &target, bool control);
  void stepPlace(int direction);
 };

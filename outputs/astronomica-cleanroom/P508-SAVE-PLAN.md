@@ -1,7 +1,7 @@
 # P508 native save continuation contract, 14 October 2026
 
-This is implementation preparation, not newly supported saving. The current
-save gate must remain unchanged until restoration and continuation pass.
+The plan below is retained as the pre-implementation contract. P508 settled
+question saving is now implemented and verified; see the dated result below.
 Sources: the current cleanroom engine, the original resource inventory in
 evidence/puzzle-save-requirements.json, and the verified P508 routes in
 evidence/runtime.log. No excluded earlier implementation is used.
@@ -52,3 +52,10 @@ Add truncation, corruption, invalid dimensions/indices and incompatible
 scene rejection with unchanged live state. Keep pending work and unsupported
 puzzles rejected. Run native slot startup tests and the complete regression
 before documenting mid-puzzle save support.
+
+
+## P508 settled question saves, 15 October 2026
+
+Native version3 now saves P508 between questions, including six locals, all global/local values and their known/width metadata, full32-bit RNG, program epoch, branch state, previous place, completion count, sprite visibility/frame selection and ambient audio state. Pending actions, foreground speech, staged images, moving sprites and button pulses are excluded. Original data confirms18 opaque508x108 pictures at(67,354); the selected picture reconstructs the background without storing media. Startup scripts and introduction are skipped on load. Ambient music restarts at the beginning, not at the exact saved sample.
+
+Three seeds and correct/wrong/mixed routes cover63 saved boundaries and 291 resumed answer steps, comparing screen pixels, script data, RNG, sound IDs/counts, destination and completion count with uninterrupted runs. Save/load/save data is stable except for the advancing clock. 2464 truncations,2464 byte corruptions and14 invalid checksummed states are rejected without changing the live state. Physical slot2 loads in a fresh process with the identical state/screen fingerprint and completes the seven remaining correct answers. Music/foreground guards and slot metadata pass. Exploration v1/v2 regressions, help and full WASAPI suite pass on the matching executable. Other puzzle saves remain unsupported.

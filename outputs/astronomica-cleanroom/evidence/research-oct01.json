@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "scope": "Original research; P501, comet, P516, P510 and P523 native routes",
   "sha256": {
     "COMET-RESEARCH.md": "495d90c4ffb43d1a311998f016be83bc9ecbbc263dc759e7a2150133c9f56d12",
@@ -30,7 +30,7 @@
     "evidence/help-inline12.png": "46cc5ddc5585ff8ed88b4b25ca6dc296afe7b03ffd4bcbdab88bfdf93e237562",
     "evidence/help-inline19.png": "17ebfdf744b86c0cd76a4b3ac22937f65bfeb9f2acae5cd6cb95b1e00d8a85a7",
     "evidence/help-native-reference.json": "4a5acfcec7c54c43b45c9386355d07ea034def38babb3da3de7560f500751027",
-    "evidence/help-native-runtime.log": "1668d59d371c5ad5362d68f6a8a164c04905a2119c79edb2d66b19863b5cd6af",
+    "evidence/help-native-runtime.log": "1153a03f759786ed0d552cd42e6931e7bc0447142962263b30597011a6428524",
     "evidence/help-native-validation.json": "21b4857eb057cf61e78822231a0cda83967a2415d35330c896148b007329c739",
     "evidence/help-navigation.json": "a297e0b820968d0640938019fbb56026995db1a4e394959d932291cee7389e8a",
     "evidence/hover-dispatch.json": "f4cabec8926a12663136bcfbce0433e4c29422f114edc0d5030f5bc3d3a52602",
@@ -44,7 +44,7 @@
     "evidence/intro-validation.json": "d21e07949d2d124eee67b71e9d4b6c8fea4c461e45e6cf660563cc5441e1a1b3",
     "evidence/legacy-file-proof.json": "5bf42f7e708170c9d58b06c8ccbbef321c9efb6f8d62576d44d3646abb345d3c",
     "evidence/legacy-resume-original.json": "a0c940c51b1cbc73f6f486d06462b818ac246cbab8c0f2cc5cc44b0bb3f87372",
-    "evidence/legacy-runtime.log": "e7dcac3cd2446926bac9c00f23c9a196a3700acf7519e5186bffdd4376cd58d5",
+    "evidence/legacy-runtime.log": "197b82e6755e8feac8837cde4b09d050d67c3c0989c5107526cdb9426fa110a2",
     "evidence/legacy-validation.json": "b3f8c08b8257dbdfc5bfe78bd794e2945e8a124331cc6527118da4de0d3e9dca",
     "evidence/mentors-validation.json": "1e3dbe9bd3d31a4aabf4371d5a54d3421fce2ba4b991417b7a0c6234f23120fe",
     "evidence/menu-services.json": "c5cfb01b08f8c052a7fe4190b206cee76d1bd9f1a94f25366832b536cb02082a",
@@ -56,6 +56,11 @@
     "evidence/p501-motion.json": "a61a325dffb6c78c106b1245d7732bd388fad6897489a6fc7ddbb1de5d7958f6",
     "evidence/p501-state.json": "7ee9ae5bcbf6ac28fc39b2f11fc7191b90ac0239f781d52ac1ada743a5fe06da",
     "evidence/p507-wheel.json": "0d67803d642402cd4a6772c28737f2a6f792c626b994ef4a861dc3ad8d444007",
+    "evidence/p508-save-original.json": "72ff0df6f34d119ae96d07af8c8051ca898fc24459c77a8abd2f661acf4cd399",
+    "evidence/p508-save-proof.json": "941486df39a2f0577701b1a8df4a89659304bd603eb11642844d65907a733595",
+    "evidence/p508-saves-runtime.log": "50036eea7e80132f10a0cb2ebbfea342867c89f9c273b3d9147a0c66299ec717",
+    "evidence/p508-saves-startup.log": "8eae4da75fbdbefc4069a3225bd11ee9b5ba6fc23a9926a5974f917f40476abf",
+    "evidence/p508-saves-validation.json": "7069b75cae843fe50f0c9add2ab57747a0ce9e310fd54202032ac81540710701",
     "evidence/p510-callbacks.json": "ac28f0979eeb92e48f3408b06a551f62d3b77d5b31f6f78b8755f63049381884",
     "evidence/p510-plot.json": "8009285412d3808e30ae591a5e94c0f284a1e0faf2b5023b8a2d8ab5b387021a",
     "evidence/p510-validation.json": "2b31a50d26d76e68e600e9c4fa6dc1226661aa3289ca45f570038b2bb723fb38",
@@ -141,6 +146,7 @@
     "probe_p501_motion.py": "d7b9ef551df9b3ced1154cdf7c2119f7298a6bc67af547a358591460c8d5df32",
     "probe_p501_state.py": "14e4bf3e18763a9e7ed274ba16dc4ec5acd91c2706b5425c46f4bf84c5dd7f6d",
     "probe_p507_wheel.py": "19a2a82c55613fffe7a131247e0c99a6c0e33cf8eb86a90d8f965ac424fc25fd",
+    "probe_p508_save.py": "fd436f2dd5e08ab1eebb211e56ea93c98da1c8fec75b91a370a7c8b3bbe913c1",
     "probe_p510_callbacks.py": "0fb001dd307e1e366325093008db877deb49a360886340545c824f1ed7181e5d",
     "probe_p510_plot.py": "b1ff3181f5f4734f067af01430eef93a7fa81709c6759058aeed46923263c188",
     "probe_p512_weather.py": "22320b202aaacdd982a63b685f05ade12a9e3ddaf13fe8098694ceb351e02308",
@@ -185,7 +191,7 @@
     "probe_world_interactions.py": "36a284eebc5dbc46239398b9ba4b83ba284151b27fea0b8d7af925faaa433f9d",
     "probe_world_movies.py": "c57b66eca6fe44a0597af75c63021e9f43be227fd5be4889fb3e3eceb2f960b1",
     "PROGRESSION-RESEARCH.md": "c39c27e5369df523c285b2c8aa8a0fb951cff89e883123ab54678272732e6ad6",
-    "SAVE-RESEARCH.md": "51d37b1022e00f740eb9f6d31596fbabfec3df6f6c98a1cd2913b122430796cf"
+    "SAVE-RESEARCH.md": "4eddd685087779dab325ae05a69cc661baffbd0cd0913d21ce319bbfd53e02b6"
   },
   "original_inputs_sha256": {
     "HELP/ASTRONOM.HLP": "ac495a6798969cb66b31087402d388f5426ad2f03da0f247907a33255e73de02",

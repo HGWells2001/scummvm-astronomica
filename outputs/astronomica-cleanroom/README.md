@@ -1,10 +1,10 @@
 # Astronomica — ripartenza dai file originali
 
-Stato verificato: 14 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS. Nessun nuovo pacchetto distribuibile.
+Stato verificato: 15 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS. Nessun nuovo pacchetto distribuibile.
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali, ora inserite fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano salvataggi durante i puzzle, fedelta tipografica e verifica manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. P508 supporta ora salvataggi fra le domande. Restano salvataggi negli altri puzzle, fedelta tipografica e verifica manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe dalla radice del workspace.
 
@@ -893,3 +893,10 @@ probe_help_inline.py also inventories every nonempty font run. No Symbol font is
 ## Help keyboard navigation, 14 October 2026
 
 PageUp/PageDown scroll the article with one line of context; Home/End reach its bounds, including inline pictures. These are native reader controls, not inferred original WinHelp behavior. Other keys and modified shortcuts retain the standard ScummVM dialog handling. All 781 articles passed production dialog dispatch checks, beginning/end clamping, opposite-page movement and modifier rejection. Full WASAPI regression and native save/import checks passed on the matching executable.
+
+
+## P508 settled question saves, 15 October 2026
+
+Native version3 now saves P508 between questions, including six locals, all global/local values and their known/width metadata, full32-bit RNG, program epoch, branch state, previous place, completion count, sprite visibility/frame selection and ambient audio state. Pending actions, foreground speech, staged images, moving sprites and button pulses are excluded. Original data confirms18 opaque508x108 pictures at(67,354); the selected picture reconstructs the background without storing media. Startup scripts and introduction are skipped on load. Ambient music restarts at the beginning, not at the exact saved sample.
+
+Three seeds and correct/wrong/mixed routes cover63 saved boundaries and 291 resumed answer steps, comparing screen pixels, script data, RNG, sound IDs/counts, destination and completion count with uninterrupted runs. Save/load/save data is stable except for the advancing clock. 2464 truncations,2464 byte corruptions and14 invalid checksummed states are rejected without changing the live state. Physical slot2 loads in a fresh process with the identical state/screen fingerprint and completes the seven remaining correct answers. Music/foreground guards and slot metadata pass. Exploration v1/v2 regressions, help and full WASAPI suite pass on the matching executable. Other puzzle saves remain unsupported.
