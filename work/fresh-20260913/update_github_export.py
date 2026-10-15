@@ -15,6 +15,7 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'work/fresh-20260913/check_p508_saves.py','work/fresh-20260913/finish_p508_saves.py','outputs/astronomica-cleanroom/probe_p508_save.py',
  'work/fresh-20260913/check_p505_saves.py','work/fresh-20260913/finish_p505_saves.py','outputs/astronomica-cleanroom/probe_p505_save.py',
  'work/fresh-20260913/check_question_regressions.py',
+ 'outputs/astronomica-cleanroom/P505-SAVE-FORMAT.md',
  'outputs/astronomica-cleanroom/probe_p519_save.py','outputs/astronomica-cleanroom/P519-SAVE-PLAN.md','outputs/astronomica-cleanroom/evidence/p519-save-original.json',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p508-previous-slot.log','p508-previous-slot-proof.json')],
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p505-save-original.json','p505-saves-validation.json','p505-save-proof.json','p505-saves-runtime.log','p505-saves-startup.log')],
