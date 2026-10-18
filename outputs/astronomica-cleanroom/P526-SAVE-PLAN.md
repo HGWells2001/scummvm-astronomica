@@ -1,6 +1,7 @@
 # P526 save preparation, 18 October 2026
 
-Saving P526 is not implemented. The original-resource inventory is produced
+P526 v7 settled saves are implemented and verified; see P526-SAVE-FORMAT.md.
+The preparation below records the original implementation questions. The original-resource inventory is produced
 by `probe_p526_save.py` from D:/astro, with hashes recorded in
 `evidence/p526-save-original.json`. This does not reuse excluded attempts.
 
@@ -39,3 +40,10 @@ and fresh-process slot loading. Existing v1–v6 must continue to work.
 Unknown until those tests exist: whether settled-only snapshots can omit any
 retained motion fields safely. Do not generalize P524's single animated
 sprite format to P526 by changing just the sprite count.
+
+
+## P526 native saves, 18 October 2026
+
+Native v7 saves settled P526 entry, stopped experiments and answered states. It retains the full runner/RNG, clock/count, 23 sprite records with render/center positions, animation and movement epochs, orbital parameters and flags, committed picture and six hover bits. Orbit travel, foreground audio, queued work and staged images exclude saving. Ambient music restarts at its beginning.
+
+Verified on one matching build: 686 round trips (33 gameplay successors, five identities, 216 animation comparisons, 432 synthetic phase/answer cases), 4956 truncations, 4956 byte corruptions and 25 checksummed invalid states. A physical slot6 loads in a fresh process and completes all remaining questions. The separate native audit observes 33 boundaries on real routes. Full v1-v6 compatibility, previous-build v3-v6 slots, exploration, import, help and WASAPI regressions pass. This is automated evidence, not a full manual audiovisual playthrough.

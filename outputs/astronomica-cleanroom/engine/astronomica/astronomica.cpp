@@ -79,6 +79,64 @@ bool validP524Animation(uint32 enabled, uint32 period, uint32 step, uint32 mode,
 }
 
 enum { kP508StateWords = 10 + ScriptRunner::kIdleStateWords };
+enum { kP526SpriteWords = 27, kP526Words = 12 + 23*kP526SpriteWords + ScriptRunner::kIdleStateWords };
+const char *const kP526Images[] = {"","s1","s2","s3","s4","s5","s6"};
+int p526ImageId(const Common::String &name) {
+ for (uint i = 0; i < 7; ++i) if (name.equalsIgnoreCase(kP526Images[i])) return i;
+ return -1;
+}
+uint p526Frames(uint i) { return i == 17 || i == 19 || i == 21 ? 12 : i < 5 || (i >= 11 && i <= 16) ? 2 : 1; }
+bool validP526State(const Common::Array<uint32> &state) {
+ if (!ScriptRunner::validIdleState(state)) return false;
+ const uint widths[] = {6,9,6,6,1,4,1};
+ for (uint i = 0; i < 100; ++i) {
+  if (state[i*3+2] != 1 || state[300+i*3+2] != (i < 7 ? 1U : 0U) || state[301+i*3] != (i < 7 ? widths[i] : 0U)) return false;
+  if (i >= 7 && state[300+i*3]) return false;
+ }
+ if (state[300] > 63 || state[303] != 1 || !state[306] || state[306] > 6 || state[309] > 6 ||
+     state[312] > 1 || state[315] > 3 || state[318] > 1) return false;
+ return !state[300] || (state[300] & (1U << (state[306]-1)));
+}
+bool validP526Scene(const Scene &scene) {
+ if (scene.mode || scene.layers != 1 || scene.sprites.size() != 23 || scene.mouseRects.size() != 6 ||
+     scene.conditions.size() != 7 || scene.scripts.size() != 2 || !scene.movies.empty()) return false;
+ for (uint i = 0; i < 23; ++i) if (spriteFrameCount(scene,i) != p526Frames(i)) return false;
+ return true;
+}
+void p526SpriteWords(const Sprite &s, Common::Array<uint32> &words) {
+ for (int32 v : {s.visible,s.selectedFrame,s.x,s.y,int32(s.renderX),int32(s.renderY),int32(s.autoFrame),int32(s.autoMove),
+      int32(s.frameSince),int32(s.moveSince),int32(s.standardMotion),int32(s.moveDX),int32(s.moveDY),int32(s.orbitMotion),
+      s.orbitSideX,s.orbitSideY,s.frameFirst,s.frameLast,int32(s.clickEnabled)}) words.push_back(uint32(v));
+ for (int32 v : s.frameData) words.push_back(uint32(v));
+ for (int32 v : s.moveData) words.push_back(uint32(v));
+}
+void p526RestoreSprite(Sprite &s, const uint32 *w) {
+ s.visible = int32(w[0]); s.selectedFrame = int32(w[1]); s.x = int32(w[2]); s.y = int32(w[3]);
+ s.renderX = int16(w[4]); s.renderY = int16(w[5]); s.autoFrame = w[6] != 0; s.autoMove = w[7] != 0;
+ s.frameSince = w[8]; s.moveSince = w[9]; s.standardMotion = w[10] != 0; s.moveDX = int16(w[11]); s.moveDY = int16(w[12]);
+ s.orbitMotion = w[13] != 0; s.orbitSideX = int32(w[14]); s.orbitSideY = int32(w[15]);
+ s.frameFirst = int32(w[16]); s.frameLast = int32(w[17]); s.clickEnabled = w[18] != 0;
+ for (uint i = 0; i < 3; ++i) s.frameData[i] = int32(w[19+i]);
+ for (uint i = 0; i < 5; ++i) s.moveData[i] = int32(w[22+i]);
+}
+bool validP526Sprite(const uint32 *w, const Sprite &initial, uint i) {
+ for (uint n : {0U,6U,7U,10U,13U,14U,15U,18U}) if (w[n] > 1) return false;
+ if (w[7] || w[16] != uint32(initial.frameFirst) || w[17] != uint32(initial.frameLast) || w[18] != uint32(initial.clickEnabled) ||
+     w[1] >= p526Frames(i) || (i != 17 && i != 19 && i != 21 && w[1])) return false;
+ for (uint n : {4U,5U}) if (int32(w[n]) < -640 || int32(w[n]) > 1280) return false;
+ if (int32(w[11]) < -2 || int32(w[11]) > 2 || int32(w[12]) < -1 || int32(w[12]) > 1) return false;
+ const bool orbit = i == 19 || i == 21 || i == 22;
+ if (!orbit && (w[2] != uint32(initial.x) || w[3] != uint32(initial.y) || w[10] || w[11] || w[12] || w[13] || w[14] || w[15] ||
+     memcmp(w+22,initial.moveData,sizeof(initial.moveData)))) return false;
+ if (!orbit && i != 20 && (w[4] != uint32(int32(initial.renderX)) || w[5] != uint32(int32(initial.renderY)))) return false;
+ if (orbit && (w[2] != uint32(initial.x) || (w[3] != uint32(initial.y) && w[3] != (i == 22 ? 70U : 120U)) ||
+     (w[22] != 0 && w[22] != 10) || (w[23] != 0 && w[23] != 200 && w[23] != 250) ||
+     (w[24] != 0 && w[24] != 100 && w[24] != 125) || w[25] || w[26])) return false;
+ if (i == 17) return (w[19] == 100 || w[19] == 0xffffffffU) && w[6] == uint32(w[19] == 100) && w[20] == 1 && !w[21];
+ if (i == 19 || i == 21) return w[6] == 1 && w[19] == 30 && w[20] == 1 && !w[21];
+ if (i == 22) return !w[6] && (w[19] == 0 || w[19] == 0xffffffffU) && !w[20] && !w[21];
+ return !w[6] && !memcmp(w+19,initial.frameData,sizeof(initial.frameData));
+}
 struct QuestionSaveProfile { uint place, version, sprites, locals; int x, y, width, height; uint widths[6]; };
 const QuestionSaveProfile *questionProfile(uint place) {
  static const QuestionSaveProfile profiles[] = {
@@ -381,6 +439,83 @@ Common::Error AstronomicaEngine::loadP524(Common::SeekableReadStream *stream) {
  return Common::kNoError;
 }
 
+bool AstronomicaEngine::canSaveP526() const {
+ if (_place != 526 || !_runner.idle() || _pendingImage.w || _movie || !validP526Scene(_scene) ||
+     _questionSaveBaseline.size() != 23 || _hoverSprites.size() != 23 || _hoverRects.size() != 6 ||
+     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+ if ((_loopSound != -1 && _loopSound != 0) ||
+     (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
+ Common::Array<uint32> state;
+ if (!_runner.exportIdleState(state) || !validP526State(state) || p526ImageId(_displayedImageName) < 0) return false;
+ for (const HoverTarget &h : _hoverSprites) if (h.entered) return false;
+ for (const HoverTarget &h : _hoverRects) if (!h.ready) return false;
+ for (uint i = 0; i < 23; ++i) {
+  const Sprite &s = _scene.sprites[i];
+  if (s.dragEnabled || s.planetMotion || s.planetPeriod != -1) return false;
+  Common::Array<uint32> words; p526SpriteWords(s,words);
+  if (!validP526Sprite(&words[0],_questionSaveBaseline[i],i)) return false;
+ }
+ return true;
+}
+Common::Error AstronomicaEngine::saveP526(Common::WriteStream *stream) {
+ if (!canSaveP526()) return Common::kWritingFailed;
+ uint32 hover = 0;
+ for (uint i = 0; i < 6; ++i) if (_hoverRects[i].entered) hover |= 1U << i;
+ const uint32 header[] = {526,_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),
+  _lastSoundAt,uint32(_mixer->isSoundHandleActive(_soundHandle)),uint32(p526ImageId(_displayedImageName)),0,hover,0};
+ Common::Array<uint32> state; _runner.exportIdleState(state);
+ stream->writeUint32BE(MKTAG('A','S','V','M')); stream->writeUint32LE(7);
+ uint32 hash = 2166136261U;
+ auto word = [&](uint32 value) { stream->writeUint32LE(value); hash = (hash ^ value)*16777619U; };
+ for (uint32 value : header) word(value);
+ Common::Array<uint32> sprites;
+ for (const Sprite &s : _scene.sprites) p526SpriteWords(s,sprites);
+ for (uint32 value : sprites) word(value);
+ for (uint32 value : state) word(value);
+ stream->writeUint32LE(hash);
+ return stream->err() ? Common::kWritingFailed : Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadP526(Common::SeekableReadStream *stream) {
+ if (stream->size()-stream->pos() < (kP526Words+1)*4 || !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ uint32 header[12], hash = 2166136261U;
+ auto word = [&]() { const uint32 value = stream->readUint32LE(); hash = (hash ^ value)*16777619U; return value; };
+ for (uint32 &value : header) value = word();
+ Common::Array<uint32> sprites; sprites.resize(23*kP526SpriteWords);
+ for (uint32 &value : sprites) value = word();
+ Common::Array<uint32> state; state.resize(ScriptRunner::kIdleStateWords);
+ for (uint32 &value : state) value = word();
+ if (stream->readUint32LE() != hash || stream->err() || !validP526State(state) || header[0] != 526 ||
+     (header[3] > 537 && header[3] != 0xffffffffU) || (header[4] != 0 && header[4] != 0xffffffffU) ||
+     header[5] > 1 || header[7] > 1 || (header[7] && (header[4] != 0 || !header[5])) || header[8] > 6 ||
+     header[9] || (header[10] & ~0x3fU) || header[11]) return Common::kReadingFailed;
+ Common::File file;
+ if (!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P526/MEGAFILE.HYP")))) return Common::kReadingFailed;
+ Scene parsed; ResourceReader reader(file);
+ if (!reader.read(parsed) || !validP526Scene(parsed)) return Common::kReadingFailed;
+ // The baseline render position is the serialized center before any motion.
+ for (uint i = 0; i < 23; ++i) {
+  parsed.sprites[i].renderX = int16(parsed.sprites[i].x); parsed.sprites[i].renderY = int16(parsed.sprites[i].y);
+  if (!validP526Sprite(&sprites[i*kP526SpriteWords],parsed.sprites[i],i)) return Common::kReadingFailed;
+ }
+ Graphics::Surface *picture = header[8] ? openBackgroundImage(kP526Images[header[8]],526) : nullptr;
+ if (header[8] && (!picture || picture->w != 98 || picture->h != 94)) {
+  if (picture) { picture->free(); delete picture; } return Common::kReadingFailed;
+ }
+ if (!loadPlace(526,false,true)) { if (picture) { picture->free(); delete picture; } return Common::kReadingFailed; }
+ _runner.resetVariantSequence(); _runner.importIdleState(state);
+ _puzzlesCompleted = header[1]; _pausedMillis = (_clockPaused ? _pauseStarted : _system->getMillis())-header[2];
+ _previousPlace = int32(header[3]); _loopSound = int32(header[4]); _loopEnabled = header[5] != 0; _lastSoundAt = header[6];
+ for (uint i = 0; i < 23; ++i) p526RestoreSprite(_scene.sprites[i],&sprites[i*kP526SpriteWords]);
+ for (uint i = 0; i < 6; ++i) _hoverRects[i].entered = (header[10] & (1U << i)) != 0;
+ if (picture) {
+  _pendingImage.copyFrom(*picture); _pendingImageName = kP526Images[header[8]]; _pendingImageX = 90; _pendingImageY = 361;
+  picture->free(); delete picture; displayBackgroundImage();
+ } else redrawSprites();
+ if (header[7]) playSound(_loopSound,scriptClock(),true);
+ return Common::kNoError;
+}
 void AstronomicaEngine::pauseEngineIntern(bool pause) {
  Engine::pauseEngineIntern(pause);
  if (pause != _clockPaused) {
@@ -391,8 +526,8 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveQuestion() || canSaveP519() || canSaveP524() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
- if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in exploration or puzzles P505, P508, P519 and P524.");
+ const bool enabled = canSaveQuestion() || canSaveP519() || canSaveP524() || canSaveP526() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in exploration or puzzles P505, P508, P519, P524 and P526.");
  return enabled;
 }
 bool AstronomicaEngine::canLoadGameStateCurrently(Common::U32String *msg) {
@@ -405,6 +540,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (questionProfile(_place)) return saveQuestion(stream);
  if (_place == 519) return saveP519(stream);
  if (_place == 524) return saveP524(stream);
+ if (_place == 526) return saveP526(stream);
  uint32 words[103]; words[102] = scriptClock(); words[0] = _place; words[1] = _puzzlesCompleted;
  for (int i = 0; i < 100; ++i) {
   int32 value = 0; if (!_runner.getValue(0,i,value)) return Common::kWritingFailed;
@@ -425,6 +561,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 3 || version == 4) return loadQuestion(stream,version);
  if (version == 5) return loadP519(stream);
  if (version == 6) return loadP524(stream);
+ if (version == 7) return loadP526(stream);
  if ((version != 1 && version != 2) || (version == 2 && stream->size()-stream->pos() < 416)) return Common::kReadingFailed;
  uint32 words[103] = {},hash = 2166136261U;
  for (uint i = 0; i < (version == 2 ? 103U : 102U); ++i) { words[i] = stream->readUint32LE(); hash = (hash ^ words[i])*16777619U; }
@@ -816,7 +953,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _p519LargeImage = _p519SmallImage = 0;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
- _questionSaveBaseline.clear(); if (questionProfile(place) || place == 519 || place == 524) _questionSaveBaseline = _scene.sprites;
+ _questionSaveBaseline.clear(); if (questionProfile(place) || place == 519 || place == 524 || place == 526) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion();
  _ball = BallMotion();
@@ -2769,6 +2906,193 @@ bool AstronomicaEngine::verifyP524Saves() {
  _runner.resetGlobals(); return loadPlace(103);
 }
 
+bool AstronomicaEngine::verifyP526Saves() {
+ auto fingerprint = [&]() {
+  Common::Array<uint32> state; if (!_runner.exportIdleState(state)) return uint32(0);
+  uint32 hash = (2166136261U ^ uint32(_place))*16777619U;
+  // The successor can enter another scene after synchronous audio. Its
+  // fresh program epoch follows real playback time rather than simulated
+  // test time. Restore equality still checks every serialized word below.
+  for (uint i = 0; i <= 600; ++i) hash = (hash ^ state[i])*16777619U;
+  Common::Array<uint32> sprites;
+  for (const Sprite &s : _scene.sprites) p526SpriteWords(s,sprites);
+  for (uint32 v : sprites) hash = (hash ^ v)*16777619U;
+  for (const HoverTarget &h : _hoverRects) hash = (hash ^ uint32(h.entered))*16777619U;
+  for (uint32 v : {_puzzlesCompleted,uint32(_previousPlace),screenRGBHash(_background),screenRGBHash(_screen)}) hash = (hash ^ v)*16777619U;
+  return hash;
+ };
+ auto settle = [&](uint32 &now) {
+  for (uint n = 0; n < 10000 && (_runner.pendingCount() || (_place == 526 && _scene.sprites[19].autoMove)); ++n) {
+   runScriptsAt(now); animateSpritesAt(now); now += 10;
+  }
+  if (_mixer->isSoundHandleActive(_soundHandle) && _lastSound != _loopSound && canSaveP526()) return false;
+  _mixer->stopHandle(_soundHandle); return _runner.idle() && (_place != 526 || !_scene.sprites[19].autoMove);
+ };
+ auto execute = [&](int action, uint32 &now) {
+  if (action == -2) { animateSpritesAt(now); return true; }
+  if (action < 0) return true;
+  if (_place != 526) return false;
+  int x = action == 6 ? 250 : 24, y = action == 6 ? 380 : 417;
+  if (action < 6) { const MouseRect &r = _scene.mouseRects[action]; x = (r.rect[0]+r.rect[2])/2; y = (r.rect[1]+r.rect[3])/2; }
+  clickAtTime(x,y,now);
+  if (canSaveP526()) return false;
+  return settle(now);
+ };
+ auto restore = [&](const Common::Array<byte> &bytes) {
+  Common::MemoryReadStream in(&bytes[0],bytes.size()); return loadGameStream(&in).getCode() == Common::kNoError;
+ };
+ auto answer = [&](bool correct) {
+  int32 scenario = 0; _runner.getValue(1,2,scenario);
+  int choice = 1; while (choice <= 6 && orbitAnswer(scenario,_scene.sprites[17].selectedFrame,choice) != correct) ++choice;
+  return choice <= 6 ? choice-1 : -1;
+ };
+ if (ConfMan.hasKey("save_slot") && ConfMan.getInt("save_slot") == 6) {
+  debug("Astronomica P526 slot fingerprint: %08x",fingerprint());
+  uint32 now = scriptClock(); bool ok = canSaveP526();
+  for (uint n = 0; n < 6 && ok && _place == 526; ++n) {
+   const int choice = answer(true); ok = choice >= 0 && execute(choice,now);
+   if (ok && _place == 526) ok = execute(6,now);
+  }
+  int32 solved = 0; ok = ok && _place == 268 && _runner.getValue(0,42,solved) && solved == 1 && _puzzlesCompleted == 11;
+  debug("Astronomica P526 startup save: %s (stopped orbit, all remaining answers)",ok ? "PASS" : "FAIL"); return ok;
+ }
+ uint32 now = 0; uint boundaries = 0, animations = 0, answerCases = 0; Common::Array<byte> fixture, initialFixture, scenarios[6];
+ auto start = [&](uint seed, bool solved) {
+  _runner.resetGlobals(); _runner.seedRandom(seed); _runner.defineValue(0,42,solved); _puzzlesCompleted = 10;
+  if (!loadPlace(526)) return false;
+  now = scriptClock();
+  if (!canSaveP526()) { debug("P526 initial save rejected"); return false; }
+  return true;
+ };
+ auto roundTrip = [&](int action, bool physical) {
+  if (action >= 0 && action < 6) {
+   const MouseRect &r = _scene.mouseRects[action]; hoverAtTime((r.rect[0]+r.rect[2])/2,(r.rect[1]+r.rect[3])/2,now);
+   if (!settle(now)) return false;
+  }
+  if (!canSaveP526()) { debug("P526 boundary rejected: %u",boundaries); return false; }
+  _pausedMillis = _system->getMillis()-now;
+  Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);
+  if (saveGameStream(&out).getCode() != Common::kNoError || out.size() != 4956) return false;
+  Common::Array<byte> bytes; bytes.resize(out.size()); memcpy(&bytes[0],out.getData(),out.size());
+  const uint32 before = fingerprint(), savedNow = now;
+  if (initialFixture.empty()) initialFixture = bytes;
+  if (action >= 0 && action < 6) {
+   int32 scenario = 0, phase = 0; _runner.getValue(1,2,scenario); _runner.getValue(1,3,phase);
+   if (!phase && scenario >= 1 && scenario <= 6 && scenarios[scenario-1].empty()) scenarios[scenario-1] = bytes;
+  }
+  if (physical) {
+   fixture = bytes;
+   if (saveGameState(6,"P526 continuation regression").getCode() != Common::kNoError) return false;
+   debug("Astronomica P526 slot fingerprint: %08x",before);
+  }
+  const uint soundsBefore = _soundsStarted;
+  if (!execute(action,now)) { debug("P526 action failed: %u %d",boundaries,action); return false; }
+  const uint32 after = fingerprint(); const uint sounds = _soundsStarted-soundsBefore; const int last = _lastSound;
+  if (!loadPlace(117)) return false;
+  _runner.seedRandom(88); _runner.defineValue(0,42,123);
+  const uint loadSounds = _soundsStarted;
+  ConfMan.setBool("astronomica_entry_scripts",true); const bool loaded = restore(bytes); ConfMan.setBool("astronomica_entry_scripts",false);
+  if (!loaded || !canSaveP526() || fingerprint() != before || _soundsStarted != loadSounds) {
+   debug("P526 restore mismatch: %u loaded %d before %08x actual %08x",boundaries,loaded,before,fingerprint()); return false;
+  }
+  now = savedNow;
+  if (action >= 0 && action < 6) {
+   const MouseRect &r = _scene.mouseRects[action]; hoverAtTime((r.rect[0]+r.rect[2])/2,(r.rect[1]+r.rect[3])/2,now);
+   if (!_runner.idle() || fingerprint() != before || _soundsStarted != loadSounds) return false;
+  }
+  Common::MemoryWriteStreamDynamic again(DisposeAfterUse::YES);
+  if (saveGameStream(&again).getCode() != Common::kNoError || again.size() != bytes.size()) return false;
+  for (uint i = 8; i < bytes.size()-4; ++i) if ((i < 16 || i >= 20) && again.getData()[i] != bytes[i]) return false;
+  if (!execute(action,now) || fingerprint() != after || _soundsStarted-loadSounds != sounds || (action >= 0 && _lastSound != last)) {
+   debug("P526 continuation mismatch: %u action %d",boundaries,action); return false;
+  }
+  ++boundaries; return true;
+ };
+ for (uint route = 0; route < 4; ++route) {
+  if (!start(111+route,route == 1)) return false;
+  uint seen = 0, answers = 0;
+  if (!roundTrip(-1,false)) return false;
+  if (route == 3) { if (!roundTrip(7,false)) return false; }
+  else for (uint n = 0; n < 6 && _place == 526; ++n) {
+   if (!roundTrip(6,false)) return false;
+   int32 scenario = 0; _runner.getValue(1,2,scenario); seen |= 1U << (scenario-1);
+   if (route == 0 && n == 0 && !roundTrip(-1,true)) return false;
+   const int choice = answer(route != 2);
+   if (choice < 0 || !roundTrip(choice,false)) return false;
+   ++answers;
+  }
+  int32 solved = -1;
+  if (_place != 268 || !_runner.getValue(0,42,solved) || solved != int(route < 2) || _puzzlesCompleted != 10+uint(route == 0) ||
+      (route < 2 && (seen != 63 || answers != 6)) || (route == 2 && answers != 4)) return false;
+ }
+ debug("Astronomica P526 save routes: PASS (six scenarios, two solve routes, four errors, voluntary exit and hover continuity)");
+ // Separate synthetic phase/answer matrix: the six scene states come from
+ // real routes; each loaded phase frame is varied explicitly. This is not
+ // a claim that all twelve frames occur naturally at every orbital stop.
+ for (uint scenario = 0; scenario < 6; ++scenario) for (uint frame = 0; frame < 12; ++frame) for (uint choice = 0; choice < 6; ++choice) {
+  if (scenarios[scenario].empty() || !restore(scenarios[scenario])) return false;
+  // Route tests above check first success/counting and the real victory
+  // voice. Use the original already-solved branch for this phase matrix
+  // instead of waiting for that same synchronous voice another 144 times.
+  _runner.defineValue(0,42,1);
+  _scene.sprites[17].selectedFrame = frame; now = scriptClock(); redrawSprites();
+  if (!roundTrip(choice,false)) return false;
+  ++answerCases;
+ }
+ debug("Astronomica P526 save answer matrix: PASS (%u synthetic phase/answer continuations)",answerCases);
+ // Compare actual first post-load animation updates, including hidden sprites.
+ for (uint i : {17U,19U,21U}) for (uint frame = 0; frame < 12; ++frame)
+  for (uint32 epoch : {1000U,0xfffffff0U}) for (uint32 extra : {0U,1U,1000U}) {
+   if (!restore(initialFixture)) return false;
+   const uint32 period = i == 17 ? 100 : 30;
+   _scene.sprites[i].selectedFrame = frame; _scene.sprites[i].frameSince = epoch;
+   now = epoch+period-1+extra; redrawSprites();
+   if (!roundTrip(-2,false)) return false;
+   if (_scene.sprites[i].selectedFrame != int(extra ? (frame+1)%12 : frame) ||
+       _scene.sprites[i].frameSince != (extra ? now : epoch)) return false;
+   ++animations;
+  }
+ if (fixture.empty() || !loadPlace(117)) return false;
+ const uint32 unchanged = fingerprint();
+ for (uint length = 0; length < fixture.size(); ++length) {
+  Common::MemoryReadStream in(&fixture[0],length);
+  if (loadGameStream(&in).getCode() == Common::kNoError || fingerprint() != unchanged) return false;
+ }
+ Common::Array<byte> damaged = fixture;
+ for (uint offset = 0; offset < damaged.size(); ++offset) {
+  damaged[offset] ^= 1; if (restore(damaged) || fingerprint() != unchanged) return false; damaged[offset] ^= 1;
+ }
+ const uint invalidWords[] = {0,3,4,5,7,8,9,10,11,12,13,16,18,19,22,25,28,30,31,33,34,633+300,633+301,633+302,1235};
+ for (uint index : invalidWords) {
+  damaged = fixture; WRITE_LE_UINT32(&damaged[8+index*4],0x80000000U);
+  uint32 hash = 2166136261U; for (uint i = 0; i < kP526Words; ++i) hash = (hash ^ READ_LE_UINT32(&damaged[8+i*4]))*16777619U;
+  WRITE_LE_UINT32(&damaged[damaged.size()-4],hash);
+  if (restore(damaged) || fingerprint() != unchanged) { debug("P526 invalid word accepted: %u",index); return false; }
+ }
+ if (!restore(fixture)) return false;
+ ConfMan.setBool("astronomica_animation",false);
+ if (canSaveP526() || restore(fixture)) return false;
+ ConfMan.removeKey("astronomica_animation",ConfMan.getActiveDomainName());
+ if (canSaveP526() || restore(fixture)) return false;
+ ConfMan.setBool("astronomica_animation",true);
+ ConfMan.setBool("astronomica_sprite_input",false);
+ if (canSaveP526() || restore(fixture)) return false;
+ ConfMan.removeKey("astronomica_sprite_input",ConfMan.getActiveDomainName());
+ if (canSaveP526() || restore(fixture)) return false;
+ ConfMan.setBool("astronomica_sprite_input",true);
+ _scene.sprites[4].selectedFrame = 1; if (canSaveP526()) return false; _scene.sprites[4].selectedFrame = 0;
+ _scene.sprites[19].autoMove = true; if (canSaveP526()) return false; _scene.sprites[19].autoMove = false;
+ if (!stageBackgroundImage("s1",90,361) || canSaveP526()) return false;
+ _pendingImage.free(); _pendingImageName.clear(); _loopSound = 0; _loopEnabled = true;
+ if (!playSound(0,scriptClock(),true) || !canSaveP526()) return false;
+ Common::MemoryWriteStreamDynamic music(DisposeAfterUse::YES);
+ if (saveGameStream(&music).getCode() != Common::kNoError) return false;
+ Common::MemoryReadStream musicIn(music.getData(),music.size());
+ if (loadGameStream(&musicIn).getCode() != Common::kNoError || !_mixer->isSoundHandleActive(_soundHandle) || _lastSound != 0) return false;
+ _mixer->stopHandle(_soundHandle);
+ debug("Astronomica P526 saves: PASS (%u boundaries, %u animation cases, %u answer cases, 4956 truncations, 4956 corruptions, 25 invalid states, motion/music/foreground guards)",boundaries,animations,answerCases);
+ _runner.resetGlobals(); return loadPlace(103);
+}
 bool AstronomicaEngine::verifyLegacySaves() {
  const bool oldChecked = _legacyChecked, oldAvailable = _legacyAvailable;
  const LegacySaveState oldLegacy = _legacyState; const uint oldCompleted = _puzzlesCompleted;
@@ -4392,6 +4716,25 @@ bool AstronomicaEngine::verifyP512Puzzle() {
  return ok;
 }
 bool AstronomicaEngine::verifyP526Puzzle() {
+ auto boundary = [&](uint route, const char *phase, uint32 now) {
+  if (!ConfMan.hasKey("astronomica_verify_p526_boundaries") || !ConfMan.getBool("astronomica_verify_p526_boundaries") || _place != 526) return;
+  Common::Array<uint32> state;
+  if (!_runner.exportIdleState(state)) { debug("P526 audit nonidle: %u %s",route,phase); return; }
+  Common::String values;
+  auto word = [&](int32 value) { values += Common::String::format(" %d",value); };
+  for (uint i = 0; i < 7; ++i) word(state[300+i*3]);
+  debug("P526 audit boundary: %u %s %u%s",route,phase,now,values.c_str());
+  for (uint i = 0; i < _scene.sprites.size(); ++i) {
+   const Sprite &s = _scene.sprites[i]; values.clear();
+   for (int32 value : {s.visible,s.selectedFrame,s.x,s.y,int32(s.renderX),int32(s.renderY),int32(s.autoFrame),int32(s.autoMove),
+        int32(s.frameSince),int32(s.moveSince),int32(s.standardMotion),int32(s.moveDX),int32(s.moveDY),int32(s.orbitMotion),
+        s.orbitSideX,s.orbitSideY,s.frameFirst,s.frameLast,int32(s.clickEnabled)}) word(value);
+   for (int32 value : s.frameData) word(value);
+   for (int32 value : s.moveData) word(value);
+   debug("P526 audit sprite: %u%s",i,values.c_str());
+  }
+  debug("P526 audit image: %s",_displayedImageName.c_str());
+ };
  bool ok = verifyOrbitMotion();
  debug("Astronomica P526 original motion comparison: %s (24 complete x86 trajectories)",ok ? "PASS" : "FAIL");
  // A queued frame change must be visible to custom13 before the next
@@ -4418,6 +4761,7 @@ bool AstronomicaEngine::verifyP526Puzzle() {
   if (!loadPlace(526) || _scene.sprites.size() != 23) return false;
   const uint completed = _puzzlesCompleted;
   uint32 now = 0;
+  boundary(route,"entry",now);
   auto settle = [&](bool moving) {
    for (uint pass = 0; pass < 4000 && _place == 526; ++pass) {
     if (!_runner.pendingCount() && (!moving || !_scene.sprites[19].autoMove)) break;
@@ -4431,6 +4775,7 @@ bool AstronomicaEngine::verifyP526Puzzle() {
    uint seen = 0;
    for (int round = 0; round < 6 && _place == 526; ++round) {
     clickAtTime(250,380,now); ok = settle(true) && ok;
+    boundary(route,"stopped",now);
     int32 scenario = 0, active = 0;
     if (_place != 526 || !_runner.getValue(1,2,scenario) || scenario < 1 || scenario > 6) return false;
     ok = !(seen & (1U << scenario)) && _runner.getValue(1,6,active) && active == 1 && ok;
@@ -4442,6 +4787,7 @@ bool AstronomicaEngine::verifyP526Puzzle() {
     if (answer > 6) return false;
     clickAtTime(choiceXY[answer-1][0],choiceXY[answer-1][1],now);
     ok = settle(false) && ok;
+    boundary(route,"answered",now);
     int32 accepted = -1, errors = -1;
     if (_place == 526) {
      ok = _runner.getValue(1,4,accepted) && accepted == int(correct) && _runner.getValue(1,5,errors) && errors == (correct ? 0 : round+1) && ok;
@@ -5068,6 +5414,13 @@ Common::Error AstronomicaEngine::run() {
   const bool ok = verifyTransitions();
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Transition verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_p526_saves") && ConfMan.getBool("astronomica_verify_p526_saves")) {
+  ConfMan.setBool("astronomica_entry_scripts",false);
+  const bool ok = verifyP526Saves();
+  debug("Astronomica P526 save verification: %s",ok ? "PASS" : "FAIL");
+  _background.free(); _screen.free(); quitGame();
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"P526 save verification failed");
  }
  if (ConfMan.hasKey("astronomica_verify_p524_saves") && ConfMan.getBool("astronomica_verify_p524_saves")) {
   ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);

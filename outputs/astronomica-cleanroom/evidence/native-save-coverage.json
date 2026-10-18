@@ -1,11 +1,11 @@
 {
   "date": "2026-10-18",
   "status": "PASS",
-  "exe_sha256": "9f95c3e60d1504739eb208b53c55a30074a773daee48fea2ba44dda2fb584495",
+  "exe_sha256": "8fda63592d008dfa2d17fdc143716b654d563c16b27d79f9bb1af659aa9b5ce9",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "2e8ff6ea962b9b16a9573905ea2ff46610ecba6edbdc5094e397ec42770016db",
-    "astronomica.h": "192e197e97ee3de439ae1564369f9ded256410880fc820da0411861888215300",
+    "astronomica.cpp": "e91fb1301d786f2ffb3f8fdc0d9a8ddfd2a93c3fdcec989072cadbf716597d41",
+    "astronomica.h": "8ac92b7e67e1f12e7781f614569611e4e8f84bb90bb2c675a232a3f92e5d8bb4",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -43,9 +43,9 @@
       "test_slot": 2,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p508-saves-validation.json",
-      "validation_sha256": "7069b75cae843fe50f0c9add2ab57747a0ce9e310fd54202032ac81540710701",
-      "runtime_sha256": "6f418f7a788d465d18aeb4eb19ddda43f472a73e6684bc67df2ab0169dc5239f",
-      "startup_sha256": "c6f7ea51ee69d3d84b02963456ca587f4b6ab3da21accb092c444c25e4bdecd8",
+      "validation_sha256": "924dab6076d79b92adbe4e3f9ddd03516701eec0fab287c77eb6956da1c6ae34",
+      "runtime_sha256": "b6e89ec8f129ab974eb882b3ede2226c7c5545903ecccdc033d5fd32868a28bb",
+      "startup_sha256": "b289f1b72475a7ef3f6ad9307225082c7c9d8756d84c774a981889fa38d5ab27",
       "fresh_process_fingerprint": "01944964"
     },
     {
@@ -55,9 +55,9 @@
       "test_slot": 3,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p505-saves-validation.json",
-      "validation_sha256": "6a166ee1d154d4fedb851caf244ed41d876a23a229203719e5f0ed7d5690dc4e",
-      "runtime_sha256": "e8b850c9dceb263e8c67ac74dd462b5d006aab1c4ef81bdfca514a8d0fc386ca",
-      "startup_sha256": "9730e5d24a6ae1b00811fb840fe781f73a4e538655770e041e894b8ded294493",
+      "validation_sha256": "190b341d565a61bc74b8344463bcd9e277de2d7ce70bba3434b2389f0cbaf539",
+      "runtime_sha256": "e1272499d6c98636d6045e7919fb2c22f513ee2eb91cf44c7db4cd50d8ccc0d8",
+      "startup_sha256": "ece6598338a6a75d3d2b91dc997cacdf0bc44c1cbf2d474605c43e8c1a7fc083",
       "fresh_process_fingerprint": "cf874c94"
     },
     {
@@ -67,9 +67,9 @@
       "test_slot": 4,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p519-saves-validation.json",
-      "validation_sha256": "b7a562798f01ae5900d361308482620dc066a978a562ed8cc7c18276c3410cdd",
-      "runtime_sha256": "dbbc259f9a008a557f8c7529e3b277830ec186f6725cc9123f98ec96bb3e8cce",
-      "startup_sha256": "9d362d3f0b3d687e880b641f6bba124a5851aec74867b11113acfa62251f6dd7",
+      "validation_sha256": "6d2abe68bee7bc584bdba3a450aa34b3be5386982580308a2795319ad5880aa0",
+      "runtime_sha256": "ed96f4eedef87e7c57100e1641144395d7be5565fbdbb18ad66cfd63943c0dcc",
+      "startup_sha256": "a734f75e6f45b563ab20bd1c28a6f6a7603db1a3eabe34c90e5820dfb48c60b1",
       "fresh_process_fingerprint": "c7504357"
     },
     {
@@ -79,13 +79,25 @@
       "test_slot": 5,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p524-saves-validation.json",
-      "validation_sha256": "a0154302d84047e4065ba647e53f35fab1adb264a6dbee94165881fc619cd7f3",
-      "runtime_sha256": "31ea5f47d9bf76ffe4e54445cc6416ecb40626ac90403e368f9268acbc4461cb",
-      "startup_sha256": "d80b9b6bb929bb30e4486f5d312360c5f0ca896fff6d0395368e3cd6aeb52ba3",
-      "fresh_process_fingerprint": "3cb4e55c"
+      "validation_sha256": "c607339e9f34b0afdbec4a7fb5ff8dddae94b11be6f2b6eddd9f0792a6f799c8",
+      "runtime_sha256": "55fedd17ea26a21ef1b5dd9b4267b25ef5037d6127b282933dd9ee686080487f",
+      "startup_sha256": "ddedbad9e827e94d197fa9f8b594e714dc397c2490cf8db2d2605651a143c5b6",
+      "fresh_process_fingerprint": "45498761"
+    },
+    {
+      "scene": 526,
+      "version": 7,
+      "payload_bytes": 4956,
+      "test_slot": 6,
+      "scope": "Settled native puzzle boundaries; no pending foreground work",
+      "validation_file": "evidence/p526-saves-validation.json",
+      "validation_sha256": "7439bcea6911629e34fc59804d8b7a8b95bdbcaa7f8f9d70153fd9c5ec3cbd01",
+      "runtime_sha256": "4b2c0646b697628b2c61c030f400ca31d3596d0b7141ce6c8ce311f4ea726cce",
+      "startup_sha256": "e4582287020b7cff6cfee350a925bebf64eff6d0ccdb13a6ae754e7a94862f0d",
+      "fresh_process_fingerprint": "243c852b"
     }
   ],
-  "supported_puzzle_route_scenes": 4,
+  "supported_puzzle_route_scenes": 5,
   "inventoried_puzzle_route_scenes": 35,
   "unsupported_puzzle_route_scenes": [
     501,
@@ -107,7 +119,6 @@
     522,
     523,
     525,
-    526,
     527,
     528,
     529,
@@ -123,7 +134,7 @@
   "whole_game_completion_percent": null,
   "limitations": [
     "These 35 route scenes include variants and are not a count of distinct puzzles",
-    "Four supported save scenes is a feature-specific count, not whole-game completion",
+    "The supported save scenes are a feature-specific count, not whole-game completion",
     "Ambient sample position is not retained",
     "Complete manual audiovisual playthrough remains outstanding"
   ]

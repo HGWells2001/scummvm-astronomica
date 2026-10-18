@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "format_version": 7,
+  "payload_bytes": 4956,
+  "scene": 526,
+  "boundaries": 686,
+  "gameplay_successor_comparisons": 33,
+  "identity_roundtrips": 5,
+  "animation_cases": 216,
+  "synthetic_answer_cases": 432,
+  "observed_native_boundaries": 33,
+  "solve_routes": 2,
+  "fourth_error_exit": true,
+  "voluntary_exit": true,
+  "hover_resumptions": true,
+  "truncations": 4956,
+  "byte_corruptions": 4956,
+  "invalid_checksummed_states": 25,
+  "fresh_process_slot": 6,
+  "fresh_process_fingerprint": "243c852b",
+  "music": "Ambient restarts from beginning",
+  "compatibility": "Exploration v1/v2, P508 v3, P505 v4, P519 v5 and P524 v6 retained; previous-build slots unchanged",
+  "limitations": [
+    "No snapshots during orbital travel",
+    "Synthetic phase trials are not claims of natural reachability",
+    "Other puzzle saves remain unsupported",
+    "No complete manual audiovisual playthrough"
+  ]
+}

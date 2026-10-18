@@ -1,45 +1,45 @@
-[2026-10-18 10:51:56] ScummVM 2026.3.1git
-[2026-10-18 10:51:56] RGB SDL2 
-[2026-10-18 10:51:56] --- Log opened.
-[2026-10-18 10:51:56] Using SDL Video Driver "dummy"
-[2026-10-18 10:51:56] Using SDL Audio Driver "wasapi"
-[2026-10-18 10:51:56] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-18 10:51:57] Output sample rate: 44100 Hz
-[2026-10-18 10:51:57] Output buffer size: 1024 samples
-[2026-10-18 10:51:57] Output channels: 2
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_START' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-18 10:51:57] CPU extensions:
-[2026-10-18 10:51:57] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-18 10:51:57] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-18 10:51:57] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-18 10:51:57] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_A' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_B' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_Y' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_X' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_UP' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-18 10:51:57] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-18 10:51:57] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-18 10:51:58] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-18 10:51:58] Astronomica legacy original payloads: PASS
-[2026-10-18 10:51:58] Astronomica legacy parser checks: PASS
-[2026-10-18 10:51:58] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-18 10:51:58] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-18 10:51:58] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-18 10:51:58] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-18 10:51:58] Astronomica legacy state checks: PASS
-[2026-10-18 10:51:58] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-18 10:51:58] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-18 10:51:58] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-18 10:51:58] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-18 10:51:58] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-18 10:51:58] Astronomica legacy save verification: PASS (15 original payloads, 102 token truncations, signed bounds, inactive import, native resave, original menu control, rejected active clocks/destinations)
-[2026-10-18 10:51:58] --- Log closed successfully.
+[2026-10-18 19:39:26] ScummVM 2026.3.1git
+[2026-10-18 19:39:26] RGB SDL2 
+[2026-10-18 19:39:26] --- Log opened.
+[2026-10-18 19:39:26] Using SDL Video Driver "dummy"
+[2026-10-18 19:39:26] Using SDL Audio Driver "wasapi"
+[2026-10-18 19:39:26] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-18 19:39:26] Output sample rate: 44100 Hz
+[2026-10-18 19:39:26] Output buffer size: 1024 samples
+[2026-10-18 19:39:26] Output channels: 2
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_START' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-18 19:39:27] CPU extensions:
+[2026-10-18 19:39:27] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-18 19:39:27] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-18 19:39:27] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-18 19:39:27] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_A' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_B' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_Y' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_X' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_UP' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-18 19:39:27] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-18 19:39:27] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-18 19:39:28] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-18 19:39:28] Astronomica legacy original payloads: PASS
+[2026-10-18 19:39:28] Astronomica legacy parser checks: PASS
+[2026-10-18 19:39:28] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-18 19:39:28] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-18 19:39:28] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-18 19:39:28] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-18 19:39:28] Astronomica legacy state checks: PASS
+[2026-10-18 19:39:28] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-18 19:39:28] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-18 19:39:28] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-18 19:39:28] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-18 19:39:28] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-18 19:39:28] Astronomica legacy save verification: PASS (15 original payloads, 102 token truncations, signed bounds, inactive import, native resave, original menu control, rejected active clocks/destinations)
+[2026-10-18 19:39:28] --- Log closed successfully.

@@ -17,11 +17,12 @@
   "byte_corruptions": 2612,
   "invalid_checksummed_states": 21,
   "fresh_process_slot": 5,
-  "fresh_process_fingerprint": "3cb4e55c",
+  "fresh_process_fingerprint": "45498761",
   "music": "Ambient restarts from beginning",
   "compatibility": "Exploration v1/v2, P508 v3, P505 v4 and P519 v5 retained; prior-build v3/v4/v5 slots unchanged",
   "limitations": [
     "Other puzzle saves remain unsupported",
     "No complete manual audiovisual playthrough"
-  ]
+  ],
+  "latest_validation_date": "2026-10-18"
 }

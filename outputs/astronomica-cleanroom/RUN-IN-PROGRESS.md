@@ -1,1 +1,1 @@
-P524 v6 saves verified 18 October 2026. Matching build, 72 round trips, animation/corruption/physical-slot/fresh-process tests, compatibility v1-v5 and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.
+P526 v7 saves verified 18 October 2026. Matching build, 686 round trips, native boundary audit, malformed rejection, slot/fresh-process completion, v1-v6 compatibility and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md and workspace AI_MODEL_CHECKPOINT.md.

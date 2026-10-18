@@ -17,6 +17,11 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'work/fresh-20260913/check_question_regressions.py',
  'outputs/astronomica-cleanroom/P505-SAVE-FORMAT.md',
  'work/fresh-20260913/record_save_coverage.py','outputs/astronomica-cleanroom/evidence/native-save-coverage.json',
+ 'AI_MODEL_CHECKPOINT.md',
+ 'outputs/astronomica-cleanroom/PRESENTATION-RESEARCH.md',
+ 'outputs/astronomica-cleanroom/P528-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p528_save.py','outputs/astronomica-cleanroom/evidence/p528-save-original.json',
+ 'work/fresh-20260913/check_p526_saves.py','work/fresh-20260913/check_p526_boundaries.py','work/fresh-20260913/check_p526_regressions.py','work/fresh-20260913/finish_p526_saves.py','outputs/astronomica-cleanroom/P526-SAVE-FORMAT.md',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p526-saves-validation.json','p526-save-proof.json','p526-saves-runtime.log','p526-saves-startup.log','p526-native-save-boundaries.json','p526-native-save-boundaries.log','p524-previous-slot.log','p524-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/P526-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p526_save.py','outputs/astronomica-cleanroom/evidence/p526-save-original.json',
  'outputs/astronomica-cleanroom/P524-SAVE-FORMAT.md','work/fresh-20260913/check_p524_saves.py','work/fresh-20260913/check_p524_regressions.py','work/fresh-20260913/finish_p524_saves.py','outputs/astronomica-cleanroom/evidence/p524-saves-validation.json','outputs/astronomica-cleanroom/evidence/p524-save-proof.json','outputs/astronomica-cleanroom/evidence/p524-saves-runtime.log','outputs/astronomica-cleanroom/evidence/p524-saves-startup.log','outputs/astronomica-cleanroom/evidence/p519-previous-slot.log','outputs/astronomica-cleanroom/evidence/p519-previous-slot-proof.json',
  'outputs/astronomica-cleanroom/P524-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p524_save.py','outputs/astronomica-cleanroom/evidence/p524-save-original.json',
@@ -47,6 +52,9 @@ if '- '+p524_note not in s:
 if 'native-save-coverage.json' not in s:
     s=s.replace('- Automatically verified routes', '- [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records four supported puzzle scenes (P505, P508, P519, P524), plus exploration. This is not a whole-game completion percentage.\n- Automatically verified routes')
 s=s.replace('on 16 October 2026','on 18 October 2026')
+if 'P526 v7' not in s:
+    s=s.replace('- Automatically verified routes','- P526 v7 saves stopped orbital experiments, retaining animation phases, render positions and hover. 686 round trips include 216 animation cases and 432 synthetic phase/answer comparisons.\n- Automatically verified routes')
+s=s.replace('four supported puzzle scenes (P505, P508, P519, P524)','five supported puzzle scenes (P505, P508, P519, P524, P526)')
 p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-18'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()

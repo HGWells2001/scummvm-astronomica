@@ -106,10 +106,33 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==4
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==5
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524,526}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/f"evidence/p{row['scene']}-saves-runtime.log")==row['runtime_sha256']
  assert digest(root/f"evidence/p{row['scene']}-saves-startup.log")==row['startup_sha256']
 print('Measured native save coverage integrity PASS')
+p526save=json.loads((root/'evidence/p526-saves-validation.json').read_text())
+assert p526save['status']=='PASS' and p526save['boundaries']==686 and p526save['animation_cases']==216 and p526save['synthetic_answer_cases']==432
+for name,marker in [('p526-saves-runtime.log','P526 saves: PASS (686 boundaries'),('p526-saves-startup.log','P526 startup save: PASS'),('p524-previous-slot.log','P524 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text()
+ assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+proof=json.loads((root/'evidence/p526-save-proof.json').read_text())
+assert proof['fresh_process_fingerprint']==p526save['fresh_process_fingerprint'] and proof['metadata_listed']
+assert json.loads((root/'evidence/p524-previous-slot-proof.json').read_text())['unchanged']
+audit=json.loads((root/'evidence/p526-native-save-boundaries.json').read_text())
+assert audit['boundaries']==33 and audit['exe_sha256']==m['exe_sha256'] and audit['source_sha256']==p526['source_sha256']
+print('P526 v7 save evidence integrity PASS')
+p528=json.loads((root/'evidence/p528-save-original.json').read_text())
+assert p528['status']=='PASS' and len(p528['phases'])==12 and len(p528['images'])==23
+assert p528['pixel_history_comparisons']==1728 and len(p528['last_pair_only_failures'])==32
+assert len(set(p528['tall_moon_last_row_sha256'].values()))==4
+assert len(p528['natural_cycle_snapshots'])==48
+assert p528['natural_cycle_snapshots'][0]['background_sha256']!=p528['natural_cycle_snapshots'][12]['background_sha256']
+assert p528['legacy_debug_strip_overlap']['pixel_addresses']==855 and p528['legacy_debug_strip_overlap']['nonblack_pixels']==204
+assert digest(Path('D:/astro/PLACES/P528/MEGAFILE.HYP'))==p528['source_sha256']
+for picture in p528['images']:
+ assert digest(Path('D:/astro/PLACES/P528')/picture['file'])==picture['sha256']
+assert next(row for row in p528['phases'] if row['phase']==2)['pictures'][0]['file']=='GE_S1'
+print('P528 original save requirements integrity PASS')

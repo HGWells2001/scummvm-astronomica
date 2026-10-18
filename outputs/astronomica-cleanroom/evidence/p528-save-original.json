@@ -1,0 +1,922 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "scope": "Original serialized resources only; P528 native saves not implemented",
+  "source_sha256": "983378eabde54a37346037706520f201508274ccf58e195e4b4d9ca0c786bf30",
+  "conditions": [
+    [
+      1,
+      0,
+      13,
+      11,
+      0,
+      13
+    ],
+    [
+      1,
+      1,
+      4,
+      0,
+      0,
+      4
+    ],
+    [
+      1,
+      2,
+      4,
+      0,
+      0,
+      4
+    ],
+    [
+      1,
+      3,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      4,
+      1,
+      0,
+      0,
+      1
+    ]
+  ],
+  "sprite_frame_counts": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    12,
+    1
+  ],
+  "phases": [
+    {
+      "phase": 0,
+      "sprite7_position": [
+        248,
+        29
+      ],
+      "sprite7_frame": 11,
+      "pictures": [
+        {
+          "file": "GE_S12",
+          "x": 87,
+          "y": 356,
+          "command_offset": 335777
+        },
+        {
+          "file": "MO_S12",
+          "x": 401,
+          "y": 369,
+          "command_offset": 336056
+        }
+      ]
+    },
+    {
+      "phase": 1,
+      "sprite7_position": [
+        169,
+        36
+      ],
+      "sprite7_frame": 10,
+      "pictures": [
+        {
+          "file": "GE_S11",
+          "x": 87,
+          "y": 356,
+          "command_offset": 335123
+        },
+        {
+          "file": "MO_S11",
+          "x": 401,
+          "y": 369,
+          "command_offset": 335402
+        }
+      ]
+    },
+    {
+      "phase": 2,
+      "sprite7_position": [
+        95,
+        57
+      ],
+      "sprite7_frame": 9,
+      "pictures": [
+        {
+          "file": "GE_S1",
+          "x": 87,
+          "y": 356,
+          "command_offset": 334469
+        },
+        {
+          "file": "MO_S10",
+          "x": 401,
+          "y": 369,
+          "command_offset": 334748
+        }
+      ]
+    },
+    {
+      "phase": 3,
+      "sprite7_position": [
+        30,
+        92
+      ],
+      "sprite7_frame": 8,
+      "pictures": [
+        {
+          "file": "GE_S9",
+          "x": 87,
+          "y": 356,
+          "command_offset": 333815
+        },
+        {
+          "file": "MO_S9",
+          "x": 401,
+          "y": 369,
+          "command_offset": 334094
+        }
+      ]
+    },
+    {
+      "phase": 4,
+      "sprite7_position": [
+        32,
+        133
+      ],
+      "sprite7_frame": 7,
+      "pictures": [
+        {
+          "file": "GE_S8",
+          "x": 87,
+          "y": 356,
+          "command_offset": 333161
+        },
+        {
+          "file": "MO_S8",
+          "x": 401,
+          "y": 369,
+          "command_offset": 333440
+        }
+      ]
+    },
+    {
+      "phase": 5,
+      "sprite7_position": [
+        101,
+        166
+      ],
+      "sprite7_frame": 6,
+      "pictures": [
+        {
+          "file": "GE_S7",
+          "x": 87,
+          "y": 356,
+          "command_offset": 332507
+        },
+        {
+          "file": "MO_S7",
+          "x": 401,
+          "y": 369,
+          "command_offset": 332786
+        }
+      ]
+    },
+    {
+      "phase": 6,
+      "sprite7_position": [
+        218,
+        180
+      ],
+      "sprite7_frame": 5,
+      "pictures": [
+        {
+          "file": "GE_S6",
+          "x": 87,
+          "y": 356,
+          "command_offset": 331853
+        },
+        {
+          "file": "MO_S6",
+          "x": 401,
+          "y": 369,
+          "command_offset": 332132
+        }
+      ]
+    },
+    {
+      "phase": 7,
+      "sprite7_position": [
+        362,
+        165
+      ],
+      "sprite7_frame": 4,
+      "pictures": [
+        {
+          "file": "GE_S5",
+          "x": 87,
+          "y": 356,
+          "command_offset": 331199
+        },
+        {
+          "file": "MO_S5",
+          "x": 401,
+          "y": 369,
+          "command_offset": 331478
+        }
+      ]
+    },
+    {
+      "phase": 8,
+      "sprite7_position": [
+        439,
+        123
+      ],
+      "sprite7_frame": 3,
+      "pictures": [
+        {
+          "file": "GE_S4",
+          "x": 87,
+          "y": 356,
+          "command_offset": 330545
+        },
+        {
+          "file": "MO_S4",
+          "x": 401,
+          "y": 369,
+          "command_offset": 330824
+        }
+      ]
+    },
+    {
+      "phase": 9,
+      "sprite7_position": [
+        464,
+        93
+      ],
+      "sprite7_frame": 2,
+      "pictures": [
+        {
+          "file": "GE_S3",
+          "x": 87,
+          "y": 356,
+          "command_offset": 329891
+        },
+        {
+          "file": "MO_S3",
+          "x": 401,
+          "y": 369,
+          "command_offset": 330170
+        }
+      ]
+    },
+    {
+      "phase": 10,
+      "sprite7_position": [
+        420,
+        59
+      ],
+      "sprite7_frame": 1,
+      "pictures": [
+        {
+          "file": "GE_S2",
+          "x": 87,
+          "y": 356,
+          "command_offset": 329237
+        },
+        {
+          "file": "MO_S2",
+          "x": 401,
+          "y": 369,
+          "command_offset": 329516
+        }
+      ]
+    },
+    {
+      "phase": 11,
+      "sprite7_position": [
+        336,
+        39
+      ],
+      "sprite7_frame": 0,
+      "pictures": [
+        {
+          "file": "GE_S1",
+          "x": 87,
+          "y": 356,
+          "command_offset": 328583
+        },
+        {
+          "file": "MO_S1",
+          "x": 401,
+          "y": 369,
+          "command_offset": 328862
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "GE_S1",
+      "width": 171,
+      "height": 105,
+      "sha256": "54e37de659c8e3d1618be05211e5e74e2a1590f78d81f48aad1a835bdab4338e"
+    },
+    {
+      "file": "GE_S11",
+      "width": 171,
+      "height": 105,
+      "sha256": "082d7184828e103efd01897537fd29e162ea78e3159d6b59bf6c76feca4750db"
+    },
+    {
+      "file": "GE_S12",
+      "width": 171,
+      "height": 105,
+      "sha256": "78fb6f30b46f78b685367262e39a0c7f54c124beb5ae7ed3744dd36a28665f2a"
+    },
+    {
+      "file": "GE_S2",
+      "width": 171,
+      "height": 105,
+      "sha256": "8e3432c633fd27667e04275cd6b3723665b2e22b3a6b1ded7fbe90aba1de6f2f"
+    },
+    {
+      "file": "GE_S3",
+      "width": 171,
+      "height": 105,
+      "sha256": "e7f9360a88f0f7a700119902d7f7c8b0d2488ddfff440f8af30b5b5f920b13a0"
+    },
+    {
+      "file": "GE_S4",
+      "width": 171,
+      "height": 105,
+      "sha256": "26805055e39938b6df9955f413a5a6b2c38005530105601dbd539ef3e8fe591b"
+    },
+    {
+      "file": "GE_S5",
+      "width": 171,
+      "height": 105,
+      "sha256": "106d29048139f5d90cb3d9c947a8f4de5b438f80f862a8d90c64d7e13c606955"
+    },
+    {
+      "file": "GE_S6",
+      "width": 171,
+      "height": 105,
+      "sha256": "8fddbb0fd20d545d1c6b3e2ddf579c54d66e206ee4c18b25c87485f1d9fe7b24"
+    },
+    {
+      "file": "GE_S7",
+      "width": 171,
+      "height": 105,
+      "sha256": "a1c154f91e4a8711c50daa65f67726003c21a2e4f07f313b7ca0c69747a326e9"
+    },
+    {
+      "file": "GE_S8",
+      "width": 171,
+      "height": 105,
+      "sha256": "ecfd127ce65c3b9365badd7877ff27878adedc9a98b895b04c57f23e66ff9bd4"
+    },
+    {
+      "file": "GE_S9",
+      "width": 171,
+      "height": 105,
+      "sha256": "e7f9360a88f0f7a700119902d7f7c8b0d2488ddfff440f8af30b5b5f920b13a0"
+    },
+    {
+      "file": "MO_S1",
+      "width": 143,
+      "height": 81,
+      "sha256": "150c9000464a9f3bb70203a717b80f4d4d0e5bce94357601a09686b3705d2cdd"
+    },
+    {
+      "file": "MO_S10",
+      "width": 143,
+      "height": 81,
+      "sha256": "0cd5aa7d1304cd3474e68d5d3031f1b93407cb028ef24cd0f879be102a87be79"
+    },
+    {
+      "file": "MO_S11",
+      "width": 143,
+      "height": 81,
+      "sha256": "15c6e7fb3a4730dde5f290e4cfa4027584abac312497e6fc0e19a5cd971a70c2"
+    },
+    {
+      "file": "MO_S12",
+      "width": 143,
+      "height": 80,
+      "sha256": "ec1e6a29324470798e8761cfda9151ab19384e5f61952ebd4c68a0bd17a099d2"
+    },
+    {
+      "file": "MO_S2",
+      "width": 143,
+      "height": 81,
+      "sha256": "fefb9af99fdfe1ae73e435d712f2402814713b51d41073794e9ea13f3e05047d"
+    },
+    {
+      "file": "MO_S3",
+      "width": 143,
+      "height": 80,
+      "sha256": "f08281567952831c511fa2dec3f184aaa232aedac9d7cd08ea4b9906c6b98fca"
+    },
+    {
+      "file": "MO_S4",
+      "width": 143,
+      "height": 80,
+      "sha256": "472778aa8eddce59accad004e0a0d479818a4e60a87803489bd88716d229ffe6"
+    },
+    {
+      "file": "MO_S5",
+      "width": 143,
+      "height": 80,
+      "sha256": "324c0c08df04ac05bdfc87566b8e3a62129175fb8f529f369512e82d2f732fbb"
+    },
+    {
+      "file": "MO_S6",
+      "width": 143,
+      "height": 80,
+      "sha256": "407f311a55053394e2d8e8927c51b3d5af3609847e22a4c5df3a3713bc74d95c"
+    },
+    {
+      "file": "MO_S7",
+      "width": 143,
+      "height": 80,
+      "sha256": "2cdcc8f584bce7a9dc7e640cbbcc15ad26cafe3d8ae5d0d15eb9ef9ed4b1f0ff"
+    },
+    {
+      "file": "MO_S8",
+      "width": 143,
+      "height": 80,
+      "sha256": "8313422cf3dceb326a2c0836f24733041c8412ce65687687e62e7c9f45b6931c"
+    },
+    {
+      "file": "MO_S9",
+      "width": 143,
+      "height": 80,
+      "sha256": "8070d891a39d01bda0e42ef24a19a5413b6c6dcbd668db4df47f024072216be2"
+    }
+  ],
+  "findings": [
+    "No startup programs, mouse rectangles, movies or automatic motion",
+    "Twelve phase branches commit two nonoverlapping image rectangles",
+    "Phase2 explicitly reuses GE_S1 alongside MO_S10; retain the original mapping",
+    "Initial phase11 can exist before any image commits; returning to phase11 later has two committed images",
+    "Original custom18 changes moon render coordinates while preserving its stored center and frame"
+  ],
+  "requirements": [
+    "Preserve absent-versus-committed pictures independently from local phase",
+    "Preserve both mutable render positions and sprite7 selected frame",
+    "Retain the two solved eclipse flags and repeated alignment behavior",
+    "Verify all48 phase/quadrant positions, both solve orders, duplicate success count, wrong/repeated alignment and unsolved exit",
+    "Reject pending actions/foreground audio and preflight both bitmaps before live state mutation"
+  ],
+  "pixel_history_comparisons": 1728,
+  "last_pair_only_failures": [
+    [
+      11,
+      9
+    ],
+    [
+      11,
+      8
+    ],
+    [
+      11,
+      7
+    ],
+    [
+      11,
+      6
+    ],
+    [
+      11,
+      5
+    ],
+    [
+      11,
+      4
+    ],
+    [
+      11,
+      3
+    ],
+    [
+      11,
+      0
+    ],
+    [
+      10,
+      9
+    ],
+    [
+      10,
+      8
+    ],
+    [
+      10,
+      7
+    ],
+    [
+      10,
+      6
+    ],
+    [
+      10,
+      5
+    ],
+    [
+      10,
+      4
+    ],
+    [
+      10,
+      3
+    ],
+    [
+      10,
+      0
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "tall_moon_last_row_sha256": {
+    "MO_S1": "87c37eb43f23115be47c5439905275450161fcb8e2b32eb16fd3836575753c4e",
+    "MO_S2": "8cd022a23ec32e2f2e0ac8df1c826dfd16ae6c05f27625782b4ee8aa176ddd53",
+    "MO_S10": "c54d5cca514f956e0849d8cf28d8622108b9ff314809caf79f4222a93994adda",
+    "MO_S11": "6a6046669635e5a7528e7fec1d2e1470b3a021f78ef76fcb3666179b9e4d6338"
+  },
+  "background_history_contract": "Keep last committed pair and last 81px moon image, or absence; restore tall moon first then the current pair",
+  "pixel_comparison_scope": "Original bitmap RGB pixels on original embedded background/control; image history only, not complete native scene restoration",
+  "initial_background_sha256": "dcc9f8c76892d64e79469ef80826eb8c4b2e5b2901af079304e6bc0c9ca97b5e",
+  "natural_cycle_snapshots": [
+    {
+      "step": 1,
+      "phase": 0,
+      "last_tall_moon": null,
+      "background_sha256": "ecd37fa63e7e215ceed903168c84274b5c21ccd85505dbc691b66852bbef9a7c"
+    },
+    {
+      "step": 2,
+      "phase": 1,
+      "last_tall_moon": "MO_S11",
+      "background_sha256": "76fb8d70e9532aeff2c2a007675d198c305ba0b0b78979e097af9f05dd783b7f"
+    },
+    {
+      "step": 3,
+      "phase": 2,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "119e7e5a2867e30fe6ab1aa96c0c373e131e78a5a8e1ceea445dcbb2571e7e40"
+    },
+    {
+      "step": 4,
+      "phase": 3,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "e1ed93e9ef2eb76896bfbc91d7d79050fca43190dd012baeedfd8e3244e151d6"
+    },
+    {
+      "step": 5,
+      "phase": 4,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7e7aaaf3bbd62c9e33c2375d51445b6ca01efab01fbd7965c6156b797a14df20"
+    },
+    {
+      "step": 6,
+      "phase": 5,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "2286cc6d15541cf758aa50b388cd6dc5b43b92d8c913bc546557c49a4a77de38"
+    },
+    {
+      "step": 7,
+      "phase": 6,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "f8055cf9ec44819c3b385db81b80da6820b963546130ca40a21fd64421d753eb"
+    },
+    {
+      "step": 8,
+      "phase": 7,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "4f99ef4565497b73df4505d4c3f818fd75f4fdda1ae9f935c98cbfb1b0b8cf57"
+    },
+    {
+      "step": 9,
+      "phase": 8,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "8f145920403811508697bef4430d7600e127d4686464137cccfcab1b006f8a1f"
+    },
+    {
+      "step": 10,
+      "phase": 9,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7fcda5d4c21fa048252a0fb08ff9734e4b6d24fd12dfe6229dd68dda26fd6936"
+    },
+    {
+      "step": 11,
+      "phase": 10,
+      "last_tall_moon": "MO_S2",
+      "background_sha256": "55f3649954458d0815f42021284835e4fbacf7f96218c2209d1450001d36eafa"
+    },
+    {
+      "step": 12,
+      "phase": 11,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "76b05f66b03ff8c3474a0266a050ee63b960ede7cace728cb9f04e5d2af5cf79"
+    },
+    {
+      "step": 13,
+      "phase": 0,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "75f88d64ef31962fc983fc2f6dee9404bb1d7c97a1554d4decd064b6b41a2d91"
+    },
+    {
+      "step": 14,
+      "phase": 1,
+      "last_tall_moon": "MO_S11",
+      "background_sha256": "76fb8d70e9532aeff2c2a007675d198c305ba0b0b78979e097af9f05dd783b7f"
+    },
+    {
+      "step": 15,
+      "phase": 2,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "119e7e5a2867e30fe6ab1aa96c0c373e131e78a5a8e1ceea445dcbb2571e7e40"
+    },
+    {
+      "step": 16,
+      "phase": 3,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "e1ed93e9ef2eb76896bfbc91d7d79050fca43190dd012baeedfd8e3244e151d6"
+    },
+    {
+      "step": 17,
+      "phase": 4,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7e7aaaf3bbd62c9e33c2375d51445b6ca01efab01fbd7965c6156b797a14df20"
+    },
+    {
+      "step": 18,
+      "phase": 5,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "2286cc6d15541cf758aa50b388cd6dc5b43b92d8c913bc546557c49a4a77de38"
+    },
+    {
+      "step": 19,
+      "phase": 6,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "f8055cf9ec44819c3b385db81b80da6820b963546130ca40a21fd64421d753eb"
+    },
+    {
+      "step": 20,
+      "phase": 7,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "4f99ef4565497b73df4505d4c3f818fd75f4fdda1ae9f935c98cbfb1b0b8cf57"
+    },
+    {
+      "step": 21,
+      "phase": 8,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "8f145920403811508697bef4430d7600e127d4686464137cccfcab1b006f8a1f"
+    },
+    {
+      "step": 22,
+      "phase": 9,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7fcda5d4c21fa048252a0fb08ff9734e4b6d24fd12dfe6229dd68dda26fd6936"
+    },
+    {
+      "step": 23,
+      "phase": 10,
+      "last_tall_moon": "MO_S2",
+      "background_sha256": "55f3649954458d0815f42021284835e4fbacf7f96218c2209d1450001d36eafa"
+    },
+    {
+      "step": 24,
+      "phase": 11,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "76b05f66b03ff8c3474a0266a050ee63b960ede7cace728cb9f04e5d2af5cf79"
+    },
+    {
+      "step": 25,
+      "phase": 0,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "75f88d64ef31962fc983fc2f6dee9404bb1d7c97a1554d4decd064b6b41a2d91"
+    },
+    {
+      "step": 26,
+      "phase": 1,
+      "last_tall_moon": "MO_S11",
+      "background_sha256": "76fb8d70e9532aeff2c2a007675d198c305ba0b0b78979e097af9f05dd783b7f"
+    },
+    {
+      "step": 27,
+      "phase": 2,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "119e7e5a2867e30fe6ab1aa96c0c373e131e78a5a8e1ceea445dcbb2571e7e40"
+    },
+    {
+      "step": 28,
+      "phase": 3,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "e1ed93e9ef2eb76896bfbc91d7d79050fca43190dd012baeedfd8e3244e151d6"
+    },
+    {
+      "step": 29,
+      "phase": 4,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7e7aaaf3bbd62c9e33c2375d51445b6ca01efab01fbd7965c6156b797a14df20"
+    },
+    {
+      "step": 30,
+      "phase": 5,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "2286cc6d15541cf758aa50b388cd6dc5b43b92d8c913bc546557c49a4a77de38"
+    },
+    {
+      "step": 31,
+      "phase": 6,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "f8055cf9ec44819c3b385db81b80da6820b963546130ca40a21fd64421d753eb"
+    },
+    {
+      "step": 32,
+      "phase": 7,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "4f99ef4565497b73df4505d4c3f818fd75f4fdda1ae9f935c98cbfb1b0b8cf57"
+    },
+    {
+      "step": 33,
+      "phase": 8,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "8f145920403811508697bef4430d7600e127d4686464137cccfcab1b006f8a1f"
+    },
+    {
+      "step": 34,
+      "phase": 9,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7fcda5d4c21fa048252a0fb08ff9734e4b6d24fd12dfe6229dd68dda26fd6936"
+    },
+    {
+      "step": 35,
+      "phase": 10,
+      "last_tall_moon": "MO_S2",
+      "background_sha256": "55f3649954458d0815f42021284835e4fbacf7f96218c2209d1450001d36eafa"
+    },
+    {
+      "step": 36,
+      "phase": 11,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "76b05f66b03ff8c3474a0266a050ee63b960ede7cace728cb9f04e5d2af5cf79"
+    },
+    {
+      "step": 37,
+      "phase": 0,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "75f88d64ef31962fc983fc2f6dee9404bb1d7c97a1554d4decd064b6b41a2d91"
+    },
+    {
+      "step": 38,
+      "phase": 1,
+      "last_tall_moon": "MO_S11",
+      "background_sha256": "76fb8d70e9532aeff2c2a007675d198c305ba0b0b78979e097af9f05dd783b7f"
+    },
+    {
+      "step": 39,
+      "phase": 2,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "119e7e5a2867e30fe6ab1aa96c0c373e131e78a5a8e1ceea445dcbb2571e7e40"
+    },
+    {
+      "step": 40,
+      "phase": 3,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "e1ed93e9ef2eb76896bfbc91d7d79050fca43190dd012baeedfd8e3244e151d6"
+    },
+    {
+      "step": 41,
+      "phase": 4,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7e7aaaf3bbd62c9e33c2375d51445b6ca01efab01fbd7965c6156b797a14df20"
+    },
+    {
+      "step": 42,
+      "phase": 5,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "2286cc6d15541cf758aa50b388cd6dc5b43b92d8c913bc546557c49a4a77de38"
+    },
+    {
+      "step": 43,
+      "phase": 6,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "f8055cf9ec44819c3b385db81b80da6820b963546130ca40a21fd64421d753eb"
+    },
+    {
+      "step": 44,
+      "phase": 7,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "4f99ef4565497b73df4505d4c3f818fd75f4fdda1ae9f935c98cbfb1b0b8cf57"
+    },
+    {
+      "step": 45,
+      "phase": 8,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "8f145920403811508697bef4430d7600e127d4686464137cccfcab1b006f8a1f"
+    },
+    {
+      "step": 46,
+      "phase": 9,
+      "last_tall_moon": "MO_S10",
+      "background_sha256": "7fcda5d4c21fa048252a0fb08ff9734e4b6d24fd12dfe6229dd68dda26fd6936"
+    },
+    {
+      "step": 47,
+      "phase": 10,
+      "last_tall_moon": "MO_S2",
+      "background_sha256": "55f3649954458d0815f42021284835e4fbacf7f96218c2209d1450001d36eafa"
+    },
+    {
+      "step": 48,
+      "phase": 11,
+      "last_tall_moon": "MO_S1",
+      "background_sha256": "76b05f66b03ff8c3474a0266a050ee63b960ede7cace728cb9f04e5d2af5cf79"
+    }
+  ],
+  "legacy_debug_strip_overlap": {
+    "image": "GE_S1",
+    "screen_rect": [
+      87,
+      456,
+      258,
+      461
+    ],
+    "pixel_addresses": 855,
+    "nonblack_pixels": 204,
+    "distinct_colors": 22,
+    "original_rgb_sha256": "3c5aadda4df8d2c6040fab83eb823822e224972542b68ecf9028642f14aa29d0"
+  }
+}

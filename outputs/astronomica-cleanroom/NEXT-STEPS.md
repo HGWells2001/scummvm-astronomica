@@ -1,3 +1,12 @@
+# Ripresa: salvataggi P526, 18 ottobre 2026
+
+P526 v7: 686 ripristini, 216 casi animazione, 432 combinazioni artificiali fase/risposta, slot e nuovo processo PASS.
+33 successori di gioco e cinque identita distinti dai casi artificiali; audit nativo 33 confini sui sei scenari.
+P505/P508/P519/P524, precedenti slot v3-v6, esplorazione v1/v2, import, aiuto e suite WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p526_saves.py. Test: check_p526_saves.py e check_p526_regressions.py.
+Leggere P526-SAVE-FORMAT.md. Prossimo: PRESENTATION-RESEARCH.md (barra che copre24 righe), poi P528-SAVE-PLAN.md (due sfondi e riga persistente).
+Protocollo AI: AI_MODEL_CHECKPOINT.md nella radice del workspace. Nessuna percentuale globale attendibile.
+
 # Ripresa: salvataggi P524, 18 ottobre 2026
 
 P524 v6: 72 ripristini, 48 casi animazione Tritone, ritorno aiuto e nuovo processo PASS.
