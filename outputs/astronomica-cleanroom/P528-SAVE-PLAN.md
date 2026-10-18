@@ -48,3 +48,44 @@ a fresh-process slot. Keep native formats v1-v7 compatible.
 
 This is preparation for the actual engine, not a playable prototype or a
 claim that static inventory proves restoration.
+
+Original answer-handler audit, 18 October 2026: probe_p528_answer_states.py
+steps the fifty instructions at ASTRO.EXE 4:444c–4523 for all192 combinations
+of twelve phases, four quadrants and two boolean solved flags. Every
+instruction is covered. It records direct sound calls without executing
+them. The first flag is set at (phase0,quadrant1) or (6,3), the second at
+(0,3) or (6,1); both flags are monotonic. The result is exactly their
+conjunction. Among144 inputs with fewer than two flags set, four answer
+edges complete the puzzle. Original serialized commands test that result
+after400ms and depart to P526 after4500ms.
+
+Admission inference: a settled P528 save must have result local2=0 and
+cannot have both solved flags set, because completion has pending departure
+work. Preserve either partial flag independently from the current alignment:
+moving the phase/quadrant does not erase it. Evidence: p528-answer-states.json.
+This static handler audit does not claim native save/load implementation or
+manual runtime observation.
+
+probe_p528_settled_graph.py derives a finite abstraction from the original
+rotation/wrap command prefixes and that instruction-derived answer table.
+Starting at the serialized phase11/quadrant0, it finds160 reachable states,
+480 control edges and six completion departures. There are56 distinct
+phase/quadrant/image-history combinations. These counts exclude clocks,
+RNG, globals, counters and sprite snapshot details and are not a whole-game
+or native-restoration completion measure.
+
+The graph sharpens the image-history preflight: absent pictures occur only
+in the four initial phase11/quadrant states, with neither partial flag set.
+After commits, phase0 retains either no tall moon on its first visit or
+MO_S1 later; phase1 retains MO_S11, phases2–9 retain MO_S10, phase10 retains
+MO_S2 and phase11 retains MO_S1. The broader1728 image-composition proof
+covers arbitrary three-pair histories; it must not be described as1728
+naturally reachable puzzle states. Both proofs have separate scopes.
+
+Suggested v8 payload, still unimplemented: twelve header words, nine
+frozen27-word sprite records and603 runner words, followed by the current
+word-wise FNV checksum. With ASVM/version this is3444 bytes. Preserve an
+explicit current pair (or absence), retained tall moon and two reserved
+words; preflight the resource-derived history constraints before mutation.
+Do not change the already published v7 field meanings. The native test must
+compare the full480-row background and screen, not the older456-row hashes.

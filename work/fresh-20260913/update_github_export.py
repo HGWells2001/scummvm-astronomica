@@ -19,9 +19,14 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'work/fresh-20260913/record_save_coverage.py','outputs/astronomica-cleanroom/evidence/native-save-coverage.json',
  'AI_MODEL_CHECKPOINT.md',
  'outputs/astronomica-cleanroom/PRESENTATION-RESEARCH.md',
+ 'outputs/astronomica-cleanroom/AUDIO-CHANNELS.md',
+ 'work/fresh-20260913/check_audio_channels.py','work/fresh-20260913/check_audio_channel_regressions.py','work/fresh-20260913/finish_audio_channels.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('audio-channels-validation.json','audio-channels.log','audio-channels-proof.json')],
  'work/fresh-20260913/check_presentation.py','work/fresh-20260913/check_presentation_regressions.py','work/fresh-20260913/finish_presentation.py',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('presentation-validation.json','presentation.log','p526-previous-slot.log','p526-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/P528-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p528_save.py','outputs/astronomica-cleanroom/evidence/p528-save-original.json',
+ 'outputs/astronomica-cleanroom/probe_p528_answer_states.py','outputs/astronomica-cleanroom/evidence/p528-answer-states.json',
+ 'outputs/astronomica-cleanroom/probe_p528_settled_graph.py','outputs/astronomica-cleanroom/evidence/p528-settled-graph.json',
  'work/fresh-20260913/check_p526_saves.py','work/fresh-20260913/check_p526_boundaries.py','work/fresh-20260913/check_p526_regressions.py','work/fresh-20260913/finish_p526_saves.py','outputs/astronomica-cleanroom/P526-SAVE-FORMAT.md',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p526-saves-validation.json','p526-save-proof.json','p526-saves-runtime.log','p526-saves-startup.log','p526-native-save-boundaries.json','p526-native-save-boundaries.log','p524-previous-slot.log','p524-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/P526-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p526_save.py','outputs/astronomica-cleanroom/evidence/p526-save-original.json',
@@ -60,6 +65,9 @@ s=s.replace('four supported puzzle scenes (P505, P508, P519, P524)','five suppor
 if 'Ordinary presentation preserves all 640x480' not in s:
     s=s.replace('- Automatically verified routes','- Ordinary presentation preserves all 640x480 original pixels. The diagnostic strip is opt-in; twelve complete-scene checks and 855 original P528 picture pixels pass.\n- Automatically verified routes')
 p.write_text(s.rstrip()+'\n')
+if 'Looping WAVs follow the Music control' not in s:
+    s=s.replace('- Automatically verified routes','- Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.\n- Automatically verified routes')
+    p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-18'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()

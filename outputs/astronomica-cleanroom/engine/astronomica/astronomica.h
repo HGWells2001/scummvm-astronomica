@@ -71,6 +71,7 @@ private:
  Common::Error loadP526(Common::SeekableReadStream *stream);
  bool verifyP526Saves();
  bool verifyPresentation();
+ bool verifyAudioChannels();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.

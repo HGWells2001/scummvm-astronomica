@@ -11,3 +11,5 @@ Valutazione AI: configurazione corrente sufficiente in questa fase. Variante e l
 Limiti: cinque scene con salvataggi interni non misurano completamento globale; nessuna percentuale globale attendibile.
 
 Presentazione completa verificata: 640x480, 12 scene, 855 pixel originali P528, barra diagnostica opzionale. Compatibilita v1-v7 e suite WASAPI PASS. Checkpoint attuale finish_presentation.py; driver check_presentation.py e check_presentation_regressions.py. Variante/livello AI invariati e non verificabili nel client; nessuna richiesta di cambio.
+
+Audio verificato: loop sul canale Musica, primo piano sul canale Effetti; sei scene con Musica muta e volume zero, 12 WAV invariati. Suite completa PASS. Checkpoint attuale finish_audio_channels.py. Configurazione AI corrente sufficiente; nessun cambio richiesto o applicato. Prossimo P528-SAVE-PLAN.md.

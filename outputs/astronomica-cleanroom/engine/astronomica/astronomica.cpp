@@ -1145,7 +1145,10 @@ bool AstronomicaEngine::playSound(int id, uint32 now, bool looping) {
  if (!stream) return false;
  // sndPlaySound is a single channel; a new sound replaces the old one.
  _mixer->stopHandle(_soundHandle);
- _mixer->playStream(Audio::Mixer::kSFXSoundType, &_soundHandle, looping ? Audio::makeLoopingAudioStream(stream, 0) : stream);
+ // Background loops follow ScummVM's Music control. Foreground sounds
+ // retain the Effects control and replace the loop on this same handle.
+ _mixer->playStream(looping ? Audio::Mixer::kMusicSoundType : Audio::Mixer::kSFXSoundType,
+  &_soundHandle, looping ? Audio::makeLoopingAudioStream(stream, 0) : stream);
  if (!looping) _lastSoundAt = now;
  _lastSound = id; ++_soundsStarted;
  return true;
@@ -2910,6 +2913,36 @@ bool AstronomicaEngine::verifyP524Saves() {
  _runner.resetGlobals(); return loadPlace(103);
 }
 
+bool AstronomicaEngine::verifyAudioChannels() {
+ const Audio::Mixer::SoundType music = Audio::Mixer::kMusicSoundType, effects = Audio::Mixer::kSFXSoundType;
+ const int oldMusicVolume = _mixer->getVolumeForSoundType(music), oldEffectsVolume = _mixer->getVolumeForSoundType(effects);
+ const bool oldMusicMute = _mixer->isSoundTypeMuted(music), oldEffectsMute = _mixer->isSoundTypeMuted(effects);
+ _mixer->setVolumeForSoundType(music,0); _mixer->muteSoundType(music,true);
+ _mixer->setVolumeForSoundType(effects,Audio::Mixer::kMaxMixerVolume); _mixer->muteSoundType(effects,false);
+ uint loops = 0, foregrounds = 0; bool ok = true;
+ for (int place : {505,508,519,524,526,528}) {
+  if (!loadPlace(place)) { ok = false; break; }
+  _mixer->stopHandle(_soundHandle);
+  const bool loopOK = playSound(0,scriptClock(),true) && _mixer->isSoundHandleActive(_soundHandle) &&
+   _mixer->hasActiveChannelOfType(music) && !_mixer->hasActiveChannelOfType(effects) &&
+   _mixer->isSoundTypeMuted(music) && _mixer->getVolumeForSoundType(music) == 0;
+  loops += loopOK;
+  const bool foregroundOK = playSound(1,scriptClock()) && _mixer->isSoundHandleActive(_soundHandle) &&
+   _mixer->hasActiveChannelOfType(effects) && !_mixer->hasActiveChannelOfType(music) &&
+   !_mixer->isSoundTypeMuted(effects) && _mixer->getVolumeForSoundType(effects) == Audio::Mixer::kMaxMixerVolume &&
+   _mixer->isSoundTypeMuted(music) && _mixer->getVolumeForSoundType(music) == 0;
+  foregrounds += foregroundOK; ok = loopOK && foregroundOK && ok;
+  debug("Astronomica P%d audio channels: music %s, foreground %s",place,loopOK ? "PASS" : "FAIL",foregroundOK ? "PASS" : "FAIL");
+  _mixer->stopHandle(_soundHandle);
+ }
+ _mixer->setVolumeForSoundType(music,oldMusicVolume); _mixer->muteSoundType(music,oldMusicMute);
+ _mixer->setVolumeForSoundType(effects,oldEffectsVolume); _mixer->muteSoundType(effects,oldEffectsMute);
+ const bool restored = _mixer->getVolumeForSoundType(music) == oldMusicVolume && _mixer->isSoundTypeMuted(music) == oldMusicMute &&
+  _mixer->getVolumeForSoundType(effects) == oldEffectsVolume && _mixer->isSoundTypeMuted(effects) == oldEffectsMute;
+ ok = ok && loops == 6 && foregrounds == 6 && restored;
+ debug("Astronomica audio channel verification: %s (%u muted music loops, %u foreground replacements, controls %s)",ok ? "PASS" : "FAIL",loops,foregrounds,restored ? "restored" : "FAIL");
+ _runner.resetGlobals(); return loadPlace(103) && ok;
+}
 bool AstronomicaEngine::verifyPresentation() {
  const bool hadOverlay = ConfMan.hasKey("astronomica_debug_overlay");
  const bool oldOverlay = hadOverlay && ConfMan.getBool("astronomica_debug_overlay");
@@ -5459,6 +5492,13 @@ Common::Error AstronomicaEngine::run() {
   const bool ok = verifyTransitions();
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Transition verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_audio_channels") && ConfMan.getBool("astronomica_verify_audio_channels")) {
+  ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);
+  ConfMan.setBool("astronomica_sprite_input",true); ConfMan.setBool("astronomica_entry_scripts",false);
+  const bool ok = verifyAudioChannels();
+  _background.free(); _screen.free(); quitGame();
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Audio channel verification failed");
  }
  if (ConfMan.hasKey("astronomica_verify_presentation") && ConfMan.getBool("astronomica_verify_presentation")) {
   ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);

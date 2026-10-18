@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "date": "2026-10-18",
+  "original_wav_sha256": {
+    "D:\\astro\\PLACES\\P505\\S0.WAV": "024b9dd39387ab576ce1bbc6dabc996a031d7a7fb8378681d75586413d647ffc",
+    "D:\\astro\\PLACES\\P505\\S1.WAV": "6aaeebef7629d617e5dd03cc64fbdd436f888936b98ebde3baae581679f7526e",
+    "D:\\astro\\PLACES\\P508\\S0.WAV": "081a8bc5378d9b4ef74a67f4ea3a111f163da8acb4b20939301fc9a08a20be78",
+    "D:\\astro\\PLACES\\P508\\S1.WAV": "3f46120b51709af3c59f28fd4a85387eded35dd040ade420bbf3719c6aadc0d2",
+    "D:\\astro\\PLACES\\P519\\S0.WAV": "7316bd886527eeecb2ffe0ebf59d01db572c9f7b4bdfd4967db26f2c82085e8f",
+    "D:\\astro\\PLACES\\P519\\S1.WAV": "db7a55c9a4480cc4c12415a8d59371c90b569695fe12e42722b7dacfeb3da1ab",
+    "D:\\astro\\PLACES\\P524\\S0.WAV": "7316bd886527eeecb2ffe0ebf59d01db572c9f7b4bdfd4967db26f2c82085e8f",
+    "D:\\astro\\PLACES\\P524\\S1.WAV": "4add911fb25b069dc39395d08c9b969128098c5d5307ede6694967fe1542c799",
+    "D:\\astro\\PLACES\\P526\\S0.WAV": "8b6142a50c765d5daa27eb59ff97479c0359b1336b41d06bb16a5445a687e7fc",
+    "D:\\astro\\PLACES\\P526\\S1.WAV": "1fa44a36d9398c533ac12917db0320e286b64909af0c693e70fd63fddf34c140",
+    "D:\\astro\\PLACES\\P528\\S0.WAV": "60eeb2c938adb43615e1e893da94408ea572bcc2bbcd45763c80c02a170b773b",
+    "D:\\astro\\PLACES\\P528\\S1.WAV": "20fa93415e61a2235303d286a9e29e35e842181b54f86f1eb61514605c8a93a9"
+  },
+  "unchanged": true
+}

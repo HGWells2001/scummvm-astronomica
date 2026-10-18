@@ -1,3 +1,12 @@
+# Ripresa: controllo Musica separato, 18 ottobre 2026
+
+Loop WAV sul canale Musica; registrazioni in primo piano sul canale Effetti, con sostituzione originale a singolo canale.
+Sei scene con Musica muta/volume zero, 12 WAV originali invariati, ripristino controlli PASS.
+Presentazione completa, salvataggi v1-v7, slot precedenti, import, aiuto e suite WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_audio_channels.py. Test: check_audio_channels.py e check_audio_channel_regressions.py.
+Prossimo: P528-SAVE-PLAN.md, verifica audiovisiva manuale e tipografia aiuto. Non rieseguire finalizzatori storici.
+Nessuna percentuale globale attendibile. Protocollo: AI_MODEL_CHECKPOINT.md.
+
 # Ripresa: fotogramma originale completo, 18 ottobre 2026
 
 Presentazione 640x480 senza barra diagnostica predefinita: 12 scene e 855 pixel originali P528 PASS; debug opzionale e ripristino PASS.

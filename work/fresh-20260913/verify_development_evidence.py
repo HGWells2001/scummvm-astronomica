@@ -136,6 +136,35 @@ for picture in p528['images']:
  assert digest(Path('D:/astro/PLACES/P528')/picture['file'])==picture['sha256']
 assert next(row for row in p528['phases'] if row['phase']==2)['pictures'][0]['file']=='GE_S1'
 print('P528 original save requirements integrity PASS')
+answer=json.loads((root/'evidence/p528-answer-states.json').read_text())
+assert answer['status']=='PASS' and answer['case_count']==192 and answer['instruction_count']==50 and answer['instructions_covered']==50
+assert answer['settled_input_combinations']==144 and answer['completion_edges_from_settled_inputs']==4
+assert answer['first_flag_pairs']==[[0,1],[6,3]] and answer['second_flag_pairs']==[[0,3],[6,1]]
+assert answer['resource_sha256']==p528['source_sha256'] and digest(Path('D:/astro/SETUP/ASTRO.EXE'))==answer['executable_sha256']
+assert answer['original_completion_condition_delay_ms']==400 and answer['original_completion_destination_delay_ms']==4500 and answer['original_completion_destination']==526
+assert len(answer['cases'])==192 and {tuple([r['phase'],r['quadrant'],*r['before']]) for r in answer['cases']}=={(p,q,a,b) for p in range(12) for q in range(4) for a in range(2) for b in range(2)}
+assert {p for row in answer['cases'] for p in row['trace']}=={row['address'] for row in answer['instructions']}
+for row in answer['cases']:
+ assert row['result']==int(row['after']==[1,1]) and row['sound'] in (8,9,10)
+ assert all(after>=before for before,after in zip(row['before'],row['after']))
+print('P528 original answer-state audit integrity PASS')
+graph_path=root/'evidence/p528-settled-graph.json';graph=json.loads(graph_path.read_text())
+assert graph['status']=='PASS' and graph['source_sha256']==p528['source_sha256']
+assert graph['answer_reference_sha256']==digest(root/'evidence/p528-answer-states.json')
+assert (graph['state_count'],graph['edge_count'],graph['completion_edges'],graph['geometry_history_count'],graph['absent_picture_states'])==(160,480,6,56,4)
+states={tuple(row['values']) for row in graph['states']};assert len(states)==160 and len(graph['edges'])==480
+assert graph['initial']==[11,0,0,0,False,'']
+assert sum(e['departure_to']==526 for e in graph['edges'])==6
+for row in graph['states']:
+ p,q,first,second,committed,tall=row['values']
+ assert p in range(12) and q in range(4) and first in (0,1) and second in (0,1) and not(first and second)
+ if not committed:assert p==11 and not first and not second and not tall
+for edge in graph['edges']:
+ assert tuple(edge['source']) in states
+ if edge['departure_to'] is None:assert tuple(edge['target']) in states
+ else:assert edge['departure_to']==526 and edge['target'][2:4]==[1,1]
+for name,expected in graph['original_moon_sha256'].items():assert digest(Path('D:/astro/PLACES/P528')/name)==expected,name
+print('P528 settled-state abstraction integrity PASS')
 presentation=json.loads((root/'evidence/presentation-validation.json').read_text())
 assert presentation['status']=='PASS' and presentation['exe_sha256']==m['exe_sha256'] and presentation['frame_height']==480
 assert presentation['scene_count']==12 and presentation['original_p528_pixels_checked']==855 and not presentation['debug_overlay_default']
@@ -145,3 +174,13 @@ assert 'full-height presentation: PASS (12 scenes, 855 original P528 pixels' in 
 assert json.loads((root/'evidence/p526-previous-slot-proof.json').read_text())['unchanged']
 assert 'P526 startup save: PASS' in (root/'evidence/p526-previous-slot.log').read_text()
 print('Full-frame presentation evidence integrity PASS')
+audio=json.loads((root/'evidence/audio-channels-validation.json').read_text())
+assert audio['status']=='PASS' and audio['exe_sha256']==m['exe_sha256'] and audio['full_suite']
+assert audio['scenes']==[505,508,519,524,526,528] and audio['music_loops']==6 and audio['foreground_replacements']==6
+assert audio['music_muted'] and audio['music_volume']==0 and audio['effects_volume']==256 and audio['effects_unmuted'] and audio['controls_restored']
+s=(root/'evidence/audio-channels.log').read_text()
+assert 'audio channel verification: PASS (6 muted music loops, 6 foreground replacements, controls restored)' in s and 'FAIL' not in s and 'Log closed successfully' in s
+proof=json.loads((root/'evidence/audio-channels-proof.json').read_text())
+assert proof['status']=='PASS' and proof['unchanged'] and len(proof['original_wav_sha256'])==12
+for name,expected in proof['original_wav_sha256'].items():assert digest(Path(name))==expected,name
+print('Audio category evidence integrity PASS')
