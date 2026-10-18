@@ -16,6 +16,7 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'work/fresh-20260913/check_p505_saves.py','work/fresh-20260913/finish_p505_saves.py','outputs/astronomica-cleanroom/probe_p505_save.py',
  'work/fresh-20260913/check_question_regressions.py',
  'outputs/astronomica-cleanroom/P505-SAVE-FORMAT.md',
+ 'work/fresh-20260913/record_save_coverage.py','outputs/astronomica-cleanroom/evidence/native-save-coverage.json',
  'outputs/astronomica-cleanroom/P526-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p526_save.py','outputs/astronomica-cleanroom/evidence/p526-save-original.json',
  'outputs/astronomica-cleanroom/P524-SAVE-FORMAT.md','work/fresh-20260913/check_p524_saves.py','work/fresh-20260913/check_p524_regressions.py','work/fresh-20260913/finish_p524_saves.py','outputs/astronomica-cleanroom/evidence/p524-saves-validation.json','outputs/astronomica-cleanroom/evidence/p524-save-proof.json','outputs/astronomica-cleanroom/evidence/p524-saves-runtime.log','outputs/astronomica-cleanroom/evidence/p524-saves-startup.log','outputs/astronomica-cleanroom/evidence/p519-previous-slot.log','outputs/astronomica-cleanroom/evidence/p519-previous-slot-proof.json',
  'outputs/astronomica-cleanroom/P524-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p524_save.py','outputs/astronomica-cleanroom/evidence/p524-save-original.json',
@@ -39,10 +40,14 @@ if 'PageUp/PageDown/Home/End' not in s:
 if 'P519 v5' not in s:
     s=s.replace('and P505/P508 question boundaries.', 'and P505/P508 question boundaries. P519 v5 saves idle selections and partial solutions, with 74 gameplay comparisons, 30 image compositions and fresh-process continuation verified.')
 s=s.replace('on 15 October 2026','on 16 October 2026')
-if 'P524 v6' not in s:
-    s += '\nP524 v6 saves question boundaries, including the running Triton animation and mentor return. Tests cover 72 round trips, 48 animation boundary cases and fresh-process continuation.\n'
+p524_note='P524 v6 saves question boundaries, including the running Triton animation and mentor return. Tests cover 72 round trips, 48 animation boundary cases and fresh-process continuation.'
+s=s.replace('\n'+p524_note+'\n','\n')
+if '- '+p524_note not in s:
+    s=s.replace('- Automatically verified routes', '- '+p524_note+'\n- Automatically verified routes')
+if 'native-save-coverage.json' not in s:
+    s=s.replace('- Automatically verified routes', '- [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records four supported puzzle scenes (P505, P508, P519, P524), plus exploration. This is not a whole-game completion percentage.\n- Automatically verified routes')
 s=s.replace('on 16 October 2026','on 18 October 2026')
-p.write_text(s)
+p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-18'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()

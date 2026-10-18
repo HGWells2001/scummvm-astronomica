@@ -102,3 +102,12 @@ assert digest(Path('D:/astro/PLACES/P526/MEGAFILE.HYP'))==p526['source_sha256']
 for picture in p526['pictures']:
  assert digest(Path('D:/astro/PLACES/P526')/picture['file'])==picture['sha256']
 print('P526 original save requirements integrity PASS')
+save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
+assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==4
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524}
+for row in save_coverage['puzzle_saves']:
+ assert digest(root/row['validation_file'])==row['validation_sha256']
+ assert digest(root/f"evidence/p{row['scene']}-saves-runtime.log")==row['runtime_sha256']
+ assert digest(root/f"evidence/p{row['scene']}-saves-startup.log")==row['startup_sha256']
+print('Measured native save coverage integrity PASS')

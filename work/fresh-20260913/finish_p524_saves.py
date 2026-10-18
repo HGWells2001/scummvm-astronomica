@@ -52,6 +52,6 @@ p=root/'NEXT-STEPS.md';s=p.read_text();heading=('# Ripresa: salvataggi P524, 18 
  'Nessuna percentuale globale attendibile. Le note successive sono storiche.\n\n')
 if not s.startswith('# Ripresa: salvataggi P524'):s=heading+s
 p.write_text(s)
-for name in ('refresh_research_evidence.py','save_development_evidence.py','verify_development_evidence.py'):subprocess.run([sys.executable,str(work/name)],check=True)
+for name in ('record_save_coverage.py','refresh_research_evidence.py','save_development_evidence.py','verify_development_evidence.py'):subprocess.run([sys.executable,str(work/name)],check=True)
 (root/'RUN-IN-PROGRESS.md').write_text('P524 v6 saves verified 18 October 2026. Matching build, 72 round trips, animation/corruption/physical-slot/fresh-process tests, compatibility v1-v5 and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.\n')
 print('P524 save checkpoint PASS')
