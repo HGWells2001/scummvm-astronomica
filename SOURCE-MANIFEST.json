@@ -165,7 +165,7 @@
     "outputs/astronomica-cleanroom/evidence/p523-validation.json": "266f1507e96049b77125f368c11c1d39656ffcc95ab7a17aa27bf1bf46bca3c0",
     "outputs/astronomica-cleanroom/evidence/p523.log": "0aa555039ba23c27304e51e30ceffede175868632b48c4ae7e5377efee088bb2",
     "outputs/astronomica-cleanroom/evidence/p524-runtime.log": "51fab0628d69321f0d22b431846c0779f35b8b2a14eb2dbddea635b12dad941f",
-    "outputs/astronomica-cleanroom/evidence/p524-save-original.json": "2734e4d5a2f89cf70a823a8e38417b5a71a1efb1da7b840d3d6e928099897132",
+    "outputs/astronomica-cleanroom/evidence/p524-save-original.json": "3507e6087df3981009c715509c91a5983854030fd374e5c8e356c434f464d38c",
     "outputs/astronomica-cleanroom/evidence/p524-save-proof.json": "9b117274c5623985fd6d83e1d1b4f3106ff034d27ffc842c5be3d9b092d48b32",
     "outputs/astronomica-cleanroom/evidence/p524-saves-runtime.log": "31ea5f47d9bf76ffe4e54445cc6416ecb40626ac90403e368f9268acbc4461cb",
     "outputs/astronomica-cleanroom/evidence/p524-saves-startup.log": "d80b9b6bb929bb30e4486f5d312360c5f0ca896fff6d0395368e3cd6aeb52ba3",
@@ -192,7 +192,7 @@
     "outputs/astronomica-cleanroom/evidence/random.json": "81ee824c674b1805d3752331d95e5328f5474ac836c5e519f8e747649675bad9",
     "outputs/astronomica-cleanroom/evidence/remaining-features.json": "ad87c6d67f4a215197b2bd1b0117b142ab99f90fe413b439283be14c860fef1b",
     "outputs/astronomica-cleanroom/evidence/remaining-scenes.json": "869e9941dccd4338dffb7128be160503cab3f7d0f1a3ac550ff8c20bfe8770da",
-    "outputs/astronomica-cleanroom/evidence/research-oct01.json": "85d259d2f3193e31a0bd02214f3b4554eca40f6328b331beb5e17014baa66a2f",
+    "outputs/astronomica-cleanroom/evidence/research-oct01.json": "4ac1dba0bc2139e64d45eb9f533a71c65d93682cf9fd00b5e76a211d11dc402a",
     "outputs/astronomica-cleanroom/evidence/research-sept27.json": "81d2293cd2f94e0804a3ac20d8f4bc94cdcff8407f0d6e73cc8e5a8048760d7b",
     "outputs/astronomica-cleanroom/evidence/research-sept28.json": "d0f9970e7e3000c57f51b59e241c7ec8060db5f5e2c583192483295f0c3ef253",
     "outputs/astronomica-cleanroom/evidence/research-sept30.json": "264ec5d1c54638b2726a11b3668d5ac40277afdce1983d3eb8acd803c9bcf8f9",
@@ -297,7 +297,7 @@
     "outputs/astronomica-cleanroom/probe_p523_native_reference.py": "314b0ac1f4ca1920972c89b4230a4f759d080ee6a4b61ffd1d7c359d42657eb7",
     "outputs/astronomica-cleanroom/probe_p523_positions.py": "fe1cb63f34730d8e594584f5d88d187c4d1b7e1fc471c07a08a284456a451500",
     "outputs/astronomica-cleanroom/probe_p523_spread.py": "4d6f3df1fb9d96ba25b066edd02d74bf01768c8eaba070a10257264c60ccbafb",
-    "outputs/astronomica-cleanroom/probe_p524_save.py": "d40dac73500bdbaae97933205952f715bb9032e85c66c0fa2c47cd50f446bfc1",
+    "outputs/astronomica-cleanroom/probe_p524_save.py": "c9a855c177eadfbe49424e2d667556d29ebb4cae436560d10eaa83427aa6d99e",
     "outputs/astronomica-cleanroom/probe_p524_state.py": "477a8b7b5728772f5a2398b384496532ad933dfbd6f9e6da2f492e40cdf610d1",
     "outputs/astronomica-cleanroom/probe_p525_video.py": "3f2252d36449a0829a24eeb173c5a7ae9e219c6aa29d6f20a063daaec808386e",
     "outputs/astronomica-cleanroom/probe_p526_answers.py": "9cbf50482b4a6d41f4edc468cc3b7129ba2429c0fb71950f0317b3e0de692afa",
@@ -568,7 +568,7 @@
     "work/fresh-20260913/test_v29.py": "7816592478bdcaf1a737e05d6794316a78a1cf6eccd4cfec06e18ec6d0a55017",
     "work/fresh-20260913/update_github_export.py": "d939041d4abecfc51d19b8c57894c03a0ccd4a08c77c1ea29c4824f42159a101",
     "work/fresh-20260913/verify_corpus.py": "02060fbb8be18304e90426ca2d17c502d7001df266ec9475a8f757224dcdd7f5",
-    "work/fresh-20260913/verify_development_evidence.py": "9636c7df287ff51a868d6a403af6e205014260a897a90377d06ed7c0330cc790",
+    "work/fresh-20260913/verify_development_evidence.py": "ad08be3ceb181bf28241fc89b3593be63cee263da7943c8ed1b7ff95c141a47e",
     "work/fresh-20260913/verify_help_images_setup.py": "9e02c24893ac070f8c79e9ae851df24e1d2d3d0b0eb60ec9eb76cd2c4d2bff4e"
   }
 }

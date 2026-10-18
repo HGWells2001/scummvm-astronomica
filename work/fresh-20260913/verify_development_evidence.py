@@ -57,6 +57,8 @@ for picture in p519['images']:
 legacy=json.loads((root/'evidence/legacy-validation.json').read_text())
 p524=json.loads((root/'evidence/p524-save-original.json').read_text())
 assert p524['status']=='PASS' and len(p524['pictures'])==9 and p524['animated_frame_count']==8
+assert p524['sprite_frame_counts']==[2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,2,8]
+assert p524['sprite31_original_geometry']['xy']==[94,58]
 assert digest(Path('D:/astro/PLACES/P524/MEGAFILE.HYP'))==p524['source_sha256']
 for picture in p524['pictures']:
  assert digest(Path('D:/astro/PLACES/P524')/picture['file'])==picture['sha256']

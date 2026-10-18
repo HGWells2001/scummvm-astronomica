@@ -188,5 +188,49 @@
     "condition_offset": 783055,
     "image_offset": 783107
   },
-  "limitation": "Original-resource inventory only; native save tests are recorded separately."
+  "limitation": "Original-resource inventory only; native save tests are recorded separately.",
+  "sprite_frame_counts": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    8
+  ],
+  "sprite31_original_geometry": {
+    "xy": [
+      94,
+      58
+    ],
+    "layer": 1,
+    "visible": 0,
+    "click_enabled": 0,
+    "drag_enabled": 0
+  }
 }
