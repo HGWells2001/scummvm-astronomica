@@ -1,6 +1,6 @@
 # Lower-screen presentation, 18 October 2026
 
-Status: observed issue; correction not implemented yet.
+Status: corrected and verified, 18 October 2026. See evidence/presentation-validation.json.
 
 The native presentScene() unconditionally fills rows456–479 with black and
 draws an EXPERIMENTAL/simple-hotspots diagnostic label. This occurs after
@@ -30,3 +30,6 @@ resource/state identities and must remain readable.
 
 This observation is separate from P526 save verification. Finish and publish
 that checkpoint before changing presentation, to keep its evidence coherent.
+
+
+Implemented: ordinary presentation preserves all480 rows. Set astronomica_debug_overlay=true only for the diagnostic strip. Twelve complete scenes,855 original GE_S1 pixels, opt-in display and recovery pass. All compatible saves and the WASAPI suite pass on the same build.

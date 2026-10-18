@@ -795,9 +795,9 @@ void AstronomicaEngine::applyPlotStep(const PlotStep &step) {
  redrawSprites();
 }
 
-static uint32 screenRGBHash(const Graphics::Surface &surface) {
+static uint32 screenRGBHash(const Graphics::Surface &surface, int height = 456) {
  uint32 hash = 2166136261U;
- for (int y = 0; y < 456; ++y) for (int x = 0; x < 640; ++x) {
+ for (int y = 0; y < height; ++y) for (int x = 0; x < 640; ++x) {
   byte r,g,b; surface.format.colorToRGB(surface.getPixel(x,y),r,g,b);
   hash = (hash ^ r) * 16777619U; hash = (hash ^ g) * 16777619U; hash = (hash ^ b) * 16777619U;
  }
@@ -1220,9 +1220,13 @@ void AstronomicaEngine::presentScene() {
  for (int y = 0; y < _movieFrame.h && y+_movieY < _screen.h; ++y)
   for (int x = 0; x < _movieFrame.w && x+_movieX < _screen.w; ++x)
    _screen.setPixel(x+_movieX,y+_movieY,_movieFrame.getPixel(x,y));
- _screen.fillRect(Common::Rect(0, 456, 640, 480), 0);
- const Common::String label = Common::String::format("EXPERIMENTAL | P%d | simple hotspots | PgUp/PgDn: browse | Esc: exit", _place);
- FontMan.getFontByUsage(Graphics::FontManager::kGUIFont)->drawString(&_screen, label, 5, 462, 630, _screen.format.RGBToColor(255, 255, 255));
+ // The original control panel and some committed pictures extend below
+ // row456. Keep all480 composed rows during ordinary play.
+ if (ConfMan.hasKey("astronomica_debug_overlay") && ConfMan.getBool("astronomica_debug_overlay")) {
+  _screen.fillRect(Common::Rect(0, 456, 640, 480), 0);
+  const Common::String label = Common::String::format("EXPERIMENTAL | P%d | simple hotspots | PgUp/PgDn: browse | Esc: exit", _place);
+  FontMan.getFontByUsage(Graphics::FontManager::kGUIFont)->drawString(&_screen, label, 5, 462, 630, _screen.format.RGBToColor(255, 255, 255));
+ }
  _system->copyRectToScreen(_screen.getPixels(), _screen.pitch, 0, 0, 640, 480);
  _system->updateScreen();
 }
@@ -2906,6 +2910,47 @@ bool AstronomicaEngine::verifyP524Saves() {
  _runner.resetGlobals(); return loadPlace(103);
 }
 
+bool AstronomicaEngine::verifyPresentation() {
+ const bool hadOverlay = ConfMan.hasKey("astronomica_debug_overlay");
+ const bool oldOverlay = hadOverlay && ConfMan.getBool("astronomica_debug_overlay");
+ ConfMan.setBool("astronomica_debug_overlay",false);
+ uint scenes = 0, originalPixels = 0; bool ok = true;
+ for (int place : {0,1,29,103,425,505,508,519,524,526,528,537}) {
+  if (!loadPlace(place)) return false;
+  Common::File file;
+  if (!file.open(Common::FSNode(ConfMan.getPath("path").join(Common::String::format("PLACES/P%d/MEGAFILE.HYP",place))))) return false;
+  Graphics::Surface expected; expected.copyFrom(_background);
+  renderStaticSprites(file,_scene,expected);
+  presentScene(); presentScene();
+  uint mismatches = 0;
+  for (int y = 0; y < 480; ++y) for (int x = 0; x < 640; ++x) if (_screen.getPixel(x,y) != expected.getPixel(x,y)) {
+   if (!mismatches) debug("Presentation mismatch P%d at %d,%d: actual %08x expected %08x",place,x,y,_screen.getPixel(x,y),expected.getPixel(x,y));
+   ++mismatches;
+  }
+  ok = !mismatches && ok;
+  expected.free(); ++scenes;
+ }
+ if (!loadPlace(528)) return false;
+ Graphics::Surface *original = openBackgroundImage("ge_s1",528);
+ if (!original || original->w != 171 || original->h != 105) { if (original) { original->free(); delete original; } return false; }
+ if (!stageBackgroundImage("ge_s1",87,356)) { original->free(); delete original; return false; }
+ displayBackgroundImage();
+ for (int y = 100; y < 105; ++y) for (int x = 0; x < 171; ++x) {
+  ok = _screen.getPixel(87+x,356+y) == original->getPixel(x,y) && ok; ++originalPixels;
+ }
+ const uint32 normal = screenRGBHash(_screen,480);
+ ConfMan.setBool("astronomica_debug_overlay",true); presentScene();
+ const bool debugVisible = screenRGBHash(_screen,480) != normal;
+ ConfMan.setBool("astronomica_debug_overlay",false); redrawSprites();
+ const bool recovered = screenRGBHash(_screen,480) == normal;
+ debug("Presentation strip checks: visible %d recovered %d",debugVisible,recovered);
+ original->free(); delete original;
+ if (hadOverlay) ConfMan.setBool("astronomica_debug_overlay",oldOverlay);
+ else ConfMan.removeKey("astronomica_debug_overlay",ConfMan.getActiveDomainName());
+ ok = ok && scenes == 12 && originalPixels == 855 && debugVisible && recovered;
+ debug("Astronomica full-height presentation: %s (%u scenes, %u original P528 pixels, optional strip and recovery)",ok ? "PASS" : "FAIL",scenes,originalPixels);
+ _runner.resetGlobals(); return loadPlace(103) && ok;
+}
 bool AstronomicaEngine::verifyP526Saves() {
  auto fingerprint = [&]() {
   Common::Array<uint32> state; if (!_runner.exportIdleState(state)) return uint32(0);
@@ -5414,6 +5459,14 @@ Common::Error AstronomicaEngine::run() {
   const bool ok = verifyTransitions();
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Transition verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_presentation") && ConfMan.getBool("astronomica_verify_presentation")) {
+  ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);
+  ConfMan.setBool("astronomica_sprite_input",true); ConfMan.setBool("astronomica_entry_scripts",false);
+  const bool ok = verifyPresentation();
+  debug("Astronomica presentation verification: %s",ok ? "PASS" : "FAIL");
+  _background.free(); _screen.free(); quitGame();
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Presentation verification failed");
  }
  if (ConfMan.hasKey("astronomica_verify_p526_saves") && ConfMan.getBool("astronomica_verify_p526_saves")) {
   ConfMan.setBool("astronomica_entry_scripts",false);

@@ -19,6 +19,8 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'work/fresh-20260913/record_save_coverage.py','outputs/astronomica-cleanroom/evidence/native-save-coverage.json',
  'AI_MODEL_CHECKPOINT.md',
  'outputs/astronomica-cleanroom/PRESENTATION-RESEARCH.md',
+ 'work/fresh-20260913/check_presentation.py','work/fresh-20260913/check_presentation_regressions.py','work/fresh-20260913/finish_presentation.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('presentation-validation.json','presentation.log','p526-previous-slot.log','p526-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/P528-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p528_save.py','outputs/astronomica-cleanroom/evidence/p528-save-original.json',
  'work/fresh-20260913/check_p526_saves.py','work/fresh-20260913/check_p526_boundaries.py','work/fresh-20260913/check_p526_regressions.py','work/fresh-20260913/finish_p526_saves.py','outputs/astronomica-cleanroom/P526-SAVE-FORMAT.md',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p526-saves-validation.json','p526-save-proof.json','p526-saves-runtime.log','p526-saves-startup.log','p526-native-save-boundaries.json','p526-native-save-boundaries.log','p524-previous-slot.log','p524-previous-slot-proof.json')],
@@ -55,6 +57,8 @@ s=s.replace('on 16 October 2026','on 18 October 2026')
 if 'P526 v7' not in s:
     s=s.replace('- Automatically verified routes','- P526 v7 saves stopped orbital experiments, retaining animation phases, render positions and hover. 686 round trips include 216 animation cases and 432 synthetic phase/answer comparisons.\n- Automatically verified routes')
 s=s.replace('four supported puzzle scenes (P505, P508, P519, P524)','five supported puzzle scenes (P505, P508, P519, P524, P526)')
+if 'Ordinary presentation preserves all 640x480' not in s:
+    s=s.replace('- Automatically verified routes','- Ordinary presentation preserves all 640x480 original pixels. The diagnostic strip is opt-in; twelve complete-scene checks and 855 original P528 picture pixels pass.\n- Automatically verified routes')
 p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-18'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()

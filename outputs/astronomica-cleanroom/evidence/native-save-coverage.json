@@ -1,11 +1,11 @@
 {
   "date": "2026-10-18",
   "status": "PASS",
-  "exe_sha256": "8fda63592d008dfa2d17fdc143716b654d563c16b27d79f9bb1af659aa9b5ce9",
+  "exe_sha256": "c625d96cf8fe38c63f7529da6290d0c196d8cb8932a5ddf3bef0f706ad3ea01d",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "e91fb1301d786f2ffb3f8fdc0d9a8ddfd2a93c3fdcec989072cadbf716597d41",
-    "astronomica.h": "8ac92b7e67e1f12e7781f614569611e4e8f84bb90bb2c675a232a3f92e5d8bb4",
+    "astronomica.cpp": "0bd4b612a9cd362c75ebadf783d70d62cefdb089ea2d9f117900d62d0257d5e0",
+    "astronomica.h": "f5ea124c483209f155deeb64ae3b8d09ed0b090d42cb01e7bdc3038a4c71f99d",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -44,8 +44,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p508-saves-validation.json",
       "validation_sha256": "924dab6076d79b92adbe4e3f9ddd03516701eec0fab287c77eb6956da1c6ae34",
-      "runtime_sha256": "b6e89ec8f129ab974eb882b3ede2226c7c5545903ecccdc033d5fd32868a28bb",
-      "startup_sha256": "b289f1b72475a7ef3f6ad9307225082c7c9d8756d84c774a981889fa38d5ab27",
+      "runtime_sha256": "2363e0186175e203cb2f3673ad500f766d3eb381fbeef970bde68cba59dc25a4",
+      "startup_sha256": "c2cf680cb27b328a1e1fa09a3f52fcbfffcc3f961458e40be19c1dd793c06e2e",
       "fresh_process_fingerprint": "01944964"
     },
     {
@@ -56,8 +56,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p505-saves-validation.json",
       "validation_sha256": "190b341d565a61bc74b8344463bcd9e277de2d7ce70bba3434b2389f0cbaf539",
-      "runtime_sha256": "e1272499d6c98636d6045e7919fb2c22f513ee2eb91cf44c7db4cd50d8ccc0d8",
-      "startup_sha256": "ece6598338a6a75d3d2b91dc997cacdf0bc44c1cbf2d474605c43e8c1a7fc083",
+      "runtime_sha256": "dc0d13f2f4b5b385ac203c8b24cab448efb97a78144591938b9c2886726be5f0",
+      "startup_sha256": "088e24d06cce7ae9eb989bf771e0fc98446a2232d09400ac94e26347864e30f3",
       "fresh_process_fingerprint": "cf874c94"
     },
     {
@@ -68,8 +68,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p519-saves-validation.json",
       "validation_sha256": "6d2abe68bee7bc584bdba3a450aa34b3be5386982580308a2795319ad5880aa0",
-      "runtime_sha256": "ed96f4eedef87e7c57100e1641144395d7be5565fbdbb18ad66cfd63943c0dcc",
-      "startup_sha256": "a734f75e6f45b563ab20bd1c28a6f6a7603db1a3eabe34c90e5820dfb48c60b1",
+      "runtime_sha256": "59652c7b25a9e59066ad35704a3623388378367a98d2a3c48e251df6fc9790a2",
+      "startup_sha256": "581dc87b0312406a92942f150d91e6639fd787d3c4f6c00315c4724132d7bd82",
       "fresh_process_fingerprint": "c7504357"
     },
     {
@@ -79,10 +79,10 @@
       "test_slot": 5,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p524-saves-validation.json",
-      "validation_sha256": "c607339e9f34b0afdbec4a7fb5ff8dddae94b11be6f2b6eddd9f0792a6f799c8",
-      "runtime_sha256": "55fedd17ea26a21ef1b5dd9b4267b25ef5037d6127b282933dd9ee686080487f",
-      "startup_sha256": "ddedbad9e827e94d197fa9f8b594e714dc397c2490cf8db2d2605651a143c5b6",
-      "fresh_process_fingerprint": "45498761"
+      "validation_sha256": "9fc5ad71063bf05be48a820403e95ce7a2dd9dcc9437373ec53ce94cfc172b95",
+      "runtime_sha256": "dc733bb13bd108e84392c2aedbd99e217cf9e013a17b61c371f7ba9dab68ec94",
+      "startup_sha256": "e7a74a216dfcacc4b2193fa17ffa651105a47542fdfb86c5fea81c4cbde40ca8",
+      "fresh_process_fingerprint": "bcf696da"
     },
     {
       "scene": 526,
@@ -91,10 +91,10 @@
       "test_slot": 6,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p526-saves-validation.json",
-      "validation_sha256": "7439bcea6911629e34fc59804d8b7a8b95bdbcaa7f8f9d70153fd9c5ec3cbd01",
-      "runtime_sha256": "4b2c0646b697628b2c61c030f400ca31d3596d0b7141ce6c8ce311f4ea726cce",
-      "startup_sha256": "e4582287020b7cff6cfee350a925bebf64eff6d0ccdb13a6ae754e7a94862f0d",
-      "fresh_process_fingerprint": "243c852b"
+      "validation_sha256": "6747c83501f3a9ac0b4daa287adf1f8155c59a7df64dd25a12a23adcb90a6a26",
+      "runtime_sha256": "972263f4d5d1799198ca5d2c95aebae2820e0a8521babc340a67f2bc2d2532bb",
+      "startup_sha256": "570f51a05fc1650f39e855fcd27c899541e2cf48c87ab71324356210b6db8649",
+      "fresh_process_fingerprint": "e8888ae3"
     }
   ],
   "supported_puzzle_route_scenes": 5,

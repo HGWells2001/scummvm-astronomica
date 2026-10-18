@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "exe_sha256": "c625d96cf8fe38c63f7529da6290d0c196d8cb8932a5ddf3bef0f706ad3ea01d",
+  "scene_count": 12,
+  "scenes": [
+    0,
+    1,
+    29,
+    103,
+    425,
+    505,
+    508,
+    519,
+    524,
+    526,
+    528,
+    537
+  ],
+  "frame_width": 640,
+  "frame_height": 480,
+  "original_p528_pixels_checked": 855,
+  "source_nonblack_pixels": 204,
+  "debug_overlay_default": false,
+  "debug_overlay_option": "astronomica_debug_overlay",
+  "optional_overlay": true,
+  "recovery_after_disable": true,
+  "compatibility": "Existing versions1-7 and prior-build v3-v7 slots tested; no save format changes",
+  "full_suite": true,
+  "limitations": [
+    "Automated pixel/state/audio verification; no full manual audiovisual playthrough",
+    "Legacy screen fingerprints still use the original 456-row region; this presentation test explicitly checks 480 rows"
+  ]
+}

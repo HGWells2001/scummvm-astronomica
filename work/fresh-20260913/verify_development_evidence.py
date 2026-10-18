@@ -136,3 +136,12 @@ for picture in p528['images']:
  assert digest(Path('D:/astro/PLACES/P528')/picture['file'])==picture['sha256']
 assert next(row for row in p528['phases'] if row['phase']==2)['pictures'][0]['file']=='GE_S1'
 print('P528 original save requirements integrity PASS')
+presentation=json.loads((root/'evidence/presentation-validation.json').read_text())
+assert presentation['status']=='PASS' and presentation['exe_sha256']==m['exe_sha256'] and presentation['frame_height']==480
+assert presentation['scene_count']==12 and presentation['original_p528_pixels_checked']==855 and not presentation['debug_overlay_default']
+assert presentation['optional_overlay'] and presentation['recovery_after_disable'] and presentation['full_suite']
+s=(root/'evidence/presentation.log').read_text()
+assert 'full-height presentation: PASS (12 scenes, 855 original P528 pixels' in s and 'FAIL' not in s and 'Log closed successfully' in s
+assert json.loads((root/'evidence/p526-previous-slot-proof.json').read_text())['unchanged']
+assert 'P526 startup save: PASS' in (root/'evidence/p526-previous-slot.log').read_text()
+print('Full-frame presentation evidence integrity PASS')

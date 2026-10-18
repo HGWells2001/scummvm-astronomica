@@ -1,1 +1,1 @@
-P526 v7 saves verified 18 October 2026. Matching build, 686 round trips, native boundary audit, malformed rejection, slot/fresh-process completion, v1-v6 compatibility and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md and workspace AI_MODEL_CHECKPOINT.md.
+Full-frame presentation verified 18 October 2026. Twelve scenes,855 original pixels, optional debug/recovery, all v1-v7 saves, prior-build slots, import/help and WASAPI suite PASS on the same executable. No tests running. See NEXT-STEPS.md and AI_MODEL_CHECKPOINT.md.

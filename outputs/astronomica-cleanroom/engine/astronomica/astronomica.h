@@ -70,6 +70,7 @@ private:
  Common::Error saveP526(Common::WriteStream *stream);
  Common::Error loadP526(Common::SeekableReadStream *stream);
  bool verifyP526Saves();
+ bool verifyPresentation();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.

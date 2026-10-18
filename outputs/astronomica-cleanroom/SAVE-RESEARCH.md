@@ -103,3 +103,8 @@ Validation: 72 round trips (23 gameplay successors, one post-help identity, 48 a
 Native v7 saves settled P526 entry, stopped experiments and answered states. It retains the full runner/RNG, clock/count, 23 sprite records with render/center positions, animation and movement epochs, orbital parameters and flags, committed picture and six hover bits. Orbit travel, foreground audio, queued work and staged images exclude saving. Ambient music restarts at its beginning.
 
 Verified on one matching build: 686 round trips (33 gameplay successors, five identities, 216 animation comparisons, 432 synthetic phase/answer cases), 4956 truncations, 4956 byte corruptions and 25 checksummed invalid states. A physical slot6 loads in a fresh process and completes all remaining questions. The separate native audit observes 33 boundaries on real routes. Full v1-v6 compatibility, previous-build v3-v6 slots, exploration, import, help and WASAPI regressions pass. This is automated evidence, not a full manual audiovisual playthrough.
+
+
+## Full original frame, 18 October 2026
+
+Ordinary presentation now preserves all 640x480 original pixels. The diagnostic strip is opt-in via astronomica_debug_overlay. The old strip covered rows 456-479, including five rows of a P528 picture. Twelve scene comparisons, 855 original picture pixels, optional-strip activation and restoration pass. All existing v1-v7 saves, prior-build v3-v7 slots, help/import and full WASAPI regressions pass on the same executable. Existing legacy fingerprints intentionally retain their 456-row scope; the new presentation test checks all 480 rows.

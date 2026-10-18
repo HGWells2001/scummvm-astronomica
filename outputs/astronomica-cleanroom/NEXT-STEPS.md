@@ -1,3 +1,12 @@
+# Ripresa: fotogramma originale completo, 18 ottobre 2026
+
+Presentazione 640x480 senza barra diagnostica predefinita: 12 scene e 855 pixel originali P528 PASS; debug opzionale e ripristino PASS.
+P526: 686 ripristini; compatibilita v1-v7, precedenti slot v3-v7, import, aiuto e suite WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_presentation.py. Test: check_presentation.py e check_presentation_regressions.py.
+Prossimo: P528-SAVE-PLAN.md, verifica audiovisiva manuale e tipografia aiuto. Non rieseguire finalizzatori storici.
+P528: conservare la riga della precedente Luna alta; 1728 storie e 48 passi ciclici verificati, salvataggi nativi ancora assenti.
+Nessuna percentuale globale attendibile. Protocollo: AI_MODEL_CHECKPOINT.md.
+
 # Ripresa: salvataggi P526, 18 ottobre 2026
 
 P526 v7: 686 ripristini, 216 casi animazione, 432 combinazioni artificiali fase/risposta, slot e nuovo processo PASS.
