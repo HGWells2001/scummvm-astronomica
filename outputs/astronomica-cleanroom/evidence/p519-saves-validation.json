@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-16",
+  "status": "PASS",
+  "format_version": 5,
+  "payload_bytes": 2584,
+  "scene": 519,
+  "scope": "Idle P519 boundaries, including detector selection and solved pair indicators",
+  "boundaries": 104,
+  "gameplay_successor_comparisons": 74,
+  "resource_compositions": 30,
+  "detector_target_pairs": 25,
+  "solve_orders": 2,
+  "repeated_target": true,
+  "unsolved_exit": true,
+  "truncations": 2584,
+  "byte_corruptions": 2584,
+  "invalid_checksummed_states": 18,
+  "fresh_process_slot": 4,
+  "fresh_process_fingerprint": "c7504357",
+  "music": "Ambient restarts from beginning",
+  "compatibility": "Exploration v1/v2, P508 v3, P505 v4 retained; previous-build v3/v4 slots tested without modifying their files",
+  "limitations": [
+    "No saves in the other puzzles",
+    "No full manual audiovisual playthrough"
+  ]
+}

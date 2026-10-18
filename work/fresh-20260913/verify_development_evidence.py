@@ -55,6 +55,19 @@ assert digest(Path('D:/astro/PLACES/P519/MEGAFILE.HYP'))==p519['source_sha256']
 for picture in p519['images']:
  assert digest(Path('D:/astro/PLACES/P519')/picture['file'])==picture['sha256']
 legacy=json.loads((root/'evidence/legacy-validation.json').read_text())
+p524=json.loads((root/'evidence/p524-save-original.json').read_text())
+assert p524['status']=='PASS' and len(p524['pictures'])==9 and p524['animated_frame_count']==8
+assert digest(Path('D:/astro/PLACES/P524/MEGAFILE.HYP'))==p524['source_sha256']
+for picture in p524['pictures']:
+ assert digest(Path('D:/astro/PLACES/P524')/picture['file'])==picture['sha256']
+p519save=json.loads((root/'evidence/p519-saves-validation.json').read_text())
+assert p519save['status']=='PASS' and p519save['boundaries']==104 and p519save['gameplay_successor_comparisons']==74 and p519save['resource_compositions']==30
+for name,marker in [('p519-saves-runtime.log','P519 saves: PASS (104 boundaries'),('p519-saves-startup.log','P519 startup save: PASS'),('p505-previous-slot.log','P505 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text()
+ assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+proof=json.loads((root/'evidence/p519-save-proof.json').read_text())
+assert proof['fresh_process_fingerprint']==p519save['fresh_process_fingerprint'] and proof['metadata_listed']
+assert json.loads((root/'evidence/p505-previous-slot-proof.json').read_text())['unchanged']
 assert legacy['status']=='PASS' and legacy['full_suite'] and legacy['original_menu_flow']
 assert legacy['native_resave'] and legacy['fixture_unchanged']
 legacy_log=(root/'evidence/legacy-runtime.log').read_text()

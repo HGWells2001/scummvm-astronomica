@@ -6,11 +6,11 @@ This repository contains the engine, original-file research tools, regression dr
 
 ## Verified development state
 
-The local Windows x64 build passed its complete WASAPI regression on 15 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
+The local Windows x64 build passed its complete WASAPI regression on 16 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
 
 - Automatically verified routes in 35 puzzle scenes; these include variants, so this is **not** a count of distinct puzzles.
 - Navigation, original script execution, puzzle motion, audio, video, mentors, countdown and endings have dedicated checks.
-- Native ScummVM saves support settled exploration screens and P505/P508 question boundaries. P505 continuation tests cover 38 boundaries and successor states, hover restoration, corrupt payload rejection and fresh-process slot loading. P508 continuation tests cover 63 boundaries, 291 answer steps and fresh-process slot loading; ambient music restarts from its beginning. Original text `GAMESTAT` import supports exploration with no active countdown.
+- Native ScummVM saves support settled exploration screens and P505/P508 question boundaries. P519 v5 saves idle selections and partial solutions, with 74 gameplay comparisons, 30 image compositions and fresh-process continuation verified. P505 continuation tests cover 38 boundaries and successor states, hover restoration, corrupt payload rejection and fresh-process slot loading. P508 continuation tests cover 63 boundaries, 291 answer steps and fresh-process slot loading; ambient music restarts from its beginning. Original text `GAMESTAT` import supports exploration with no active countdown.
 - The original help file supplies 781 readable articles, 31 pictures in 20 articles, search and tables. Pictures now scroll with their surrounding text. Thirteen original exponent runs use explicit `^(value)` notation.
 - PageUp/PageDown/Home/End scroll the native help reader; all 781 articles pass keyboard navigation and boundary checks.
 - Help checks cover all articles, image pixels, wheel/drag scrolling and narrow-width/height reflow. Save/import regressions passed on the same executable.

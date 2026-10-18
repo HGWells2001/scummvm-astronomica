@@ -16,6 +16,9 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'work/fresh-20260913/check_p505_saves.py','work/fresh-20260913/finish_p505_saves.py','outputs/astronomica-cleanroom/probe_p505_save.py',
  'work/fresh-20260913/check_question_regressions.py',
  'outputs/astronomica-cleanroom/P505-SAVE-FORMAT.md',
+ 'outputs/astronomica-cleanroom/P524-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p524_save.py','outputs/astronomica-cleanroom/evidence/p524-save-original.json',
+ 'outputs/astronomica-cleanroom/P519-SAVE-FORMAT.md','work/fresh-20260913/check_p519_saves.py','work/fresh-20260913/check_p519_regressions.py','work/fresh-20260913/finish_p519_saves.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p519-saves-validation.json','p519-save-proof.json','p519-saves-runtime.log','p519-saves-startup.log','p505-previous-slot.log','p505-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/probe_p519_save.py','outputs/astronomica-cleanroom/P519-SAVE-PLAN.md','outputs/astronomica-cleanroom/evidence/p519-save-original.json',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p508-previous-slot.log','p508-previous-slot-proof.json')],
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p505-save-original.json','p505-saves-validation.json','p505-save-proof.json','p505-saves-runtime.log','p505-saves-startup.log')],
@@ -31,8 +34,11 @@ if 'P505 continuation tests' not in s:
     s=s.replace('and P508 question boundaries.', 'and P505/P508 question boundaries. P505 continuation tests cover 38 boundaries and successor states, hover restoration, corrupt payload rejection and fresh-process slot loading.')
 if 'PageUp/PageDown/Home/End' not in s:
     s=s.replace('- Help checks cover', '- PageUp/PageDown/Home/End scroll the native help reader; all 781 articles pass keyboard navigation and boundary checks.\n- Help checks cover')
+if 'P519 v5' not in s:
+    s=s.replace('and P505/P508 question boundaries.', 'and P505/P508 question boundaries. P519 v5 saves idle selections and partial solutions, with 74 gameplay comparisons, 30 image compositions and fresh-process continuation verified.')
+s=s.replace('on 15 October 2026','on 16 October 2026')
 p.write_text(s)
-manifest['date']='2026-10-15'
+manifest['date']='2026-10-16'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

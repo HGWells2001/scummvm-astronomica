@@ -1,1 +1,1 @@
-P505/P508 settled-question saves verified 15 October 2026. Matching build, native continuation/hover/corruption/slot/fresh-process tests, exploration saves/import, help and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.
+P519 v5 saves verified 16 October 2026. Matching build, 104 round trips (74 gameplay + 30 resource compositions), corruption/slot/fresh-process tests, P505/P508 compatibility, exploration saves/import, help and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.

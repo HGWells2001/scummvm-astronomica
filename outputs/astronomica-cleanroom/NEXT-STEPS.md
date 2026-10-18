@@ -1,3 +1,11 @@
+# Ripresa: salvataggi P519, 16 ottobre 2026
+
+P519 v5: 74 confronti di continuazione e 30 composizioni native; 25 abbinamenti, due ordini, uscita e slot reale PASS.
+P505/P508, vecchi slot v3/v4, esplorazione v1/v2, import, aiuto e suite WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p519_saves.py. Test: check_p519_saves.py e check_p519_regressions.py.
+Leggere P519-SAVE-FORMAT.md e P519-SAVE-PLAN.md. Prossimo: P524-SAVE-PLAN.md (animazione e ritorno aiuto), verifica audiovisiva manuale e tipografia aiuto.
+Nessuna percentuale globale attendibile. Le note successive sono storiche.
+
 # Ripresa: salvataggi P505 e P508, 15 ottobre 2026
 
 P505 v4: 38 punti e confronti del passo successivo, hover, slot reale e nuovo processo PASS.

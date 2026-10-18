@@ -58,6 +58,10 @@ private:
  Common::Error loadQuestion(Common::SeekableReadStream *stream, uint32 version);
  bool verifyP508Saves();
  bool verifyP505Saves();
+ bool canSaveP519() const;
+ Common::Error saveP519(Common::WriteStream *stream);
+ Common::Error loadP519(Common::SeekableReadStream *stream);
+ bool verifyP519Saves();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.
@@ -123,6 +127,7 @@ private:
  void displayBackgroundImage();
  Graphics::Surface _pendingImage;
  Common::String _pendingImageName, _displayedImageName;
+ uint _p519LargeImage = 0, _p519SmallImage = 0;
  int _pendingImageX = 0, _pendingImageY = 0;
  bool playSound(int id, uint32 now = 0, bool looping = false);
  void resumeLoopAt(uint32 now);
