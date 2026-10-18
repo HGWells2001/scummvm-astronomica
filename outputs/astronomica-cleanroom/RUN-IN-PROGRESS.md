@@ -1,1 +1,1 @@
-P519 v5 saves verified 16 October 2026. Matching build, 104 round trips (74 gameplay + 30 resource compositions), corruption/slot/fresh-process tests, P505/P508 compatibility, exploration saves/import, help and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.
+P524 v6 saves verified 18 October 2026. Matching build, 72 round trips, animation/corruption/physical-slot/fresh-process tests, compatibility v1-v5 and full WASAPI suite PASS. No tests running. See NEXT-STEPS.md.

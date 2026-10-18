@@ -6,7 +6,7 @@ This repository contains the engine, original-file research tools, regression dr
 
 ## Verified development state
 
-The local Windows x64 build passed its complete WASAPI regression on 16 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
+The local Windows x64 build passed its complete WASAPI regression on 18 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
 
 - Automatically verified routes in 35 puzzle scenes; these include variants, so this is **not** a count of distinct puzzles.
 - Navigation, original script execution, puzzle motion, audio, video, mentors, countdown and endings have dedicated checks.
@@ -43,3 +43,5 @@ Start with [NEXT-STEPS.md](outputs/astronomica-cleanroom/NEXT-STEPS.md) and [HEL
 ## License
 
 Engine sources carry `GPL-3.0-or-later` identifiers. See [COPYING](COPYING). Original game content remains the property of its respective rights holders. This is an independent experimental project, not an official ScummVM release.
+
+P524 v6 saves question boundaries, including the running Triton animation and mentor return. Tests cover 72 round trips, 48 animation boundary cases and fresh-process continuation.

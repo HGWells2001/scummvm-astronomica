@@ -1,3 +1,12 @@
+# Ripresa: salvataggi P524, 18 ottobre 2026
+
+P524 v6: 72 ripristini, 48 casi animazione Tritone, ritorno aiuto e nuovo processo PASS.
+P505/P508/P519, precedenti slot v3/v4/v5, esplorazione v1/v2, import, aiuto e suite WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p524_saves.py. Test: check_p524_saves.py e check_p524_regressions.py.
+Leggere P524-SAVE-FORMAT.md. Prossimo: P526-SAVE-PLAN.md (tre animazioni e orbita), verifica audiovisiva manuale e tipografia aiuto.
+Correzione alla preparazione P524: la Luna segue le otto scelte casuali, non le precede.
+Nessuna percentuale globale attendibile. Le note successive sono storiche.
+
 # Ripresa: salvataggi P519, 16 ottobre 2026
 
 P519 v5: 74 confronti di continuazione e 30 composizioni native; 25 abbinamenti, due ordini, uscita e slot reale PASS.

@@ -85,3 +85,20 @@ for row in inventory['rows']:
  assert digest(original)==row['source_sha256'],str(original)
  assert original.stat().st_size==row['parsed_bytes']+row['trailing_bytes'],str(original)
 print('Checkpoint integrity: PASS',m['date'],len(m['complete_route_scenes']),'puzzle route scenes; interactive:',m['interactive_nonpuzzle_scenes'])
+
+p524save=json.loads((root/'evidence/p524-saves-validation.json').read_text())
+assert p524save['status']=='PASS' and p524save['boundaries']==72 and p524save['animation_cases']==48
+for name,marker in [('p524-saves-runtime.log','P524 saves: PASS (72 boundaries'),('p524-saves-startup.log','P524 startup save: PASS'),('p519-previous-slot.log','P519 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text()
+ assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+proof=json.loads((root/'evidence/p524-save-proof.json').read_text())
+assert proof['fresh_process_fingerprint']==p524save['fresh_process_fingerprint'] and proof['metadata_listed']
+assert json.loads((root/'evidence/p519-previous-slot-proof.json').read_text())['unchanged']
+assert p524['moon_sequence']['mask']==255 and p524['moon_sequence']['scenario']==9
+print('P524 save evidence integrity PASS')
+p526=json.loads((root/'evidence/p526-save-original.json').read_text())
+assert p526['status']=='PASS' and len(p526['pictures'])==6 and len(p526['animations'])==3
+assert digest(Path('D:/astro/PLACES/P526/MEGAFILE.HYP'))==p526['source_sha256']
+for picture in p526['pictures']:
+ assert digest(Path('D:/astro/PLACES/P526')/picture['file'])==picture['sha256']
+print('P526 original save requirements integrity PASS')

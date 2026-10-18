@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-18",
   "status": "PASS",
   "source_sha256": "d227d980fe5fe34d4bbec39ae5d302ef19e538f4a3c137bc2aa6949640c56c0d",
   "local_conditions": [
@@ -176,11 +176,17 @@
     }
   ],
   "requirements": [
-    "Reconstruct one committed 640x320 image, including initial Moon separately from eight randomized choices",
+    "Reconstruct one committed 640x320 image, including final Moon after the eight randomized choices",
     "Serialize sprite31 animation enable, selected frame, frame period/range and last-frame epoch",
     "Keep all global/local known/width/value metadata across mentor-help transfer",
     "Validate continuation immediately before and at the 200ms frame boundary and after clock wrap",
     "Exclude queued actions and foreground audio, preserve native help return behavior"
   ],
-  "limitation": "Original-resource inventory only; P524 native saves are not implemented."
+  "moon_sequence": {
+    "mask": 255,
+    "scenario": 9,
+    "condition_offset": 783055,
+    "image_offset": 783107
+  },
+  "limitation": "Original-resource inventory only; native save tests are recorded separately."
 }

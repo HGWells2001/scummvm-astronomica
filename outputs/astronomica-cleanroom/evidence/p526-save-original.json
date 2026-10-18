@@ -1,0 +1,701 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "scope": "Original resource inventory; not native save support",
+  "source_sha256": "ce86ed46b0384efb726abd31be8346ad2bf6c3c314cebbbbd294b9c218e51812",
+  "local_conditions": [
+    [
+      1,
+      0,
+      6,
+      0,
+      0,
+      63
+    ],
+    [
+      1,
+      1,
+      9,
+      1,
+      1,
+      9
+    ],
+    [
+      1,
+      2,
+      6,
+      1,
+      1,
+      6
+    ],
+    [
+      1,
+      3,
+      6,
+      1,
+      0,
+      6
+    ],
+    [
+      1,
+      4,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      5,
+      4,
+      0,
+      0,
+      6
+    ],
+    [
+      1,
+      6,
+      1,
+      0,
+      0,
+      1
+    ]
+  ],
+  "animations": [
+    {
+      "index": 17,
+      "frames": 12,
+      "parameters": [
+        100,
+        1,
+        0
+      ],
+      "xy": [
+        287,
+        120
+      ]
+    },
+    {
+      "index": 19,
+      "frames": 12,
+      "parameters": [
+        30,
+        1,
+        0
+      ],
+      "xy": [
+        300,
+        220
+      ]
+    },
+    {
+      "index": 21,
+      "frames": 12,
+      "parameters": [
+        30,
+        1,
+        0
+      ],
+      "xy": [
+        300,
+        220
+      ]
+    }
+  ],
+  "pictures": [
+    {
+      "file": "S1",
+      "x": 90,
+      "y": 361,
+      "width": 98,
+      "height": 94,
+      "sha256": "cab22ba61f9d4a7901c6eccf40060afa17181cd579deab9ef46ec8af3fbd976c",
+      "offset": 327755
+    },
+    {
+      "file": "S2",
+      "x": 90,
+      "y": 361,
+      "width": 98,
+      "height": 94,
+      "sha256": "836016ff677403b4ac6e3ebfc8a343110d0dc869c95c0fd26a270133d0a59ecc",
+      "offset": 328086
+    },
+    {
+      "file": "S3",
+      "x": 90,
+      "y": 361,
+      "width": 98,
+      "height": 94,
+      "sha256": "424f1ead0283b1218cac517e2faf8785cf50de1bf8c8c75aff5bb8049d9e6497",
+      "offset": 328417
+    },
+    {
+      "file": "S4",
+      "x": 90,
+      "y": 361,
+      "width": 98,
+      "height": 94,
+      "sha256": "d646bec1fee23fe5a1b2f2ef0962f58fdbb21c2968ca7bc67f967ca3d1194dbd",
+      "offset": 328748
+    },
+    {
+      "file": "S5",
+      "x": 90,
+      "y": 361,
+      "width": 98,
+      "height": 94,
+      "sha256": "a53b9b39c690c229bf6fed6e07ca3c2c1938b9bdedb59f3746bc6aad1e593b2c",
+      "offset": 329079
+    },
+    {
+      "file": "S6",
+      "x": 90,
+      "y": 361,
+      "width": 98,
+      "height": 94,
+      "sha256": "7c13ef89a0e27e623f210214ad47d4099037ab854a01589d057dc427921ab09b",
+      "offset": 329410
+    }
+  ],
+  "orbit_commands": [
+    {
+      "source": "sprite4.click",
+      "args": [
+        13,
+        0,
+        20,
+        0,
+        0,
+        0
+      ],
+      "offset": 327511
+    },
+    {
+      "source": "sprite4.click",
+      "args": [
+        13,
+        0,
+        22,
+        0,
+        0,
+        0
+      ],
+      "offset": 327543
+    },
+    {
+      "source": "sprite4.click",
+      "args": [
+        13,
+        0,
+        23,
+        13,
+        -50,
+        0
+      ],
+      "offset": 327575
+    },
+    {
+      "source": "rect0.click",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "offset": 594701
+    },
+    {
+      "source": "rect1.click",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "offset": 595285
+    },
+    {
+      "source": "rect2.click",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "offset": 595869
+    },
+    {
+      "source": "rect3.click",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "offset": 596453
+    },
+    {
+      "source": "rect4.click",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "offset": 597037
+    },
+    {
+      "source": "rect5.click",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "offset": 597621
+    }
+  ],
+  "hover": [
+    {
+      "source": "rect0.mouse_in",
+      "commands": [
+        {
+          "offset": 595017,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595049,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            6
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595061,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect0.mouse_out",
+      "commands": [
+        {
+          "offset": 595077,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595109,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            6
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595121,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect1.mouse_in",
+      "commands": [
+        {
+          "offset": 595601,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595633,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595645,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect1.mouse_out",
+      "commands": [
+        {
+          "offset": 595661,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595693,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 595705,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect2.mouse_in",
+      "commands": [
+        {
+          "offset": 596185,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596217,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            7
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596229,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect2.mouse_out",
+      "commands": [
+        {
+          "offset": 596245,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596277,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            7
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596289,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect3.mouse_in",
+      "commands": [
+        {
+          "offset": 596769,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596801,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            8
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596813,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect3.mouse_out",
+      "commands": [
+        {
+          "offset": 596829,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596861,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            8
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 596873,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect4.mouse_in",
+      "commands": [
+        {
+          "offset": 597353,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 597385,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 597397,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect4.mouse_out",
+      "commands": [
+        {
+          "offset": 597413,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 597445,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 597457,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect5.mouse_in",
+      "commands": [
+        {
+          "offset": 597937,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 597969,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 597981,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    },
+    {
+      "source": "rect5.mouse_out",
+      "commands": [
+        {
+          "offset": 597997,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 598029,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "offset": 598041,
+          "opcode": 42,
+          "name": "end_condition",
+          "args": [],
+          "delay": -1
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    "Preserve all three animation states, including hidden sprites",
+    "Preserve moved render coordinates separately from original orbital center coordinates",
+    "Preserve stopped orbit parameters, frame/range, move/frame epochs, deltas and quadrant flags",
+    "Track the committed scenario image, including pre-experiment absence",
+    "Retain hover-entered state for six answer rectangles and sprite targets",
+    "Prove answer identity and full subsequent trajectories after restore"
+  ]
+}

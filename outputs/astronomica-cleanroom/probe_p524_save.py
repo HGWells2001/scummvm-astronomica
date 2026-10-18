@@ -1,4 +1,4 @@
-"""Fresh original-resource requirements for future P524 saves; no new support."""
+"""Original-resource requirements for P524 saves; independent of native tests."""
 from pathlib import Path
 import argparse,hashlib,json,struct
 from astro_reader import parse
@@ -26,6 +26,9 @@ assert len(pictures)==9 and len({x['file'] for x in pictures})==9
 assert len(timers)==1 and timers[0]['args']==[32,200,1,0] and timers[0]['source']=='program3'
 assert len(stops)==1 and stops[0]['args']==[32] and stops[0]['source']=='program1'
 assert len(s['sprites'][31]['frames'])==8
+moon=s['scripts'][2]
+assert moon[3]['args']==[1,1,255,0,0,0] and moon[4]['args']==[1,0,9]
+assert moon[5]['args']==['viewmoon',0,0]
 assert [(x['source'],x['args'][:2]) for x in transfers]==[('program0',[28,1]),('sprite30.click',[28,0])]
-a.out.write_text(json.dumps(dict(date='2026-10-16',status='PASS',source_sha256=hashlib.sha256(raw).hexdigest(),local_conditions=s['conditions'],pictures=pictures,animation_start=timers,animation_stop=stops,animated_sprite_index=31,animated_frame_count=8,help_transfers=transfers,requirements=['Reconstruct one committed 640x320 image, including initial Moon separately from eight randomized choices','Serialize sprite31 animation enable, selected frame, frame period/range and last-frame epoch','Keep all global/local known/width/value metadata across mentor-help transfer','Validate continuation immediately before and at the 200ms frame boundary and after clock wrap','Exclude queued actions and foreground audio, preserve native help return behavior'],limitation='Original-resource inventory only; P524 native saves are not implemented.'),indent=2))
+a.out.write_text(json.dumps(dict(date='2026-10-18',status='PASS',source_sha256=hashlib.sha256(raw).hexdigest(),local_conditions=s['conditions'],pictures=pictures,animation_start=timers,animation_stop=stops,animated_sprite_index=31,animated_frame_count=8,help_transfers=transfers,requirements=['Reconstruct one committed 640x320 image, including final Moon after the eight randomized choices','Serialize sprite31 animation enable, selected frame, frame period/range and last-frame epoch','Keep all global/local known/width/value metadata across mentor-help transfer','Validate continuation immediately before and at the 200ms frame boundary and after clock wrap','Exclude queued actions and foreground audio, preserve native help return behavior'],moon_sequence=dict(mask=255,scenario=9,condition_offset=moon[3]['offset'],image_offset=moon[5]['offset']),limitation='Original-resource inventory only; native save tests are recorded separately.'),indent=2))
 print('Original P524 save requirements PASS: nine images, eight-frame Triton animation, two help-transfer commands')

@@ -1,6 +1,6 @@
 # Astronomica — ripartenza dai file originali
 
-Stato verificato: 16 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS. Nessun nuovo pacchetto distribuibile.
+Stato verificato: 18 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS. Nessun nuovo pacchetto distribuibile.
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali, ora inserite fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
@@ -914,3 +914,10 @@ Two seeds and correct/wrong/mixed routes verify 38 saved boundaries and their 38
 Native v5 now saves idle P519 selections and partial solutions. It retains all script state and RNG, clock/count, 27 sprite frames and visibility, ten rectangle hover flags and ambient state. Two original image identities reconstruct the full background: the latest large image and optional subsequent small image. Image identities change only when display commits; a new large image clears the small record. Loading skips startup and speech. Foreground audio, queued work, button pulses and staged pictures exclude saving. Ambient music restarts from its beginning.
 
 Tests pass 74 gameplay successor comparisons (all 25 detector/target pairs, both solve orders, repeated target and unsolved exit), plus 30 separate native image-composition round trips. All compare script/RNG, background/screen pixels, sprite frames, hover state and applicable sound IDs/counts. 2584 truncations, 2584 byte corruptions and 18 checksummed invalid states reject without changing live state. Physical slot 4 loads in a fresh process with an identical fingerprint and completes five pairings after the wrong Sun selection. P505/P508 full save tests, previous-build v3/v4 slots, exploration saves, original import, help and full WASAPI suite pass. This remains automated evidence; manual audiovisual playthrough and other puzzle saves are outstanding.
+
+
+## P524 native saves, 18 October 2026
+
+Native v6 saves settled P524 questions with all script/RNG state, previous scene, clock/count, 32 sprite frames/visibility and the continuing Triton animation epoch and parameters. Mentor return preserves the additional known local values. The original committed picture is reconstructed. The Moon follows all eight random choices; the earlier preparation calling it an initial stage was incorrect. Startup and foreground speech are skipped on load; ambient music restarts from the beginning.
+
+Validation: 72 round trips (23 gameplay successors, one post-help identity, 48 animation cases), all eight animation frames at 199/200/2200ms with ordinary and wrapping clocks, two solve routes, third-error exit, voluntary exit, mentor return and fresh-process slot5 completion. 2612 truncations, 2612 byte corruptions and 21 checksummed invalid states reject atomically. Full P505/P508/P519 saves, prior-build v3/v4/v5 slots, exploration v1/v2, import, help and WASAPI suite pass on the same build. These are automated results, not manual audiovisual confirmation.

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "format_version": 6,
+  "payload_bytes": 2612,
+  "scene": 524,
+  "boundaries": 72,
+  "gameplay_successor_comparisons": 23,
+  "post_help_identity": 1,
+  "animation_cases": 48,
+  "solve_routes": 2,
+  "moon_last": true,
+  "third_error_exit": true,
+  "voluntary_exit": true,
+  "mentor_return": true,
+  "truncations": 2612,
+  "byte_corruptions": 2612,
+  "invalid_checksummed_states": 21,
+  "fresh_process_slot": 5,
+  "fresh_process_fingerprint": "3cb4e55c",
+  "music": "Ambient restarts from beginning",
+  "compatibility": "Exploration v1/v2, P508 v3, P505 v4 and P519 v5 retained; prior-build v3/v4/v5 slots unchanged",
+  "limitations": [
+    "Other puzzle saves remain unsupported",
+    "No complete manual audiovisual playthrough"
+  ]
+}
