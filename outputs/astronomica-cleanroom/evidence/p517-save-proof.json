@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "fresh_process_fingerprint": "52bcb075",
+  "slot": 11,
+  "metadata_listed": true,
+  "music_restart": true,
+  "original_wav_sha256": {
+    "S0.WAV": "293e947857b1c724aef860fe73bd1825714074edbb85e9283142cf99f6edbcb5",
+    "S1.WAV": "823254d3baf360d1ff222847b63eee890cc41c1ae92ec8ec90e3c4854092339c"
+  },
+  "boundaries": 2278,
+  "routes": 3,
+  "settings": 14,
+  "animation_cases": 2240,
+  "truncations": 3660,
+  "corruptions": 3660,
+  "invalid_states": 45
+}

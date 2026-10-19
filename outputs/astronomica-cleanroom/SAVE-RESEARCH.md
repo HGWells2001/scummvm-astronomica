@@ -133,3 +133,8 @@ Native v10 saves P506/P531/P532/P533/P534/P535 partial solutions, all runner dat
 ## P513 native saves,19 October2026
 
 Native v11 retains six locals/RNG,32 complete sprite records, stopped hidden photon endpoint and old digit/result state, cube image and clock/count. 728 native round trips/successors cover five solve/exit routes, all14 scenarios, nine photon results, bounds and silent first/repeated success. Slot10 resumes after two correct answers in a fresh process and finishes with the original count. All5928 truncations,5928 byte corruptions and37 checksummed invalid states reject without changing state. Versions1-10, old slots, cross-puzzle entry correction, full graphics/audio/help/import/WASAPI and normal launcher startup pass on the same build.
+
+
+## P517 aurora saves,19 October2026
+
+Native v12 retains both locals, all eleven sprite records, the active aurora timer and stopped inactive phases, background, gauge and marker. 2278 native round trips/successors cover all14 settings,2240 animation cases, both controls, minimum clamp and first/repeated completion count. Slot11 resumes setting12 with active/stopped phases in a fresh process and completes with the original count. All3660 truncations,3660 byte corruptions and45 checksummed invalid states reject atomically. Versions1-11, old slots, full graphics/audio/help/import/WASAPI and normal launcher startup pass on the same build.

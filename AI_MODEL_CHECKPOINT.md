@@ -2,10 +2,10 @@
 
 Modello dichiarato dall'utente: GPT-6.1 Sol, ragionamento medio,19 ottobre2026. Nessun cambio automatico applicato; selezione del client non verificabile tramite i tool disponibili.
 
-Checkpoint: P513 v11,5928 byte,728 successori, cinque percorsi,14 scenari,nove risultati fotone e slot10 in nuovo processo PASS. Conserva fotone fermo/cifre e RNG; conteggio originale silenzioso, errori/limiti/uscite PASS. Compatibilita v1-v10 e suite completa WASAPI PASS.
+Checkpoint:P517 v12,3660 byte,2278 successori,14 posizioni,2240 casi animazione e slot11 in nuovo processo PASS. Fasi attive/ferme e timer conservati; primo/ripetuto conteggio,limiti/uscite PASS. Compatibilita v1-v11 e suite completa WASAPI PASS.
 
-Seguire NEXT-STEPS.md, P513-SAVE-FORMAT.md e check_p513_saves.py/check_p513_regressions.py/finish_p513_saves.py. Sorgenti canonici in outputs/astronomica-cleanroom/engine/astronomica. Non ricopiare vecchi file di staging sopra i sorgenti correnti.
+Seguire NEXT-STEPS.md,P517-SAVE-FORMAT.md e check_p517_saves.py/check_p517_regressions.py/finish_p517_saves.py. Sorgenti canonici in outputs/astronomica-cleanroom/engine/astronomica. Non ricopiare staging precedente.
 
-Avvio reale: Avvia-Astronomica.cmd; userdata/astronomica contiene preferenze/salvataggi personali. Restano altri salvataggi, verifica audiovisiva manuale integrale e tipografia aiuto. Quattordici scene con salvataggi non sono una percentuale globale.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Quindici scene con salvataggi non sono una percentuale globale.
 
-Vincoli: originali D:/astro, solo cleanroom dal13 settembre2026, niente vecchi tentativi esclusi o nuovi prototipi. Modello corrente sufficiente, nessun cambio richiesto; se occorre cambiare, checkpoint e conferma del protocollo utente. Controllare entrambe le quote, riservare verifica/pubblicazione e fermarsi vicino all'1% limitante; nessun acquisto o riscatto reset.
+Vincoli:originali D:/astro,solo cleanroom dal13 settembre2026,niente vecchi tentativi esclusi o prototipi. Modello corrente sufficiente,nessun cambio richiesto. Controllare entrambe le quote,riservare verifica/pubblicazione e fermarsi vicino all'1% limitante;nessun acquisto o riscatto reset.

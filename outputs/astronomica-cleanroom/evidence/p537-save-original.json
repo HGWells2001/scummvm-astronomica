@@ -1,0 +1,1764 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "scope": "Original resource observations only; no new save support or Windows runtime claim",
+  "source_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
+  "conditions": [
+    [
+      1,
+      0,
+      16,
+      0,
+      0,
+      15
+    ]
+  ],
+  "sprites": [
+    {
+      "id": 1,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        23,
+        365
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 2,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        23,
+        416
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 3,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        589,
+        365
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 4,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        589,
+        416
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 5,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        77,
+        420
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 6,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        153,
+        420
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 7,
+      "clone": -1,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 8,
+      "clone": -1,
+      "frames": 1,
+      "xy": [
+        95,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 9,
+      "clone": -1,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 10,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 11,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 12,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 13,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 14,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 15,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 16,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 17,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 18,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 19,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 20,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 21,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 22,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 23,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 24,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 25,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 26,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 27,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 28,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 29,
+      "clone": 9,
+      "frames": 10,
+      "xy": [
+        77,
+        443
+      ],
+      "visible": 1,
+      "click_enabled": 0
+    },
+    {
+      "id": 30,
+      "clone": -1,
+      "frames": 1,
+      "xy": [
+        393,
+        361
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 31,
+      "clone": 30,
+      "frames": 1,
+      "xy": [
+        393,
+        361
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 32,
+      "clone": 30,
+      "frames": 1,
+      "xy": [
+        393,
+        361
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 33,
+      "clone": -1,
+      "frames": 2,
+      "xy": [
+        187,
+        411
+      ],
+      "visible": 1,
+      "click_enabled": 1
+    },
+    {
+      "id": 34,
+      "clone": -1,
+      "frames": 10,
+      "xy": [
+        0,
+        130
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 35,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 36,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 37,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 38,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 39,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 40,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 41,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 42,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 43,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 44,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 45,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 46,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 47,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    },
+    {
+      "id": 48,
+      "clone": 7,
+      "frames": 1,
+      "xy": [
+        73,
+        409
+      ],
+      "visible": 0,
+      "click_enabled": 0
+    }
+  ],
+  "opcode_counts": {
+    "5": 3,
+    "9": 14,
+    "16": 15,
+    "17": 19,
+    "23": 2,
+    "28": 6,
+    "29": 6,
+    "31": 23,
+    "32": 3,
+    "41": 2,
+    "42": 5,
+    "45": 18,
+    "46": 2
+  },
+  "startup_scripts": [
+    [
+      {
+        "offset": 745771,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        "delay": 0
+      },
+      {
+        "offset": 745803,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          48
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745815,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 745823,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          14,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745855,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          48
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745867,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          47
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745879,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 745887,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          13,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745919,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          47
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745931,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          46
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745943,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 745951,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          12,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745983,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          46
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 745995,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          45
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746007,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746015,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746047,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          45
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746059,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          44
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746071,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746079,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746111,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          44
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746123,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          43
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746135,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746143,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746175,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          43
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746187,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          42
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746199,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746207,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746239,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          42
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746251,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          41
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746263,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746271,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746303,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          41
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746315,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          40
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746327,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746335,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746367,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          40
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746379,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          39
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746391,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746399,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746431,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          39
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746443,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          38
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746455,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746463,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746495,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          38
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746507,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          37
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746519,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746527,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746559,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          37
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746571,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          36
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746583,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746591,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746623,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          36
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746635,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          35
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746647,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746655,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746687,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          35
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746699,
+        "opcode": 16,
+        "name": "op_16",
+        "args": [
+          7
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746711,
+        "opcode": 45,
+        "name": "else",
+        "args": [],
+        "delay": -1
+      },
+      {
+        "offset": 746719,
+        "opcode": 31,
+        "name": "condition",
+        "args": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746751,
+        "opcode": 17,
+        "name": "op_17",
+        "args": [
+          7
+        ],
+        "delay": -1
+      },
+      {
+        "offset": 746763,
+        "opcode": 42,
+        "name": "end_condition",
+        "args": [],
+        "delay": -1
+      }
+    ]
+  ],
+  "launch_control": 33,
+  "launch_commands": [
+    {
+      "offset": 354555,
+      "opcode": 28,
+      "name": "op_28",
+      "args": [
+        -1
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354567,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        9
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354579,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354611,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        34
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354623,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        30
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 354635,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        31
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 354647,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        32
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 354659,
+      "opcode": 23,
+      "name": "custom",
+      "args": [
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354691,
+      "opcode": 42,
+      "name": "end_condition",
+      "args": [],
+      "delay": -1
+    },
+    {
+      "offset": 354699,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 300
+    },
+    {
+      "offset": 354731,
+      "opcode": 32,
+      "name": "set_condition",
+      "args": [
+        1,
+        0,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354751,
+      "opcode": 45,
+      "name": "else",
+      "args": [],
+      "delay": -1
+    },
+    {
+      "offset": 354759,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        0,
+        11,
+        0,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354791,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        12
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354803,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        17
+      ],
+      "delay": 6000
+    },
+    {
+      "offset": 354815,
+      "opcode": 45,
+      "name": "else",
+      "args": [],
+      "delay": -1
+    },
+    {
+      "offset": 354823,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        0,
+        13,
+        0,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354855,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        11
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354867,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        16
+      ],
+      "delay": 9500
+    },
+    {
+      "offset": 354879,
+      "opcode": 23,
+      "name": "custom",
+      "args": [
+        25,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "delay": 4500
+    },
+    {
+      "offset": 354911,
+      "opcode": 5,
+      "name": "new_place",
+      "args": [
+        321
+      ],
+      "delay": 4500
+    },
+    {
+      "offset": 354923,
+      "opcode": 45,
+      "name": "else",
+      "args": [],
+      "delay": -1
+    },
+    {
+      "offset": 354931,
+      "opcode": 31,
+      "name": "condition",
+      "args": [
+        1,
+        0,
+        12,
+        0,
+        2,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354963,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        10
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354975,
+      "opcode": 9,
+      "name": "op_9",
+      "args": [
+        18
+      ],
+      "delay": 1000
+    },
+    {
+      "offset": 354987,
+      "opcode": 42,
+      "name": "end_condition",
+      "args": [],
+      "delay": -1
+    },
+    {
+      "offset": 354995,
+      "opcode": 29,
+      "name": "op_29",
+      "args": [
+        -1
+      ],
+      "delay": 5000
+    }
+  ],
+  "launch_custom_index": 7,
+  "mutations": [
+    {
+      "offset": 354611,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        34
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 354623,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        30
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 354635,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        31
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 354647,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        32
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745803,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        48
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745855,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        48
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745867,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        47
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745919,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        47
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745931,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        46
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745983,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        46
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 745995,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        45
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746047,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        45
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746059,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        44
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746111,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        44
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746123,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        43
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746175,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        43
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746187,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        42
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746239,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        42
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746251,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        41
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746303,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        41
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746315,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        40
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746367,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        40
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746379,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        39
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746431,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        39
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746443,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        38
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746495,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        38
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746507,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        37
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746559,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        37
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746571,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        36
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746623,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        36
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746635,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        35
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746687,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        35
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746699,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        7
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 746751,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        7
+      ],
+      "delay": -1
+    }
+  ],
+  "original_wav_sha256": {
+    "S0.WAV": "f86ed5d8ad91f741682137bc12d20d0593eb7a2b618c4b7f89f4e1332bf85847",
+    "S1.WAV": "0662b39bd3a5a7156ba90f63e35ca4f21980a7efad94fd14ffb2bb8af423df71"
+  },
+  "requirements": [
+    "Retain selector0..15 and cloned indicator frames/visibility",
+    "Launch custom14 has a delayed script continuation under click blocking; a settled-only format cannot infer that continuation from rocket coordinates",
+    "Consider separate native RocketMotion kind/delta/since as well as all sprite records, even for a stopped rocket",
+    "Retain dormant cross-puzzle state; test live selector changes only where actual controls permit them",
+    "Original callback and success observations remain separately recorded by probe_rocket.py and its evidence"
+  ]
+}

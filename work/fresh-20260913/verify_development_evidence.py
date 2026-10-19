@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==14
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,519,524,526,528,530,531,532,533,534,535}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==15
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,517,519,524,526,528,530,531,532,533,534,535}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
@@ -288,3 +288,29 @@ for scene in builder_save['scenes']:
   assert (picture['width'],picture['height'],picture['x'],picture['y'])==(250,330,0,0)
   assert digest(Path(f"D:/astro/PLACES/P{scene['scene']}")/picture['file'])==picture['sha256']
 print('P515/P536 preparatory resource inventory integrity PASS; no native-save claim')
+
+v=json.loads((root/'evidence/p517-saves-validation.json').read_text())
+proof=json.loads((root/'evidence/p517-save-proof.json').read_text())
+assert v['status']=='PASS' and v['exe_sha256']==m['exe_sha256'] and v['full_suite']
+assert (v['format_version'],v['payload_bytes'],v['scene'],v['full_frame_height'])==(12,3660,517,480)
+assert proof['status']=='PASS' and proof['metadata_listed'] and proof['slot']==11
+assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint'] and proof['boundaries']==v['boundaries'] and v['boundaries']>2000
+assert (proof['routes'],proof['settings'],proof['animation_cases'])==(3,14,2240)
+assert (v['solve_and_exit_routes'],v['settings'],v['animation_cases'])==(3,14,2240)
+assert v['truncations']==v['byte_corruptions']==proof['truncations']==proof['corruptions']==3660
+assert v['invalid_checksummed_states']==proof['invalid_states'] and proof['invalid_states']>30
+assert all(v[k] for k in ('active_animation','inactive_phases','next_frame_timing','first_completion_count','repeated_completion_count','minimum_clamp','unsolved_exit','music_restart'))
+assert proof['music_restart'] and proof['original_wav_sha256']==p517['original_wav_sha256']
+for name,marker in [('p517-saves-runtime.log','P517 saves: PASS ('),('p517-saves-startup.log','P517 startup save: PASS'),('p513-previous-slot.log','P513 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+assert json.loads((root/'evidence/p513-previous-slot-proof.json').read_text())['unchanged']
+print('P517 v12 active and stopped aurora phase save evidence integrity PASS')
+audit=json.loads((root/'evidence/builder-boundaries.json').read_text())
+assert audit['status']=='PASS' and audit['exe_sha256']==m['exe_sha256'] and audit['boundaries']==len(audit['rows']) and audit['boundaries']>100
+assert audit['original_inventory_sha256']==digest(root/'evidence/builder-save-original.json')
+assert {r['locals'][1] for r in audit['rows'] if r['locals'][1]}=={1,2,3,4,5}
+assert all(len(r['sprites'])==60 and len(r['locals'])==13 for r in audit['rows'])
+for n,expected in audit['source_sha256'].items():assert digest(Path(f'D:/astro/PLACES/P{n}/MEGAFILE.HYP'))==expected
+s=(root/'evidence/builder-boundaries.log').read_text()
+assert 'P515/P536 interaction verification: PASS' in s and 'FAIL' not in s and 'Log closed successfully' in s
+print('Builder native boundary observations integrity PASS; save implementation remains pending')

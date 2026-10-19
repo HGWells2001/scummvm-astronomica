@@ -29,7 +29,10 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'outputs/astronomica-cleanroom/probe_p513_save.py','outputs/astronomica-cleanroom/evidence/p513-save-original.json','outputs/astronomica-cleanroom/P513-SAVE-FORMAT.md',
  'outputs/astronomica-cleanroom/probe_p513_cross_setting.py','outputs/astronomica-cleanroom/evidence/p513-cross-setting.json',
  'outputs/astronomica-cleanroom/probe_p517_save.py','outputs/astronomica-cleanroom/evidence/p517-save-original.json','outputs/astronomica-cleanroom/P517-SAVE-FORMAT.md',
+ 'outputs/astronomica-cleanroom/probe_p537_save.py','outputs/astronomica-cleanroom/evidence/p537-save-original.json','outputs/astronomica-cleanroom/P537-SAVE-PLAN.md',
  'outputs/astronomica-cleanroom/probe_builder_save.py','outputs/astronomica-cleanroom/evidence/builder-save-original.json','outputs/astronomica-cleanroom/BUILDER-SAVE-PLAN.md',
+ 'work/fresh-20260913/check_p517_saves.py','work/fresh-20260913/check_p517_regressions.py','work/fresh-20260913/finish_p517_saves.py','work/fresh-20260913/check_builder_boundaries.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p517-saves-validation.json','p517-save-proof.json','p517-saves-runtime.log','p517-saves-startup.log','p513-previous-slot.log','p513-previous-slot-proof.json','builder-boundaries.json','builder-boundaries.log')],
  'work/fresh-20260913/check_p513_saves.py','work/fresh-20260913/check_p513_regressions.py','work/fresh-20260913/finish_p513_saves.py',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p513-saves-validation.json','p513-save-proof.json','p513-saves-runtime.log','p513-saves-startup.log','variant-previous-slot.log','variant-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/VARIANT-SAVE-FORMAT.md',
@@ -93,6 +96,9 @@ s=s.replace('five supported puzzle scenes (P505, P508, P519, P524, P526)','six s
 s=s.replace('six supported puzzle scenes (P505, P508, P519, P524, P526, P528)','seven supported puzzle scenes (P505, P508, P519, P524, P526, P528, P530)')
 s=s.replace('seven supported puzzle scenes (P505, P508, P519, P524, P526, P528, P530)','fourteen supported puzzle scenes (P505, P506, P508, P513, P519, P524, P526, P528, P530-P535)')
 s=s.replace('thirteen supported puzzle scenes (P505, P506, P508, P519, P524, P526, P528, P530-P535)','fourteen supported puzzle scenes (P505, P506, P508, P513, P519, P524, P526, P528, P530-P535)')
+s=s.replace('fourteen supported puzzle scenes (P505, P506, P508, P513, P519, P524, P526, P528, P530-P535)','fifteen supported puzzle scenes (P505, P506, P508, P513, P517, P519, P524, P526, P528, P530-P535)')
+if 'P517 v12' not in s:
+    s=s.replace('- Automatically verified routes','- P517 v12 retains active aurora cycles, stopped phases and timers, original pictures and controls. All14 settings,2240 animation cases, first/repeated completion and slot11 in a fresh process pass.\n- Automatically verified routes')
 if 'custom17 v10' not in s:
     s=s.replace('- Automatically verified routes','- Six-scene custom17 v10 saves retain partial solutions and original process statics across random rounds and exit/reentry. Every scene passes at all four stages; one family slot resumes in a fresh process.\n- Retained unknown locals from earlier scenes no longer block P524/P526/P528/P530 saves. Four original P509 entries, twelve inert-value extremes and eight invalid-metadata rejections pass with v6-v9 layouts unchanged.\n- Automatically verified routes')
 if 'P530 v9' not in s:

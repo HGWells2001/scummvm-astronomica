@@ -1,3 +1,27 @@
+# Ripresa: salvataggi P517,19 ottobre2026
+
+Formato v12:2278 ripristini/successori,14 posizioni,2240 casi animazione PASS. Conserva fasi attive/ferme, timer,immagine,indicatore e cursore grafico.
+Slot11 in nuovo processo dalla posizione12 PASS; primo/ripetuto successo,limite minimo e uscita volontaria PASS. Compatibilita v1-v11,vecchi slot v3-v11 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint:finish_p517_saves.py;check_p517_saves.py,check_p517_regressions.py e P517-SAVE-FORMAT.md. Non rieseguire finalizzatori precedenti da soli.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Quindici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi P513,19 ottobre2026
+
+Formato v11: 728 ripristini/successori, cinque percorsi,14 scenari e nove risultati fotone PASS. Conserva fotone fermo nascosto, vecchie cifre, immagine cubo, RNG e conteggio silenzioso originale.
+Slot10 in nuovo processo dopo due risposte corrette PASS; limiti, dieci errori, primo/ripetuto successo e uscita volontaria PASS. Compatibilita v1-v10, vecchi slot v3-v10 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p513_saves.py; check_p513_saves.py, check_p513_regressions.py e P513-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio: Avvia-Astronomica.cmd; preferenze e salvataggi personali in userdata/astronomica. Prossimo: altri salvataggi, verifica audiovisiva manuale integrale e tipografia aiuto. Quattordici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi della sequenza P506,19 ottobre2026
+
+Formato v10 per P506/P531/P532/P533/P534/P535: 1222 ripristini/successori, 15 percorsi, sei scene in ciascuna fase0..3 PASS.
+Conserva soluzioni parziali, RNG e statica originale round/mask anche dopo uscita/rientro. Slot9 in nuovo processo e contatori primo/ripetuto completamento PASS.
+Corretto il rifiuto dei salvataggi P524/P526/P528/P530 dopo altri enigmi: quattro ingressi originali da P509,12 estremi inattivi e8 rifiuti di metadati incoerenti PASS; layout v6-v9 invariati.
+Compatibilita v1-v9, vecchi slot v3-v9, avvio P1 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_variant_saves.py; check_variant_saves.py, check_variant_regressions.py e VARIANT-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio locale: Avvia-Astronomica.cmd nella radice; configurazione/salvataggi personali in userdata/astronomica, separati dalle prove.
+Prossimo: altri puzzle dall'inventario; restano verifica audiovisiva manuale integrale e tipografia aiuto. Tredici scene con salvataggi non misurano il completamento globale.
+
 # Ripresa: salvataggi P513,19 ottobre2026
 
 Formato v11: 728 ripristini/successori, cinque percorsi,14 scenari e nove risultati fotone PASS. Conserva fotone fermo nascosto, vecchie cifre, immagine cubo, RNG e conteggio silenzioso originale.
