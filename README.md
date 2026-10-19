@@ -9,10 +9,11 @@ This repository contains the engine, original-file research tools, regression dr
 The local Windows x64 build passed its complete WASAPI regression on 18 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
 
 - P524 v6 saves question boundaries, including the running Triton animation and mentor return. Tests cover 72 round trips, 48 animation boundary cases and fresh-process continuation.
-- [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records five supported puzzle scenes (P505, P508, P519, P524, P526), plus exploration. This is not a whole-game completion percentage.
+- [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records six supported puzzle scenes (P505, P508, P519, P524, P526, P528), plus exploration. This is not a whole-game completion percentage.
 - P526 v7 saves stopped orbital experiments, retaining animation phases, render positions and hover. 686 round trips include 216 animation cases and 432 synthetic phase/answer comparisons.
 - Ordinary presentation preserves all 640x480 original pixels. The diagnostic strip is opt-in; twelve complete-scene checks and 855 original P528 picture pixels pass.
 - Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.
+- P528 v8 retains partial eclipses and original image history; 160 reachable abstract states, 640 continuations, full480-row pixels and fresh-process completion pass.
 - Automatically verified routes in 35 puzzle scenes; these include variants, so this is **not** a count of distinct puzzles.
 - Navigation, original script execution, puzzle motion, audio, video, mentors, countdown and endings have dedicated checks.
 - Native ScummVM saves support settled exploration screens and P505/P508 question boundaries. P519 v5 saves idle selections and partial solutions, with 74 gameplay comparisons, 30 image compositions and fresh-process continuation verified. P505 continuation tests cover 38 boundaries and successor states, hover restoration, corrupt payload rejection and fresh-process slot loading. P508 continuation tests cover 63 boundaries, 291 answer steps and fresh-process slot loading; ambient music restarts from its beginning. Original text `GAMESTAT` import supports exploration with no active countdown.

@@ -1,15 +1,13 @@
-# Astronomica: checkpoint AI, 18 ottobre 2026
+# Astronomica: checkpoint AI, 19 ottobre 2026
 
-P526 v7 verificato: 686 ripristini, 33 successori di gioco, cinque identita, 216 casi animazione e 432 casi artificiali fase/risposta. Audit nativo33 confini; compatibilita v1-v6 e suite WASAPI superate sullo stesso eseguibile.
+Modello dichiarato dall'utente: GPT-6.1 Sol, ragionamento medio, 19 ottobre 2026. Impostazione scelta dall'utente; nessun cambio automatico applicato dall'agente. La selezione del client non e verificabile tramite i tool disponibili.
 
-Sorgenti modificati: outputs/astronomica-cleanroom/engine/astronomica/astronomica.cpp e astronomica.h. Driver e prove: check_p526_saves.py, check_p526_boundaries.py, check_p526_regressions.py, finish_p526_saves.py; contratto P526-SAVE-FORMAT.md e evidence/p526-saves-validation.json.
+Checkpoint verificato: P528 v8, formato3444 byte,160 stati astratti raggiungibili e640 ripristini/successori confrontati con il grafo derivato dagli originali. Slot7 e nuovo processo conservano il risultato parziale e la riga Luna persistente, poi completano con conteggio corretto. Dati danneggiati, compatibilita v1-v7 e precedenti slot v3-v7, grafica640x480, controllo Musica, import, aiuto e WASAPI PASS sullo stesso eseguibile. Prove eseguite il18 ottobre; checkpoint finalizzato il19 ottobre.
 
-Obiettivo: motore reale dai file D:/astro, cleanroom dal13 settembre2026. Prossimo: P528-SAVE-PLAN.md, verifica audiovisiva manuale e tipografia aiuto. Leggere NEXT-STEPS.md; non rieseguire finalizzatori storici.
+Sorgenti: outputs/astronomica-cleanroom/engine/astronomica/astronomica.cpp e astronomica.h. Contratto: P528-SAVE-FORMAT.md. Driver: work/fresh-20260913/check_p528_saves.py e check_p528_regressions.py. Finalizzatore corrente: finish_p528_saves.py; non rieseguire quelli storici da soli.
 
-Valutazione AI: configurazione corrente sufficiente in questa fase. Variante e livello selezionati nel client non verificabili. Nessun cambio applicato o richiesto. Candidato per difficolta persistenti: gpt-6.1-sol, xhigh, documentato in https://developers.openai.com/api/docs/models/gpt-6.1-sol. Prima di ogni nuova fase rivalutare il vantaggio concreto; se serve un cambio, salvare il checkpoint, richiederlo e attendere conferma come da protocollo utente.
+Prossimo: outputs/astronomica-cleanroom/P530-SAVE-PLAN.md. Inventario originale:14 locali,29 sprite,25 immagini172x172;625 coppie di sovrapposizione verificate. Salvataggi P530 ancora assenti. Restano la verifica audiovisiva manuale completa e la tipografia dell'aiuto. Leggere NEXT-STEPS.md.
 
-Limiti: cinque scene con salvataggi interni non misurano completamento globale; nessuna percentuale globale attendibile.
+Valutazione AI: GPT-6.1 Sol / medio sufficiente per la prossima analisi circoscritta. Prima di una fase diversa rivalutare il vantaggio concreto; se serve un cambio, salvare il checkpoint, richiederlo e attendere la conferma prevista dal protocollo utente. Nessuna richiesta di cambio pendente.
 
-Presentazione completa verificata: 640x480, 12 scene, 855 pixel originali P528, barra diagnostica opzionale. Compatibilita v1-v7 e suite WASAPI PASS. Checkpoint attuale finish_presentation.py; driver check_presentation.py e check_presentation_regressions.py. Variante/livello AI invariati e non verificabili nel client; nessuna richiesta di cambio.
-
-Audio verificato: loop sul canale Musica, primo piano sul canale Effetti; sei scene con Musica muta e volume zero, 12 WAV invariati. Suite completa PASS. Checkpoint attuale finish_audio_channels.py. Configurazione AI corrente sufficiente; nessun cambio richiesto o applicato. Prossimo P528-SAVE-PLAN.md.
+Vincoli: motore reale, nessun prototipo; originali D:/astro; solo cleanroom iniziata il13 settembre2026, senza tentativi precedenti esclusi. Controllare entrambe le quote, riservare margine per verifica/pubblicazione, non riscattare reset e non acquistare crediti. Sei scene con salvataggi non misurano il completamento globale; nessuna percentuale globale attendibile.

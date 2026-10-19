@@ -1,3 +1,12 @@
+# Ripresa: salvataggi P528, 18 ottobre 2026
+
+P528 v8:160 stati astratti raggiungibili,640 ripristini/successori,6 completamenti e160 uscite PASS; confronto integrale480 righe.
+Slot7 e nuovo processo: riga Luna persistente, risultato parziale e completamento con conteggio PASS.
+Compatibilita v1-v7, precedenti slot v3-v7, grafica completa, controllo Musica, import, aiuto e WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p528_saves.py. Test: check_p528_saves.py e check_p528_regressions.py.
+Leggere P528-SAVE-FORMAT.md. Prossimo: P530-SAVE-PLAN.md; inventario originale25 immagini/625 coppie, salvataggi P530 ancora assenti. Restano verifica audiovisiva manuale completa e tipografia aiuto.
+Non rieseguire finalizzatori storici. Nessuna percentuale globale attendibile; vedere AI_MODEL_CHECKPOINT.md.
+
 # Ripresa: controllo Musica separato, 18 ottobre 2026
 
 Loop WAV sul canale Musica; registrazioni in primo piano sul canale Effetti, con sostituzione originale a singolo canale.

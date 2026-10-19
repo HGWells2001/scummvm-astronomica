@@ -72,6 +72,10 @@ private:
  bool verifyP526Saves();
  bool verifyPresentation();
  bool verifyAudioChannels();
+ bool canSaveP528() const;
+ Common::Error saveP528(Common::WriteStream *stream);
+ Common::Error loadP528(Common::SeekableReadStream *stream);
+ bool verifyP528Saves();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.
@@ -138,6 +142,8 @@ private:
  Graphics::Surface _pendingImage;
  Common::String _pendingImageName, _displayedImageName;
  uint _p519LargeImage = 0, _p519SmallImage = 0;
+ uint _p528EarthImage = 0, _p528MoonImage = 0, _p528TallMoon = 0;
+ bool _p528HistoryValid = true;
  int _pendingImageX = 0, _pendingImageY = 0;
  bool playSound(int id, uint32 now = 0, bool looping = false);
  void resumeLoopAt(uint32 now);

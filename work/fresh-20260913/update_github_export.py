@@ -27,6 +27,9 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'outputs/astronomica-cleanroom/P528-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p528_save.py','outputs/astronomica-cleanroom/evidence/p528-save-original.json',
  'outputs/astronomica-cleanroom/probe_p528_answer_states.py','outputs/astronomica-cleanroom/evidence/p528-answer-states.json',
  'outputs/astronomica-cleanroom/probe_p528_settled_graph.py','outputs/astronomica-cleanroom/evidence/p528-settled-graph.json',
+ 'outputs/astronomica-cleanroom/P528-SAVE-FORMAT.md','work/fresh-20260913/check_p528_saves.py','work/fresh-20260913/check_p528_regressions.py','work/fresh-20260913/finish_p528_saves.py',
+ 'outputs/astronomica-cleanroom/P530-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p530_save.py','outputs/astronomica-cleanroom/evidence/p530-save-original.json',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p528-saves-validation.json','p528-save-proof.json','p528-saves-runtime.log','p528-saves-startup.log')],
  'work/fresh-20260913/check_p526_saves.py','work/fresh-20260913/check_p526_boundaries.py','work/fresh-20260913/check_p526_regressions.py','work/fresh-20260913/finish_p526_saves.py','outputs/astronomica-cleanroom/P526-SAVE-FORMAT.md',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p526-saves-validation.json','p526-save-proof.json','p526-saves-runtime.log','p526-saves-startup.log','p526-native-save-boundaries.json','p526-native-save-boundaries.log','p524-previous-slot.log','p524-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/P526-SAVE-PLAN.md','outputs/astronomica-cleanroom/probe_p526_save.py','outputs/astronomica-cleanroom/evidence/p526-save-original.json',
@@ -62,6 +65,9 @@ s=s.replace('on 16 October 2026','on 18 October 2026')
 if 'P526 v7' not in s:
     s=s.replace('- Automatically verified routes','- P526 v7 saves stopped orbital experiments, retaining animation phases, render positions and hover. 686 round trips include 216 animation cases and 432 synthetic phase/answer comparisons.\n- Automatically verified routes')
 s=s.replace('four supported puzzle scenes (P505, P508, P519, P524)','five supported puzzle scenes (P505, P508, P519, P524, P526)')
+s=s.replace('five supported puzzle scenes (P505, P508, P519, P524, P526)','six supported puzzle scenes (P505, P508, P519, P524, P526, P528)')
+if 'P528 v8' not in s:
+    s=s.replace('- Automatically verified routes','- P528 v8 retains partial eclipses and original image history; 160 reachable abstract states, 640 continuations, full480-row pixels and fresh-process completion pass.\n- Automatically verified routes')
 if 'Ordinary presentation preserves all 640x480' not in s:
     s=s.replace('- Automatically verified routes','- Ordinary presentation preserves all 640x480 original pixels. The diagnostic strip is opt-in; twelve complete-scene checks and 855 original P528 picture pixels pass.\n- Automatically verified routes')
 p.write_text(s.rstrip()+'\n')

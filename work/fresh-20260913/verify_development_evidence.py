@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==5
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524,526}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==6
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524,526,528}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/f"evidence/p{row['scene']}-saves-runtime.log")==row['runtime_sha256']
@@ -184,3 +184,19 @@ proof=json.loads((root/'evidence/audio-channels-proof.json').read_text())
 assert proof['status']=='PASS' and proof['unchanged'] and len(proof['original_wav_sha256'])==12
 for name,expected in proof['original_wav_sha256'].items():assert digest(Path(name))==expected,name
 print('Audio category evidence integrity PASS')
+p528save=json.loads((root/'evidence/p528-saves-validation.json').read_text())
+assert p528save['status']=='PASS' and p528save['exe_sha256']==m['exe_sha256'] and p528save['full_suite']
+assert (p528save['format_version'],p528save['payload_bytes'],p528save['reachable_states'],p528save['boundaries'],p528save['completion_edges'],p528save['unsolved_exits'],p528save['full_frame_height'])==(8,3444,160,640,6,160,480)
+proof=json.loads((root/'evidence/p528-save-proof.json').read_text())
+assert proof['metadata_listed'] and proof['slot']==7 and proof['resource_edges_compared']==640
+assert proof['original_state_graph_sha256']==digest(graph_path) and proof['fresh_process_fingerprint']==p528save['fresh_process_fingerprint']
+for name,marker in [('p528-saves-runtime.log','P528 saves: PASS (160 reachable states, 640 round trips'),('p528-saves-startup.log','P528 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+print('P528 v8 native save evidence integrity PASS')
+p530=json.loads((root/'evidence/p530-save-original.json').read_text())
+assert p530['status']=='PASS' and p530['command_count']==581 and p530['image_commits']==25 and p530['image_history_comparisons']==625
+assert len(p530['conditions'])==14 and p530['startup_programs']==11 and len(p530['sprite_frames'])==29
+assert digest(Path('D:/astro/PLACES/P530/MEGAFILE.HYP'))==p530['source_sha256']
+assert len(p530['images'])==25 and {(p['width'],p['height'],p['x'],p['y']) for p in p530['images']}=={(172,172,460,10)}
+for p in p530['images']:assert digest(Path('D:/astro/PLACES/P530')/p['file'])==p['sha256']
+print('P530 original save inventory integrity PASS')

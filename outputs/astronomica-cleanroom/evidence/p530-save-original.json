@@ -1,0 +1,1870 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "scope": "Original resource requirements only; P530 native saves not implemented",
+  "source_sha256": "2056a7305ba91e8d06ad4f4ce309ea0dadf7d789633ae12d28bb43293f096631",
+  "conditions": [
+    [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      3,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      4,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      5,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      6,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      7,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      8,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      9,
+      5,
+      1,
+      0,
+      5
+    ],
+    [
+      1,
+      10,
+      5,
+      0,
+      0,
+      5
+    ],
+    [
+      1,
+      11,
+      5,
+      0,
+      0,
+      31
+    ],
+    [
+      1,
+      12,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      13,
+      5,
+      0,
+      0,
+      5
+    ]
+  ],
+  "sprite_frames": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "startup_programs": 11,
+  "mouse_rectangles": 3,
+  "command_count": 581,
+  "opcode_counts": {
+    "5": 4,
+    "7": 77,
+    "9": 30,
+    "10": 5,
+    "16": 31,
+    "17": 18,
+    "20": 25,
+    "23": 2,
+    "28": 18,
+    "29": 18,
+    "31": 102,
+    "32": 94,
+    "39": 1,
+    "41": 48,
+    "42": 32,
+    "45": 70,
+    "46": 1,
+    "49": 5
+  },
+  "image_commits": 25,
+  "images": [
+    {
+      "file": "M3110",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "44b0e389fcbcf755638f8e89de551a9d1bf212eb310963c68e4229c23c037006",
+      "command_offset": 715213
+    },
+    {
+      "file": "M3130",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "08ecc9a60b4382756ecb3b37bd113d44d606082b5a52e5bd2db59dd7d1816b2f",
+      "command_offset": 715536
+    },
+    {
+      "file": "M31100",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "83e9756d1f6ab711a95388078f7261572e9ff461498bf8aec9efd2f78f072497",
+      "command_offset": 715903
+    },
+    {
+      "file": "M31250",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "fe2a58958ff246efc0f77b5283acd599a184a6d5bf783785c23175ec5ba44d9a",
+      "command_offset": 716226
+    },
+    {
+      "file": "M31500",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "09e5f7c21d0b122bf3a7a90b5a1bdefa08aef7d992ecc2e264aef170c26a7618",
+      "command_offset": 716549
+    },
+    {
+      "file": "HUB10X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "89286ca8205d555efd00208980890ae661daae069133d8e662c38796fbb371ea",
+      "command_offset": 716936
+    },
+    {
+      "file": "HUB30X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "eb0eee89a10cf461a7d0ade9a428c0c89755a12c1daa68ddb532547d3e4faec6",
+      "command_offset": 717259
+    },
+    {
+      "file": "HUB100X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "f3648c4bdd97d4f1b4255346d3225427471d69ba213980c9c87d43e282a723d2",
+      "command_offset": 717582
+    },
+    {
+      "file": "HUB250X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "dc149d3e8179d8db03da06d2dda3c9b8fe0575b94a99fe953eb5000bb5ab22ed",
+      "command_offset": 717905
+    },
+    {
+      "file": "HUB500X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "a77558c7e036cf64d8fc360f34b52072b50ab78e64dbf718c87f657d72bdf2f1",
+      "command_offset": 718272
+    },
+    {
+      "file": "SAT10X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "c554436be9de5d8f440e392f5761f3a3399471bde22813514982656c58a8f1a2",
+      "command_offset": 718659
+    },
+    {
+      "file": "SAT30X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "c7f2b68854b3eadebdfb26d2d3c2333617ad4b9f6f12787d3b93fb8c5010932a",
+      "command_offset": 718982
+    },
+    {
+      "file": "SAT100X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "57ac8647b0eeb432a0497fe2e4419608fe382552d511f2bc99b4a1cfb4794f85",
+      "command_offset": 719305
+    },
+    {
+      "file": "SAT250X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "6e9d2618a12021981b8ec3d56b866b04e2107f3737baa2f9379fa5e623ea6c0e",
+      "command_offset": 719628
+    },
+    {
+      "file": "SAT",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "5070eb8010c3d8d021d8ce400747ce57bf5debc3a3bcfdefdb6be36101f816a4",
+      "command_offset": 719951
+    },
+    {
+      "file": "STAR10X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "d69042e1a55761d3046b61f754dc06d85138cbd7dd153a0a806db4b3e89699f3",
+      "command_offset": 720382
+    },
+    {
+      "file": "STAR30X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "39b0d0c5185a98471b9553e278736797d0d9190d9819065cc90494a731f09bde",
+      "command_offset": 720749
+    },
+    {
+      "file": "STAR100X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "bbbb616d91744a80d59d561cb19f15ed1365a7726290930601322af567be432b",
+      "command_offset": 721072
+    },
+    {
+      "file": "STAR250X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "c1fda58a69bf42793b03bbc2d2f646f85b49a1e0284fbad12ff7e6b7a1f5565c",
+      "command_offset": 721395
+    },
+    {
+      "file": "STAR500X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "edebfc62461c42a78fe43d26b16d357cd512f093ce473009711a422fd1e46800",
+      "command_offset": 721718
+    },
+    {
+      "file": "GLOB10X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "56543722e8431c897e3f3584c91038b88d6ea9d43d1b1a0c01d2b883faab5789",
+      "command_offset": 722105
+    },
+    {
+      "file": "GLOB30X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "cd016b01ec937d9e74bc45ec34a733243f3dff35206e0a546bbdc9e71f5e25ff",
+      "command_offset": 722428
+    },
+    {
+      "file": "GLOB100X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "c95ea4e293ae4b9acbb93f1d15a9f38005d7f6b451932ae5f74ece3b7fa9eff7",
+      "command_offset": 722751
+    },
+    {
+      "file": "GLOB",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "70bc49330cd4ce4b5525b761feeb953320d01b4aca648fd1be308e2e37a7159a",
+      "command_offset": 723074
+    },
+    {
+      "file": "GLOB500X",
+      "x": 460,
+      "y": 10,
+      "width": 172,
+      "height": 172,
+      "sha256": "b2d58d8452c4d3264972d98cbf7e6a0291213f8eceb9f396dfdd16aa14c2726f",
+      "command_offset": 723441
+    }
+  ],
+  "image_history_comparisons": 625,
+  "image_history_scope": "Opaque original RGB pictures on a sentinel canvas; common172x172 footprint, no native state restoration claim",
+  "movies": 0,
+  "automatic_animation": false,
+  "automatic_movement": false,
+  "mutation_commands": [
+    {
+      "path": "scene/sprites/7/click/8",
+      "offset": 352297,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/7/click/13",
+      "offset": 352389,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        21
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/8/click/8",
+      "offset": 357161,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/8/click/13",
+      "offset": 357253,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        21
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/9/click/8",
+      "offset": 361689,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/9/click/13",
+      "offset": 361781,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        21
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/10/click/8",
+      "offset": 365713,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/10/click/13",
+      "offset": 365805,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        21
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/11/click/8",
+      "offset": 369233,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/11/click/13",
+      "offset": 369325,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        21
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/19/click/3",
+      "offset": 492461,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        18
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/20/click/3",
+      "offset": 496417,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        19
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/21/click/6",
+      "offset": 509813,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        15
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/21/click/11",
+      "offset": 509897,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        14
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/21/click/21",
+      "offset": 510081,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        17
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/21/click/24",
+      "offset": 510133,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        13
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/22/click/7",
+      "offset": 515025,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        6
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/22/click/12",
+      "offset": 515109,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        7
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/22/click/21",
+      "offset": 515281,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        17
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/sprites/22/click/24",
+      "offset": 515333,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        13
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/0/2",
+      "offset": 714793,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/0/3",
+      "offset": 714813,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        29
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/0/4",
+      "offset": 714825,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/5",
+      "offset": 714845,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/6",
+      "offset": 714865,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/7",
+      "offset": 714885,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/8",
+      "offset": 714905,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/9",
+      "offset": 714925,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/10",
+      "offset": 714945,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/11",
+      "offset": 714965,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/12",
+      "offset": 714985,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/0/13",
+      "offset": 715005,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/1/0",
+      "offset": 715093,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        24
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/1/1",
+      "offset": 715105,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        25
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/1/2",
+      "offset": 715117,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        26
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/1/3",
+      "offset": 715129,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        27
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/1/4",
+      "offset": 715141,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        28
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/1/5",
+      "offset": 715153,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        29
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/7/0",
+      "offset": 723784,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/7/1",
+      "offset": 723796,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        22
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/7/2",
+      "offset": 723808,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        23
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/7/3",
+      "offset": 723820,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        21
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/0",
+      "offset": 723836,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        6
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/8/1",
+      "offset": 723848,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        7
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/2",
+      "offset": 723860,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        13
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/3",
+      "offset": 723872,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        14
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/4",
+      "offset": 723884,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        15
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/5",
+      "offset": 723896,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        17
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/6",
+      "offset": 723908,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        18
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/8/7",
+      "offset": 723920,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        19
+      ],
+      "delay": -1
+    },
+    {
+      "path": "scene/scripts/10/8",
+      "offset": 724260,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/9",
+      "offset": 724280,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        29
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/10",
+      "offset": 724292,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/11",
+      "offset": 724312,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/12",
+      "offset": 724332,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/13",
+      "offset": 724352,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/14",
+      "offset": 724372,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/15",
+      "offset": 724392,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/16",
+      "offset": 724412,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/17",
+      "offset": 724432,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/18",
+      "offset": 724452,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/19",
+      "offset": 724472,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        29,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/28",
+      "offset": 724652,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/29",
+      "offset": 724672,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        24
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/30",
+      "offset": 724684,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/31",
+      "offset": 724704,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/32",
+      "offset": 724724,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/33",
+      "offset": 724744,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/34",
+      "offset": 724764,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/35",
+      "offset": 724784,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/36",
+      "offset": 724804,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/37",
+      "offset": 724824,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/38",
+      "offset": 724844,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/39",
+      "offset": 724864,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        24,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/43",
+      "offset": 724944,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/44",
+      "offset": 724964,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        25
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/45",
+      "offset": 724976,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/46",
+      "offset": 724996,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/47",
+      "offset": 725016,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/48",
+      "offset": 725036,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/49",
+      "offset": 725056,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/50",
+      "offset": 725076,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/51",
+      "offset": 725096,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/52",
+      "offset": 725116,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/53",
+      "offset": 725136,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/54",
+      "offset": 725156,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        25,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/58",
+      "offset": 725236,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/59",
+      "offset": 725256,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        26
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/60",
+      "offset": 725268,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/61",
+      "offset": 725288,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/62",
+      "offset": 725308,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/63",
+      "offset": 725328,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/64",
+      "offset": 725348,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/65",
+      "offset": 725368,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/66",
+      "offset": 725388,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/67",
+      "offset": 725408,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/68",
+      "offset": 725428,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/69",
+      "offset": 725448,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        26,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/73",
+      "offset": 725528,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/74",
+      "offset": 725548,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        27
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/75",
+      "offset": 725560,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/76",
+      "offset": 725580,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/77",
+      "offset": 725600,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/78",
+      "offset": 725620,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/79",
+      "offset": 725640,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/80",
+      "offset": 725660,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/81",
+      "offset": 725680,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/82",
+      "offset": 725700,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/83",
+      "offset": 725720,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/84",
+      "offset": 725740,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        27,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/88",
+      "offset": 725820,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        305
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/89",
+      "offset": 725840,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        28
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/scripts/10/90",
+      "offset": 725852,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        295
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/91",
+      "offset": 725872,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        275
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/92",
+      "offset": 725892,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        255
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/93",
+      "offset": 725912,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        235
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/94",
+      "offset": 725932,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        215
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/95",
+      "offset": 725952,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        195
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/96",
+      "offset": 725972,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        175
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/97",
+      "offset": 725992,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        155
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/98",
+      "offset": 726012,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        135
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/scripts/10/99",
+      "offset": 726032,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        28,
+        466,
+        115
+      ],
+      "delay": 10
+    },
+    {
+      "path": "scene/mouse_rects/0/click/10",
+      "offset": 726284,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        20
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/mouse_rects/0/click/15",
+      "offset": 726376,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        21
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/mouse_rects/1/click/4",
+      "offset": 726516,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        22
+      ],
+      "delay": 0
+    },
+    {
+      "path": "scene/mouse_rects/2/click/5",
+      "offset": 726736,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        23
+      ],
+      "delay": 0
+    }
+  ],
+  "mutated_sprites": [
+    5,
+    6,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "random_selection": [
+    {
+      "path": "scene/scripts/10/24",
+      "offset": 724556,
+      "opcode": 39,
+      "name": "op_39",
+      "args": [
+        1,
+        11,
+        1,
+        9
+      ],
+      "delay": 0
+    }
+  ],
+  "completion_gate": {
+    "local": 13,
+    "value": 3,
+    "destination": 228
+  },
+  "requirements": [
+    "Snapshot14 locals and all runner metadata/RNG, including choice local9 and mask local11",
+    "Preserve partially placed component flags, all mutable visibility/frame state and mouse rectangle hover",
+    "Reject pending commands, foreground audio and button pulses; preflight the last committed picture or absence and prove its overwrite/history footprint",
+    "Verify three randomized rounds, both component orders, wrong/repeated selection, unsolved exit and fresh-process continuation",
+    "P530 has exceptional completion semantics: original global46 and S12 voice, without increasing the puzzle counter; use the separate original executable proof"
+  ]
+}

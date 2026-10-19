@@ -938,3 +938,8 @@ Ordinary presentation now preserves all 640x480 original pixels. The diagnostic 
 ## Separate music control, 18 October 2026
 
 Looping background WAVs now use the ScummVM Music channel. Foreground recordings retain the Effects channel and replace the active loop as before. Six scenes pass with Music muted and volume zero, Effects audible, and all original controls restored afterward. Twelve original S0/S1 WAV hashes are unchanged. Presentation, compatible v1-v7 saves, prior-build slots, help/import and the full WASAPI suite pass on the same executable. This is automated channel/control verification; manual listening remains outstanding. See AUDIO-CHANNELS.md and evidence/audio-channels-validation.json.
+
+
+## P528 native saves, 18 October 2026
+
+Native v8 saves settled P528 states with full runner/RNG, clock/count, nine sprite records, partial eclipse flags, current image pair and retained tall-moon history. Tests cover160 reachable abstract states and640 round trips/successors, including six completion edges and160 exits, using full480-row pixel hashes. 3444 truncations,3444 byte corruptions and30 checksummed invalid states reject atomically. Slot7 loads in a fresh process, retains the old moon row and completes the remaining eclipse with first-success counting. Versions1-7, prior-build slots, presentation/audio controls, help/import and WASAPI regressions pass on the same executable. No whole-game completion percentage is inferred.

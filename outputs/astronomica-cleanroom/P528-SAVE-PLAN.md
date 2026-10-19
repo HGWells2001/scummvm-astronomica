@@ -1,6 +1,7 @@
 # P528 save preparation, 18 October 2026
 
-P528 saves are not implemented. probe_p528_save.py reads the original
+P528 v8 settled saves are implemented and verified; see P528-SAVE-FORMAT.md.
+The preparation below records the original implementation questions. probe_p528_save.py reads the original
 MEGAFILE.HYP and pictures, writing hashes and twelve exact branch mappings
 to evidence/p528-save-original.json. The original file contains nine sprites,
 five locals (widths13,4,4,1,1), no startup programs, no mouse rectangles, no
@@ -82,7 +83,7 @@ MO_S2 and phase11 retains MO_S1. The broader1728 image-composition proof
 covers arbitrary three-pair histories; it must not be described as1728
 naturally reachable puzzle states. Both proofs have separate scopes.
 
-Suggested v8 payload, still unimplemented: twelve header words, nine
+Implemented v8 payload: twelve header words, nine
 frozen27-word sprite records and603 runner words, followed by the current
 word-wise FNV checksum. With ASVM/version this is3444 bytes. Preserve an
 explicit current pair (or absence), retained tall moon and two reserved
