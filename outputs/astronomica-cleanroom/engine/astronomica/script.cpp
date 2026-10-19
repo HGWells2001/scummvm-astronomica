@@ -65,12 +65,14 @@ uint16 ScriptRunner::random15() {
 }
 bool ScriptRunner::exportIdleState(Common::Array<uint32> &words) const {
  if (!idle()) return false;
+ exportSettledValues(words); return true;
+}
+void ScriptRunner::exportSettledValues(Common::Array<uint32> &words) const {
  words.clear();
  for (int scope = 0; scope < 2; ++scope) for (int i = 0; i < 100; ++i) {
   words.push_back(uint32(_values[scope][i])); words.push_back(uint32(_widths[scope][i])); words.push_back(_known[scope][i]);
  }
  words.push_back(_randomState); words.push_back(_programLoadedAt); words.push_back(_lastTrue);
- return true;
 }
 bool ScriptRunner::validIdleState(const Common::Array<uint32> &words) {
  if (words.size() != kIdleStateWords || words[602] > 1) return false;
@@ -79,12 +81,30 @@ bool ScriptRunner::validIdleState(const Common::Array<uint32> &words) {
 }
 bool ScriptRunner::importIdleState(const Common::Array<uint32> &words) {
  if (!idle() || !validIdleState(words)) return false;
+ importSettledValues(words); return true;
+}
+void ScriptRunner::importSettledValues(const Common::Array<uint32> &words) {
  for (int scope = 0; scope < 2; ++scope) for (int i = 0; i < 100; ++i) {
   const uint n = (scope*100+i)*3;
   _values[scope][i] = int32(words[n]); _widths[scope][i] = int32(words[n+1]); _known[scope][i] = words[n+2] != 0;
  }
  _randomState = words[600]; _programLoadedAt = words[601]; _lastTrue = words[602] != 0;
- return true;
+}
+bool ScriptRunner::validVariantState(const Common::Array<uint32> &words) {
+ if (words.size() != kIdleStateWords+2) return false;
+ Common::Array<uint32> values; for (uint i = 0; i < kIdleStateWords; ++i) values.push_back(words[i]);
+ if (!validIdleState(values) || words[603] > 3 || words[604] > 63) return false;
+ uint count = 0; for (uint bits = words[604]; bits; bits >>= 1) count += bits & 1;
+ return count == words[603];
+}
+bool ScriptRunner::exportVariantState(Common::Array<uint32> &words) const {
+ if (!variantIdle()) return false;
+ exportSettledValues(words); words.push_back(_variantRound); words.push_back(_variantMask);
+ return validVariantState(words);
+}
+bool ScriptRunner::importVariantState(const Common::Array<uint32> &words) {
+ if (!variantIdle() || !validVariantState(words)) return false;
+ importSettledValues(words); _variantRound = words[603]; _variantMask = words[604]; return true;
 }
 void ScriptRunner::resetGlobals() {
  // _clear_globals 9:408c loops over indices 0..99, storing zero.

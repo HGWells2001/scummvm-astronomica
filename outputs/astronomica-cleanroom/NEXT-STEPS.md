@@ -1,3 +1,13 @@
+# Ripresa: salvataggi della sequenza P506,19 ottobre2026
+
+Formato v10 per P506/P531/P532/P533/P534/P535: 1222 ripristini/successori, 15 percorsi, sei scene in ciascuna fase0..3 PASS.
+Conserva soluzioni parziali, RNG e statica originale round/mask anche dopo uscita/rientro. Slot9 in nuovo processo e contatori primo/ripetuto completamento PASS.
+Corretto il rifiuto dei salvataggi P524/P526/P528/P530 dopo altri enigmi: quattro ingressi originali da P509,12 estremi inattivi e8 rifiuti di metadati incoerenti PASS; layout v6-v9 invariati.
+Compatibilita v1-v9, vecchi slot v3-v9, avvio P1 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_variant_saves.py; check_variant_saves.py, check_variant_regressions.py e VARIANT-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio locale: Avvia-Astronomica.cmd nella radice; configurazione/salvataggi personali in userdata/astronomica, separati dalle prove.
+Prossimo: altri puzzle dall'inventario; restano verifica audiovisiva manuale integrale e tipografia aiuto. Tredici scene con salvataggi non misurano il completamento globale.
+
 # Ripresa: salvataggi P530,19 ottobre2026
 
 P530 v9:800 ripristini/successori,14 percorsi randomizzati; cinque scenari per ogni turno,25 immagini, entrambi gli ordini componenti PASS.

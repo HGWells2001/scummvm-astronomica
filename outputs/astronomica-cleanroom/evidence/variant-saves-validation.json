@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "exe_sha256": "4160189189dc94ca0e538af126759e019139dce52c04a41dfe27aedec54fcc88",
+  "format_version": 10,
+  "payload_bytes_by_scene": {
+    "506": 3992,
+    "531": 3992,
+    "532": 3776,
+    "533": 3776,
+    "534": 4424,
+    "535": 3776
+  },
+  "boundaries": 1222,
+  "gameplay_successor_comparisons": 1222,
+  "solve_routes": 15,
+  "transitions": 61,
+  "initial_repeats": 4,
+  "scenes_per_stage": 6,
+  "stages": 4,
+  "full_frame_height": 480,
+  "truncations": 23736,
+  "byte_corruptions": 23736,
+  "invalid_checksummed_states": 192,
+  "fresh_process_slot": 9,
+  "fresh_process_fingerprint": "4d43e3dc",
+  "partial_solutions": true,
+  "process_statics": true,
+  "random_continuation": true,
+  "first_completion_count": true,
+  "repeated_completion_count": true,
+  "exit_reentry": true,
+  "full_suite": true,
+  "compatibility": "Versions1-9 retained; previous-build v3-v9 slots unchanged",
+  "limitations": [
+    "Route coverage includes every scene at each stage, not all possible input histories",
+    "Successor fingerprints omit newly rebuilt program and departure sound epochs; exact pre-action payload checks retain saved epochs",
+    "Ambient sample cursor restarts",
+    "No complete manual audiovisual playthrough"
+  ]
+}

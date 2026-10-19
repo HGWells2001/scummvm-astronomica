@@ -87,8 +87,16 @@ public:
  bool exportIdleState(Common::Array<uint32> &words) const;
  static bool validIdleState(const Common::Array<uint32> &words);
  bool importIdleState(const Common::Array<uint32> &words);
+ // custom17 keeps two process statics even between idle scene scripts.
+ // Older save formats deliberately retain their stricter idle contract.
+ bool variantIdle() const { return _variantSupport && _pending.empty() && _actions.empty() && !_clicksBlocked; }
+ bool exportVariantState(Common::Array<uint32> &words) const;
+ static bool validVariantState(const Common::Array<uint32> &words);
+ bool importVariantState(const Common::Array<uint32> &words);
  static bool supports(const Script &script, bool allowTimed = false);
 private:
+ void exportSettledValues(Common::Array<uint32> &words) const;
+ void importSettledValues(const Common::Array<uint32> &words);
  struct Pending { Script script; uint index; uint32 since; };
  Common::Array<Script> _programs;
  uint32 _programLoadedAt = 0;

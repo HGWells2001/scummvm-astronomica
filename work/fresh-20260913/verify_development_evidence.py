@@ -106,12 +106,12 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==7
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524,526,528,530}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==13
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,519,524,526,528,530,531,532,533,534,535}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
- assert digest(root/f"evidence/p{row['scene']}-saves-runtime.log")==row['runtime_sha256']
- assert digest(root/f"evidence/p{row['scene']}-saves-startup.log")==row['startup_sha256']
+ assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
+ assert digest(root/row.get('startup_file',f"evidence/p{row['scene']}-saves-startup.log"))==row['startup_sha256']
 print('Measured native save coverage integrity PASS')
 p526save=json.loads((root/'evidence/p526-saves-validation.json').read_text())
 assert p526save['status']=='PASS' and p526save['boundaries']==686 and p526save['animation_cases']==216 and p526save['synthetic_answer_cases']==432
@@ -216,3 +216,27 @@ orders=json.loads((root/'evidence/p530-orders-original.json').read_text())
 assert orders['status']=='PASS' and orders['source_sha256']==p530['source_sha256'] and orders['case_count']==100 and len(orders['cases'])==100
 assert orders['correct_detectors_by_last_sprite']=={'19':[2,4,5,1,4],'20':[2,4,5,1,4],'21':[2,4,5,1,4],'22':[2,1,5,4,4]}
 print('P530 v9 native save and original-order evidence integrity PASS')
+variant_original=json.loads((root/'evidence/variant-save-original.json').read_text())
+assert variant_original['status']=='PASS' and [s['scene'] for s in variant_original['scenes']]==[506,531,532,533,534,535]
+for scene in variant_original['scenes']:
+ assert digest(Path(f"D:/astro/PLACES/P{scene['scene']}/MEGAFILE.HYP"))==scene['source_sha256']
+v=json.loads((root/'evidence/variant-saves-validation.json').read_text())
+proof=json.loads((root/'evidence/variant-save-proof.json').read_text())
+assert v['status']=='PASS' and v['exe_sha256']==m['exe_sha256'] and v['full_suite'] and v['format_version']==10
+assert v['payload_bytes_by_scene']=={'506':3992,'531':3992,'532':3776,'533':3776,'534':4424,'535':3776}
+assert v['scenes_per_stage']==6 and v['stages']==4 and v['full_frame_height']==480 and v['initial_repeats']>0
+assert proof['metadata_listed'] and proof['slot']==9 and proof['fresh_process_fingerprint']==v['fresh_process_fingerprint']
+assert v['boundaries']==proof['boundaries'] and v['solve_routes']==proof['routes'] and v['transitions']==4*v['solve_routes']+1
+assert v['truncations']==v['byte_corruptions']==23736 and v['invalid_checksummed_states']==192
+assert all(v[k] for k in ('partial_solutions','process_statics','random_continuation','first_completion_count','repeated_completion_count','exit_reentry'))
+assert json.loads((root/'evidence/p530-previous-slot-proof.json').read_text())['unchanged']
+for name,marker in [('variant-saves-runtime.log','variant saves: PASS ('),('variant-saves-startup.log','variant startup save: PASS'),('p530-previous-slot.log','P530 startup save: PASS'),('save-entry-history.log','save entry history: PASS (4 original P509 entries, 12 inert-value round trips, 8 metadata rejections')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+history=json.loads((root/'evidence/save-entry-history-proof.json').read_text())
+assert history['status']=='PASS' and history['exe_sha256']==m['exe_sha256'] and history['destinations']==[524,526,528,530]
+assert history['original_entries']==4 and history['inert_extreme_round_trips']==12 and history['metadata_rejections']==8
+assert 'save entry history rejected: P509 -> P524' in (root/'evidence/save-entry-history-before.log').read_text()
+launcher=json.loads((root/'evidence/local-launcher-validation.json').read_text())
+assert launcher['status']=='PASS' and launcher['exe_sha256']==m['exe_sha256'] and launcher['normal_P1_startup']
+assert launcher['template_sha256']==digest(root/'astronomica-play.ini')
+print('Custom17 v10, original entry-history correction and normal launcher evidence integrity PASS')

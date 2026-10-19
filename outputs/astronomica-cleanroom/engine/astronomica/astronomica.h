@@ -80,6 +80,11 @@ private:
  Common::Error saveP530(Common::WriteStream *stream);
  Common::Error loadP530(Common::SeekableReadStream *stream);
  bool verifyP530Saves();
+ bool canSaveVariant() const;
+ Common::Error saveVariant(Common::WriteStream *stream);
+ Common::Error loadVariant(Common::SeekableReadStream *stream);
+ bool verifyVariantSaves();
+ bool verifySaveEntryHistory();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.

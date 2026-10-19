@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "exe_sha256": "4160189189dc94ca0e538af126759e019139dce52c04a41dfe27aedec54fcc88",
+  "source_scene": 509,
+  "destinations": [
+    524,
+    526,
+    528,
+    530
+  ],
+  "original_entries": 4,
+  "inert_extreme_round_trips": 12,
+  "metadata_rejections": 8,
+  "layouts_unchanged": [
+    6,
+    7,
+    8,
+    9
+  ]
+}

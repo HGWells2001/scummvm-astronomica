@@ -1,47 +1,47 @@
-[2026-10-19 13:58:37] ScummVM 2026.3.1git
-[2026-10-19 13:58:37] RGB SDL2 
-[2026-10-19 13:58:37] --- Log opened.
-[2026-10-19 13:58:37] Using SDL Video Driver "dummy"
-[2026-10-19 13:58:37] Using SDL Audio Driver "wasapi"
-[2026-10-19 13:58:38] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-19 13:58:38] Output sample rate: 44100 Hz
-[2026-10-19 13:58:38] Output buffer size: 1024 samples
-[2026-10-19 13:58:38] Output channels: 2
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_START' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-19 13:58:38] CPU extensions:
-[2026-10-19 13:58:38] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-19 13:58:38] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-19 13:58:38] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-19 13:58:38] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_A' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_B' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_Y' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_X' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_UP' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-19 13:58:38] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-19 13:58:38] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-19 13:58:39] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-19 13:58:39] Astronomica static sprites: P1, 3 drawn
-[2026-10-19 13:58:39] Astronomica resource explorer: P524; nav 0,0,0
-[2026-10-19 13:58:39] Astronomica static sprites: P524, 13 drawn
-[2026-10-19 13:58:39] Astronomica P524 slot fingerprint: 5f0ab403
-[2026-10-19 13:58:39] Audio Codec FourCC: 'raw '
-[2026-10-19 13:58:39] stsd version =0
-[2026-10-19 13:58:39] Astronomica P408 movie: 160x120, scale 30, duration 67222
-[2026-10-19 13:58:39] Astronomica resource explorer: P408; nav 0,0,0
-[2026-10-19 13:58:39] Astronomica static sprites: P408, 7 drawn
-[2026-10-19 13:58:39] Astronomica resource explorer: P524; nav 0,0,0
-[2026-10-19 13:58:39] Astronomica static sprites: P524, 13 drawn
-[2026-10-19 13:58:41] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-19 13:58:41] Astronomica static sprites: P117, 1 drawn
-[2026-10-19 13:58:41] Astronomica P524 startup save: PASS (Triton, mentor return and completion)
-[2026-10-19 13:58:41] Astronomica P524 save verification: PASS
-[2026-10-19 13:58:41] --- Log closed successfully.
+[2026-10-19 14:39:27] ScummVM 2026.3.1git
+[2026-10-19 14:39:27] RGB SDL2 
+[2026-10-19 14:39:27] --- Log opened.
+[2026-10-19 14:39:27] Using SDL Video Driver "dummy"
+[2026-10-19 14:39:27] Using SDL Audio Driver "wasapi"
+[2026-10-19 14:39:27] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-19 14:39:27] Output sample rate: 44100 Hz
+[2026-10-19 14:39:27] Output buffer size: 1024 samples
+[2026-10-19 14:39:27] Output channels: 2
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_START' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-19 14:39:28] CPU extensions:
+[2026-10-19 14:39:28] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-19 14:39:28] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-19 14:39:28] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-19 14:39:28] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_A' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_B' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_Y' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_X' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_UP' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-19 14:39:28] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-19 14:39:28] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-19 14:39:29] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-19 14:39:29] Astronomica static sprites: P1, 3 drawn
+[2026-10-19 14:39:29] Astronomica resource explorer: P524; nav 0,0,0
+[2026-10-19 14:39:29] Astronomica static sprites: P524, 13 drawn
+[2026-10-19 14:39:29] Astronomica P524 slot fingerprint: fd644f6c
+[2026-10-19 14:39:29] Audio Codec FourCC: 'raw '
+[2026-10-19 14:39:29] stsd version =0
+[2026-10-19 14:39:29] Astronomica P408 movie: 160x120, scale 30, duration 67222
+[2026-10-19 14:39:29] Astronomica resource explorer: P408; nav 0,0,0
+[2026-10-19 14:39:29] Astronomica static sprites: P408, 7 drawn
+[2026-10-19 14:39:29] Astronomica resource explorer: P524; nav 0,0,0
+[2026-10-19 14:39:29] Astronomica static sprites: P524, 13 drawn
+[2026-10-19 14:39:31] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-19 14:39:31] Astronomica static sprites: P117, 1 drawn
+[2026-10-19 14:39:31] Astronomica P524 startup save: PASS (Triton, mentor return and completion)
+[2026-10-19 14:39:31] Astronomica P524 save verification: PASS
+[2026-10-19 14:39:31] --- Log closed successfully.
