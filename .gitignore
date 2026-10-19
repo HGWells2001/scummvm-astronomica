@@ -29,3 +29,5 @@ GAMESTAT
 *.s04
 *.s[0-9][0-9]
 *.sav
+!outputs/astronomica-cleanroom/astronomica-play.ini
+userdata/

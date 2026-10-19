@@ -118,3 +118,8 @@ Looping background WAVs now use the ScummVM Music channel. Foreground recordings
 ## P528 native saves, 18 October 2026
 
 Native v8 saves settled P528 states with full runner/RNG, clock/count, nine sprite records, partial eclipse flags, current image pair and retained tall-moon history. Tests cover160 reachable abstract states and640 round trips/successors, including six completion edges and160 exits, using full480-row pixel hashes. 3444 truncations,3444 byte corruptions and30 checksummed invalid states reject atomically. Slot7 loads in a fresh process, retains the old moon row and completes the remaining eclipse with first-success counting. Versions1-7, prior-build slots, presentation/audio controls, help/import and WASAPI regressions pass on the same executable. No whole-game completion percentage is inferred.
+
+
+## P530 native saves,19 October2026
+
+Native v9 retains14 locals and full runner/RNG,29 sprite records including hidden settled indicator positions, clock/count and the last picture or absence. 800 round trips across14 randomized routes cover five scenarios at every round, all25 pictures, all six placement permutations, wrong/repeated answers and unsolved exit. Slot8 loads in a fresh process with a partial component assembly and prior-round picture, then completes the remaining random rounds without increasing the counter, as in the original. 5604 truncations,5604 byte corruptions and31 checksummed invalid states reject atomically. Versions1-8, previous-build slots, full-frame presentation, music controls, help/import and WASAPI pass on the same executable.

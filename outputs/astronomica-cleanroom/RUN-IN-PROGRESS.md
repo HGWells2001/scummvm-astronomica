@@ -1,1 +1,1 @@
-P528 v8 verified 18 October 2026.160 abstract states,640 successors, full480-row images, malformed rejection and fresh-process partial completion PASS. Full compatible save/presentation/audio/help/import/WASAPI suite PASS on the same executable. No tests running. See NEXT-STEPS.md and AI_MODEL_CHECKPOINT.md.
+P530 v9 verified19 October2026. Same-build targeted, fresh-process, previous-slot and full compatible presentation/audio/help/import/WASAPI suites PASS. No tests running. See NEXT-STEPS.md and AI_MODEL_CHECKPOINT.md.

@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==6
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524,526,528}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==7
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,508,519,524,526,528,530}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/f"evidence/p{row['scene']}-saves-runtime.log")==row['runtime_sha256']
@@ -200,3 +200,19 @@ assert digest(Path('D:/astro/PLACES/P530/MEGAFILE.HYP'))==p530['source_sha256']
 assert len(p530['images'])==25 and {(p['width'],p['height'],p['x'],p['y']) for p in p530['images']}=={(172,172,460,10)}
 for p in p530['images']:assert digest(Path('D:/astro/PLACES/P530')/p['file'])==p['sha256']
 print('P530 original save inventory integrity PASS')
+p530save=json.loads((root/'evidence/p530-saves-validation.json').read_text())
+assert p530save['status']=='PASS' and p530save['exe_sha256']==m['exe_sha256'] and p530save['full_suite']
+assert (p530save['format_version'],p530save['payload_bytes'],p530save['scenarios_per_round'],p530save['rounds'],p530save['pictures'],p530save['full_frame_height'])==(9,5604,5,3,25,480)
+assert p530save['partial_components'] and p530save['prior_round_picture'] and p530save['random_continuation'] and p530save['counter_unchanged']
+assert p530save['placement_permutations']==6
+assert 8<=p530save['solve_routes']<=32 and p530save['boundaries']==57*p530save['solve_routes']+2
+proof=json.loads((root/'evidence/p530-save-proof.json').read_text())
+assert proof['metadata_listed'] and proof['slot']==8 and proof['fresh_process_fingerprint']==p530save['fresh_process_fingerprint']
+assert proof['round_trips']==p530save['boundaries'] and proof['solve_routes']==p530save['solve_routes']
+for name,marker in [('p530-saves-runtime.log','P530 saves: PASS ('),('p530-saves-startup.log','P530 startup save: PASS'),('p528-previous-slot.log','P528 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+assert json.loads((root/'evidence/p528-previous-slot-proof.json').read_text())['unchanged']
+orders=json.loads((root/'evidence/p530-orders-original.json').read_text())
+assert orders['status']=='PASS' and orders['source_sha256']==p530['source_sha256'] and orders['case_count']==100 and len(orders['cases'])==100
+assert orders['correct_detectors_by_last_sprite']=={'19':[2,4,5,1,4],'20':[2,4,5,1,4],'21':[2,4,5,1,4],'22':[2,1,5,4,4]}
+print('P530 v9 native save and original-order evidence integrity PASS')

@@ -1,0 +1,6736 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "scope": "Original resource inventory only; no native variant save claim",
+  "scenes": [
+    {
+      "scene": 506,
+      "source_sha256": "bc7bf0b66ba3644f6066d4978f9a2dff609571cbb50e7a88b2fad937b9741826",
+      "conditions": [
+        [
+          0,
+          0,
+          6,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          1,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0,
+          7
+        ],
+        [
+          1,
+          1,
+          6,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "sprites": [
+        {
+          "index": 0,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 1,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 2,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 3,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 4,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            74,
+            366
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 5,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            188,
+            366
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 6,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            296,
+            366
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 7,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            388,
+            366
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 8,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            477,
+            366
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 9,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            239,
+            145
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 10,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            242,
+            86
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 11,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            417,
+            164
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 12,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            186,
+            137
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 13,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            112,
+            0
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        }
+      ],
+      "startup": [
+        [
+          {
+            "offset": 598983,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599015,
+            "opcode": 23,
+            "name": "custom",
+            "args": [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599047,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ],
+        [
+          {
+            "offset": 599059,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599079,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599111,
+            "opcode": 39,
+            "name": "op_39",
+            "args": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599135,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 599143,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599175,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              506
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599187,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 599195,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599227,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              531
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599239,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 599247,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599279,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              532
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599291,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 599299,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599331,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              533
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599343,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 599351,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599383,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              534
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599395,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 599403,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599435,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              535
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 599447,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ]
+      ],
+      "mouse_rectangles": [
+        {
+          "rect": [
+            0,
+            0,
+            640,
+            320
+          ],
+          "click": [
+            {
+              "offset": 599483,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 599515,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 599527,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 599535,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 599567,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                10
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 599579,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                10
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 599591,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 599599,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                2,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 599631,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                11
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 599643,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                11
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 599655,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ],
+      "opcode_counts": {
+        "5": 8,
+        "9": 23,
+        "15": 25,
+        "16": 11,
+        "17": 8,
+        "23": 1,
+        "28": 6,
+        "29": 6,
+        "31": 23,
+        "32": 15,
+        "33": 3,
+        "39": 1,
+        "41": 3,
+        "42": 8,
+        "45": 15
+      },
+      "mutations": [
+        {
+          "path": "scene/sprites/4/click/2",
+          "offset": 341159,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/3",
+          "offset": 341175,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/4",
+          "offset": 341191,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/5",
+          "offset": 341207,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/6",
+          "offset": 341223,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/2",
+          "offset": 362363,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/3",
+          "offset": 362379,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/4",
+          "offset": 362395,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/5",
+          "offset": 362411,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/6",
+          "offset": 362427,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/2",
+          "offset": 383567,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/3",
+          "offset": 383583,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/4",
+          "offset": 383599,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/5",
+          "offset": 383615,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/6",
+          "offset": 383631,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/2",
+          "offset": 404771,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/3",
+          "offset": 404787,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/4",
+          "offset": 404803,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/5",
+          "offset": 404819,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/6",
+          "offset": 404835,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/2",
+          "offset": 425975,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/3",
+          "offset": 425991,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/4",
+          "offset": 426007,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/5",
+          "offset": 426023,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/6",
+          "offset": 426039,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/11/click/5",
+          "offset": 493019,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/11/click/9",
+          "offset": 493091,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/11/click/11",
+          "offset": 493115,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            10
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/11/click/14",
+          "offset": 493167,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/11/click/16",
+          "offset": 493191,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            11
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/12/click/5",
+          "offset": 549931,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/12/click/9",
+          "offset": 550003,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/12/click/11",
+          "offset": 550027,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            10
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/12/click/14",
+          "offset": 550079,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/12/click/16",
+          "offset": 550103,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            11
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/13/click/5",
+          "offset": 598551,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            14
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/9",
+          "offset": 598623,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/11",
+          "offset": 598647,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            10
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/13/click/14",
+          "offset": 598699,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/16",
+          "offset": 598723,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            11
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/4",
+          "offset": 599567,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/5",
+          "offset": 599579,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            10
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/8",
+          "offset": 599631,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/9",
+          "offset": 599643,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            11
+          ],
+          "delay": 500
+        }
+      ],
+      "sound_ids": [
+        [
+          301,
+          0
+        ],
+        [
+          302,
+          0
+        ],
+        [
+          303,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          305,
+          0
+        ],
+        [
+          306,
+          0
+        ],
+        [
+          312,
+          0
+        ],
+        [
+          313,
+          0
+        ],
+        [
+          314,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          316,
+          0
+        ],
+        [
+          317,
+          0
+        ]
+      ],
+      "intro": 300,
+      "background": {
+        "offset": 16,
+        "size": 205878,
+        "width": 640,
+        "height": 320,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "d648fc81c02a42ea0b38cb7cc360226d27ac5c7dff964cb9c21c7795b2c37d67"
+      },
+      "control": {
+        "offset": 205906,
+        "size": 94518,
+        "width": 640,
+        "height": 146,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "6e41bb9ac4f1f956a761b62fb09cc8370c5d471dbc0631758748ebfb6aa3092e"
+      }
+    },
+    {
+      "scene": 531,
+      "source_sha256": "6de49090d61e83e4d9dc86785c4d3730c4edca483eb236779987b87b77a4ec8e",
+      "conditions": [
+        [
+          0,
+          0,
+          6,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          1,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          1,
+          0,
+          4,
+          0,
+          0,
+          15
+        ],
+        [
+          1,
+          1,
+          6,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "sprites": [
+        {
+          "index": 0,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 1,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 2,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 3,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 4,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            82,
+            361
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 5,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            181,
+            360
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 6,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            277,
+            360
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 7,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            381,
+            360
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 8,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            480,
+            359
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 9,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            0,
+            85
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 10,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            73,
+            200
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 11,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            380,
+            0
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 12,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            20,
+            60
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 13,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            258,
+            94
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        }
+      ],
+      "startup": [
+        [
+          {
+            "offset": 618291,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              15,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618323,
+            "opcode": 23,
+            "name": "custom",
+            "args": [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618355,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ],
+        [
+          {
+            "offset": 618367,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618387,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              15,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618419,
+            "opcode": 39,
+            "name": "op_39",
+            "args": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618443,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 618451,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618483,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              506
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618495,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 618503,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618535,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              531
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618547,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 618555,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618587,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              532
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618599,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 618607,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618639,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              533
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618651,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 618659,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618691,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              534
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618703,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 618711,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618743,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              535
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 618755,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ]
+      ],
+      "mouse_rectangles": [
+        {
+          "rect": [
+            0,
+            0,
+            640,
+            320
+          ],
+          "click": [
+            {
+              "offset": 618791,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 618823,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 618835,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 618843,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                4,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 618875,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                13
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 618887,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 618899,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                13
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 618911,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ],
+      "opcode_counts": {
+        "5": 8,
+        "9": 24,
+        "15": 25,
+        "16": 9,
+        "17": 5,
+        "23": 1,
+        "28": 7,
+        "29": 7,
+        "31": 22,
+        "32": 18,
+        "33": 4,
+        "39": 1,
+        "41": 4,
+        "42": 9,
+        "45": 13
+      },
+      "mutations": [
+        {
+          "path": "scene/sprites/4/click/2",
+          "offset": 342439,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/3",
+          "offset": 342455,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/4",
+          "offset": 342471,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/5",
+          "offset": 342487,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/6",
+          "offset": 342503,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/2",
+          "offset": 364923,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/3",
+          "offset": 364939,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/4",
+          "offset": 364955,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/5",
+          "offset": 364971,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/6",
+          "offset": 364987,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/2",
+          "offset": 387407,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/3",
+          "offset": 387423,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/4",
+          "offset": 387439,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/5",
+          "offset": 387455,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/6",
+          "offset": 387471,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/2",
+          "offset": 409891,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/3",
+          "offset": 409907,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/4",
+          "offset": 409923,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/5",
+          "offset": 409939,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/6",
+          "offset": 409955,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/2",
+          "offset": 432375,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/3",
+          "offset": 432391,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/4",
+          "offset": 432407,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/5",
+          "offset": 432423,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/6",
+          "offset": 432439,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/5",
+          "offset": 464331,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/9",
+          "offset": 464403,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/11",
+          "offset": 464427,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/10/click/5",
+          "offset": 503307,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/9",
+          "offset": 503379,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/11",
+          "offset": 503403,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/11/click/5",
+          "offset": 543507,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/11/click/9",
+          "offset": 543579,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/11/click/11",
+          "offset": 543603,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/13/click/5",
+          "offset": 617935,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            14
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/9",
+          "offset": 618007,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/11",
+          "offset": 618031,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/4",
+          "offset": 618875,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/6",
+          "offset": 618899,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        }
+      ],
+      "sound_ids": [
+        [
+          301,
+          0
+        ],
+        [
+          302,
+          0
+        ],
+        [
+          303,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          305,
+          0
+        ],
+        [
+          306,
+          0
+        ],
+        [
+          312,
+          0
+        ],
+        [
+          313,
+          0
+        ],
+        [
+          314,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          316,
+          0
+        ],
+        [
+          317,
+          0
+        ]
+      ],
+      "intro": 300,
+      "background": {
+        "offset": 16,
+        "size": 205878,
+        "width": 640,
+        "height": 320,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "2151a7883a9250caac5c999a7bcc5e61bab74a9760aeccd957839757eb9d0a64"
+      },
+      "control": {
+        "offset": 205906,
+        "size": 94518,
+        "width": 640,
+        "height": 146,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "2225f454c2eb4dda8cff970a376e7a13fd667c76dc7a269c398ea5cf7800d940"
+      }
+    },
+    {
+      "scene": 532,
+      "source_sha256": "838463fd8438127804ec5074829301fe8993a3a583cb8b37c5809aef709a159f",
+      "conditions": [
+        [
+          0,
+          0,
+          6,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          1,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0,
+          7
+        ],
+        [
+          1,
+          1,
+          6,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "sprites": [
+        {
+          "index": 0,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 1,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 2,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 3,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 4,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            73,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 5,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            200,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 6,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            317,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 7,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            430,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 8,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            80,
+            47
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 9,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            189,
+            120
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 10,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            363,
+            99
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 11,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            281,
+            0
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        }
+      ],
+      "startup": [
+        [
+          {
+            "offset": 603811,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 603843,
+            "opcode": 23,
+            "name": "custom",
+            "args": [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 603875,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ],
+        [
+          {
+            "offset": 603887,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 603907,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 603939,
+            "opcode": 39,
+            "name": "op_39",
+            "args": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 603963,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 603971,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 604003,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              506
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 604015,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 604023,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 604055,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              531
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 604067,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 604075,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 604107,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              532
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 604119,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 604127,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 604159,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              533
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 604171,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 604179,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 604211,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              534
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 604223,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 604231,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            "delay": -1
+          },
+          {
+            "offset": 604263,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              535
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 604275,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ]
+      ],
+      "mouse_rectangles": [
+        {
+          "rect": [
+            0,
+            0,
+            640,
+            320
+          ],
+          "click": [
+            {
+              "offset": 604311,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 604343,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": -1
+            },
+            {
+              "offset": 604355,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 604363,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                2,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 604395,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                9
+              ],
+              "delay": -1
+            },
+            {
+              "offset": 604407,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": -1
+            },
+            {
+              "offset": 604419,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                9
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 604431,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ],
+      "opcode_counts": {
+        "5": 8,
+        "9": 20,
+        "15": 16,
+        "16": 7,
+        "17": 4,
+        "23": 1,
+        "28": 10,
+        "29": 10,
+        "31": 19,
+        "32": 17,
+        "33": 3,
+        "39": 1,
+        "41": 3,
+        "42": 8,
+        "45": 11
+      },
+      "mutations": [
+        {
+          "path": "scene/sprites/4/click/3",
+          "offset": 352403,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/4",
+          "offset": 352419,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/5",
+          "offset": 352435,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/6",
+          "offset": 352451,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/5/click/3",
+          "offset": 384847,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/5/click/4",
+          "offset": 384863,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            1
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/5/click/5",
+          "offset": 384879,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/5/click/6",
+          "offset": 384895,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/6/click/3",
+          "offset": 417291,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/6/click/4",
+          "offset": 417307,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/6/click/5",
+          "offset": 417323,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            1
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/6/click/6",
+          "offset": 417339,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/7/click/3",
+          "offset": 449735,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/7/click/4",
+          "offset": 449751,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/7/click/5",
+          "offset": 449767,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/7/click/6",
+          "offset": 449783,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            1
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/9/click/5",
+          "offset": 491075,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/11",
+          "offset": 491179,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/9/click/12",
+          "offset": 491191,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            9
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/10/click/5",
+          "offset": 514519,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/10/click/11",
+          "offset": 514623,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/10/click/12",
+          "offset": 514635,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            9
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/11/click/5",
+          "offset": 603435,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/11/click/11",
+          "offset": 603539,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/sprites/11/click/12",
+          "offset": 603551,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            9
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/4",
+          "offset": 604395,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": -1
+        },
+        {
+          "path": "scene/mouse_rects/0/click/6",
+          "offset": 604419,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            9
+          ],
+          "delay": 500
+        }
+      ],
+      "sound_ids": [
+        [
+          301,
+          0
+        ],
+        [
+          302,
+          0
+        ],
+        [
+          303,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          305,
+          0
+        ],
+        [
+          306,
+          0
+        ],
+        [
+          312,
+          0
+        ],
+        [
+          313,
+          0
+        ],
+        [
+          314,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          316,
+          0
+        ],
+        [
+          317,
+          0
+        ]
+      ],
+      "intro": 300,
+      "background": {
+        "offset": 16,
+        "size": 205878,
+        "width": 640,
+        "height": 320,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "2fd5f0e828f6b5ec1848768aa1e90dc5cde774f00ab68597c2aa382bfb9231c7"
+      },
+      "control": {
+        "offset": 205906,
+        "size": 94518,
+        "width": 640,
+        "height": 146,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "4fa63febc39caf221a72b3de0724a492bc8587abc7ac3cdf4526b546cf983e94"
+      }
+    },
+    {
+      "scene": 533,
+      "source_sha256": "58857a2d8668b6a5c6daebbde39610eb49dc486cb7bf3ec743ad9f4dd3e6ed5b",
+      "conditions": [
+        [
+          0,
+          0,
+          6,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          1,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0,
+          7
+        ],
+        [
+          1,
+          1,
+          6,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "sprites": [
+        {
+          "index": 0,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 1,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 2,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 3,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 4,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            77,
+            356
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 5,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            200,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 6,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            322,
+            356
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 7,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            444,
+            356
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 8,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            255,
+            16
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 9,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            161,
+            84
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 10,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            457,
+            133
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 11,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            138,
+            61
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        }
+      ],
+      "startup": [
+        [
+          {
+            "offset": 548611,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548643,
+            "opcode": 23,
+            "name": "custom",
+            "args": [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548675,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ],
+        [
+          {
+            "offset": 548687,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548707,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548739,
+            "opcode": 39,
+            "name": "op_39",
+            "args": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548763,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 548771,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548803,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              506
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548815,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 548823,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548855,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              531
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548867,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 548875,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548907,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              532
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548919,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 548927,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548959,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              533
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 548971,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 548979,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 549011,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              534
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 549023,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 549031,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 549063,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              535
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 549075,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ]
+      ],
+      "mouse_rectangles": [
+        {
+          "rect": [
+            0,
+            0,
+            640,
+            320
+          ],
+          "click": [
+            {
+              "offset": 549111,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 549143,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 549155,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 549163,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                4,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 549195,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 549207,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                12
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 549219,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ],
+      "opcode_counts": {
+        "5": 8,
+        "9": 16,
+        "15": 16,
+        "16": 7,
+        "17": 4,
+        "23": 1,
+        "28": 6,
+        "29": 6,
+        "31": 19,
+        "32": 14,
+        "33": 3,
+        "39": 1,
+        "41": 3,
+        "42": 8,
+        "45": 11
+      },
+      "mutations": [
+        {
+          "path": "scene/sprites/4/click/2",
+          "offset": 350727,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/3",
+          "offset": 350743,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/4",
+          "offset": 350759,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/5",
+          "offset": 350775,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/2",
+          "offset": 381483,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/3",
+          "offset": 381499,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/4",
+          "offset": 381515,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/5",
+          "offset": 381531,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/2",
+          "offset": 412239,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/3",
+          "offset": 412255,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/4",
+          "offset": 412271,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/5",
+          "offset": 412287,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/2",
+          "offset": 442995,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/3",
+          "offset": 443011,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/4",
+          "offset": 443027,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/5",
+          "offset": 443043,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/5",
+          "offset": 523535,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/9",
+          "offset": 523607,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/10",
+          "offset": 523619,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/9/click/5",
+          "offset": 530183,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/9",
+          "offset": 530255,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/10",
+          "offset": 530267,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/10/click/5",
+          "offset": 536811,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/9",
+          "offset": 536883,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/10",
+          "offset": 536895,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/4",
+          "offset": 549195,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/5",
+          "offset": 549207,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        }
+      ],
+      "sound_ids": [
+        [
+          301,
+          0
+        ],
+        [
+          302,
+          0
+        ],
+        [
+          303,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          305,
+          0
+        ],
+        [
+          306,
+          0
+        ],
+        [
+          312,
+          0
+        ],
+        [
+          313,
+          0
+        ],
+        [
+          314,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          316,
+          0
+        ],
+        [
+          317,
+          0
+        ]
+      ],
+      "intro": 300,
+      "background": {
+        "offset": 16,
+        "size": 205878,
+        "width": 640,
+        "height": 320,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "6d9f64de9d35925ea3f4c6e716a19f880164393fabb830c553d90d8bfcec1c29"
+      },
+      "control": {
+        "offset": 205906,
+        "size": 94518,
+        "width": 640,
+        "height": 146,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "a41e400fc4f10c682847cfac92ca64ca1961d35c7d6359e55a7436df48398ee8"
+      }
+    },
+    {
+      "scene": 534,
+      "source_sha256": "9bc2673d8b40b971aee1ea9175f1828313961bed54cd66f2df98d601dcfaf277",
+      "conditions": [
+        [
+          0,
+          0,
+          6,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          1,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          1,
+          0,
+          5,
+          0,
+          0,
+          31
+        ],
+        [
+          1,
+          1,
+          8,
+          0,
+          0,
+          7
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "sprites": [
+        {
+          "index": 0,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 1,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 2,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 3,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 4,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            73,
+            359
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 5,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            136,
+            358
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 6,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            203,
+            362
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 7,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            285,
+            359
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 8,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            362,
+            360
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 9,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            436,
+            360
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 10,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            503,
+            359
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 11,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            247,
+            13
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 12,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            437,
+            0
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 13,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            51,
+            7
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 14,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            127,
+            140
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 15,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            407,
+            20
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 16,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            295,
+            81
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 17,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            284,
+            160
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        }
+      ],
+      "startup": [
+        [
+          {
+            "offset": 582803,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              31,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 582835,
+            "opcode": 23,
+            "name": "custom",
+            "args": [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 582867,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ],
+        [
+          {
+            "offset": 582879,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 582899,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              31,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 582931,
+            "opcode": 39,
+            "name": "op_39",
+            "args": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 582955,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 582963,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 582995,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              506
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583007,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 583015,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583047,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              531
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583059,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 583067,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583099,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              532
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583111,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 583119,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583151,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              533
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583163,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 583171,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583203,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              534
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583215,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 583223,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583255,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              535
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 583267,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ]
+      ],
+      "mouse_rectangles": [
+        {
+          "rect": [
+            0,
+            0,
+            640,
+            320
+          ],
+          "click": [
+            {
+              "offset": 583303,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 583335,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 583347,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 583355,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 583387,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 583399,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                12
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 583411,
+              "opcode": 45,
+              "name": "else",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 583419,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                2,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 583451,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                13
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 583463,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                13
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 583475,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ],
+      "opcode_counts": {
+        "5": 8,
+        "9": 33,
+        "15": 49,
+        "16": 17,
+        "17": 12,
+        "23": 1,
+        "28": 8,
+        "29": 8,
+        "31": 31,
+        "32": 23,
+        "33": 5,
+        "39": 1,
+        "41": 5,
+        "42": 10,
+        "45": 21
+      },
+      "mutations": [
+        {
+          "path": "scene/sprites/4/click/2",
+          "offset": 339239,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/3",
+          "offset": 339255,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/4",
+          "offset": 339271,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/5",
+          "offset": 339287,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/6",
+          "offset": 339303,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/7",
+          "offset": 339319,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/8",
+          "offset": 339335,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/2",
+          "offset": 358555,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/3",
+          "offset": 358571,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/4",
+          "offset": 358587,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/5",
+          "offset": 358603,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/6",
+          "offset": 358619,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/7",
+          "offset": 358635,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/8",
+          "offset": 358651,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/2",
+          "offset": 377871,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/3",
+          "offset": 377887,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/4",
+          "offset": 377903,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/5",
+          "offset": 377919,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/6",
+          "offset": 377935,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/7",
+          "offset": 377951,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/8",
+          "offset": 377967,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/2",
+          "offset": 397187,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/3",
+          "offset": 397203,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/4",
+          "offset": 397219,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/5",
+          "offset": 397235,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/6",
+          "offset": 397251,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/7",
+          "offset": 397267,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/8",
+          "offset": 397283,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/2",
+          "offset": 416503,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/3",
+          "offset": 416519,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/4",
+          "offset": 416535,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/5",
+          "offset": 416551,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/6",
+          "offset": 416567,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/7",
+          "offset": 416583,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/8",
+          "offset": 416599,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/2",
+          "offset": 435819,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/3",
+          "offset": 435835,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/4",
+          "offset": 435851,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/5",
+          "offset": 435867,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/6",
+          "offset": 435883,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/7",
+          "offset": 435899,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/8",
+          "offset": 435915,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/2",
+          "offset": 455135,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/3",
+          "offset": 455151,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/4",
+          "offset": 455167,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/5",
+          "offset": 455183,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/6",
+          "offset": 455199,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            9,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/7",
+          "offset": 455215,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            10,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/8",
+          "offset": 455231,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            11,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/5",
+          "offset": 498439,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            14
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/9",
+          "offset": 498511,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/11",
+          "offset": 498535,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/13/click/14",
+          "offset": 498587,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/13/click/16",
+          "offset": 498611,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/14/click/5",
+          "offset": 508531,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            15
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/14/click/9",
+          "offset": 508603,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/14/click/11",
+          "offset": 508627,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/14/click/14",
+          "offset": 508679,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/14/click/16",
+          "offset": 508703,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/15/click/5",
+          "offset": 566375,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            16
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/15/click/9",
+          "offset": 566447,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/15/click/11",
+          "offset": 566471,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/15/click/14",
+          "offset": 566523,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/15/click/16",
+          "offset": 566547,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/16/click/5",
+          "offset": 576223,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            17
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/16/click/9",
+          "offset": 576295,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/16/click/11",
+          "offset": 576319,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/16/click/14",
+          "offset": 576371,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/16/click/16",
+          "offset": 576395,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/17/click/5",
+          "offset": 582371,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            18
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/17/click/9",
+          "offset": 582443,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/17/click/11",
+          "offset": 582467,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/17/click/14",
+          "offset": 582519,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/17/click/16",
+          "offset": 582543,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/4",
+          "offset": 583387,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/5",
+          "offset": 583399,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/8",
+          "offset": 583451,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            13
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/9",
+          "offset": 583463,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            13
+          ],
+          "delay": 500
+        }
+      ],
+      "sound_ids": [
+        [
+          301,
+          0
+        ],
+        [
+          302,
+          0
+        ],
+        [
+          303,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          305,
+          0
+        ],
+        [
+          306,
+          0
+        ],
+        [
+          312,
+          0
+        ],
+        [
+          313,
+          0
+        ],
+        [
+          314,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          316,
+          0
+        ],
+        [
+          317,
+          0
+        ]
+      ],
+      "intro": 300,
+      "background": {
+        "offset": 16,
+        "size": 205878,
+        "width": 640,
+        "height": 320,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "661ad3a66f4ddb2cc58c5adf1c26f4329ff96280605fadd9f88c8e80731aaf4f"
+      },
+      "control": {
+        "offset": 205906,
+        "size": 94518,
+        "width": 640,
+        "height": 146,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "793eb93c2f872470e8fdfce4f0fb86f7ab0380d4e310d0e407cd5cf6a7450e9a"
+      }
+    },
+    {
+      "scene": 535,
+      "source_sha256": "efffde1379147d487e2f933eb9593e48624d50026186b426a2fd05780ec2f270",
+      "conditions": [
+        [
+          0,
+          0,
+          6,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          1,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          0,
+          2,
+          6,
+          0,
+          0,
+          63
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0,
+          7
+        ],
+        [
+          1,
+          1,
+          6,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "sprites": [
+        {
+          "index": 0,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 1,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            23,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 2,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            365
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 3,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            589,
+            416
+          ],
+          "click_type": 2,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 4,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            80,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 5,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            204,
+            358
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 6,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            324,
+            358
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 7,
+          "clone": -1,
+          "frames": 2,
+          "visible": 1,
+          "xy": [
+            447,
+            357
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 8,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            98,
+            10
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 9,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            362,
+            124
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 10,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            137,
+            181
+          ],
+          "click_type": 0,
+          "hover_in": [],
+          "hover_out": []
+        },
+        {
+          "index": 11,
+          "clone": -1,
+          "frames": 1,
+          "visible": 0,
+          "xy": [
+            132,
+            196
+          ],
+          "click_type": null,
+          "hover_in": [],
+          "hover_out": []
+        }
+      ],
+      "startup": [
+        [
+          {
+            "offset": 553851,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 553883,
+            "opcode": 23,
+            "name": "custom",
+            "args": [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 553915,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ],
+        [
+          {
+            "offset": 553927,
+            "opcode": 32,
+            "name": "set_condition",
+            "args": [
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 553947,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              1,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 553979,
+            "opcode": 39,
+            "name": "op_39",
+            "args": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554003,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 554011,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554043,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              506
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554055,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 554063,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554095,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              531
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554107,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 554115,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554147,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              532
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554159,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 554167,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554199,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              533
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554211,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 554219,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554251,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              534
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554263,
+            "opcode": 45,
+            "name": "else",
+            "args": [],
+            "delay": -1
+          },
+          {
+            "offset": 554271,
+            "opcode": 31,
+            "name": "condition",
+            "args": [
+              0,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554303,
+            "opcode": 5,
+            "name": "new_place",
+            "args": [
+              535
+            ],
+            "delay": 0
+          },
+          {
+            "offset": 554315,
+            "opcode": 42,
+            "name": "end_condition",
+            "args": [],
+            "delay": -1
+          }
+        ]
+      ],
+      "mouse_rectangles": [
+        {
+          "rect": [
+            0,
+            0,
+            640,
+            320
+          ],
+          "click": [
+            {
+              "offset": 554351,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 554383,
+              "opcode": 9,
+              "name": "op_9",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 554395,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            },
+            {
+              "offset": 554403,
+              "opcode": 31,
+              "name": "condition",
+              "args": [
+                1,
+                1,
+                4,
+                0,
+                0,
+                0
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 554435,
+              "opcode": 16,
+              "name": "op_16",
+              "args": [
+                12
+              ],
+              "delay": 0
+            },
+            {
+              "offset": 554447,
+              "opcode": 17,
+              "name": "op_17",
+              "args": [
+                12
+              ],
+              "delay": 500
+            },
+            {
+              "offset": 554459,
+              "opcode": 42,
+              "name": "end_condition",
+              "args": [],
+              "delay": -1
+            }
+          ],
+          "mouse_in": [],
+          "mouse_out": []
+        }
+      ],
+      "opcode_counts": {
+        "5": 8,
+        "9": 16,
+        "15": 16,
+        "16": 7,
+        "17": 4,
+        "23": 1,
+        "28": 6,
+        "29": 6,
+        "31": 19,
+        "32": 14,
+        "33": 3,
+        "39": 1,
+        "41": 3,
+        "42": 8,
+        "45": 11
+      },
+      "mutations": [
+        {
+          "path": "scene/sprites/4/click/2",
+          "offset": 348479,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/3",
+          "offset": 348495,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/4",
+          "offset": 348511,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/4/click/5",
+          "offset": 348527,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/2",
+          "offset": 376987,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/3",
+          "offset": 377003,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/4",
+          "offset": 377019,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/5/click/5",
+          "offset": 377035,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/2",
+          "offset": 405495,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/3",
+          "offset": 405511,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/4",
+          "offset": 405527,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/6/click/5",
+          "offset": 405543,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/2",
+          "offset": 434003,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            5,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/3",
+          "offset": 434019,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            6,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/4",
+          "offset": 434035,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            7,
+            0
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/7/click/5",
+          "offset": 434051,
+          "opcode": 15,
+          "name": "op_15",
+          "args": [
+            8,
+            1
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/5",
+          "offset": 450271,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            9
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/9",
+          "offset": 450343,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/8/click/10",
+          "offset": 450355,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/9/click/5",
+          "offset": 504323,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            10
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/9",
+          "offset": 504395,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/9/click/10",
+          "offset": 504407,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/sprites/10/click/5",
+          "offset": 535191,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            11
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/9",
+          "offset": 535263,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/sprites/10/click/10",
+          "offset": 535275,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        },
+        {
+          "path": "scene/mouse_rects/0/click/4",
+          "offset": 554435,
+          "opcode": 16,
+          "name": "op_16",
+          "args": [
+            12
+          ],
+          "delay": 0
+        },
+        {
+          "path": "scene/mouse_rects/0/click/5",
+          "offset": 554447,
+          "opcode": 17,
+          "name": "op_17",
+          "args": [
+            12
+          ],
+          "delay": 500
+        }
+      ],
+      "sound_ids": [
+        [
+          301,
+          0
+        ],
+        [
+          302,
+          0
+        ],
+        [
+          303,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          305,
+          0
+        ],
+        [
+          306,
+          0
+        ],
+        [
+          312,
+          0
+        ],
+        [
+          313,
+          0
+        ],
+        [
+          314,
+          0
+        ],
+        [
+          315,
+          0
+        ],
+        [
+          316,
+          0
+        ],
+        [
+          317,
+          0
+        ]
+      ],
+      "intro": 300,
+      "background": {
+        "offset": 16,
+        "size": 205878,
+        "width": 640,
+        "height": 320,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "2d9b1d22e86713db1c05ec173b4f9a4cff5249878b9bce4867835d10c33d446a"
+      },
+      "control": {
+        "offset": 205906,
+        "size": 94518,
+        "width": 640,
+        "height": 146,
+        "bpp": 8,
+        "compression": 0,
+        "sha256": "ceadd5c39b00eb380811830afd5bcb0606f55582440e0e20557d88f15b41906e"
+      }
+    }
+  ]
+}

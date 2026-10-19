@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "scope": "Local development build; no new package",
   "research_manifest": "research-oct01.json",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "a9db62d317ee20ca54b0b5ee9a1abc54484d9047080caf6405eb80907707869f",
-    "astronomica.h": "211b9fc0f85f48e02d2b5923054033d78102a62dc1a6378098e53fd485dd1d7d",
+    "astronomica.cpp": "c77fe34116155187571fc93894859ac5e96540f338fa86e2c52df59bfe3fdd72",
+    "astronomica.h": "ad1edd7b14f1aedc3586e8c0353199c1eb412c19e1c15485f0621bfcbfa693f1",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -27,8 +27,8 @@
     "sprites.h": "9034a4708c2b690a660047528a23b94a5f80b04f267ad605386159546d946ddc",
     "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
   },
-  "exe_sha256": "407347cfda452f19f28fcd8531f97ff54663562e50aa7b4e6cb5bac026e1a0bb",
-  "runtime_log_sha256": "279fb9a13b1913ef85b3eee2ba8a34ca8e1295a2a76682129e48dd83cda9deca",
+  "exe_sha256": "c8917133f21d664f0581cd5001cebd16af0c8b8953fa32f200f827b2273b48c6",
+  "runtime_log_sha256": "3843df2002ad5affaab8b4d1086d54830ce0d0dc643dc6914d06d05bd383b635",
   "build_exit": 0,
   "runtime_exit": 0,
   "complete_route_scenes": [

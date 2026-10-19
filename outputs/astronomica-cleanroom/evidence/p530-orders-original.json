@@ -1,0 +1,1045 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "scope": "Static original script dispatch; not execution or complete input-history coverage",
+  "source_sha256": "2056a7305ba91e8d06ad4f4ce309ea0dadf7d789633ae12d28bb43293f096631",
+  "cases": [
+    {
+      "last_sprite": 19,
+      "scenario": 1,
+      "program": 2,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 715484,
+      "correct": false,
+      "picture": "M3110"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 1,
+      "program": 2,
+      "detector": 2,
+      "sound": 9,
+      "sound_offset": 715819,
+      "correct": true,
+      "picture": "M3130"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 1,
+      "program": 2,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 716174,
+      "correct": false,
+      "picture": "M31100"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 1,
+      "program": 2,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 716497,
+      "correct": false,
+      "picture": "M31250"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 1,
+      "program": 2,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 716820,
+      "correct": false,
+      "picture": "M31500"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 2,
+      "program": 3,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 717207,
+      "correct": false,
+      "picture": "HUB10X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 2,
+      "program": 3,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 717530,
+      "correct": false,
+      "picture": "HUB30X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 2,
+      "program": 3,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 717853,
+      "correct": false,
+      "picture": "HUB100X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 2,
+      "program": 3,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 718188,
+      "correct": true,
+      "picture": "HUB250X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 2,
+      "program": 3,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 718543,
+      "correct": false,
+      "picture": "HUB500X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 3,
+      "program": 4,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 718930,
+      "correct": false,
+      "picture": "SAT10X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 3,
+      "program": 4,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 719253,
+      "correct": false,
+      "picture": "SAT30X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 3,
+      "program": 4,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 719576,
+      "correct": false,
+      "picture": "SAT100X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 3,
+      "program": 4,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 719899,
+      "correct": false,
+      "picture": "SAT250X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 3,
+      "program": 4,
+      "detector": 5,
+      "sound": 9,
+      "sound_offset": 720234,
+      "correct": true,
+      "picture": "SAT"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 4,
+      "program": 5,
+      "detector": 1,
+      "sound": 9,
+      "sound_offset": 720665,
+      "correct": true,
+      "picture": "STAR10X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 4,
+      "program": 5,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 721020,
+      "correct": false,
+      "picture": "STAR30X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 4,
+      "program": 5,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 721343,
+      "correct": false,
+      "picture": "STAR100X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 4,
+      "program": 5,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 721666,
+      "correct": false,
+      "picture": "STAR250X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 4,
+      "program": 5,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 721989,
+      "correct": false,
+      "picture": "STAR500X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 5,
+      "program": 6,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 722376,
+      "correct": false,
+      "picture": "GLOB10X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 5,
+      "program": 6,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 722699,
+      "correct": false,
+      "picture": "GLOB30X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 5,
+      "program": 6,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 723022,
+      "correct": false,
+      "picture": "GLOB100X"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 5,
+      "program": 6,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 723357,
+      "correct": true,
+      "picture": "GLOB"
+    },
+    {
+      "last_sprite": 19,
+      "scenario": 5,
+      "program": 6,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 723712,
+      "correct": false,
+      "picture": "GLOB500X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 1,
+      "program": 2,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 715484,
+      "correct": false,
+      "picture": "M3110"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 1,
+      "program": 2,
+      "detector": 2,
+      "sound": 9,
+      "sound_offset": 715819,
+      "correct": true,
+      "picture": "M3130"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 1,
+      "program": 2,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 716174,
+      "correct": false,
+      "picture": "M31100"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 1,
+      "program": 2,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 716497,
+      "correct": false,
+      "picture": "M31250"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 1,
+      "program": 2,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 716820,
+      "correct": false,
+      "picture": "M31500"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 2,
+      "program": 3,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 717207,
+      "correct": false,
+      "picture": "HUB10X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 2,
+      "program": 3,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 717530,
+      "correct": false,
+      "picture": "HUB30X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 2,
+      "program": 3,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 717853,
+      "correct": false,
+      "picture": "HUB100X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 2,
+      "program": 3,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 718188,
+      "correct": true,
+      "picture": "HUB250X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 2,
+      "program": 3,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 718543,
+      "correct": false,
+      "picture": "HUB500X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 3,
+      "program": 4,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 718930,
+      "correct": false,
+      "picture": "SAT10X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 3,
+      "program": 4,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 719253,
+      "correct": false,
+      "picture": "SAT30X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 3,
+      "program": 4,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 719576,
+      "correct": false,
+      "picture": "SAT100X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 3,
+      "program": 4,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 719899,
+      "correct": false,
+      "picture": "SAT250X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 3,
+      "program": 4,
+      "detector": 5,
+      "sound": 9,
+      "sound_offset": 720234,
+      "correct": true,
+      "picture": "SAT"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 4,
+      "program": 5,
+      "detector": 1,
+      "sound": 9,
+      "sound_offset": 720665,
+      "correct": true,
+      "picture": "STAR10X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 4,
+      "program": 5,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 721020,
+      "correct": false,
+      "picture": "STAR30X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 4,
+      "program": 5,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 721343,
+      "correct": false,
+      "picture": "STAR100X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 4,
+      "program": 5,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 721666,
+      "correct": false,
+      "picture": "STAR250X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 4,
+      "program": 5,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 721989,
+      "correct": false,
+      "picture": "STAR500X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 5,
+      "program": 6,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 722376,
+      "correct": false,
+      "picture": "GLOB10X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 5,
+      "program": 6,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 722699,
+      "correct": false,
+      "picture": "GLOB30X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 5,
+      "program": 6,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 723022,
+      "correct": false,
+      "picture": "GLOB100X"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 5,
+      "program": 6,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 723357,
+      "correct": true,
+      "picture": "GLOB"
+    },
+    {
+      "last_sprite": 20,
+      "scenario": 5,
+      "program": 6,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 723712,
+      "correct": false,
+      "picture": "GLOB500X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 1,
+      "program": 2,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 715484,
+      "correct": false,
+      "picture": "M3110"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 1,
+      "program": 2,
+      "detector": 2,
+      "sound": 9,
+      "sound_offset": 715819,
+      "correct": true,
+      "picture": "M3130"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 1,
+      "program": 2,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 716174,
+      "correct": false,
+      "picture": "M31100"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 1,
+      "program": 2,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 716497,
+      "correct": false,
+      "picture": "M31250"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 1,
+      "program": 2,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 716820,
+      "correct": false,
+      "picture": "M31500"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 2,
+      "program": 3,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 717207,
+      "correct": false,
+      "picture": "HUB10X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 2,
+      "program": 3,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 717530,
+      "correct": false,
+      "picture": "HUB30X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 2,
+      "program": 3,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 717853,
+      "correct": false,
+      "picture": "HUB100X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 2,
+      "program": 3,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 718188,
+      "correct": true,
+      "picture": "HUB250X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 2,
+      "program": 3,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 718543,
+      "correct": false,
+      "picture": "HUB500X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 3,
+      "program": 4,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 718930,
+      "correct": false,
+      "picture": "SAT10X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 3,
+      "program": 4,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 719253,
+      "correct": false,
+      "picture": "SAT30X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 3,
+      "program": 4,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 719576,
+      "correct": false,
+      "picture": "SAT100X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 3,
+      "program": 4,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 719899,
+      "correct": false,
+      "picture": "SAT250X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 3,
+      "program": 4,
+      "detector": 5,
+      "sound": 9,
+      "sound_offset": 720234,
+      "correct": true,
+      "picture": "SAT"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 4,
+      "program": 5,
+      "detector": 1,
+      "sound": 9,
+      "sound_offset": 720665,
+      "correct": true,
+      "picture": "STAR10X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 4,
+      "program": 5,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 721020,
+      "correct": false,
+      "picture": "STAR30X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 4,
+      "program": 5,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 721343,
+      "correct": false,
+      "picture": "STAR100X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 4,
+      "program": 5,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 721666,
+      "correct": false,
+      "picture": "STAR250X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 4,
+      "program": 5,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 721989,
+      "correct": false,
+      "picture": "STAR500X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 5,
+      "program": 6,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 722376,
+      "correct": false,
+      "picture": "GLOB10X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 5,
+      "program": 6,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 722699,
+      "correct": false,
+      "picture": "GLOB30X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 5,
+      "program": 6,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 723022,
+      "correct": false,
+      "picture": "GLOB100X"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 5,
+      "program": 6,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 723357,
+      "correct": true,
+      "picture": "GLOB"
+    },
+    {
+      "last_sprite": 21,
+      "scenario": 5,
+      "program": 6,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 723712,
+      "correct": false,
+      "picture": "GLOB500X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 1,
+      "program": 2,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 715484,
+      "correct": false,
+      "picture": "M3110"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 1,
+      "program": 2,
+      "detector": 2,
+      "sound": 9,
+      "sound_offset": 715819,
+      "correct": true,
+      "picture": "M3130"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 1,
+      "program": 2,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 716174,
+      "correct": false,
+      "picture": "M31100"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 1,
+      "program": 2,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 716497,
+      "correct": false,
+      "picture": "M31250"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 1,
+      "program": 2,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 716820,
+      "correct": false,
+      "picture": "M31500"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 2,
+      "program": 5,
+      "detector": 1,
+      "sound": 9,
+      "sound_offset": 720665,
+      "correct": true,
+      "picture": "STAR10X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 2,
+      "program": 5,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 721020,
+      "correct": false,
+      "picture": "STAR30X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 2,
+      "program": 5,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 721343,
+      "correct": false,
+      "picture": "STAR100X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 2,
+      "program": 5,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 721666,
+      "correct": false,
+      "picture": "STAR250X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 2,
+      "program": 5,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 721989,
+      "correct": false,
+      "picture": "STAR500X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 3,
+      "program": 4,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 718930,
+      "correct": false,
+      "picture": "SAT10X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 3,
+      "program": 4,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 719253,
+      "correct": false,
+      "picture": "SAT30X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 3,
+      "program": 4,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 719576,
+      "correct": false,
+      "picture": "SAT100X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 3,
+      "program": 4,
+      "detector": 4,
+      "sound": 8,
+      "sound_offset": 719899,
+      "correct": false,
+      "picture": "SAT250X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 3,
+      "program": 4,
+      "detector": 5,
+      "sound": 9,
+      "sound_offset": 720234,
+      "correct": true,
+      "picture": "SAT"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 4,
+      "program": 6,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 722376,
+      "correct": false,
+      "picture": "GLOB10X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 4,
+      "program": 6,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 722699,
+      "correct": false,
+      "picture": "GLOB30X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 4,
+      "program": 6,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 723022,
+      "correct": false,
+      "picture": "GLOB100X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 4,
+      "program": 6,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 723357,
+      "correct": true,
+      "picture": "GLOB"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 4,
+      "program": 6,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 723712,
+      "correct": false,
+      "picture": "GLOB500X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 5,
+      "program": 3,
+      "detector": 1,
+      "sound": 8,
+      "sound_offset": 717207,
+      "correct": false,
+      "picture": "HUB10X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 5,
+      "program": 3,
+      "detector": 2,
+      "sound": 8,
+      "sound_offset": 717530,
+      "correct": false,
+      "picture": "HUB30X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 5,
+      "program": 3,
+      "detector": 3,
+      "sound": 8,
+      "sound_offset": 717853,
+      "correct": false,
+      "picture": "HUB100X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 5,
+      "program": 3,
+      "detector": 4,
+      "sound": 9,
+      "sound_offset": 718188,
+      "correct": true,
+      "picture": "HUB250X"
+    },
+    {
+      "last_sprite": 22,
+      "scenario": 5,
+      "program": 3,
+      "detector": 5,
+      "sound": 8,
+      "sound_offset": 718543,
+      "correct": false,
+      "picture": "HUB500X"
+    }
+  ],
+  "case_count": 100,
+  "correct_detectors_by_last_sprite": {
+    "19": [
+      2,
+      4,
+      5,
+      1,
+      4
+    ],
+    "20": [
+      2,
+      4,
+      5,
+      1,
+      4
+    ],
+    "21": [
+      2,
+      4,
+      5,
+      1,
+      4
+    ],
+    "22": [
+      2,
+      1,
+      5,
+      4,
+      4
+    ]
+  },
+  "finding": "Placing component B (sprite22) last swaps the response programs for scenarios2/4/5 relative to placing the detector or component A last; scenarios2/4 have different correct detectors",
+  "requirements": [
+    "Test all six A/B/detector placement permutations",
+    "Retain partial selections and placed-component flags exactly",
+    "Do not normalize the original order-dependent answer mapping"
+  ]
+}

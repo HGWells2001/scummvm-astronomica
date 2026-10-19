@@ -1,14 +1,16 @@
-# Astronomica — ripartenza dai file originali
+# Astronomica � ripartenza dai file originali
 
-Stato verificato: 18 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS. Nessun nuovo pacchetto distribuibile.
+Stato verificato: 19 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
 
-Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali, ora inserite fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
+Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa la build reale attuale, parte dal menu P1 e attiva audio, animazioni e interazione. Preferenze e salvataggi personali sono in userdata/astronomica, separati dalle prove. Il vecchio collegamento bin/Avvia-Astronomica.cmd rimanda allo stesso avvio. Vedere LOCAL-PLAY.md.
 
-Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. P505 e P508 supportano salvataggi fra le domande; P519 fra le selezioni. Restano salvataggi negli altri puzzle, fedelta tipografica e verifica manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe dalla radice del workspace.
+Salvataggi nativi verificati in esplorazione e in P505, P508, P519, P524, P526, P528, P530. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
-Questo lavoro è stato ricostruito da `D:\astro`, senza consultare codice, rapporti o conclusioni dei tentativi precedenti. Il nome della cartella indica questa ripartenza; non è una certificazione legale di processo clean room.
+Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
+
+Questo lavoro e stato ricostruito da D:/astro, senza consultare codice, rapporti o conclusioni dei tentativi precedenti esclusi dall'utente. Il nome della cartella indica questa ripartenza; non e una certificazione legale di processo clean room.
 
 ## Registro storico delle funzionalita (settembre)
 
@@ -943,3 +945,8 @@ Looping background WAVs now use the ScummVM Music channel. Foreground recordings
 ## P528 native saves, 18 October 2026
 
 Native v8 saves settled P528 states with full runner/RNG, clock/count, nine sprite records, partial eclipse flags, current image pair and retained tall-moon history. Tests cover160 reachable abstract states and640 round trips/successors, including six completion edges and160 exits, using full480-row pixel hashes. 3444 truncations,3444 byte corruptions and30 checksummed invalid states reject atomically. Slot7 loads in a fresh process, retains the old moon row and completes the remaining eclipse with first-success counting. Versions1-7, prior-build slots, presentation/audio controls, help/import and WASAPI regressions pass on the same executable. No whole-game completion percentage is inferred.
+
+
+## P530 native saves,19 October2026
+
+Native v9 retains14 locals and full runner/RNG,29 sprite records including hidden settled indicator positions, clock/count and the last picture or absence. 800 round trips across14 randomized routes cover five scenarios at every round, all25 pictures, all six placement permutations, wrong/repeated answers and unsolved exit. Slot8 loads in a fresh process with a partial component assembly and prior-round picture, then completes the remaining random rounds without increasing the counter, as in the original. 5604 truncations,5604 byte corruptions and31 checksummed invalid states reject atomically. Versions1-8, previous-build slots, full-frame presentation, music controls, help/import and WASAPI pass on the same executable.

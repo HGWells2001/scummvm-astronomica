@@ -1,6 +1,7 @@
 # P530 save preparation, 18 October 2026
 
-P530 native saves are not implemented. The original resource inventory
+P530 v9 settled saves are implemented and verified; see P530-SAVE-FORMAT.md.
+The inventory below records the original preparation. The original resource inventory
 records14 locals,29 sprites and11 startup programs. There are581 commands,
 including25 external background image commits, and no movies, automatic
 animation or movement. Only the first four sprites have two frames; the
@@ -29,3 +30,8 @@ rejection and a fresh-process physical slot. Preserve formats1–8.
 
 This inventory is static original-resource evidence; it does not demonstrate
 native P530 save restoration or add a global completion percentage.
+
+
+## P530 native saves,19 October2026
+
+Native v9 retains14 locals and full runner/RNG,29 sprite records including hidden settled indicator positions, clock/count and the last picture or absence. 800 round trips across14 randomized routes cover five scenarios at every round, all25 pictures, all six placement permutations, wrong/repeated answers and unsolved exit. Slot8 loads in a fresh process with a partial component assembly and prior-round picture, then completes the remaining random rounds without increasing the counter, as in the original. 5604 truncations,5604 byte corruptions and31 checksummed invalid states reject atomically. Versions1-8, previous-build slots, full-frame presentation, music controls, help/import and WASAPI pass on the same executable.

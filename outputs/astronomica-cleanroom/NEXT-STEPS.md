@@ -1,3 +1,12 @@
+# Ripresa: salvataggi P530,19 ottobre2026
+
+P530 v9:800 ripristini/successori,14 percorsi randomizzati; cinque scenari per ogni turno,25 immagini, entrambi gli ordini componenti PASS.
+Slot8/nuovo processo: montaggio parziale, immagine del turno precedente, RNG e contatore invariato PASS.
+Compatibilita v1-v8, precedenti slot v3-v8 e suite grafica/audio/help/import/WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p530_saves.py. Test: check_p530_saves.py e check_p530_regressions.py.
+Prossimo: inventario dei salvataggi per il prossimo puzzle; restano verifica audiovisiva manuale e tipografia aiuto. Non rieseguire finalizzatori storici.
+Nessuna percentuale globale attendibile. Modello utente: GPT-6.1 Sol / medio.
+
 # Ripresa: salvataggi P528, 18 ottobre 2026
 
 P528 v8:160 stati astratti raggiungibili,640 ripristini/successori,6 completamenti e160 uscite PASS; confronto integrale480 righe.
