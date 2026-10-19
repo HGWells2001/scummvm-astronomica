@@ -1,3 +1,29 @@
+# Ripresa: salvataggi P513,19 ottobre2026
+
+Formato v11: 728 ripristini/successori, cinque percorsi,14 scenari e nove risultati fotone PASS. Conserva fotone fermo nascosto, vecchie cifre, immagine cubo, RNG e conteggio silenzioso originale.
+Slot10 in nuovo processo dopo due risposte corrette PASS; limiti, dieci errori, primo/ripetuto successo e uscita volontaria PASS. Compatibilita v1-v10, vecchi slot v3-v10 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p513_saves.py; check_p513_saves.py, check_p513_regressions.py e P513-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio: Avvia-Astronomica.cmd; preferenze e salvataggi personali in userdata/astronomica. Prossimo: altri salvataggi, verifica audiovisiva manuale integrale e tipografia aiuto. Quattordici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi della sequenza P506,19 ottobre2026
+
+Formato v10 per P506/P531/P532/P533/P534/P535: 1222 ripristini/successori, 15 percorsi, sei scene in ciascuna fase0..3 PASS.
+Conserva soluzioni parziali, RNG e statica originale round/mask anche dopo uscita/rientro. Slot9 in nuovo processo e contatori primo/ripetuto completamento PASS.
+Corretto il rifiuto dei salvataggi P524/P526/P528/P530 dopo altri enigmi: quattro ingressi originali da P509,12 estremi inattivi e8 rifiuti di metadati incoerenti PASS; layout v6-v9 invariati.
+Compatibilita v1-v9, vecchi slot v3-v9, avvio P1 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_variant_saves.py; check_variant_saves.py, check_variant_regressions.py e VARIANT-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio locale: Avvia-Astronomica.cmd nella radice; configurazione/salvataggi personali in userdata/astronomica, separati dalle prove.
+Prossimo: altri puzzle dall'inventario; restano verifica audiovisiva manuale integrale e tipografia aiuto. Tredici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa P513 v11 ancora da verificare,19 ottobre2026
+
+P513 v11 IN CORSO,19 ottobre2026. Compilazione PASS. check_p513_saves.py attivo nella sessione61521; puo terminare dopo la sospensione per quota. Controllare p513-saves.log, p513-saves-startup.log e p513-save-proof.json: non dichiarare PASS prima della chiusura dei due processi. Nessuna regressione completa v11 ancora eseguita. Ultimo checkpoint completamente verificato e pubblicato: v10 e6ae3b7c9e1afa2d384fcacd56123b75ce5c073f (13 scene salvabili,1222 continuazioni custom17; correzione ingresso P509).
+
+Ripresa: esaminare le prove mirate; eseguire check_p513_regressions.py sullo stesso eseguibile senza modificare i sorgenti. Prima di finish_p513_saves.py aggiornare record_save_coverage.py con (513,11,5928,10), verificatore con14 scene e prove v11, refresh_research_evidence.py con i log/proof/validazione P513 e variant-previous-slot, e allowlist update_github_export.py con driver/finisher/prove nuovi. Il finisher P513 esiste ma questi adeguamenti ai metadati sono ancora pendenti. Dopo suite completa: finish_p513_saves.py, finish_local_launcher.py, esportazione, revisione, clone di verifica, commit/push e confronto SHA. NON eseguire finalizzatori precedenti da soli.
+
+I sorgenti canonici contengono ora v11; le evidenze globali archiviate descrivono ancora v10. Non ricopiare staging precedente. Dati originali D:/astro, nessun vecchio tentativo escluso o prototipo. Modello utente GPT-6.1 Sol/medio invariato. Quota arresto:1% cinque ore,53% settimana. Nessun reset riscattato/acquisto.
+
+
 # Ripresa: salvataggi della sequenza P506,19 ottobre2026
 
 Formato v10 per P506/P531/P532/P533/P534/P535: 1222 ripristini/successori, 15 percorsi, sei scene in ciascuna fase0..3 PASS.

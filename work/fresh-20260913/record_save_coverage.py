@@ -5,7 +5,7 @@ root=Path('outputs/astronomica-cleanroom');work=Path('work/fresh-20260913')
 digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 inventory=json.loads((root/'evidence/puzzle-save-requirements.json').read_text())
 rows=[]
-for place,version,size,slot in [(508,3,2464,2),(505,4,2472,3),(519,5,2584,4),(524,6,2612,5),(526,7,4956,6),(528,8,3444,7),(530,9,5604,8)]:
+for place,version,size,slot in [(508,3,2464,2),(505,4,2472,3),(519,5,2584,4),(524,6,2612,5),(526,7,4956,6),(528,8,3444,7),(530,9,5604,8),(513,11,5928,10)]:
  validation=root/f'evidence/p{place}-saves-validation.json';v=json.loads(validation.read_text())
  proof=json.loads((root/f'evidence/p{place}-save-proof.json').read_text())
  assert v['status']=='PASS' and proof['metadata_listed'] and proof['slot']==slot
@@ -34,4 +34,4 @@ result=dict(date='2026-10-19',status='PASS',exe_sha256=digest(work/'build/Releas
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
-print('Native save coverage: thirteen supported puzzle scenes; versions 1-10 readable; no global completion percentage')
+print('Native save coverage: fourteen supported puzzle scenes; versions 1-11 readable; no global completion percentage')

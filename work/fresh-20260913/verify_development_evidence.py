@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==13
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,519,524,526,528,530,531,532,533,534,535}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==14
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,519,524,526,528,530,531,532,533,534,535}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
@@ -240,3 +240,51 @@ launcher=json.loads((root/'evidence/local-launcher-validation.json').read_text()
 assert launcher['status']=='PASS' and launcher['exe_sha256']==m['exe_sha256'] and launcher['normal_P1_startup']
 assert launcher['template_sha256']==digest(root/'astronomica-play.ini')
 print('Custom17 v10, original entry-history correction and normal launcher evidence integrity PASS')
+p513=json.loads((root/'evidence/p513-save-original.json').read_text())
+assert p513['status']=='PASS' and len(p513['sprite_frames'])==32 and len(p513['conditions'])==6 and len(p513['startup'])==4
+assert p513['image_history_comparisons']==1089 and len(p513['images'])==33
+assert len({p['file'] for p in p513['images']})==17
+assert digest(Path('D:/astro/PLACES/P513/MEGAFILE.HYP'))==p513['source_sha256']
+for picture in p513['images']:
+ assert (picture['width'],picture['height'],picture['x'],picture['y'])==(313,320,177,22)
+ assert digest(Path('D:/astro/PLACES/P513')/picture['file'])==picture['sha256']
+cross=json.loads((root/'evidence/p513-cross-setting.json').read_text())
+motion=json.loads((root/'evidence/p513-motion.json').read_text())
+assert cross['code_sha256']==motion['code_sha256']
+assert [(r['initial_setting'],r['setting_after20_ticks'],r['last_x'],r['ticks'],r['digits']) for r in cross['cross_setting_cases']]==[(7,8,444,89,[0,5,0]),(9,8,443,266,[0,5,0])]
+v=json.loads((root/'evidence/p513-saves-validation.json').read_text())
+proof=json.loads((root/'evidence/p513-save-proof.json').read_text())
+assert v['status']=='PASS' and v['exe_sha256']==m['exe_sha256'] and v['full_suite']
+assert (v['format_version'],v['payload_bytes'],v['scene'],v['full_frame_height'])==(11,5928,513,480)
+assert proof['status']=='PASS' and proof['metadata_listed'] and proof['slot']==10
+assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint'] and proof['boundaries']==v['boundaries'] and v['boundaries']>100
+assert (proof['routes'],proof['scenarios'],proof['photon_results'],proof['answer_continuations'],proof['live_setting_changes'])==(5,14,9,126,2)
+assert (v['solve_and_exit_routes'],v['scenarios'],v['photon_results'],v['answer_continuations'],v['live_setting_changes'])==(5,14,9,126,2)
+assert (v['truncations'],v['byte_corruptions'],v['invalid_checksummed_states'])==(5928,5928,37)
+assert all(v[k] for k in ('retained_stopped_photon','retained_digits','random_continuation','silent_first_success','repeated_success_count'))
+for name,marker in [('p513-saves-runtime.log','P513 saves: PASS ('),('p513-saves-startup.log','P513 startup save: PASS'),('variant-previous-slot.log','variant startup save: PASS')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+assert json.loads((root/'evidence/variant-previous-slot-proof.json').read_text())['unchanged']
+print('P513 original cube/motion observations and v11 native save evidence integrity PASS')
+p517=json.loads((root/'evidence/p517-save-original.json').read_text())
+assert p517['status']=='PASS' and len(p517['sprite_frames'])==11 and len(p517['conditions'])==2
+assert p517['image_history_comparisons']==196 and len(p517['images'])==14 and len({p['file'] for p in p517['images']})==4
+assert [r['setting'] for r in p517['settings']]==list(range(1,15))
+assert [r['level'] for r in p517['settings']]==[4,3,2,1,2,3,4,3,2,1,2,3,4,3]
+assert digest(Path('D:/astro/PLACES/P517/MEGAFILE.HYP'))==p517['source_sha256']
+for name,expected in p517['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES/P517')/name)==expected,name
+for picture in p517['images']:
+ assert (picture['width'],picture['height'],picture['x'],picture['y'])==(640,320,0,0)
+ assert digest(Path('D:/astro/PLACES/P517')/picture['file'])==picture['sha256']
+print('P517 preparatory original resource observations integrity PASS; no native-save claim')
+builder_save=json.loads((root/'evidence/builder-save-original.json').read_text())
+assert builder_save['status']=='PASS' and [r['scene'] for r in builder_save['scenes']]==[515,536]
+for scene in builder_save['scenes']:
+ assert scene['status']=='PASS' and len(scene['conditions'])==13 and len(scene['sprite_frames'])==60
+ assert scene['image_history_comparisons']==4 and scene['ignored_frame_requests']==[dict(sprite=15,requested_frame=1,loaded_frames=1)]
+ assert scene['early_launch_prefix']['condition']['args']==[1,2,4,0,1,0] and scene['early_launch_prefix']['mask_assignment']['args']==[1,0,7]
+ assert digest(Path(f"D:/astro/PLACES/P{scene['scene']}/MEGAFILE.HYP"))==scene['source_sha256']
+ for picture in scene['images']:
+  assert (picture['width'],picture['height'],picture['x'],picture['y'])==(250,330,0,0)
+  assert digest(Path(f"D:/astro/PLACES/P{scene['scene']}")/picture['file'])==picture['sha256']
+print('P515/P536 preparatory resource inventory integrity PASS; no native-save claim')

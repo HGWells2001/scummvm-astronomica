@@ -85,6 +85,10 @@ private:
  Common::Error loadVariant(Common::SeekableReadStream *stream);
  bool verifyVariantSaves();
  bool verifySaveEntryHistory();
+ bool canSaveP513() const;
+ Common::Error saveP513(Common::WriteStream *stream);
+ Common::Error loadP513(Common::SeekableReadStream *stream);
+ bool verifyP513Saves();
  bool verifyGameState();
  GameStateContext gameStateContext() const override {
   // Original text GAMESTAT is admitted only after complete validation.
@@ -154,6 +158,7 @@ private:
  uint _p528EarthImage = 0, _p528MoonImage = 0, _p528TallMoon = 0;
  bool _p528HistoryValid = true;
  bool _p530HistoryValid = true;
+ bool _p513HistoryValid = true;
  int _pendingImageX = 0, _pendingImageY = 0;
  bool playSound(int id, uint32 now = 0, bool looping = false);
  void resumeLoopAt(uint32 now);

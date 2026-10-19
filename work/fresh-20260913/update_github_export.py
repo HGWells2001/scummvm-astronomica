@@ -28,6 +28,10 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'outputs/astronomica-cleanroom/probe_variant_saves.py','outputs/astronomica-cleanroom/evidence/variant-save-original.json',
  'outputs/astronomica-cleanroom/probe_p513_save.py','outputs/astronomica-cleanroom/evidence/p513-save-original.json','outputs/astronomica-cleanroom/P513-SAVE-FORMAT.md',
  'outputs/astronomica-cleanroom/probe_p513_cross_setting.py','outputs/astronomica-cleanroom/evidence/p513-cross-setting.json',
+ 'outputs/astronomica-cleanroom/probe_p517_save.py','outputs/astronomica-cleanroom/evidence/p517-save-original.json','outputs/astronomica-cleanroom/P517-SAVE-FORMAT.md',
+ 'outputs/astronomica-cleanroom/probe_builder_save.py','outputs/astronomica-cleanroom/evidence/builder-save-original.json','outputs/astronomica-cleanroom/BUILDER-SAVE-PLAN.md',
+ 'work/fresh-20260913/check_p513_saves.py','work/fresh-20260913/check_p513_regressions.py','work/fresh-20260913/finish_p513_saves.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p513-saves-validation.json','p513-save-proof.json','p513-saves-runtime.log','p513-saves-startup.log','variant-previous-slot.log','variant-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/VARIANT-SAVE-FORMAT.md',
  'work/fresh-20260913/check_variant_saves.py','work/fresh-20260913/check_variant_regressions.py','work/fresh-20260913/finish_variant_saves.py','work/fresh-20260913/check_save_entry_history.py',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('variant-saves-validation.json','variant-save-proof.json','variant-saves-runtime.log','variant-saves-startup.log','p530-previous-slot.log','p530-previous-slot-proof.json','save-entry-history.log','save-entry-history-proof.json','save-entry-history-before.log')],
@@ -87,11 +91,14 @@ if 'P526 v7' not in s:
 s=s.replace('four supported puzzle scenes (P505, P508, P519, P524)','five supported puzzle scenes (P505, P508, P519, P524, P526)')
 s=s.replace('five supported puzzle scenes (P505, P508, P519, P524, P526)','six supported puzzle scenes (P505, P508, P519, P524, P526, P528)')
 s=s.replace('six supported puzzle scenes (P505, P508, P519, P524, P526, P528)','seven supported puzzle scenes (P505, P508, P519, P524, P526, P528, P530)')
-s=s.replace('seven supported puzzle scenes (P505, P508, P519, P524, P526, P528, P530)','thirteen supported puzzle scenes (P505, P506, P508, P519, P524, P526, P528, P530-P535)')
+s=s.replace('seven supported puzzle scenes (P505, P508, P519, P524, P526, P528, P530)','fourteen supported puzzle scenes (P505, P506, P508, P513, P519, P524, P526, P528, P530-P535)')
+s=s.replace('thirteen supported puzzle scenes (P505, P506, P508, P519, P524, P526, P528, P530-P535)','fourteen supported puzzle scenes (P505, P506, P508, P513, P519, P524, P526, P528, P530-P535)')
 if 'custom17 v10' not in s:
     s=s.replace('- Automatically verified routes','- Six-scene custom17 v10 saves retain partial solutions and original process statics across random rounds and exit/reentry. Every scene passes at all four stages; one family slot resumes in a fresh process.\n- Retained unknown locals from earlier scenes no longer block P524/P526/P528/P530 saves. Four original P509 entries, twelve inert-value extremes and eight invalid-metadata rejections pass with v6-v9 layouts unchanged.\n- Automatically verified routes')
 if 'P530 v9' not in s:
     s=s.replace('- Automatically verified routes','- P530 v9 preserves partial component assembly, the prior-round picture, RNG and the original unchanged completion counter; five scenarios per round and all25 pictures pass native continuation tests.\n- Automatically verified routes')
+if 'P513 v11' not in s:
+    s=s.replace('- Automatically verified routes','- P513 v11 saves settled photon experiments and question progress, retaining hidden photon endpoints, old digits and cube image. Tests cover 728 round trips, 126 answer continuations, two changes during flight, and fresh-process silent completion.\n- Automatically verified routes')
 if 'P528 v8' not in s:
     s=s.replace('- Automatically verified routes','- P528 v8 retains partial eclipses and original image history; 160 reachable abstract states, 640 continuations, full480-row pixels and fresh-process completion pass.\n- Automatically verified routes')
 if 'Ordinary presentation preserves all 640x480' not in s:

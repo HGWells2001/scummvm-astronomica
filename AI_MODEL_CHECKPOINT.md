@@ -1,13 +1,11 @@
 # Astronomica: checkpoint AI,19 ottobre2026
 
-Modello dichiarato dall'utente: GPT-6.1 Sol, ragionamento medio, 19 ottobre 2026. Impostazione scelta dall'utente; nessun cambio automatico applicato dall'agente. La selezione del client non e verificabile tramite i tool disponibili.
+Modello dichiarato dall'utente: GPT-6.1 Sol, ragionamento medio,19 ottobre2026. Nessun cambio automatico applicato; selezione del client non verificabile tramite i tool disponibili.
 
-Checkpoint: custom17 v10 per P506/P531-P535; 1222 successori, 15 percorsi casuali, sei scene nelle quattro fasi. Slot9 in nuovo processo con soluzione parziale/statica/RNG e primo conteggio PASS; ripetizioni e uscita/rientro PASS. Compatibilita v1-v9 e suite completa WASAPI PASS.
+Checkpoint: P513 v11,5928 byte,728 successori, cinque percorsi,14 scenari,nove risultati fotone e slot10 in nuovo processo PASS. Conserva fotone fermo/cifre e RNG; conteggio originale silenzioso, errori/limiti/uscite PASS. Compatibilita v1-v10 e suite completa WASAPI PASS.
 
-Corretto anche il rifiuto P524/P526/P528/P530 dopo P509: quattro ingressi reali,12 estremi inattivi e8 metadati invalidi PASS; layout v6-v9 invariati.
+Seguire NEXT-STEPS.md, P513-SAVE-FORMAT.md e check_p513_saves.py/check_p513_regressions.py/finish_p513_saves.py. Sorgenti canonici in outputs/astronomica-cleanroom/engine/astronomica. Non ricopiare vecchi file di staging sopra i sorgenti correnti.
 
-Sorgenti canonici: outputs/astronomica-cleanroom/engine/astronomica. Seguire NEXT-STEPS.md, VARIANT-SAVE-FORMAT.md, check_variant_saves.py, check_variant_regressions.py, check_save_entry_history.py e finish_variant_saves.py. Avvia-Astronomica.cmd usa la build reale corrente; userdata/astronomica conserva preferenze e salvataggi personali.
+Avvio reale: Avvia-Astronomica.cmd; userdata/astronomica contiene preferenze/salvataggi personali. Restano altri salvataggi, verifica audiovisiva manuale integrale e tipografia aiuto. Quattordici scene con salvataggi non sono una percentuale globale.
 
-Prossimo: altri salvataggi dall'inventario, verifica audiovisiva manuale e tipografia aiuto. Configurazione AI corrente sufficiente; nessun cambio richiesto. Se occorre cambiarla, salvare checkpoint e attendere la conferma del protocollo utente.
-
-Vincoli: motore reale senza prototipi, originali D:/astro, solo cleanroom dal13 settembre2026, nessun tentativo precedente escluso. Controllare entrambe le quote; riservare verifica/pubblicazione e fermarsi vicino all'1% limitante. Nessun riscatto reset o acquisto. Tredici scene con salvataggi non misurano il completamento globale.
+Vincoli: originali D:/astro, solo cleanroom dal13 settembre2026, niente vecchi tentativi esclusi o nuovi prototipi. Modello corrente sufficiente, nessun cambio richiesto; se occorre cambiare, checkpoint e conferma del protocollo utente. Controllare entrambe le quote, riservare verifica/pubblicazione e fermarsi vicino all'1% limitante; nessun acquisto o riscatto reset.

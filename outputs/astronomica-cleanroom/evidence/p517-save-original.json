@@ -1,0 +1,1296 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "scope": "Original resource observations; no native-save or Windows runtime claim",
+  "source_sha256": "e93efcc68f117117b4f64c6b99f20b575e7ed5492098165aa32c1e8b321ec5d1",
+  "original_wav_sha256": {
+    "S0.WAV": "293e947857b1c724aef860fe73bd1825714074edbb85e9283142cf99f6edbcb5",
+    "S1.WAV": "823254d3baf360d1ff222847b63eee890cc41c1ae92ec8ec90e3c4854092339c"
+  },
+  "conditions": [
+    [
+      1,
+      0,
+      4,
+      1,
+      1,
+      4
+    ],
+    [
+      1,
+      1,
+      14,
+      4,
+      1,
+      14
+    ]
+  ],
+  "sprite_frames": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    4,
+    4,
+    2
+  ],
+  "settings": [
+    {
+      "setting": 1,
+      "level": 4,
+      "marker": [
+        72,
+        368
+      ],
+      "picture": "AURBACK4",
+      "timers": [
+        [
+          11,
+          300,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        9
+      ]
+    },
+    {
+      "setting": 2,
+      "level": 3,
+      "marker": [
+        87,
+        390
+      ],
+      "picture": "AURBACK3",
+      "timers": [
+        [
+          10,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        11,
+        9
+      ]
+    },
+    {
+      "setting": 3,
+      "level": 2,
+      "marker": [
+        98,
+        413
+      ],
+      "picture": "AURBACK2",
+      "timers": [
+        [
+          9,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        11
+      ]
+    },
+    {
+      "setting": 4,
+      "level": 1,
+      "marker": [
+        114,
+        429
+      ],
+      "picture": "AURBACK1",
+      "timers": [],
+      "stopped": [
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "setting": 5,
+      "level": 2,
+      "marker": [
+        131,
+        411
+      ],
+      "picture": "AURBACK2",
+      "timers": [
+        [
+          9,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        11
+      ]
+    },
+    {
+      "setting": 6,
+      "level": 3,
+      "marker": [
+        140,
+        388
+      ],
+      "picture": "AURBACK3",
+      "timers": [
+        [
+          10,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        11,
+        9
+      ]
+    },
+    {
+      "setting": 7,
+      "level": 4,
+      "marker": [
+        158,
+        370
+      ],
+      "picture": "AURBACK4",
+      "timers": [
+        [
+          11,
+          300,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        9
+      ]
+    },
+    {
+      "setting": 8,
+      "level": 3,
+      "marker": [
+        174,
+        386
+      ],
+      "picture": "AURBACK3",
+      "timers": [
+        [
+          10,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        11,
+        9
+      ]
+    },
+    {
+      "setting": 9,
+      "level": 2,
+      "marker": [
+        185,
+        408
+      ],
+      "picture": "AURBACK2",
+      "timers": [
+        [
+          9,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        11
+      ]
+    },
+    {
+      "setting": 10,
+      "level": 1,
+      "marker": [
+        201,
+        425
+      ],
+      "picture": "AURBACK1",
+      "timers": [],
+      "stopped": [
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "setting": 11,
+      "level": 2,
+      "marker": [
+        216,
+        408
+      ],
+      "picture": "AURBACK2",
+      "timers": [
+        [
+          9,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        11
+      ]
+    },
+    {
+      "setting": 12,
+      "level": 3,
+      "marker": [
+        225,
+        386
+      ],
+      "picture": "AURBACK3",
+      "timers": [
+        [
+          10,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        11,
+        9
+      ]
+    },
+    {
+      "setting": 13,
+      "level": 4,
+      "marker": [
+        244,
+        368
+      ],
+      "picture": "AURBACK4",
+      "timers": [
+        [
+          11,
+          300,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        10,
+        9
+      ]
+    },
+    {
+      "setting": 14,
+      "level": 3,
+      "marker": [
+        261,
+        384
+      ],
+      "picture": "AURBACK3",
+      "timers": [
+        [
+          10,
+          100,
+          1,
+          0
+        ]
+      ],
+      "stopped": [
+        11,
+        9
+      ]
+    }
+  ],
+  "gauge_positions": [
+    [
+      7,
+      447,
+      361
+    ],
+    [
+      7,
+      477,
+      361
+    ],
+    [
+      7,
+      507,
+      361
+    ],
+    [
+      7,
+      536,
+      361
+    ]
+  ],
+  "images": [
+    {
+      "file": "AURBACK4",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "64703696512cd8ba5688b7040b95827e4662572c522037740e819d5e9b282388",
+      "offset": 865235
+    },
+    {
+      "file": "AURBACK3",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "8e9f1d6e05006421007aceb7afc6b86048f6c602c4abf6d9ac8f9c7683d78ce8",
+      "offset": 865646
+    },
+    {
+      "file": "AURBACK2",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "2d15ff0d8d71e74837b8a07febb9f2fec994fe75958385e6b68585d1341b98d4",
+      "offset": 866057
+    },
+    {
+      "file": "AURBACK1",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "fe9ab64055f8cd2438d480c5b4f22aa01baa5ae3b107daa7fe12046a736956fe",
+      "offset": 866468
+    },
+    {
+      "file": "AURBACK2",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "2d15ff0d8d71e74837b8a07febb9f2fec994fe75958385e6b68585d1341b98d4",
+      "offset": 866855
+    },
+    {
+      "file": "AURBACK3",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "8e9f1d6e05006421007aceb7afc6b86048f6c602c4abf6d9ac8f9c7683d78ce8",
+      "offset": 867266
+    },
+    {
+      "file": "AURBACK4",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "64703696512cd8ba5688b7040b95827e4662572c522037740e819d5e9b282388",
+      "offset": 867677
+    },
+    {
+      "file": "AURBACK3",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "8e9f1d6e05006421007aceb7afc6b86048f6c602c4abf6d9ac8f9c7683d78ce8",
+      "offset": 868088
+    },
+    {
+      "file": "AURBACK2",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "2d15ff0d8d71e74837b8a07febb9f2fec994fe75958385e6b68585d1341b98d4",
+      "offset": 868499
+    },
+    {
+      "file": "AURBACK1",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "fe9ab64055f8cd2438d480c5b4f22aa01baa5ae3b107daa7fe12046a736956fe",
+      "offset": 868910
+    },
+    {
+      "file": "AURBACK2",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "2d15ff0d8d71e74837b8a07febb9f2fec994fe75958385e6b68585d1341b98d4",
+      "offset": 869297
+    },
+    {
+      "file": "AURBACK3",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "8e9f1d6e05006421007aceb7afc6b86048f6c602c4abf6d9ac8f9c7683d78ce8",
+      "offset": 869708
+    },
+    {
+      "file": "AURBACK4",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "64703696512cd8ba5688b7040b95827e4662572c522037740e819d5e9b282388",
+      "offset": 870119
+    },
+    {
+      "file": "AURBACK3",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320,
+      "sha256": "8e9f1d6e05006421007aceb7afc6b86048f6c602c4abf6d9ac8f9c7683d78ce8",
+      "offset": 870530
+    }
+  ],
+  "image_history_comparisons": 196,
+  "opcode_counts": {
+    "5": 3,
+    "7": 18,
+    "9": 8,
+    "16": 16,
+    "17": 4,
+    "19": 12,
+    "20": 14,
+    "23": 1,
+    "28": 5,
+    "29": 5,
+    "30": 30,
+    "31": 20,
+    "32": 16,
+    "41": 3,
+    "42": 4,
+    "45": 16,
+    "46": 2,
+    "49": 1
+  },
+  "mutations": [
+    {
+      "offset": 303127,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        1
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 303139,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        1
+      ],
+      "delay": 500
+    },
+    {
+      "offset": 305627,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        2
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 305639,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        2
+      ],
+      "delay": 500
+    },
+    {
+      "offset": 308139,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        3
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 308151,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        3
+      ],
+      "delay": 500
+    },
+    {
+      "offset": 310639,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        4
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 310651,
+      "opcode": 17,
+      "name": "op_17",
+      "args": [
+        4
+      ],
+      "delay": 500
+    },
+    {
+      "offset": 864951,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        7,
+        447,
+        361
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 865011,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        7,
+        477,
+        361
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 865071,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        7,
+        507,
+        361
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 865131,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        7,
+        536,
+        361
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 865195,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        72,
+        368
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865506,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        11,
+        300,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 865530,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865542,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865554,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865606,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        87,
+        390
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865917,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        10,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 865941,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865953,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 865965,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866017,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        98,
+        413
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866328,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        9,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 866352,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866364,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866376,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866428,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        114,
+        429
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866739,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866751,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866763,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 866815,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        131,
+        411
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867126,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        9,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 867150,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867162,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867174,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867226,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        140,
+        388
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867537,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        10,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 867561,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867573,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867585,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867637,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        158,
+        370
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867948,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        11,
+        300,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 867972,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867984,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 867996,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868048,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        174,
+        386
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868359,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        10,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 868383,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868395,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868407,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868459,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        185,
+        408
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868770,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        9,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 868794,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868806,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868818,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 868870,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        201,
+        425
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869181,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869193,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869205,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869257,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        216,
+        408
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869568,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        9,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 869592,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869604,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869616,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869668,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        225,
+        386
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 869979,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        10,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 870003,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870015,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870027,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870079,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        244,
+        368
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870390,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        11,
+        300,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 870414,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870426,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870438,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870490,
+      "opcode": 7,
+      "name": "op_7",
+      "args": [
+        8,
+        261,
+        384
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870801,
+      "opcode": 19,
+      "name": "op_19",
+      "args": [
+        10,
+        100,
+        1,
+        0
+      ],
+      "delay": 0
+    },
+    {
+      "offset": 870825,
+      "opcode": 16,
+      "name": "op_16",
+      "args": [
+        10
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870837,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        11
+      ],
+      "delay": -1
+    },
+    {
+      "offset": 870849,
+      "opcode": 30,
+      "name": "op_30",
+      "args": [
+        9
+      ],
+      "delay": -1
+    }
+  ],
+  "requirements": [
+    "Retain both locals, current picture and gauge/marker stored and rendered positions",
+    "Retain all three animation phases, stopped inactive phases and frame timers; active cycles can remain saveable",
+    "Test minimum clamp, settings1-14, first/repeated success to P512 and unsolved exit to P157",
+    "Preserve the original P517 custom25 counter and S12 behavior independently of departure voice"
+  ]
+}

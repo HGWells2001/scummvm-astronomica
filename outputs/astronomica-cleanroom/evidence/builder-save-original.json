@@ -1,0 +1,3077 @@
+{
+  "date": "2026-10-19",
+  "status": "PASS",
+  "scope": "Original resource observations only; no script execution, native save or Windows runtime claim",
+  "scenes": [
+    {
+      "scene": 515,
+      "status": "PASS",
+      "source_sha256": "d740db8e67a1ca6d600df71f0f1b6ed3b9e703ac2f2659c0ceba74a8fbd20360",
+      "conditions": [
+        [
+          1,
+          0,
+          5,
+          24,
+          0,
+          31
+        ],
+        [
+          1,
+          1,
+          5,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          5,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          3,
+          6,
+          0,
+          0,
+          6
+        ],
+        [
+          1,
+          4,
+          7,
+          6,
+          0,
+          7
+        ],
+        [
+          1,
+          5,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          6,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          7,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          8,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          9,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          11,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          12,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "sprite_frames": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_initials": [
+        {
+          "id": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 2,
+          "xy": [
+            23,
+            416
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 3,
+          "xy": [
+            589,
+            365
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 4,
+          "xy": [
+            589,
+            416
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 5,
+          "xy": [
+            185,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 6,
+          "xy": [
+            289,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 7,
+          "xy": [
+            396,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 8,
+          "xy": [
+            495,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 9,
+          "xy": [
+            69,
+            425
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 10,
+          "xy": [
+            151,
+            425
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 11,
+          "xy": [
+            69,
+            392
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 12,
+          "xy": [
+            151,
+            392
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 13,
+          "xy": [
+            69,
+            364
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 14,
+          "xy": [
+            151,
+            362
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 15,
+          "xy": [
+            73,
+            209
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 16,
+          "xy": [
+            79,
+            209
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 17,
+          "xy": [
+            103,
+            170
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 18,
+          "xy": [
+            103,
+            131
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 17
+        },
+        {
+          "id": 19,
+          "xy": [
+            103,
+            93
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 17
+        },
+        {
+          "id": 20,
+          "xy": [
+            103,
+            54
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 17
+        },
+        {
+          "id": 21,
+          "xy": [
+            101,
+            3
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 22,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 23,
+          "xy": [
+            108,
+            193
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 24,
+          "xy": [
+            108,
+            177
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 23
+        },
+        {
+          "id": 25,
+          "xy": [
+            108,
+            153
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 23
+        },
+        {
+          "id": 26,
+          "xy": [
+            108,
+            137
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 23
+        },
+        {
+          "id": 27,
+          "xy": [
+            108,
+            139
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 28,
+          "xy": [
+            108,
+            139
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 29,
+          "xy": [
+            108,
+            254
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 30,
+          "xy": [
+            108,
+            254
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 31,
+          "xy": [
+            108,
+            254
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 32,
+          "xy": [
+            109,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 33,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 32
+        },
+        {
+          "id": 34,
+          "xy": [
+            109,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 35,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 36,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 37,
+          "xy": [
+            110,
+            100
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 38,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 39,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 40,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 41,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 42,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 43,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 44,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 45,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 46,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 47,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 48,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 49,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 50,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 51,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 52,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 53,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 54,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 55,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 56,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 57,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 58,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 59,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 60,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        }
+      ],
+      "images": [
+        {
+          "file": "pad",
+          "x": 0,
+          "y": 0,
+          "width": 250,
+          "height": 330,
+          "sha256": "351e9cc5bf979ada394ec1b19daea209c74eb9a9a17162768be5e9e6da8e813c",
+          "offset": 323611
+        },
+        {
+          "file": "drydock",
+          "x": 0,
+          "y": 0,
+          "width": 250,
+          "height": 330,
+          "sha256": "15a39446af33b1d235f114fbad1708401fa9556c18047ea07271791f2661ae13",
+          "offset": 323986
+        }
+      ],
+      "image_history_comparisons": 4,
+      "literal_mutations": {
+        "7": [
+          [
+            15,
+            99,
+            312
+          ],
+          [
+            15,
+            99,
+            313
+          ],
+          [
+            21,
+            101,
+            3
+          ],
+          [
+            21,
+            101,
+            42
+          ],
+          [
+            21,
+            101,
+            81
+          ],
+          [
+            21,
+            101,
+            120
+          ],
+          [
+            21,
+            101,
+            159
+          ],
+          [
+            27,
+            112,
+            99
+          ],
+          [
+            28,
+            108,
+            139
+          ],
+          [
+            28,
+            112,
+            117
+          ],
+          [
+            28,
+            112,
+            157
+          ],
+          [
+            37,
+            110,
+            61
+          ],
+          [
+            37,
+            110,
+            100
+          ],
+          [
+            38,
+            122,
+            26
+          ],
+          [
+            39,
+            112,
+            60
+          ],
+          [
+            39,
+            112,
+            66
+          ],
+          [
+            40,
+            78,
+            77
+          ],
+          [
+            41,
+            78,
+            35
+          ],
+          [
+            42,
+            79,
+            3
+          ],
+          [
+            43,
+            0,
+            0
+          ],
+          [
+            43,
+            297,
+            208
+          ],
+          [
+            44,
+            0,
+            0
+          ],
+          [
+            44,
+            297,
+            208
+          ],
+          [
+            45,
+            0,
+            0
+          ],
+          [
+            45,
+            297,
+            208
+          ],
+          [
+            46,
+            0,
+            0
+          ],
+          [
+            46,
+            296,
+            14
+          ],
+          [
+            47,
+            0,
+            0
+          ],
+          [
+            47,
+            439,
+            62
+          ],
+          [
+            48,
+            0,
+            0
+          ],
+          [
+            48,
+            439,
+            62
+          ],
+          [
+            49,
+            0,
+            0
+          ],
+          [
+            49,
+            297,
+            208
+          ],
+          [
+            50,
+            0,
+            0
+          ],
+          [
+            50,
+            456,
+            257
+          ],
+          [
+            51,
+            0,
+            0
+          ],
+          [
+            51,
+            456,
+            257
+          ],
+          [
+            52,
+            0,
+            0
+          ],
+          [
+            52,
+            456,
+            257
+          ],
+          [
+            53,
+            0,
+            0
+          ],
+          [
+            53,
+            295,
+            110
+          ],
+          [
+            54,
+            0,
+            0
+          ],
+          [
+            54,
+            295,
+            110
+          ],
+          [
+            55,
+            0,
+            0
+          ],
+          [
+            55,
+            436,
+            159
+          ],
+          [
+            56,
+            0,
+            0
+          ],
+          [
+            56,
+            436,
+            159
+          ],
+          [
+            57,
+            0,
+            0
+          ],
+          [
+            57,
+            436,
+            159
+          ],
+          [
+            58,
+            0,
+            0
+          ],
+          [
+            58,
+            436,
+            159
+          ],
+          [
+            59,
+            0,
+            0
+          ],
+          [
+            59,
+            297,
+            208
+          ],
+          [
+            60,
+            0,
+            0
+          ],
+          [
+            60,
+            297,
+            208
+          ]
+        ],
+        "15": [
+          [
+            15,
+            1
+          ]
+        ],
+        "16": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ],
+          [
+            20
+          ],
+          [
+            21
+          ],
+          [
+            22
+          ],
+          [
+            23
+          ],
+          [
+            24
+          ],
+          [
+            25
+          ],
+          [
+            26
+          ],
+          [
+            27
+          ],
+          [
+            28
+          ],
+          [
+            29
+          ],
+          [
+            30
+          ],
+          [
+            31
+          ],
+          [
+            32
+          ],
+          [
+            33
+          ],
+          [
+            34
+          ],
+          [
+            35
+          ],
+          [
+            36
+          ],
+          [
+            37
+          ],
+          [
+            38
+          ],
+          [
+            39
+          ],
+          [
+            40
+          ],
+          [
+            41
+          ],
+          [
+            42
+          ],
+          [
+            43
+          ],
+          [
+            44
+          ],
+          [
+            45
+          ],
+          [
+            46
+          ],
+          [
+            47
+          ],
+          [
+            48
+          ],
+          [
+            49
+          ],
+          [
+            50
+          ],
+          [
+            51
+          ],
+          [
+            52
+          ],
+          [
+            53
+          ],
+          [
+            54
+          ],
+          [
+            55
+          ],
+          [
+            56
+          ],
+          [
+            57
+          ],
+          [
+            58
+          ],
+          [
+            59
+          ],
+          [
+            60
+          ]
+        ],
+        "17": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ],
+          [
+            20
+          ],
+          [
+            21
+          ],
+          [
+            22
+          ],
+          [
+            23
+          ],
+          [
+            24
+          ],
+          [
+            25
+          ],
+          [
+            26
+          ],
+          [
+            27
+          ],
+          [
+            28
+          ],
+          [
+            29
+          ],
+          [
+            30
+          ],
+          [
+            31
+          ],
+          [
+            32
+          ],
+          [
+            33
+          ],
+          [
+            34
+          ],
+          [
+            35
+          ],
+          [
+            36
+          ],
+          [
+            37
+          ],
+          [
+            38
+          ],
+          [
+            39
+          ],
+          [
+            40
+          ],
+          [
+            41
+          ],
+          [
+            42
+          ],
+          [
+            43
+          ],
+          [
+            44
+          ],
+          [
+            45
+          ],
+          [
+            46
+          ],
+          [
+            47
+          ],
+          [
+            48
+          ],
+          [
+            49
+          ],
+          [
+            50
+          ],
+          [
+            51
+          ],
+          [
+            52
+          ],
+          [
+            53
+          ],
+          [
+            54
+          ],
+          [
+            55
+          ],
+          [
+            56
+          ],
+          [
+            57
+          ],
+          [
+            58
+          ],
+          [
+            59
+          ],
+          [
+            60
+          ]
+        ],
+        "18": [],
+        "19": [],
+        "24": [],
+        "30": [],
+        "47": [
+          [
+            15,
+            0,
+            -5
+          ],
+          [
+            40,
+            0,
+            -5
+          ],
+          [
+            41,
+            0,
+            -5
+          ],
+          [
+            42,
+            0,
+            -5
+          ]
+        ],
+        "48": []
+      },
+      "ignored_frame_requests": [
+        {
+          "sprite": 15,
+          "requested_frame": 1,
+          "loaded_frames": 1
+        }
+      ],
+      "early_launch_prefix": {
+        "condition": {
+          "offset": 350413,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            2,
+            4,
+            0,
+            1,
+            0
+          ],
+          "delay": 500
+        },
+        "mask_assignment": {
+          "offset": 350445,
+          "opcode": 32,
+          "name": "set_condition",
+          "args": [
+            1,
+            0,
+            7
+          ],
+          "delay": 0
+        }
+      },
+      "local_assignments": {
+        "0": [
+          7
+        ],
+        "1": [],
+        "2": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "3": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "5": [
+          0,
+          1
+        ],
+        "6": [
+          0,
+          1
+        ],
+        "7": [
+          0,
+          1
+        ],
+        "8": [
+          0,
+          1
+        ],
+        "9": [
+          0,
+          1
+        ],
+        "10": [
+          0,
+          1
+        ],
+        "11": [
+          0,
+          1
+        ],
+        "12": [
+          0,
+          1
+        ]
+      },
+      "local_additions": [],
+      "opcode_counts": {
+        "5": 4,
+        "7": 114,
+        "9": 47,
+        "15": 81,
+        "16": 94,
+        "17": 77,
+        "20": 2,
+        "23": 1,
+        "28": 31,
+        "29": 31,
+        "31": 112,
+        "32": 108,
+        "39": 2,
+        "41": 16,
+        "42": 39,
+        "45": 73,
+        "47": 241,
+        "49": 2
+      }
+    },
+    {
+      "scene": 536,
+      "status": "PASS",
+      "source_sha256": "2427a16a916e53affdf0c7a7590f858f96492784d11eb1a7b3632b804e35d554",
+      "conditions": [
+        [
+          1,
+          0,
+          5,
+          7,
+          0,
+          31
+        ],
+        [
+          1,
+          1,
+          5,
+          2,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          5,
+          0,
+          0,
+          5
+        ],
+        [
+          1,
+          3,
+          6,
+          0,
+          0,
+          6
+        ],
+        [
+          1,
+          4,
+          7,
+          6,
+          0,
+          7
+        ],
+        [
+          1,
+          5,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          6,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          7,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          8,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          9,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          11,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          12,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "sprite_frames": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sprite_initials": [
+        {
+          "id": 1,
+          "xy": [
+            23,
+            365
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 2,
+          "xy": [
+            23,
+            416
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 3,
+          "xy": [
+            589,
+            365
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 4,
+          "xy": [
+            589,
+            416
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 5,
+          "xy": [
+            185,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 6,
+          "xy": [
+            289,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 7,
+          "xy": [
+            396,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 8,
+          "xy": [
+            495,
+            395
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 9,
+          "xy": [
+            69,
+            425
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 10,
+          "xy": [
+            151,
+            425
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 11,
+          "xy": [
+            69,
+            392
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 12,
+          "xy": [
+            151,
+            392
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 13,
+          "xy": [
+            69,
+            364
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 14,
+          "xy": [
+            151,
+            362
+          ],
+          "visible": 1,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 15,
+          "xy": [
+            73,
+            209
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 16,
+          "xy": [
+            79,
+            209
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 17,
+          "xy": [
+            103,
+            170
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 18,
+          "xy": [
+            103,
+            131
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 17
+        },
+        {
+          "id": 19,
+          "xy": [
+            103,
+            93
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 17
+        },
+        {
+          "id": 20,
+          "xy": [
+            103,
+            54
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 17
+        },
+        {
+          "id": 21,
+          "xy": [
+            101,
+            3
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 22,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 23,
+          "xy": [
+            108,
+            193
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 24,
+          "xy": [
+            108,
+            177
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 23
+        },
+        {
+          "id": 25,
+          "xy": [
+            108,
+            153
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 23
+        },
+        {
+          "id": 26,
+          "xy": [
+            108,
+            137
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 23
+        },
+        {
+          "id": 27,
+          "xy": [
+            108,
+            139
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 28,
+          "xy": [
+            108,
+            139
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 29,
+          "xy": [
+            108,
+            254
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 30,
+          "xy": [
+            108,
+            254
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 31,
+          "xy": [
+            108,
+            254
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 32,
+          "xy": [
+            109,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 33,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": 32
+        },
+        {
+          "id": 34,
+          "xy": [
+            109,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 35,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 36,
+          "xy": [
+            136,
+            216
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 37,
+          "xy": [
+            110,
+            100
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 38,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 39,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 40,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 41,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 42,
+          "xy": [
+            122,
+            26
+          ],
+          "visible": 0,
+          "click_enabled": 0,
+          "clone": -1
+        },
+        {
+          "id": 43,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 44,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 45,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 46,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 47,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 48,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 49,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 50,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 51,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 52,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 53,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 54,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 55,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 56,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 57,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 58,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 59,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        },
+        {
+          "id": 60,
+          "xy": [
+            0,
+            0
+          ],
+          "visible": 0,
+          "click_enabled": 1,
+          "clone": -1
+        }
+      ],
+      "images": [
+        {
+          "file": "pad",
+          "x": 0,
+          "y": 0,
+          "width": 250,
+          "height": 330,
+          "sha256": "7b07e9efcb74a1bd8218505775ebb477a0d4819f4e265528da174122f1d41899",
+          "offset": 323607
+        },
+        {
+          "file": "drydock",
+          "x": 0,
+          "y": 0,
+          "width": 250,
+          "height": 330,
+          "sha256": "1cbe3458f05384533b0f878ea843040a41e5520cb34bf7e4d37c336ed83628f8",
+          "offset": 323982
+        }
+      ],
+      "image_history_comparisons": 4,
+      "literal_mutations": {
+        "7": [
+          [
+            15,
+            99,
+            312
+          ],
+          [
+            15,
+            99,
+            313
+          ],
+          [
+            21,
+            101,
+            3
+          ],
+          [
+            21,
+            101,
+            42
+          ],
+          [
+            21,
+            101,
+            81
+          ],
+          [
+            21,
+            101,
+            120
+          ],
+          [
+            21,
+            101,
+            159
+          ],
+          [
+            27,
+            112,
+            99
+          ],
+          [
+            28,
+            108,
+            139
+          ],
+          [
+            28,
+            112,
+            117
+          ],
+          [
+            28,
+            112,
+            157
+          ],
+          [
+            37,
+            110,
+            61
+          ],
+          [
+            37,
+            110,
+            100
+          ],
+          [
+            38,
+            122,
+            26
+          ],
+          [
+            39,
+            112,
+            60
+          ],
+          [
+            39,
+            112,
+            66
+          ],
+          [
+            40,
+            78,
+            77
+          ],
+          [
+            41,
+            78,
+            35
+          ],
+          [
+            42,
+            79,
+            3
+          ],
+          [
+            43,
+            0,
+            0
+          ],
+          [
+            43,
+            297,
+            208
+          ],
+          [
+            44,
+            0,
+            0
+          ],
+          [
+            44,
+            297,
+            208
+          ],
+          [
+            45,
+            0,
+            0
+          ],
+          [
+            45,
+            297,
+            208
+          ],
+          [
+            46,
+            0,
+            0
+          ],
+          [
+            46,
+            296,
+            14
+          ],
+          [
+            47,
+            0,
+            0
+          ],
+          [
+            47,
+            439,
+            62
+          ],
+          [
+            48,
+            0,
+            0
+          ],
+          [
+            48,
+            439,
+            62
+          ],
+          [
+            49,
+            0,
+            0
+          ],
+          [
+            49,
+            297,
+            208
+          ],
+          [
+            50,
+            0,
+            0
+          ],
+          [
+            50,
+            456,
+            257
+          ],
+          [
+            51,
+            0,
+            0
+          ],
+          [
+            51,
+            456,
+            257
+          ],
+          [
+            52,
+            0,
+            0
+          ],
+          [
+            52,
+            456,
+            257
+          ],
+          [
+            53,
+            0,
+            0
+          ],
+          [
+            53,
+            295,
+            110
+          ],
+          [
+            54,
+            0,
+            0
+          ],
+          [
+            54,
+            295,
+            110
+          ],
+          [
+            55,
+            0,
+            0
+          ],
+          [
+            55,
+            436,
+            159
+          ],
+          [
+            56,
+            0,
+            0
+          ],
+          [
+            56,
+            436,
+            159
+          ],
+          [
+            57,
+            0,
+            0
+          ],
+          [
+            57,
+            436,
+            159
+          ],
+          [
+            58,
+            0,
+            0
+          ],
+          [
+            58,
+            436,
+            159
+          ],
+          [
+            59,
+            0,
+            0
+          ],
+          [
+            59,
+            297,
+            208
+          ],
+          [
+            60,
+            0,
+            0
+          ],
+          [
+            60,
+            297,
+            208
+          ]
+        ],
+        "15": [
+          [
+            15,
+            1
+          ]
+        ],
+        "16": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ],
+          [
+            20
+          ],
+          [
+            21
+          ],
+          [
+            22
+          ],
+          [
+            23
+          ],
+          [
+            24
+          ],
+          [
+            25
+          ],
+          [
+            26
+          ],
+          [
+            27
+          ],
+          [
+            28
+          ],
+          [
+            29
+          ],
+          [
+            30
+          ],
+          [
+            31
+          ],
+          [
+            32
+          ],
+          [
+            33
+          ],
+          [
+            34
+          ],
+          [
+            35
+          ],
+          [
+            36
+          ],
+          [
+            37
+          ],
+          [
+            38
+          ],
+          [
+            39
+          ],
+          [
+            40
+          ],
+          [
+            41
+          ],
+          [
+            42
+          ],
+          [
+            43
+          ],
+          [
+            44
+          ],
+          [
+            45
+          ],
+          [
+            46
+          ],
+          [
+            47
+          ],
+          [
+            48
+          ],
+          [
+            49
+          ],
+          [
+            50
+          ],
+          [
+            51
+          ],
+          [
+            52
+          ],
+          [
+            53
+          ],
+          [
+            54
+          ],
+          [
+            55
+          ],
+          [
+            56
+          ],
+          [
+            57
+          ],
+          [
+            58
+          ],
+          [
+            59
+          ],
+          [
+            60
+          ]
+        ],
+        "17": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ],
+          [
+            20
+          ],
+          [
+            21
+          ],
+          [
+            22
+          ],
+          [
+            23
+          ],
+          [
+            24
+          ],
+          [
+            25
+          ],
+          [
+            26
+          ],
+          [
+            27
+          ],
+          [
+            28
+          ],
+          [
+            29
+          ],
+          [
+            30
+          ],
+          [
+            31
+          ],
+          [
+            32
+          ],
+          [
+            33
+          ],
+          [
+            34
+          ],
+          [
+            35
+          ],
+          [
+            36
+          ],
+          [
+            37
+          ],
+          [
+            38
+          ],
+          [
+            39
+          ],
+          [
+            40
+          ],
+          [
+            41
+          ],
+          [
+            42
+          ],
+          [
+            43
+          ],
+          [
+            44
+          ],
+          [
+            45
+          ],
+          [
+            46
+          ],
+          [
+            47
+          ],
+          [
+            48
+          ],
+          [
+            49
+          ],
+          [
+            50
+          ],
+          [
+            51
+          ],
+          [
+            52
+          ],
+          [
+            53
+          ],
+          [
+            54
+          ],
+          [
+            55
+          ],
+          [
+            56
+          ],
+          [
+            57
+          ],
+          [
+            58
+          ],
+          [
+            59
+          ],
+          [
+            60
+          ]
+        ],
+        "18": [],
+        "19": [],
+        "24": [],
+        "30": [],
+        "47": [
+          [
+            15,
+            0,
+            -5
+          ],
+          [
+            40,
+            0,
+            -5
+          ],
+          [
+            41,
+            0,
+            -5
+          ],
+          [
+            42,
+            0,
+            -5
+          ]
+        ],
+        "48": []
+      },
+      "ignored_frame_requests": [
+        {
+          "sprite": 15,
+          "requested_frame": 1,
+          "loaded_frames": 1
+        }
+      ],
+      "early_launch_prefix": {
+        "condition": {
+          "offset": 350409,
+          "opcode": 31,
+          "name": "condition",
+          "args": [
+            1,
+            2,
+            4,
+            0,
+            1,
+            0
+          ],
+          "delay": 500
+        },
+        "mask_assignment": {
+          "offset": 350441,
+          "opcode": 32,
+          "name": "set_condition",
+          "args": [
+            1,
+            0,
+            7
+          ],
+          "delay": 0
+        }
+      },
+      "local_assignments": {
+        "0": [
+          7
+        ],
+        "1": [],
+        "2": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "3": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "5": [
+          0,
+          1
+        ],
+        "6": [
+          0,
+          1
+        ],
+        "7": [
+          0,
+          1
+        ],
+        "8": [
+          0,
+          1
+        ],
+        "9": [
+          0,
+          1
+        ],
+        "10": [
+          0,
+          1
+        ],
+        "11": [
+          0,
+          1
+        ],
+        "12": [
+          0,
+          1
+        ]
+      },
+      "local_additions": [],
+      "opcode_counts": {
+        "5": 4,
+        "7": 114,
+        "9": 48,
+        "15": 81,
+        "16": 94,
+        "17": 77,
+        "20": 2,
+        "23": 1,
+        "28": 31,
+        "29": 31,
+        "31": 112,
+        "32": 108,
+        "39": 2,
+        "41": 16,
+        "42": 39,
+        "45": 73,
+        "47": 253,
+        "49": 2
+      }
+    }
+  ],
+  "requirements": [
+    "Preserve13 locals/RNG and all60 sprite records, including stored/rendered coordinates after offsets",
+    "Retain no picture or the last original250x330 picture; account for all480 screen rows",
+    "Do not save launch/assembly programs or button pulses while pending",
+    "Retain original P515 no-op success dispatch and P536 first/repeated global31 count",
+    "Verify all five designs, both phases, undersize/removal recovery, partial parts, reset controls and fresh-process continuation"
+  ],
+  "observations": [
+    "Launch begins with stage<4 and sets local0=7; choosing uses that mask through original command39",
+    "Literal setters include opcode7(0,0); native stored/rendered effects require separate boundary observations"
+  ],
+  "unknowns": [
+    "Literal mutation sets do not establish reachable combinations or coordinate extrema",
+    "Local/sprite/background relations require native boundary observations before defining a save validator",
+    "Complete manual audiovisual playthrough remains outstanding"
+  ]
+}

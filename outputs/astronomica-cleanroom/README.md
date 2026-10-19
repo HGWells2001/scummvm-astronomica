@@ -6,7 +6,7 @@ Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P519, P524, P526, P528, P530, P531, P532, P533, P534, P535. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P519, P524, P526, P528, P530, P531, P532, P533, P534, P535. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -955,3 +955,8 @@ Native v9 retains14 locals and full runner/RNG,29 sprite records including hidde
 ## Six-scene custom17 saves,19 October2026
 
 Native v10 saves P506/P531/P532/P533/P534/P535 partial solutions, all runner data and the original round/mask process statics. 1222 round trips and successors across 15 randomized solve routes cover all six scenes at each of four stages, including 4 initial-scene repeats. Slot9 resumes a partial solution at round2 in a fresh process, then finishes the remaining nonrepeating rounds and first completion count. Voluntary exit/reentry retains the original statics. All23736 truncations,23736 single-byte corruptions and192 checksummed invalid payloads reject without changing state. The P509 entry-history regression also passes for P524/P526/P528/P530: previously retained unknown locals blocked saving. Four natural entries and12 inert-value extremes now round-trip, while8 invalid metadata cases still reject. v6-v9 payload layouts remain unchanged. v1-v9 compatibility, prior-build slots, normal P1 launcher startup, full graphics/audio/help/import/WASAPI suite pass on the same executable.
+
+
+## P513 native saves,19 October2026
+
+Native v11 retains six locals/RNG,32 complete sprite records, stopped hidden photon endpoint and old digit/result state, cube image and clock/count. 728 native round trips/successors cover five solve/exit routes, all14 scenarios, nine photon results, bounds and silent first/repeated success. Slot10 resumes after two correct answers in a fresh process and finishes with the original count. All5928 truncations,5928 byte corruptions and37 checksummed invalid states reject without changing state. Versions1-10, old slots, cross-puzzle entry correction, full graphics/audio/help/import/WASAPI and normal launcher startup pass on the same build.

@@ -1,6 +1,6 @@
 # P513 stopped-photon save format, v11
 
-Implementation being prepared,19 October2026; not yet a verified checkpoint.
+Implemented and verified19 October2026; see evidence/p513-saves-validation.json.
 
 Original resource observations:32 sprites, six locals, four entry programs,
 no movies,33 image commits using17 original BMP pictures. Every picture has

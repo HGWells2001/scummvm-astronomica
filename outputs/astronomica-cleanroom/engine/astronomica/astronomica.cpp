@@ -82,6 +82,34 @@ bool validP524Animation(uint32 enabled, uint32 period, uint32 step, uint32 mode,
 
 enum { kP528Words = 12 + 9*27 + ScriptRunner::kIdleStateWords };
 enum { kP530Words = 12 + 29*27 + ScriptRunner::kIdleStateWords };
+enum { kP513Words = 12 + 32*27 + ScriptRunner::kIdleStateWords };
+int p513ImageId(const Common::String &name, bool intermediate = false) {
+ for (uint i = 1; i <= 9; ++i) {
+  if (name.equalsIgnoreCase(Common::String::format("cube%u",i))) return int(i);
+  if (intermediate && i < 9 && name.equalsIgnoreCase(Common::String::format("cube%u_50",i))) return int(i+9);
+ }
+ return -1;
+}
+bool validP513State(const Common::Array<uint32> &state) {
+ if (!ScriptRunner::validIdleState(state)) return false;
+ const uint widths[] = {18,14,14,14,4,14};
+ for (uint i = 0; i < 100; ++i) {
+  if (state[i*3+2] != 1 || state[300+i*3+2] != (i < 6 ? 1U : 0U) || state[301+i*3] != (i < 6 ? widths[i] : 0U)) return false;
+ }
+ const uint setting = state[300], scenario = state[303], mask = state[306], wrong = state[312], right = state[315];
+ if (!setting || setting > 9 || !scenario || scenario > 14 || mask > 0x3fff || !(mask & (1U << (scenario-1))) || state[309] > 1 || wrong >= 10 || right >= 7) return false;
+ uint count = 0; for (uint bits = mask; bits; bits >>= 1) count += bits & 1;
+ return count == wrong+right+1;
+}
+bool validP513Scene(const Scene &scene) {
+ if (scene.mode || scene.layers != 1 || scene.sprites.size() != 32 || !scene.mouseRects.empty() ||
+     scene.conditions.size() != 6 || scene.scripts.size() != 4 || !scene.movies.empty()) return false;
+ for (uint i = 0; i < 32; ++i) {
+  const Sprite &s = scene.sprites[i];
+  if (spriteFrameCount(scene,i) != (i < 8 ? 2U : i < 11 ? 10U : 1U) || s.autoFrame || s.autoMove || s.dragEnabled || s.cursor) return false;
+ }
+ return true;
+}
 const char *const kP530Images[] = {"","m3110","m3130","m31100","m31250","m31500",
  "hub10x","hub30x","hub100x","hub250x","hub500x","sat10x","sat30x","sat100x","sat250x","sat",
  "star10x","star30x","star100x","star250x","star500x","glob10x","glob30x","glob100x","glob","glob500x"};
@@ -220,6 +248,21 @@ bool validP528Sprites(const Common::Array<uint32> &words, const Scene &original,
  return true;
 }
 struct QuestionSaveProfile { uint place, version, sprites, locals; int x, y, width, height; uint widths[6]; };
+bool validP513Sprites(const Common::Array<uint32> &words, const Scene &original) {
+ if (words.size() != 32*27 || !validP513Scene(original)) return false;
+ for (uint i = 0; i < 32; ++i) {
+  Sprite s = original.sprites[i]; s.selectedFrame = 0;
+  Common::Array<uint32> baseline; p526SpriteWords(s,baseline);
+  const uint32 *w = &words[i*27];
+  if (w[0] > 1 || (i < 8 && w[0] != baseline[0]) || (i == 31 && w[0]) || w[1] > (i >= 8 && i <= 10 ? 9U : 0U)) return false;
+  const bool stopped = i == 31 && w[10] == 1 && int32(w[4]) >= 443 && int32(w[4]) <= 451 && w[19] == 0xffffffffU && w[22] == 0xffffffffU;
+  for (uint field = 2; field < 27; ++field) {
+   if (field == 8 || field == 9 || (stopped && (field == 4 || field == 10 || field == 19 || field == 22))) continue;
+   if (w[field] != baseline[field]) return false;
+  }
+ }
+ return true;
+}
 struct VariantSaveProfile { uint place, sprites, choices, answers; };
 const VariantSaveProfile *variantProfile(uint place) {
  static const VariantSaveProfile profiles[] = {{506,14,5,3},{531,14,5,4},{532,12,4,3},{533,12,4,3},{534,18,7,5},{535,12,4,3}};
@@ -790,6 +833,67 @@ Common::Error AstronomicaEngine::loadP530(Common::SeekableReadStream *stream) {
  if (header[7]) playSound(_loopSound,scriptClock(),true);
  return Common::kNoError;
 }
+bool AstronomicaEngine::canSaveP513() const {
+ if (_place != 513 || !_runner.idle() || _pendingImage.w || _movie || !validP513Scene(_scene) || _questionSaveBaseline.size() != 32 || !_p513HistoryValid ||
+     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+ if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
+ Common::Array<uint32> state,sprites;
+ if (!_runner.exportIdleState(state) || !validP513State(state) || p513ImageId(_displayedImageName) != int(state[300])) return false;
+ for (const HoverTarget &h : _hoverSprites) if (h.entered) return false;
+ for (const HoverTarget &h : _hoverRects) if (h.entered) return false;
+ for (const Sprite &s : _scene.sprites) {
+  if (s.dragEnabled || s.planetMotion || s.planetPeriod != -1) return false;
+  p526SpriteWords(s,sprites);
+ }
+ Scene original = _scene; original.sprites = _questionSaveBaseline;
+ return validP513Sprites(sprites,original);
+}
+Common::Error AstronomicaEngine::saveP513(Common::WriteStream *stream) {
+ if (!canSaveP513()) return Common::kWritingFailed;
+ const uint32 header[] = {513,_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),
+  _lastSoundAt,uint32(_mixer->isSoundHandleActive(_soundHandle)),uint32(p513ImageId(_displayedImageName)),0,0,0};
+ Common::Array<uint32> state,sprites; _runner.exportIdleState(state);
+ for (const Sprite &s : _scene.sprites) p526SpriteWords(s,sprites);
+ stream->writeUint32BE(MKTAG('A','S','V','M')); stream->writeUint32LE(11);
+ uint32 hash = 2166136261U;
+ auto word = [&](uint32 v) { stream->writeUint32LE(v); hash = (hash ^ v)*16777619U; };
+ for (uint32 v : header) word(v);
+ for (uint32 v : sprites) word(v);
+ for (uint32 v : state) word(v);
+ stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadP513(Common::SeekableReadStream *stream) {
+ if (stream->size()-stream->pos() < (kP513Words+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ uint32 header[12],hash = 2166136261U;
+ auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
+ for (uint32 &v : header) v = word();
+ Common::Array<uint32> sprites,state; sprites.resize(32*27); state.resize(ScriptRunner::kIdleStateWords);
+ for (uint32 &v : sprites) v = word();
+ for (uint32 &v : state) v = word();
+ if (stream->readUint32LE() != hash || stream->err() || !validP513State(state) || header[0] != 513 ||
+     (header[3] > 537 && header[3] != 0xffffffffU) || (header[4] != 0 && header[4] != 0xffffffffU) ||
+     header[5] > 1 || header[7] > 1 || (header[7] && (header[4] != 0 || !header[5])) || header[8] != state[300] || header[9] || header[10] || header[11]) return Common::kReadingFailed;
+ Common::File file;
+ if (!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P513/MEGAFILE.HYP")))) return Common::kReadingFailed;
+ Scene parsed; ResourceReader reader(file);
+ if (!reader.read(parsed) || !validP513Sprites(sprites,parsed)) return Common::kReadingFailed;
+ const Common::String name = Common::String::format("cube%u",header[8]);
+ Graphics::Surface *picture = openBackgroundImage(name,513);
+ if (!picture || picture->w != 313 || picture->h != 320) { if (picture) { picture->free(); delete picture; } return Common::kReadingFailed; }
+ if (!loadPlace(513,false,true)) { picture->free(); delete picture; return Common::kReadingFailed; }
+ _runner.resetVariantSequence(); _runner.importIdleState(state);
+ _puzzlesCompleted = header[1]; _pausedMillis = (_clockPaused ? _pauseStarted : _system->getMillis())-header[2];
+ _previousPlace = int32(header[3]); _loopSound = int32(header[4]); _loopEnabled = header[5] != 0; _lastSoundAt = header[6];
+ for (uint i = 0; i < 32; ++i) p526RestoreSprite(_scene.sprites[i],&sprites[i*27]);
+ _pendingImage.copyFrom(*picture); _pendingImageName = name; _pendingImageX = 177; _pendingImageY = 22;
+ picture->free(); delete picture; displayBackgroundImage();
+ if (header[7]) playSound(_loopSound,scriptClock(),true);
+ return Common::kNoError;
+}
 bool AstronomicaEngine::canSaveVariant() const {
  const VariantSaveProfile *p = variantProfile(_place);
  if (!p || !_runner.variantIdle() || _pendingImage.w || !_displayedImageName.empty() || _movie || !validVariantScene(_scene,*p) ||
@@ -862,7 +966,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveQuestion() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSaveQuestion() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -879,6 +983,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (_place == 526) return saveP526(stream);
  if (_place == 528) return saveP528(stream);
  if (_place == 530) return saveP530(stream);
+ if (_place == 513) return saveP513(stream);
  if (variantProfile(_place)) return saveVariant(stream);
  uint32 words[103]; words[102] = scriptClock(); words[0] = _place; words[1] = _puzzlesCompleted;
  for (int i = 0; i < 100; ++i) {
@@ -904,6 +1009,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 8) return loadP528(stream);
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
+ if (version == 11) return loadP513(stream);
  if ((version != 1 && version != 2) || (version == 2 && stream->size()-stream->pos() < 416)) return Common::kReadingFailed;
  uint32 words[103] = {},hash = 2166136261U;
  for (uint i = 0; i < (version == 2 ? 103U : 102U); ++i) { words[i] = stream->readUint32LE(); hash = (hash ^ words[i])*16777619U; }
@@ -1296,9 +1402,10 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _p528EarthImage = _p528MoonImage = _p528TallMoon = 0;
  _p528HistoryValid = true;
  _p530HistoryValid = true;
+ _p513HistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
- _questionSaveBaseline.clear(); if (questionProfile(place) || variantProfile(place) || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
+ _questionSaveBaseline.clear(); if (questionProfile(place) || variantProfile(place) || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion();
  _ball = BallMotion();
@@ -1422,6 +1529,7 @@ bool AstronomicaEngine::stageBackgroundImage(const Common::String &name, int x, 
 }
 void AstronomicaEngine::displayBackgroundImage() {
  if (_place == 530 && _pendingImage.w && (p530ImageId(_pendingImageName) <= 0 || _pendingImageX != 460 || _pendingImageY != 10 || _pendingImage.w != 172 || _pendingImage.h != 172)) _p530HistoryValid = false;
+ if (_place == 513 && _pendingImage.w && (p513ImageId(_pendingImageName,true) <= 0 || _pendingImageX != 177 || _pendingImageY != 22 || _pendingImage.w != 313 || _pendingImage.h != 320)) _p513HistoryValid = false;
  if (_place == 528 && _pendingImage.w) {
   const uint earth = p528ImageId(_pendingImageName,false), moon = p528ImageId(_pendingImageName,true);
   if (earth && _pendingImageX == 87 && _pendingImageY == 356 && _pendingImage.w == 171 && _pendingImage.h == 105) _p528EarthImage = earth;
@@ -3266,6 +3374,214 @@ bool AstronomicaEngine::verifyP524Saves() {
  _runner.resetGlobals(); return loadPlace(103);
 }
 
+bool AstronomicaEngine::verifyP513Saves() {
+ const int answers[] = {7,2,2,2,8,1,8,7,6,2,5,9,4,5};
+ const int digits[9][3] = {{0,0,5},{0,1,1},{0,0,4},{0,3,0},{0,0,2},{1,0,0},{0,0,4},{0,5,0},{0,1,5}};
+ const int results[] = {12,13,14,14,15,15,16,16,17};
+ auto fingerprint = [&]() {
+  Common::Array<uint32> state,sprites; if (!_runner.exportIdleState(state)) return uint32(0);
+  uint32 hash = (2166136261U ^ uint32(_place))*16777619U;
+  for (uint i = 0; i < state.size(); ++i) if (i != 601) hash = (hash ^ state[i])*16777619U;
+  for (const Sprite &s : _scene.sprites) p526SpriteWords(s,sprites);
+  for (uint32 v : sprites) hash = (hash ^ v)*16777619U;
+  for (uint32 v : {_puzzlesCompleted,uint32(_previousPlace),uint32(_p513HistoryValid),screenRGBHash(_background,480),screenRGBHash(_screen,480),
+       uint32(_loopSound),uint32(_loopEnabled),_place == 513 ? _lastSoundAt : uint32(0)}) hash = (hash ^ v)*16777619U;
+  return hash;
+ };
+ auto restore = [&](const Common::Array<byte> &bytes) {
+  Common::MemoryReadStream in(&bytes[0],bytes.size()); return loadGameStream(&in).getCode() == Common::kNoError;
+ };
+ auto snapshot = [&](Common::Array<byte> &bytes, uint32 now) {
+  _pausedMillis = _system->getMillis()-now;
+  Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);
+  if (saveGameStream(&out).getCode() != Common::kNoError || out.size() != 5928) return false;
+  bytes.resize(out.size()); memcpy(&bytes[0],out.getData(),out.size()); return true;
+ };
+ auto execute = [&](int action, uint32 &now) {
+  if (!action) return true;
+  if (_place != 513) return false;
+  const int x[] = {0,24,281,281,335,335},y[] = {0,417,362,418,369,411},expected[] = {-1,1,6,7,4,5};
+  if (action < 1 || action > 5) return false;
+  if (spriteAt(x[action],y[action]) != expected[action]) { debug("P513 save hit mismatch: action%d got%d expected%d",action,spriteAt(x[action],y[action]),expected[action]); return false; }
+  clickAtTime(x[action],y[action],now);
+  for (uint pass = 0; pass < 10000 && _place == 513 && _runner.pendingCount(); ++pass) {
+   if (canSaveP513()) return false;
+   runScriptsAt(now); animateSpritesAt(now); now += 10;
+  }
+  if (_place == 513 && _scene.sprites[31].autoMove) {
+   _mixer->stopHandle(_soundHandle);
+   if (canSaveP513()) return false; // Still moving with no foreground audio.
+   for (uint pass = 0; pass < 400 && _scene.sprites[31].autoMove; ++pass) { animateSpritesAt(now); now += 10; }
+   if (_scene.sprites[31].autoMove || _scene.sprites[31].visible) return false;
+  }
+  if (_mixer->isSoundHandleActive(_soundHandle) && _lastSound != _loopSound && canSaveP513()) return false;
+  _mixer->stopHandle(_soundHandle); return _runner.idle();
+ };
+ auto directSelect = [&](int desired, uint32 &now) {
+  for (uint n = 0; n < 10; ++n) {
+   int32 setting = 0; if (!_runner.getValue(1,0,setting)) return false;
+   if (setting == desired) return true;
+   if (!execute(setting < desired ? 2 : 3,now)) return false;
+  }
+  return false;
+ };
+ if (ConfMan.hasKey("save_slot") && ConfMan.getInt("save_slot") == 10) {
+  debug("Astronomica P513 slot fingerprint: %08x",fingerprint());
+  uint32 now = scriptClock(); int32 right = 0; bool ok = canSaveP513() && _runner.getValue(1,5,right) && right == 2 && _scene.sprites[31].standardMotion;
+  for (uint n = 0; n < 7 && ok && _place == 513; ++n) {
+   int32 scenario = 0; ok = _runner.getValue(1,1,scenario) && scenario >= 1 && scenario <= 14;
+   ok = ok && directSelect(answers[scenario-1],now) && execute(4,now);
+  }
+  int32 solved = 0; ok = ok && _place == 197 && _runner.getValue(0,29,solved) && solved == 1 && _puzzlesCompleted == 11;
+  debug("Astronomica P513 startup save: %s (two correct, retained stopped photon/digits, RNG and silent first completion)",ok ? "PASS" : "FAIL"); return ok;
+ }
+ uint32 now = 0; uint boundaries = 0, scenarios = 0, settings = 0, launches = 0, answerCases = 0; Common::Array<byte> fixture, questions[14];
+ auto roundTrip = [&](int action, bool physical) {
+  if (!canSaveP513()) {
+   Common::Array<uint32> state; _runner.exportIdleState(state);
+   debug("P513 save boundary rejected: %u idle%d scene%d history%d picture%d",boundaries,_runner.idle(),validP513Scene(_scene),_p513HistoryValid,p513ImageId(_displayedImageName));
+   if (state.size() == ScriptRunner::kIdleStateWords) debug("P513 locals: %u,%u,%u,%u,%u,%u valid%d",state[300],state[303],state[306],state[309],state[312],state[315],validP513State(state));
+   for (uint i = 0; i < _scene.sprites.size(); ++i) {
+    const Sprite &s = _scene.sprites[i]; debug("P513 sprite%u visible%d frame%d auto%d,%d standard%d stored%d,%d render%d,%d periods%d,%d",i,s.visible,s.selectedFrame,s.autoFrame,s.autoMove,s.standardMotion,s.x,s.y,s.renderX,s.renderY,s.frameData[0],s.moveData[0]);
+   }
+   return false;
+  }
+  Common::Array<byte> bytes; if (!snapshot(bytes,now)) return false;
+  int32 current = 0; if (!_runner.getValue(1,1,current) || current < 1 || current > 14) return false;
+  if (questions[current-1].empty()) questions[current-1] = bytes;
+  const uint32 before = fingerprint(),savedNow = now;
+  if (physical) {
+   fixture = bytes;
+   if (saveGameState(10,"P513 continuation regression").getCode() != Common::kNoError) return false;
+   debug("Astronomica P513 slot fingerprint: %08x",before);
+  }
+  const uint soundsBefore = _soundsStarted;
+  if (!execute(action,now)) return false;
+  const uint32 after = fingerprint(); const uint sounds = _soundsStarted-soundsBefore; const int last = _lastSound;
+  if (!after || !loadPlace(117)) return false;
+  _runner.seedRandom(88); _runner.defineValue(0,29,123);
+  const uint loadSounds = _soundsStarted;
+  ConfMan.setBool("astronomica_entry_scripts",true); const bool loaded = restore(bytes); ConfMan.setBool("astronomica_entry_scripts",false);
+  if (!loaded || !canSaveP513() || fingerprint() != before || _soundsStarted != loadSounds) {
+   debug("P513 restore mismatch: %u loaded%d expected%08x actual%08x",boundaries,loaded,before,fingerprint()); return false;
+  }
+  now = savedNow;
+  Common::Array<byte> again; if (!snapshot(again,now) || again.size() != bytes.size()) return false;
+  for (uint i = 8; i < bytes.size()-4; ++i) if ((i < 16 || i >= 20) && again[i] != bytes[i]) return false;
+  if (!execute(action,now) || fingerprint() != after || _soundsStarted-loadSounds != sounds || (action && _lastSound != last)) {
+   debug("P513 continuation mismatch: %u action%d expected%08x actual%08x",boundaries,action,after,fingerprint()); return false;
+  }
+  ++boundaries; return true;
+ };
+ auto select = [&](int desired) {
+  for (uint n = 0; n < 10; ++n) {
+   int32 setting = 0; if (!_runner.getValue(1,0,setting)) return false;
+   if (setting == desired) return true;
+   if (!roundTrip(setting < desired ? 2 : 3,false)) return false;
+  }
+  return false;
+ };
+ for (uint route = 0; route < 5; ++route) {
+  _runner.resetGlobals(); _runner.resetVariantSequence(); _runner.seedRandom(113+route); _runner.defineValue(0,29,route == 2); _puzzlesCompleted = 10;
+  if (!loadPlace(509) || !loadPlace(513)) return false;
+  now = scriptClock(); if (_runner.enqueueStartup(_scene.scripts,now,true) != 4) return false;
+  for (uint n = 0; n < 10000 && _runner.pendingCount(); ++n) { runScriptsAt(now); animateSpritesAt(now); now += 10; }
+  _mixer->stopHandle(_soundHandle);
+  if (!roundTrip(0,false)) return false;
+  if (route == 4) { if (!roundTrip(1,false)) return false; }
+  else {
+   if (!route) {
+    if (!roundTrip(3,false)) return false;
+    for (uint level = 1; level <= 9; ++level) {
+     if (!select(level) || !roundTrip(5,false)) return false;
+     const uint speed = 10-level, ticks = (266+speed-1)/speed;
+     if (_scene.sprites[31].renderX != int(177+ticks*speed) || !_scene.sprites[results[level-1]-1].visible) return false;
+     for (uint d = 0; d < 3; ++d) if (_scene.sprites[d+8].selectedFrame != digits[level-1][d]) return false;
+     settings |= 1U << (level-1); ++launches;
+    }
+    if (!roundTrip(2,false)) return false;
+   }
+   uint seen = 0, attempts = 0;
+   for (; attempts < 15 && _place == 513; ++attempts) {
+    int32 scenario = 0; if (!_runner.getValue(1,1,scenario) || scenario < 1 || scenario > 14 || (seen & (1U << (scenario-1)))) return false;
+    seen |= 1U << (scenario-1); scenarios |= seen;
+    const bool correct = route == 0 || route == 2 || (route == 1 && attempts < 6);
+    int setting = answers[scenario-1]; if (!correct) setting = setting == 9 ? 8 : setting+1;
+    if (!select(setting)) return false;
+    if (!route && attempts == 2 && !roundTrip(0,true)) return false;
+    if (!roundTrip(4,false)) return false;
+   }
+   if (attempts != (route == 1 ? 14U : route == 3 ? 10U : 7U) || (route == 1 && seen != 0x3fff)) return false;
+  }
+  int32 solved = 0;
+  if (_place != 197 || !_runner.getValue(0,29,solved) || solved != int(route < 3) || _puzzlesCompleted != 10+uint(route < 2)) return false;
+ }
+ if (fixture.empty() || scenarios != 0x3fff || settings != 0x1ff || launches != 9) return false;
+ // Each question fixture comes from a real route above. Exhaust all nine
+ // ordinary knob settings and compare the restored answer's successor.
+ for (uint scenario = 1; scenario <= 14; ++scenario) for (uint setting = 1; setting <= 9; ++setting) {
+  if (questions[scenario-1].empty() || !restore(questions[scenario-1])) return false;
+  now = scriptClock(); if (!select(setting) || !roundTrip(4,false)) return false;
+  if (_place == 513) {
+   int32 accepted = 0; const int expected = answers[scenario-1];
+   if (!_runner.getValue(1,3,accepted) || accepted != int(setting == uint(expected))) return false;
+   if (!accepted && _lastSound != (int(setting) < expected ? 10 : 11)) return false;
+  }
+  ++answerCases;
+ }
+ // The knob can change after its200ms input lock while a slow photon is
+ // still moving. Velocity retains the launch setting; digits use the live
+ // setting when the original callback stops the photon.
+ for (uint initial : {7U,9U}) {
+  if (!restore(fixture)) return false;
+  now = scriptClock(); if (!select(initial)) return false;
+  clickAtTime(335,411,now);
+  for (uint n = 0; n < 10000 && _runner.pendingCount(); ++n) { runScriptsAt(now); animateSpritesAt(now); now += 10; }
+  _mixer->stopHandle(_soundHandle);
+  if (!_scene.sprites[31].autoMove || canSaveP513() || !execute(initial < 8 ? 2 : 3,now)) return false;
+  const uint speed = 10-initial;
+  if (_scene.sprites[31].renderX != int(177+((266+speed-1)/speed)*speed)) return false;
+  for (uint d = 0; d < 3; ++d) if (_scene.sprites[d+8].selectedFrame != digits[7][d]) return false;
+  if (!roundTrip(0,false) || !select(1) || !roundTrip(0,false)) return false;
+  for (uint d = 0; d < 3; ++d) if (_scene.sprites[d+8].selectedFrame != digits[7][d]) return false;
+ }
+ if (!loadPlace(117)) return false;
+ const uint32 unchanged = fingerprint();
+ for (uint length = 0; length < fixture.size(); ++length) {
+  Common::MemoryReadStream in(&fixture[0],length); if (loadGameStream(&in).getCode() == Common::kNoError || fingerprint() != unchanged) return false;
+ }
+ Common::Array<byte> damaged = fixture;
+ for (uint offset = 0; offset < damaged.size(); ++offset) {
+  damaged[offset] ^= 1; if (restore(damaged) || fingerprint() != unchanged) return false; damaged[offset] ^= 1;
+ }
+ const uint invalidWords[] = {0,3,4,5,7,8,9,10,11,12,13,14,18,19,22,25,28,30,31,33,34,853,856,859,868,871,1176,1177,1178,1179,1182,1185,1188,1191,1195,1196,1478};
+ for (uint index : invalidWords) {
+  damaged = fixture; WRITE_LE_UINT32(&damaged[8+index*4],0x80000000U);
+  uint32 hash = 2166136261U; for (uint i = 0; i < kP513Words; ++i) hash = (hash ^ READ_LE_UINT32(&damaged[8+i*4]))*16777619U;
+  WRITE_LE_UINT32(&damaged[damaged.size()-4],hash);
+  if (restore(damaged) || fingerprint() != unchanged) { debug("P513 invalid field accepted: %u",index); return false; }
+ }
+ if (!restore(fixture)) return false;
+ for (const char *option : {"astronomica_audio","astronomica_animation","astronomica_sprite_input"}) {
+  ConfMan.setBool(option,false); if (canSaveP513() || restore(fixture)) return false;
+  ConfMan.removeKey(option,ConfMan.getActiveDomainName()); if (canSaveP513() || restore(fixture)) return false;
+  ConfMan.setBool(option,true);
+ }
+ _scene.sprites[0].selectedFrame = 1; if (canSaveP513()) return false; _scene.sprites[0].selectedFrame = 0;
+ _pendingImage.create(1,1,_screen.format); if (canSaveP513()) return false; _pendingImage.free();
+ if (!stageBackgroundImage("cube1",176,22)) return false;
+ displayBackgroundImage(); if (canSaveP513() || _p513HistoryValid || !restore(fixture)) return false;
+ _loopSound = 0; _loopEnabled = true;
+ if (!playSound(0,scriptClock(),true) || !canSaveP513()) return false;
+ Common::MemoryWriteStreamDynamic music(DisposeAfterUse::YES);
+ if (saveGameStream(&music).getCode() != Common::kNoError) return false;
+ Common::MemoryReadStream musicIn(music.getData(),music.size());
+ if (loadGameStream(&musicIn).getCode() != Common::kNoError || !_mixer->isSoundHandleActive(_soundHandle) || _lastSound != 0) return false;
+ if (!playSound(1,scriptClock()) || canSaveP513()) return false;
+ _mixer->stopHandle(_soundHandle);
+ debug("Astronomica P513 saves: PASS (%u boundaries, five routes, fourteen scenarios, nine stopped photon results, %u answer continuations, two live-setting changes, 5928 truncations, 5928 corruptions, 37 invalid states, initial/repeated silent success and guards)",boundaries,answerCases);
+ _runner.resetGlobals(); return loadPlace(103);
+}
 bool AstronomicaEngine::verifySaveEntryHistory() {
  auto fingerprint = [&]() {
   Common::Array<uint32> state,sprites; if (!_runner.exportIdleState(state)) return uint32(0);
@@ -6379,6 +6695,13 @@ Common::Error AstronomicaEngine::run() {
   const bool ok = verifyAudioChannels();
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Audio channel verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_p513_saves") && ConfMan.getBool("astronomica_verify_p513_saves")) {
+  ConfMan.setBool("astronomica_entry_scripts",false);
+  const bool ok = verifyP513Saves();
+  debug("Astronomica P513 save verification: %s",ok ? "PASS" : "FAIL");
+  _background.free(); _screen.free(); quitGame();
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"P513 save verification failed");
  }
  if (ConfMan.hasKey("astronomica_verify_save_history") && ConfMan.getBool("astronomica_verify_save_history")) {
   ConfMan.setBool("astronomica_entry_scripts",false);
