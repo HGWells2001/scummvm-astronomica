@@ -8,7 +8,7 @@ Launch control33 starts custom14 inside a click-blocked script with delayed comm
 
 The real engine also has RocketMotion kind/delta/since outside the sprite records. startRocket intentionally retains the prior movement timestamp, so even stopped history may affect a subsequent launch. Any save proposal must retain or explicitly constrain that state, alongside full sprite records, selector/RNG, clock/count, previous scene, ambient state and dormant cross-puzzle state. No payload version or byte count is assigned before the scope and native boundaries are established.
 
-Next verification should observe actual controls at initial, selected, failed-return and launch boundaries; establish save eligibility independently of the new serializer; compare all15 settings, clamping, queued-launch rejection, stopped history, next movement timing, failure/success counts and fresh-process continuation. Existing rocket motion checks and static resource observations do not prove a new save implementation or complete manual playthrough.
+Next verification should observe actual controls at initial, selected, failed-return and launch boundaries; establish save eligibility independently of the new serializer; compare all16 selector values (0..15), clamping, queued-launch rejection, stopped history, next movement timing, failure/success counts and fresh-process continuation. Existing rocket motion checks and static resource observations do not prove a new save implementation or complete manual playthrough.
 
 
 ## Original callback oracle,20 October2026
@@ -21,3 +21,10 @@ Original FrameTime(-1) calls for all21 digits reveal an inactive-timer differenc
 ## Native callback correction verified,20 October2026
 
 The production engine matches all96 controlled original callback fixtures and14592 steps (292dc3fd), including the exact final readout IDs and21 stopped frame periods. Full real-audio regression passes on the same build. See evidence/p537-motion-validation.json. This fixes rocket behavior; P537 save support is still not implemented.
+
+
+## Narrow boundary audit,20 October2026
+
+Direct re-read of D:/astro/PLACES/P537/MEGAFILE.HYP confirms the selector controls are one-based sprites5/6: their click programs begin by blocking clicks, adjust local0 by-1/+1, clamp at0/15, refresh the indicator, then unblock with a200ms delayed command. Their first commands start at resource offsets323319 and326731. A save during that pulse must remain ineligible even when the selector already has its final value.
+
+Launch is sprite33, starting at offset354555. Its custom14 command is at354659; delayed conditional continuation begins at354699. Motion stopping alone therefore cannot establish an eligible boundary. Candidate positive boundaries for a future independent native audit are initial settled entry, each settled selector value, and completed failure-return after all queued commands and foreground sound finish. Successful launches depart to P321 and should use that scene's eligibility. The existing verified native rocket suite samples launch settings0,1,10,11,12,13,15; it does not prove a new serializer or every save-boundary case. Preserve stopped RocketMotion.delta/since and prior readout independently of the current selector, and explicitly exercise selector changes after failure before proposing a format.
