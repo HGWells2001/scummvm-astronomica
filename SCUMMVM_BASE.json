@@ -2,7 +2,7 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "d6a4f8e45038db28cfebd51b205272a5645354a142e5b199b5db94f026201352",
+  "validated_executable_sha256": "799afeb0aebd78b3d877ce0ad74486aba876f13fe597d7c70d5641f3659b6d34",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
     "astronomica.cpp": "49dd2371e4edfe488b7b741f0c5f7228b465ca94c338185cfa47c40bb3406881",

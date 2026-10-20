@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "scope": "Local development build; no new package",
   "research_manifest": "research-oct01.json",
   "engine_sha256": {
@@ -27,8 +27,8 @@
     "sprites.h": "9034a4708c2b690a660047528a23b94a5f80b04f267ad605386159546d946ddc",
     "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
   },
-  "exe_sha256": "d6a4f8e45038db28cfebd51b205272a5645354a142e5b199b5db94f026201352",
-  "runtime_log_sha256": "163c13c4305f3e7a0590ef753531f4ab79f520cd7ea0de89b2e5f0511041f5e8",
+  "exe_sha256": "799afeb0aebd78b3d877ce0ad74486aba876f13fe597d7c70d5641f3659b6d34",
+  "runtime_log_sha256": "cadd3ced47438fafdcf5802d03568c5cfa0c5e1d1d913d3adea92470b666ed48",
   "build_exit": 0,
   "runtime_exit": 0,
   "complete_route_scenes": [

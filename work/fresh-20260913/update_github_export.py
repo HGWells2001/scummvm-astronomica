@@ -29,6 +29,7 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'outputs/astronomica-cleanroom/probe_p513_save.py','outputs/astronomica-cleanroom/evidence/p513-save-original.json','outputs/astronomica-cleanroom/P513-SAVE-FORMAT.md',
  'outputs/astronomica-cleanroom/probe_p513_cross_setting.py','outputs/astronomica-cleanroom/evidence/p513-cross-setting.json',
  'outputs/astronomica-cleanroom/probe_p517_save.py','outputs/astronomica-cleanroom/evidence/p517-save-original.json','outputs/astronomica-cleanroom/P517-SAVE-FORMAT.md',
+ 'outputs/astronomica-cleanroom/probe_p537_motion.py','outputs/astronomica-cleanroom/evidence/p537-motion-original.json',
  'outputs/astronomica-cleanroom/probe_p537_save.py','outputs/astronomica-cleanroom/evidence/p537-save-original.json','outputs/astronomica-cleanroom/P537-SAVE-PLAN.md',
  'outputs/astronomica-cleanroom/probe_builder_save.py','outputs/astronomica-cleanroom/evidence/builder-save-original.json','outputs/astronomica-cleanroom/BUILDER-SAVE-PLAN.md',
  'work/fresh-20260913/check_p517_saves.py','work/fresh-20260913/check_p517_regressions.py','work/fresh-20260913/finish_p517_saves.py','work/fresh-20260913/check_builder_boundaries.py',
@@ -87,6 +88,7 @@ if 'native-save-coverage.json' not in s:
     s=s.replace('- Automatically verified routes', '- [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records four supported puzzle scenes (P505, P508, P519, P524), plus exploration. This is not a whole-game completion percentage.\n- Automatically verified routes')
 s=s.replace('on 16 October 2026','on 18 October 2026')
 s=s.replace('on 18 October 2026','on 19 October 2026')
+s=s.replace('on 19 October 2026','on 20 October 2026')
 if 'Avvia-Astronomica.cmd' not in s:
     s=s.replace('- Automatically verified routes','- The workspace entry point [Avvia-Astronomica.cmd](Avvia-Astronomica.cmd) uses the current local build and keeps personal preferences/saves separate from verification slots. The default template passes normal P1 startup; see [local play](outputs/astronomica-cleanroom/LOCAL-PLAY.md).\n- Automatically verified routes')
 if 'P526 v7' not in s:
@@ -113,7 +115,7 @@ p.write_text(s.rstrip()+'\n')
 if 'Looping WAVs follow the Music control' not in s:
     s=s.replace('- Automatically verified routes','- Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
-manifest['date']='2026-10-19'
+manifest['date']='2026-10-20'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

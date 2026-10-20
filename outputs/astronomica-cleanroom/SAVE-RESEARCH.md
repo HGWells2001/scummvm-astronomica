@@ -138,3 +138,8 @@ Native v11 retains six locals/RNG,32 complete sprite records, stopped hidden pho
 ## P517 aurora saves,19 October2026
 
 Native v12 retains both locals, all eleven sprite records, the active aurora timer and stopped inactive phases, background, gauge and marker. 2278 native round trips/successors cover all14 settings,2240 animation cases, both controls, minimum clamp and first/repeated completion count. Slot11 resumes setting12 with active/stopped phases in a fresh process and completes with the original count. All3660 truncations,3660 byte corruptions and45 checksummed invalid states reject atomically. Versions1-11, old slots, full graphics/audio/help/import/WASAPI and normal launcher startup pass on the same build.
+
+
+## Unreproduced test-file truncation,20 October2026
+
+During validation of the rebuilt v12 executable, test slot5 was observed at16384 bytes with its ASVM payload and SVMCR header present but the extended metadata footer absent. Native P524 continuation and fresh-process load passed; metadata listing correctly failed. Repeating the exact targeted test produced a complete41085-byte slot and passed listing and fresh-process continuation. The cause is not established and no fix is claimed. Core Engine::saveGameState currently returns the payload result without checking the finalized stream error; this is a possible detection gap, not evidence of the cause. Personal saves were not used. Preserve a failing physical file before rerunning if this recurs.

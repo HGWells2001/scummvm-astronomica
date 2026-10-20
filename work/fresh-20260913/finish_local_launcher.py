@@ -10,7 +10,7 @@ coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 places=', '.join('P'+str(r['scene']) for r in sorted(coverage['puzzle_saves'],key=lambda r:r['scene']))
 p=root/'README.md';old=p.read_text();history=old[old.index('## Registro storico delle funzionalita (settembre)'):]
 head=('# Astronomica — ripartenza dai file originali\n\n'
- 'Stato verificato: 19 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.\n\n'
+ 'Stato verificato: 20 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.\n\n'
  'Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa la build reale attuale, parte dal menu P1 e attiva audio, animazioni e interazione. '
  'Preferenze e salvataggi personali sono in userdata/astronomica, separati dalle prove. Il vecchio collegamento bin/Avvia-Astronomica.cmd rimanda allo stesso avvio. Vedere LOCAL-PLAY.md.\n\n'
  'Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. '

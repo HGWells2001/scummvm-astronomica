@@ -1,6 +1,6 @@
 # Astronomica — ripartenza dai file originali
 
-Stato verificato: 19 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
+Stato verificato: 20 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
 
 Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa la build reale attuale, parte dal menu P1 e attiva audio, animazioni e interazione. Preferenze e salvataggi personali sono in userdata/astronomica, separati dalle prove. Il vecchio collegamento bin/Avvia-Astronomica.cmd rimanda allo stesso avvio. Vedere LOCAL-PLAY.md.
 

@@ -6,7 +6,7 @@ This repository contains the engine, original-file research tools, regression dr
 
 ## Verified development state
 
-The local Windows x64 build passed its complete WASAPI regression on 19 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
+The local Windows x64 build passed its complete WASAPI regression on 20 October 2026. Publishing this source snapshot does not constitute a new build on another machine.
 
 - P524 v6 saves question boundaries, including the running Triton animation and mentor return. Tests cover 72 round trips, 48 animation boundary cases and fresh-process continuation.
 - [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records fifteen supported puzzle scenes (P505, P506, P508, P513, P517, P519, P524, P526, P528, P530-P535), plus exploration. This is not a whole-game completion percentage.
