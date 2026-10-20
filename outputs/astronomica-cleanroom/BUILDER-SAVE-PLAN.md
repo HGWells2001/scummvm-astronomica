@@ -1,6 +1,6 @@
 # P515/P536 construction saves: investigation plan
 
-19 October2026. Save support is not implemented or verified for these two scenes.
+19 October2026. Save support is implemented and verified for both scenes; see BUILDER-SAVE-FORMAT.md and evidence/builder-saves-validation.json.
 
 Original resource observations are recorded by probe_builder_save.py and evidence/builder-save-original.json. Each scene has60 sprites,13 locals,seven programs and no movie, automatic motion, drag or hover programs. The only picture commits are opaque250x330 drydock/pad at0,0. Eight ordered original-image overwrites across the two scenes confirm that the last image is sufficient; absence of a picture is also an initial state.
 
@@ -24,4 +24,4 @@ A v13 builder payload can share the605-word layout of v10: the frozen603 values/
 
 Add an explicit scripts-idle export/import path that admits a dormant nonzero variant sequence even outside a variant scene. Keep the legacy idle() requirement unchanged for formats that do not retain those two words. Validate the same round0..3/mask0..63/popcount relation before any scene mutation. A new builder loader must rebuild its original scene context and import the persistent state without clearing the saved sequence.
 
-For a measured cross-puzzle case, copy only the verified test-family slot9 to an isolated builder test slot99, load its partial round2 state, and then enter P515 through the real engine. Preserve that state through builder saves, completion and fresh-process slot12. Hash-check the original test fixture before and after; never inspect or copy personal saves. This is a verification plan, not implemented support.
+For a measured cross-puzzle case, copy only the verified test-family slot9 to an isolated builder test slot99, load its partial round2 state, and then enter P515 through the real engine. Preserve that state through builder saves, completion and fresh-process slot12. Hash-check the original test fixture before and after; never inspect or copy personal saves. This cross-puzzle case is verified in memory and through physical slot12.

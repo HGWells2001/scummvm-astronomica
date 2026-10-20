@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "audio_driver": "native",
+  "diagnostic": false,
+  "fresh_process_fingerprint": "e8f8500f",
+  "slot": 12,
+  "metadata_listed": true,
+  "music_restart": true,
+  "comet_phase_retained": true,
+  "original_wav_sha256": {
+    "P515/S0.WAV": "ebbd34bb8ef1fb1e99a9d837833fc3bf209d954bc53e2f05637e773a3689c6f7",
+    "P515/S1.WAV": "6df066c54000e9991d23a17120d79d24b1e3285a5d5a79924dbd3afae8e6457c",
+    "P536/S0.WAV": "ebbd34bb8ef1fb1e99a9d837833fc3bf209d954bc53e2f05637e773a3689c6f7",
+    "P536/S1.WAV": "6df066c54000e9991d23a17120d79d24b1e3285a5d5a79924dbd3afae8e6457c"
+  },
+  "variant_fixture_sha256": "ac262808c3cc2905ba044e5802355d4e4ae3ad8c27ccf82710fdb0e8587b0b94",
+  "variant_fixture_unchanged": true,
+  "boundaries": 613,
+  "routes": 6,
+  "matrix_cases": 420,
+  "truncations": 8960,
+  "corruptions": 8960,
+  "invalid_states": 52,
+  "no_picture_boundaries": 168,
+  "dormant_boundaries": 189,
+  "fresh_scene_timer_comparisons": 6
+}

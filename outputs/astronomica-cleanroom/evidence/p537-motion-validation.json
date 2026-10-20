@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "exe_sha256": "127bc38dd6bea7a7deccece1a539e79d414ec7c835c3ce1cd79d50caf89cdf61",
+  "fixtures": 96,
+  "steps": 14592,
+  "combined_fnv32": "292dc3fd",
+  "original_evidence_sha256": "1e828270d72bcc24b0872c258c1c0110e41ca9636044c1a223cf1bb3c9f4c086",
+  "readout_proof_sha256": "104d127add353301b053d9baa1705f82ccfeb755f19b92b06c4722fa0efc8c5f",
+  "rendered_pixels": 12096,
+  "native_runtime_sha256": "8f7bfc7ca36ec8afcc299823ff58b5b3ec2e5d96896a8d4b465600675676876a",
+  "inactive_digit_timers": 21,
+  "full_suite": true,
+  "corrections": [
+    "Final readout uses original one-based sprite IDs",
+    "All21 digit frame periods become-1 when stopped"
+  ],
+  "limitations": [
+    "Explicit callback fixtures, not96 UI routes",
+    "Only selected SpriteWorld fields/setters are modeled",
+    "Animation scheduling and success-helper internals are outside the original instruction model"
+  ]
+}

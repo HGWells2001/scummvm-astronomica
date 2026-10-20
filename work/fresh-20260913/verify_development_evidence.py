@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==15
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,517,519,524,526,528,530,531,532,533,534,535}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==17
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,515,517,519,524,526,528,530,531,532,533,534,535,536}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
@@ -313,4 +313,37 @@ assert all(len(r['sprites'])==60 and len(r['locals'])==13 for r in audit['rows']
 for n,expected in audit['source_sha256'].items():assert digest(Path(f'D:/astro/PLACES/P{n}/MEGAFILE.HYP'))==expected
 s=(root/'evidence/builder-boundaries.log').read_text()
 assert 'P515/P536 interaction verification: PASS' in s and 'FAIL' not in s and 'Log closed successfully' in s
-print('Builder native boundary observations integrity PASS; save implementation remains pending')
+print('Builder native boundary observations integrity PASS')
+
+v=json.loads((root/'evidence/builder-saves-validation.json').read_text())
+proof=json.loads((root/'evidence/builder-save-proof.json').read_text())
+assert v['status']=='PASS' and v['exe_sha256']==m['exe_sha256'] and v['full_suite']
+assert (v['format_version'],v['payload_bytes'],v['scenes'],v['full_frame_height'])==(13,8960,[515,536],480)
+assert proof['status']=='PASS' and proof['metadata_listed'] and proof['slot']==12
+assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint'] and proof['boundaries']==v['boundaries'] and v['boundaries']>300
+assert proof['routes']==v['routes']==6 and proof['matrix_cases']==v['matrix_cases'] and proof['matrix_cases']>=280
+assert proof['fresh_scene_timer_comparisons']==v['fresh_scene_timer_comparisons'] and proof['fresh_scene_timer_comparisons']>=6
+assert proof['audio_driver']=='native' and not proof['diagnostic']
+assert proof['truncations']==proof['corruptions']==8960 and proof['invalid_states']>40
+assert proof['variant_fixture_unchanged'] and proof['dormant_boundaries'] and proof['no_picture_boundaries']
+assert all(v[k] for k in ('dormant_sequence_retained','comet_phase_retained','first_completion_count','repeated_completion_count','early_launch','p515_success_noop','music_restart'))
+for name,marker in [('builder-saves-runtime.log','builder saves: PASS ('),('builder-saves-startup.log','builder startup save: PASS'),('p517-previous-slot.log','P517 startup save: PASS')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s,name
+assert json.loads((root/'evidence/p517-previous-slot-proof.json').read_text())['unchanged']
+for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+rocket=json.loads((root/'evidence/p537-motion-validation.json').read_text())
+original=json.loads((root/'evidence/p537-motion-original.json').read_text())
+assert rocket['status']=='PASS' and rocket['exe_sha256']==m['exe_sha256'] and rocket['full_suite']
+assert rocket['combined_fnv32']==original['combined_fnv32']=='292dc3fd' and rocket['fixtures']==96 and rocket['steps']==original['steps']==14592
+assert rocket['inactive_digit_timers']==21 and rocket['original_evidence_sha256']==digest(root/'evidence/p537-motion-original.json')
+readout=json.loads((root/'evidence/p537-readout-proof.json').read_text())
+assert rocket['readout_proof_sha256']==digest(root/'evidence/p537-readout-proof.json')
+assert readout['status']=='PASS' and not readout['diagnostic'] and readout['exe_sha256']==m['exe_sha256']
+assert readout['checked_pixels']==rocket['rendered_pixels'] and readout['checked_pixels']>1000 and readout['old_shift_mismatch_pixels']>0
+assert {c['setting'] for c in readout['captures']}=={1,7,11,13}
+for item in readout['captures']:assert digest(root/'evidence'/('p537-readout-'+str(item['setting'])+'.png'))==item['png_sha256']
+
+assert rocket['native_runtime_sha256']==digest(root/'evidence/runtime.log')
+assert 'P537 original callback comparison: PASS (96 fixtures, 14592 steps, 292dc3fd)' in (root/'evidence/runtime.log').read_text()
+print('P537 original final readout and inactive timer correction integrity PASS')
+print('Builder v13 construction and dormant-sequence save evidence integrity PASS')

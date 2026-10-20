@@ -25,6 +25,16 @@ for place,size in ((506,3992),(531,3992),(532,3776),(533,3776),(534,4424),(535,3
  rows.append(dict(scene=place,version=10,payload_bytes=size,test_slot=9,family='custom17',scope='Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process',
   validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
   startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+validation=root/'evidence/builder-saves-validation.json';v=json.loads(validation.read_text())
+proof=json.loads((root/'evidence/builder-save-proof.json').read_text())
+assert v['status']=='PASS' and proof['metadata_listed'] and proof['slot']==12 and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+log=root/'evidence/builder-saves-runtime.log';startup=root/'evidence/builder-saves-startup.log'
+assert 'builder save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+assert 'builder startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+for place in (515,536):
+ rows.append(dict(scene=place,version=13,payload_bytes=8960,test_slot=12,family='builder',scope='Settled construction; both scenes in memory and partial P536 in a fresh process; dormant custom17 sequence retained',
+  validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
+  startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-19',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
@@ -34,4 +44,4 @@ result=dict(date='2026-10-19',status='PASS',exe_sha256=digest(work/'build/Releas
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
-print('Native save coverage: fifteen supported puzzle scenes; versions 1-12 readable; no global completion percentage')
+print('Native save coverage: seventeen supported puzzle scenes; versions 1-13 readable; no global completion percentage')

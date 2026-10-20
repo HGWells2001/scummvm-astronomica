@@ -143,3 +143,8 @@ Native v12 retains both locals, all eleven sprite records, the active aurora tim
 ## Unreproduced test-file truncation,20 October2026
 
 During validation of the rebuilt v12 executable, test slot5 was observed at16384 bytes with its ASVM payload and SVMCR header present but the extended metadata footer absent. Native P524 continuation and fresh-process load passed; metadata listing correctly failed. Repeating the exact targeted test produced a complete41085-byte slot and passed listing and fresh-process continuation. The cause is not established and no fix is claimed. Core Engine::saveGameState currently returns the payload result without checking the finalized stream error; this is a possible detection gap, not evidence of the cause. Personal saves were not used. Preserve a failing physical file before rerunning if this recurs.
+
+
+## Construction saves,20 October2026
+
+Native v13 retains both P515/P536 construction scenes and the dormant custom17 round/mask and comet orientation. 613 round trips/successors and420 control matrix cases cover six routes, all five designs, early Launch, no-picture states, partial parts and cap recovery. Physical slot12 resumes partial P536 design5 in a fresh process, preserves dormant round2 and applies first completion exactly once. P515 success remains the original no-op. All8960 truncations,8960 byte corruptions and52 checksummed invalid states reject atomically. Versions1-12 and the complete WASAPI regression pass on this build.

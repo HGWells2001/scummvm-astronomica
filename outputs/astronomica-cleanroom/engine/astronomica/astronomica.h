@@ -85,6 +85,10 @@ private:
  Common::Error loadVariant(Common::SeekableReadStream *stream);
  bool verifyVariantSaves();
  bool verifySaveEntryHistory();
+ bool canSaveBuilder() const;
+ Common::Error saveBuilder(Common::WriteStream *stream);
+ Common::Error loadBuilder(Common::SeekableReadStream *stream);
+ bool verifyBuilderSaves();
  bool canSaveP517() const;
  Common::Error saveP517(Common::WriteStream *stream);
  Common::Error loadP517(Common::SeekableReadStream *stream);
@@ -164,6 +168,7 @@ private:
  bool _p530HistoryValid = true;
  bool _p513HistoryValid = true;
  bool _p517HistoryValid = true;
+ bool _builderHistoryValid = true;
  int _pendingImageX = 0, _pendingImageY = 0;
  bool playSound(int id, uint32 now = 0, bool looping = false);
  void resumeLoopAt(uint32 now);

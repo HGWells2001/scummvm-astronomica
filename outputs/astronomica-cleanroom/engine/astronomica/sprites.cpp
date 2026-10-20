@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "astronomica/sprites.h"
+#include "common/debug.h"
 #include <math.h>
 namespace Astronomica {
 void startBall(Sprite &s, BallMotion &m, int scenario) {
@@ -854,28 +855,28 @@ bool startRocket(Scene &scene, RocketMotion &motion, int setting) {
 static void finishRocketDigits(Scene &scene, int setting) {
  // Identical readout tail in all three original callbacks (3:1715 onward).
  for (uint id = 9; id <= 29; ++id) {
-  Sprite &digit = rocketSprite(scene,id); digit.autoFrame = false; digit.selectedFrame = 0;
+  Sprite &digit = rocketSprite(scene,id); digit.autoFrame = false; digit.frameData[0] = -1; digit.selectedFrame = 0;
  }
- rocketSprite(scene,10).selectedFrame = 9;
- rocketSprite(scene,26).selectedFrame = 2;
- rocketSprite(scene,27).selectedFrame = 5;
+ rocketSprite(scene,9).selectedFrame = 9;
+ rocketSprite(scene,25).selectedFrame = 2;
+ rocketSprite(scene,26).selectedFrame = 5;
  if (setting >= 11) {
-  for (uint id = 11; id <= 20; ++id) rocketSprite(scene,id).selectedFrame = 9;
-  rocketSprite(scene,25).selectedFrame = 1;
+  for (uint id = 10; id <= 19; ++id) rocketSprite(scene,id).selectedFrame = 9;
+  rocketSprite(scene,24).selectedFrame = 1;
  } else if (setting >= 9) {
-  for (uint id = 11; id <= 13; ++id) rocketSprite(scene,id).selectedFrame = 9;
-  rocketSprite(scene,23).selectedFrame = 3;
- } else if (setting >= 7) {
-  for (uint id = 11; id <= 12; ++id) rocketSprite(scene,id).selectedFrame = 9;
-  rocketSprite(scene,22).selectedFrame = 1;
- } else if (setting >= 5) {
-  rocketSprite(scene,11).selectedFrame = 9;
+  for (uint id = 10; id <= 12; ++id) rocketSprite(scene,id).selectedFrame = 9;
   rocketSprite(scene,22).selectedFrame = 3;
-  rocketSprite(scene,23).selectedFrame = 5;
- } else if (setting >= 3) {
-  rocketSprite(scene,11).selectedFrame = 8;
+ } else if (setting >= 7) {
+  for (uint id = 10; id <= 11; ++id) rocketSprite(scene,id).selectedFrame = 9;
+  rocketSprite(scene,21).selectedFrame = 1;
+ } else if (setting >= 5) {
+  rocketSprite(scene,10).selectedFrame = 9;
+  rocketSprite(scene,21).selectedFrame = 3;
   rocketSprite(scene,22).selectedFrame = 5;
- } else rocketSprite(scene,21).selectedFrame = 1;
+ } else if (setting >= 3) {
+  rocketSprite(scene,10).selectedFrame = 8;
+  rocketSprite(scene,21).selectedFrame = 5;
+ } else rocketSprite(scene,20).selectedFrame = 1;
 }
 int advanceRocket(Scene &scene, RocketMotion &motion, int setting, uint32 now) {
  if (motion.kind == RocketMotion::kStopped || int32(now-motion.since) < 10) return 0;
@@ -913,6 +914,39 @@ int advanceRocket(Scene &scene, RocketMotion &motion, int setting, uint32 now) {
  motion.kind = RocketMotion::kStopped;
  finishRocketDigits(scene,setting);
  return success ? 3 : 2;
+}
+bool verifyRocketOriginalCallbacks(uint32 &hash) {
+ // Independent 16-bit callback execution: probe_p537_motion.py.
+ // Explicit callback fixtures, not full SpriteWorld animation or UI routes.
+ hash = 2166136261U;
+ auto add = [&](int32 v) { hash = (hash ^ uint32(v))*16777619U; };
+ for (int kind = 0; kind < 3; ++kind) for (int setting = 0; setting < 16; ++setting) for (int solved = 0; solved < 2; ++solved) {
+  add(kind); add(setting); add(solved);
+  Scene scene; scene.sprites.resize(48);
+  for (Sprite &s : scene.sprites) { s.visible = 1; s.selectedFrame = 0; s.frameData[0] = 0; s.moveData[0] = 10; }
+  for (uint i = 8; i <= 28; ++i) scene.sprites[i].autoFrame = true;
+  RocketMotion motion; motion.kind = RocketMotion::Kind(kind+1); motion.delta = kind == 0 ? 2 : kind == 1 ? 4 : 16;
+  Sprite &rocket = scene.sprites[33]; rocket.renderY = kind == 0 ? 50 : 100;
+  if (!kind) rocket.selectedFrame = 9;
+  scene.sprites[29].renderX = 393; scene.sprites[29].renderY = 361;
+  scene.sprites[30].renderX = 462; scene.sprites[30].renderY = 361;
+  scene.sprites[31].renderX = 529; scene.sprites[31].renderY = 414;
+  int successCalls = 0,global36 = solved;
+  for (int tick = 1; tick <= 1000 && motion.kind != RocketMotion::kStopped; ++tick) {
+   const int result = advanceRocket(scene,motion,setting,tick*10);
+   if (result == 3) { if (!global36) ++successCalls; global36 = 1; }
+   add(tick); add(motion.delta); add(successCalls); add(global36);
+   for (uint id = 9; id <= 34; ++id) {
+    const Sprite &s = scene.sprites[id-1];
+    add(s.renderX); add(s.renderY); add(s.visible); add(s.selectedFrame); add(s.frameData[0]);
+    // The engine's separate RocketMotion replaces the original move timer.
+    add(id == 34 ? (motion.kind == RocketMotion::kStopped ? -1 : 10) : s.moveData[0]);
+   }
+  }
+  if (motion.kind != RocketMotion::kStopped || successCalls != int(kind == 1 && !solved)) return false;
+  for (uint i = 8; i <= 28; ++i) if (scene.sprites[i].autoFrame || scene.sprites[i].frameData[0] != -1) return false;
+ }
+ return hash == 0x292dc3fdU;
 }
 const Frame *staticSpriteFrame(const Scene &scene, uint index) {
  const int owner = frameOwner(scene,index);

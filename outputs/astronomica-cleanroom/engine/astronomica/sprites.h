@@ -58,6 +58,7 @@ bool advancePhoton(Scene &scene, int setting, uint32 now);
 bool verifyPhotonMotion();
 bool advanceSpriteMove(Sprite &sprite, int width, int height, uint32 now);
 int advancePlanet(Sprite &sprite, const Sprite &launcher, int width, int height, uint32 now);
+bool verifyRocketOriginalCallbacks(uint32 &hash);
 bool startRocket(Scene &scene, RocketMotion &motion, int setting);
 // Returns 1 while moving, 2 on failure completion, 3 on successful orbit.
 int advanceRocket(Scene &scene, RocketMotion &motion, int setting, uint32 now);

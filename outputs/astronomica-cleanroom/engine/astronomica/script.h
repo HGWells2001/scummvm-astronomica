@@ -82,7 +82,11 @@ public:
  uint pendingCount() const { return _pending.size(); }
  // A settled snapshot contains data only. Programs and callbacks are rebuilt
  // from the original scene; queued work must never be silently discarded.
- enum { kIdleStateWords = 603 };
+ enum { kIdleStateWords = 603, kPersistentStateWords = 605 };
+ bool scriptsIdle() const { return _pending.empty() && _actions.empty() && !_clicksBlocked; }
+ bool exportPersistentState(Common::Array<uint32> &words) const;
+ bool importPersistentState(const Common::Array<uint32> &words);
+ static bool validPersistentState(const Common::Array<uint32> &words) { return validVariantState(words); }
  bool idle() const { return _pending.empty() && _actions.empty() && !_clicksBlocked && !_variantRound; }
  bool exportIdleState(Common::Array<uint32> &words) const;
  static bool validIdleState(const Common::Array<uint32> &words);

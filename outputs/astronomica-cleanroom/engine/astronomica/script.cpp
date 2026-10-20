@@ -67,6 +67,18 @@ bool ScriptRunner::exportIdleState(Common::Array<uint32> &words) const {
  if (!idle()) return false;
  exportSettledValues(words); return true;
 }
+bool ScriptRunner::exportPersistentState(Common::Array<uint32> &words) const {
+ if (!scriptsIdle()) return false;
+ exportSettledValues(words); words.push_back(_variantRound); words.push_back(_variantMask);
+ return validPersistentState(words);
+}
+bool ScriptRunner::importPersistentState(const Common::Array<uint32> &words) {
+ if (!scriptsIdle() || !validPersistentState(words)) return false;
+ Common::Array<uint32> values;
+ for (uint i = 0; i < kIdleStateWords; ++i) values.push_back(words[i]);
+ importSettledValues(values); _variantRound = words[603]; _variantMask = words[604];
+ return true;
+}
 void ScriptRunner::exportSettledValues(Common::Array<uint32> &words) const {
  words.clear();
  for (int scope = 0; scope < 2; ++scope) for (int i = 0; i < 100; ++i) {

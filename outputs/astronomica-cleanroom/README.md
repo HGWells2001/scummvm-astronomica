@@ -6,7 +6,7 @@ Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P517, P519, P524, P526, P528, P530, P531, P532, P533, P534, P535. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530, P531, P532, P533, P534, P535, P536. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -965,3 +965,8 @@ Native v11 retains six locals/RNG,32 complete sprite records, stopped hidden pho
 ## P517 aurora saves,19 October2026
 
 Native v12 retains both locals, all eleven sprite records, the active aurora timer and stopped inactive phases, background, gauge and marker. 2278 native round trips/successors cover all14 settings,2240 animation cases, both controls, minimum clamp and first/repeated completion count. Slot11 resumes setting12 with active/stopped phases in a fresh process and completes with the original count. All3660 truncations,3660 byte corruptions and45 checksummed invalid states reject atomically. Versions1-11, old slots, full graphics/audio/help/import/WASAPI and normal launcher startup pass on the same build.
+
+
+## Construction saves,20 October2026
+
+Native v13 retains both P515/P536 construction scenes and the dormant custom17 round/mask and comet orientation. 613 round trips/successors and420 control matrix cases cover six routes, all five designs, early Launch, no-picture states, partial parts and cap recovery. Physical slot12 resumes partial P536 design5 in a fresh process, preserves dormant round2 and applies first completion exactly once. P515 success remains the original no-op. All8960 truncations,8960 byte corruptions and52 checksummed invalid states reject atomically. Versions1-12 and the complete WASAPI regression pass on this build.

@@ -1,11 +1,13 @@
-# Astronomica: checkpoint AI,19 ottobre2026
+# Astronomica: checkpoint AI,20 ottobre2026
 
 Modello dichiarato dall'utente: GPT-6.1 Sol, ragionamento medio,19 ottobre2026. Nessun cambio automatico applicato; selezione del client non verificabile tramite i tool disponibili.
 
-Checkpoint:P517 v12,3660 byte,2278 successori,14 posizioni,2240 casi animazione e slot11 in nuovo processo PASS. Fasi attive/ferme e timer conservati; primo/ripetuto conteggio,limiti/uscite PASS. Compatibilita v1-v11 e suite completa WASAPI PASS.
+# Ripresa: salvataggi costruttore,20 ottobre2026
 
-Seguire NEXT-STEPS.md,P517-SAVE-FORMAT.md e check_p517_saves.py/check_p517_regressions.py/finish_p517_saves.py. Sorgenti canonici in outputs/astronomica-cleanroom/engine/astronomica. Non ricopiare staging precedente.
+Formato v13:8960 byte,613 ripristini/successori,420 casi controlli,sei percorsi e cinque progetti PASS. P515/P536 conservano anche round/mask custom17 sospesi.
+Slot12 in nuovo processo da P536 parziale con round2 sospeso PASS; primo/ripetuto conteggio,Launch anticipato,P515 no-op,cap/ripristino e stati senza immagine PASS. Compatibilita v1-v12 e suite completa WASAPI PASS sullo stesso eseguibile.
+P537:corretti gli ID delle cifre finali e21 periodi fermi;96 fixture/14592 passi originali e12096 pixel di quattro schermate PASS. P537 non ha ancora salvataggi.
+Checkpoint:finish_builder_saves.py;check_builder_saves.py,check_builder_regressions.py,BUILDER-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Diciassette scene con salvataggi non sono una percentuale globale.
 
-Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Quindici scene con salvataggi non sono una percentuale globale.
-
-Vincoli:originali D:/astro,solo cleanroom dal13 settembre2026,niente vecchi tentativi esclusi o prototipi. Modello corrente sufficiente,nessun cambio richiesto. Controllare entrambe le quote,riservare verifica/pubblicazione e fermarsi vicino all'1% limitante;nessun acquisto o riscatto reset.
+Vincoli:originali D:/astro,solo cleanroom dal13 settembre2026,niente tentativi esclusi o prototipi. Modello invariato. Controllare entrambe le quote e fermarsi vicino all'1% limitante;nessun acquisto o riscatto reset.
