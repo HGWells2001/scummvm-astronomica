@@ -11,3 +11,5 @@ Checkpoint:finish_builder_saves.py;check_builder_saves.py,check_builder_regressi
 Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Diciassette scene con salvataggi non sono una percentuale globale.
 
 Vincoli:originali D:/astro,solo cleanroom dal13 settembre2026,niente tentativi esclusi o prototipi. Modello invariato. Controllare entrambe le quote e fermarsi vicino all'1% limitante;nessun acquisto o riscatto reset.
+
+Pubblicazione20ottobre2026:32fa281d3df260e0832c3679c925b3bfe130239a,clone706file/23sorgentimotorePASS e SHAremoto verificato. Nessun testin corso. Seguire P537-SAVE-PLAN.md per audit confini salvabili,non ancora nuovi salvataggiP537.

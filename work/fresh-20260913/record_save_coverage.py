@@ -37,7 +37,7 @@ for place in (515,536):
   startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
-result=dict(date='2026-10-19',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
+result=dict(date='2026-10-20',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
  engine_sha256={p.name:digest(p) for p in sorted((root/'engine/astronomica').iterdir()) if p.is_file()},
  exploration=dict(read_versions=[1,2],write_version=2,scope='Settled mode1 exploration screens; v1 inactive countdown compatibility'),
  puzzle_saves=rows,supported_puzzle_route_scenes=len(supported),inventoried_puzzle_route_scenes=len(all_scenes),

@@ -1,6 +1,6 @@
 # P537 rocket saves: original requirements
 
-19 October2026. New save support is not implemented. This inventory prepares later work while the frozen P517 regression runs.
+Updated20 October2026. P537 save support is not implemented. Construction v13 and the P537 callback/readout correction are verified and published; this inventory prepares subsequent settled-boundary save work.
 
 probe_p537_save.py records the original resource's48 sprites, one local selector0..15 and one startup program. Cloned indicators inherit source frame/visibility state. No picture commits, movies, drag/hover or initial automatic motion occur. Original custom14 dispatch/callback evidence remains separately documented by probe_rocket.py and evidence/p537-rocket.json; this new resource inventory is not an additional Windows execution trace.
 
