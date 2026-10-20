@@ -1,0 +1,16 @@
+name: Astronomica source smoke
+on:
+  push:
+  pull_request:
+jobs:
+  integrity-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source export
+        run: python tools/verify_export.py
+      - name: Test original archive handler (synthetic fixtures only)
+        run: python -m unittest discover -s tests -v
