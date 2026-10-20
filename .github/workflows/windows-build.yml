@@ -65,7 +65,8 @@ jobs:
           print("Bundled DLLs:", sorted(seen))
           PY
           ./dist/scummvm.exe --list-engines | grep -i astronomica
-      - name: Publish downloadable preview through GitHub Releases
+      - name: Attempt GitHub Releases publication (may require repository permission)
+        continue-on-error: true
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
