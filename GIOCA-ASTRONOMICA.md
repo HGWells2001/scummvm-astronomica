@@ -2,9 +2,21 @@
 
 This project is an experimental ScummVM engine. The launcher is **not** a substitute for building ScummVM with this engine enabled. The game files are not included in this repository.
 
+## One-command local build and play (no GitHub artifact required)
+
+On Windows 10/11, download this repository branch and open PowerShell in its root directory. You can compile and launch using your original English CD ZIP:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Build-e-Gioca.ps1 -Archivio "C:\Users\YOU\Downloads\ASTROeng(3).zip"
+```
+
+The script installs MSYS2 through `winget` if missing, updates the MSYS2 environment, downloads the pinned ScummVM source, builds the native Astronomica engine using MinGW-w64, verifies its registration, safely extracts your original ZIP into ignored `game_data`, and launches the game. The first MSYS2 upgrade can require closing any running MSYS2 windows and running the command again.
+
+To compile without launching or extracting game data, add `-SoloCompila`. This route does not depend on GitHub Actions artifact or release-upload permissions.
+
 ## Windows x64 precompiled preview
 
-Download the ZIP from the private repository's [Astronomica Windows preview release](https://github.com/HGWells2001/scummvm-astronomica/releases/tag/astronomica-windows-preview). Extract it into a new directory. The ZIP contains the experimental ScummVM binary and the required DLLs but **no original game files**.
+If GitHub has permission to publish releases, download the ZIP from the [Astronomica Windows preview release](https://github.com/HGWells2001/scummvm-astronomica/releases/tag/astronomica-windows-preview) and extract it into a new directory. That link will not have an asset if the repository's Actions token lacks release-write permission. Use the local-build method above in that case. The ZIP contains the experimental ScummVM binary and the required DLLs but **no original game files**.
 
 With Python 3 installed, open PowerShell in that extracted directory:
 
