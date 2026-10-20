@@ -55,7 +55,7 @@ jobs:
               executable = queue.popleft()
               result = subprocess.run(["objdump", "-p", str(executable)], capture_output=True, text=True, check=True)
               for name in re.findall(r"DLL Name:\s*([^\r\n]+)", result.stdout, re.I):
-                  source = Path("/mingw64/bin") / name.strip()
+                  source = Path(shutil.which("g++")).parent / name.strip()
                   key = name.casefold()
                   if source.is_file() and key not in seen:
                       seen.add(key)
