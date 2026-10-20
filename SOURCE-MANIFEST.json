@@ -710,8 +710,10 @@
     "work/fresh-20260913/verify_help_images_setup.py": "9e02c24893ac070f8c79e9ae851df24e1d2d3d0b0eb60ec9eb76cd2c4d2bff4e",
     "tools/game_archive.py": "87e63f82f63f62b6a8d06600761abe1d5543e58a81bb1997d544fa2bbae34a58",
     "tests/test_game_archive.py": "ba60a87c13ff337799558d1d0e2718ea77e179b23e8965feada406f31dbf6e34",
-    "GIOCA-ASTRONOMICA.md": "ddbc556efa2cff216f401b55b41419c83e7c82085b4b6f4cec9a81f2927fa0a3",
+    "GIOCA-ASTRONOMICA.md": "cd090d1c1a118a419f6bea1fe7089e00a20bcb60d90c604dbb7bf792de69483c",
     ".github/workflows/source-smoke.yml": "22cd92d77f864bb492f3ce45c4bd0776d8d0c89513f5b55ea02b52442f16a3ad",
-    ".github/workflows/windows-build.yml": "613c04f3da88b9ee46250ace4462b19447e4801dd00cb05b1a14de19597ddc6c"
+    ".github/workflows/windows-build.yml": "f3b1a108534ae8829ae5c50ddf05415c5421048bd8b5068203506914b6431e8b",
+    "Build-e-Gioca.ps1": "d0a512c786cde4634830a2006dc56bfac2a1829a4d276390d6dcfce82fb4e2b7",
+    "tools/build_msys2.sh": "598d1340c2ecef829daf5c0a6a6f4ee761eac325cd625015fd4a51827d78a507"
   }
 }
