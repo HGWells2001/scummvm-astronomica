@@ -1,0 +1,53 @@
+name: Astronomica Windows experimental build
+on:
+  push:
+    branches:
+      - fix/english-archive-playability
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mingw64:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            git make
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-SDL2
+            mingw-w64-x86_64-pkgconf
+            mingw-w64-x86_64-python
+            mingw-w64-x86_64-zlib
+            mingw-w64-x86_64-libpng
+      - name: Install pinned ScummVM and engine
+        shell: msys2 {0}
+        run: |
+          python tools/verify_export.py
+          python tools/prepare_scummvm.py
+      - name: Compile experimental Astronomica engine
+        shell: msys2 {0}
+        run: |
+          cd work/fresh-20260913/scummvm
+          ./configure --disable-all-engines --enable-engine=astronomica
+          make -j2
+          ./scummvm.exe --list-engines | grep -i astronomica
+      - name: Package experimental Windows player (without copyrighted data)
+        shell: msys2 {0}
+        run: |
+          mkdir -p dist/outputs/astronomica-cleanroom dist/tools
+          cp work/fresh-20260913/scummvm/scummvm.exe dist/
+          cp /mingw64/bin/SDL2.dll dist/
+          cp /mingw64/bin/libgcc_s_seh-1.dll /mingw64/bin/libstdc++-6.dll /mingw64/bin/libwinpthread-1.dll dist/
+          cp Avvia-Astronomica.cmd GIOCA-ASTRONOMICA.md dist/
+          cp outputs/astronomica-cleanroom/astronomica-play.ini dist/outputs/astronomica-cleanroom/
+          cp tools/game_archive.py dist/tools/
+          printf '@echo off\r\nset "ASTRO_SCUMMVM=%%~dp0scummvm.exe"\r\ncall "%%~dp0Avvia-Astronomica.cmd"\r\n' > dist/GIOCA.cmd
+      - uses: actions/upload-artifact@v4
+        with:
+          name: astronomica-windows-x64-experimental
+          path: dist/
+          retention-days: 14
