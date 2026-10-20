@@ -712,6 +712,6 @@
     "tests/test_game_archive.py": "ba60a87c13ff337799558d1d0e2718ea77e179b23e8965feada406f31dbf6e34",
     "GIOCA-ASTRONOMICA.md": "ddbc556efa2cff216f401b55b41419c83e7c82085b4b6f4cec9a81f2927fa0a3",
     ".github/workflows/source-smoke.yml": "22cd92d77f864bb492f3ce45c4bd0776d8d0c89513f5b55ea02b52442f16a3ad",
-    ".github/workflows/windows-build.yml": "92df0a1f5d1b6d62d47e5da274a2f2b2fcbc6e62da28ffd5a4dd4e70b59dc546"
+    ".github/workflows/windows-build.yml": "613c04f3da88b9ee46250ace4462b19447e4801dd00cb05b1a14de19597ddc6c"
   }
 }
