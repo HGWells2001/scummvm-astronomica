@@ -5,7 +5,12 @@
 #include "common/util.h"
 namespace Astronomica {
 enum DangerOp { kDangerRange, kDangerCallback, kDangerShow, kDangerHide, kDangerHideAll, kDangerPlay, kDangerStop, kDangerSuccess };
-struct DangerAction { DangerOp op; int a = 0, b = 0, c = 0; };
+struct DangerAction {
+ DangerOp op;
+ int a, b, c;
+ DangerAction(DangerOp operation = kDangerRange, int first = 0, int second = 0, int third = 0)
+  : op(operation), a(first), b(second), c(third) {}
+};
 struct DangerStep { Common::Array<DangerAction> actions; int destination = 0; };
 // Original segment4 _qt_callme call sequences; see p523-callbacks.json.
 inline DangerStep dangerCallback(int event, const int channels[3], int buttons, bool solved) {
