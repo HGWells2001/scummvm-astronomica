@@ -54,7 +54,14 @@ public:
  struct SuccessHandler { virtual ~SuccessHandler() {} virtual uint32 onPuzzleSuccess(uint32 now) = 0; };
  static int successGlobalForPlace(int place);
  void setSuccessHandler(SuccessHandler *handler, int place) { _successHandler = handler; _successGlobal = successGlobalForPlace(place); _successExtraGlobal = place == 529 ? 60 : -1; }
- struct Action { int32 opcode, value, x, y; Common::String text; int32 motion[3] = {}; };
+ struct Action {
+  int32 opcode, value, x, y;
+  Common::String text;
+  int32 motion[3];
+  Action(int32 op = 0, int32 val = 0, int32 px = 0, int32 py = 0,
+         const Common::String &message = Common::String())
+   : opcode(op), value(val), x(px), y(py), text(message), motion{0, 0, 0} {}
+ };
  ScriptRunner() : _lastTrue(false), _clicksBlocked(false), _executed(0), _randomState(1) { memset(_widths, 0, sizeof(_widths)); memset(_known, 0, sizeof(_known)); memset(_values, 0, sizeof(_values)); }
  void loadLocalConditions(const Common::Array<Condition> &conditions);
  void resetGlobals();
