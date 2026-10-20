@@ -6,6 +6,9 @@ static const PlainGameDescriptor games[] = {
 };
 static const ADGameDescription descriptions[] = {
  {"astronomica", "Experimental", AD_ENTRY2s("GAMEDATA", "84099c2580e5c71beec97ca3e52a5967", 1604, "ASTRO.EXE", "14929fa8e52d7e3bc539244413703ecb", 418376), Common::EN_ANY, Common::kPlatformWindows, ADGF_UNSTABLE, GUIO0()},
+ // The English CD archive stores the same 418376-byte executable as SETUP/ASTROeng.EXE.
+ // ScummVM's default executable signature is the MD5 of the first 5000 bytes.
+ {"astronomica", "English CD", AD_ENTRY2s("GAMEDATA", "84099c2580e5c71beec97ca3e52a5967", 1604, "ASTROeng.EXE", "14929fa8e52d7e3bc539244413703ecb", 418376), Common::EN_ANY, Common::kPlatformWindows, ADGF_UNSTABLE, GUIO0()},
  AD_TABLE_END_MARKER
 };
 static const char *const globs[] = {"PLACES", "SETUP", nullptr};
