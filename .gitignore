@@ -31,3 +31,6 @@ GAMESTAT
 *.sav
 !outputs/astronomica-cleanroom/astronomica-play.ini
 userdata/
+
+# Locally extracted copyrighted original Astronomica game files
+game_data/
