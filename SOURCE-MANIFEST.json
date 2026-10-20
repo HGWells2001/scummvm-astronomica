@@ -3,9 +3,9 @@
   "scope": "Authored source/research export; no game media or toolchain binaries",
   "sha256": {
     ".gitattributes": "d4f79c642ac1350f115099af37e0387492ba5c701458dc103641fb5cc3724af3",
-    ".gitignore": "68cb1d6941cd0abb20f19bd23ff8096299f7b6d2fee4cf5d4dbf18c6bbcfbaaf",
+    ".gitignore": "9b9c5f85c4332e1d94a8593ff69de5a1620695d8da8bda02be54f95301e7646a",
     "AI_MODEL_CHECKPOINT.md": "eca15241f906e590e50279335ca621c76fdaa130ce7a2fbbe946fff5a41cf603",
-    "Avvia-Astronomica.cmd": "63b74cbba2e79a1c51f4721b17d16fd4fdb3b8fc8fe7c47472a3234af901781d",
+    "Avvia-Astronomica.cmd": "8e6b884b40aaab43846134d07d09a6bcd7a64b41188124895390590a18a8794b",
     "BUILDING.md": "c74ec9acf8a7c582e41bed78be6df7e5eaa164b0f9e8cfa4e67b73c33086c3ef",
     "COPYING": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
     "EXPORT-NOTES.json": "ceb06aa28502854ccf6877b9a136f09e1d654b11351ec8894d15c40ff7d5baae",
@@ -30,7 +30,7 @@
     "outputs/astronomica-cleanroom/engine/astronomica/configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "outputs/astronomica-cleanroom/engine/astronomica/countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
     "outputs/astronomica-cleanroom/engine/astronomica/danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
-    "outputs/astronomica-cleanroom/engine/astronomica/detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "outputs/astronomica-cleanroom/engine/astronomica/detection.cpp": "6541d334462b23e34369c38bdfd5151712cb848b5d9a989822f0bc0ac9a8ccd1",
     "outputs/astronomica-cleanroom/engine/astronomica/gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
     "outputs/astronomica-cleanroom/engine/astronomica/help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
     "outputs/astronomica-cleanroom/engine/astronomica/help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
@@ -455,7 +455,7 @@
     "outputs/astronomica-cleanroom/verify_success_reference.py": "87c4c0f999eaeace1af85c852b4d501cab45ec91e6c0bedd8e12bf594b6f5c70",
     "outputs/astronomica-cleanroom/verify_variant_reference.py": "0b7a8d9a258ca643734a80ffaf8bf6e7e9d68a1c5340f5e712caabfea7894a72",
     "README.md": "aee93a8ca32dce831884e8b64249a4a04888078c4f8a7d960126edca2bb9be46",
-    "SCUMMVM_BASE.json": "98af930e519adc109fc580665ce8b229798786c112baeef17f79597772c13e64",
+    "SCUMMVM_BASE.json": "36dcbda241f639dd43722be6f1b5cb2361e01ee9c5fa4570903e911eac0aca86",
     "tools/install_engine.py": "69ce286044e4f919737aa31bd2cb0fbb5307828054f454278fb46cca4e860e7e",
     "tools/prepare_scummvm.py": "1f297a40239632cafd913046feaaad3aa238b8c218f31686d3e0bda2ac15c566",
     "tools/verify_export.py": "100390d908826a58788eae9b4901e6b478b78f39d42d471a978c8593f4a97833",
@@ -707,6 +707,10 @@
     "work/fresh-20260913/update_github_export.py": "cb633fa0216fb205514d8ae870ee2ab88a65268fd3af0fb3f80df4003a55a4a6",
     "work/fresh-20260913/verify_corpus.py": "02060fbb8be18304e90426ca2d17c502d7001df266ec9475a8f757224dcdd7f5",
     "work/fresh-20260913/verify_development_evidence.py": "688cf38fbb1755ce7589d8413e2e1ee274b1ff8d88350182ce71dc8be5294cfe",
-    "work/fresh-20260913/verify_help_images_setup.py": "9e02c24893ac070f8c79e9ae851df24e1d2d3d0b0eb60ec9eb76cd2c4d2bff4e"
+    "work/fresh-20260913/verify_help_images_setup.py": "9e02c24893ac070f8c79e9ae851df24e1d2d3d0b0eb60ec9eb76cd2c4d2bff4e",
+    "tools/game_archive.py": "87e63f82f63f62b6a8d06600761abe1d5543e58a81bb1997d544fa2bbae34a58",
+    "tests/test_game_archive.py": "ba60a87c13ff337799558d1d0e2718ea77e179b23e8965feada406f31dbf6e34",
+    "GIOCA-ASTRONOMICA.md": "5e46e108968191cefb8a9b9f175c5dbb1db6db8188e5fe36a3e908ee5faf88f9",
+    ".github/workflows/source-smoke.yml": "22cd92d77f864bb492f3ce45c4bd0776d8d0c89513f5b55ea02b52442f16a3ad"
   }
 }
