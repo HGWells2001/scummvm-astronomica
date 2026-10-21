@@ -32,8 +32,14 @@ class TestGameArchive(unittest.TestCase):
 
     def test_backslashes_refused(self):
         with archive_with(('PLACES\\P1\\MEGAFILE.HYP', b'bad')) as archive:
-            with self.assertRaisesRegex(ValueError, 'Unsafe'):
-                _archive_entries(archive)
+            # zipfile normalizes backslashes while creating ZipInfo on Windows.
+            if '\\' in archive.namelist()[0]:
+                with self.assertRaisesRegex(ValueError, 'Unsafe'):
+                    _archive_entries(archive)
+            else:
+                self.assertEqual(archive.namelist()[0], 'PLACES/P1/MEGAFILE.HYP')
+                files, _ = _archive_entries(archive)
+                self.assertIn('places/p1/megafile.hyp', files)
 
     def test_case_insensitive_collision_refused(self):
         with archive_with(('PLACES/GAMEDATA', b'a'), ('places/gamedata', b'b')) as archive:
