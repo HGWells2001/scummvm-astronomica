@@ -1536,10 +1536,10 @@ void AstronomicaEngine::dangerCustom(int operation, int mode) {
  }
  if (operation == 5) {
   DangerStep step;
-  step.actions.push_back({kDangerRange,0,602});
-  step.actions.push_back({kDangerCallback,0,1,600}); step.actions.push_back({kDangerCallback,1,13,510});
-  for (int id : {5,6,1}) step.actions.push_back({kDangerHide,id});
-  for (int id : {7,11,18}) step.actions.push_back({kDangerShow,id});
+  step.actions.push_back(DangerAction{kDangerRange,0,602});
+  step.actions.push_back(DangerAction{kDangerCallback,0,1,600}); step.actions.push_back(DangerAction{kDangerCallback,1,13,510});
+  for (int id : {5,6,1}) step.actions.push_back(DangerAction{kDangerHide,id});
+  for (int id : {7,11,18}) step.actions.push_back(DangerAction{kDangerShow,id});
   applyDangerStep(step);
  }
 }
