@@ -6,6 +6,7 @@
 #include "common/ptr.h"
 #include "common/stream.h"
 #include "common/textconsole.h"
+#include "common/util.h"
 #include "graphics/cursorman.h"
 #include "graphics/wincursor.h"
 
