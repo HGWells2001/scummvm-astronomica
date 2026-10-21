@@ -32,3 +32,39 @@ Then run GIOCA.cmd from the preview, or Avvia-Astronomica.cmd from a source chec
 4. Preserve reproducible scene/transition logs and explicit failures with saved evidence. The historical 114/121 accepted entry-script templates is not a gameplay completion percentage.
 
 No complete real interactive playthrough is claimed. Original copyrighted game media and personal saves remain outside GitHub. Avoid rerunning historical finalizer scripts from main.
+
+## Development checkpoint: native regression harness and normal-play protections
+
+The ScummVM engine now gates developer-only scene skipping (PageUp/PageDown)
+and demonstration keys (V/M/R/C/F) behind
+`astronomica_debug_controls=true`. The default is off. Original on-screen
+click interactions and normal F5 menu / Escape / arrow navigation are unchanged.
+
+The Windows preview now includes `VERIFICA.cmd` and
+`tools/verify_gameplay.py`. With your own original English game assets in
+`game_data`, double-click `VERIFICA.cmd` to execute five independent
+native-core regressions, including story transitions and endings. This uses a
+new per-run `astronomica-diagnostics-YYYYMMDD-HHMMSS` directory with separate
+configuration, log and save areas. Personal `userdata/astronomica` is never
+selected by the test runner.
+
+For more coverage, run:
+
+    py -3 tools/verify_gameplay.py --exe scummvm.exe --game-dir game_data --suite saves
+    py -3 tools/verify_gameplay.py --exe scummvm.exe --game-dir game_data --suite av
+    py -3 tools/verify_gameplay.py --exe scummvm.exe --game-dir game_data --suite all
+
+The script requires both a zero process exit and a matching PASS marker from
+each native test. It stops at the first failure or timeout, retains diagnostic
+logs in its private test directory and emits summary.json. No logs, save
+files, screenshots or original assets are uploaded automatically. Do not
+publish the entire generated diagnostic directory: some native tests can
+create image dumps containing original artwork. The operator may share
+summary.json and sanitized text logs for bug reproduction.
+
+These checks are **not** a substitute for a real full playthrough. In
+particular, test-only scene injection does not prove that a player can
+naturally reach every puzzle or cross every story gate. The next phase is
+manual P1-to-credits acceptance with failures recorded scene by scene, followed
+by implementation of observed blockers. Never infer a global game-completion
+percentage from static template acceptance.
