@@ -1,5 +1,5 @@
 MODULE := engines/astronomica
-MODULE_OBJS := astronomica.o help.o resource.o script.o conditions_test.o sprites.o metaengine.o
+MODULE_OBJS := astronomica.o help.o resource.o script.o conditions_test.o sprites.o original_cursors.o metaengine.o
 ifeq ($(ENABLE_ASTRONOMICA), DYNAMIC_PLUGIN)
 PLUGIN := 1
 endif
