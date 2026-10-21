@@ -9044,6 +9044,8 @@ Common::Error AstronomicaEngine::run() {
   quitGame();
   return scriptsOK && loaded == 420 && bitmaps == 3625 && commands == 10316 && tails == 4 ? Common::kNoError : Common::Error(Common::kReadingFailed, "Resource or script verification failed");
  }
+ // Developer-only scene jumping and puzzle controls must never affect a normal playthrough.
+ const bool developerControls = ConfMan.hasKey("astronomica_debug_controls") && ConfMan.getBool("astronomica_debug_controls");
  while (!shouldQuit()) {
   Common::Event event;
   while (_eventMan->pollEvent(event)) {
@@ -9054,16 +9056,16 @@ Common::Error AstronomicaEngine::run() {
    switch (event.kbd.keycode) {
    case Common::KEYCODE_F5: openMainMenuDialog(); break;
    case Common::KEYCODE_ESCAPE: quitGame(); break;
-   case Common::KEYCODE_v: if (_place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
+   case Common::KEYCODE_v: if (developerControls && _place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
    case Common::KEYCODE_m:
-    if (_place == 517 && _scene.sprites.size() >= 7) demoMovement(_scene.sprites[6].x == 447 ? 477 : 447);
-    else if (_place == 510) demoOffset();
+    if (developerControls && _place == 517 && _scene.sprites.size() >= 7) demoMovement(_scene.sprites[6].x == 447 ? 477 : 447);
+    else if (developerControls && _place == 510) demoOffset();
     break;
-   case Common::KEYCODE_r: if (_place == 510) changePlace(510); break;
-   case Common::KEYCODE_c: if (_place == 510) demoOffset(9); break;
-   case Common::KEYCODE_f: if (_place == 510 && _scene.sprites.size() >= 10) demoFrame(_scene.sprites[9].selectedFrame == 1 ? 0 : 1); break;
-   case Common::KEYCODE_PAGEDOWN: stepPlace(1); break;
-   case Common::KEYCODE_PAGEUP: stepPlace(-1); break;
+   case Common::KEYCODE_r: if (developerControls && _place == 510) changePlace(510); break;
+   case Common::KEYCODE_c: if (developerControls && _place == 510) demoOffset(9); break;
+   case Common::KEYCODE_f: if (developerControls && _place == 510 && _scene.sprites.size() >= 10) demoFrame(_scene.sprites[9].selectedFrame == 1 ? 0 : 1); break;
+   case Common::KEYCODE_PAGEDOWN: if (developerControls) stepPlace(1); break;
+   case Common::KEYCODE_PAGEUP: if (developerControls) stepPlace(-1); break;
    case Common::KEYCODE_LEFT: if (_nav[0] > 0) changePlace(_nav[0]); break;
    case Common::KEYCODE_UP: if (_nav[1] > 0) changePlace(_nav[1]); break;
    case Common::KEYCODE_RIGHT: if (_nav[2] > 0) changePlace(_nav[2]); break;
