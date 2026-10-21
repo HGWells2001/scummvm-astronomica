@@ -64,3 +64,37 @@ Ambient music restarts according to the older formats' existing convention.
 Malformed payload rejection is tested against complete state/surface fingerprints
 and frozen-clock offsets. Host-side file changes between preflight and scene
 load remain outside that guarantee. Native WASAPI and official integration pass with the full same-build suite. Natural real-time final-frame save boundaries and broader manual gameplay remain unverified.
+
+
+## Segment and retained-image invariants
+
+The original script intervals are in30Hz ticks; readouts below are the three
+digit sprites. End values are the engine's actual start-plus-length boundary.
+
+| Selectors | Last attempted start/end | Historical mask flag value | Readout | Eligible retained samples from this group |
+|---|---|---|---|---|
+| 13–15 | 0/359 | 2 | 002 | 0–79 |
+| 9–12 | 360/719 | 1 | 005 | 80–159 |
+| 6–8 | 720/946 | 8 | 015 | 160–213 |
+| 1–5 | 1029/1261 | 4 | 005 | 215–252 |
+
+Before any attempt, the segment pair is0/0 and the readout000. Do not infer
+movie identity from the readout:005 belongs to two different groups. Likewise,
+the current selector does not identify either the last attempt or last picture.
+The last attempted group validates the readout and its mask bit; a retained
+picture independently validates its own group's bit. An absent picture is valid
+after an attempt when the first movie update arrived after the segment ended.
+Header0/359 therefore remains distinct from0/0 even when both have no picture.
+
+The variable-duration samples hold frame79 from tick237, frame159 from597,
+frame213 from879 and frame252 from1140. Sample214 begins at948 and ends at1029,
+outside the requested movie segments; it cannot be a settled retained picture.
+End checks run before decoding, so a delayed update can leave an earlier picture
+unchanged. A decoder seek-to-end can also change its cursor without presenting
+any new pixels. Only the successful surface-copy commit updates the saved sample.
+
+The253-sample comparison validates native frame reconstruction across the full
+asset; ordinary round trips and the two explicit zero-frame histories validate
+how that image state combines with script and control history. Most test routes
+skip movies after a real presentation and do not establish natural final-frame
+save timing for every real-time playback history.

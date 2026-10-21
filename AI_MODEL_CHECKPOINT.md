@@ -12,3 +12,6 @@ Prossimo studio:P522-SAVE-PLAN.md/P522-NATIVE-AUDIT.md eprobe_p522_save.py;18spr
 Diciannove scene con salvataggi verificati non sono una percentuale globale. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Avvio:Avvia-Astronomica.cmd;userdata/astronomica intatti.
 
 Vincoli:originali D:/astro,solo cleanroom dal13settembre2026,niente tentativi esclusi o prototipi. Modello invariato. Controllare entrambe le quote e fermarsi vicino1%limitante;nessun acquisto/riscatto reset.
+
+
+Stop richiesto dall'utente per stasera,21 ottobre2026. Lavoro verificato e salvato; nessun processo di sviluppo/verifica attivo. Automazione riprendi-astronomica-dopo-reset-quota gia PAUSED: non riprendere automaticamente. Prossima ripresa solo su nuova richiesta dell'utente, seguendo questo checkpoint v15 e lo studio P522.
