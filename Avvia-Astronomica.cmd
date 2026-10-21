@@ -31,11 +31,13 @@ if not exist "%ASTRO_USER%\saves\" mkdir "%ASTRO_USER%\saves"
 if not exist "%ASTRO_USER%\saves\" exit /b 1
 if not exist "%ASTRO_USER%\astronomica.ini" copy /y "%ASTRO_ROOT%outputs\astronomica-cleanroom\astronomica-play.ini" "%ASTRO_USER%\astronomica.ini" >nul
 if not exist "%ASTRO_USER%\astronomica.ini" exit /b 1
+set "ASTRO_TRACE_ARGS="
+if /i "%ASTRO_TRACE%"=="1" set "ASTRO_TRACE_ARGS=--debuglevel=1"
 pushd "%ASTRO_ROOT%"
 if exist "%ASTRO_ROOT%work\fresh-20260913\fonts\" (
- "%ASTRO_EXE%" --config="%ASTRO_USER%\astronomica.ini" --savepath="%ASTRO_USER%\saves" --logfile="%ASTRO_USER%\astronomica.log" --path="%ASTRO_DATA%" --extrapath="%ASTRO_ROOT%work\fresh-20260913\fonts" astronomica
+ "%ASTRO_EXE%" %ASTRO_TRACE_ARGS% --config="%ASTRO_USER%\astronomica.ini" --savepath="%ASTRO_USER%\saves" --logfile="%ASTRO_USER%\astronomica.log" --path="%ASTRO_DATA%" --extrapath="%ASTRO_ROOT%work\fresh-20260913\fonts" astronomica
 ) else (
- "%ASTRO_EXE%" --config="%ASTRO_USER%\astronomica.ini" --savepath="%ASTRO_USER%\saves" --logfile="%ASTRO_USER%\astronomica.log" --path="%ASTRO_DATA%" astronomica
+ "%ASTRO_EXE%" %ASTRO_TRACE_ARGS% --config="%ASTRO_USER%\astronomica.ini" --savepath="%ASTRO_USER%\saves" --logfile="%ASTRO_USER%\astronomica.log" --path="%ASTRO_DATA%" astronomica
 )
 set "ASTRO_RESULT=%ERRORLEVEL%"
 popd
