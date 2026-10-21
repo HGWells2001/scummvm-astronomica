@@ -18,6 +18,9 @@ EXPECTED_SCENES = 421
 MUST_HAVE = set(range(501, 538)) | {0, 1, 423, 424, 425, 426, 427, 428, 429, 432, 433, 435, 436, 437}
 SCENE_RE = re.compile(r"^PLACES/P([0-9]+)/MEGAFILE\.HYP$", re.I)
 TAIL_RE = re.compile(r"^trailing ([0-9]+) bytes at 0x([0-9a-f]+)$")
+# The original English disc contains a 24-byte navigation stub at P406.
+# It is not a fully serialized scene. Only this exact SHA-256 is exempt.
+KNOWN_STUBS = {406: ("fcd48d6c1f370a53f62870fb81f0532aeacb5dded8d5a81342538883b5f87cd8", 24)}
 
 
 def index_scenes(names):
@@ -92,9 +95,17 @@ def audit_archive(archive_path, deep=True):
             errors = []
             destinations = {}
             tail_count = 0
+            recognized_stubs = []
             modes = {}
             for scene_id, name in sorted(scenes.items()):
                 try:
+                    if scene_id in KNOWN_STUBS:
+                        data = archive.read(name)
+                        digest, expected_bytes = KNOWN_STUBS[scene_id]
+                        if len(data) == expected_bytes and hashlib.sha256(data).hexdigest() == digest:
+                            recognized_stubs.append(scene_id)
+                            continue
+                        raise ValueError("Known navigation stub checksum mismatch")
                     parsed, trailing = decode_scene(reader, archive.read(name))
                     tail_count += bool(trailing)
                     modes[str(scene_id)] = parsed["mode"]
@@ -106,7 +117,8 @@ def audit_archive(archive_path, deep=True):
                     errors.append({"scene": scene_id, "error": str(exc)[:300]})
             missing_jumps = sorted({dest for values in destinations.values() for dest in values if dest >= 0 and dest not in scenes})
             results.update(
-                parsed_scenes=len(scenes) - len(errors),
+                parsed_scenes=len(scenes) - len(errors) - len(recognized_stubs),
+                recognized_original_stubs=recognized_stubs,
                 scene_parse_errors=errors,
                 scenes_with_trailing_data=tail_count,
                 direct_scene_transitions=sum(len(v) for v in destinations.values()),
