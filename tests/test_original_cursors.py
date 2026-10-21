@@ -18,8 +18,9 @@ class OriginalCursorIntegrationTests(unittest.TestCase):
         cls.module=(ENGINE/"module.mk").read_text(encoding="utf-8")
 
     def test_cursors_are_taken_from_original_english_exe(self):
-        self.assertIn('"SETUP/ASTROeng.EXE"',self.c)
+        self.assertNotIn('ASTROeng.EXE',self.c)
         self.assertIn('"SETUP/ASTRO.EXE"',self.c)
+        self.assertIn('"ASTRO.EXE"',self.c)
         self.assertIn('Common::WinResources::createFromEXE',self.c)
         self.assertIn('Common::kWinGroupCursor',self.c)
         self.assertIn('Common::kWinCursor',self.c)
