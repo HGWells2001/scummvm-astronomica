@@ -728,7 +728,7 @@
     "tests/test_game_archive.py": "aca616c21fdd22f12b0a6e5d4f9d44e9f188cd864d5a83a0e74869bafd4c0a80",
     "tools/completion_audit.py": "a4fa518c2021878ffffca738714223dbbe64dc42f6f430634f6a205ca1c39482",
     "tests/test_completion_audit.py": "afa8fc1c75cac32ae9800d361c7a0f1c7c509403728fd4d4428f9ff0d71c70b8",
-    ".github/workflows/v14-windows.yml": "bd6e1c42d59b79b8fadfe6f4889b40297deef1f959464883f8ee66f590ba101c",
+    ".github/workflows/v14-windows.yml": "264fe8cfdf2efdd2b81056b4f4015cb0f7856a87ae30f6adb59b1faa93ab83e8",
     "V14-COMPLETION-CHECKPOINT.md": "244caaf3b530c6ac1ab311b4025393dcc30e1062cf88bc9f951c107d4ce59cc8",
     "tools/verify_gameplay.py": "816c9346f980de778e4cffa4d1ad88fe960e7d47a5a85a39cf1af3c1bf07ae5f",
     "tests/test_verify_gameplay.py": "a38614b4cf55d220ee3db9425618226052a4cfa9da541e9113a57aef43d60d40",
