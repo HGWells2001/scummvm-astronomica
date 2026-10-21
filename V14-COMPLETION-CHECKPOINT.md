@@ -68,3 +68,27 @@ naturally reach every puzzle or cross every story gate. The next phase is
 manual P1-to-credits acceptance with failures recorded scene by scene, followed
 by implementation of observed blockers. Never infer a global game-completion
 percentage from static template acceptance.
+
+
+## Optional real-play route tracing
+
+To identify the *first actual* blocker during an ordinary playthrough, edit
+`userdata/astronomica/astronomica.ini` inside the **player's own extracted
+directory** and add under `[astronomica]`:
+
+    astronomica_trace_route=true
+
+Launch `Avvia-Astronomica.cmd` with `ASTRO_TRACE=1` set in the environment,
+for example from PowerShell:
+
+    $env:ASTRO_TRACE = "1"
+    .\Avvia-Astronomica.cmd
+
+The diagnostic log is `userdata/astronomica/astronomica.log`. Opt-in trace
+lines identify startup scene, click coordinates, blocked input, requested
+transitions, transitions denied or redirected by original game gates, and
+actual loaded destinations. There is **no forced jump** or developer
+shortcut in this mode. Keep personal save files private; share sanitized log
+lines from the first failure. Turn tracing off by removing the INI key
+or setting it to false. (The `ASTRO_TRACE` environment variable alone
+only raises debug logging and does not enable route instrumentation.)
