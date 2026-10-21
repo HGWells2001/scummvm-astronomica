@@ -43,10 +43,10 @@ jobs:
         run: |
           mkdir -p dist/outputs/astronomica-cleanroom dist/tools
           cp work/fresh-20260913/scummvm/scummvm.exe dist/
-          cp Avvia-Astronomica.cmd dist/
+          cp Avvia-Astronomica.cmd VERIFICA.cmd dist/
           cp outputs/astronomica-cleanroom/astronomica-play.ini dist/outputs/astronomica-cleanroom/
           cp outputs/astronomica-cleanroom/astro_reader.py outputs/astronomica-cleanroom/opcode-layout.json dist/outputs/astronomica-cleanroom/
-          cp tools/game_archive.py tools/completion_audit.py dist/tools/
+          cp tools/game_archive.py tools/completion_audit.py tools/verify_gameplay.py dist/tools/
           printf '@echo off\r\nset "ASTRO_SCUMMVM=%%~dp0scummvm.exe"\r\ncall "%%~dp0Avvia-Astronomica.cmd"\r\n' > dist/GIOCA.cmd
           python - <<'PY'
           from pathlib import Path
