@@ -1,3 +1,51 @@
+# Ripresa: salvataggi universo P529,21 ottobre2026
+
+Formato v15:3684 byte,188 ripristini/successori,121 confini con immagini/cifre precedenti,149 con custom17 sospeso PASS.
+Tutti16 selector,quattro gruppi,primo/ripetuto successo,uscita e slot14 in nuovo processo PASS. Immagine realmente presentata indipendente dal cursore decoder e dall'ultimo segmento tentato; verificati anche primo filmato senza fotogramma e immagine residua di gruppo precedente.
+Audit indipendente253 fotogrammi originali e137 confini; fine voce naturale,Music restart,stati ordinari round0 e rifiuto atomico esteso PASS. Compatibilita v1-v14,suite completa WASAPI e avvio normale PASS sullo stesso eseguibile.
+Checkpoint:finish_universe_saves.py;check_universe_saves.py/check_universe_regressions.py/check_universe_boundaries.py/P529-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Prossimo studio:P522-SAVE-PLAN.md/P522-NATIVE-AUDIT.md eprobe_p522_save.py;18sprite,2locali,poll200ms eanimazioni attive;126osservazioni diagnostiche conservate. Serve contrattoesplicito del lavoro ricorrente;nessunsupportoP522salvataggi giaimplementato.
+Diciannove scene con salvataggi verificati non sono una percentuale globale. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Avvio:Avvia-Astronomica.cmd;userdata/astronomica intatti.
+
+# Ripresa: salvataggi razzo P537,21 ottobre2026
+
+Formato v14:7680byte,577 ripristini/successori,385 confini con display precedente,385 con custom17 sospeso PASS. Tutti16 selector,limiti,rilanciozero,uscita/help,primo/ripetuto successo verificati.
+Slot13 in nuovo processo:precedente fallimento veloce,selector11,round2 sospeso e successo contato una volta PASS. Delta/since del moto fermo e cometa conservati. Audit nativo indipendente402confini. Compatibilita v1-v13 e suite completa WASAPI/avvio normale PASS sullo stesso eseguibile.
+Checkpoint:finish_rocket_saves.py;check_rocket_saves.py/check_rocket_regressions.py/check_rocket_boundaries.py/P537-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Diciotto scene con salvataggi verificati non sono una percentuale globale. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Avvio:Avvia-Astronomica.cmd;userdata/astronomica intatti.
+
+# Ripresa: salvataggi costruttore,20 ottobre2026
+
+Formato v13:8960 byte,613 ripristini/successori,420 casi controlli,sei percorsi e cinque progetti PASS. P515/P536 conservano anche round/mask custom17 sospesi.
+Slot12 in nuovo processo da P536 parziale con round2 sospeso PASS; primo/ripetuto conteggio,Launch anticipato,P515 no-op,cap/ripristino e stati senza immagine PASS. Compatibilita v1-v12 e suite completa WASAPI PASS sullo stesso eseguibile.
+P537:corretti gli ID delle cifre finali e21 periodi fermi;96 fixture/14592 passi originali e12096 pixel di quattro schermate PASS. P537 non ha ancora salvataggi.
+Checkpoint:finish_builder_saves.py;check_builder_saves.py,check_builder_regressions.py,BUILDER-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Diciassette scene con salvataggi non sono una percentuale globale.
+
+# Ripresa: salvataggi P517,19 ottobre2026
+
+Formato v12:2278 ripristini/successori,14 posizioni,2240 casi animazione PASS. Conserva fasi attive/ferme, timer,immagine,indicatore e cursore grafico.
+Slot11 in nuovo processo dalla posizione12 PASS; primo/ripetuto successo,limite minimo e uscita volontaria PASS. Compatibilita v1-v11,vecchi slot v3-v11 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint:finish_p517_saves.py;check_p517_saves.py,check_p517_regressions.py e P517-SAVE-FORMAT.md. Non rieseguire finalizzatori precedenti da soli.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Quindici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi P513,19 ottobre2026
+
+Formato v11: 728 ripristini/successori, cinque percorsi,14 scenari e nove risultati fotone PASS. Conserva fotone fermo nascosto, vecchie cifre, immagine cubo, RNG e conteggio silenzioso originale.
+Slot10 in nuovo processo dopo due risposte corrette PASS; limiti, dieci errori, primo/ripetuto successo e uscita volontaria PASS. Compatibilita v1-v10, vecchi slot v3-v10 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p513_saves.py; check_p513_saves.py, check_p513_regressions.py e P513-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio: Avvia-Astronomica.cmd; preferenze e salvataggi personali in userdata/astronomica. Prossimo: altri salvataggi, verifica audiovisiva manuale integrale e tipografia aiuto. Quattordici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi della sequenza P506,19 ottobre2026
+
+Formato v10 per P506/P531/P532/P533/P534/P535: 1222 ripristini/successori, 15 percorsi, sei scene in ciascuna fase0..3 PASS.
+Conserva soluzioni parziali, RNG e statica originale round/mask anche dopo uscita/rientro. Slot9 in nuovo processo e contatori primo/ripetuto completamento PASS.
+Corretto il rifiuto dei salvataggi P524/P526/P528/P530 dopo altri enigmi: quattro ingressi originali da P509,12 estremi inattivi e8 rifiuti di metadati incoerenti PASS; layout v6-v9 invariati.
+Compatibilita v1-v9, vecchi slot v3-v9, avvio P1 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_variant_saves.py; check_variant_saves.py, check_variant_regressions.py e VARIANT-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio locale: Avvia-Astronomica.cmd nella radice; configurazione/salvataggi personali in userdata/astronomica, separati dalle prove.
+Prossimo: altri puzzle dall'inventario; restano verifica audiovisiva manuale integrale e tipografia aiuto. Tredici scene con salvataggi non misurano il completamento globale.
+
 # Ripresa: salvataggi razzo P537,21 ottobre2026
 
 Formato v14:7680byte,577 ripristini/successori,385 confini con display precedente,385 con custom17 sospeso PASS. Tutti16 selector,limiti,rilanciozero,uscita/help,primo/ripetuto successo verificati.

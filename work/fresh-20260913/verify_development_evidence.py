@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==18
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,515,517,519,524,526,528,530,531,532,533,534,535,536,537}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==19
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
@@ -362,3 +362,49 @@ audit=json.loads((root/'evidence/rocket-boundaries.json').read_text());assert au
 assert all(len(row['sprites'])==48 for row in audit['rows']) and {row['selector'] for row in audit['rows']}==set(range(16))
 assert audit['source_sha256']==digest(Path('D:/astro/PLACES/P537/MEGAFILE.HYP'))
 print('P537 v14 settled rocket saves and independent boundary evidence integrity PASS')
+
+# Universe proof must identify this exact real engine and independently decoded movie.
+v=json.loads((root/'evidence/universe-saves-validation.json').read_text());proof=json.loads((root/'evidence/universe-save-proof.json').read_text())
+assert v['status']=='PASS' and v['exe_sha256']==proof['exe_sha256']==m['exe_sha256'] and v['full_suite']
+assert (v['format_version'],v['payload_bytes'],v['scene'])==(15,3684,529)
+assert proof['status']=='PASS' and proof['metadata_listed'] and proof['slot']==14 and not proof['diagnostic'] and proof['audio_driver']=='native' and proof['actual_audio_driver']=='wasapi'
+assert proof['ordinary_boundaries']>0 and proof['natural_voice_ends']>0 and proof['zero_frame_first_absent'] and proof['zero_frame_prior_residual'] and proof['extended_atomic_state'] and proof['music_restart']
+assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint'] and proof['boundaries']==v['boundaries'] and v['boundaries']>100
+assert proof['history_boundaries']>50 and proof['dormant_boundaries']>100 and proof['busy_rejections']>0
+assert proof['truncations']==proof['corruptions']==3684 and proof['invalid_states']>=25 and proof['variant_fixture_unchanged']
+for name,marker in [('universe-saves-runtime.log','universe saves: PASS ('),('universe-saves-startup.log','universe startup save: PASS'),('rocket-previous-slot.log','rocket startup save: PASS')]:
+ text=(root/'evidence'/name).read_text();assert marker in text and 'FAIL' not in text and 'Log closed successfully' in text
+text=(root/'evidence/universe-saves-runtime.log').read_text()
+for marker in ('universe natural voice end: PASS','universe Music restart: PASS','universe extra guards: PASS','universe zero-frame history: PASS'):assert marker in text
+previous=json.loads((root/'evidence/rocket-previous-slot-proof.json').read_text())
+assert previous['status']=='PASS' and previous['unchanged'] and previous['exe_sha256']==m['exe_sha256']
+assert previous['producing_exe_sha256']=='e1c05225769cb9411a1b849abe7530cb36ee24114a3cf65bac446c587b903d3c'
+assert previous['slot_sha256']=='899116a341ff8c0480591bf1688ac9d5f671eda00fd5c1b193648aea1913b947' and previous['origin_commit']=='20aa22b8459e443f05a2b9e5fd078a6843933351'
+audit_path=root/'evidence/universe-boundaries-proof.json';audit=json.loads(audit_path.read_text())
+assert audit['status']=='PASS' and audit['exe_sha256']==m['exe_sha256'] and audit['boundaries']>=137 and audit['movie_samples']==proof['movie_samples']==253 and audit['actual_audio_driver']=='wasapi'
+assert proof['movie_audit_proof_sha256']==digest(audit_path)
+assert proof['movie_audit_log_sha256']==audit['log_sha256']==digest(root/'evidence/universe-boundaries.log')
+assert audit['source_sha256']==digest(Path('D:/astro/PLACES/P529/MEGAFILE.HYP')) and audit['movie_sha256']==digest(Path('D:/astro/PLACES/P529/FUNIV.MOV'))
+for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+print('P529 v15 settled universe, original MOV and zero-frame history evidence integrity PASS')
+
+research=json.loads((root/'evidence/p522-save-original.json').read_text())
+assert research['status']=='PASS' and research['source']['sha256']==digest(Path('D:/astro/PLACES/P522/MEGAFILE.HYP'))
+assert research['source']['size']==483379 and research['initial_values']==[2,0] and research['command_count']==69 and len(research['sprites'])==18
+assert research['recurring_program']['opcode']==41 and research['recurring_program']['args']==[0] and research['recurring_program']['delay']==200
+for source in research['source_references']:assert digest(Path(source['path']))==source['sha256']
+assert research['prior_original_callback_probe']['consulted_as_text_only']
+print('P522 static original-resource inventory integrity PASS; no native save support claim')
+
+audit=json.loads((root/'evidence/p522-probe-boundaries.json').read_text());build=json.loads((root/'evidence/p522-probe-audit-build-proof.json').read_text())
+assert audit['status']==build['status']=='PASS' and build['diagnostic_only'] and audit['build_proof']==build
+assert build['regression_exe_sha256']==m['exe_sha256'] and build['canonical_sha256']==m['engine_sha256']
+assert audit['log_sha256']==digest(root/'evidence/p522-probe-boundaries.log')
+assert audit['observations']==len(audit['records'])==126 and set(map(int,audit['route_counts']))==set(range(4))
+assert all(len(row['sprites'])==18 and all(len(words)==27 for words in row['sprites'].values()) for row in audit['records'])
+assert audit['polling_observations']==len(audit['polls'])==5830 and audit['poll_executions']==sum(p['due'] for p in audit['polls'])==832
+assert audit['after_startup_pending_counts']==[1]*4 and audit['observed_due_ages']==[210]
+assert audit['hidden_probe_ordinary_motion']==105
+text=(root/'evidence/p522-probe-boundaries.log').read_text()
+assert 'Using SDL Audio Driver "dummy"' in text and 'Using SDL Video Driver "dummy"' in text and 'FAIL' not in text and 'Log closed successfully' in text
+print('P522 isolated native observation evidence integrity PASS; no save format implemented')

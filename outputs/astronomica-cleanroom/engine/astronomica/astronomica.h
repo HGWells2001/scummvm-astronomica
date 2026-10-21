@@ -90,6 +90,10 @@ private:
  Common::Error loadBuilder(Common::SeekableReadStream *stream);
  bool verifyBuilderSaves();
  bool verifyRocketBoundaries();
+ bool canSaveUniverse() const;
+ Common::Error saveUniverse(Common::WriteStream *stream);
+ Common::Error loadUniverse(Common::SeekableReadStream *stream);
+ bool verifyUniverseSaves();
  bool canSaveRocket() const;
  Common::Error saveRocket(Common::WriteStream *stream);
  Common::Error loadRocket(Common::SeekableReadStream *stream);
@@ -128,6 +132,9 @@ private:
  bool verifyP524Puzzle();
  Video::QuickTimeDecoder *_movie = nullptr;
  Graphics::Surface _movieFrame;
+ int _moviePresentedFrame = -1;
+ uint32 _universeSegmentEnd = 0;
+ bool _universeAssetsValid = false;
  bool _moviePlaying = false;
  int _worldMovieCursorBottom = -1;
  int _movieX = 0, _movieY = 0;
@@ -185,6 +192,7 @@ private:
  bool verifySpectrumPuzzle();
  bool verifyMoveFrameCommand();
  bool verifySolarPuzzle();
+ bool verifyUniverseBoundaries();
  bool verifyUniversePuzzle();
  bool verifyP530Puzzle();
  bool verifyEclipsePuzzle();

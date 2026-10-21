@@ -45,6 +45,16 @@ rows.append(dict(scene=537,version=14,payload_bytes=7680,test_slot=13,scope='Set
  validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
  startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+validation=root/'evidence/universe-saves-validation.json';v=json.loads(validation.read_text())
+proof=json.loads((root/'evidence/universe-save-proof.json').read_text())
+assert v['status']=='PASS' and proof['metadata_listed'] and proof['slot']==14 and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+log=root/'evidence/universe-saves-runtime.log';startup=root/'evidence/universe-saves-startup.log'
+assert 'universe save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+assert 'universe startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+rows.append(dict(scene=529,version=15,payload_bytes=3684,test_slot=14,scope='Settled universe boundaries; last presented original movie frame independent of selector and attempted segment',
+ validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
+ startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
@@ -54,4 +64,4 @@ result=dict(date='2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releas
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
-print('Native save coverage: eighteen supported puzzle scenes; versions 1-14 readable; no global completion percentage')
+print('Native save coverage: nineteen supported puzzle scenes; versions 1-15 readable; no global completion percentage')

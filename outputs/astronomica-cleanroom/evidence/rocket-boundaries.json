@@ -2,7 +2,7 @@
   "date": "2026-10-21",
   "status": "PASS",
   "scope": "Native settled-script/stopped-motion observations; foreground audio may still bar a save; no P537 save support",
-  "exe_sha256": "e1c05225769cb9411a1b849abe7530cb36ee24114a3cf65bac446c587b903d3c",
+  "exe_sha256": "dbe43465359fff29a4a1931b850f463251120a71c21039e44106e64a1b6ffe7b",
   "source_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
   "boundaries": 402,
   "rows": [

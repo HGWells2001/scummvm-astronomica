@@ -1,3 +1,7 @@
+## Verified settled save support,21 October2026
+
+Version15 is implemented and verified; see P529-SAVE-FORMAT.md and evidence/universe-saves-validation.json. The original inventory below remains research history.
+
 # P529 save preparation, 21 October 2026
 
 This is static preparation for future save work. It adds no serializer, native

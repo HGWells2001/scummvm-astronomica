@@ -34,6 +34,13 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'outputs/astronomica-cleanroom/probe_builder_save.py','outputs/astronomica-cleanroom/evidence/builder-save-original.json','outputs/astronomica-cleanroom/BUILDER-SAVE-PLAN.md',
  'outputs/astronomica-cleanroom/probe_p529_save.py','outputs/astronomica-cleanroom/evidence/p529-save-original.json','outputs/astronomica-cleanroom/P529-SAVE-PLAN.md',
  'outputs/astronomica-cleanroom/P537-SAVE-FORMAT.md',
+ 'outputs/astronomica-cleanroom/P529-SAVE-FORMAT.md',
+ 'work/fresh-20260913/prepare_probe_audit.py','work/fresh-20260913/build_probe_audit.py','work/fresh-20260913/analyze_probe_audit.py',
+ 'outputs/astronomica-cleanroom/P522-NATIVE-AUDIT.md',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p522-probe-boundaries.json', 'p522-probe-boundaries.log', 'p522-probe-audit-build-proof.json')],
+ 'outputs/astronomica-cleanroom/probe_p522_save.py','outputs/astronomica-cleanroom/evidence/p522-save-original.json','outputs/astronomica-cleanroom/P522-SAVE-PLAN.md',
+ 'work/fresh-20260913/check_universe_saves.py','work/fresh-20260913/check_universe_boundaries.py','work/fresh-20260913/check_universe_regressions.py','work/fresh-20260913/finish_universe_saves.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('universe-saves-validation.json', 'universe-save-proof.json', 'universe-saves-runtime.log', 'universe-saves-startup.log', 'universe-boundaries-proof.json', 'universe-boundaries.log', 'rocket-previous-slot.log', 'rocket-previous-slot-proof.json')],
  'work/fresh-20260913/check_rocket_saves.py','work/fresh-20260913/check_rocket_boundaries.py','work/fresh-20260913/check_rocket_regressions.py','work/fresh-20260913/finish_rocket_saves.py',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('rocket-saves-validation.json', 'rocket-save-proof.json', 'rocket-saves-runtime.log', 'rocket-saves-startup.log', 'rocket-boundaries.json', 'rocket-boundaries.log', 'builder-previous-slot.log', 'builder-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/BUILDER-SAVE-FORMAT.md',
@@ -112,6 +119,9 @@ s=s.replace('fifteen supported puzzle scenes (P505, P506, P508, P513, P517, P519
 if 'Builder v13' not in s:
     s=s.replace('- Automatically verified routes','- Builder v13 retains construction in P515/P536, all five designs and a dormant custom17 sequence. Early Launch, first/repeated completion, P515 no-op and partial P536 slot12 in a fresh process pass.\n- Automatically verified routes')
 s=s.replace('seventeen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530-P536)','eighteen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530-P537)')
+s=s.replace('eighteen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530-P537)','nineteen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528-P537)')
+if 'Universe v15' not in s:
+    s=s.replace('- Automatically verified routes','- Universe v15 retains P529 selectors, original movie frame and digit history, mask, comet and dormant custom17 state. Original253 movie frames, a fresh-process slot14 and compatibility with older save versions pass.\n- Automatically verified routes')
 if 'Rocket v14' not in s:
     s=s.replace('- Automatically verified routes','- Rocket v14 preserves settled P537 selectors, prior failed-launch digits/gauges, stopped motion epoch and dormant custom17 state. All16 selectors, first/repeated success and fresh-process slot13 pass.\n- Automatically verified routes')
 if 'custom17 v10' not in s:
