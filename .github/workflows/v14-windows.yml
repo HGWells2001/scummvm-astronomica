@@ -4,6 +4,10 @@ on:
     branches:
       - dev/completion-route-audit-20261021
   workflow_dispatch:
+# Superseded commits should not consume Windows runners or publish stale previews.
+concurrency:
+  group: astronomica-v14-completion-preview
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
