@@ -48,8 +48,7 @@ class OriginalCursorIntegrationTests(unittest.TestCase):
 
     def test_engine_module_links_cursor_source(self):
         self.assertIn('original_cursors.o',self.module)
-        self.assertIn('#include "astronomica/original_cursors.h"',self.engine.replace(
-            '#include "astronomica/astronomica.h"', '#include "astronomica/original_cursors.h"',1
-        ) if False else (ENGINE/"astronomica.h").read_text(encoding="utf-8"))
+        self.assertIn('#include "astronomica/original_cursors.h"',
+                      (ENGINE/"astronomica.h").read_text(encoding="utf-8"))
 
 if __name__=="__main__":unittest.main()
