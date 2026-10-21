@@ -5,10 +5,15 @@ from pathlib import Path
 from unittest.mock import Mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from completion_audit import index_scenes, decode_scene, _commands, MUST_HAVE
+from completion_audit import index_scenes, decode_scene, _commands, MUST_HAVE, KNOWN_STUBS
 
 
 class TestCompletionAudit(unittest.TestCase):
+    def test_original_short_stub_is_explicit(self):
+        self.assertEqual(KNOWN_STUBS[406][1], 24)
+        self.assertEqual(len(KNOWN_STUBS[406][0]), 64)
+        self.assertEqual(list(KNOWN_STUBS), [406])
+
     def test_directories_not_confused_with_scenes(self):
         actual, duplicates = index_scenes(["PLACES/P1/", "PLACES/P1/S0.WAV",
                                            "PLACES/P1/MEGAFILE.HYP", "PLACES/P537/MEGAFILE.HYP"])
