@@ -1742,6 +1742,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
+ _cursorPointPlace = -1; // Recompute original pointer on every scene load.
  _questionSaveBaseline.clear(); if (place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion();
@@ -2170,6 +2171,33 @@ int AstronomicaEngine::spriteAt(int x, int y) {
   if (pointInSprite(s, width, height, x, y)) return int(i);
  }
  return -1;
+}
+void AstronomicaEngine::updateOriginalCursor(int x, int y) {
+ if (!_originalCursors.loaded() || (x == _cursorPointX && y == _cursorPointY && _place == _cursorPointPlace)) return;
+ _cursorPointX = x; _cursorPointY = y; _cursorPointPlace = _place;
+ int32 cursorID = 0;
+ if (!_runner.clicksBlocked()) {
+  Common::File file;
+  const Common::Path path = ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/MEGAFILE.HYP",_place)));
+  if (file.open(Common::FSNode(path))) {
+   for (uint i = 0; i < _scene.sprites.size(); ++i) {
+    const Sprite &s = _scene.sprites[i];
+    // Use exactly the cursor resource ID serialized in the original scene.
+    // Do not synthesize hands/arrows for generic mouse rectangles.
+    if (s.cursor <= 0 || !_originalCursors.contains(uint32(s.cursor)) || !supportsSpriteLayers(_scene) ||
+        s.layer != 1 || s.autoMove || s.autoFrame) continue;
+    const uint n = spriteFrameCount(_scene,i);
+    if (!n || (s.selectedFrame >= 0 && uint(s.selectedFrame) >= n)) continue;
+    const Frame *frame = spriteFrameAt(_scene,i,s.selectedFrame >= 0 ? uint(s.selectedFrame) : 0U);
+    Graphics::Surface *bmp = frame ? decodeSpriteBitmap(file,frame->image,_screen.format) : nullptr;
+    if (!bmp) continue;
+    const bool inside = pointInSprite(s,bmp->w,bmp->h,x,y);
+    bmp->free(); delete bmp;
+    if (inside) { cursorID = s.cursor; break; }
+   }
+  }
+ }
+ _originalCursors.select(cursorID);
 }
 void AstronomicaEngine::clickAt(int x, int y) { clickAtTime(x,y,scriptClock()); }
 void AstronomicaEngine::clickAtTime(int x, int y, uint32 now) {
@@ -7529,6 +7557,8 @@ Common::Error AstronomicaEngine::run() {
  // Supply a visible engine cursor; the backend hides the OS cursor in-game.
  CursorMan.setDefaultArrowCursor();
  CursorMan.showMouse(true);
+ if (!ConfMan.hasKey("astronomica_original_cursors") || ConfMan.getBool("astronomica_original_cursors"))
+  _originalCursors.load(ConfMan.getPath("path"));
  _runner.seedRandom(uint16(Common::RandomSource::generateNewSeed()));
  // _CreateGame allocates the original game structure with calloc.
  _runner.resetGlobals();
@@ -9063,7 +9093,7 @@ Common::Error AstronomicaEngine::run() {
    if (event.type == Common::EVENT_LBUTTONDOWN) { clickAt(event.mouse.x, event.mouse.y); continue; }
    if (event.type != Common::EVENT_KEYDOWN) continue;
    switch (event.kbd.keycode) {
-   case Common::KEYCODE_F5: openMainMenuDialog(); break;
+   case Common::KEYCODE_F5: openMainMenuDialog(); _originalCursors.reset(); _cursorPointPlace = -1; break;
    case Common::KEYCODE_ESCAPE: quitGame(); break;
    case Common::KEYCODE_v: if (developerControls && _place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
    case Common::KEYCODE_m:
@@ -9084,6 +9114,7 @@ Common::Error AstronomicaEngine::run() {
   runScripts();
   const Common::Point mouse = _eventMan->getMousePos();
   hoverAtTime(mouse.x,mouse.y,scriptClock());
+  updateOriginalCursor(mouse.x,mouse.y);
   updateWorldAt(scriptClock());
   animateSpritesAt(scriptClock());
   resumeLoopAt(scriptClock());
