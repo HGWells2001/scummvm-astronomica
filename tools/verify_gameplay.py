@@ -32,7 +32,7 @@ CHECKS = {
     "av": (
         ("astronomica_verify_intro", "Astronomica intro verification: PASS"),
         ("astronomica_verify_audio_channels", "Astronomica audio channel verification: PASS"),
-        ("astronomica_verify_world29", "Astronomica P29"),
+        ("astronomica_verify_world29", "Astronomica world movies verification: PASS"),
         ("astronomica_verify_help", "Astronomica help verification: PASS"),
     ),
 }
