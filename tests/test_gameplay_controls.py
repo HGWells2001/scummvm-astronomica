@@ -21,7 +21,7 @@ class TestNormalGameplay(unittest.TestCase):
     def test_page_navigation_requires_explicit_developer_switch(self):
         self.assertIn(
             'ConfMan.hasKey("astronomica_debug_controls") && ConfMan.getBool("astronomica_debug_controls")',
-            self.loop
+            self.code
         )
         self.assertIn("case Common::KEYCODE_PAGEDOWN: if (developerControls) stepPlace(1);", self.loop)
         self.assertIn("case Common::KEYCODE_PAGEUP: if (developerControls) stepPlace(-1);", self.loop)
