@@ -5,7 +5,7 @@
     ".gitattributes": "d4f79c642ac1350f115099af37e0387492ba5c701458dc103641fb5cc3724af3",
     ".gitignore": "510a0f0d2c9c01cd562afc950885e39adabde35129693f896fd01f961f5b36b5",
     "AI_MODEL_CHECKPOINT.md": "e007a7e7329d79d06bdf2e4adb8fb17bb5254d18a50efe193226578032f35247",
-    "Avvia-Astronomica.cmd": "952a8bfda20b8d6b4d9f7eb3b7f0023a5f407e4212769e073960436e150d0aa6",
+    "Avvia-Astronomica.cmd": "27b52c794d34b9e6f7fc8859a6269ca98cd88489669fcb5302a9a75741755da2",
     "BUILDING.md": "c74ec9acf8a7c582e41bed78be6df7e5eaa164b0f9e8cfa4e67b73c33086c3ef",
     "COPYING": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
     "EXPORT-NOTES.json": "ceb06aa28502854ccf6877b9a136f09e1d654b11351ec8894d15c40ff7d5baae",
@@ -24,7 +24,7 @@
     "outputs/astronomica-cleanroom/COPYING": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
     "outputs/astronomica-cleanroom/corpus-summary.json": "bd0a3676e7e139cbc7535be81f3f8e4b2390dfc4a50d75b6aed28f3f924497ec",
     "outputs/astronomica-cleanroom/engine/astronomica/advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "outputs/astronomica-cleanroom/engine/astronomica/astronomica.cpp": "fa69890f7cee9d6d3276dc064f6afe4f93bb02d4cd51922888bfa17336d6a2a5",
+    "outputs/astronomica-cleanroom/engine/astronomica/astronomica.cpp": "99d53654b01b019fd53410778dbac39239e0a6b20982d20946f48d01a4ea7a23",
     "outputs/astronomica-cleanroom/engine/astronomica/astronomica.h": "64b61c50fa1796bbe0ef5b158c406964734331c12d4a1f5e54f9af13422614d6",
     "outputs/astronomica-cleanroom/engine/astronomica/conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "outputs/astronomica-cleanroom/engine/astronomica/configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
@@ -467,7 +467,7 @@
     "outputs/astronomica-cleanroom/verify_success_reference.py": "87c4c0f999eaeace1af85c852b4d501cab45ec91e6c0bedd8e12bf594b6f5c70",
     "outputs/astronomica-cleanroom/verify_variant_reference.py": "0b7a8d9a258ca643734a80ffaf8bf6e7e9d68a1c5340f5e712caabfea7894a72",
     "README.md": "aefd2d91a20c16e4690598182099c6eed9198e056ef85001825597005e176c85",
-    "SCUMMVM_BASE.json": "34f6afc3712f6c9635a4db130bf07b5487aec4f0232e8eda2b3ced63c0d5902f",
+    "SCUMMVM_BASE.json": "c21981def2c2c16838797cc936176c66584249448b992d3fcf23275e26ef6a26",
     "tools/install_engine.py": "69ce286044e4f919737aa31bd2cb0fbb5307828054f454278fb46cca4e860e7e",
     "tools/prepare_scummvm.py": "1f297a40239632cafd913046feaaad3aa238b8c218f31686d3e0bda2ac15c566",
     "tools/verify_export.py": "100390d908826a58788eae9b4901e6b478b78f39d42d471a978c8593f4a97833",
@@ -729,9 +729,10 @@
     "tools/completion_audit.py": "a4fa518c2021878ffffca738714223dbbe64dc42f6f430634f6a205ca1c39482",
     "tests/test_completion_audit.py": "afa8fc1c75cac32ae9800d361c7a0f1c7c509403728fd4d4428f9ff0d71c70b8",
     ".github/workflows/v14-windows.yml": "bd6e1c42d59b79b8fadfe6f4889b40297deef1f959464883f8ee66f590ba101c",
-    "V14-COMPLETION-CHECKPOINT.md": "ad6cae8f62380683ba1526e88ad8afee4cc4ddc6040be90130440d838ef53786",
+    "V14-COMPLETION-CHECKPOINT.md": "8311e3e0965c0805b9d48b4a6dd15cba58f9a08db9a67a52e1e338657cedf34f",
     "tools/verify_gameplay.py": "816c9346f980de778e4cffa4d1ad88fe960e7d47a5a85a39cf1af3c1bf07ae5f",
     "tests/test_verify_gameplay.py": "ac050a6032497af38790382c7a78cddb25ac664e1b5845cca724815dd349d6e8",
-    "VERIFICA.cmd": "40ceda45d5d90abfad4a50f13bd40aeda12834cb87e64636a8faa799be5cb5f5"
+    "VERIFICA.cmd": "40ceda45d5d90abfad4a50f13bd40aeda12834cb87e64636a8faa799be5cb5f5",
+    "tests/test_gameplay_controls.py": "26fcda9887d4b6481c707f5e45145549f1b6a716ef8e389ae4269491265dd1f6"
   }
 }
