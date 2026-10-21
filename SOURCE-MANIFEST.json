@@ -467,7 +467,7 @@
     "outputs/astronomica-cleanroom/verify_success_reference.py": "87c4c0f999eaeace1af85c852b4d501cab45ec91e6c0bedd8e12bf594b6f5c70",
     "outputs/astronomica-cleanroom/verify_variant_reference.py": "0b7a8d9a258ca643734a80ffaf8bf6e7e9d68a1c5340f5e712caabfea7894a72",
     "README.md": "aefd2d91a20c16e4690598182099c6eed9198e056ef85001825597005e176c85",
-    "SCUMMVM_BASE.json": "8244c65c2cfa35758d6d006c2a9440d717a8d506e903cbb7c0ca331b72cf5f46",
+    "SCUMMVM_BASE.json": "1adfd4dc02df40d8dc4d2d77ace88616d306d6535a1c93bea59c965341938f8c",
     "tools/install_engine.py": "69ce286044e4f919737aa31bd2cb0fbb5307828054f454278fb46cca4e860e7e",
     "tools/prepare_scummvm.py": "1f297a40239632cafd913046feaaad3aa238b8c218f31686d3e0bda2ac15c566",
     "tools/verify_export.py": "100390d908826a58788eae9b4901e6b478b78f39d42d471a978c8593f4a97833",
@@ -735,7 +735,7 @@
     "VERIFICA.cmd": "40ceda45d5d90abfad4a50f13bd40aeda12834cb87e64636a8faa799be5cb5f5",
     "tests/test_gameplay_controls.py": "4b435e023d54e3b0fe61122d6ac9f364cf41995dd9b47220e34cde68f86e4ce7",
     "outputs/astronomica-cleanroom/engine/astronomica/original_cursors.h": "171585cafb6bcce4195be65627f752719e201794f651d1acdc441e88e4834393",
-    "outputs/astronomica-cleanroom/engine/astronomica/original_cursors.cpp": "0ce45f72cd30950ffa54297204de9be78433595b3a8d3e172f99671d0f7a444e",
+    "outputs/astronomica-cleanroom/engine/astronomica/original_cursors.cpp": "1aabd7ff809d2349b17caa09efb148208423d3bbc383a8ebbadb57bcb51a060d",
     "tests/test_original_cursors.py": "b23f2a7f132dfdc7098106fff276ae8946a793e48402306cdea0b45e279b87e4"
   }
 }
