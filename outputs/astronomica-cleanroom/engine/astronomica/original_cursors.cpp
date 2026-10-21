@@ -44,8 +44,7 @@ uint OriginalCursors::load(const Common::Path &gameRoot) {
  // Both published English CD layouts are supported. No Windows platform
  // dependencies: ScummVM's NE/PE resource reader decodes the game's EXE.
  static const char *const candidates[] = {
-  "SETUP/ASTROeng.EXE", "SETUP/ASTRO.EXE",
-  "ASTROeng.EXE", "ASTRO.EXE"
+  "SETUP/ASTRO.EXE", "ASTRO.EXE"
  };
  Common::WinResources *exe = nullptr;
  for (uint i = 0; i < ARRAYSIZE(candidates); ++i) {
