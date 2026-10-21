@@ -5,8 +5,8 @@
   "validated_executable_sha256": "e1c05225769cb9411a1b849abe7530cb36ee24114a3cf65bac446c587b903d3c",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "99d53654b01b019fd53410778dbac39239e0a6b20982d20946f48d01a4ea7a23",
-    "astronomica.h": "64b61c50fa1796bbe0ef5b158c406964734331c12d4a1f5e54f9af13422614d6",
+    "astronomica.cpp": "f0d2ba126be7eeb70613a0c64d7fba1fb9ce6b301864d551b1f0d11abb3276a8",
+    "astronomica.h": "0e79a7e76e060f2651248b86f7ba1885ad5215d7a126e12e5be54ff3298d461e",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -18,7 +18,7 @@
     "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
     "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
     "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
-    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "module.mk": "852a2889c48e619cf01d0903409ced881898ff895e1aa2628dc4232fe26c5931",
     "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
     "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
     "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
@@ -26,6 +26,8 @@
     "script.h": "6ed0d51978621a1693d0d4e1d5a488f86fab54659c7a0e06710bf73a6b6116c3",
     "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
     "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
-    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823",
+    "original_cursors.h": "171585cafb6bcce4195be65627f752719e201794f651d1acdc441e88e4834393",
+    "original_cursors.cpp": "0ce45f72cd30950ffa54297204de9be78433595b3a8d3e172f99671d0f7a444e"
   }
 }
