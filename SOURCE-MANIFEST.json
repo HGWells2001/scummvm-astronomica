@@ -725,9 +725,9 @@
     "work/fresh-20260913/verify_development_evidence.py": "48172fc5fd401ae0101a18c3c53ea5727c5e31b9767a23fb851a6ab55cd29b38",
     "work/fresh-20260913/verify_help_images_setup.py": "9e02c24893ac070f8c79e9ae851df24e1d2d3d0b0eb60ec9eb76cd2c4d2bff4e",
     "tools/game_archive.py": "87e63f82f63f62b6a8d06600761abe1d5543e58a81bb1997d544fa2bbae34a58",
-    "tests/test_game_archive.py": "ba60a87c13ff337799558d1d0e2718ea77e179b23e8965feada406f31dbf6e34",
-    "tools/completion_audit.py": "a7ab961c6128d0ccf3d23202c6e8742b00ee29b30af1c8a33311401f67dd168d",
-    "tests/test_completion_audit.py": "355d2663f96cfb8f0ce4c5ed186ed51e47493a02a503d8774b352baef4c93868",
+    "tests/test_game_archive.py": "aca616c21fdd22f12b0a6e5d4f9d44e9f188cd864d5a83a0e74869bafd4c0a80",
+    "tools/completion_audit.py": "a4fa518c2021878ffffca738714223dbbe64dc42f6f430634f6a205ca1c39482",
+    "tests/test_completion_audit.py": "afa8fc1c75cac32ae9800d361c7a0f1c7c509403728fd4d4428f9ff0d71c70b8",
     ".github/workflows/v14-windows.yml": "21dd81b8164ad14dcf8534085f79a80db1933707b6649cd198a79dfb8eef1fe5",
     "V14-COMPLETION-CHECKPOINT.md": "bc2d1c62cfc76a667b979123044299d7d584a606d0a817f2376c34629219e9b5"
   }
