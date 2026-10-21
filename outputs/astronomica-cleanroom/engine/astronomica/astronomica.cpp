@@ -1670,18 +1670,23 @@ bool AstronomicaEngine::readImage(Common::SeekableReadStream &s, Graphics::Surfa
 }
 
 bool AstronomicaEngine::changePlace(int place) {
+ const int sourcePlace = _place;
+ const bool traceRoute = ConfMan.hasKey("astronomica_trace_route") && ConfMan.getBool("astronomica_trace_route");
  int32 globals[100] = {};
  for (int i = 0; i < 100; ++i) _runner.getValue(0,i,globals[i]);
  const PlaceTransition transition = resolvePlaceTransition(_place,place,globals);
+ if (traceRoute) debug("Astronomica route request: P%d -> P%d resolved P%d permit%d", sourcePlace,place,transition.destination,int(transition.permit));
  _runner.defineValue(0,57,transition.permit);
  const bool audio = ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio");
  // Denial voice starts before reloading the old scene in _do_place. Preserve
  // that foreground sound while the scene loader replaces its other state.
  const bool keepSound = audio && transition.immediateSound && playSound(transition.immediateSound,scriptClock());
  if (!loadPlace(transition.destination,keepSound)) {
+  if (traceRoute) debug("Astronomica route LOAD FAILURE: P%d -> P%d",sourcePlace,transition.destination);
   _runner.defineValue(0,57,globals[57]); return false;
  }
  if (audio && transition.failureVoice) playSound(911,scriptClock());
+ if (traceRoute) debug("Astronomica route accepted: P%d -> P%d",sourcePlace,_place);
  return true;
 }
 bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
@@ -2168,6 +2173,8 @@ int AstronomicaEngine::spriteAt(int x, int y) {
 }
 void AstronomicaEngine::clickAt(int x, int y) { clickAtTime(x,y,scriptClock()); }
 void AstronomicaEngine::clickAtTime(int x, int y, uint32 now) {
+ if (ConfMan.hasKey("astronomica_trace_route") && ConfMan.getBool("astronomica_trace_route"))
+  debug("Astronomica route click: P%d x%d y%d blocked%d",_place,x,y,int(_runner.clicksBlocked()));
  if (_runner.clicksBlocked()) return;
  // Original _do_mouse 9:11f7 stores the last click before hit dispatch.
  if (_place == 507) _runner.setZodiacRegion(astrologyRegion(x,y,444,165,122,30));
@@ -7527,6 +7534,8 @@ Common::Error AstronomicaEngine::run() {
  _runner.resetGlobals();
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
+ if (ConfMan.hasKey("astronomica_trace_route") && ConfMan.getBool("astronomica_trace_route"))
+  debug("Astronomica route startup: P%d",_place);
  if (ConfMan.hasKey("save_slot") && ConfMan.getInt("save_slot") >= 0) {
   const Common::Error result = loadGameState(ConfMan.getInt("save_slot"));
   if (result.getCode() != Common::kNoError) { _background.free(); _screen.free(); return result; }
