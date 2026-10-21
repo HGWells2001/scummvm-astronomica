@@ -92,3 +92,36 @@ shortcut in this mode. Keep personal save files private; share sanitized log
 lines from the first failure. Turn tracing off by removing the INI key
 or setting it to false. (The `ASTRO_TRACE` environment variable alone
 only raises debug logging and does not enable route instrumentation.)
+
+## Original mouse cursor integration (21 October 2026)
+
+The branch now contains `original_cursors.h/.cpp`, a runtime loader for the
+**actual original Win16 executable's** `RT_CURSOR` and `RT_GROUP_CURSOR`
+resources. It uses ScummVM's pinned native `WinResources` and
+`Graphics::WinCursorGroup` decoders, so the original bitmap, transparency,
+palette, and hot-spot coordinates are retained rather than approximated.
+It reads the player's original `SETUP/ASTROeng.EXE` (or `ASTRO.EXE` layout)
+locally and **does not package the artwork in GitHub**.
+
+When hovering a static sprite with a serialized original `Sprite.cursor`
+identifier, the native cursor is selected by that exact resource ID.
+Unsupported/missing IDs revert safely to the classic Windows pointer.
+Generic rectangle hotspots are not artificially assigned a cursor ID;
+moving sprites and complex interaction regions need further oracle tests.
+Scene loads and return from the F5 menu reset the cursor lookup so the
+pointer is not stuck with a previous screen's appearance.
+
+The option `astronomica_original_cursors=true` is enabled by default when
+the executable's original cursor resources are parseable. To disable it,
+add under the user's `[astronomica]` INI section:
+
+    astronomica_original_cursors=false
+
+The native loader logs the count of resource images found, at debug level1:
+`Astronomica original cursor resources: N images from original executable`.
+
+**Verification limits:** the unit tests and cross-compiler build only prove
+implementation integration. Until the actual original EXE has been examined
+and the cursor group IDs and hotspots compared in real interactive play,
+do not claim that every original mouse pointer, dynamic context or scene
+is fully reproduced.
