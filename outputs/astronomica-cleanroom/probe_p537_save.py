@@ -30,12 +30,13 @@ rows=[]
 for i,x in enumerate(s['sprites']):
  source=x;clone=x['clone']
  if clone>0:source=s['sprites'][clone-1];assert source['clone']==-1
- rows.append(dict(id=i+1,clone=clone,frames=len(source['frames']),xy=source['xy'],visible=source['visible'],click_enabled=source['click_enabled']))
+ rows.append(dict(id=i+1,clone=clone,frames=len(source['frames']),xy=x['xy'],visible=x['visible'],click_enabled=x['click_enabled']))
 report=dict(date='2026-10-19',status='PASS',scope='Original resource observations only; no new save support or Windows runtime claim',
  source_sha256=hashlib.sha256(raw).hexdigest(),conditions=s['conditions'],sprites=rows,opcode_counts=dict(sorted(counts.items())),
  startup_scripts=s['scripts'],launch_control=33,launch_commands=launch,launch_custom_index=custom,
  mutations=[c for c in commands if c['opcode'] in (7,15,16,17,18,19,24,30,47,48)],
  original_wav_sha256={name:hashlib.sha256((a.root/'PLACES/P537'/name).read_bytes()).hexdigest() for name in ('S0.WAV','S1.WAV')},
+ inventory_notes=['Clones inherit frame bitmaps/count from their prototype; coordinates, visibility and click_enabled are their own serialized fields. Earlier preparatory inventory incorrectly copied those fields from the prototype; original resources and engine were unchanged.'],
  requirements=['Retain selector0..15 and cloned indicator frames/visibility',
  'Launch custom14 has a delayed script continuation under click blocking; a settled-only format cannot infer that continuation from rocket coordinates',
  'Consider separate native RocketMotion kind/delta/since as well as all sprite records, even for a stopped rocket',

@@ -1,5 +1,1 @@
-Construction v13 and P537 readout/timer corrections verified20October2026. Official builder613boundaries/420matrixcases/sixroutes/fivedesigns,slot12freshprocessPASS. P53796originalfixtures/14592steps292dc3fd and12096originalpixelsPASS. Complete compatible native WASAPI suite plus normal launcherPASS on one executable. No tests running.
-
-Published32fa281d3df260e0832c3679c925b3bfe130239a; separate Git checkout verifies706files/23nativefiles; remoteSHAreadback and cleanpublicationPASS. Follow NEXT-STEPS.md and AI_MODEL_CHECKPOINT.md, newest finisher finish_builder_saves.py. P537 saves still absent; next task is independent eligibility/boundary audit in P537-SAVE-PLAN.md before serialization. Exactv12rollback retained at work/fresh-20260913/verified-checkpoints/p517-799afeb0aebd.
-
-Original D:/astro; only cleanroom since13September2026, no excluded attempts/prototypes. Personal saves untouched. No resets or purchases. Unreproduced P524testfiletruncation documented in SAVE-RESEARCH.md; preserve bad file before rerun if recurring.
+P537 v14 verified21October2026. Targeted/fresh-process/independent-boundary/prior-slot and complete native WASAPI suite plus launcher PASS. No tests running. Follow NEXT-STEPS.md/AI_MODEL_CHECKPOINT.md; newest finisher finish_rocket_saves.py.

@@ -89,6 +89,11 @@ private:
  Common::Error saveBuilder(Common::WriteStream *stream);
  Common::Error loadBuilder(Common::SeekableReadStream *stream);
  bool verifyBuilderSaves();
+ bool verifyRocketBoundaries();
+ bool canSaveRocket() const;
+ Common::Error saveRocket(Common::WriteStream *stream);
+ Common::Error loadRocket(Common::SeekableReadStream *stream);
+ bool verifyRocketSaves();
  bool canSaveP517() const;
  Common::Error saveP517(Common::WriteStream *stream);
  Common::Error loadP517(Common::SeekableReadStream *stream);

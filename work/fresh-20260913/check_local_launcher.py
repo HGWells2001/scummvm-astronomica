@@ -23,6 +23,6 @@ except subprocess.TimeoutExpired:
 s=log.read_text()
 assert 'resource explorer: P1;' in s and 'FAIL' not in s and 'ERROR:' not in out
 assert not any(p.suffix[1:].isdigit() for p in folder.glob('astronomica.*'))
-proof=dict(date='2026-10-19',status='PASS',template_sha256=hashlib.sha256(template.read_bytes()).hexdigest(),exe_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),target_listed=True,normal_P1_startup=True,no_verification_mode=True,personal_saves_untouched=True,headless_seconds=6,terminated_own_child=True,limitations='Native startup uses the launcher template directly. Batch paths reviewed; interactive GUI and full audiovisual playthrough remain manual.')
+proof=dict(date='2026-10-21',status='PASS',template_sha256=hashlib.sha256(template.read_bytes()).hexdigest(),exe_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),target_listed=True,normal_P1_startup=True,no_verification_mode=True,personal_saves_untouched=True,headless_seconds=6,terminated_own_child=True,limitations='Native startup uses the launcher template directly. Batch paths reviewed; interactive GUI and full audiovisual playthrough remain manual.')
 (root/'evidence/local-launcher-validation.json').write_text(json.dumps(proof,indent=2))
 print('Launcher template and normal P1 startup PASS; personal saves untouched')

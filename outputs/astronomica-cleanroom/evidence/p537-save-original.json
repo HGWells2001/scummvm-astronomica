@@ -118,7 +118,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        86,
         443
       ],
       "visible": 1,
@@ -129,7 +129,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        104,
         443
       ],
       "visible": 1,
@@ -140,7 +140,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        113,
         443
       ],
       "visible": 1,
@@ -151,7 +151,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        122,
         443
       ],
       "visible": 1,
@@ -162,7 +162,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        131,
         443
       ],
       "visible": 1,
@@ -173,7 +173,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        140,
         443
       ],
       "visible": 1,
@@ -184,7 +184,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        149,
         443
       ],
       "visible": 1,
@@ -195,7 +195,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        158,
         443
       ],
       "visible": 1,
@@ -206,7 +206,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        167,
         443
       ],
       "visible": 1,
@@ -217,7 +217,7 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
+        176,
         443
       ],
       "visible": 1,
@@ -228,8 +228,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        292,
+        370
       ],
       "visible": 1,
       "click_enabled": 0
@@ -239,8 +239,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        301,
+        370
       ],
       "visible": 1,
       "click_enabled": 0
@@ -250,8 +250,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        310,
+        370
       ],
       "visible": 1,
       "click_enabled": 0
@@ -261,8 +261,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        319,
+        370
       ],
       "visible": 1,
       "click_enabled": 0
@@ -272,8 +272,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        328,
+        370
       ],
       "visible": 1,
       "click_enabled": 0
@@ -283,8 +283,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        292,
+        417
       ],
       "visible": 1,
       "click_enabled": 0
@@ -294,8 +294,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        301,
+        417
       ],
       "visible": 1,
       "click_enabled": 0
@@ -305,8 +305,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        310,
+        417
       ],
       "visible": 1,
       "click_enabled": 0
@@ -316,8 +316,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        319,
+        417
       ],
       "visible": 1,
       "click_enabled": 0
@@ -327,8 +327,8 @@
       "clone": 9,
       "frames": 10,
       "xy": [
-        77,
-        443
+        328,
+        417
       ],
       "visible": 1,
       "click_enabled": 0
@@ -349,7 +349,7 @@
       "clone": 30,
       "frames": 1,
       "xy": [
-        393,
+        462,
         361
       ],
       "visible": 0,
@@ -360,8 +360,8 @@
       "clone": 30,
       "frames": 1,
       "xy": [
-        393,
-        361
+        529,
+        414
       ],
       "visible": 0,
       "click_enabled": 0
@@ -393,8 +393,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        75,
+        399
       ],
       "visible": 0,
       "click_enabled": 0
@@ -404,8 +404,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        79,
+        389
       ],
       "visible": 0,
       "click_enabled": 0
@@ -415,8 +415,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        85,
+        380
       ],
       "visible": 0,
       "click_enabled": 0
@@ -426,8 +426,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        93,
+        372
       ],
       "visible": 0,
       "click_enabled": 0
@@ -437,8 +437,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        101,
+        366
       ],
       "visible": 0,
       "click_enabled": 0
@@ -448,8 +448,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        110,
+        362
       ],
       "visible": 0,
       "click_enabled": 0
@@ -459,8 +459,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        120,
+        361
       ],
       "visible": 0,
       "click_enabled": 0
@@ -470,8 +470,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        130,
+        362
       ],
       "visible": 0,
       "click_enabled": 0
@@ -481,8 +481,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        139,
+        366
       ],
       "visible": 0,
       "click_enabled": 0
@@ -492,8 +492,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        147,
+        372
       ],
       "visible": 0,
       "click_enabled": 0
@@ -503,8 +503,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        155,
+        380
       ],
       "visible": 0,
       "click_enabled": 0
@@ -514,8 +514,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        161,
+        389
       ],
       "visible": 0,
       "click_enabled": 0
@@ -525,8 +525,8 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
-        409
+        165,
+        399
       ],
       "visible": 0,
       "click_enabled": 0
@@ -536,7 +536,7 @@
       "clone": 7,
       "frames": 1,
       "xy": [
-        73,
+        167,
         409
       ],
       "visible": 0,
@@ -1754,6 +1754,9 @@
     "S0.WAV": "f86ed5d8ad91f741682137bc12d20d0593eb7a2b618c4b7f89f4e1332bf85847",
     "S1.WAV": "0662b39bd3a5a7156ba90f63e35ca4f21980a7efad94fd14ffb2bb8af423df71"
   },
+  "inventory_notes": [
+    "Clones inherit frame bitmaps/count from their prototype; coordinates, visibility and click_enabled are their own serialized fields. Earlier preparatory inventory incorrectly copied those fields from the prototype; original resources and engine were unchanged."
+  ],
   "requirements": [
     "Retain selector0..15 and cloned indicator frames/visibility",
     "Launch custom14 has a delayed script continuation under click blocking; a settled-only format cannot infer that continuation from rocket coordinates",

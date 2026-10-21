@@ -106,8 +106,8 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==17
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,515,517,519,524,526,528,530,531,532,533,534,535,536}
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==18
+assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,515,517,519,524,526,528,530,531,532,533,534,535,536,537}
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
@@ -347,3 +347,18 @@ assert rocket['native_runtime_sha256']==digest(root/'evidence/runtime.log')
 assert 'P537 original callback comparison: PASS (96 fixtures, 14592 steps, 292dc3fd)' in (root/'evidence/runtime.log').read_text()
 print('P537 original final readout and inactive timer correction integrity PASS')
 print('Builder v13 construction and dormant-sequence save evidence integrity PASS')
+
+v=json.loads((root/'evidence/rocket-saves-validation.json').read_text());proof=json.loads((root/'evidence/rocket-save-proof.json').read_text())
+assert v['status']=='PASS' and v['exe_sha256']==m['exe_sha256'] and v['full_suite']
+assert (v['format_version'],v['payload_bytes'],v['scene'])==(14,7680,537)
+assert proof['status']=='PASS' and proof['metadata_listed'] and proof['slot']==13 and not proof['diagnostic'] and proof['audio_driver']=='native'
+assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint'] and proof['boundaries']==v['boundaries'] and v['boundaries']>500
+assert proof['history_boundaries']>300 and proof['dormant_boundaries']>300 and proof['busy_rejections']>0
+assert proof['truncations']==proof['corruptions']==7680 and proof['invalid_states']>40 and proof['variant_fixture_unchanged']
+for name,marker in [('rocket-saves-runtime.log','rocket saves: PASS ('),('rocket-saves-startup.log','rocket startup save: PASS'),('builder-previous-slot.log','builder startup save: PASS')]:
+ s=(root/'evidence'/name).read_text();assert marker in s and 'FAIL' not in s and 'Log closed successfully' in s
+assert json.loads((root/'evidence/builder-previous-slot-proof.json').read_text())['unchanged']
+audit=json.loads((root/'evidence/rocket-boundaries.json').read_text());assert audit['status']=='PASS' and audit['exe_sha256']==m['exe_sha256'] and audit['boundaries']==402
+assert all(len(row['sprites'])==48 for row in audit['rows']) and {row['selector'] for row in audit['rows']}==set(range(16))
+assert audit['source_sha256']==digest(Path('D:/astro/PLACES/P537/MEGAFILE.HYP'))
+print('P537 v14 settled rocket saves and independent boundary evidence integrity PASS')

@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-21",
+  "status": "PASS",
+  "exe_sha256": "e1c05225769cb9411a1b849abe7530cb36ee24114a3cf65bac446c587b903d3c",
+  "format_version": 14,
+  "payload_bytes": 7680,
+  "scene": 537,
+  "boundaries": 577,
+  "history_boundaries": 385,
+  "dormant_boundaries": 385,
+  "busy_rejections": 347721,
+  "truncations": 7680,
+  "byte_corruptions": 7680,
+  "invalid_checksummed_states": 48,
+  "fresh_process_slot": 13,
+  "fresh_process_fingerprint": "c7d5ee19",
+  "music_restart": true,
+  "comet_phase_retained": true,
+  "dormant_sequence_retained": true,
+  "previous_readout_retained": true,
+  "stopped_motion_epoch_retained": true,
+  "full_frame_height": 480,
+  "full_suite": true,
+  "compatibility": "Versions1-13 retained; previous-build v3-v13 slots unchanged",
+  "limitations": [
+    "Settled script boundaries only; no queued mid-launch serialization",
+    "Ambient sample may restart from beginning",
+    "No complete manual audiovisual playthrough"
+  ]
+}

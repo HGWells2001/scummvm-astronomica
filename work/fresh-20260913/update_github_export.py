@@ -32,6 +32,10 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  'outputs/astronomica-cleanroom/probe_p537_motion.py','outputs/astronomica-cleanroom/evidence/p537-motion-original.json',
  'outputs/astronomica-cleanroom/probe_p537_save.py','outputs/astronomica-cleanroom/evidence/p537-save-original.json','outputs/astronomica-cleanroom/P537-SAVE-PLAN.md',
  'outputs/astronomica-cleanroom/probe_builder_save.py','outputs/astronomica-cleanroom/evidence/builder-save-original.json','outputs/astronomica-cleanroom/BUILDER-SAVE-PLAN.md',
+ 'outputs/astronomica-cleanroom/probe_p529_save.py','outputs/astronomica-cleanroom/evidence/p529-save-original.json','outputs/astronomica-cleanroom/P529-SAVE-PLAN.md',
+ 'outputs/astronomica-cleanroom/P537-SAVE-FORMAT.md',
+ 'work/fresh-20260913/check_rocket_saves.py','work/fresh-20260913/check_rocket_boundaries.py','work/fresh-20260913/check_rocket_regressions.py','work/fresh-20260913/finish_rocket_saves.py',
+ *['outputs/astronomica-cleanroom/evidence/'+name for name in ('rocket-saves-validation.json', 'rocket-save-proof.json', 'rocket-saves-runtime.log', 'rocket-saves-startup.log', 'rocket-boundaries.json', 'rocket-boundaries.log', 'builder-previous-slot.log', 'builder-previous-slot-proof.json')],
  'outputs/astronomica-cleanroom/BUILDER-SAVE-FORMAT.md',
  'work/fresh-20260913/check_p537_readout.py','work/fresh-20260913/check_builder_saves.py','work/fresh-20260913/check_builder_regressions.py','work/fresh-20260913/finish_builder_saves.py',
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p537-readout-proof.json', 'p537-readout-runtime.log', 'p537-readout-1.png', 'p537-readout-7.png', 'p537-readout-11.png', 'p537-readout-13.png', 'p537-motion-validation.json', 'builder-saves-validation.json', 'builder-save-proof.json', 'builder-saves-runtime.log', 'builder-saves-startup.log', 'p517-previous-slot.log', 'p517-previous-slot-proof.json')],
@@ -91,7 +95,7 @@ if 'native-save-coverage.json' not in s:
     s=s.replace('- Automatically verified routes', '- [Measured save coverage](outputs/astronomica-cleanroom/evidence/native-save-coverage.json) records four supported puzzle scenes (P505, P508, P519, P524), plus exploration. This is not a whole-game completion percentage.\n- Automatically verified routes')
 s=s.replace('on 16 October 2026','on 18 October 2026')
 s=s.replace('on 18 October 2026','on 19 October 2026')
-s=s.replace('on 19 October 2026','on 20 October 2026')
+s=s.replace('on 19 October 2026','on 21 October 2026').replace('on 20 October 2026','on 21 October 2026')
 if 'Avvia-Astronomica.cmd' not in s:
     s=s.replace('- Automatically verified routes','- The workspace entry point [Avvia-Astronomica.cmd](Avvia-Astronomica.cmd) uses the current local build and keeps personal preferences/saves separate from verification slots. The default template passes normal P1 startup; see [local play](outputs/astronomica-cleanroom/LOCAL-PLAY.md).\n- Automatically verified routes')
 if 'P526 v7' not in s:
@@ -107,6 +111,9 @@ if 'P517 v12' not in s:
 s=s.replace('fifteen supported puzzle scenes (P505, P506, P508, P513, P517, P519, P524, P526, P528, P530-P535)','seventeen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530-P536)')
 if 'Builder v13' not in s:
     s=s.replace('- Automatically verified routes','- Builder v13 retains construction in P515/P536, all five designs and a dormant custom17 sequence. Early Launch, first/repeated completion, P515 no-op and partial P536 slot12 in a fresh process pass.\n- Automatically verified routes')
+s=s.replace('seventeen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530-P536)','eighteen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530-P537)')
+if 'Rocket v14' not in s:
+    s=s.replace('- Automatically verified routes','- Rocket v14 preserves settled P537 selectors, prior failed-launch digits/gauges, stopped motion epoch and dormant custom17 state. All16 selectors, first/repeated success and fresh-process slot13 pass.\n- Automatically verified routes')
 if 'custom17 v10' not in s:
     s=s.replace('- Automatically verified routes','- Six-scene custom17 v10 saves retain partial solutions and original process statics across random rounds and exit/reentry. Every scene passes at all four stages; one family slot resumes in a fresh process.\n- Retained unknown locals from earlier scenes no longer block P524/P526/P528/P530 saves. Four original P509 entries, twelve inert-value extremes and eight invalid-metadata rejections pass with v6-v9 layouts unchanged.\n- Automatically verified routes')
 if 'P530 v9' not in s:
@@ -121,7 +128,7 @@ p.write_text(s.rstrip()+'\n')
 if 'Looping WAVs follow the Music control' not in s:
     s=s.replace('- Automatically verified routes','- Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
-manifest['date']='2026-10-20'
+manifest['date']='2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

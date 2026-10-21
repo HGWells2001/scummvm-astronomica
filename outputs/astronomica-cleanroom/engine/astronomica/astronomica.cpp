@@ -84,6 +84,7 @@ enum { kP528Words = 12 + 9*27 + ScriptRunner::kIdleStateWords };
 enum { kP530Words = 12 + 29*27 + ScriptRunner::kIdleStateWords };
 enum { kP513Words = 12 + 32*27 + ScriptRunner::kIdleStateWords };
 enum { kP517Words = 12 + 11*27 + ScriptRunner::kIdleStateWords };
+enum { kRocketWords = 16 + 48*27 + ScriptRunner::kPersistentStateWords };
 enum { kBuilderWords = 12 + 60*27 + ScriptRunner::kPersistentStateWords };
 bool builderScene(uint place) { return place == 515 || place == 536; }
 int builderImageId(const Common::String &name) {
@@ -286,6 +287,53 @@ void p526RestoreSprite(Sprite &s, const uint32 *w) {
  for (uint i = 0; i < 3; ++i) s.frameData[i] = int32(w[19+i]);
  for (uint i = 0; i < 5; ++i) s.moveData[i] = int32(w[22+i]);
 }
+bool validRocketState(const Common::Array<uint32> &state) {
+ if (!ScriptRunner::validPersistentState(state) || state[300] > 15) return false;
+ for (uint i = 0; i < 100; ++i) {
+  if (state[i*3+2] != 1 || state[300+i*3+2] != uint32(i == 0) || state[301+i*3] != (i == 0 ? 16U : 0U)) return false;
+ }
+ return true;
+}
+bool validRocketScene(const Scene &scene) {
+ return supportsRocket(scene) && !scene.mode && scene.layers == 1 && scene.sprites.size() == 48 &&
+  scene.conditions.size() == 1 && scene.scripts.size() == 1 && scene.mouseRects.empty() && scene.movies.empty();
+}
+void rocketReadout(int *digits, int setting) {
+ for (uint i = 0; i < 21; ++i) digits[i] = 0;
+ digits[0] = 9; digits[16] = 2; digits[17] = 5;
+ if (setting >= 11) { for (uint i = 1; i <= 10; ++i) digits[i] = 9; digits[15] = 1; }
+ else if (setting >= 9) { for (uint i = 1; i <= 3; ++i) digits[i] = 9; digits[13] = 3; }
+ else if (setting >= 7) { digits[1] = digits[2] = 9; digits[12] = 1; }
+ else if (setting >= 5) { digits[1] = 9; digits[12] = 3; digits[13] = 5; }
+ else if (setting >= 3) { digits[1] = 8; digits[12] = 5; }
+ else digits[11] = 1;
+}
+bool validRocketSprites(const Common::Array<uint32> &words, const Scene &original, const Common::Array<uint32> &state, uint32 delta, uint32 since) {
+ if (words.size() != 48*27 || !validRocketScene(original) || !validRocketState(state) || (delta != 0 && delta != 2 && delta != 10) || (!delta && since)) return false;
+ Scene expected = original;
+ for (Sprite &s : expected.sprites) s.selectedFrame = 0;
+ expected.sprites[6].visible = state[300] >= 1;
+ for (uint id = 35; id <= 48; ++id) expected.sprites[id-1].visible = state[300] >= id-33;
+ for (uint i = 29; i <= 31; ++i) expected.sprites[i].visible = delta != 0;
+ expected.sprites[33].visible = 0;
+ if (delta) {
+  const bool fast = delta == 10; const int slowY[] = {374,422,401},fastY[] = {421,391,354};
+  for (uint i = 0; i < 3; ++i) expected.sprites[29+i].renderY = fast ? fastY[i] : slowY[i];
+  expected.sprites[33].renderX = fast ? 632 : 500; expected.sprites[33].renderY = fast ? -89 : 200;
+  expected.sprites[33].selectedFrame = fast ? 8 : 9;
+  bool readout = false;
+  for (int setting = delta == 10 ? 13 : 1; setting <= (delta == 10 ? 13 : 10); setting += 2) {
+   int digits[21]; rocketReadout(digits,setting); bool match = true;
+   for (uint i = 0; i < 21; ++i) if (words[(8+i)*27+1] != uint32(digits[i])) match = false;
+   if (match) readout = true;
+  }
+  if (!readout) return false;
+  for (uint i = 8; i <= 28; ++i) { expected.sprites[i].selectedFrame = words[i*27+1]; expected.sprites[i].frameSince = since; expected.sprites[i].frameData[0] = -1; expected.sprites[i].frameData[1] = 1; }
+ }
+ Common::Array<uint32> baseline; for (const Sprite &s : expected.sprites) p526SpriteWords(s,baseline);
+ return words == baseline;
+}
+
 bool validP526Sprite(const uint32 *w, const Sprite &initial, uint i) {
  for (uint n : {0U,6U,7U,10U,13U,14U,15U,18U}) if (w[n] > 1) return false;
  if (w[7] || w[16] != uint32(initial.frameFirst) || w[17] != uint32(initial.frameLast) || w[18] != uint32(initial.clickEnabled) ||
@@ -1062,6 +1110,49 @@ Common::Error AstronomicaEngine::loadP517(Common::SeekableReadStream *stream) {
  if (header[7]) playSound(_loopSound,scriptClock(),true);
  return Common::kNoError;
 }
+bool AstronomicaEngine::canSaveRocket() const {
+ if (_place != 537 || _comet.frame < 1 || _comet.frame > 12 || _comet.previousFrame < 0 || _comet.previousFrame > 12 || !_runner.scriptsIdle() || _rocket.kind != RocketMotion::kStopped || _pendingImage.w || !_displayedImageName.empty() || _movie ||
+     !validRocketScene(_scene) || _questionSaveBaseline.size() != 48 ||
+     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") || !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+ if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
+ Common::Array<uint32> state,sprites; if (!_runner.exportPersistentState(state)) return false;
+ for (const HoverTarget &h : _hoverSprites) if (h.entered) return false;
+ for (const HoverTarget &h : _hoverRects) if (h.entered) return false;
+ for (const Sprite &s : _scene.sprites) { if (s.dragEnabled || s.planetMotion || s.planetPeriod != -1) return false; p526SpriteWords(s,sprites); }
+ Scene original = _scene; original.sprites = _questionSaveBaseline;
+ return validRocketSprites(sprites,original,state,_rocket.delta,_rocket.since);
+}
+Common::Error AstronomicaEngine::saveRocket(Common::WriteStream *stream) {
+ if (!canSaveRocket()) return Common::kWritingFailed;
+ const uint32 header[] = {537,_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,
+  uint32(_mixer->isSoundHandleActive(_soundHandle)),uint32(_rocket.delta),_rocket.since,uint32(_comet.frame),uint32(_comet.previousFrame),0,0,0,0};
+ Common::Array<uint32> state,sprites; _runner.exportPersistentState(state); for (const Sprite &s : _scene.sprites) p526SpriteWords(s,sprites);
+ stream->writeUint32BE(MKTAG('A','S','V','M')); stream->writeUint32LE(14); uint32 hash = 2166136261U;
+ auto word = [&](uint32 v) { stream->writeUint32LE(v); hash = (hash ^ v)*16777619U; };
+ for (uint32 v : header) word(v); for (uint32 v : sprites) word(v); for (uint32 v : state) word(v);
+ stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadRocket(Common::SeekableReadStream *stream) {
+ if (stream->size()-stream->pos() < (kRocketWords+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") || !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ uint32 header[16],hash = 2166136261U; auto word = [&]() { uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
+ for (uint32 &v : header) v = word(); Common::Array<uint32> sprites,state; sprites.resize(48*27); state.resize(ScriptRunner::kPersistentStateWords);
+ for (uint32 &v : sprites) v = word(); for (uint32 &v : state) v = word();
+ if (stream->readUint32LE() != hash || stream->err() || !validRocketState(state) || header[0] != 537 || (header[3] > 537 && header[3] != 0xffffffffU) ||
+     (header[4] != 0 && header[4] != 0xffffffffU) || header[5] > 1 || header[7] > 1 || (header[7] && (header[4] != 0 || !header[5])) ||
+     header[10] < 1 || header[10] > 12 || header[11] > 12 || header[12] || header[13] || header[14] || header[15]) return Common::kReadingFailed;
+ Common::File file; if (!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P537/MEGAFILE.HYP")))) return Common::kReadingFailed;
+ Scene parsed; ResourceReader reader(file); if (!reader.read(parsed) || !validRocketSprites(sprites,parsed,state,header[8],header[9])) return Common::kReadingFailed;
+ if (!loadPlace(537,false,true)) return Common::kReadingFailed;
+ _runner.importPersistentState(state); _rocket.kind = RocketMotion::kStopped; _rocket.delta = header[8]; _rocket.since = header[9];
+ _comet.frame = header[10]; _comet.previousFrame = header[11]; _puzzlesCompleted = header[1];
+ _pausedMillis = (_clockPaused ? _pauseStarted : _system->getMillis())-header[2]; _previousPlace = int32(header[3]);
+ _loopSound = int32(header[4]); _loopEnabled = header[5] != 0; _lastSoundAt = header[6];
+ for (uint i = 0; i < 48; ++i) p526RestoreSprite(_scene.sprites[i],&sprites[i*27]); redrawSprites();
+ if (header[7]) playSound(_loopSound,scriptClock(),true); return Common::kNoError;
+}
+
 bool AstronomicaEngine::canSaveBuilder() const {
  if (_comet.frame < 1 || _comet.frame > 12 || _comet.previousFrame < 0 || _comet.previousFrame > 12) return false;
  if (!builderScene(_place) || !_runner.scriptsIdle() || _pendingImage.w || _movie || !validBuilderScene(_scene) || _questionSaveBaseline.size() != 60 || !_builderHistoryValid ||
@@ -1199,7 +1290,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -1216,6 +1307,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (_place == 526) return saveP526(stream);
  if (_place == 528) return saveP528(stream);
  if (_place == 530) return saveP530(stream);
+ if (_place == 537) return saveRocket(stream);
  if (builderScene(_place)) return saveBuilder(stream);
  if (_place == 517) return saveP517(stream);
  if (_place == 513) return saveP513(stream);
@@ -1244,6 +1336,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 8) return loadP528(stream);
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
+ if (version == 14) return loadRocket(stream);
  if (version == 13) return loadBuilder(stream);
  if (version == 12) return loadP517(stream);
  if (version == 11) return loadP513(stream);
@@ -1644,7 +1737,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
- _questionSaveBaseline.clear(); if (questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
+ _questionSaveBaseline.clear(); if (place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion();
  _ball = BallMotion();
@@ -3612,6 +3705,193 @@ bool AstronomicaEngine::verifyP524Saves() {
  if (loadGameStream(&musicIn).getCode() != Common::kNoError || !_mixer->isSoundHandleActive(_soundHandle) || _lastSound != 0) return false;
  _mixer->stopHandle(_soundHandle);
  debug("Astronomica P524 saves: PASS (%u boundaries, %u animation cases, 2612 truncations, 2612 corruptions, 21 invalid states, music and foreground guards)",boundaries,animations);
+ _runner.resetGlobals(); return loadPlace(103);
+}
+
+bool AstronomicaEngine::verifyRocketSaves() {
+ uint boundaries = 0, histories = 0, dormant = 0, busy = 0, invalid = 0; uint32 now = 0;
+ Common::Array<byte> fixture;
+ auto fingerprint = [&](uint32 clock = 0, bool departure = false) {
+  uint32 hash = 2166136261U; auto add = [&](uint32 v) { hash = (hash ^ v)*16777619U; };
+  add(_place); add(_puzzlesCompleted); add(_comet.frame); add(_comet.previousFrame);
+  Common::Array<uint32> state; if (!_runner.exportPersistentState(state)) return uint32(0);
+  for (uint i = 0; i < state.size(); ++i) if (i != 601) add(state[i]);
+  if (_place == 537) { add(_rocket.kind); add(_rocket.delta); add(_rocket.since); }
+  for (const Sprite &s : _scene.sprites) {
+   Common::Array<uint32> words; p526SpriteWords(s,words);
+   if (departure && s.autoFrame) words[8] = clock-words[8];
+   if (departure && s.autoMove) words[9] = clock-words[9];
+   for (uint32 v : words) add(v);
+  }
+  add(screenRGBHash(_background,480)); add(screenRGBHash(_screen,480)); return hash;
+ };
+ auto settle = [&]() {
+  for (uint n = 0; n < 20000 && _place == 537 && (!_runner.scriptsIdle() || _rocket.kind != RocketMotion::kStopped); ++n) {
+   if (canSaveRocket()) return false; ++busy;
+   runScriptsAt(now); animateSpritesAt(now); now += 10;
+  }
+  if (_mixer->isSoundHandleActive(_soundHandle) && _lastSound != _loopSound && canSaveRocket()) return false;
+  _mixer->stopHandle(_soundHandle); return _runner.scriptsIdle();
+ };
+ auto press = [&](uint id) {
+  if (!id) return true;
+  if (_place != 537 || id > 48) return false;
+  const Sprite &s = _scene.sprites[id-1]; if (spriteAt(s.x+1,s.y+1) != int(id)-1) return false;
+  clickAtTime(s.x+1,s.y+1,now);
+  if (canSaveRocket()) return false; return settle();
+ };
+ auto start = [&](bool suspended = false, int solved = 0) {
+  if (suspended) { if (loadGameState(99).getCode() != Common::kNoError) return false; }
+  else _runner.resetGlobals();
+  _runner.defineValue(0,36,solved); _puzzlesCompleted = 10; _comet.frame = 3; _comet.previousFrame = 4;
+  if (!loadPlace(537)) return false;
+  now = 1000; if (_runner.enqueueStartup(_scene.scripts,now,true) != 1 || !settle()) return false;
+  return canSaveRocket();
+ };
+ auto bytes = [&](Common::Array<byte> &result) {
+  // Freeze the test clock while serializing; keep the byte comparison exact.
+  const bool paused = _clockPaused; const uint32 pauseStarted = _pauseStarted;
+  _clockPaused = true; _pauseStarted = now; _pausedMillis = 0;
+  Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);
+  const bool ok = saveGameStream(&out).getCode() == Common::kNoError && out.size() == 7680;
+  _clockPaused = paused; _pauseStarted = pauseStarted;
+  _pausedMillis = (paused ? pauseStarted : _system->getMillis())-now;
+  if (!ok) return false;
+  result.resize(out.size()); memcpy(&result[0],out.getData(),out.size()); return true;
+ };
+ auto restore = [&](const Common::Array<byte> &data) {
+  const bool paused = _clockPaused; const uint32 oldStart = _pauseStarted,oldOffset = _pausedMillis;
+  _clockPaused = true; _pauseStarted = 0x23450000U;
+  Common::MemoryReadStream in(&data[0],data.size()); const bool loaded = loadGameStream(&in).getCode() == Common::kNoError;
+  const uint32 restoredClock = scriptClock(); const bool clockOK = loaded ? data.size() >= 20 && restoredClock == READ_LE_UINT32(&data[16]) : _pausedMillis == oldOffset;
+  _clockPaused = paused; _pauseStarted = oldStart; _pausedMillis = loaded ? (paused ? oldStart : _system->getMillis())-restoredClock : oldOffset;
+  if (!clockOK) debug("Rocket restored/rejected clock invariant: FAIL");
+  return loaded ? clockOK : !clockOK;
+ };
+ auto roundTrip = [&](uint action, bool physical = false) {
+  if (!canSaveRocket()) { debug("Rocket save eligibility failed: boundary%u action%u P%d delta%d since%u",boundaries,action,_place,_rocket.delta,_rocket.since); return false; }
+  Common::Array<byte> saved; if (!bytes(saved)) return false;
+  const uint32 before = fingerprint(), savedNow = now; Common::Array<uint32> state; _runner.exportPersistentState(state);
+  histories += _rocket.delta != 0; dormant += state[603] != 0;
+  if (physical) { fixture = saved; if (saveGameState(13,"Rocket continuation regression").getCode() != Common::kNoError) return false; debug("Astronomica rocket slot fingerprint: %08x",before); }
+  const uint soundsBefore = _soundsStarted; if (!press(action)) return false;
+  const bool departure = _place != 537; const uint32 after = fingerprint(now,departure), sounds = _soundsStarted-soundsBefore; const int last = _lastSound;
+  if (!loadPlace(117)) return false; _runner.seedRandom(77); _runner.defineValue(0,36,0x12345678);
+  ConfMan.setBool("astronomica_entry_scripts",true); const bool loaded = restore(saved); ConfMan.setBool("astronomica_entry_scripts",false);
+  now = savedNow; Common::Array<byte> again;
+  if (!loaded || !canSaveRocket() || fingerprint() != before || !bytes(again) || again != saved) { debug("Rocket save restore mismatch: boundary%u action%u loaded%d eligible%d before%08x actual%08x bytes%u/%u",boundaries,action,loaded,canSaveRocket(),before,fingerprint(),uint(saved.size()),uint(again.size())); for (uint i = 0; i < MIN(saved.size(),again.size()); ++i) if (saved[i] != again[i]) { debug("Rocket payload difference: offset%u expected%u actual%u",i,uint(saved[i]),uint(again[i])); break; } return false; }
+  const uint actualSoundsBefore = _soundsStarted; if (!press(action)) return false;
+  if (fingerprint(now,departure) != after || _soundsStarted-actualSoundsBefore != sounds || _lastSound != last) {
+   debug("Rocket continuation mismatch: boundary%u action%u expected%08x actual%08x clock%u",boundaries,action,after,fingerprint(now,departure),now); return false;
+  }
+  if (!restore(saved)) return false; now = savedNow; ++boundaries; return true;
+ };
+ if (ConfMan.hasKey("save_slot") && ConfMan.getInt("save_slot") == 13) {
+  debug("Astronomica rocket slot fingerprint: %08x",fingerprint()); now = scriptClock();
+  Common::Array<uint32> state; if (!_runner.exportPersistentState(state)) return false; const uint32 mask = state[604];
+  int32 selection = -1; bool ok = canSaveRocket() && _rocket.delta == 10 && _comet.frame == 3 && _comet.previousFrame == 4 && state[603] == 2 &&
+   _runner.getValue(1,0,selection) && selection == 11;
+  ok = ok && press(33); int32 solved = 0;
+  ok = ok && _place == 321 && _runner.getValue(0,36,solved) && solved == 1 && _puzzlesCompleted == 11 && _runner.exportPersistentState(state) && state[603] == 2 && state[604] == mask;
+  debug("Astronomica rocket startup save: %s (prior fast failure, selector11, dormant round2, first success)",ok ? "PASS" : "FAIL"); return ok;
+ }
+ // Exercise all controls at every initial selector, with both count histories.
+ for (int solved = 0; solved <= 1; ++solved) for (int setting = 0; setting < 16; ++setting) {
+  if (!start(false,solved)) return false;
+  for (int value = 1; value <= setting; ++value) if (!press(6)) return false;
+  for (uint action : {0U,5U,6U,33U,1U,4U}) if (!roundTrip(action)) return false;
+ }
+ // Old digits/gauges must remain independent of all subsequent selector values.
+ for (int setting : {1,3,5,7,9,13}) {
+  if (!start(true)) return false;
+  for (int value = 1; value <= setting; ++value) if (!press(6)) return false;
+  if (!press(33) || _place != 537) return false;
+  for (int value = setting; value > 0; --value) if (!press(5)) return false;
+  for (int value = 0; value < 16; ++value) {
+   for (uint action : {0U,5U,6U,33U}) if (!roundTrip(action)) return false;
+   if (value < 15 && !press(6)) return false;
+  }
+ }
+ // Build a real old-readout fixture, then choose the successful selector.
+ if (!start(true)) return false;
+ for (int value = 1; value <= 13; ++value) if (!press(6)) return false;
+ if (!press(33) || !press(5) || !press(5) || !roundTrip(33,true)) return false;
+ // The ambient sample may restart, but no entry narration is replayed.
+ _loopSound = 0; _loopEnabled = true; playSound(0,now,true); Common::Array<byte> music; if (!bytes(music) || !loadPlace(117)) return false;
+ uint sounds = _soundsStarted; if (!restore(music) || _soundsStarted != sounds+1 || _lastSound != 0 || !_loopEnabled) return false;
+ _mixer->stopHandle(_soundHandle);
+ // Every truncation/corruption and checksummed invalid field rejects atomically.
+ auto atomic = [&]() {
+  uint32 hash = fingerprint(); auto add = [&](uint32 v) { hash = (hash ^ v)*16777619U; };
+  for (uint32 v : {uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_lastSound),_soundsStarted,_pausedMillis,_pauseStarted,uint32(_clockPaused),
+       uint32(_rocket.kind),uint32(_rocket.delta),_rocket.since,_lastSuccessEnd,_lastBlockingSoundEnd,uint32(_pendingImageX),uint32(_pendingImageY),uint32(_movie != nullptr)}) add(v);
+  Common::Array<uint32> state; _runner.exportPersistentState(state); for (uint32 v : state) add(v);
+  for (char c : _pendingImageName) add(byte(c)); add(0); for (char c : _displayedImageName) add(byte(c));
+  add(screenRGBHash(_pendingImage,480)); return hash;
+ };
+ if (fixture.empty() || !loadPlace(117)) return false; const uint32 unchanged = atomic();
+ for (uint length = 0; length < fixture.size(); ++length) { Common::MemoryReadStream in(&fixture[0],length); if (loadGameStream(&in).getCode() == Common::kNoError || atomic() != unchanged) return false; }
+ Common::Array<byte> damaged = fixture;
+ for (uint offset = 0; offset < damaged.size(); ++offset) { damaged[offset] ^= 0x40; if (restore(damaged) || atomic() != unchanged) return false; damaged[offset] ^= 0x40; }
+ const uint invalidWords[] = {0,3,4,5,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,
+  16+6*27,16+8*27+1,16+8*27+19,16+8*27+20,16+29*27+5,16+33*27+4,16+34*27,16+48*27+300,16+48*27+301,16+48*27+302,16+48*27+604};
+ for (uint index : invalidWords) {
+  damaged = fixture; WRITE_LE_UINT32(&damaged[8+index*4],0x7fffffffU); uint32 hash = 2166136261U;
+  for (uint i = 8; i < damaged.size()-4; i += 4) hash = (hash ^ READ_LE_UINT32(&damaged[i]))*16777619U;
+  WRITE_LE_UINT32(&damaged[damaged.size()-4],hash);
+  if (restore(damaged) || atomic() != unchanged) { debug("Rocket invalid field accepted: %u",index); return false; } ++invalid;
+ }
+ debug("Astronomica rocket saves: PASS (%u boundaries, %u history boundaries, %u dormant boundaries, %u busy rejections, 7680 truncations, 7680 corruptions, %u invalid states, Music restart)",boundaries,histories,dormant,busy,invalid);
+ _runner.resetGlobals(); return loadPlace(103);
+}
+
+bool AstronomicaEngine::verifyRocketBoundaries() {
+ uint boundaries = 0, rejected = 0, failures = 0; uint32 now = 0;
+ auto candidate = [&]() { return _place == 537 && _runner.scriptsIdle() && _rocket.kind == RocketMotion::kStopped && !_pendingImage.w && !_movie; };
+ auto settle = [&]() {
+  for (uint tick = 0; tick < 6000 && (!candidate()); ++tick) { runScriptsAt(now); animateSpritesAt(now); now += 20; if (_place != 537) return _runner.scriptsIdle(); }
+  return candidate();
+ };
+ auto record = [&](int route, int control) {
+  if (!candidate()) return false;
+  Common::Array<uint32> state; if (!_runner.exportPersistentState(state)) return false;
+  debug("Rocket audit boundary: %d %d %u %u %d %u %u %u %u",route,control,now,state[300],_rocket.delta,_rocket.since,state[603],state[604],uint(_mixer->isSoundHandleActive(_soundHandle) && _lastSound != _loopSound));
+  for (uint i = 0; i < _scene.sprites.size(); ++i) {
+   Common::Array<uint32> words; p526SpriteWords(_scene.sprites[i],words);
+   Common::String line = Common::String::format("Rocket audit sprite: %u",i);
+   for (uint32 value : words) line += Common::String::format(" %d",int32(value));
+   debug("%s",line.c_str());
+  }
+  ++boundaries; return true;
+ };
+ auto click = [&](uint id) {
+  const Sprite &s = _scene.sprites[id];
+  if (spriteAt(s.x+1,s.y+1) != int(id)) return false;
+  clickAtTime(s.x+1,s.y+1,now);
+  if (candidate()) return false;
+  ++rejected; return settle();
+ };
+ for (int route = 0; route <= 16; ++route) {
+  _runner.resetGlobals(); if (!loadPlace(537)) return false;
+  now = 0; if (_runner.enqueueStartup(_scene.scripts,now,true) != 1 || !settle() || !record(route,-1)) return false;
+  if (!route) {
+   if (!click(4) || !record(route,4)) return false;
+   for (int value = 1; value <= 15; ++value) if (!click(5) || !record(route,5)) return false;
+   if (!click(5) || !record(route,5)) return false;
+   for (int value = 14; value >= 0; --value) if (!click(4) || !record(route,4)) return false;
+  } else {
+   const int setting = route-1;
+   for (int value = 1; value <= setting; ++value) if (!click(5)) return false;
+   if (!record(route,5) || !click(32)) return false;
+   if (setting == 11 || setting == 12) { if (_place != 321) return false; }
+   else {
+    if (!record(route,32)) return false; ++failures;
+    for (int value = setting+1; value <= 15; ++value) if (!click(5) || !record(route,5)) return false;
+    for (int value = 14; value >= 0; --value) if (!click(4) || !record(route,4)) return false;
+   }
+  }
+ }
+ debug("Astronomica rocket boundary verification: PASS (%u boundaries, %u busy rejections, %u failed-return routes, all16 selectors)",boundaries,rejected,failures);
  _runner.resetGlobals(); return loadPlace(103);
 }
 
@@ -7342,6 +7622,15 @@ Common::Error AstronomicaEngine::run() {
   const bool ok = verifyAudioChannels();
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Audio channel verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_rocket_saves") && ConfMan.getBool("astronomica_verify_rocket_saves")) {
+  const bool ok = verifyRocketSaves(); debug("Astronomica rocket save verification: %s",ok ? "PASS" : "FAIL");
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Rocket save verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_rocket_boundaries") && ConfMan.getBool("astronomica_verify_rocket_boundaries")) {
+  const bool ok = verifyRocketBoundaries();
+  debug("Astronomica rocket boundary result: %s",ok ? "PASS" : "FAIL");
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Rocket boundary audit failed");
  }
  if (ConfMan.hasKey("astronomica_verify_rocket_original") && ConfMan.getBool("astronomica_verify_rocket_original")) {
   uint32 hash = 0; bool ok = verifyRocketOriginalCallbacks(hash);

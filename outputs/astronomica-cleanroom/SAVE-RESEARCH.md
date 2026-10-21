@@ -148,3 +148,8 @@ During validation of the rebuilt v12 executable, test slot5 was observed at16384
 ## Construction saves,20 October2026
 
 Native v13 retains both P515/P536 construction scenes and the dormant custom17 round/mask and comet orientation. 613 round trips/successors and420 control matrix cases cover six routes, all five designs, early Launch, no-picture states, partial parts and cap recovery. Physical slot12 resumes partial P536 design5 in a fresh process, preserves dormant round2 and applies first completion exactly once. P515 success remains the original no-op. All8960 truncations,8960 byte corruptions and52 checksummed invalid states reject atomically. Versions1-12 and the complete WASAPI regression pass on this build.
+
+
+## P537 rocket saves,21 October2026
+
+Version14 retains all48 sprites, selector, prior digits/gauges, stopped motion epoch and dormant cross-puzzle state. 577 exact round trips/successors and fresh-process slot13 pass; all7680 truncations,7680 corruptions and48 checksummed invalid states reject atomically. Full native WASAPI suite and normal startup pass with versions1-13 retained.

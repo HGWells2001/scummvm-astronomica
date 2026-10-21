@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "status": "PASS",
-  "exe_sha256": "127bc38dd6bea7a7deccece1a539e79d414ec7c835c3ce1cd79d50caf89cdf61",
+  "exe_sha256": "e1c05225769cb9411a1b849abe7530cb36ee24114a3cf65bac446c587b903d3c",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "19b832ec95abb9a8bac10215b7811148f2caca727c744b977f7ca7a2f4ab8f58",
-    "astronomica.h": "e5d3ceac0df806a9c25b80be8cd6b31db610234ea9c73c95ce33ba55c83b180a",
+    "astronomica.cpp": "fe8190b5231569671079e9db167b064310ef45516d1f0566693c2d6299d0b5d8",
+    "astronomica.h": "64b61c50fa1796bbe0ef5b158c406964734331c12d4a1f5e54f9af13422614d6",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -44,8 +44,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p508-saves-validation.json",
       "validation_sha256": "924dab6076d79b92adbe4e3f9ddd03516701eec0fab287c77eb6956da1c6ae34",
-      "runtime_sha256": "6e9dca98a2f8cf28d16ac3380b9c70bfa443821e96dbe5e04e0e1b096c04f88b",
-      "startup_sha256": "03b6d3f1268a7de4900a46ec3bcc2856fd74321905fedccc670d7b4fa94368bd",
+      "runtime_sha256": "39c90067a9b5591b6a315bdda76dc33117550043c4282d04dde87326f3b56fd5",
+      "startup_sha256": "10f96b920b2f0728810912bfb95b5521d759b70ee9b4bd81d3d15dc244fd55a7",
       "fresh_process_fingerprint": "01944964"
     },
     {
@@ -56,8 +56,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p505-saves-validation.json",
       "validation_sha256": "190b341d565a61bc74b8344463bcd9e277de2d7ce70bba3434b2389f0cbaf539",
-      "runtime_sha256": "273efcb87c67e29c9beba6f90adfb980c857825ab11d8e1afab5ce5ded8abc60",
-      "startup_sha256": "4b197f8260c404602b9ea9d69f3fdee00dcb05f09db9ce5f14c5855897145410",
+      "runtime_sha256": "65d2b3c63f13488575c2e4c35df3e6fd21a4d35c9a53079126520ffb6c54acc4",
+      "startup_sha256": "e4633b8041f4a83d9a48e9c37267a84f79c9106eba6f066e770b9711a0347531",
       "fresh_process_fingerprint": "cf874c94"
     },
     {
@@ -68,8 +68,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p519-saves-validation.json",
       "validation_sha256": "6d2abe68bee7bc584bdba3a450aa34b3be5386982580308a2795319ad5880aa0",
-      "runtime_sha256": "5fd7c2a52008d006ef8cca0af8bf44c7df5838d4991ec20da18677193abfaeed",
-      "startup_sha256": "671d3dccb17042738b6b1aa2734e02716b690674b439d08a7d3620794ae63ad3",
+      "runtime_sha256": "c79db304fdcea84f410050d109fcdacb21c957bab57ba9fad081761cb48e13b6",
+      "startup_sha256": "15758849f324e2003898645a0e735d3a4b2febe0b4b3e3abe9f340d8badc8924",
       "fresh_process_fingerprint": "c7504357"
     },
     {
@@ -79,10 +79,10 @@
       "test_slot": 5,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p524-saves-validation.json",
-      "validation_sha256": "f8024ac196e59e1447b1ca1eddac742722bb29d1478b650bf17650817355a105",
-      "runtime_sha256": "e951781fa5b280f9d49c99309b1c0af642b701b455ec2b838d959a28fcbd604d",
-      "startup_sha256": "316657e825315a17c40a36781d97dc4e26834c5da5740a83fd78dfabef3f4f1d",
-      "fresh_process_fingerprint": "19fe296b"
+      "validation_sha256": "1ed015260473072578b638921bc6109ec089f0bd1b034e2e2d6e19ee179b414c",
+      "runtime_sha256": "896c9a946697a610d1059f0d148aa8e4c118e3475713ec1ce3588906ce4fbaaf",
+      "startup_sha256": "c25ca8d96b3ac73b36dc7695c661fb6f775d67efb5ced7eae8532ed76d2da0aa",
+      "fresh_process_fingerprint": "7fb90c89"
     },
     {
       "scene": 526,
@@ -91,10 +91,10 @@
       "test_slot": 6,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p526-saves-validation.json",
-      "validation_sha256": "23eae2fbdbeb6676754812620056c1061bf28a52763d115552a527a1cb6e5221",
-      "runtime_sha256": "39487d88e473a1ff2130d19aba539f289e633dc9fa7c17a7d9ea253a56b5b133",
-      "startup_sha256": "9303b2c6978b57e4420f1d57d2a92ea8269026a5bde689eeb514d07a0c1f1ae8",
-      "fresh_process_fingerprint": "e39cd0c3"
+      "validation_sha256": "f463beca0d323a012ab06fc775f1b8411cbdb70d3ef899101a36338f6d348770",
+      "runtime_sha256": "0f2de71859308117b22916362cdd143716cc8f883946901be4c42a46d2f43b4a",
+      "startup_sha256": "433b07af4e9541bcc43eafe8181575cf25b28809df055e165eb243c85e3df5be",
+      "fresh_process_fingerprint": "5f9be957"
     },
     {
       "scene": 528,
@@ -103,10 +103,10 @@
       "test_slot": 7,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p528-saves-validation.json",
-      "validation_sha256": "23861d90ff2a2a2c2658c0ac7aaec6c96accf57f70c1994ef5d55d046792e2c5",
-      "runtime_sha256": "aef7a8e2b483377687e46031afed4d8492ccd52738b339c0a233d503721747d6",
-      "startup_sha256": "2ed5bde4155de6c24a6349731ab97a5b839a87ecec3bdbbacafd7c3ce3d18e3b",
-      "fresh_process_fingerprint": "6a7b5ed1"
+      "validation_sha256": "765c3dd78ab915ee54e252e520cab5dde27f85902b10e6a963b073d86a6b87f9",
+      "runtime_sha256": "3dd9f0bee3082f6c45157a273f6438b9b4276b4c23910808a4108bfe5913fa5f",
+      "startup_sha256": "74c6ea4a4f202b7a985a75133b8484f5a879e13c895f1ecfec8acd2a396ee116",
+      "fresh_process_fingerprint": "53ef212f"
     },
     {
       "scene": 530,
@@ -115,10 +115,10 @@
       "test_slot": 8,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p530-saves-validation.json",
-      "validation_sha256": "acaae551d63510ff95fdf3c8e6008a14009a22e49c82752148d1ca17e3be9424",
-      "runtime_sha256": "ec0191f0d412c279b55879e2ee02e5649d6f846e83f0445c516ece2c0150bbaf",
-      "startup_sha256": "b63025c9159ef1f999844fe4c35f5d766e807635fc530f7ec3316c1ec1282970",
-      "fresh_process_fingerprint": "b315157e"
+      "validation_sha256": "b0ba21763c49bc8fc66dfe2090c10c3c13b7cb258e1f5105cd221d7fef3324ed",
+      "runtime_sha256": "28b2601db36c7b8b547d70b527ffc89bf4f55a88c107d7ab340e0a08a49a2cb6",
+      "startup_sha256": "d98d99f3deeb53069605f3c559fd27105180c3e16d6e9aaf868c9efdd392e75f",
+      "fresh_process_fingerprint": "95bfe5d7"
     },
     {
       "scene": 513,
@@ -127,10 +127,10 @@
       "test_slot": 10,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p513-saves-validation.json",
-      "validation_sha256": "c35ca80152f9a60bdcb194446c566bdeb72063c5d71d987ea2bcd67734d7f498",
-      "runtime_sha256": "1c74b8cbc6973404dcb87f601e68ab19b154110c8abb2da8b86ac97d563b4473",
-      "startup_sha256": "338a230aec46812f5013fcf94608ed1451117a85cac49ce19f2b45607c21e8f9",
-      "fresh_process_fingerprint": "d4b2b0bd"
+      "validation_sha256": "99d00a1c4345cfc4759a557c8dceb8fceeadcf7bae37496a10c9bcf13a3881e5",
+      "runtime_sha256": "fc649f0fcdba2c19ae621e1d747fdfa09948681752276f59eec0b5d535a31982",
+      "startup_sha256": "1dd066c646da06e3dda5db5c1a0167489e37853e381078279c2f6325adddc5d1",
+      "fresh_process_fingerprint": "daced955"
     },
     {
       "scene": 517,
@@ -139,10 +139,10 @@
       "test_slot": 11,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p517-saves-validation.json",
-      "validation_sha256": "158116a2b44f2df74e92daf2c29b9d2b3cd2437b0ede181fc1ae06df8cce6d26",
-      "runtime_sha256": "72e90487b0bea2e506c1fdc36c9b63e5576e49de5bf7496100da43fbce318bce",
-      "startup_sha256": "9a2bdfa852a60f9c6fdd5c69b68aca986def78d97d9b8ae2f204d9e395744758",
-      "fresh_process_fingerprint": "f4bcd4f8"
+      "validation_sha256": "3f1b2d3530ba1e496318d7ad3db2f9251ca66f9b0c2d8d88479b2c0ef33f360f",
+      "runtime_sha256": "f8dbfbe04f4677e4bf747418d532ecfc7080b22c03a2e64f49563423d5be42b0",
+      "startup_sha256": "da62cdc0cc2eaa0838d9129a44d9c8ccd9e5ed0cc3939f731c4e06b30c1e7806",
+      "fresh_process_fingerprint": "23b97709"
     },
     {
       "scene": 506,
@@ -152,12 +152,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "ddb1b82bf8b3f01ab657b5dcc9b61c4017e2106adf971c1fbc3e3f9e59bf4ca8",
+      "validation_sha256": "cbbe311182d753adb60b6a201d410b6bd32c700a8299fdde84d5c7121cd8b75a",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "a2c663895ee046cf1f1b66753cd72576db354094a8b385b0d7cbaa11d7274900",
+      "runtime_sha256": "61a5a58e9546b0cb1e46681297712e90f1cf945f42d618034d49ff4adb121be2",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "0123597213d87cfc3b2ca0e875ca735eebe8a4290f57ef4af0e6033942a03bd2",
-      "fresh_process_fingerprint": "d246483b"
+      "startup_sha256": "5ace3965b42580ec7bf28759ea558cd802124f7ccd0b80c543d19b129f330a29",
+      "fresh_process_fingerprint": "5d45900c"
     },
     {
       "scene": 531,
@@ -167,12 +167,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "ddb1b82bf8b3f01ab657b5dcc9b61c4017e2106adf971c1fbc3e3f9e59bf4ca8",
+      "validation_sha256": "cbbe311182d753adb60b6a201d410b6bd32c700a8299fdde84d5c7121cd8b75a",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "a2c663895ee046cf1f1b66753cd72576db354094a8b385b0d7cbaa11d7274900",
+      "runtime_sha256": "61a5a58e9546b0cb1e46681297712e90f1cf945f42d618034d49ff4adb121be2",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "0123597213d87cfc3b2ca0e875ca735eebe8a4290f57ef4af0e6033942a03bd2",
-      "fresh_process_fingerprint": "d246483b"
+      "startup_sha256": "5ace3965b42580ec7bf28759ea558cd802124f7ccd0b80c543d19b129f330a29",
+      "fresh_process_fingerprint": "5d45900c"
     },
     {
       "scene": 532,
@@ -182,12 +182,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "ddb1b82bf8b3f01ab657b5dcc9b61c4017e2106adf971c1fbc3e3f9e59bf4ca8",
+      "validation_sha256": "cbbe311182d753adb60b6a201d410b6bd32c700a8299fdde84d5c7121cd8b75a",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "a2c663895ee046cf1f1b66753cd72576db354094a8b385b0d7cbaa11d7274900",
+      "runtime_sha256": "61a5a58e9546b0cb1e46681297712e90f1cf945f42d618034d49ff4adb121be2",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "0123597213d87cfc3b2ca0e875ca735eebe8a4290f57ef4af0e6033942a03bd2",
-      "fresh_process_fingerprint": "d246483b"
+      "startup_sha256": "5ace3965b42580ec7bf28759ea558cd802124f7ccd0b80c543d19b129f330a29",
+      "fresh_process_fingerprint": "5d45900c"
     },
     {
       "scene": 533,
@@ -197,12 +197,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "ddb1b82bf8b3f01ab657b5dcc9b61c4017e2106adf971c1fbc3e3f9e59bf4ca8",
+      "validation_sha256": "cbbe311182d753adb60b6a201d410b6bd32c700a8299fdde84d5c7121cd8b75a",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "a2c663895ee046cf1f1b66753cd72576db354094a8b385b0d7cbaa11d7274900",
+      "runtime_sha256": "61a5a58e9546b0cb1e46681297712e90f1cf945f42d618034d49ff4adb121be2",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "0123597213d87cfc3b2ca0e875ca735eebe8a4290f57ef4af0e6033942a03bd2",
-      "fresh_process_fingerprint": "d246483b"
+      "startup_sha256": "5ace3965b42580ec7bf28759ea558cd802124f7ccd0b80c543d19b129f330a29",
+      "fresh_process_fingerprint": "5d45900c"
     },
     {
       "scene": 534,
@@ -212,12 +212,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "ddb1b82bf8b3f01ab657b5dcc9b61c4017e2106adf971c1fbc3e3f9e59bf4ca8",
+      "validation_sha256": "cbbe311182d753adb60b6a201d410b6bd32c700a8299fdde84d5c7121cd8b75a",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "a2c663895ee046cf1f1b66753cd72576db354094a8b385b0d7cbaa11d7274900",
+      "runtime_sha256": "61a5a58e9546b0cb1e46681297712e90f1cf945f42d618034d49ff4adb121be2",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "0123597213d87cfc3b2ca0e875ca735eebe8a4290f57ef4af0e6033942a03bd2",
-      "fresh_process_fingerprint": "d246483b"
+      "startup_sha256": "5ace3965b42580ec7bf28759ea558cd802124f7ccd0b80c543d19b129f330a29",
+      "fresh_process_fingerprint": "5d45900c"
     },
     {
       "scene": 535,
@@ -227,12 +227,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "ddb1b82bf8b3f01ab657b5dcc9b61c4017e2106adf971c1fbc3e3f9e59bf4ca8",
+      "validation_sha256": "cbbe311182d753adb60b6a201d410b6bd32c700a8299fdde84d5c7121cd8b75a",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "a2c663895ee046cf1f1b66753cd72576db354094a8b385b0d7cbaa11d7274900",
+      "runtime_sha256": "61a5a58e9546b0cb1e46681297712e90f1cf945f42d618034d49ff4adb121be2",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "0123597213d87cfc3b2ca0e875ca735eebe8a4290f57ef4af0e6033942a03bd2",
-      "fresh_process_fingerprint": "d246483b"
+      "startup_sha256": "5ace3965b42580ec7bf28759ea558cd802124f7ccd0b80c543d19b129f330a29",
+      "fresh_process_fingerprint": "5d45900c"
     },
     {
       "scene": 515,
@@ -242,12 +242,12 @@
       "family": "builder",
       "scope": "Settled construction; both scenes in memory and partial P536 in a fresh process; dormant custom17 sequence retained",
       "validation_file": "evidence/builder-saves-validation.json",
-      "validation_sha256": "5399b9559d930565398b253ed035f4eea8f99cd514ed95bd911f8b2015267782",
+      "validation_sha256": "d541e4758f037ed06dfaf67fb09b7e65fa7b35af0af9547c3af233b0d9dcd778",
       "runtime_file": "evidence/builder-saves-runtime.log",
-      "runtime_sha256": "4e1e41ef033e1e6249375bbf8544ceb112052b91b1b9078696f9372757b0d2d0",
+      "runtime_sha256": "db870ba260ee18889b8170bacadfc3fb1a216fbbd44fc1c3d59d998f981e885a",
       "startup_file": "evidence/builder-saves-startup.log",
-      "startup_sha256": "e15a700e1113225bd4de22923046602a1b4190859c69ee190d600c058717da56",
-      "fresh_process_fingerprint": "e8f8500f"
+      "startup_sha256": "8ad16667a63058a6a9f9b67f2a31cb808360c818bb168463f0f1ef8e58317181",
+      "fresh_process_fingerprint": "b5645f34"
     },
     {
       "scene": 536,
@@ -257,15 +257,29 @@
       "family": "builder",
       "scope": "Settled construction; both scenes in memory and partial P536 in a fresh process; dormant custom17 sequence retained",
       "validation_file": "evidence/builder-saves-validation.json",
-      "validation_sha256": "5399b9559d930565398b253ed035f4eea8f99cd514ed95bd911f8b2015267782",
+      "validation_sha256": "d541e4758f037ed06dfaf67fb09b7e65fa7b35af0af9547c3af233b0d9dcd778",
       "runtime_file": "evidence/builder-saves-runtime.log",
-      "runtime_sha256": "4e1e41ef033e1e6249375bbf8544ceb112052b91b1b9078696f9372757b0d2d0",
+      "runtime_sha256": "db870ba260ee18889b8170bacadfc3fb1a216fbbd44fc1c3d59d998f981e885a",
       "startup_file": "evidence/builder-saves-startup.log",
-      "startup_sha256": "e15a700e1113225bd4de22923046602a1b4190859c69ee190d600c058717da56",
-      "fresh_process_fingerprint": "e8f8500f"
+      "startup_sha256": "8ad16667a63058a6a9f9b67f2a31cb808360c818bb168463f0f1ef8e58317181",
+      "fresh_process_fingerprint": "b5645f34"
+    },
+    {
+      "scene": 537,
+      "version": 14,
+      "payload_bytes": 7680,
+      "test_slot": 13,
+      "scope": "Settled selector and failed-return boundaries; previous readout and motion epoch preserved; no mid-launch saving",
+      "validation_file": "evidence/rocket-saves-validation.json",
+      "validation_sha256": "d1b05cb83bb05b4aa662d5736d29619b6cbb1456aee48aaf55b25b1f411c5ddb",
+      "runtime_file": "evidence/rocket-saves-runtime.log",
+      "runtime_sha256": "f3946f8be441e864d64c8181596a956e71cf86bf80f250da76e7e34e3d2531eb",
+      "startup_file": "evidence/rocket-saves-startup.log",
+      "startup_sha256": "4fb07640cbb7cc705b0f241bf659b2ad193770bff4a7f60baf2cbd71f453162f",
+      "fresh_process_fingerprint": "c7d5ee19"
     }
   ],
-  "supported_puzzle_route_scenes": 17,
+  "supported_puzzle_route_scenes": 18,
   "inventoried_puzzle_route_scenes": 35,
   "unsupported_puzzle_route_scenes": [
     501,
@@ -284,8 +298,7 @@
     523,
     525,
     527,
-    529,
-    537
+    529
   ],
   "whole_game_completion_percent": null,
   "limitations": [

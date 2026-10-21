@@ -1,12 +1,12 @@
 # Astronomica — ripartenza dai file originali
 
-Stato verificato: 20 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
+Stato verificato: 21 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
 
 Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa la build reale attuale, parte dal menu P1 e attiva audio, animazioni e interazione. Preferenze e salvataggi personali sono in userdata/astronomica, separati dalle prove. Il vecchio collegamento bin/Avvia-Astronomica.cmd rimanda allo stesso avvio. Vedere LOCAL-PLAY.md.
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530, P531, P532, P533, P534, P535, P536. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P530, P531, P532, P533, P534, P535, P536, P537. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -970,3 +970,8 @@ Native v12 retains both locals, all eleven sprite records, the active aurora tim
 ## Construction saves,20 October2026
 
 Native v13 retains both P515/P536 construction scenes and the dormant custom17 round/mask and comet orientation. 613 round trips/successors and420 control matrix cases cover six routes, all five designs, early Launch, no-picture states, partial parts and cap recovery. Physical slot12 resumes partial P536 design5 in a fresh process, preserves dormant round2 and applies first completion exactly once. P515 success remains the original no-op. All8960 truncations,8960 byte corruptions and52 checksummed invalid states reject atomically. Versions1-12 and the complete WASAPI regression pass on this build.
+
+
+## P537 rocket saves,21 October2026
+
+Version14 retains all48 sprites, selector, prior digits/gauges, stopped motion epoch and dormant cross-puzzle state. 577 exact round trips/successors and fresh-process slot13 pass; all7680 truncations,7680 corruptions and48 checksummed invalid states reject atomically. Full native WASAPI suite and normal startup pass with versions1-13 retained.

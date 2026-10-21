@@ -35,13 +35,23 @@ for place in (515,536):
  rows.append(dict(scene=place,version=13,payload_bytes=8960,test_slot=12,family='builder',scope='Settled construction; both scenes in memory and partial P536 in a fresh process; dormant custom17 sequence retained',
   validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
   startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+validation=root/'evidence/rocket-saves-validation.json';v=json.loads(validation.read_text())
+proof=json.loads((root/'evidence/rocket-save-proof.json').read_text())
+assert v['status']=='PASS' and proof['metadata_listed'] and proof['slot']==13 and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+log=root/'evidence/rocket-saves-runtime.log';startup=root/'evidence/rocket-saves-startup.log'
+assert 'rocket save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+assert 'rocket startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+rows.append(dict(scene=537,version=14,payload_bytes=7680,test_slot=13,scope='Settled selector and failed-return boundaries; previous readout and motion epoch preserved; no mid-launch saving',
+ validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
+ startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
-result=dict(date='2026-10-20',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
+result=dict(date='2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
  engine_sha256={p.name:digest(p) for p in sorted((root/'engine/astronomica').iterdir()) if p.is_file()},
  exploration=dict(read_versions=[1,2],write_version=2,scope='Settled mode1 exploration screens; v1 inactive countdown compatibility'),
  puzzle_saves=rows,supported_puzzle_route_scenes=len(supported),inventoried_puzzle_route_scenes=len(all_scenes),
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
-print('Native save coverage: seventeen supported puzzle scenes; versions 1-13 readable; no global completion percentage')
+print('Native save coverage: eighteen supported puzzle scenes; versions 1-14 readable; no global completion percentage')
