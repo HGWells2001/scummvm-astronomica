@@ -31,3 +31,5 @@ GAMESTAT
 *.sav
 !outputs/astronomica-cleanroom/astronomica-play.ini
 userdata/
+game_data/
+astronomica-diagnostics-*/

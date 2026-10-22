@@ -12,6 +12,7 @@ namespace Audio { class SeekableAudioStream; }
 #include "astronomica/legacy_save.h"
 #include "astronomica/script.h"
 #include "astronomica/sprites.h"
+#include "astronomica/original_cursors.h"
 #include "astronomica/plot.h"
 #include "astronomica/danger.h"
 #include "astronomica/transitions.h"
@@ -161,6 +162,9 @@ private:
  bool verifyP510Puzzle();
  int _plotEvent = 0;
  uint32 _plotTime = 0;
+ OriginalCursors _originalCursors;
+ int _cursorPointX = -1, _cursorPointY = -1, _cursorPointPlace = -1;
+ void updateOriginalCursor(int x, int y);
  int _place;
  int _previousPlace;
  int32 _nav[3];

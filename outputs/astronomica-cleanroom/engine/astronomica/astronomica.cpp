@@ -1783,10 +1783,10 @@ void AstronomicaEngine::dangerCustom(int operation, int mode) {
  }
  if (operation == 5) {
   DangerStep step;
-  step.actions.push_back({kDangerRange,0,602});
-  step.actions.push_back({kDangerCallback,0,1,600}); step.actions.push_back({kDangerCallback,1,13,510});
-  for (int id : {5,6,1}) step.actions.push_back({kDangerHide,id});
-  for (int id : {7,11,18}) step.actions.push_back({kDangerShow,id});
+  step.actions.push_back(DangerAction{kDangerRange,0,602});
+  step.actions.push_back(DangerAction{kDangerCallback,0,1,600}); step.actions.push_back(DangerAction{kDangerCallback,1,13,510});
+  for (int id : {5,6,1}) step.actions.push_back(DangerAction{kDangerHide,id});
+  for (int id : {7,11,18}) step.actions.push_back(DangerAction{kDangerShow,id});
   applyDangerStep(step);
  }
 }
@@ -1917,18 +1917,23 @@ bool AstronomicaEngine::readImage(Common::SeekableReadStream &s, Graphics::Surfa
 }
 
 bool AstronomicaEngine::changePlace(int place) {
+ const int sourcePlace = _place;
+ const bool traceRoute = ConfMan.hasKey("astronomica_trace_route") && ConfMan.getBool("astronomica_trace_route");
  int32 globals[100] = {};
  for (int i = 0; i < 100; ++i) _runner.getValue(0,i,globals[i]);
  const PlaceTransition transition = resolvePlaceTransition(_place,place,globals);
+ if (traceRoute) debug("Astronomica route request: P%d -> P%d resolved P%d permit%d", sourcePlace,place,transition.destination,int(transition.permit));
  _runner.defineValue(0,57,transition.permit);
  const bool audio = ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio");
  // Denial voice starts before reloading the old scene in _do_place. Preserve
  // that foreground sound while the scene loader replaces its other state.
  const bool keepSound = audio && transition.immediateSound && playSound(transition.immediateSound,scriptClock());
  if (!loadPlace(transition.destination,keepSound)) {
+  if (traceRoute) debug("Astronomica route LOAD FAILURE: P%d -> P%d",sourcePlace,transition.destination);
   _runner.defineValue(0,57,globals[57]); return false;
  }
  if (audio && transition.failureVoice) playSound(911,scriptClock());
+ if (traceRoute) debug("Astronomica route accepted: P%d -> P%d",sourcePlace,_place);
  return true;
 }
 bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
@@ -1984,6 +1989,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
+ _cursorPointPlace = -1; // Recompute original pointer on every scene load.
  _questionSaveBaseline.clear(); if (place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion(); _probeAssetsValid = false;
@@ -2413,8 +2419,37 @@ int AstronomicaEngine::spriteAt(int x, int y) {
  }
  return -1;
 }
+void AstronomicaEngine::updateOriginalCursor(int x, int y) {
+ if (!_originalCursors.loaded() || (x == _cursorPointX && y == _cursorPointY && _place == _cursorPointPlace)) return;
+ _cursorPointX = x; _cursorPointY = y; _cursorPointPlace = _place;
+ int32 cursorID = 0;
+ if (!_runner.clicksBlocked()) {
+  Common::File file;
+  const Common::Path path = ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/MEGAFILE.HYP",_place)));
+  if (file.open(Common::FSNode(path))) {
+   for (uint i = 0; i < _scene.sprites.size(); ++i) {
+    const Sprite &s = _scene.sprites[i];
+    // Use exactly the cursor resource ID serialized in the original scene.
+    // Do not synthesize hands/arrows for generic mouse rectangles.
+    if (s.cursor <= 0 || !_originalCursors.contains(uint32(s.cursor)) || !supportsSpriteLayers(_scene) ||
+        s.layer != 1 || s.autoMove || s.autoFrame) continue;
+    const uint n = spriteFrameCount(_scene,i);
+    if (!n || (s.selectedFrame >= 0 && uint(s.selectedFrame) >= n)) continue;
+    const Frame *frame = spriteFrameAt(_scene,i,s.selectedFrame >= 0 ? uint(s.selectedFrame) : 0U);
+    Graphics::Surface *bmp = frame ? decodeSpriteBitmap(file,frame->image,_screen.format) : nullptr;
+    if (!bmp) continue;
+    const bool inside = pointInSprite(s,bmp->w,bmp->h,x,y);
+    bmp->free(); delete bmp;
+    if (inside) { cursorID = s.cursor; break; }
+   }
+  }
+ }
+ _originalCursors.select(cursorID);
+}
 void AstronomicaEngine::clickAt(int x, int y) { clickAtTime(x,y,scriptClock()); }
 void AstronomicaEngine::clickAtTime(int x, int y, uint32 now) {
+ if (ConfMan.hasKey("astronomica_trace_route") && ConfMan.getBool("astronomica_trace_route"))
+  debug("Astronomica route click: P%d x%d y%d blocked%d",_place,x,y,int(_runner.clicksBlocked()));
  if (_runner.clicksBlocked()) return;
  // Original _do_mouse 9:11f7 stores the last click before hit dispatch.
  if (_place == 507) _runner.setZodiacRegion(astrologyRegion(x,y,444,165,122,30));
@@ -8327,11 +8362,15 @@ Common::Error AstronomicaEngine::run() {
  // Supply a visible engine cursor; the backend hides the OS cursor in-game.
  CursorMan.setDefaultArrowCursor();
  CursorMan.showMouse(true);
+ if (!ConfMan.hasKey("astronomica_original_cursors") || ConfMan.getBool("astronomica_original_cursors"))
+  { _originalCursors.load(ConfMan.getPath("path")); if (_originalCursors.loaded()) _originalCursors.select(0); }
  _runner.seedRandom(uint16(Common::RandomSource::generateNewSeed()));
  // _CreateGame allocates the original game structure with calloc.
  _runner.resetGlobals();
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
+ if (ConfMan.hasKey("astronomica_trace_route") && ConfMan.getBool("astronomica_trace_route"))
+  debug("Astronomica route startup: P%d",_place);
  if (ConfMan.hasKey("save_slot") && ConfMan.getInt("save_slot") >= 0) {
   const Common::Error result = loadGameState(ConfMan.getInt("save_slot"));
   if (result.getCode() != Common::kNoError) { _background.free(); _screen.free(); return result; }
@@ -9868,6 +9907,8 @@ Common::Error AstronomicaEngine::run() {
   quitGame();
   return scriptsOK && loaded == 420 && bitmaps == 3625 && commands == 10316 && tails == 4 ? Common::kNoError : Common::Error(Common::kReadingFailed, "Resource or script verification failed");
  }
+ // Developer-only scene jumping and puzzle controls must never affect a normal playthrough.
+ const bool developerControls = ConfMan.hasKey("astronomica_debug_controls") && ConfMan.getBool("astronomica_debug_controls");
  while (!shouldQuit()) {
   Common::Event event;
   while (_eventMan->pollEvent(event)) {
@@ -9876,18 +9917,18 @@ Common::Error AstronomicaEngine::run() {
    if (event.type == Common::EVENT_LBUTTONDOWN) { clickAt(event.mouse.x, event.mouse.y); continue; }
    if (event.type != Common::EVENT_KEYDOWN) continue;
    switch (event.kbd.keycode) {
-   case Common::KEYCODE_F5: openMainMenuDialog(); break;
+   case Common::KEYCODE_F5: openMainMenuDialog(); _originalCursors.reset(); _cursorPointPlace = -1; break;
    case Common::KEYCODE_ESCAPE: quitGame(); break;
-   case Common::KEYCODE_v: if (_place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
+   case Common::KEYCODE_v: if (developerControls && _place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
    case Common::KEYCODE_m:
-    if (_place == 517 && _scene.sprites.size() >= 7) demoMovement(_scene.sprites[6].x == 447 ? 477 : 447);
-    else if (_place == 510) demoOffset();
+    if (developerControls && _place == 517 && _scene.sprites.size() >= 7) demoMovement(_scene.sprites[6].x == 447 ? 477 : 447);
+    else if (developerControls && _place == 510) demoOffset();
     break;
-   case Common::KEYCODE_r: if (_place == 510) changePlace(510); break;
-   case Common::KEYCODE_c: if (_place == 510) demoOffset(9); break;
-   case Common::KEYCODE_f: if (_place == 510 && _scene.sprites.size() >= 10) demoFrame(_scene.sprites[9].selectedFrame == 1 ? 0 : 1); break;
-   case Common::KEYCODE_PAGEDOWN: stepPlace(1); break;
-   case Common::KEYCODE_PAGEUP: stepPlace(-1); break;
+   case Common::KEYCODE_r: if (developerControls && _place == 510) changePlace(510); break;
+   case Common::KEYCODE_c: if (developerControls && _place == 510) demoOffset(9); break;
+   case Common::KEYCODE_f: if (developerControls && _place == 510 && _scene.sprites.size() >= 10) demoFrame(_scene.sprites[9].selectedFrame == 1 ? 0 : 1); break;
+   case Common::KEYCODE_PAGEDOWN: if (developerControls) stepPlace(1); break;
+   case Common::KEYCODE_PAGEUP: if (developerControls) stepPlace(-1); break;
    case Common::KEYCODE_LEFT: if (_nav[0] > 0) changePlace(_nav[0]); break;
    case Common::KEYCODE_UP: if (_nav[1] > 0) changePlace(_nav[1]); break;
    case Common::KEYCODE_RIGHT: if (_nav[2] > 0) changePlace(_nav[2]); break;
@@ -9897,6 +9938,7 @@ Common::Error AstronomicaEngine::run() {
   runScripts();
   const Common::Point mouse = _eventMan->getMousePos();
   hoverAtTime(mouse.x,mouse.y,scriptClock());
+  updateOriginalCursor(mouse.x,mouse.y);
   updateWorldAt(scriptClock());
   animateSpritesAt(scriptClock());
   resumeLoopAt(scriptClock());
