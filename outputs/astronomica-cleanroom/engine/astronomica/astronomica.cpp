@@ -1163,6 +1163,55 @@ static bool validUniverseSprites(const Common::Array<uint32> &w, const Scene &or
 static Graphics::Surface *decodeSpriteBitmap(Common::SeekableReadStream &, const BitmapRef &, const Graphics::PixelFormat &);
 // Native v16 preserves ordinary/failed-return P522, not an active flight.
 // P514 ordinary settled orbit state. No queued launch/docking/exit continuation.
+static void planetSpriteWords(const Sprite&s,Common::Array<uint32>&w){p526SpriteWords(s,w);w.push_back(s.planetMotion);w.push_back(s.planetPeriod);}
+static bool validPlanetState(const Common::Array<uint32>&s){
+ if(!ScriptRunner::validPersistentState(s)||s[300]>15||s[303]>511||s[306]<1||s[306]>9||s[309]>8)return false;
+ const uint widths[]={20,9,9,20};for(uint i=0;i<100;++i)if(s[3*i+2]!=1||(s[3*i+1]&&(i>=3||s[3*i+1]!=6))||s[302+3*i]!=uint32(i<4)||s[301+3*i]!=(i<4?widths[i]:0U))return false;return true;
+}
+static bool validPlanetScene(const Scene&s){
+ if(s.mode||s.layers!=1||s.sprites.size()!=32||s.conditions.size()!=4||s.scripts.size()!=3||!s.movies.empty()||!s.mouseRects.empty())return false;
+ const int raw[4][6]={{1,0,20,0,0,20},{1,1,9,0,0,511},{1,2,9,1,1,9},{1,3,20,0,0,20}};for(uint i=0;i<4;++i)for(uint j=0;j<6;++j)if(s.conditions[i].raw[j]!=raw[i][j])return false;
+ const uint frames[]={2,2,2,2,2,2,1,2,1,3,3,11,11,3,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1};for(uint i=0;i<32;++i)if(spriteFrameCount(s,i)!=frames[i]||s.sprites[i].clone!=(i>=18?7:-1))return false;return true;
+}
+static bool validPlanetSprites(const Common::Array<uint32>&w,const Scene&original,const Common::Array<uint32>&state,uint32 clock){
+ if(w.size()!=32*29||!validPlanetScene(original)||!validPlanetState(state))return false;Scene expected=original;for(Sprite&s:expected.sprites)s.selectedFrame=0;
+ const uint setting=state[300];expected.sprites[6].visible=setting>=1;for(uint i=18;i<32;++i)expected.sprites[i].visible=setting>=i-16;
+ Sprite&launcher=expected.sprites[8];launcher.standardMotion=true;launcher.moveDX=0;launcher.renderX=int16(w[8*29+4]);launcher.moveDY=int16(w[8*29+12]);launcher.renderY=int16(w[8*29+5]);launcher.moveSince=w[8*29+9];
+ if((launcher.renderX!=602&&launcher.renderX!=603)||int32(clock-launcher.moveSince)<0||launcher.renderY<8||launcher.renderY>236||(launcher.renderY&1)||(launcher.moveDY!=2&&launcher.moveDY!=-2)||(launcher.moveDY==2&&launcher.renderY<10)||(launcher.moveDY==-2&&launcher.renderY>234))return false;
+ const uint widths[]={30,44,54,40,60,110,39,50,28};uint mask=0;const uint frameSince=w[9*29+8];if(int32(clock-frameSince)<0)return false;
+ for(uint i=9;i<18;++i){Sprite&s=expected.sprites[i];const uint at=i*29,mode=w[at+27],id=i-8,category=w[at+22];const int period=int32(w[at+28]);
+  if(mode>2||w[at+8]!=frameSince||w[at+1]>=spriteFrameCount(original,i))return false;s.frameSince=frameSince;s.selectedFrame=w[at+1];
+  if((i==10||i==13||i==17)&&w[at+1]!=w[9*29+1])return false;if(i==12&&w[at+1]!=w[11*29+1])return false;
+  if(mode){s.planetMotion=mode;s.planetPeriod=period;s.standardMotion=true;s.autoMove=w[at+7]!=0;s.visible=w[at]!=0;s.x=id;s.moveData[0]=category;s.renderX=int16(w[at+4]);s.renderY=int16(w[at+5]);s.moveDX=int16(w[at+11]);s.moveDY=int16(w[at+12]);s.moveSince=w[at+9];
+   if(category>15||int32(clock-s.moveSince)<0)return false;
+   if(mode==1){if(!s.visible||!s.autoMove||period!=10||s.moveDX||(s.moveDY!=2&&s.moveDY!=-2)||(s.renderX!=603-int(widths[i-9])&&s.renderX!=602-int(widths[i-9])))return false;mask|=1U<<(id-1);}
+   else{if(!category||s.moveDY||(s.moveDX!=-2&&s.moveDX!=2)||s.renderX < -2||s.renderX > 642-int(widths[i-9]))return false;const bool correct=category+id==10||int(category)-int(id)==9;
+    if(s.autoMove){if(period!=10||!s.visible)return false;mask|=1U<<(id-1);}else{if(period!=-1||s.visible!=int(correct))return false;if(correct)mask|=1U<<(id-1);}
+   }
+  }
+ }
+ // No popcount/count correlation: multiple old flights and exhausted-mask
+ // reattachment are genuine original-control histories. Follow Y is retained
+ // as native int16 state; old velocity and independent epochs forbid snapping.
+ if(mask!=state[303]||w[(state[306]+8)*29+27]!=1)return false;
+ Common::Array<uint32>baseline;for(const Sprite&s:expected.sprites)planetSpriteWords(s,baseline);return baseline==w;
+}
+bool AstronomicaEngine::canSavePlanets()const{
+ if(_place!=518||!_planetAssetsValid||!_runner.scriptsIdle()||!validPlanetScene(_scene)||_questionSaveBaseline.size()!=32||_movie||_movieFrame.w||_pendingImage.w||!_displayedImageName.empty()||_comet.frame<1||_comet.frame>12||_comet.previousFrame<0||_comet.previousFrame>12||!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return false;
+ if((_loopSound!=-1&&_loopSound!=0)||(_mixer->isSoundHandleActive(_soundHandle)&&(_lastSound!=_loopSound||!_loopEnabled)))return false;for(const HoverTarget&h:_hoverSprites)if(h.entered)return false;for(const HoverTarget&h:_hoverRects)if(h.entered)return false;
+ Common::Array<uint32>state,w;if(!_runner.exportPersistentState(state))return false;for(const Sprite&s:_scene.sprites){if(s.dragEnabled)return false;planetSpriteWords(s,w);}Scene original=_scene;original.sprites=_questionSaveBaseline;return validPlanetSprites(w,original,state,scriptClock());
+}
+Common::Error AstronomicaEngine::savePlanets(Common::WriteStream*stream){
+ if(!canSavePlanets())return Common::kWritingFailed;Common::Array<uint32>state,w;_runner.exportPersistentState(state);for(const Sprite&s:_scene.sprites)planetSpriteWords(s,w);const uint32 h[]={518,_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_mixer->isSoundHandleActive(_soundHandle)),uint32(_comet.frame),uint32(_comet.previousFrame)};stream->writeUint32BE(MKTAG('A','S','V','M'));stream->writeUint32LE(18);uint32 hash=2166136261U;auto write=[&](uint32 v){stream->writeUint32LE(v);hash=(hash^v)*16777619U;};for(uint32 v:h)write(v);for(uint32 v:w)write(v);for(uint32 v:state)write(v);stream->writeUint32LE(hash);return stream->err()?Common::kWritingFailed:Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadPlanets(Common::SeekableReadStream*stream){
+ if(stream->size()-stream->pos()<(10+32*29+605+1)*4||!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return Common::kReadingFailed;
+ uint32 h[10],hash=2166136261U;auto read=[&](){uint32 v=stream->readUint32LE();hash=(hash^v)*16777619U;return v;};for(uint32&v:h)v=read();Common::Array<uint32>w,state;w.resize(32*29);state.resize(605);for(uint32&v:w)v=read();for(uint32&v:state)v=read();if(stream->readUint32LE()!=hash||stream->err()||h[0]!=518||(h[3]>537&&h[3]!=0xffffffffU)||(h[4]&&h[4]!=0xffffffffU)||h[5]>1||h[7]>1||(h[7]&&(h[4]||!h[5]))||h[8]<1||h[8]>12||h[9]>12)return Common::kReadingFailed;
+ const Common::Path path=ConfMan.getPath("path").join("PLACES/P518/MEGAFILE.HYP");if(!universeFileIdentity(path,489731,0x838a2480U))return Common::kReadingFailed;Common::File file;if(!file.open(Common::FSNode(path)))return Common::kReadingFailed;Scene parsed;ResourceReader reader(file);if(!reader.read(parsed)||!validPlanetScene(parsed)||!validPlanetSprites(w,parsed,state,h[2]))return Common::kReadingFailed;
+ const int widths[]={38,30,44,54,40,60,110,39,50,28},heights[]={36,32,44,52,40,60,40,100,50,30};for(uint i=8;i<18;++i){Graphics::Surface*bmp=decodeSpriteBitmap(file,parsed.sprites[i].frames[0].image,_screen.format);if(!bmp)return Common::kReadingFailed;const bool ok=bmp->w==widths[i-8]&&bmp->h==heights[i-8];bmp->free();delete bmp;if(!ok)return Common::kReadingFailed;}
+ if(!loadPlace(518,false,true))return Common::kReadingFailed;if(!_runner.importPersistentState(state))error("Validated P518 state could not be installed");_planetAssetsValid=true;_puzzlesCompleted=h[1];_pausedMillis=(_clockPaused?_pauseStarted:_system->getMillis())-h[2];_previousPlace=int32(h[3]);_loopSound=int32(h[4]);_loopEnabled=h[5]!=0;_lastSoundAt=h[6];_comet.frame=h[8];_comet.previousFrame=h[9];for(uint i=0;i<32;++i){p526RestoreSprite(_scene.sprites[i],&w[i*29]);_scene.sprites[i].planetMotion=w[i*29+27];_scene.sprites[i].planetPeriod=int32(w[i*29+28]);}redrawSprites();if(h[7])playSound(_loopSound,scriptClock(),true);return Common::kNoError;
+}
+
 static bool validRendezvousState(const Common::Array<uint32> &s) {
  if (!ScriptRunner::validPersistentState(s) || s[300] || s[303]!=0xffffffffU || s[306]>1 || s[309]!=54 || s[312]!=1 || s[315]>15 || s[318] || s[321]) return false;
  const uint widths[]={20,19,2,52,1,16,16,1};
@@ -1595,7 +1644,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -1613,6 +1662,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (_place == 528) return saveP528(stream);
  if (_place == 530) return saveP530(stream);
  if (_place == 537) return saveRocket(stream);
+ if (_place == 518) return savePlanets(stream);
  if (_place == 514) return saveRendezvous(stream);
  if (_place == 522) return saveProbe(stream);
  if (_place == 529) return saveUniverse(stream);
@@ -1645,6 +1695,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
  if (version == 14) return loadRocket(stream);
+ if (version == 18) return loadPlanets(stream);
  if (version == 17) return loadRendezvous(stream);
  if (version == 16) return loadProbe(stream);
  if (version == 15) return loadUniverse(stream);
@@ -2050,9 +2101,10 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
- _questionSaveBaseline.clear(); if (place == 514 || place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
+ _questionSaveBaseline.clear(); if (place == 518 || place == 514 || place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion(); _probeAssetsValid = false;
+ _planetAssetsValid=place==518&&validPlanetScene(_scene)&&universeFileIdentity(ConfMan.getPath("path").join("PLACES/P518/MEGAFILE.HYP"),489731,0x838a2480U);
  _rendezvousAssetsValid = place == 514 && validRendezvousScene(_scene) && universeFileIdentity(ConfMan.getPath("path").join("PLACES/P514/MEGAFILE.HYP"),586435,0x97d1b539U);
  _ball = BallMotion();
  // The original orientation phase is process-global, unlike the sprite links.
@@ -7586,6 +7638,99 @@ bool AstronomicaEngine::verifyP526Puzzle() {
  debug("Astronomica P526 interaction verification: %s (six scenarios, repeat success, four wrong answers, unsolved exit, synchronous answer/context rejection)",ok ? "PASS" : "FAIL");
  return ok;
 }
+bool AstronomicaEngine::verifyPlanetSaves() {
+ ConfMan.setBool("astronomica_verify",false);uint32 now=0;uint records=0,boundaries=0,histories=0,dormant=0,ordinary=0,busy=0,followB=0,releasedB=0,failedArr=0,correctArr=0,settingsMask=0,successors=0,futures=0,exhausted=0,timerCases=0;
+ auto sync=[&](){_clockPaused=true;_pauseStarted=now;_pausedMillis=0;};
+ auto tick=[&](){sync();uint active=0;for(uint i=9;i<18;++i)if(_scene.sprites[i].planetMotion==2&&_scene.sprites[i].autoMove)active|=1U<<i;runScriptsAt(now);animateSpritesAt(now);if(_place==518)for(uint i=9;i<18;++i)if((active&(1U<<i))&&!_scene.sprites[i].autoMove){if(_scene.sprites[i].visible)++correctArr;else ++failedArr;}now+=10;sync();};
+ auto settle=[&](bool flight=false){for(uint n=0;n<3000&&_place==518;++n){bool moving=false;if(flight)for(uint i=9;i<18;++i)moving=moving||(_scene.sprites[i].planetMotion==2&&_scene.sprites[i].autoMove);if(_runner.scriptsIdle()&&!moving)break;if(!_runner.scriptsIdle()){if(canSavePlanets())return false;++busy;}tick();}return _place==518&&_runner.scriptsIdle();};
+ auto press=[&](uint index,bool flight=false){const int x=index==4?183:index==5?259:374,y=index==7?399:420;sync();if(spriteAt(x,y)!=int(index)||_runner.clicksBlocked())return false;clickAtTime(x,y,now);const bool ok=settle(flight);return _place!=518||ok;};
+ auto select=[&](int desired){for(uint n=0;n<20;++n){int32 v=-1;if(!_runner.getValue(1,0,v))return false;if(v==desired)return true;if(!press(v<desired?5:4))return false;}return false;};
+ auto snapshot=[&](Common::Array<byte>&data){sync();Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);if(saveGameStream(&out).getCode()!=Common::kNoError||out.size()!=6184)return false;data.resize(out.size());memcpy(&data[0],out.getData(),out.size());return true;};
+ auto restore=[&](const Common::Array<byte>&data){_pauseStarted=0x23450000U;Common::MemoryReadStream in(&data[0],data.size());const bool ok=loadGameStream(&in).getCode()==Common::kNoError;if(ok&&scriptClock()!=READ_LE_UINT32(&data[16]))return false;if(ok)now=scriptClock();sync();return ok;};
+ auto fingerprint=[&](bool destination=false){uint32 hash=2166136261U;auto add=[&](uint32 v){hash=(hash^v)*16777619U;};add(_place);add(_previousPlace);add(_puzzlesCompleted);add(_comet.frame);add(_comet.previousFrame);if(destination){Common::Array<uint32>state;if(!_runner.exportPersistentState(state))return uint32(0);for(uint i=0;i<state.size();++i)if(i!=601)add(state[i]);}else add(_runner.probeDiagnosticHash(false));for(const Sprite&s:_scene.sprites){Common::Array<uint32>w;planetSpriteWords(s,w);for(uint32 v:w)add(v);}add(screenRGBHash(_screen,480));add(screenRGBHash(_background,480));return hash;};
+ auto roundtrip=[&](uint duration=130){if(_mixer->isSoundHandleActive(_soundHandle)&&_lastSound!=_loopSound){if(canSavePlanets())return false;++busy;_mixer->stopHandle(_soundHandle);}Common::Array<byte>data,again;if(!snapshot(data)){debug("Planet snapshot rejection at%u",now);return false;}const uint32 before=fingerprint(),savedNow=now;for(uint n=0;n<duration;n+=10)tick();const uint32 after=fingerprint(),afterNow=now;if(!loadPlace(117)||!restore(data)||now!=savedNow||fingerprint()!=before||!snapshot(again)||again!=data)return false;for(uint n=0;n<duration;n+=10)tick();if(now!=afterNow||fingerprint()!=after)return false;Common::Array<uint32>state;_runner.exportPersistentState(state);bool f=false,r=false,h=false;for(const Sprite&s:_scene.sprites){f=f||s.planetMotion==1;r=r||(s.planetMotion==2&&s.autoMove);h=h||s.planetMotion==2;}++boundaries;++successors;histories+=h;dormant+=state[603]!=0;ordinary+=!state[603];followB+=f;releasedB+=r;settingsMask|=1U<<state[300];return true;};
+ auto record=[&](const char*tag){Common::Array<uint32>state;if(!_runner.exportPersistentState(state))return false;uint modes[3]={},active=0;for(const Sprite&s:_scene.sprites){if(s.planetMotion>=0&&s.planetMotion<3)++modes[s.planetMotion];active+=s.planetMotion==2&&s.autoMove;}debug("Planet audit header: %u %s clock%u setting%u mask%u selected%u count%u rng%u releasedActive%u modes%u,%u,%u screen%08x background%08x",records,tag,now,state[300],state[303],state[306],state[309],state[600],active,modes[0],modes[1],modes[2],screenRGBHash(_screen,480),screenRGBHash(_background,480));for(uint i=0;i<32;++i){Common::Array<uint32>words;p526SpriteWords(_scene.sprites[i],words);words.push_back(_scene.sprites[i].planetMotion);words.push_back(_scene.sprites[i].planetPeriod);Common::String line=Common::String::format("Planet audit sprite: %u %u",records,i);for(uint32 v:words)line+=Common::String::format(" %d",int32(v));debug("%s",line.c_str());}++records;return roundtrip();};
+
+ auto future=[&](uint mode){const uint completed=_puzzlesCompleted;if(mode==2){clickAtTime(24,417,now);settle();}
+  else for(uint n=0;n<10&&_place==518;++n){int32 id=0;_runner.getValue(1,2,id);const int setting=mode==1&&id<=6?id+9:10-id;if(!select(setting)||!press(7,true))return false;}
+  int32 solved=-1;return _place==388&&_runner.scriptsIdle()&&_runner.getValue(0,34,solved)&&solved==int(mode<2)&&_puzzlesCompleted==completed+uint(mode==0);
+ };
+ if(ConfMan.hasKey("save_slot")&&ConfMan.getInt("save_slot")==17){now=scriptClock();sync();debug("Astronomica planet slot fingerprint: %08x",fingerprint());const bool ok=canSavePlanets()&&roundtrip()&&future(0);debug("Astronomica planet startup save: %s (slot17, exhausted-mask and wrong-history continuation)",ok?"PASS":"FAIL");return ok;}
+
+ _runner.resetGlobals();_runner.seedRandom(101);sync();if(!loadPlace(518)||_runner.enqueueStartup(_scene.scripts,now,true)!=3||!settle()||!record("startup-follow"))return false;
+
+ for(uint setting=1;setting<=15;++setting)if(!select(setting)||!roundtrip())return false;
+ if(!press(5)||!roundtrip()||!select(0)||!press(4)||!roundtrip())return false;
+ Common::Array<uint32>zeroBefore,zeroAfter;_runner.exportPersistentState(zeroBefore);if(!press(7)||!roundtrip())return false;_runner.exportPersistentState(zeroAfter);if(zeroBefore[600]!=zeroAfter[600]||zeroAfter[309])return false;
+ if(loadGameState(99).getCode()!=Common::kNoError)return false;_runner.resetGlobals();_runner.defineValue(1,50,1234);_runner.seedRandom(101);_puzzlesCompleted=10;_comet.frame=3;_comet.previousFrame=4;now=1000;sync();
+ if(!loadPlace(518)||_runner.enqueueStartup(_scene.scripts,now,true)!=3||!settle()||!record("dormant-startup-follow"))return false;
+
+ for(uint n=0;n<7;++n){int32 id=0;if(!_runner.getValue(1,2,id)||!select(10-id)||!press(7,true))return false;}
+ if(!record("seven-correct"))return false;int32 a=0,b=0,mask=0,count=0;_runner.getValue(1,2,a);
+ if(!select(a==6?14:15)||!press(7)||!record("first-wrong-still-released"))return false;_runner.getValue(1,1,mask);_runner.getValue(1,2,b);_runner.getValue(1,3,count);
+ if(mask!=511||count!=7||b==a||_scene.sprites[a+8].planetMotion!=2||!_scene.sprites[a+8].autoMove)return false;
+ Common::Array<uint32>before;_runner.exportPersistentState(before);
+ if(!select(b==6?14:15)||!press(7)||!record("exhausted-mask-reattached-current"))return false;
+ Common::Array<uint32>after;_runner.exportPersistentState(after);
+ if(after[303]!=511||after[306]!=uint(b)||after[309]!=7||after[600]==before[600]||_scene.sprites[b+8].planetMotion!=1)return false;
+ ++exhausted;for(uint n=0;n<1000;++n)tick();if(!record("old-wrong-arrived-hidden"))return false;
+
+ Common::Array<byte>fixture;if(!snapshot(fixture))return false;const uint32 originalClock=READ_LE_UINT32(&fixture[16]);
+ const uint current=READ_LE_UINT32(&fixture[8+(10+928+306)*4])+8;
+ for(uint32 clock:{originalClock,0xfffffff0U})for(uint kind:{0U,1U,2U}){const uint period=kind==2?50:10;
+  for(uint32 age:{0U,1U,period-1,period,period+1}){Common::Array<byte>timed=fixture;const uint32 delta=clock-originalClock;WRITE_LE_UINT32(&timed[16],clock);
+   for(uint i=8;i<18;++i){if(i==8||READ_LE_UINT32(&timed[8+(10+i*29+27)*4])){const uint at=8+(10+i*29+9)*4;WRITE_LE_UINT32(&timed[at],READ_LE_UINT32(&timed[at])+delta);}if(i>=9){const uint at=8+(10+i*29+8)*4;WRITE_LE_UINT32(&timed[at],READ_LE_UINT32(&timed[at])+delta);}}
+   if(kind==2){for(uint i=9;i<18;++i)WRITE_LE_UINT32(&timed[8+(10+i*29+8)*4],clock-age);}else WRITE_LE_UINT32(&timed[8+(10+(kind?current:8)*29+9)*4],clock-age);
+   const uint at=8+(10+928+601)*4;WRITE_LE_UINT32(&timed[at],READ_LE_UINT32(&timed[at])+delta);uint32 hash=2166136261U;for(uint j=8;j<timed.size()-4;j+=4)hash=(hash^READ_LE_UINT32(&timed[j]))*16777619U;WRITE_LE_UINT32(&timed[timed.size()-4],hash);
+   if(!restore(timed)||!roundtrip())return false;++timerCases;
+  }
+ }
+ if(!restore(fixture))return false;debug("Astronomica planet timer epochs: PASS (%u native save/successor cases, before/at/after periods and uint32 wrap)",timerCases);
+ // A real foreground original narration finishes naturally, without stopHandle.
+ if(!playSound(1,now)||!_mixer->isSoundHandleActive(_soundHandle)||canSavePlanets())return false;
+ const uint32 voiceStart=_system->getMillis();while(_mixer->isSoundHandleActive(_soundHandle)&&_system->getMillis()-voiceStart<120000){if(canSavePlanets())return false;++busy;_system->delayMillis(10);}
+ const uint32 waited=_system->getMillis()-voiceStart;if(_mixer->isSoundHandleActive(_soundHandle)||!waited||!canSavePlanets()||!roundtrip(130))return false;
+ debug("Astronomica planet natural voice end: PASS (%u ms, no stopHandle)",waited);
+ _loopSound=0;_loopEnabled=true;if(!playSound(0,now,true)||!_mixer->isSoundHandleActive(_soundHandle)||!canSavePlanets())return false;
+ Common::Array<byte>music,again;if(!snapshot(music)||!loadPlace(117))return false;const uint sounds=_soundsStarted;
+ if(!restore(music)||_soundsStarted!=sounds+1||_lastSound!=0||!_mixer->isSoundHandleActive(_soundHandle)||!snapshot(again)||again!=music)return false;
+ debug("Astronomica planet Music restart: PASS (one ambient start)");_mixer->stopHandle(_soundHandle);if(!restore(fixture))return false;
+ // Nonzero sentinels and paused native audio strengthen atomic rejection checks.
+ if(!playSound(1,now)||!_mixer->isSoundHandleActive(_soundHandle)||canSavePlanets())return false;
+ Common::MemoryWriteStreamDynamic denied(DisposeAfterUse::YES);if(saveGameStream(&denied).getCode()!=Common::kWritingFailed||denied.size())return false;
+ _mixer->pauseHandle(_soundHandle,true);_pendingImage.create(5,3,_screen.format);_pendingImage.fillRect(Common::Rect(5,3),_screen.format.RGBToColor(17,33,65));_pendingImageX=19;_pendingImageY=23;_pendingImageName="planet-atomic-image";_displayedImageName="planet-atomic-display";
+ auto atomic=[&](){uint32 h=fingerprint();auto add=[&](uint32 v){h=(h^v)*16777619U;};add(_runner.probeDiagnosticHash(true));
+  for(uint32 v:{uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_lastSound),_soundsStarted,_pausedMillis,_pauseStarted,uint32(_clockPaused),scriptClock(),_lastSuccessEnd,_lastBlockingSoundEnd,uint32(_pendingImageX),uint32(_pendingImageY),uint32(_pendingImage.w),uint32(_pendingImage.h),uint32(_movie!=nullptr),uint32(_moviePlaying),uint32(_planetAssetsValid),uint32(_mixer->isSoundHandleActive(_soundHandle)),_mixer->getSoundElapsedTime(_soundHandle),uint32(_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)),uint32(_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType))})add(v);
+  for(char c:_pendingImageName)add(byte(c));for(char c:_displayedImageName)add(byte(c));add(screenRGBHash(_pendingImage,480));return h;};
+ const uint32 unchanged=atomic();const void*pixels=_pendingImage.getPixels();
+ auto reject=[&](const Common::Array<byte>&bad){Common::MemoryReadStream in(&bad[0],bad.size());return loadGameStream(&in).getCode()!=Common::kNoError&&atomic()==unchanged&&_pendingImage.getPixels()==pixels;};
+ for(uint i=0;i<fixture.size();++i){Common::MemoryReadStream in(i?&fixture[0]:nullptr,i);if(loadGameStream(&in).getCode()==Common::kNoError||atomic()!=unchanged||_pendingImage.getPixels()!=pixels)return false;}
+ for(uint i=0;i<fixture.size();++i){Common::Array<byte>bad=fixture;bad[i]^=1;if(!reject(bad))return false;}
+ uint invalid=0;auto badWord=[&](uint index,uint32 value){Common::Array<byte>bad=fixture;WRITE_LE_UINT32(&bad[8+index*4],value);uint32 hash=2166136261U;for(uint at=8;at<bad.size()-4;at+=4)hash=(hash^READ_LE_UINT32(&bad[at]))*16777619U;WRITE_LE_UINT32(&bad[bad.size()-4],hash);if(!reject(bad))return false;++invalid;return true;};
+
+ for(uint index:{0U,3U,4U,5U,7U,8U,9U})if(!badWord(index,index==3?538U:index==4?1U:0xffffffffU))return false;
+ for(uint i=0;i<32;++i)if(!badWord(10+i*29+18,2))return false;
+ for(uint i=0;i<4;++i)if(!badWord(10+928+301+3*i,100))return false;
+ if(!badWord(10+928+300,16)||!badWord(10+928+303,512)||!badWord(10+928+306,0)||!badWord(10+928+309,9)||!badWord(10+928+2,0)||!badWord(10+8*29+9,now+1)||!badWord(10+9*29+8,now+1)||!badWord(10+8*29+11,65536)||!badWord(10+8*29+27,1)||!badWord(10+8*29+28,10)||!badWord(10+9*29+27,3)||!badWord(10+9*29+28,0))return false;
+ _pendingImage.free();_pendingImageName.clear();_displayedImageName.clear();_mixer->stopHandle(_soundHandle);if(!restore(fixture)||!canSavePlanets())return false;
+ debug("Astronomica planet rejection verification: PASS (6184 truncations, 6184 corruptions, %u invalid states, extended atomic state)",invalid);
+
+
+ // Original count8 branch draws again even when selector0 releases nothing.
+ if(!restore(fixture))return false;int32 zeroId=0;_runner.getValue(1,2,zeroId);if(!select(10-zeroId)||!press(7,true)||!select(0))return false;
+ Common::Array<uint32>eightBefore,eightAfter;if(!_runner.exportPersistentState(eightBefore)||eightBefore[309]!=8||eightBefore[303]!=511||!press(7)||!_runner.exportPersistentState(eightAfter))return false;
+ if(eightAfter[309]!=8||eightAfter[303]!=511||eightAfter[306]!=eightBefore[306]||eightAfter[600]==eightBefore[600]||_scene.sprites[eightAfter[306]+8].planetMotion!=1||!roundtrip())return false;++exhausted;
+ debug("Astronomica planet count8 zero-setting: PASS (delayed exhausted-mask RNG draw, unchanged count/selection, native follow, roundtrip)");
+
+ for(uint mode=0;mode<3;++mode){if(!restore(fixture))return false;if(mode==1)_runner.defineValue(0,34,1);if(!roundtrip())return false;Common::Array<byte>branch;if(!snapshot(branch)||!future(mode))return false;const uint32 expected=fingerprint(mode==0),expectedClock=now,expectedEnd=_lastSuccessEnd;if(!expected)return false;
+  if(!restore(branch)||!future(mode)||(mode?now!=expectedClock:(now-_lastSuccessEnd<2010||now-_lastSuccessEnd>=2020||expectedClock-expectedEnd<2010||expectedClock-expectedEnd>=2020))||fingerprint(mode==0)!=expected){debug("Planet future mismatch mode%u clock%u/%u end%u/%u hash%08x/%08x",mode,expectedClock,now,expectedEnd,_lastSuccessEnd,expected,fingerprint(mode==0));return false;}++futures;++successors;
+ }
+ if(!restore(fixture)||saveGameState(17,"Planet continuation regression").getCode()!=Common::kNoError)return false;debug("Astronomica planet slot fingerprint: %08x",fingerprint());if(!future(0))return false;
+ uint settings=0;for(uint i=0;i<16;++i)settings+=(settingsMask>>i)&1U;
+ debug("Astronomica planet motion coverage: PASS (%u follow boundaries, %u released boundaries, %u failed arrivals, %u correct arrivals, %u speed settings, %u successor checks, %u future outcome checks, %u exhausted mask checks)",followB,releasedB,failedArr,correctArr,settings,successors,futures,exhausted);
+ debug("Astronomica planet saves: PASS (%u boundaries, %u history boundaries, %u dormant boundaries, %u ordinary boundaries, %u busy rejections)",boundaries,histories,dormant,ordinary,busy);
+ return true;
+}
 bool AstronomicaEngine::verifyP518Puzzle() {
  bool ok = true;
  for (int route = 0; route < 3; ++route) {
@@ -8826,6 +8971,7 @@ Common::Error AstronomicaEngine::run() {
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"P513 verification failed");
  }
+ if(ConfMan.hasKey("astronomica_verify_planet_saves")&&ConfMan.getBool("astronomica_verify_planet_saves")){const bool ok=verifyPlanetSaves();debug("Astronomica planet save verification: %s",ok?"PASS":"FAIL");return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Planet audit failed");}
  if (ConfMan.hasKey("astronomica_verify_rendezvous_saves") && ConfMan.getBool("astronomica_verify_rendezvous_saves")) {const bool ok=verifyRendezvousSaves();debug("Astronomica rendezvous save verification: %s",ok?"PASS":"FAIL");return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Rendezvous save verification failed");}
  if (ConfMan.hasKey("astronomica_verify_p514") && ConfMan.getBool("astronomica_verify_p514")) {
   ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);

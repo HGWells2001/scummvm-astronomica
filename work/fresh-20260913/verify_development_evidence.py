@@ -108,9 +108,11 @@ save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text()
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
 probe_save_present=(root/'evidence/probe-saves-validation.json').is_file()
 rendezvous_save_present=(root/'evidence/rendezvous-saves-validation.json').is_file()
+planet_save_present=(root/'evidence/planet-saves-validation.json').is_file()
 expected_save_scenes={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
 if probe_save_present:expected_save_scenes.add(522)
 if rendezvous_save_present:expected_save_scenes.add(514)
+if planet_save_present:expected_save_scenes.add(518)
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
@@ -489,3 +491,45 @@ if rendezvous_save_present:
  assert previous['origin_commit']=='295842e695bb9e41a5c3641918af203c0062731a'
  for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
  print('P514 v17 rendezvous saves and frozen v16 continuation evidence integrity PASS')
+
+p518_inventory=root/'evidence/p518-save-original.json'
+if p518_inventory.exists():
+ research=json.loads(p518_inventory.read_text())
+ assert research['status']=='STATIC_ORIGINAL_INVENTORY_ONLY' and research['command_count']==111
+ assert research['source']['size']==489731 and research['source']['sha256']==digest(Path('D:/astro/PLACES/P518/MEGAFILE.HYP'))
+ assert research['source']['sha256']=='235de8b0fbb86b6cc1a8337779d6c6f7804e8455bce0dc607ea00092f3f6ffbd'
+ assert research['mode']==0 and research['layers']==1 and len(research['sprites'])==32
+ assert research['conditions']==[[1,0,20,0,0,20],[1,1,9,0,0,511],[1,2,9,1,1,9],[1,3,20,0,0,20]]
+ assert research['opcode_counts']['39']==3 and '20' not in research['opcode_counts'] and not research['movies'] and not research['mouse_rects']
+ for name,reference in research['source_references'].items():assert digest(root/'engine/astronomica'/name)==reference['sha256'],name
+ assert research['prior_original_probe']['consulted_as_text_only'] and digest(root/'probe_p518_planets.py')==research['prior_original_probe']['sha256']
+ print('P518 fresh static original resource identity/source references PASS; separate from native save proof')
+if planet_save_present:
+ assert p518_inventory.is_file()
+ v=json.loads((root/'evidence/planet-saves-validation.json').read_text())
+ proof=json.loads((root/'evidence/planet-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['exe_sha256']==proof['exe_sha256']==m['exe_sha256'] and v['full_suite']
+ assert (v['format_version'],v['payload_bytes'],v['scene'])==(18,6184,518)
+ assert proof['metadata_listed'] and proof['slot']==17 and not proof['diagnostic']
+ assert proof['audio_driver']=='native' and proof['actual_audio_driver']=='wasapi'
+ assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint']
+ assert proof['truncations']==proof['corruptions']==6184 and proof['invalid_states']>0 and proof['variant_fixture_unchanged']
+ for key in ('boundaries','busy_rejections','history_boundaries','dormant_boundaries','ordinary_boundaries','natural_voice_ends'):
+  assert proof[key]>0,key
+  if key in v:assert v[key]==proof[key],key
+ assert proof['music_restart'] and proof['extended_atomic_state']
+ for name,marker in [('planet-saves-runtime.log','planet saves: PASS'),('planet-saves-startup.log','planet startup save: PASS'),('rendezvous-previous-slot.log','rendezvous startup save: PASS')]:
+  text=(root/'evidence'/name).read_text()
+  assert marker in text and 'FAIL' not in text and text.rstrip().endswith('--- Log closed successfully.'),name
+  assert 'Using SDL Audio Driver "wasapi"' in text,name
+ previous=json.loads((root/'evidence/rendezvous-previous-slot-proof.json').read_text())
+ assert previous['status']=='PASS' and previous['unchanged'] and previous['exe_sha256']==m['exe_sha256'] and previous['audio_driver']=='wasapi'
+ assert previous['producing_exe_sha256']=='33980e92277d656d45f3383af5868db2567915de53642d3f5ec08dea87ae3faa'
+ assert previous['slot_sha256']=='53fba4c58fe6caf096c349fa65efba43a588feb79386895fe434f09afcf04fa0'
+ assert previous['origin_commit']=='ab9094909911ca5d1f73e6ad2b0e507b67f7a10f'
+ for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+ for key in ('follow_boundaries','released_boundaries','failed_arrivals','correct_arrivals','successor_checks','future_outcome_checks','exhausted_mask_checks','timer_cases'):
+  assert proof[key]>0,key
+  if key in v:assert proof[key]==v[key],key
+ assert proof['speed_settings']>=16 and proof['count8_zero_checks']==1
+ print('P518 v18 planet saves and frozen v17 continuation evidence integrity PASS')

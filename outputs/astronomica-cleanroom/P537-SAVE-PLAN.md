@@ -14,6 +14,10 @@ Version14 is implemented and verified; see P537-SAVE-FORMAT.md and evidence/rock
 
 Version14 is implemented and verified; see P537-SAVE-FORMAT.md and evidence/rocket-saves-validation.json. The following sections retain the original investigation history.
 
+## Verified settled save support,21 October2026
+
+Version14 is implemented and verified; see P537-SAVE-FORMAT.md and evidence/rocket-saves-validation.json. The following sections retain the original investigation history.
+
 # P537 rocket saves: original requirements
 
 Updated20 October2026. P537 save support is not implemented. Construction v13 and the P537 callback/readout correction are verified and published; this inventory prepares subsequent settled-boundary save work.
@@ -44,6 +48,11 @@ The production engine matches all96 controlled original callback fixtures and145
 Direct re-read of D:/astro/PLACES/P537/MEGAFILE.HYP confirms the selector controls are one-based sprites5/6: their click programs begin by blocking clicks, adjust local0 by-1/+1, clamp at0/15, refresh the indicator, then unblock with a200ms delayed command. Their first commands start at resource offsets323319 and326731. A save during that pulse must remain ineligible even when the selector already has its final value.
 
 Launch is sprite33, starting at offset354555. Its custom14 command is at354659; delayed conditional continuation begins at354699. Motion stopping alone therefore cannot establish an eligible boundary. Candidate positive boundaries for a future independent native audit are initial settled entry, each settled selector value, and completed failure-return after all queued commands and foreground sound finish. Successful launches depart to P321 and should use that scene's eligibility. The existing verified native rocket suite samples launch settings0,1,10,11,12,13,15; it does not prove a new serializer or every save-boundary case. Preserve stopped RocketMotion.delta/since and prior readout independently of the current selector, and explicitly exercise selector changes after failure before proposing a format.
+
+
+## Native callback correction verified,20 October2026
+
+The production engine matches all96 controlled original callback fixtures and14592 steps (292dc3fd), including the exact final readout IDs and21 stopped frame periods. Full real-audio regression passes on the same build. See evidence/p537-motion-validation.json. This fixes rocket behavior; P537 save support is still not implemented.
 
 
 ## Native callback correction verified,20 October2026

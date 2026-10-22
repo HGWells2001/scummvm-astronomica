@@ -168,3 +168,8 @@ Version16 preserves ordinary P522 state across 31 measured native round trips/su
 ## P514 rendezvous saves,22 October2026
 
 Version17 preserves settled P514 state across 87 measured native round trips/successors, with a fresh-process slot16 and unchanged verified v16 slot compatibility. Active orbit, frame and fuel timers, all16 speeds and hidden failed-docking history are retained. Queued launch, successful-docking and fuel-exhaustion transitions remain excluded. All4632 truncations and4632 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.
+
+
+## P518 planet saves,22 October2026
+
+Version18 preserves P518 idle-script boundaries across 59 measured native round trips/successors, with a fresh-process slot17 and unchanged verified v17 slot compatibility. Planet motion, random selection, hidden failed-attempt history and timer phases are retained. Queued commands, foreground audio and transitions remain excluded. All6184 truncations and6184 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.

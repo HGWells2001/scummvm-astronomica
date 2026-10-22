@@ -1,1 +1,1 @@
-P514 v17 settled rendezvous saves verified22October2026. Complete same-build native WASAPI suite, fresh-process slot16 and prior v16 slot PASS. Publication still requires export verification. Newest finisher finish_rendezvous_saves.py. Automation remains PAUSED.
+P518 v18 planet saves verified22October2026. Complete same-build native WASAPI suite, fresh-process slot17 and prior v17 slot PASS. Publication still requires export verification. Newest finisher finish_planet_saves.py. Automation remains PAUSED.

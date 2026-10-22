@@ -6,7 +6,7 @@ Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P514, P515, P517, P519, P522, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P514, P515, P517, P518, P519, P522, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -990,3 +990,8 @@ Version16 preserves ordinary P522 state across 31 measured native round trips/su
 ## P514 rendezvous saves,22 October2026
 
 Version17 preserves settled P514 state across 87 measured native round trips/successors, with a fresh-process slot16 and unchanged verified v16 slot compatibility. Active orbit, frame and fuel timers, all16 speeds and hidden failed-docking history are retained. Queued launch, successful-docking and fuel-exhaustion transitions remain excluded. All4632 truncations and4632 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.
+
+
+## P518 planet saves,22 October2026
+
+Version18 preserves P518 idle-script boundaries across 59 measured native round trips/successors, with a fresh-process slot17 and unchanged verified v17 slot compatibility. Planet motion, random selection, hidden failed-attempt history and timer phases are retained. Queued commands, foreground audio and transitions remain excluded. All6184 truncations and6184 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.

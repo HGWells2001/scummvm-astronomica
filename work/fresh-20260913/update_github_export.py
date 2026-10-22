@@ -102,6 +102,19 @@ if rendezvous_save_present:
     for name in rendezvous_paths:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
+planet_save_present=Path('outputs/astronomica-cleanroom/evidence/planet-saves-validation.json').is_file()
+if Path('outputs/astronomica-cleanroom/evidence/p518-save-original.json').is_file():
+    for name in ('P518-SAVE-PLAN.md','probe_p518_save.py','evidence/p518-save-original.json'):
+        source=Path('outputs/astronomica-cleanroom')/name
+        (root/source).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,root/source)
+if planet_save_present:
+    planet_paths=['outputs/astronomica-cleanroom/P518-SAVE-FORMAT.md',
+                  *['work/fresh-20260913/'+name for name in ('check_planet_saves.py','check_planet_regressions.py','finish_planet_saves.py')],
+                  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('planet-saves-validation.json','planet-save-proof.json','planet-saves-runtime.log','planet-saves-startup.log','rendezvous-previous-slot.log','rendezvous-previous-slot-proof.json')]]
+    for name in planet_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -166,6 +179,11 @@ if rendezvous_save_present:
                 'twenty-one supported puzzle scenes (P505, P506, P508, P513, P514, P515, P517, P519, P522, P524, P526, P528-P537)')
     if 'Rendezvous v17' not in s:
         s=s.replace('- Automatically verified routes','- Rendezvous v17 retains live P514 orbit and fuel phases, speed settings and hidden docking-attempt history at settled script boundaries. Fresh-process continuation and frozen v16 save compatibility are verified.\n- Automatically verified routes')
+if planet_save_present:
+    s=s.replace('twenty-one supported puzzle scenes (P505, P506, P508, P513, P514, P515, P517, P519, P522, P524, P526, P528-P537)',
+                'twenty-two supported puzzle scenes (P505, P506, P508, P513, P514, P515, P517, P518, P519, P522, P524, P526, P528-P537)')
+    if 'Planets v18' not in s:
+        s=s.replace('- Automatically verified routes','- Planets v18 preserves P518 idle-script boundaries with following and released planets, random selection state and hidden failed-attempt history. Fresh-process continuation and frozen v17 compatibility are verified.\n- Automatically verified routes')
 p.write_text(s.rstrip()+'\n')
 if 'Looping WAVs follow the Music control' not in s:
     s=s.replace('- Automatically verified routes','- Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.\n- Automatically verified routes')

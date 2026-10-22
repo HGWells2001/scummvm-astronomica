@@ -209,6 +209,11 @@ private:
  bool verifyEclipsePuzzle();
  bool verifyP521Puzzle();
  bool verifyP518Puzzle();
+ bool verifyPlanetSaves();
+ bool canSavePlanets() const;
+ Common::Error savePlanets(Common::WriteStream *stream);
+ Common::Error loadPlanets(Common::SeekableReadStream *stream);
+ bool _planetAssetsValid=false;
  bool verifyP526Puzzle();
  bool verifyP512Puzzle();
  bool verifyBuilderPuzzle();

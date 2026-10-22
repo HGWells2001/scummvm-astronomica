@@ -86,6 +86,21 @@ if rendezvous_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+planet_validation=root/'evidence/planet-saves-validation.json'
+if planet_validation.exists():
+ v=json.loads(planet_validation.read_text());proof=json.loads((root/'evidence/planet-save-proof.json').read_text())
+ assert v['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==17
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/planet-saves-runtime.log';startup=root/'evidence/planet-saves-startup.log'
+ assert 'planet save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'planet startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=518,version=18,payload_bytes=v['payload_bytes'],test_slot=17,
+  scope='Idle-script P518 boundaries with following/released planets, random state and hidden failed-attempt history; queued transitions excluded',
+  validation_file=planet_validation.relative_to(root).as_posix(),validation_sha256=digest(planet_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
