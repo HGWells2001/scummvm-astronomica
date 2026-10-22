@@ -1,1 +1,1 @@
-P522 v16 ordinary nonflight saves verified22October2026. Complete same-build native WASAPI suite, fresh-process slot15 and prior v15 slot PASS. Publication still requires export verification. Newest finisher finish_probe_saves.py. Automation remains PAUSED.
+P514 v17 settled rendezvous saves verified22October2026. Complete same-build native WASAPI suite, fresh-process slot16 and prior v16 slot PASS. Publication still requires export verification. Newest finisher finish_rendezvous_saves.py. Automation remains PAUSED.

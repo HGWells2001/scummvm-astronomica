@@ -67,6 +67,9 @@ p = r / 'P522-SAVE-FORMAT.md'
 s = p.read_text()
 s = s.replace('Status: candidate, SDL only; official native suite pending.',
     'Status: verified22October2026; official native WASAPI and complete compatible suite PASS on the same executable.')
+s = s.replace('The candidate saves', 'The format saves')
+old_tail = 'Native diagnostic results and exact source/executable identities will be recorded in CHECKPOINT.md and the measured probe-save-proof.json. SDL dummy diagnostics are not a manual playthrough or an official native-audio/full-build validation. Existing format1..15 loaders and the frozen v15 main executable remain unchanged outside this isolated stage.'
+s = s.replace(old_tail, 'Native WASAPI, fresh-process slot15 and the complete compatible same-build suite pass; see evidence/probe-save-proof.json and evidence/probe-saves-validation.json for exact identities and measured counts. Formats1..15 remain readable. This is not a complete manual audiovisual playthrough.')
 p.write_text(s)
 p = r / 'P522-SAVE-PLAN.md'
 s = p.read_text()

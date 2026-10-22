@@ -2,7 +2,7 @@
   "date": "2026-10-18",
   "status": "PASS",
   "scope": "Observed native boundaries; save implementation still absent",
-  "exe_sha256": "634c241e0d4242ad95e5915d4c77af491fe8c20b62100533e6bb82d444152bb0",
+  "exe_sha256": "33980e92277d656d45f3383af5868db2567915de53642d3f5ec08dea87ae3faa",
   "source_sha256": "ce86ed46b0384efb726abd31be8346ad2bf6c3c314cebbbbd294b9c218e51812",
   "boundaries": 33,
   "fields": [

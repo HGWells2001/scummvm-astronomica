@@ -1162,6 +1162,70 @@ static bool validUniverseSprites(const Common::Array<uint32> &w, const Scene &or
 }
 static Graphics::Surface *decodeSpriteBitmap(Common::SeekableReadStream &, const BitmapRef &, const Graphics::PixelFormat &);
 // Native v16 preserves ordinary/failed-return P522, not an active flight.
+// P514 ordinary settled orbit state. No queued launch/docking/exit continuation.
+static bool validRendezvousState(const Common::Array<uint32> &s) {
+ if (!ScriptRunner::validPersistentState(s) || s[300] || s[303]!=0xffffffffU || s[306]>1 || s[309]!=54 || s[312]!=1 || s[315]>15 || s[318] || s[321]) return false;
+ const uint widths[]={20,19,2,52,1,16,16,1};
+ for(uint i=0;i<100;++i)if(s[3*i+2]!=1 || (s[3*i+1] && (i>=3 || s[3*i+1]!=6)) || s[302+3*i]!=uint32(i<8) || s[301+3*i]!=(i<8?widths[i]:0U))return false;
+ return true;
+}
+static bool validRendezvousScene(const Scene &s) {
+ if(s.mode || s.layers!=1 || s.sprites.size()!=20 || s.conditions.size()!=8 || s.scripts.size()!=2 || !s.movies.empty() || !s.mouseRects.empty())return false;
+ const int raw[8][6]={{1,0,20,0,0,19},{1,1,19,-1,0,18},{1,2,2,0,0,2},{1,3,52,54,0,52},{1,4,1,1,1,1},{1,5,16,0,0,15},{1,6,16,0,0,15},{1,7,1,0,0,1}};
+ for(uint i=0;i<8;++i)for(uint j=0;j<6;++j)if(s.conditions[i].raw[j]!=raw[i][j])return false;
+ const uint counts[]={2,2,2,2,2,2,16,10,10,10,10,10,10,1,2,2,1,3,12,1};
+ for(uint i=0;i<20;++i)if(spriteFrameCount(s,i)!=counts[i] || s.sprites[i].clone!=(i>=8&&i<=12?8:-1))return false;
+ return true;
+}
+static bool rendezvousPhase(const Sprite &actual,const Scene &original,uint index,bool xOnly=false) {
+ Scene replay=original;for(Sprite&s:replay.sprites)s.selectedFrame=0;
+ const int mode=index==16?0:1;configureRendezvous(replay,mode,0);Sprite &s=replay.sprites[index];s.visible=1;if(index==18)s.selectedFrame=5;
+ // Each original145-radius quadrant traverses monotone2-unit coordinates.
+ // This bound includes the initial off-ellipse approach and repeated cycles.
+ for(uint n=0;n<4096;++n){
+  if(xOnly?s.renderX==actual.renderX:(s.renderX==actual.renderX&&s.renderY==actual.renderY&&s.moveDX==actual.moveDX&&s.moveDY==actual.moveDY&&s.orbitSideX==actual.orbitSideX&&s.orbitSideY==actual.orbitSideY&&s.selectedFrame==actual.selectedFrame))return true;
+  advanceRendezvous(replay,index,index==16?52:56,index==16?54:56,(n+1)*100);
+ }
+ return false;
+}
+static bool validRendezvousSprites(const Common::Array<uint32>&w,const Scene&original,const Common::Array<uint32>&state,uint32 clock) {
+ if(w.size()!=20*27 || !validRendezvousScene(original) || !validRendezvousState(state))return false;
+ const bool launched=state[306]!=0;const uint speed=state[315];Scene expected=original;for(Sprite&s:expected.sprites)s.selectedFrame=0;
+ expected.sprites[6].selectedFrame=speed;expected.sprites[7].selectedFrame=(20+speed)/10;expected.sprites[8].selectedFrame=speed%10;
+ configureRendezvous(expected,0,speed);expected.sprites[16].visible=1;
+ if(launched){configureRendezvous(expected,1,speed);expected.sprites[18].visible=1;Sprite &launch=expected.sprites[17];launch.x=launch.renderX=170;launch.y=launch.renderY=130;launch.selectedFrame=2;
+  // Launch rewrites only the tens digit; a later speed click refreshes it.
+  if(w[7*27+1]!=2 && w[7*27+1]!=(20+speed)/10)return false;expected.sprites[7].selectedFrame=w[7*27+1];
+ }
+ for(uint i=0;i<20;++i){Sprite&s=expected.sprites[i];const uint at=i*27;
+  if(i==16 || (launched&&(i==13||i==18))){if(int32(clock-w[at+9])<0)return false;s.moveSince=w[at+9];s.renderX=int16(w[at+4]);s.renderY=int16(w[at+5]);s.moveDX=int16(w[at+11]);s.moveDY=int16(w[at+12]);s.orbitSideX=w[at+14];s.orbitSideY=w[at+15];if(i==18)s.selectedFrame=w[at+1];
+   if(i==13){if(s.renderX!=406 || s.renderY<359 || s.renderY>412 || s.moveDX || s.moveDY!=1 || s.orbitSideX || s.orbitSideY)return false;}
+   else if(!rendezvousPhase(s,original,i))return false;
+  }
+ }
+ if(launched){Sprite &probe=expected.sprites[19];probe.renderX=int16(w[19*27+4]);probe.renderY=int16(w[19*27+5]);if(!(probe.renderX==272&&probe.renderY==4) && (probe.renderY!=probe.renderX+56 || !rendezvousPhase(probe,original,18,true)))return false;}
+ Common::Array<uint32> baseline;for(const Sprite&s:expected.sprites)p526SpriteWords(s,baseline);return baseline==w;
+}
+bool AstronomicaEngine::canSaveRendezvous() const {
+ if(_place!=514 || !_rendezvousAssetsValid || !_runner.scriptsIdle() || !validRendezvousScene(_scene) || _questionSaveBaseline.size()!=20 || _movie || _movieFrame.w || _pendingImage.w || !_displayedImageName.empty() || _comet.frame<1 || _comet.frame>12 || _comet.previousFrame<0 || _comet.previousFrame>12 || !ConfMan.getBool("astronomica_audio") || !ConfMan.getBool("astronomica_animation") || !ConfMan.getBool("astronomica_sprite_input"))return false;
+ if((_loopSound!=-1&&_loopSound!=0)||(_mixer->isSoundHandleActive(_soundHandle)&&(_lastSound!=_loopSound||!_loopEnabled)))return false;
+ for(const HoverTarget&h:_hoverSprites)if(h.entered)return false;for(const HoverTarget&h:_hoverRects)if(h.entered)return false;
+ Common::Array<uint32>state,w;if(!_runner.exportPersistentState(state))return false;for(const Sprite&s:_scene.sprites){if(s.dragEnabled||s.planetMotion||s.planetPeriod!=-1)return false;p526SpriteWords(s,w);}Scene original=_scene;original.sprites=_questionSaveBaseline;return validRendezvousSprites(w,original,state,scriptClock());
+}
+Common::Error AstronomicaEngine::saveRendezvous(Common::WriteStream *stream) {
+ if(!canSaveRendezvous())return Common::kWritingFailed;Common::Array<uint32>state,w;_runner.exportPersistentState(state);for(const Sprite&s:_scene.sprites)p526SpriteWords(s,w);
+ const uint32 h[]={514,_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_mixer->isSoundHandleActive(_soundHandle)),uint32(_comet.frame),uint32(_comet.previousFrame)};
+ stream->writeUint32BE(MKTAG('A','S','V','M'));stream->writeUint32LE(17);uint32 hash=2166136261U;auto write=[&](uint32 v){stream->writeUint32LE(v);hash=(hash^v)*16777619U;};for(uint32 v:h)write(v);for(uint32 v:w)write(v);for(uint32 v:state)write(v);stream->writeUint32LE(hash);return stream->err()?Common::kWritingFailed:Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadRendezvous(Common::SeekableReadStream *stream) {
+ if(stream->size()-stream->pos()<(10+20*27+605+1)*4 || !ConfMan.getBool("astronomica_audio") || !ConfMan.getBool("astronomica_animation") || !ConfMan.getBool("astronomica_sprite_input"))return Common::kReadingFailed;
+ uint32 h[10],hash=2166136261U;auto read=[&](){uint32 v=stream->readUint32LE();hash=(hash^v)*16777619U;return v;};for(uint32&v:h)v=read();Common::Array<uint32>w,state;w.resize(20*27);state.resize(605);for(uint32&v:w)v=read();for(uint32&v:state)v=read();
+ if(stream->readUint32LE()!=hash || stream->err() || h[0]!=514 || (h[3]>537&&h[3]!=0xffffffffU) || (h[4]&&h[4]!=0xffffffffU) || h[5]>1 || h[7]>1 || (h[7]&&(h[4]||!h[5])) || h[8]<1 || h[8]>12 || h[9]>12)return Common::kReadingFailed;
+ const Common::Path path=ConfMan.getPath("path").join("PLACES/P514/MEGAFILE.HYP");if(!universeFileIdentity(path,586435,0x97d1b539U))return Common::kReadingFailed;Common::File file;if(!file.open(Common::FSNode(path)))return Common::kReadingFailed;Scene parsed;ResourceReader reader(file);if(!reader.read(parsed)||!validRendezvousScene(parsed)||!validRendezvousSprites(w,parsed,state,h[2]))return Common::kReadingFailed;
+ const uint ids[]={13,16,18,19};const int widths[]={18,52,56,15},heights[]={9,54,56,28};for(uint i=0;i<4;++i){Graphics::Surface*bmp=decodeSpriteBitmap(file,parsed.sprites[ids[i]].frames[0].image,_screen.format);if(!bmp)return Common::kReadingFailed;const bool ok=bmp->w==widths[i]&&bmp->h==heights[i];bmp->free();delete bmp;if(!ok)return Common::kReadingFailed;}
+ if(!loadPlace(514,false,true))return Common::kReadingFailed;if(!_runner.importPersistentState(state))error("Validated P514 persistent state could not be installed");_rendezvousAssetsValid=true;_puzzlesCompleted=h[1];_pausedMillis=(_clockPaused?_pauseStarted:_system->getMillis())-h[2];_previousPlace=int32(h[3]);_loopSound=int32(h[4]);_loopEnabled=h[5]!=0;_lastSoundAt=h[6];_comet.frame=h[8];_comet.previousFrame=h[9];for(uint i=0;i<20;++i)p526RestoreSprite(_scene.sprites[i],&w[i*27]);redrawSprites();if(h[7])playSound(_loopSound,scriptClock(),true);return Common::kNoError;
+}
+
 static bool validProbeSaveState(const Common::Array<uint32> &s) {
  if (!ScriptRunner::validPersistentState(s) || s[300] < 1 || s[300] > 4 || s[303]) return false;
  for (uint i = 0; i < 100; ++i) {
@@ -1531,7 +1595,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -1549,6 +1613,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (_place == 528) return saveP528(stream);
  if (_place == 530) return saveP530(stream);
  if (_place == 537) return saveRocket(stream);
+ if (_place == 514) return saveRendezvous(stream);
  if (_place == 522) return saveProbe(stream);
  if (_place == 529) return saveUniverse(stream);
  if (builderScene(_place)) return saveBuilder(stream);
@@ -1580,6 +1645,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
  if (version == 14) return loadRocket(stream);
+ if (version == 17) return loadRendezvous(stream);
  if (version == 16) return loadProbe(stream);
  if (version == 15) return loadUniverse(stream);
  if (version == 13) return loadBuilder(stream);
@@ -1984,9 +2050,10 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
- _questionSaveBaseline.clear(); if (place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
+ _questionSaveBaseline.clear(); if (place == 514 || place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion(); _probeAssetsValid = false;
+ _rendezvousAssetsValid = place == 514 && validRendezvousScene(_scene) && universeFileIdentity(ConfMan.getPath("path").join("PLACES/P514/MEGAFILE.HYP"),586435,0x97d1b539U);
  _ball = BallMotion();
  // The original orientation phase is process-global, unlike the sprite links.
  const int oldCometFrame = _comet.frame, oldCometPrevious = _comet.previousFrame;
@@ -7099,6 +7166,108 @@ bool AstronomicaEngine::verifyP513Puzzle() {
  debug("Astronomica P513 interaction verification: %s (fourteen scenarios, seven correct/all selected/ten errors, nine animations, limits, repeated success, silent counter, unsolved exit)",ok ? "PASS" : "FAIL");
  return ok;
 }
+bool AstronomicaEngine::verifyRendezvousSaves() {
+ ConfMan.setBool("astronomica_verify",false);
+ uint32 now=0;uint boundaries=0,prelaunch=0,launched=0,ordinary=0,dormant=0,histories=0,busy=0,failed=0,successors=0,futures=0,settingsMask=0,timerCases=0;
+ auto sync=[&](){_clockPaused=true;_pauseStarted=now;_pausedMillis=0;};
+ auto tick=[&](){sync();runScriptsAt(now);animateSpritesAt(now);now+=10;sync();};
+ auto settle=[&](){
+  for(uint n=0;n<3000&&_place==514&&!_runner.scriptsIdle();++n){if(canSaveRendezvous())return false;++busy;tick();}
+  if(_mixer->isSoundHandleActive(_soundHandle)&&_lastSound!=_loopSound){if(_place==514){if(canSaveRendezvous())return false;++busy;}_mixer->stopHandle(_soundHandle);}
+  return _place!=514||_runner.scriptsIdle();
+ };
+ auto snapshot=[&](Common::Array<byte>&data){sync();Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);if(saveGameStream(&out).getCode()!=Common::kNoError||out.size()!=4632)return false;data.resize(out.size());memcpy(&data[0],out.getData(),out.size());return true;};
+ auto restore=[&](const Common::Array<byte>&data){_pauseStarted=0x23450000U;Common::MemoryReadStream in(&data[0],data.size());const bool ok=loadGameStream(&in).getCode()==Common::kNoError;if(ok&&scriptClock()!=READ_LE_UINT32(&data[16]))return false;if(ok)now=scriptClock();sync();return ok;};
+ auto fingerprint=[&](bool destination=false){uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};add(_place);add(_previousPlace);add(_puzzlesCompleted);add(_comet.frame);add(_comet.previousFrame);if(destination){Common::Array<uint32>state;if(!_runner.exportPersistentState(state))return uint32(0);for(uint i=0;i<state.size();++i)if(i!=601)add(state[i]);}else add(_runner.probeDiagnosticHash(false));for(const Sprite&s:_scene.sprites){Common::Array<uint32>w;p526SpriteWords(s,w);for(uint32 v:w)add(v);}add(screenRGBHash(_screen,480));add(screenRGBHash(_background,480));return h;};
+ auto roundtrip=[&](uint duration){
+  Common::Array<byte>saved,again;if(!snapshot(saved)){debug("Rendezvous snapshot rejected: %u launched%u speed%u",now,uint(_scene.sprites[18].autoMove),uint(_scene.sprites[6].selectedFrame));return false;}
+  const uint32 before=fingerprint(),savedNow=now;for(uint t=0;t<duration;t+=10)tick();const uint32 after=fingerprint(),afterNow=now;
+  if(!loadPlace(117)||!restore(saved)||now!=savedNow||fingerprint()!=before||!snapshot(again)||again!=saved){debug("Rendezvous restored state mismatch");return false;}
+  for(uint t=0;t<duration;t+=10)tick();if(now!=afterNow||fingerprint()!=after){debug("Rendezvous successor mismatch");return false;}
+  Common::Array<uint32>state;_runner.exportPersistentState(state);++boundaries;++successors;prelaunch+=!state[306];launched+=state[306]!=0;ordinary+=!state[603];dormant+=state[603]!=0;settingsMask|=1U<<state[315];histories+=_scene.sprites[19].renderX!=272||_scene.sprites[19].renderY!=4;return true;
+ };
+ auto press=[&](int x,int y,int index){sync();if(spriteAt(x,y)!=index||_runner.clicksBlocked())return false;clickAtTime(x,y,now);return settle();};
+ auto select=[&](int desired){for(uint n=0;n<20;++n){int32 speed=-1;if(!_runner.getValue(1,5,speed))return false;if(speed==desired)return true;if(!press(speed<desired?310:234,416,speed<desired?5:4))return false;}return false;};
+ auto overlapping=[&](){const Sprite&t=_scene.sprites[16],&s=_scene.sprites[18];return t.renderX<=s.renderX+56&&t.renderX+52>=s.renderX&&t.renderY<=s.renderY+56&&t.renderY+54>=s.renderY;};
+ auto future=[&](uint mode){
+  const uint completed=_puzzlesCompleted;if(mode==3){if(!press(24,417,1))return false;}
+  else{if(!select(mode==0?5:mode==1?8:15))return false;
+   for(uint n=0;n<15000&&_place==514;++n){if(mode<2&&_runner.scriptsIdle()&&overlapping()){if(!press(495,372,14))return false;}else tick();}
+  }
+  int32 solved=-1;return _place==388&&_runner.getValue(0,30,solved)&&solved==int(mode<2)&&_puzzlesCompleted==completed+uint(mode==0);
+ };
+ if(ConfMan.hasKey("save_slot")&&ConfMan.getInt("save_slot")==16){
+  now=scriptClock();sync();debug("Astronomica rendezvous slot fingerprint: %08x",fingerprint());
+  const bool ok=canSaveRendezvous()&&roundtrip(130)&&future(0);debug("Astronomica rendezvous startup save: %s (slot16, failed docking and native next success)",ok?"PASS":"FAIL");return ok;
+ }
+ // Ordinary route is independent of the physical dormant fixture.
+ _runner.resetGlobals();now=0;sync();if(!loadPlace(514)||_runner.enqueueStartup(_scene.scripts,now,true)!=2||!settle()||!roundtrip(130))return false;
+ for(uint speed=1;speed<=15;++speed)if(!press(310,416,5)||!roundtrip(130))return false;
+ if(!press(310,416,5)||!roundtrip(130)||!press(120,395,15)||!roundtrip(130))return false;
+ for(uint speed=0;speed<15;++speed)if(!press(234,416,4)||!roundtrip(130))return false;
+ // Rebuild the same original scene while retaining dormant variant/comet data.
+ if(loadGameState(99).getCode()!=Common::kNoError)return false;
+ _runner.resetGlobals();_runner.defineValue(1,50,1234);_runner.seedRandom(77);_puzzlesCompleted=10;_comet.frame=3;_comet.previousFrame=4;
+ now=1000;sync();if(!loadPlace(514)||_runner.enqueueStartup(_scene.scripts,now,true)!=2||!settle()||!roundtrip(130)||!press(120,395,15)||!roundtrip(130))return false;
+ for(uint speed=1;speed<=15;++speed)if(!press(310,416,5)||!roundtrip(130))return false;
+ if(!select(0)||!roundtrip(130))return false;
+ // Choose a genuinely disjoint original position for the failed docking attempt.
+ for(uint n=0;n<3000&&overlapping();++n)tick();
+ if(overlapping()||!press(495,372,14)||_place!=514||!roundtrip(130))return false;++failed;
+ Common::Array<byte>fixture;if(!snapshot(fixture))return false;
+ // Active timer epochs are independent of orbit phase and selected speed.
+ const uint32 savedClock=READ_LE_UINT32(&fixture[16]);
+ for(uint32 clock:{savedClock,0xfffffff0U})for(uint sprite:{13U,16U,18U}){
+  const uint32 period=READ_LE_UINT32(&fixture[8+(10+sprite*27+22)*4]);
+  for(uint32 age:{0U,1U,period-1,period,period+1}){
+   Common::Array<byte>timed=fixture;const uint32 delta=clock-savedClock;WRITE_LE_UINT32(&timed[16],clock);
+   for(uint i:{13U,16U,18U}){const uint at=8+(10+i*27+9)*4;WRITE_LE_UINT32(&timed[at],READ_LE_UINT32(&timed[at])+delta);}
+   WRITE_LE_UINT32(&timed[8+(10+sprite*27+9)*4],clock-age);const uint at=8+(10+540+601)*4;WRITE_LE_UINT32(&timed[at],READ_LE_UINT32(&timed[at])+delta);
+   uint32 hash=2166136261U;for(uint j=8;j<timed.size()-4;j+=4)hash=(hash^READ_LE_UINT32(&timed[j]))*16777619U;WRITE_LE_UINT32(&timed[timed.size()-4],hash);
+   if(!restore(timed)||!roundtrip(130))return false;++timerCases;
+  }
+ }
+ if(!restore(fixture))return false;debug("Astronomica rendezvous timer epochs: PASS (%u native save/successor cases, before/at/after periods and uint32 wrap)",timerCases);
+ // A real foreground original narration finishes naturally, without stopHandle.
+ if(!playSound(1,now)||!_mixer->isSoundHandleActive(_soundHandle)||canSaveRendezvous())return false;
+ const uint32 voiceStart=_system->getMillis();while(_mixer->isSoundHandleActive(_soundHandle)&&_system->getMillis()-voiceStart<120000){if(canSaveRendezvous())return false;++busy;_system->delayMillis(10);}
+ const uint32 waited=_system->getMillis()-voiceStart;if(_mixer->isSoundHandleActive(_soundHandle)||!waited||!canSaveRendezvous()||!roundtrip(130))return false;
+ debug("Astronomica rendezvous natural voice end: PASS (%u ms, no stopHandle)",waited);
+ _loopSound=0;_loopEnabled=true;if(!playSound(0,now,true)||!_mixer->isSoundHandleActive(_soundHandle)||!canSaveRendezvous())return false;
+ Common::Array<byte>music,again;if(!snapshot(music)||!loadPlace(117))return false;const uint sounds=_soundsStarted;
+ if(!restore(music)||_soundsStarted!=sounds+1||_lastSound!=0||!_mixer->isSoundHandleActive(_soundHandle)||!snapshot(again)||again!=music)return false;
+ debug("Astronomica rendezvous Music restart: PASS (one ambient start)");_mixer->stopHandle(_soundHandle);if(!restore(fixture))return false;
+ // Nonzero sentinels and paused native audio strengthen atomic rejection checks.
+ if(!playSound(1,now)||!_mixer->isSoundHandleActive(_soundHandle)||canSaveRendezvous())return false;
+ Common::MemoryWriteStreamDynamic denied(DisposeAfterUse::YES);if(saveGameStream(&denied).getCode()!=Common::kWritingFailed||denied.size())return false;
+ _mixer->pauseHandle(_soundHandle,true);_pendingImage.create(5,3,_screen.format);_pendingImage.fillRect(Common::Rect(5,3),_screen.format.RGBToColor(17,33,65));_pendingImageX=19;_pendingImageY=23;_pendingImageName="rendezvous-atomic-image";_displayedImageName="rendezvous-atomic-display";
+ auto atomic=[&](){uint32 h=fingerprint();auto add=[&](uint32 v){h=(h^v)*16777619U;};add(_runner.probeDiagnosticHash(true));
+  for(uint32 v:{uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_lastSound),_soundsStarted,_pausedMillis,_pauseStarted,uint32(_clockPaused),scriptClock(),_lastSuccessEnd,_lastBlockingSoundEnd,uint32(_pendingImageX),uint32(_pendingImageY),uint32(_pendingImage.w),uint32(_pendingImage.h),uint32(_movie!=nullptr),uint32(_moviePlaying),uint32(_rendezvousAssetsValid),uint32(_mixer->isSoundHandleActive(_soundHandle)),_mixer->getSoundElapsedTime(_soundHandle),uint32(_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)),uint32(_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType))})add(v);
+  for(char c:_pendingImageName)add(byte(c));for(char c:_displayedImageName)add(byte(c));add(screenRGBHash(_pendingImage,480));return h;};
+ const uint32 unchanged=atomic();const void*pixels=_pendingImage.getPixels();
+ auto reject=[&](const Common::Array<byte>&bad){Common::MemoryReadStream in(&bad[0],bad.size());return loadGameStream(&in).getCode()!=Common::kNoError&&atomic()==unchanged&&_pendingImage.getPixels()==pixels;};
+ for(uint i=0;i<fixture.size();++i){Common::MemoryReadStream in(i?&fixture[0]:nullptr,i);if(loadGameStream(&in).getCode()==Common::kNoError||atomic()!=unchanged||_pendingImage.getPixels()!=pixels)return false;}
+ for(uint i=0;i<fixture.size();++i){Common::Array<byte>bad=fixture;bad[i]^=1;if(!reject(bad))return false;}
+ uint invalid=0;auto badWord=[&](uint index,uint32 value){Common::Array<byte>bad=fixture;WRITE_LE_UINT32(&bad[8+index*4],value);uint32 hash=2166136261U;for(uint at=8;at<bad.size()-4;at+=4)hash=(hash^READ_LE_UINT32(&bad[at]))*16777619U;WRITE_LE_UINT32(&bad[bad.size()-4],hash);if(!reject(bad))return false;++invalid;return true;};
+ for(uint index:{0U,3U,4U,5U,7U,8U,9U})if(!badWord(index,index==3?538U:index==4?1U:0xffffffffU))return false;
+ for(uint i=0;i<20;++i)if(!badWord(10+i*27+18,2))return false;
+ for(uint i=0;i<8;++i)if(!badWord(10+540+301+3*i,100))return false;
+ for(uint i:{13U,16U,18U})if(!badWord(10+i*27+9,now+1))return false;
+ if(!badWord(10+16*27+11,65538)||!badWord(10+540+315,16)||!badWord(10+540+318,1)||!badWord(10+540+321,1)||!badWord(10+540+303,0)||!badWord(10+540+309,52)||!badWord(10+540+2,0)||!badWord(10+19*27+5,0)||!badWord(10+17*27+2,270))return false;
+ _pendingImage.free();_pendingImageName.clear();_displayedImageName.clear();_mixer->stopHandle(_soundHandle);if(!restore(fixture)||!canSaveRendezvous())return false;
+ debug("Astronomica rendezvous rejection verification: PASS (4632 truncations, 4632 corruptions, %u invalid states, extended atomic state)",invalid);
+ for(uint mode=0;mode<4;++mode){
+  if(!restore(fixture))return false;if(mode==1)_runner.defineValue(0,30,1);if(!roundtrip(130))return false;Common::Array<byte>branch;if(!snapshot(branch))return false;
+  if(!future(mode))return false;const uint32 expected=fingerprint(mode==0),expectedClock=now,expectedEnd=_lastSuccessEnd,expectedBlock=_lastBlockingSoundEnd,expectedScreen=screenRGBHash(_screen,480),expectedBackground=screenRGBHash(_background,480);Common::Array<uint32>expectedState,expectedSprites;_runner.exportPersistentState(expectedState);for(const Sprite&s:_scene.sprites)p526SpriteWords(s,expectedSprites);
+  if(!restore(branch)||!future(mode)||(mode?now!=expectedClock:(now-_lastSuccessEnd<3010||now-_lastSuccessEnd>=3020||expectedClock-expectedEnd<3010||expectedClock-expectedEnd>=3020))||fingerprint(mode==0)!=expected){debug("Rendezvous future outcome mismatch mode%u clock%u/%u successEnd%u/%u blockingEnd%u/%u hash%08x/%08x screen%08x/%08x bg%08x/%08x",mode,expectedClock,now,expectedEnd,_lastSuccessEnd,expectedBlock,_lastBlockingSoundEnd,expected,fingerprint(mode==0),expectedScreen,screenRGBHash(_screen,480),expectedBackground,screenRGBHash(_background,480));Common::Array<uint32>actualState,actualSprites;_runner.exportPersistentState(actualState);for(const Sprite&s:_scene.sprites)p526SpriteWords(s,actualSprites);for(uint i=0;i<MIN(expectedState.size(),actualState.size());++i)if(expectedState[i]!=actualState[i])debug("Rendezvous future runner%u: %u/%u",i,expectedState[i],actualState[i]);for(uint i=0;i<MIN(expectedSprites.size(),actualSprites.size());++i)if(expectedSprites[i]!=actualSprites[i])debug("Rendezvous future sprite%u field%u: %u/%u",i/27+1,i%27,expectedSprites[i],actualSprites[i]);return false;}++futures;++successors;
+ }
+ if(!restore(fixture)||saveGameState(16,"Rendezvous continuation regression").getCode()!=Common::kNoError)return false;
+ debug("Astronomica rendezvous slot fingerprint: %08x",fingerprint());if(!future(0))return false;
+ uint settings=0;for(uint i=0;i<16;++i)settings+=(settingsMask>>i)&1U;
+ debug("Astronomica rendezvous motion coverage: PASS (%u prelaunch boundaries, %u launched boundaries, %u failed docking boundaries, %u speed settings, %u successor checks, %u future outcome checks)",prelaunch,launched,failed,settings,successors,futures);
+ debug("Astronomica rendezvous saves: PASS (%u boundaries, %u history boundaries, %u dormant boundaries, %u ordinary boundaries, %u busy rejections)",boundaries,histories,dormant,ordinary,busy);return true;
+}
+
 bool AstronomicaEngine::verifyP514Puzzle() {
  bool ok = verifyRendezvousMotion();
  debug("Astronomica P514 original motion verification: %s (two 1000-step x86 trajectories)",ok ? "PASS" : "FAIL");
@@ -8657,6 +8826,7 @@ Common::Error AstronomicaEngine::run() {
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"P513 verification failed");
  }
+ if (ConfMan.hasKey("astronomica_verify_rendezvous_saves") && ConfMan.getBool("astronomica_verify_rendezvous_saves")) {const bool ok=verifyRendezvousSaves();debug("Astronomica rendezvous save verification: %s",ok?"PASS":"FAIL");return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Rendezvous save verification failed");}
  if (ConfMan.hasKey("astronomica_verify_p514") && ConfMan.getBool("astronomica_verify_p514")) {
   ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);
   ConfMan.setBool("astronomica_sprite_input",true); ConfMan.setBool("astronomica_entry_scripts",false);

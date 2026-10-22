@@ -1,0 +1,25 @@
+## Verified settled save support,22 October2026
+
+Version17 is implemented and verified; see P514-SAVE-FORMAT.md and evidence/rendezvous-saves-validation.json. The original inventory below remains research history.
+
+# P514 original save-boundary research
+
+Static inventory only. No save support, native audit, original application execution or format version is claimed by this document.
+
+Original MEGAFILE.HYP is586435 bytes, SHA256 df7e496d2258169662ef23985ed1d8ec99ef5d24a23153903c6d48ba8b173afd, byte FNV97d1b539. The fresh parser consumes it completely. It is mode0 with one layer,20 sprites and2 startup programs,139 commands,12 declared sounds, introduction302, no movies, no mouse rectangles and no external picture commands. Four custom16 modes exist; the speed UI has SIXTEEN settings0..15, not four settings.
+
+Eight scope1 declarations have initial values [0,-1,0,54,1,0,0,0], read from raw field3, and widths [20,19,2,52,1,16,16,1]. Widths are retained metadata, not value limits: original local3 starts54 despite width52. local2 is the launched latch, local5 the speed setting and local6 the docking-success latch. Other declared values must be preserved rather than assigned invented zeros. Undeclared slots retain historical values with unknown metadata, following the existing runner contract.
+
+Sprites9..13 clone only sprite8 frames; their own x positions266/273/280/287/294 and flags remain independent. Resolved frame counts are [2,2,2,2,2,2,16,10,10,10,10,10,10,1,2,2,1,3,12,1]. Original geometry is target17=52×54, ship19=56×56, fuel14=18×9, hidden probe20=15×28. No sprite begins with auto-frame/move; startup and original controls configure active motion.
+
+Program0 configures target17 (center295,140, radii145,145,100ms), then shows it after50ms. Program1 updates speed readouts and, only after launch local2=1, updates ship/fuel periods. Speed controls5/6 adjust local5 with0..15 clamps and queue program1; no recurring poll exists. Launch control16 sets local2=1 once, runs two600ms launch picture/movement stages, configures ship19 and fuel14, then shows the ship. Pending launch/button/program1 work is distinct from ordinary settled orbit motion.
+
+A realistic first contract admits only scriptsIdle with no queued actions, click block/button pulse, foreground voice, movie, pending/displayed external image or entered hover state. Active target/ship/fuel animation is ordinary persistent state and must survive. Preserve20×27 mutable sprite words, all605 runner persistent words, clock/count/previous-place/audio and dormant variant/comet state. There is no separate RendezvousMotion struct or cached bitmap geometry: callbacks derive geometry from original frame resources, while periods/deltas/quadrant flags/epochs reside in sprites. Four modes0/1/2/3 are transient commands, not extra memory fields.
+
+Important histories: before launch, changing local5 changes the readout but ship/fuel remain unconfigured. After launch, periods become100-4×speed and1000-40×speed. Mode2 preserves current render positions, deltas, sides and timer epochs. Fuel crossing y412 stops fuel14,target17 and ship19 with period-1; subsequent speed changes can reactivate only ship/fuel, leaving target stopped. Do not require all three autoMove flags to match. Successful docking stops ship/fuel immediately; its pending continuation later stops target and exits. Such pending success is excluded from the first contract.
+
+Failed docking also mutates hidden sprite20: its render position becomes (shipX,shipX+56) at the attempted instant. The actual overlap test still uses sprite19, not sprite20, and five target points. The ship continues after failure, so hidden sprite20 is neither always original nor necessarily equal to the current ship position. Preserve it independently. Stored static xy remain original. The unusual ship-right-edge-as-y argument is established by the cleanroom callback probe at original4:3736 and intentionally retained in native source.
+
+Independent source review anchors (current canonical): configureRendezvous sprites.cpp425; advanceRendezvous440; onRendezvous astronomica.cpp2471; custom16 dispatch script.cpp728; callback installation astronomica.cpp2023. The evidence JSON records exact source hashes and line anchors, full commands/conditions/clones/dimensions and WAV hashes. probe_p514_motion.py was consulted as text only; its prior1000-step trajectory/17161-region/224-collision assertions were not rerun here. No unsupported Win16NE provider was retried.
+
+Before implementation, observe original-control routes for startup, all16 settings/clamps, delayed launch, moving/post-failed docking, independent fuel exhaustion/reactivation, success/repeat and unsolved exits. A native save test should compare bytes, complete runner/sprite state and full480-pixel surfaces plus successor timing, natural narration and ambient restart, clock wrap, physical fresh-process restoration and atomic malformed-payload rejection. Exact dynamic reachability and all these runtime properties remain untested by this static inventory.

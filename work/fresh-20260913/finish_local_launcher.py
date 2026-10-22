@@ -24,6 +24,8 @@ head=('# Astronomica — ripartenza dai file originali\n\n'
 if (root/'evidence/probe-saves-validation.json').exists():
  head=head.replace('21 ottobre 2026','22 ottobre 2026')
  head=head.replace('Import GAMESTAT originale', 'P522 conserva solo confini ordinari senza volo, con poll e orbite attive. Import GAMESTAT originale')
+if (root/'evidence/rendezvous-saves-validation.json').exists():
+ head=head.replace('Import GAMESTAT originale', 'P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. Import GAMESTAT originale')
 p.write_text(head+history)
 for name in ('refresh_research_evidence.py','save_development_evidence.py','verify_development_evidence.py'):subprocess.run([sys.executable,str(work/name)],check=True)
 print('Current local launcher and README checkpoint PASS')

@@ -2,7 +2,7 @@
 
 Status: verified22October2026; official native WASAPI and complete compatible suite PASS on the same executable.
 
-The candidate saves ordinary P522 animation and failed-return boundaries. Active flights, expired/calendar completion, pending button actions, foreground voices, movies, hover actions and the transient queued program0/index0 pass are rejected. The only serialized work is the trusted original program0 poll at command index6, with its retained 200ms epoch. The imported script and callbacks come from the validated original scene, never from save bytes.
+The format saves ordinary P522 animation and failed-return boundaries. Active flights, expired/calendar completion, pending button actions, foreground voices, movies, hover actions and the transient queued program0/index0 pass are rejected. The only serialized work is the trusted original program0 poll at command index6, with its retained 200ms epoch. The imported script and callbacks come from the validated original scene, never from save bytes.
 
 The payload is 4472 bytes: ASVM and LE version16, 24 header words, 18×27 sprite words, 605 runner words and a word FNV checksum. Header words are place522, completed count, script clock, previous place, ambient sound id, loop enabled, last sound epoch, ambient active, poll epoch, year, yearArmed, specialHit, flying, expired, three width/height pairs, comet frame, previous comet frame and two zero reserved words. Booleans, geometry and reserved words are validated. No new fields are silently synthesized from unknown local slots.
 
@@ -14,4 +14,4 @@ Earth, Mars and calendar phases are checked by replaying the finite original nat
 
 All payload/profile/geometry/poll binding checks occur before loadPlace mutates live state. A temporary runner validates imported metadata and trusted poll shape. After loadPlace constructs the actual scene bindings, the same validated state is imported into that configured runner, preserving sound/sprite/success handlers. This covers malformed bytes under immutable original assets; host I/O replacement between preflight and installation is outside the contract. Ambient restart follows existing native save behavior; original WAV assets are assumed unchanged and are hashed by the diagnostic driver.
 
-Native diagnostic results and exact source/executable identities will be recorded in CHECKPOINT.md and the measured probe-save-proof.json. SDL dummy diagnostics are not a manual playthrough or an official native-audio/full-build validation. Existing format1..15 loaders and the frozen v15 main executable remain unchanged outside this isolated stage.
+Native WASAPI, fresh-process slot15 and the complete compatible same-build suite pass; see evidence/probe-save-proof.json and evidence/probe-saves-validation.json for exact identities and measured counts. Formats1..15 remain readable. This is not a complete manual audiovisual playthrough.

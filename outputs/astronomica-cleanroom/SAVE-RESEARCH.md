@@ -163,3 +163,8 @@ Version15 preserves original movie and readout history independently of selector
 ## P522 nonflight probe saves,22 October2026
 
 Version16 preserves ordinary P522 state across 31 measured native round trips/successors, with a fresh-process slot15 and unchanged verified v15 slot compatibility. The original recurring200ms poll epoch, active orbit/frame phases and calendar are retained. Flight, expiry, special-hit success and the deferred index0 phase remain excluded. All4472 truncations and4472 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.
+
+
+## P514 rendezvous saves,22 October2026
+
+Version17 preserves settled P514 state across 87 measured native round trips/successors, with a fresh-process slot16 and unchanged verified v16 slot compatibility. Active orbit, frame and fuel timers, all16 speeds and hidden failed-docking history are retained. Queued launch, successful-docking and fuel-exhaustion transitions remain excluded. All4632 truncations and4632 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.

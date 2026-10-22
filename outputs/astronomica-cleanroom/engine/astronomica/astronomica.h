@@ -90,6 +90,11 @@ private:
  Common::Error loadBuilder(Common::SeekableReadStream *stream);
  bool verifyBuilderSaves();
  bool verifyRocketBoundaries();
+ bool canSaveRendezvous() const;
+ Common::Error saveRendezvous(Common::WriteStream *stream);
+ Common::Error loadRendezvous(Common::SeekableReadStream *stream);
+ bool verifyRendezvousSaves();
+ bool _rendezvousAssetsValid=false;
  bool canSaveProbe() const;
  Common::Error saveProbe(Common::WriteStream *stream);
  Common::Error loadProbe(Common::SeekableReadStream *stream);

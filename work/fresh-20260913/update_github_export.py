@@ -89,6 +89,19 @@ if probe_save_present:
     for name in probe_paths:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
+rendezvous_save_present=Path('outputs/astronomica-cleanroom/evidence/rendezvous-saves-validation.json').is_file()
+p514_research_paths=['outputs/astronomica-cleanroom/'+name for name in ('P514-SAVE-PLAN.md','probe_p514_save.py','evidence/p514-save-original.json')]
+if Path('outputs/astronomica-cleanroom/evidence/p514-save-original.json').is_file():
+    for name in p514_research_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+if rendezvous_save_present:
+    rendezvous_paths=['outputs/astronomica-cleanroom/P514-SAVE-FORMAT.md',
+                      *['work/fresh-20260913/'+name for name in ('check_rendezvous_saves.py','check_rendezvous_regressions.py','finish_rendezvous_saves.py')],
+                      *['outputs/astronomica-cleanroom/evidence/'+name for name in ('rendezvous-saves-validation.json','rendezvous-save-proof.json','rendezvous-saves-runtime.log','rendezvous-saves-startup.log','probe-previous-slot.log','probe-previous-slot-proof.json')]]
+    for name in rendezvous_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -148,6 +161,11 @@ if probe_save_present:
                 'twenty supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P522, P524, P526, P528-P537)')
     if 'Probe v16' not in s:
         s=s.replace('- Automatically verified routes','- Probe v16 preserves ordinary nonflight and failed-return P522 boundaries, active orbit/calendar phases and the trusted200ms poll epoch; active flight remains excluded. Fresh-process continuation and older save compatibility are verified.\n- Automatically verified routes')
+if rendezvous_save_present:
+    s=s.replace('twenty supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P522, P524, P526, P528-P537)',
+                'twenty-one supported puzzle scenes (P505, P506, P508, P513, P514, P515, P517, P519, P522, P524, P526, P528-P537)')
+    if 'Rendezvous v17' not in s:
+        s=s.replace('- Automatically verified routes','- Rendezvous v17 retains live P514 orbit and fuel phases, speed settings and hidden docking-attempt history at settled script boundaries. Fresh-process continuation and frozen v16 save compatibility are verified.\n- Automatically verified routes')
 p.write_text(s.rstrip()+'\n')
 if 'Looping WAVs follow the Music control' not in s:
     s=s.replace('- Automatically verified routes','- Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.\n- Automatically verified routes')
