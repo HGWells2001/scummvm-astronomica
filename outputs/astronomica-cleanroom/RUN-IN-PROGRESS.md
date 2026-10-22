@@ -1,1 +1,1 @@
-P537 v14 verified21October2026. Targeted/fresh-process/independent-boundary/prior-slot and complete native WASAPI suite plus launcher PASS. No tests running. Follow NEXT-STEPS.md/AI_MODEL_CHECKPOINT.md; newest finisher finish_rocket_saves.py.
+P522 v16 ordinary nonflight saves verified22October2026. Complete same-build native WASAPI suite, fresh-process slot15 and prior v15 slot PASS. Publication still requires export verification. Newest finisher finish_probe_saves.py. Automation remains PAUSED.

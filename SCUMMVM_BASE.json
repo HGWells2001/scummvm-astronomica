@@ -2,11 +2,11 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "e1c05225769cb9411a1b849abe7530cb36ee24114a3cf65bac446c587b903d3c",
+  "validated_executable_sha256": "634c241e0d4242ad95e5915d4c77af491fe8c20b62100533e6bb82d444152bb0",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "f0d2ba126be7eeb70613a0c64d7fba1fb9ce6b301864d551b1f0d11abb3276a8",
-    "astronomica.h": "0e79a7e76e060f2651248b86f7ba1885ad5215d7a126e12e5be54ff3298d461e",
+    "astronomica.cpp": "77bd1ba22d81c62a0a3314ffa17b61cc987f70623658bea08bc1e733f681f596",
+    "astronomica.h": "2ba535cae4dfc9b538141f413cd2f040344c28574ffe451ea54d2f022ee69dce",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -22,12 +22,12 @@
     "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
     "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
     "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
-    "script.cpp": "194c4d871bdaef66acf41c1216ef9827a7a5022626c05aecde8e51104d0f205f",
-    "script.h": "6ed0d51978621a1693d0d4e1d5a488f86fab54659c7a0e06710bf73a6b6116c3",
+    "script.cpp": "c98b2b4195d02c70f3e79327596e8c85157a386c83f8bb811712c11ba5860b38",
+    "script.h": "98e64b16538d32dcd59eb61976977cd7ad91fd10ec3faf7cdb3407857e469e0a",
     "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
     "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
     "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823",
-    "original_cursors.h": "171585cafb6bcce4195be65627f752719e201794f651d1acdc441e88e4834393",
-    "original_cursors.cpp": "1aabd7ff809d2349b17caa09efb148208423d3bbc383a8ebbadb57bcb51a060d"
+    "original_cursors.cpp": "d082ed6cc56f3cc171b4030f3979d764e48bc2c8eaca0950fd38e4b7f4243ed6",
+    "original_cursors.h": "ec3e171b38e27923497f1e7a857f43fe5aaece0cef9ba9be67f28003c917bdb7"
   }
 }

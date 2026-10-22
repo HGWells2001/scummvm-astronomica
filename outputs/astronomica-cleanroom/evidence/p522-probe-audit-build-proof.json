@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "canonical_files": 23,
+  "canonical_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "c7fde521a4bac174ed8cf4108afd1758f7fbf2e7849ef9e35ed2fd4e2bc0b221",
+    "astronomica.h": "2a875ee5800502b5405e1af029128f9490f13a007d27678bda3444b131ffd5d4",
+    "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "194c4d871bdaef66acf41c1216ef9827a7a5022626c05aecde8e51104d0f205f",
+    "script.h": "9881ac6388de44a38fc260161edf78ca962cea59c9eba2b5bfa871b516b205e0",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "regression_exe_sha256": "dbe43465359fff29a4a1931b850f463251120a71c21039e44106e64a1b6ffe7b",
+  "candidate_exe_sha256": "d80a7795370f3813bbb2b1f526121dd91d2f8ea1614ed8adb6581650bc9f79f7",
+  "stage_sha256": {
+    "astronomica.cpp": "bebf6e9e86851a9ea10b3869209e37c6daa167310becc650c36478222d838c26",
+    "astronomica.h": "a2f55ca6a9cd47d6215d4e5ac8b775470125c9407eb1fcb75975d9b6c9641f1f",
+    "script.cpp": "803daf92af27b6ebdd0b9e66a327d695d6001f1d4f3924b1d73f6430bf05415e",
+    "script.h": "9881ac6388de44a38fc260161edf78ca962cea59c9eba2b5bfa871b516b205e0",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "compiled_sources": 8,
+  "probe_log": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p522-audit\\candidate-build\\probe-boundaries.log",
+  "diagnostic_only": true
+}

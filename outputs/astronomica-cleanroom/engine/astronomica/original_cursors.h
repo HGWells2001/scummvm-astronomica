@@ -5,28 +5,24 @@
 #include "common/array.h"
 #include "common/path.h"
 
-namespace Graphics {
-class Cursor;
-struct WinCursorGroup;
-}
+namespace Graphics { class Cursor; }
 
 namespace Astronomica {
 
-// The bitmaps stay in the player's original Windows executable. No original
-// cursor image is distributed or rebuilt into the ScummVM executable.
+// Cursors are decoded from the player's own PLACES/GAMEPLAC/*_S and *_M
+// monochrome BMPs. The engine never distributes the copyrighted bitmaps.
 class OriginalCursors {
  struct Entry {
   uint32 id;
   const Graphics::Cursor *cursor;
-  Entry(uint32 resourceID, const Graphics::Cursor *graphicsCursor) : id(resourceID), cursor(graphicsCursor) {}
+  Entry(uint32 resourceID, const Graphics::Cursor *graphicsCursor)
+   : id(resourceID), cursor(graphicsCursor) {}
  };
  Common::Array<Entry> _entries;
- Common::Array<Graphics::WinCursorGroup *> _groups;
- Common::Array<Graphics::Cursor *> _standalone;
- Graphics::Cursor *_windowsArrow = nullptr;
+ Common::Array<Graphics::Cursor *> _owned;
+ const Graphics::Cursor *_defaultArrow = nullptr;
  int32 _currentID = -1;
  bool _loaded = false;
- bool add(uint32 id, const Graphics::Cursor *cursor);
 public:
  ~OriginalCursors();
  uint load(const Common::Path &gameRoot);

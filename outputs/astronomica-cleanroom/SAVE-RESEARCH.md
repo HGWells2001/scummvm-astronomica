@@ -153,3 +153,13 @@ Native v13 retains both P515/P536 construction scenes and the dormant custom17 r
 ## P537 rocket saves,21 October2026
 
 Version14 retains all48 sprites, selector, prior digits/gauges, stopped motion epoch and dormant cross-puzzle state. 577 exact round trips/successors and fresh-process slot13 pass; all7680 truncations,7680 corruptions and48 checksummed invalid states reject atomically. Full native WASAPI suite and normal startup pass with versions1-13 retained.
+
+
+## P529 universe saves,21 October2026
+
+Version15 preserves original movie and readout history independently of selector and attempted segment, plus all eleven sprites, four locals, mask, dormant custom17 and comet phase. 188 exact round trips/successors and physical slot14 in a fresh process pass. All3684 truncations,3684 corruptions and25 checksummed invalid states reject atomically. Original253-frame reconstruction, zero-frame history, natural voice completion, Music restart and the full native WASAPI regression pass on the same build.
+
+
+## P522 nonflight probe saves,22 October2026
+
+Version16 preserves ordinary P522 state across 31 measured native round trips/successors, with a fresh-process slot15 and unchanged verified v15 slot compatibility. The original recurring200ms poll epoch, active orbit/frame phases and calendar are retained. Flight, expiry, special-hit success and the deferred index0 phase remain excluded. All4472 truncations and4472 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.

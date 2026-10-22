@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "astronomica/script.h"
+#include "common/debug.h"
 #include "astronomica/mentors.h"
 #include "astronomica/advice.h"
 namespace Astronomica {
@@ -66,6 +67,103 @@ uint16 ScriptRunner::random15() {
 bool ScriptRunner::exportIdleState(Common::Array<uint32> &words) const {
  if (!idle()) return false;
  exportSettledValues(words); return true;
+}
+uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
+ uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());
+ for(const Pending&p:_pending){add(p.index);add(p.since);add(p.script.size());for(const Command&c:p.script){add(c.opcode);add(c.delay);add(c.args.size());for(int32 v:c.args)add(v);}}
+ for(const Action&a:_actions){add(a.opcode);add(a.value);add(a.x);add(a.y);for(char c:a.text)add(byte(c));for(int32 v:a.motion)add(v);}
+ if(strict){add(_pendingEpoch);add(_executed);add(_spriteTargets.size());for(uint v:_spriteTargets)add(v);add(_soundTargets.size());for(bool v:_soundTargets)add(v);add(_gameStateHandler!=nullptr);add(_soundHandler!=nullptr);add(_probeHandler!=nullptr);add(_successHandler!=nullptr);}return h;
+}
+
+bool ScriptRunner::trustedProbePollProgram() const {
+ if (!_probeHandler || _programs.size() != 11 || _programs[0].size() != 7) return false;
+ const Command &last = _programs[0][6];
+ return last.opcode == 41 && last.delay == 200 && last.args.size() == 1 && last.args[0] == 0;
+}
+bool ScriptRunner::exportProbePollState(Common::Array<uint32> &words, uint32 &since) const {
+ if (!trustedProbePollProgram() || _pending.size() != 1 || !_actions.empty() || _clicksBlocked) return false;
+ const Pending &p = _pending[0];
+ if (p.index != 6 || p.script.size() != _programs[0].size()) return false;
+ for (uint i = 0; i < p.script.size(); ++i)
+  if (p.script[i].opcode != _programs[0][i].opcode || p.script[i].delay != _programs[0][i].delay || p.script[i].args != _programs[0][i].args) return false;
+ Common::Array<uint32> state; exportSettledValues(state); state.push_back(_variantRound); state.push_back(_variantMask);
+ if (!validPersistentState(state) || state[300] < 1 || state[300] > 4 || state[303] != 0) return false;
+ words = state; since = p.since; return true;
+}
+bool ScriptRunner::importProbePollState(const Common::Array<uint32> &words, uint32 since) {
+ if (!trustedProbePollProgram() || !scriptsIdle() || !validPersistentState(words) || words[300] < 1 || words[300] > 4 || words[303] != 0) return false;
+ // Match declarations from the already loaded trusted scene, including unknown
+ // slots; do not invent zero values for retained undeclared local data.
+ for (uint i = 0; i < 100; ++i)
+  if (words[301+3*i] != uint32(_widths[1][i]) || words[302+3*i] != uint32(_known[1][i])) return false;
+ importSettledValues(words); _variantRound = words[603]; _variantMask = words[604];
+ _pending.push_back(Pending{_programs[0],6,since}); ++_pendingEpoch; return true;
+}
+bool ScriptRunner::verifyProbePollSnapshots() const {
+ Common::Array<uint32> saved; uint32 originalSince = 0;
+ if (!exportProbePollState(saved,originalSince)) return false;
+ uint cases = 0, rejected = 0;
+ for (uint32 epoch : {originalSince,0xfffffff0U}) for (uint32 age : {0U,1U,199U,200U,201U,210U,1000U}) {
+  ScriptRunner expected = *this, actual = *this;
+  expected._pending[0].since = epoch; actual.clear();
+  if (!actual.importProbePollState(saved,epoch)) return false;
+  Common::Array<uint32> again; uint32 restored = 0;
+  if (!actual.exportProbePollState(again,restored) || again != saved || restored != epoch) return false;
+  const uint32 now = epoch+age;
+  auto equivalent = [&]() {
+   Common::Array<uint32> a,b; expected.exportSettledValues(a); actual.exportSettledValues(b);
+   if (a != b || expected._variantRound != actual._variantRound || expected._variantMask != actual._variantMask || expected._pending.size() != actual._pending.size() || expected._actions.size() != actual._actions.size() || expected._clicksBlocked != actual._clicksBlocked) return false;
+   for (uint i = 0; i < expected._pending.size(); ++i) {
+    const Pending &x = expected._pending[i],&y = actual._pending[i];
+    if (x.index != y.index || x.since != y.since || x.script.size() != y.script.size()) return false;
+    for (uint j = 0; j < x.script.size(); ++j)
+     if (x.script[j].opcode != y.script[j].opcode || x.script[j].delay != y.script[j].delay || x.script[j].args != y.script[j].args) return false;
+   }
+   return true;
+  };
+  expected.tick(now); actual.tick(now);
+  if (!equivalent() || actual._pending.size() != 1 || actual._pending[0].index != (age >= 200 ? 0U : 6U)) return false;
+  if (age >= 200 && actual.exportProbePollState(again,restored)) return false;
+  // opcode41 queues program0 for another pass; it must not execute immediately.
+  expected.tick(now); actual.tick(now);
+  if (!equivalent() || !actual.exportProbePollState(again,restored) || restored != (age >= 200 ? now : epoch)) return false;
+  expected.tick(now+199); actual.tick(now+199); if (!equivalent()) return false;
+  expected.tick(now+199); actual.tick(now+199);
+  if (!equivalent() || !actual.exportProbePollState(again,restored)) return false;
+  const bool dueAgain = int32(now+200-actual._pending[0].since) >= 200;
+  expected.tick(now+200); actual.tick(now+200); if (!equivalent()) return false;
+  if (actual.exportProbePollState(again,restored) == dueAgain) return false;
+  expected.tick(now+200); actual.tick(now+200);
+  if (!equivalent() || !actual.exportProbePollState(again,restored)) return false;
+
+  ++cases;
+ }
+ auto denied = [&](Common::Array<uint32> bad) {
+  ScriptRunner target = *this; target.clear();
+  Common::Array<uint32> before,after; target.exportSettledValues(before);
+  const uint round = target._variantRound,mask = target._variantMask,generation = target._pendingEpoch;
+  if (target.importProbePollState(bad,originalSince)) return false;
+  target.exportSettledValues(after);
+  if (before != after || !target.scriptsIdle() || target._variantRound != round || target._variantMask != mask || target._pendingEpoch != generation) return false;
+  ++rejected; return true;
+ };
+ for (uint field : {2U,300U,301U,302U,303U,602U,603U,604U}) {
+  Common::Array<uint32> bad = saved; bad[field] = 0xffffffffU; if (!denied(bad)) return false;
+ }
+ Common::Array<uint32> shortState = saved; shortState.resize(604); if (!denied(shortState)) return false;
+ for (uint mutation = 0; mutation < 5; ++mutation) {
+  ScriptRunner bad = *this;
+  if (mutation == 0) bad._pending.push_back(bad._pending[0]);
+  if (mutation == 1) bad._pending[0].index = 5;
+  if (mutation == 2) bad._pending[0].script[6].delay = 201;
+  if (mutation == 3) bad._clicksBlocked = true;
+  if (mutation == 4) bad._actions.push_back(Action{});
+  Common::Array<uint32> out; uint32 when = 0;
+  if (bad.exportProbePollState(out,when)) return false;
+  ++rejected;
+ }
+ debug("Astronomica probe poll snapshot kernel: PASS (%u timing cases, %u atomic/shape rejections; original605 words, retained epoch, wrap)",cases,rejected);
+ return true;
 }
 bool ScriptRunner::exportPersistentState(Common::Array<uint32> &words) const {
  if (!scriptsIdle()) return false;
@@ -805,6 +903,9 @@ void ScriptRunner::tick(uint32 now) {
  for (uint i = 0; i < count; ++i) {
   const Pending p = _pending[index];
   const int32 delay = p.script[p.index].delay;
+  if (p.script[p.index].opcode == 41 && p.script[p.index].args.size() == 1 && !p.script[p.index].args[0] && delay == 200)
+   debug("Probe audit poll: %u %u %d %u %u %u",now,p.since,delay,uint(int32(now-p.since) >= delay),count,p.index);
+
   if (delay == 0 || int32(now - p.since) >= delay) {
    _pending.remove_at(index);
    execute(p.script, p.index, now);
