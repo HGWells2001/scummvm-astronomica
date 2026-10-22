@@ -31,7 +31,7 @@ class OriginalCursorIntegrationTests(unittest.TestCase):
         self.assertIn('height != kCursorSize', self.c)
         self.assertIn('pixelOffset < 62', self.c)
         self.assertIn('kCursorSize - bottomRow - 1', self.c)
-        self.assertIn('mask[i] ? 0 : (shape[i] ? 2 : 1)', self.c)
+        self.assertIn('mask[i] ? (shape[i] ? 1 : 2) : 0', self.c)
         self.assertIn('getKeyColor() const override { return 0; }', self.c)
         self.assertIn('getPaletteStartIndex() const override { return 1; }', self.c)
 

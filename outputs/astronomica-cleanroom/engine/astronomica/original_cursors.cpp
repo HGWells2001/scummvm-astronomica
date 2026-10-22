@@ -74,11 +74,13 @@ class MonochromeCursor : public Graphics::Cursor {
 public:
  MonochromeCursor(const byte *shape, const byte *mask, uint16 x, uint16 y)
   : _hotspotX(x), _hotspotY(y) {
-  // ScummVM CLUT8: index 0 is transparent, 1 black, 2 white.
+  // Original BMP palette: bit 0 = white, bit 1 = black. The *_M mask
+  // is black for opaque pixels; *_S is black for the inner silhouette.
+  // ScummVM CLUT8: index 0 transparent, 1 black, 2 white.
   _palette[0] = _palette[1] = _palette[2] = 0;
   _palette[3] = _palette[4] = _palette[5] = 255;
   for (int i = 0; i < kCursorPixels; ++i)
-   _surface[i] = mask[i] ? 0 : (shape[i] ? 2 : 1);
+   _surface[i] = mask[i] ? (shape[i] ? 1 : 2) : 0;
  }
  uint16 getWidth() const override { return kCursorSize; }
  uint16 getHeight() const override { return kCursorSize; }
