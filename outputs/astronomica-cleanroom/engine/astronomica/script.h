@@ -84,6 +84,10 @@ public:
  // from the original scene; queued work must never be silently discarded.
  enum { kIdleStateWords = 603, kPersistentStateWords = 605 };
  bool scriptsIdle() const { return _pending.empty() && _actions.empty() && !_clicksBlocked; }
+ bool exportProbePollState(Common::Array<uint32> &words, uint32 &since) const;
+ bool importProbePollState(const Common::Array<uint32> &words, uint32 since);
+ bool verifyProbePollSnapshots() const;
+ uint32 probeDiagnosticHash(bool strict) const;
  bool exportPersistentState(Common::Array<uint32> &words) const;
  bool importPersistentState(const Common::Array<uint32> &words);
  static bool validPersistentState(const Common::Array<uint32> &words) { return validVariantState(words); }
@@ -99,6 +103,7 @@ public:
  bool importVariantState(const Common::Array<uint32> &words);
  static bool supports(const Script &script, bool allowTimed = false);
 private:
+ bool trustedProbePollProgram() const;
  void exportSettledValues(Common::Array<uint32> &words) const;
  void importSettledValues(const Common::Array<uint32> &words);
  struct Pending { Script script; uint index; uint32 since; };

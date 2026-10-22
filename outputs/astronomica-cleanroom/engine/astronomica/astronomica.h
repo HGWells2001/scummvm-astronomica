@@ -90,6 +90,11 @@ private:
  Common::Error loadBuilder(Common::SeekableReadStream *stream);
  bool verifyBuilderSaves();
  bool verifyRocketBoundaries();
+ bool canSaveProbe() const;
+ Common::Error saveProbe(Common::WriteStream *stream);
+ Common::Error loadProbe(Common::SeekableReadStream *stream);
+ bool verifyProbeSaves();
+ bool _probeAssetsValid = false;
  bool canSaveUniverse() const;
  Common::Error saveUniverse(Common::WriteStream *stream);
  Common::Error loadUniverse(Common::SeekableReadStream *stream);
@@ -128,6 +133,7 @@ private:
  void queueBallCommand(int opcode, int value, int frame, int delay, uint32 now);
  bool verifyP501Puzzle();
  void onProbe(int mode, int id) override;
+ bool verifyProbeBoundaries();
  bool verifyP522Puzzle();
  bool verifyP524Puzzle();
  Video::QuickTimeDecoder *_movie = nullptr;

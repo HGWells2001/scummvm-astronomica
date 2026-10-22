@@ -1,12 +1,12 @@
 # Astronomica — ripartenza dai file originali
 
-Stato verificato: 21 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
+Stato verificato: 22 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
 
 Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa la build reale attuale, parte dal menu P1 e attiva audio, animazioni e interazione. Preferenze e salvataggi personali sono in userdata/astronomica, separati dalle prove. Il vecchio collegamento bin/Avvia-Astronomica.cmd rimanda allo stesso avvio. Vedere LOCAL-PLAY.md.
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P515, P517, P519, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P513, P515, P517, P519, P522, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -980,3 +980,8 @@ Version14 retains all48 sprites, selector, prior digits/gauges, stopped motion e
 ## P529 universe saves,21 October2026
 
 Version15 preserves original movie and readout history independently of selector and attempted segment, plus all eleven sprites, four locals, mask, dormant custom17 and comet phase. 188 exact round trips/successors and physical slot14 in a fresh process pass. All3684 truncations,3684 corruptions and25 checksummed invalid states reject atomically. Original253-frame reconstruction, zero-frame history, natural voice completion, Music restart and the full native WASAPI regression pass on the same build.
+
+
+## P522 nonflight probe saves,22 October2026
+
+Version16 preserves ordinary P522 state across 31 measured native round trips/successors, with a fresh-process slot15 and unchanged verified v15 slot compatibility. The original recurring200ms poll epoch, active orbit/frame phases and calendar are retained. Flight, expiry, special-hit success and the deferred index0 phase remain excluded. All4472 truncations and4472 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.

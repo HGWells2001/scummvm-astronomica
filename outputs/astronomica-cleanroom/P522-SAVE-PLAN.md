@@ -1,3 +1,7 @@
+## Verified ordinary nonflight save support,22 October2026
+
+Version16 is implemented and verified; see P522-SAVE-FORMAT.md and evidence/probe-saves-validation.json. Only local1=0 boundaries with the trusted index6 poll are supported. The inventory and proposed contract below remain research history.
+
 # P522 future save research, 21 October 2026
 
 This is fresh static inventory of `D:/astro/PLACES/P522/MEGAFILE.HYP`, with
@@ -110,3 +114,22 @@ Compare full sprite/screen state and the next poll, calendar and movement update
 Negative tests must reject extra jobs, the wrong program/index/delay, button pulses,
 foreground audio and partial startup without changing queue, sound or rendered state.
 This is a proposed implementation scope, not tested serialization support.
+
+
+## Retained global-width metadata,22 October2026
+
+A fresh read-only scan of all421 original PLACES/P*/MEGAFILE.HYP files found
+only global indices0,1,2 declared with width6, in P281/P506/P531/P532/P533/P534/P535.
+The other global widths retain their initial zero. Each of indices0..2 can
+therefore retain zero or six according to route history; they must not be
+compared with the current loading session or with P522 local widths8/8.
+`loadLocalConditions` clears only local widths and updates declared global
+widths; `defineValue` and `resetGlobals` do not clear global widths.
+
+The cleanroom astro_reader parsed416 complete resources. P502/P503/P504/P533
+have already documented trailing bitmap data; their scene prefixes were parsed
+at the exact trailing-data boundary. P502/P503/P504 declare no globals, while
+P533 repeats the three width6 declarations. P406 is a24-byte incomplete resource
+and has no parsed condition table. No original executable, callback or audio
+was executed by this scan. This scan establishes a metadata guard; it is not a
+native save or restoration test.

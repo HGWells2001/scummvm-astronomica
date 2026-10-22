@@ -1160,6 +1160,127 @@ static bool validUniverseSprites(const Common::Array<uint32> &w, const Scene &or
  Common::Array<uint32> baseline; for (const Sprite &s : expected.sprites) p526SpriteWords(s,baseline);
  return baseline == w;
 }
+static Graphics::Surface *decodeSpriteBitmap(Common::SeekableReadStream &, const BitmapRef &, const Graphics::PixelFormat &);
+// Native v16 preserves ordinary/failed-return P522, not an active flight.
+static bool validProbeSaveState(const Common::Array<uint32> &s) {
+ if (!ScriptRunner::validPersistentState(s) || s[300] < 1 || s[300] > 4 || s[303]) return false;
+ for (uint i = 0; i < 100; ++i) {
+  if (s[3*i+2] != 1 || s[302+3*i] != uint32(i < 2) || s[301+3*i] != (i < 2 ? 8U : 0U)) return false;
+  // Global widths are retained metadata; negative widths cannot come from
+  // the original declared nonnegative condition widths or initial zero.
+  if (s[3*i+1] != 0 && (i >= 3 || s[3*i+1] != 6)) return false;
+ }
+ return true;
+}
+static bool validProbeSaveScene(const Scene &s) {
+ if (s.mode || s.layers != 1 || s.sprites.size() != 18 || s.conditions.size() != 2 || s.scripts.size() != 11 || !s.movies.empty() || !s.mouseRects.empty()) return false;
+ const int expected[2][6] = {{1,0,8,2,1,4},{1,1,8,0,0,8}};
+ for (uint i = 0; i < 2; ++i) for (uint j = 0; j < 6; ++j) if (s.conditions[i].raw[j] != expected[i][j]) return false;
+ const uint frames[] = {2,2,2,2,2,2,2,2,12,10,10,10,10,2,11,11,1,1};
+ for (uint i = 0; i < 18; ++i) if (spriteFrameCount(s,i) != frames[i] || s.sprites[i].clone != (i >= 10 && i <= 12 ? 10 : -1)) return false;
+ return true;
+}
+static bool probeDirection(uint32 dx, uint32 dy, uint32 sx, uint32 sy) {
+ return (int32(dx) == 2 && !dy && !sx && !sy) || (int32(dx) == -2 && !dy && !sx && sy == 1) ||
+        (!dx && int32(dy) == -1 && sx == 1 && !sy) || (!dx && int32(dy) == 1 && !sx && !sy);
+}
+static bool validProbeSaveSprites(const Common::Array<uint32> &w,const Scene &original,const Common::Array<uint32> &state,const ProbeMotion &motion,uint32 clock) {
+ if (!validProbeSaveScene(original) || !validProbeSaveState(state) || w.size() != 18*27 || motion.year < 1991 || motion.year >= 2003 || motion.flying || motion.expired || motion.specialHit) return false;
+ const int widths[] = {54,40,43},heights[] = {52,40,25};
+ for (uint i = 0; i < 3; ++i) if (motion.widths[i] != widths[i] || motion.heights[i] != heights[i]) return false;
+ Scene expected = original; for (Sprite &s : expected.sprites) s.selectedFrame = 0;
+ for (uint i = 4; i < 8; ++i) expected.sprites[i].selectedFrame = state[300] == i-3;
+ int year = motion.year; for (int i = 12; i >= 9; --i) { expected.sprites[i].selectedFrame = year%10; year /= 10; }
+ expected.sprites[8].selectedFrame = w[8*27+1]; if (w[8*27+1] > 11) return false;
+ ProbeMotion initial; for (uint i = 0; i < 3; ++i) { initial.widths[i] = widths[i]; initial.heights[i] = heights[i]; configureProbe(expected,initial,15+i); }
+ expected.sprites[14].visible = expected.sprites[15].visible = 1;
+ const uint32 moveEpoch = w[14*27+9],frameEpoch = w[14*27+8];
+ if (int32(clock-moveEpoch) < 0 || int32(clock-frameEpoch) < 0 || w[14*27+1] > 10 || w[15*27+1] != w[14*27+1]) return false;
+ for (uint i = 14; i <= 16; ++i) {
+  if (w[i*27+9] != moveEpoch || !probeDirection(w[i*27+11],w[i*27+12],w[i*27+14],w[i*27+15])) return false;
+  Sprite &s = expected.sprites[i]; s.moveSince = moveEpoch;
+  s.renderX = int16(w[i*27+4]); s.renderY = int16(w[i*27+5]);
+  s.moveDX = int16(w[i*27+11]); s.moveDY = int16(w[i*27+12]); s.orbitSideX = w[i*27+14]; s.orbitSideY = w[i*27+15];
+  if (i < 16) { if (w[i*27+8] != frameEpoch) return false; s.frameSince = frameEpoch; s.selectedFrame = w[i*27+1]; }
+ }
+ // A failed flight resets its radii but commits the old computed point. Do
+ // not force that hidden point onto the smaller orbit or onto Earth's point.
+ const int px = int32(w[16*27+4]),py = int32(w[16*27+5]);
+ if (px < 300-226-widths[2]-2 || px > 300+226+2 || py < 140-113-heights[2]-1 || py > 140+113+1) return false;
+ Common::Array<uint32> baseline; for (const Sprite &s : expected.sprites) p526SpriteWords(s,baseline);
+ if (baseline != w) { for(uint j=0;j<w.size();++j) if(baseline[j]!=w[j]) { debug("Probe baseline mismatch %u %d/%d",j,int32(w[j]),int32(baseline[j]));break; } return false; }
+ // Validate all reachable Earth/Mars/calendar phases from the original setup,
+ // including Mars's initial x40 approach and the initial unarmed partial year.
+ // This is the native callback's finite calendar path, not an audit sample list.
+ Scene world = original; for (Sprite &s : world.sprites) s.selectedFrame = 0;
+ ProbeMotion m; for (uint i = 0; i < 3; ++i) { m.widths[i] = widths[i]; m.heights[i] = heights[i]; configureProbe(world,m,15+i); }
+ world.sprites[14].visible = world.sprites[15].visible = 1; world.sprites[8].selectedFrame = 0;
+ for (uint tick = 0; tick <= 20000 && !m.expired; ++tick) {
+  bool same = m.year == motion.year && m.yearArmed == motion.yearArmed && world.sprites[8].selectedFrame == int(w[8*27+1]);
+  for (uint i = 14; i <= 15; ++i) {
+   const Sprite &s = world.sprites[i]; const uint at = i*27;
+   same = same && s.renderX == int32(w[at+4]) && s.renderY == int32(w[at+5]) && s.moveDX == int32(w[at+11]) && s.moveDY == int32(w[at+12]) && s.orbitSideX == int32(w[at+14]) && s.orbitSideY == int32(w[at+15]);
+  }
+  if (same) return true;
+  int32 idle = 0; advanceProbe(world,m,14,idle,(tick+1)*30); advanceProbe(world,m,15,idle,(tick+1)*30);
+ }
+ return false;
+}
+bool AstronomicaEngine::canSaveProbe() const {
+ if (_place != 522 || !_probeAssetsValid || !validProbeSaveScene(_scene) || _questionSaveBaseline.size() != 18 || _movie || _movieFrame.w || _pendingImage.w || !_displayedImageName.empty() ||
+     _probe.flying || _probe.expired || _probe.specialHit || _comet.frame < 1 || _comet.frame > 12 || _comet.previousFrame < 0 || _comet.previousFrame > 12 ||
+     !ConfMan.getBool("astronomica_audio") || !ConfMan.getBool("astronomica_animation") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+ if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
+ for (const HoverTarget &h : _hoverSprites) if (h.entered) return false;
+ for (const HoverTarget &h : _hoverRects) if (h.entered) return false;
+ Common::Array<uint32> state,words; uint32 since = 0; if (!_runner.exportProbePollState(state,since) || int32(scriptClock()-since) < 0) return false;
+ for (const Sprite &s : _scene.sprites) { if (s.dragEnabled || s.planetMotion || s.planetPeriod != -1) return false; p526SpriteWords(s,words); }
+ Scene original = _scene; original.sprites = _questionSaveBaseline;
+ return validProbeSaveSprites(words,original,state,_probe,scriptClock());
+}
+Common::Error AstronomicaEngine::saveProbe(Common::WriteStream *stream) {
+ if (!canSaveProbe()) return Common::kWritingFailed;
+ Common::Array<uint32> state,words; uint32 since = 0; _runner.exportProbePollState(state,since); for (const Sprite &s : _scene.sprites) p526SpriteWords(s,words);
+ const uint32 h[] = {522,_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_mixer->isSoundHandleActive(_soundHandle)),
+  since,uint32(_probe.year),uint32(_probe.yearArmed),uint32(_probe.specialHit),uint32(_probe.flying),uint32(_probe.expired),
+  uint32(_probe.widths[0]),uint32(_probe.heights[0]),uint32(_probe.widths[1]),uint32(_probe.heights[1]),uint32(_probe.widths[2]),uint32(_probe.heights[2]),uint32(_comet.frame),uint32(_comet.previousFrame),0,0};
+ stream->writeUint32BE(MKTAG('A','S','V','M')); stream->writeUint32LE(16); uint32 hash = 2166136261U;
+ auto write = [&](uint32 v) { stream->writeUint32LE(v); hash = (hash ^ v)*16777619U; };
+ for (uint32 v : h) write(v); for (uint32 v : words) write(v); for (uint32 v : state) write(v); stream->writeUint32LE(hash);
+ return stream->err() ? Common::kWritingFailed : Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadProbe(Common::SeekableReadStream *stream) {
+ if (stream->size()-stream->pos() < (24+18*27+605+1)*4 || !ConfMan.getBool("astronomica_audio") || !ConfMan.getBool("astronomica_animation") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ uint32 h[24],hash = 2166136261U; auto read = [&]() { uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
+ for (uint32 &v : h) v = read(); Common::Array<uint32> words,state; words.resize(18*27); state.resize(605);
+ for (uint32 &v : words) v = read(); for (uint32 &v : state) v = read();
+ if (stream->readUint32LE() != hash || stream->err() || h[0] != 522 || (h[3] > 537 && h[3] != 0xffffffffU) || (h[4] && h[4] != 0xffffffffU) ||
+     h[5] > 1 || h[7] > 1 || (h[7] && (h[4] || !h[5])) || int32(h[2]-h[8]) < 0 || h[10] > 1 || h[11] || h[12] || h[13] ||
+     h[20] < 1 || h[20] > 12 || h[21] > 12 || h[22] || h[23]) return Common::kReadingFailed;
+ const Common::Path path = ConfMan.getPath("path").join("PLACES/P522/MEGAFILE.HYP");
+ if (!universeFileIdentity(path,483379,0x6015e215U)) return Common::kReadingFailed;
+ Common::File file; if (!file.open(Common::FSNode(path))) return Common::kReadingFailed; Scene parsed; ResourceReader reader(file);
+ if (!reader.read(parsed) || !validProbeSaveScene(parsed)) return Common::kReadingFailed;
+ ProbeMotion motion; motion.year = int32(h[9]); motion.yearArmed = h[10] != 0;
+ for (uint i = 0; i < 3; ++i) {
+  Graphics::Surface *bmp = decodeSpriteBitmap(file,parsed.sprites[14+i].frames[0].image,_screen.format);
+  if (!bmp) return Common::kReadingFailed; const bool match = h[14+i*2] == uint(bmp->w) && h[15+i*2] == uint(bmp->h);
+  motion.widths[i] = bmp->w; motion.heights[i] = bmp->h; bmp->free(); delete bmp; if (!match) return Common::kReadingFailed;
+ }
+ if (!validProbeSaveSprites(words,parsed,state,motion,h[2])) return Common::kReadingFailed;
+ // Validate the complete trusted binding against the parsed original program
+ // before live mutation. No code, callback address or arbitrary job is imported.
+ ScriptRunner prepared = _runner; prepared.clear(); prepared.loadLocalConditions(parsed.conditions); prepared.setPrograms(parsed.scripts,state[601]); prepared.setProbeHandler(this);
+ if (!prepared.importProbePollState(state,h[8])) return Common::kReadingFailed;
+ if (!loadPlace(522,false,true)) return Common::kReadingFailed;
+ if (!_runner.importProbePollState(state,h[8])) error("Validated P522 poll binding could not be installed");
+ _probe = motion; _probeAssetsValid = true;
+ _puzzlesCompleted = h[1]; _pausedMillis = (_clockPaused ? _pauseStarted : _system->getMillis())-h[2]; _previousPlace = int32(h[3]);
+ _loopSound = int32(h[4]); _loopEnabled = h[5] != 0; _lastSoundAt = h[6]; _comet.frame = h[20]; _comet.previousFrame = h[21];
+ for (uint i = 0; i < 18; ++i) p526RestoreSprite(_scene.sprites[i],&words[i*27]); redrawSprites();
+ if (h[7]) playSound(_loopSound,scriptClock(),true); return Common::kNoError;
+}
+
 bool AstronomicaEngine::canSaveUniverse() const {
  if (_place != 529 || !_universeAssetsValid || !_movie || _moviePlaying || !_runner.scriptsIdle() || _pendingImage.w ||
      !_displayedImageName.empty() || !validUniverseScene(_scene) || _questionSaveBaseline.size() != 11 ||
@@ -1410,7 +1531,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -1428,6 +1549,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (_place == 528) return saveP528(stream);
  if (_place == 530) return saveP530(stream);
  if (_place == 537) return saveRocket(stream);
+ if (_place == 522) return saveProbe(stream);
  if (_place == 529) return saveUniverse(stream);
  if (builderScene(_place)) return saveBuilder(stream);
  if (_place == 517) return saveP517(stream);
@@ -1458,6 +1580,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
  if (version == 14) return loadRocket(stream);
+ if (version == 16) return loadProbe(stream);
  if (version == 15) return loadUniverse(stream);
  if (version == 13) return loadBuilder(stream);
  if (version == 12) return loadP517(stream);
@@ -1861,9 +1984,9 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
- _questionSaveBaseline.clear(); if (place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
+ _questionSaveBaseline.clear(); if (place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
- _probe = ProbeMotion();
+ _probe = ProbeMotion(); _probeAssetsValid = false;
  _ball = BallMotion();
  // The original orientation phase is process-global, unlike the sprite links.
  const int oldCometFrame = _comet.frame, oldCometPrevious = _comet.previousFrame;
@@ -2702,6 +2825,7 @@ void AstronomicaEngine::onProbe(int mode, int id) {
  const Frame *frame = staticSpriteFrame(_scene,id-1);
  Graphics::Surface *bmp = file.isOpen() && frame ? decodeSpriteBitmap(file,frame->image,_screen.format) : nullptr;
  if (bmp) { _probe.widths[id-15] = bmp->w; _probe.heights[id-15] = bmp->h; bmp->free(); delete bmp; }
+ if (id == 17) _probeAssetsValid = validProbeSaveScene(_scene) && universeFileIdentity(ConfMan.getPath("path").join("PLACES/P522/MEGAFILE.HYP"),483379,0x6015e215U);
 }
 void AstronomicaEngine::animateSpritesAt(uint32 now) {
  if (!ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") || !supportsSpriteLayers(_scene)) return;
@@ -2779,7 +2903,7 @@ void AstronomicaEngine::animateSpritesAt(uint32 now) {
    }
   }
  }
- if (_place == 522 && _probe.expired) { changePlace(388); return; }
+ if (_place == 522 && _probe.expired) { debug("Probe audit expiry: %u %d %u",now,_probe.year,uint(_probe.expired)); changePlace(388); return; }
  if (_place == 537 && _rocket.kind != RocketMotion::kStopped) {
   int32 setting = 0;
   _runner.getValue(1,0,setting);
@@ -6626,6 +6750,170 @@ bool AstronomicaEngine::verifyP501Puzzle() {
  debug("Astronomica P501 interaction verification: %s (five worlds, hit/catch, success/repeat, missed hits, serve/return timeouts, voluntary exit)",ok ? "PASS" : "FAIL");
  return ok;
 }
+bool AstronomicaEngine::verifyProbeSaves() {
+ ConfMan.setBool("astronomica_verify",false);
+ uint32 now = 0; uint boundaries=0,ordinary=0,dormant=0,failed=0,calendar=0,busy=0;
+ auto sync = [&]() { _clockPaused=true; _pauseStarted=now; _pausedMillis=0; };
+ auto tick = [&]() { sync(); runScriptsAt(now); animateSpritesAt(now); now+=30; sync(); };
+ auto settle = [&]() { for(uint i=0;i<40;++i) tick(); Common::Array<uint32> st; uint32 since; for(uint i=0;i<4 && !_runner.exportProbePollState(st,since);++i) tick(); if(_mixer->isSoundHandleActive(_soundHandle)&&_lastSound!=_loopSound){if(canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}_mixer->stopHandle(_soundHandle);} return _place==522; };
+ auto snapshot = [&](Common::Array<byte> &data) { sync(); Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES); if(saveGameStream(&out).getCode()!=Common::kNoError||out.size()!=4472) {debug("Probe test rejected line %d",__LINE__);return false;} data.resize(out.size()); memcpy(&data[0],out.getData(),out.size()); return true; };
+ auto restore = [&](const Common::Array<byte> &data) { _pauseStarted=0x23450000U; Common::MemoryReadStream in(&data[0],data.size()); const bool ok=loadGameStream(&in).getCode()==Common::kNoError; if(ok&&scriptClock()!=READ_LE_UINT32(&data[16])) {debug("Probe test rejected line %d",__LINE__);return false;} if(ok) now=scriptClock(); sync(); return ok; };
+ auto fingerprint = [&]() { uint32 hash=2166136261U; auto add=[&](uint32 v){hash=(hash^v)*16777619U;}; add(_place);add(_previousPlace);add(_puzzlesCompleted);add(_comet.frame);add(_comet.previousFrame); add(_runner.probeDiagnosticHash(false));for(const Sprite &s:_scene.sprites){Common::Array<uint32>w;p526SpriteWords(s,w);for(uint32 v:w)add(v);} add(_probe.year);add(_probe.yearArmed);add(_probe.specialHit);add(_probe.flying);add(_probe.expired);for(int i=0;i<3;++i){add(_probe.widths[i]);add(_probe.heights[i]);}add(screenRGBHash(_screen,480));add(screenRGBHash(_background,480));return hash; };
+ auto roundtrip = [&](uint duration) { Common::Array<uint32> ready;uint32 poll;if(!_runner.exportProbePollState(ready,poll)){if(canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}runScriptsAt(now);} Common::Array<byte> saved,again;sync();if(!snapshot(saved)){debug("Probe rejected at %u year%d month%d pending%u assets%d",now,_probe.year,_scene.sprites[8].selectedFrame,_runner.pendingCount(),_probeAssetsValid);{debug("Probe test rejected line %d",__LINE__);return false;}}const uint32 before=fingerprint(),savedNow=now;for(uint t=0;t<duration;t+=30)tick();if(!_runner.exportProbePollState(ready,poll))runScriptsAt(now);const uint32 after=fingerprint(),afterNow=now;if(!loadPlace(117)||!restore(saved)||now!=savedNow||fingerprint()!=before||!snapshot(again)||again!=saved){debug("Probe test rejected line %d",__LINE__);return false;}for(uint t=0;t<duration;t+=30)tick();if(!_runner.exportProbePollState(ready,poll))runScriptsAt(now);if(now!=afterNow||fingerprint()!=after){debug("Probe test rejected line %d",__LINE__);return false;}Common::Array<uint32> st;uint32 since;_runner.exportProbePollState(st,since);++boundaries;ordinary+=!st[603];dormant+=st[603]!=0;return true; };
+ auto press=[&](int x,int y,int index){sync();if(spriteAt(x,y)!=index||_runner.clicksBlocked()){debug("Probe test rejected line %d",__LINE__);return false;}clickAtTime(x,y,now);return settle();};
+ auto continuation=[&]() { for(uint i=0;i<4500&&_place==522;++i){if(_probe.year==1992&&_scene.sprites[8].selectedFrame==8)break;tick();}if(_probe.year!=1992||!press(452,394,13)){debug("Probe test rejected line %d",__LINE__);return false;}for(uint i=0;i<1800&&_place==522;++i)tick();int32 solved=-1;return _place==388&&_runner.getValue(0,38,solved)&&solved==1;};
+ if(ConfMan.hasKey("save_slot")&&ConfMan.getInt("save_slot")==15){now=scriptClock();sync();debug("Astronomica probe slot fingerprint: %08x",fingerprint());const bool ok=canSaveProbe()&&roundtrip(240)&&continuation();debug("Astronomica probe startup save: %s (slot15, failed return and natural next success)",ok?"PASS":"FAIL");return ok;}
+ for(uint route=0;route<2;++route){if(route==1&&loadGameState(99).getCode()!=Common::kNoError){debug("Probe test rejected line %d",__LINE__);return false;}_runner.resetGlobals();now=0;sync();if(!loadPlace(522)){debug("Probe test rejected line %d",__LINE__);return false;}if(_runner.enqueueStartup(_scene.scripts,now,true)!=11||!settle()){debug("Probe test rejected line %d",__LINE__);return false;}
+ if(!_runner.verifyProbePollSnapshots()){debug("Probe test rejected line %d",__LINE__);return false;}
+ if(!roundtrip(240)){debug("Probe test rejected line %d",__LINE__);return false;}
+ const int buttons[4][2]={{306,398},{332,377},{360,377},{385,397}};
+ for(int c=0;c<4;++c)if(!press(buttons[c][0],buttons[c][1],c+4)||!roundtrip(240)){debug("Probe test rejected line %d",__LINE__);return false;}
+ for(uint t=0;t<4500&&_place==522;++t){const int yr=_probe.year,month=_scene.sprites[8].selectedFrame;tick();if(_probe.year!=yr||_scene.sprites[8].selectedFrame!=month){if(!roundtrip(240)){debug("Probe test rejected line %d",__LINE__);return false;}++calendar;}if(_probe.year==1991&&_scene.sprites[8].selectedFrame==8)break;}
+ if(!press(452,394,13)||!_probe.flying||canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}++busy;
+ for(uint t=0;t<1200&&_probe.flying;++t){tick();if(_probe.flying){if(canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}++busy;}}
+ if(_probe.flying||!settle()||!roundtrip(240)){debug("Probe test rejected line %d",__LINE__);return false;}++failed;
+ }
+
+ Common::Array<byte> fixture;
+ if (!snapshot(fixture)) {debug("Probe test rejected line %d",__LINE__);return false;}
+
+ const uint32 originalClock=READ_LE_UINT32(&fixture[16]);
+ for(uint32 clock:{originalClock,0xfffffff0U})for(uint32 age:{0U,1U,199U,200U,201U,210U,1000U}){
+  Common::Array<byte> timed=fixture;const uint32 delta=clock-originalClock;
+  WRITE_LE_UINT32(&timed[16],clock);WRITE_LE_UINT32(&timed[8+8*4],clock-age);
+  for(uint i=14;i<=16;++i){const uint at=8+(24+i*27+9)*4;WRITE_LE_UINT32(&timed[at],READ_LE_UINT32(&timed[at])+delta);if(i<16){const uint f=8+(24+i*27+8)*4;WRITE_LE_UINT32(&timed[f],READ_LE_UINT32(&timed[f])+delta);}}
+  const uint loadAt=8+(24+486+601)*4;WRITE_LE_UINT32(&timed[loadAt],READ_LE_UINT32(&timed[loadAt])+delta);
+  uint32 checksum=2166136261U;for(uint at=8;at<timed.size()-4;at+=4)checksum=(checksum^READ_LE_UINT32(&timed[at]))*16777619U;WRITE_LE_UINT32(&timed[timed.size()-4],checksum);
+  if(!restore(timed)||!roundtrip(240))return false;
+ }
+ if(!restore(fixture))return false;
+ debug("Astronomica probe caller poll epochs: PASS (14 original/wrap save and successor cases)");
+
+ // A real original foreground voice must finish naturally.
+ if (!playSound(1,now) || !_mixer->isSoundHandleActive(_soundHandle) || canSaveProbe()) {debug("Probe test rejected line %d",__LINE__);return false;}
+ const uint32 voiceStart=_system->getMillis();
+ while (_mixer->isSoundHandleActive(_soundHandle) && _system->getMillis()-voiceStart<120000) { if(canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}_system->delayMillis(10); }
+ const uint32 voiceWait=_system->getMillis()-voiceStart;
+ if(_mixer->isSoundHandleActive(_soundHandle)||!voiceWait||!canSaveProbe()||!roundtrip(240)){debug("Probe test rejected line %d",__LINE__);return false;}
+ debug("Astronomica probe natural voice end: PASS (%u ms, no stopHandle)",voiceWait);
+ _loopSound=0;_loopEnabled=true;
+ if(!playSound(0,now,true)||!_mixer->isSoundHandleActive(_soundHandle)||!canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}
+ Common::Array<byte> music;if(!snapshot(music)||!loadPlace(117)){debug("Probe test rejected line %d",__LINE__);return false;}const uint sounds=_soundsStarted;
+ if(!restore(music)||_soundsStarted!=sounds+1||_lastSound!=0||!_mixer->isSoundHandleActive(_soundHandle)){debug("Probe test rejected line %d",__LINE__);return false;}
+ Common::Array<byte> again;if(!snapshot(again)||again!=music){debug("Probe test rejected line %d",__LINE__);return false;}
+ debug("Astronomica probe Music restart: PASS (one ambient start)");
+ _mixer->stopHandle(_soundHandle);if(!restore(fixture)){debug("Probe test rejected line %d",__LINE__);return false;}
+ if(!playSound(1,now)||!_mixer->isSoundHandleActive(_soundHandle)||canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}
+ Common::MemoryWriteStreamDynamic denied(DisposeAfterUse::YES);if(saveGameStream(&denied).getCode()!=Common::kWritingFailed||denied.size()){debug("Probe test rejected line %d",__LINE__);return false;}
+ _mixer->pauseHandle(_soundHandle,true);
+ _pendingImage.create(5,3,_screen.format);_pendingImage.fillRect(Common::Rect(5,3),_screen.format.RGBToColor(17,33,65));_pendingImageX=19;_pendingImageY=23;_pendingImageName="probe-atomic-image";_displayedImageName="probe-atomic-display";
+ auto atomic=[&](){uint32 h=fingerprint();h=(h^_runner.probeDiagnosticHash(true))*16777619U;auto add=[&](uint32 v){h=(h^v)*16777619U;};for(uint32 v:{uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_lastSound),_soundsStarted,_pausedMillis,_pauseStarted,uint32(_clockPaused),scriptClock(),_lastSuccessEnd,_lastBlockingSoundEnd,uint32(_pendingImageX),uint32(_pendingImageY),uint32(_pendingImage.w),uint32(_pendingImage.h),uint32(_movie!=nullptr),uint32(_moviePlaying),uint32(_probeAssetsValid),uint32(_runner.pendingCount()),uint32(_runner.clicksBlocked()),uint32(_mixer->isSoundHandleActive(_soundHandle)),_mixer->getSoundElapsedTime(_soundHandle)})add(v);for(char c:_pendingImageName)add(byte(c));for(char c:_displayedImageName)add(byte(c));add(screenRGBHash(_pendingImage,480));return h;};
+ const uint32 unchanged=atomic();const void *pendingPixels=_pendingImage.getPixels();
+ auto reject=[&](const Common::Array<byte>&bad){Common::MemoryReadStream in(&bad[0],bad.size());if(loadGameStream(&in).getCode()==Common::kNoError||atomic()!=unchanged||_pendingImage.getPixels()!=pendingPixels){debug("Probe test rejected line %d",__LINE__);return false;}return true;};
+ for(uint i=0;i<fixture.size();++i){Common::Array<byte> bad;bad.resize(i);if(i)memcpy(&bad[0],&fixture[0],i);Common::MemoryReadStream in(i?&bad[0]:nullptr,i);if(loadGameStream(&in).getCode()==Common::kNoError||atomic()!=unchanged||_pendingImage.getPixels()!=pendingPixels){debug("Probe test rejected line %d",__LINE__);return false;}}
+ for(uint i=0;i<fixture.size();++i){Common::Array<byte> bad=fixture;bad[i]^=1;if(!reject(bad)){debug("Probe test rejected line %d",__LINE__);return false;}}
+ uint invalid=0;auto invalidWord=[&](uint index,uint32 value){Common::Array<byte> bad=fixture;WRITE_LE_UINT32(&bad[8+index*4],value);uint32 h=2166136261U;for(uint at=8;at<bad.size()-4;at+=4)h=(h^READ_LE_UINT32(&bad[at]))*16777619U;WRITE_LE_UINT32(&bad[bad.size()-4],h);if(!reject(bad)){debug("Probe test rejected line %d",__LINE__);return false;}++invalid;return true;};
+ for(uint index:{0U,3U,4U,5U,7U,9U,10U,11U,12U,13U,14U,15U,16U,17U,18U,19U,20U,21U,22U,23U})if(!invalidWord(index,index==3?538U:index==4?1U:0xffffffffU)){debug("Probe test rejected line %d",__LINE__);return false;}
+ for(uint i=0;i<18;++i)if(!invalidWord(24+i*27+18,2)){debug("Probe test rejected line %d",__LINE__);return false;}
+ if(!invalidWord(24+14*27+11,65538)||!invalidWord(24+14*27+9,now+1)||!invalidWord(24+486+301,6)||!invalidWord(24+486+303,1)||!invalidWord(24+486+10,1)){debug("Probe test rejected line %d",__LINE__);return false;}
+ _pendingImage.free();_pendingImageName.clear();_displayedImageName.clear();_mixer->stopHandle(_soundHandle);
+ if(!restore(fixture)||!canSaveProbe()){debug("Probe test rejected line %d",__LINE__);return false;}
+ debug("Astronomica probe rejection verification: PASS (4472 truncations, 4472 corruptions, %u invalid states, extended atomic state)",invalid);
+
+
+ if(!restore(fixture)||!_runner.defineValue(0,38,1)||!roundtrip(240))return false;
+ const uint completedBeforeRepeat=_puzzlesCompleted;if(!continuation()||_puzzlesCompleted!=completedBeforeRepeat)return false;
+ if(!restore(fixture)||!roundtrip(240))return false;
+ const uint completedBeforeExpiry=_puzzlesCompleted;for(uint i=0;i<5000&&_place==522;++i)tick();int32 expiredSolved=-1;if(_place!=388||!_runner.getValue(0,38,expiredSolved)||expiredSolved||_puzzlesCompleted!=completedBeforeExpiry)return false;
+ if(!restore(fixture))return false;
+ debug("Astronomica probe future outcomes: PASS (restored repeat success and natural year2003 expiry)");
+
+ if(saveGameState(15,"Probe continuation regression").getCode()!=Common::kNoError){debug("Probe test rejected line %d",__LINE__);return false;}debug("Astronomica probe slot fingerprint: %08x",fingerprint());
+ if(!continuation()){debug("Probe test rejected line %d",__LINE__);return false;}
+ debug("Astronomica probe saves: PASS (%u boundaries, %u history boundaries, %u dormant boundaries, %u ordinary boundaries, %u failed return boundaries, %u calendar edges, %u poll timing cases, %u flight rejections)",boundaries,failed,dormant,ordinary,failed,calendar,14U,busy);
+ return true;
+}
+
+bool AstronomicaEngine::verifyProbeBoundaries() {
+ uint observations = 0;
+ bool ok = verifyProbeMotion();
+ debug("Astronomica P522 original motion verification: %s (4128 calendar steps, six original launches, timer boundaries)",ok ? "PASS" : "FAIL");
+ if (!ok) return false;
+ for (int route = 0; route < 4; ++route) {
+  _runner.resetGlobals(); if (route == 1) _runner.defineValue(0,38,1);
+  if (!loadPlace(522)) return false;
+  const uint completed = _puzzlesCompleted; uint32 now = 0;
+  auto record = [&](const char *tag) {
+   if (_place != 522 || _scene.sprites.size() != 18) return;
+   int32 selector = -1,state = -1; _runner.getValue(1,0,selector); _runner.getValue(1,1,state);
+   debug("Probe audit boundary: %u %d %s %u %d %d %d %d %u %u %u %u %d %d %d %d %d %d %u %u %u %u %u %u %08x %08x",
+    observations,route,tag,now,_place,selector,state,_probe.year,uint(_probe.yearArmed),uint(_probe.specialHit),uint(_probe.flying),uint(_probe.expired),
+    _probe.widths[0],_probe.heights[0],_probe.widths[1],_probe.heights[1],_probe.widths[2],_probe.heights[2],
+    _runner.pendingCount(),uint(_runner.idle()),uint(_runner.scriptsIdle()),uint(_runner.clicksBlocked()),
+    uint(_mixer->isSoundHandleActive(_soundHandle) && _lastSound != _loopSound),_puzzlesCompleted,screenRGBHash(_screen,480),screenRGBHash(_background,480));
+   for (uint i = 0; i < 18; ++i) {
+    Common::Array<uint32> words; p526SpriteWords(_scene.sprites[i],words);
+    Common::String line = Common::String::format("Probe audit sprite: %u %u %u",observations,i,words.size());
+    for (uint32 word : words) line += Common::String::format(" %d",int32(word));
+    debug("%s",line.c_str());
+   }
+   ++observations;
+  };
+  record("before-startup");
+
+  auto step = [&]() {
+   const int year = _probe.year; const bool armed = _probe.yearArmed,flying = _probe.flying,special = _probe.specialHit;
+   int32 before = -1; _runner.getValue(1,1,before);
+   runScriptsAt(now); animateSpritesAt(now); now += 30;
+   if (_place != 522) { debug("Probe audit departure: %d %u %d %u",route,now,_place,_puzzlesCompleted); return; }
+   int32 after = -1; _runner.getValue(1,1,after);
+   if (now <= 360) record("startup-tick");
+   else if (year != _probe.year || armed != _probe.yearArmed) record("calendar-edge");
+   else if (flying != _probe.flying || special != _probe.specialHit || before != after) record("flight-transition");
+  };
+  auto wait = [&](uint duration) { const uint32 until = now+duration; while (_place == 522 && now < until) step(); };
+  auto press = [&](int x, int y, int index) {
+   if (_place != 522 || _runner.clicksBlocked() || spriteAt(x,y) != index) { debug("P522 rejected test click %d,%d expected %d actual %d blocked %d",x,y,index,spriteAt(x,y),int(_runner.clicksBlocked())); return false; }
+   clickAtTime(x,y,now); wait(600); record("after-control"); return true;
+  };
+  auto window = [&](int year, int month) {
+   for (int tick = 0; tick < 4500 && _place == 522; ++tick) {
+    if (_probe.year == year && _scene.sprites[8].selectedFrame == month && !_runner.clicksBlocked()) { record("launch-window"); return true; }
+    step();
+   }
+   return false;
+  };
+  ok = _runner.enqueueStartup(_scene.scripts,0,true) == 11 && ok; wait(600); record("after-startup");
+  if (!_runner.verifyProbePollSnapshots()) return false;
+  int32 value = -1;
+  ok = _runner.getValue(1,0,value) && value == 2 && _probe.widths[0] == 54 && _probe.widths[1] == 40 && _probe.widths[2] == 43 && ok;
+  const int buttons[4][2] = {{306,398},{332,377},{360,377},{385,397}};
+  for (int choice = 1; choice <= 4; ++choice) {
+   ok = press(buttons[choice-1][0],buttons[choice-1][1],choice+3) && _runner.getValue(1,0,value) && value == choice && ok;
+   for (int button = 0; button < 4; ++button) ok = _scene.sprites[button+4].selectedFrame == int(button == choice-1) && ok;
+  }
+  if (route == 3) ok = press(24,417,1) && ok;
+  else if (route == 2) wait(150000);
+  else {
+   if (route == 0) {
+    ok = window(1991,8) && press(452,394,13) && ok;
+    for (int tick = 0; tick < 1000 && _place == 522; ++tick) {
+     _runner.getValue(1,1,value); if (value == 0) break; step();
+    }
+    ok = _place == 522 && value == 0 && !_scene.sprites[16].visible && !_probe.flying && ok; record("failed-return");
+   }
+   ok = window(route == 0 ? 1992 : 1994,route == 0 ? 8 : 10) && press(452,394,13) && ok;
+   for (int tick = 0; tick < 1800 && _place == 522; ++tick) step();
+  }
+  ok = _place == 388 && _runner.getValue(0,38,value) && value == int(route < 2) &&
+   _puzzlesCompleted == completed+uint(route == 0) && ok;
+  debug("Astronomica P522 route %d: %s",route,ok ? "PASS" : "FAIL");
+ }
+ debug("Astronomica P522 interaction verification: %s (four controls, failed launch/recovery, success/repeat, year2003 timeout, voluntary exit)",ok ? "PASS" : "FAIL");
+ debug("Astronomica probe boundary audit: %s (%u observations, four native routes; no save support)",ok ? "PASS" : "FAIL",observations);
+ return ok;
+}
+
 bool AstronomicaEngine::verifyP522Puzzle() {
  bool ok = verifyProbeMotion();
  debug("Astronomica P522 original motion verification: %s (4128 calendar steps, six original launches, timer boundaries)",ok ? "PASS" : "FAIL");
@@ -8143,6 +8431,13 @@ Common::Error AstronomicaEngine::run() {
  if (ConfMan.hasKey("astronomica_verify_rocket_saves") && ConfMan.getBool("astronomica_verify_rocket_saves")) {
   const bool ok = verifyRocketSaves(); debug("Astronomica rocket save verification: %s",ok ? "PASS" : "FAIL");
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Rocket save verification failed");
+ }
+ if (ConfMan.hasKey("astronomica_verify_probe_saves") && ConfMan.getBool("astronomica_verify_probe_saves")) { ConfMan.setBool("astronomica_verify",true); const bool ok=verifyProbeSaves(); debug("Astronomica probe save verification: %s",ok ? "PASS" : "FAIL"); return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Probe save verification failed"); }
+ if (ConfMan.hasKey("astronomica_verify_probe_boundaries") && ConfMan.getBool("astronomica_verify_probe_boundaries")) {
+  ConfMan.setBool("astronomica_verify",true);
+  const bool ok = verifyProbeBoundaries();
+  debug("Astronomica probe boundary result: %s",ok ? "PASS" : "FAIL");
+  return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Probe boundary audit failed");
  }
  if (ConfMan.hasKey("astronomica_verify_universe_saves") && ConfMan.getBool("astronomica_verify_universe_saves")) {
   ConfMan.setBool("astronomica_verify",true);

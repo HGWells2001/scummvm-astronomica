@@ -55,13 +55,29 @@ rows.append(dict(scene=529,version=15,payload_bytes=3684,test_slot=14,scope='Set
  validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
  startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+# Only count P522 after the exact official native evidence exists.
+probe_validation=root/'evidence/probe-saves-validation.json'
+if probe_validation.exists():
+ v=json.loads(probe_validation.read_text());proof=json.loads((root/'evidence/probe-save-proof.json').read_text())
+ assert v['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==15
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/probe-saves-runtime.log';startup=root/'evidence/probe-saves-startup.log'
+ assert 'probe save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'probe startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=522,version=16,payload_bytes=v['payload_bytes'],test_slot=15,
+  scope='Ordinary nonflight P522 boundaries; recurring poll, orbit and calendar epochs retained; flight excluded',
+  validation_file=probe_validation.relative_to(root).as_posix(),validation_sha256=digest(probe_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
-result=dict(date='2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
+result=dict(date='2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
  engine_sha256={p.name:digest(p) for p in sorted((root/'engine/astronomica').iterdir()) if p.is_file()},
  exploration=dict(read_versions=[1,2],write_version=2,scope='Settled mode1 exploration screens; v1 inactive countdown compatibility'),
  puzzle_saves=rows,supported_puzzle_route_scenes=len(supported),inventoried_puzzle_route_scenes=len(all_scenes),
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
-print('Native save coverage: nineteen supported puzzle scenes; versions 1-15 readable; no global completion percentage')
+print(f'Native save coverage: {len(supported)} supported puzzle scenes; no global completion percentage')

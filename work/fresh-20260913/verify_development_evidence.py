@@ -106,8 +106,11 @@ for picture in p526['pictures']:
 print('P526 original save requirements integrity PASS')
 save_coverage=json.loads((root/'evidence/native-save-coverage.json').read_text())
 assert save_coverage['status']=='PASS' and save_coverage['exe_sha256']==m['exe_sha256'] and save_coverage['engine_sha256']==m['engine_sha256']
-assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==19
-assert {row['scene'] for row in save_coverage['puzzle_saves']}=={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
+probe_save_present=(root/'evidence/probe-saves-validation.json').is_file()
+expected_save_scenes={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
+if probe_save_present:expected_save_scenes.add(522)
+assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
+assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
@@ -398,7 +401,9 @@ print('P522 static original-resource inventory integrity PASS; no native save su
 
 audit=json.loads((root/'evidence/p522-probe-boundaries.json').read_text());build=json.loads((root/'evidence/p522-probe-audit-build-proof.json').read_text())
 assert audit['status']==build['status']=='PASS' and build['diagnostic_only'] and audit['build_proof']==build
-assert build['regression_exe_sha256']==m['exe_sha256'] and build['canonical_sha256']==m['engine_sha256']
+historical=json.loads((work/'verified-checkpoints/universe-dbe43465359f/checkpoint.json').read_text())
+assert historical['exe_sha256']=='dbe43465359fff29a4a1931b850f463251120a71c21039e44106e64a1b6ffe7b'
+assert build['regression_exe_sha256']==historical['exe_sha256'] and build['canonical_sha256']==historical['engine_sha256']
 assert audit['log_sha256']==digest(root/'evidence/p522-probe-boundaries.log')
 assert audit['observations']==len(audit['records'])==126 and set(map(int,audit['route_counts']))==set(range(4))
 assert all(len(row['sprites'])==18 and all(len(words)==27 for words in row['sprites'].values()) for row in audit['records'])
@@ -407,4 +412,36 @@ assert audit['after_startup_pending_counts']==[1]*4 and audit['observed_due_ages
 assert audit['hidden_probe_ordinary_motion']==105
 text=(root/'evidence/p522-probe-boundaries.log').read_text()
 assert 'Using SDL Audio Driver "dummy"' in text and 'Using SDL Video Driver "dummy"' in text and 'FAIL' not in text and 'Log closed successfully' in text
-print('P522 isolated native observation evidence integrity PASS; no save format implemented')
+print('P522 historical native observation evidence integrity PASS; that audit tests no save format')
+
+
+# v16 is verified only when the finalized P522 save evidence is present.
+if probe_save_present:
+ v=json.loads((root/'evidence/probe-saves-validation.json').read_text())
+ proof=json.loads((root/'evidence/probe-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['exe_sha256']==proof['exe_sha256']==m['exe_sha256'] and v['full_suite']
+ assert (v['format_version'],v['payload_bytes'],v['scene'])==(16,4472,522)
+ assert proof['metadata_listed'] and proof['slot']==15 and not proof['diagnostic']
+ assert proof['audio_driver']=='native' and proof['actual_audio_driver']=='wasapi'
+ assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint']
+ assert proof['truncations']==proof['corruptions']==4472 and proof['invalid_states']>0 and proof['variant_fixture_unchanged']
+ for key in ('boundaries','history_boundaries','dormant_boundaries','ordinary_boundaries'):
+  assert proof[key]>0,key
+  if key in v:assert proof[key]==v[key],key
+ # The final driver must measure every promised continuation and guard.
+ for key in ('poll_timing_cases','failed_return_boundaries','calendar_edges','flight_rejections','natural_voice_ends'):
+  assert proof[key]>0,key
+  if key in v:assert proof[key]==v[key],key
+ assert proof['music_restart']
+ for name,marker in [('probe-saves-runtime.log','probe saves: PASS'),('probe-saves-startup.log','probe startup save: PASS'),('universe-previous-slot.log','universe startup save: PASS')]:
+  text=(root/'evidence'/name).read_text()
+  assert marker in text and 'FAIL' not in text and text.rstrip().endswith('--- Log closed successfully.'),name
+  assert 'Using SDL Audio Driver "wasapi"' in text,name
+ previous=json.loads((root/'evidence/universe-previous-slot-proof.json').read_text())
+ assert previous['status']=='PASS' and previous['unchanged'] and previous['exe_sha256']==m['exe_sha256']
+ assert previous['audio_driver']=='wasapi'
+ assert previous['producing_exe_sha256']=='dbe43465359fff29a4a1931b850f463251120a71c21039e44106e64a1b6ffe7b'
+ assert previous['slot_sha256']=='654d47e01c9412b1dda09a27707bdb4778c493d62b00ff336ea233f46e6dc1e4'
+ assert previous['origin_commit']=='dd687a686d5edb9d1931360b94ee568081ec0ad0'
+ for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+ print('P522 v16 ordinary nonflight saves and frozen v15 continuation evidence integrity PASS')

@@ -81,6 +81,14 @@ for name in ('work/fresh-20260913/finish_help_keyboard.py','work/fresh-20260913/
  *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p508-save-original.json','p508-saves-validation.json','p508-save-proof.json','p508-saves-runtime.log','p508-saves-startup.log')]):
     (root/name).parent.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(name,root/name)
+probe_save_present=Path('outputs/astronomica-cleanroom/evidence/probe-saves-validation.json').is_file()
+if probe_save_present:
+    probe_paths=['outputs/astronomica-cleanroom/P522-SAVE-FORMAT.md',
+                 'work/fresh-20260913/check_probe_saves.py','work/fresh-20260913/check_probe_regressions.py','work/fresh-20260913/finish_probe_saves.py',
+                 *['outputs/astronomica-cleanroom/evidence/'+name for name in ('probe-saves-validation.json','probe-save-proof.json','probe-saves-runtime.log','probe-saves-startup.log','universe-previous-slot.log','universe-previous-slot-proof.json')]]
+    for name in probe_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -134,11 +142,17 @@ if 'P528 v8' not in s:
     s=s.replace('- Automatically verified routes','- P528 v8 retains partial eclipses and original image history; 160 reachable abstract states, 640 continuations, full480-row pixels and fresh-process completion pass.\n- Automatically verified routes')
 if 'Ordinary presentation preserves all 640x480' not in s:
     s=s.replace('- Automatically verified routes','- Ordinary presentation preserves all 640x480 original pixels. The diagnostic strip is opt-in; twelve complete-scene checks and 855 original P528 picture pixels pass.\n- Automatically verified routes')
+if probe_save_present:
+    s=s.replace('on 21 October 2026','on 22 October 2026')
+    s=s.replace('nineteen supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P524, P526, P528-P537)',
+                'twenty supported puzzle scenes (P505, P506, P508, P513, P515, P517, P519, P522, P524, P526, P528-P537)')
+    if 'Probe v16' not in s:
+        s=s.replace('- Automatically verified routes','- Probe v16 preserves ordinary nonflight and failed-return P522 boundaries, active orbit/calendar phases and the trusted200ms poll epoch; active flight remains excluded. Fresh-process continuation and older save compatibility are verified.\n- Automatically verified routes')
 p.write_text(s.rstrip()+'\n')
 if 'Looping WAVs follow the Music control' not in s:
     s=s.replace('- Automatically verified routes','- Looping WAVs follow the Music control; foreground WAVs retain Effects. Six scenes pass with Music muted at volume zero, original controls restored and twelve WAV hashes unchanged.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
-manifest['date']='2026-10-21'
+manifest['date']='2026-10-22' if probe_save_present else '2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}
