@@ -1,44 +1,44 @@
-[2026-10-22 22:14:54] ScummVM 2026.3.1git
-[2026-10-22 22:14:54] RGB SDL2 
-[2026-10-22 22:14:54] --- Log opened.
-[2026-10-22 22:14:54] Using SDL Video Driver "dummy"
-[2026-10-22 22:14:55] Using SDL Audio Driver "wasapi"
-[2026-10-22 22:14:55] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-22 22:14:55] Output sample rate: 44100 Hz
-[2026-10-22 22:14:55] Output buffer size: 1024 samples
-[2026-10-22 22:14:55] Output channels: 2
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_START' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-22 22:14:55] CPU extensions:
-[2026-10-22 22:14:55] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-22 22:14:55] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-22 22:14:55] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-22 22:14:55] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_A' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_B' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_Y' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_X' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_UP' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-22 22:14:55] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-22 22:14:56] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-22 22:14:56] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-22 22:14:56] Astronomica static sprites: P1, 3 drawn
-[2026-10-22 22:14:56] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-22 22:14:56] Astronomica static sprites: P518, 8 drawn
-[2026-10-22 22:14:56] Astronomica planet slot fingerprint: 719bc5d1
-[2026-10-22 22:14:56] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-22 22:14:56] Astronomica static sprites: P117, 1 drawn
-[2026-10-22 22:14:56] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-22 22:14:56] Astronomica static sprites: P518, 8 drawn
-[2026-10-22 22:15:02] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-22 22:15:02] Astronomica static sprites: P388, 9 drawn
-[2026-10-22 22:15:02] Astronomica planet startup save: PASS (slot17, exhausted-mask and wrong-history continuation)
-[2026-10-22 22:15:02] Astronomica planet save verification: PASS
-[2026-10-22 22:15:02] --- Log closed successfully.
+[2026-10-23 20:19:26] ScummVM 2026.3.1git
+[2026-10-23 20:19:26] RGB SDL2 
+[2026-10-23 20:19:26] --- Log opened.
+[2026-10-23 20:19:26] Using SDL Video Driver "dummy"
+[2026-10-23 20:19:26] Using SDL Audio Driver "wasapi"
+[2026-10-23 20:19:26] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-23 20:19:26] Output sample rate: 44100 Hz
+[2026-10-23 20:19:26] Output buffer size: 1024 samples
+[2026-10-23 20:19:26] Output channels: 2
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_START' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-23 20:19:27] CPU extensions:
+[2026-10-23 20:19:27] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-23 20:19:27] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-23 20:19:27] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-23 20:19:27] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_A' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_B' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_Y' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_X' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_UP' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-23 20:19:27] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-23 20:19:27] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-23 20:19:28] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-23 20:19:28] Astronomica static sprites: P1, 3 drawn
+[2026-10-23 20:19:28] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-23 20:19:28] Astronomica static sprites: P518, 8 drawn
+[2026-10-23 20:19:28] Astronomica planet slot fingerprint: 719bc5d1
+[2026-10-23 20:19:28] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-23 20:19:28] Astronomica static sprites: P117, 1 drawn
+[2026-10-23 20:19:28] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-23 20:19:28] Astronomica static sprites: P518, 8 drawn
+[2026-10-23 20:19:34] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-23 20:19:34] Astronomica static sprites: P388, 9 drawn
+[2026-10-23 20:19:34] Astronomica planet startup save: PASS (slot17, exhausted-mask and wrong-history continuation)
+[2026-10-23 20:19:34] Astronomica planet save verification: PASS
+[2026-10-23 20:19:34] --- Log closed successfully.

@@ -1,64 +1,64 @@
-[2026-10-22 22:45:52] ScummVM 2026.3.1git
-[2026-10-22 22:45:52] RGB SDL2 
-[2026-10-22 22:45:52] --- Log opened.
-[2026-10-22 22:45:52] Using SDL Video Driver "dummy"
-[2026-10-22 22:45:52] Using SDL Audio Driver "wasapi"
-[2026-10-22 22:45:52] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-22 22:45:52] Output sample rate: 44100 Hz
-[2026-10-22 22:45:52] Output buffer size: 1024 samples
-[2026-10-22 22:45:52] Output channels: 2
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_START' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-22 22:45:53] CPU extensions:
-[2026-10-22 22:45:53] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-22 22:45:53] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-22 22:45:53] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-22 22:45:53] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_A' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_B' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_Y' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_X' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_UP' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-22 22:45:53] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-22 22:45:53] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-22 22:45:54] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-22 22:45:54] Audio Codec FourCC: 'raw '
-[2026-10-22 22:45:54] stsd version =0
-[2026-10-22 22:45:54] Astronomica P0 movie: 320x240, scale 30, duration 546
-[2026-10-22 22:45:54] Astronomica resource explorer: P0; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P1, 3 drawn
-[2026-10-22 22:45:54] Audio Codec FourCC: 'raw '
-[2026-10-22 22:45:54] stsd version =0
-[2026-10-22 22:45:54] Astronomica P29 movie: 240x180, scale 30, duration 1987
-[2026-10-22 22:45:54] Astronomica resource explorer: P29; nav 0,0,27
-[2026-10-22 22:45:54] Astronomica static sprites: P29, 1 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-22 22:45:54] Astronomica resource explorer: P425; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica resource explorer: P508; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P508, 6 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P519; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P519, 4 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P524; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P524, 13 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P526; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P526, 13 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P528; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P528, 9 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P537; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P537, 29 drawn
-[2026-10-22 22:45:54] Astronomica resource explorer: P528; nav 0,0,0
-[2026-10-22 22:45:54] Astronomica static sprites: P528, 9 drawn
-[2026-10-22 22:45:54] Presentation strip checks: visible 1 recovered 1
-[2026-10-22 22:45:54] Astronomica full-height presentation: PASS (12 scenes, 855 original P528 pixels, optional strip and recovery)
-[2026-10-22 22:45:54] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-22 22:45:54] Astronomica presentation verification: PASS
-[2026-10-22 22:45:54] --- Log closed successfully.
+[2026-10-23 20:49:14] ScummVM 2026.3.1git
+[2026-10-23 20:49:14] RGB SDL2 
+[2026-10-23 20:49:14] --- Log opened.
+[2026-10-23 20:49:14] Using SDL Video Driver "dummy"
+[2026-10-23 20:49:14] Using SDL Audio Driver "wasapi"
+[2026-10-23 20:49:14] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-23 20:49:14] Output sample rate: 44100 Hz
+[2026-10-23 20:49:14] Output buffer size: 1024 samples
+[2026-10-23 20:49:14] Output channels: 2
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_START' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-23 20:49:15] CPU extensions:
+[2026-10-23 20:49:15] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-23 20:49:15] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-23 20:49:15] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-23 20:49:15] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_A' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_B' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_Y' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_X' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_UP' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-23 20:49:15] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-23 20:49:15] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-23 20:49:16] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-23 20:49:16] Audio Codec FourCC: 'raw '
+[2026-10-23 20:49:16] stsd version =0
+[2026-10-23 20:49:16] Astronomica P0 movie: 320x240, scale 30, duration 546
+[2026-10-23 20:49:16] Astronomica resource explorer: P0; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P1, 3 drawn
+[2026-10-23 20:49:16] Audio Codec FourCC: 'raw '
+[2026-10-23 20:49:16] stsd version =0
+[2026-10-23 20:49:16] Astronomica P29 movie: 240x180, scale 30, duration 1987
+[2026-10-23 20:49:16] Astronomica resource explorer: P29; nav 0,0,27
+[2026-10-23 20:49:16] Astronomica static sprites: P29, 1 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-23 20:49:16] Astronomica resource explorer: P425; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica resource explorer: P508; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P508, 6 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P519; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P519, 4 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P524; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P524, 13 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P526; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P526, 13 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P528; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P528, 9 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P537; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P537, 29 drawn
+[2026-10-23 20:49:16] Astronomica resource explorer: P528; nav 0,0,0
+[2026-10-23 20:49:16] Astronomica static sprites: P528, 9 drawn
+[2026-10-23 20:49:16] Presentation strip checks: visible 1 recovered 1
+[2026-10-23 20:49:16] Astronomica full-height presentation: PASS (12 scenes, 855 original P528 pixels, optional strip and recovery)
+[2026-10-23 20:49:16] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-23 20:49:16] Astronomica presentation verification: PASS
+[2026-10-23 20:49:16] --- Log closed successfully.

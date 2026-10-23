@@ -1,314 +1,314 @@
-[2026-10-22 22:15:03] ScummVM 2026.3.1git
-[2026-10-22 22:15:03] RGB SDL2 
-[2026-10-22 22:15:03] --- Log opened.
-[2026-10-22 22:15:03] Using SDL Video Driver "dummy"
-[2026-10-22 22:15:04] Using SDL Audio Driver "wasapi"
-[2026-10-22 22:15:04] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-22 22:15:04] Output sample rate: 44100 Hz
-[2026-10-22 22:15:04] Output buffer size: 1024 samples
-[2026-10-22 22:15:04] Output channels: 2
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_START' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-22 22:15:04] CPU extensions:
-[2026-10-22 22:15:04] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-22 22:15:04] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-22 22:15:04] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-22 22:15:04] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_A' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_B' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_Y' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_X' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_UP' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-22 22:15:04] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-22 22:15:05] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-22 22:15:05] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-22 22:15:05] Astronomica static sprites: P1, 3 drawn
-[2026-10-22 22:15:05] Astronomica resource explorer: P522; nav 0,0,0
-[2026-10-22 22:15:05] Astronomica static sprites: P522, 15 drawn
-[2026-10-22 22:15:05] Astronomica probe slot fingerprint: e8e89a9f
-[2026-10-22 22:15:05] Probe audit poll: 17402 17280 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17432 17280 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17462 17280 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17492 17280 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17552 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17582 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17612 17522 200 0 1 6
-[2026-10-22 22:15:05] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-22 22:15:05] Astronomica static sprites: P117, 1 drawn
-[2026-10-22 22:15:05] Astronomica resource explorer: P522; nav 0,0,0
-[2026-10-22 22:15:05] Astronomica static sprites: P522, 15 drawn
-[2026-10-22 22:15:05] Probe audit poll: 17402 17280 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17432 17280 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17462 17280 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17492 17280 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17552 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17582 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17612 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17642 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17672 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17702 17522 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17732 17522 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17792 17762 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17822 17762 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17852 17762 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17882 17762 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17912 17762 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 17942 17762 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 17972 17762 200 1 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18032 18002 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18062 18002 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18092 18002 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18122 18002 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18152 18002 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18182 18002 200 0 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18212 18002 200 1 3 6
-[2026-10-22 22:15:05] Probe audit poll: 18272 18242 200 0 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18302 18242 200 0 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18332 18242 200 0 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18362 18242 200 0 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18392 18242 200 0 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18422 18242 200 0 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18452 18242 200 1 2 6
-[2026-10-22 22:15:05] Probe audit poll: 18512 18482 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18542 18482 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18572 18482 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18602 18482 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18632 18482 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18662 18482 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18692 18482 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18752 18722 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18782 18722 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18812 18722 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18842 18722 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18872 18722 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18902 18722 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18932 18722 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 18992 18962 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19022 18962 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19052 18962 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19082 18962 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19112 18962 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19142 18962 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19172 18962 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19232 19202 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19262 19202 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19292 19202 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19322 19202 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19352 19202 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19382 19202 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19412 19202 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19472 19442 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19502 19442 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19532 19442 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19562 19442 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19592 19442 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19622 19442 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19652 19442 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19712 19682 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19742 19682 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19772 19682 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19802 19682 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19832 19682 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19862 19682 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19892 19682 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19952 19922 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 19982 19922 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20012 19922 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20042 19922 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20072 19922 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20102 19922 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20132 19922 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20192 20162 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20222 20162 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20252 20162 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20282 20162 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20312 20162 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20342 20162 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20372 20162 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20432 20402 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20462 20402 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20492 20402 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20522 20402 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20552 20402 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20582 20402 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20612 20402 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20672 20642 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20702 20642 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20732 20642 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20762 20642 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20792 20642 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20822 20642 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20852 20642 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20912 20882 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20942 20882 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 20972 20882 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21002 20882 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21032 20882 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21062 20882 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21092 20882 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21152 21122 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21182 21122 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21212 21122 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21242 21122 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21272 21122 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21302 21122 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21332 21122 200 1 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21392 21362 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21422 21362 200 0 1 6
-[2026-10-22 22:15:05] Probe audit poll: 21452 21362 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21482 21362 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21512 21362 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21542 21362 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21572 21362 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21632 21602 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21662 21602 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21692 21602 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21722 21602 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21752 21602 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21782 21602 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21812 21602 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21872 21842 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21902 21842 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21932 21842 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21962 21842 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 21992 21842 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22022 21842 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22052 21842 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22112 22082 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22142 22082 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22172 22082 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22202 22082 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22232 22082 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22262 22082 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22292 22082 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22352 22322 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22382 22322 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22412 22322 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22442 22322 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22472 22322 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22502 22322 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22532 22322 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22592 22562 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22622 22562 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22652 22562 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22682 22562 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22712 22562 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22742 22562 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22772 22562 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22832 22802 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22862 22802 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22892 22802 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22922 22802 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22952 22802 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 22982 22802 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23012 22802 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23072 23042 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23102 23042 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23132 23042 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23162 23042 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23192 23042 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23222 23042 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23252 23042 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23312 23282 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23342 23282 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23372 23282 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23402 23282 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23432 23282 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23462 23282 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23492 23282 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23552 23522 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23582 23522 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23612 23522 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23642 23522 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23672 23522 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23702 23522 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23732 23522 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23792 23762 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23822 23762 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23852 23762 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23882 23762 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23912 23762 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23942 23762 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 23972 23762 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24032 24002 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24062 24002 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24092 24002 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24122 24002 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24152 24002 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24182 24002 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24212 24002 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24272 24242 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24302 24242 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24332 24242 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24362 24242 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24392 24242 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24422 24242 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24452 24242 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24512 24482 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24542 24482 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24572 24482 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24602 24482 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24632 24482 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24662 24482 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24692 24482 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24752 24722 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24782 24722 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24812 24722 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24842 24722 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24872 24722 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24902 24722 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24932 24722 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 24992 24962 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25022 24962 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25052 24962 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25082 24962 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25112 24962 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25142 24962 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25172 24962 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25232 25202 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25262 25202 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25292 25202 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25322 25202 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25352 25202 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25382 25202 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25412 25202 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25472 25442 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25502 25442 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25532 25442 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25562 25442 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25592 25442 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25622 25442 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25652 25442 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25712 25682 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25742 25682 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25772 25682 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25802 25682 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25832 25682 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25862 25682 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25892 25682 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25952 25922 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 25982 25922 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26012 25922 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26042 25922 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26072 25922 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26102 25922 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26132 25922 200 1 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26192 26162 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26222 26162 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26252 26162 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26282 26162 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26312 26162 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26342 26162 200 0 1 6
-[2026-10-22 22:15:06] Probe audit poll: 26372 26162 200 1 1 6
-[2026-10-22 22:15:08] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-22 22:15:08] Astronomica static sprites: P388, 9 drawn
-[2026-10-22 22:15:08] Astronomica probe startup save: PASS (slot15, failed return and natural next success)
-[2026-10-22 22:15:08] Astronomica probe save verification: PASS
-[2026-10-22 22:15:08] --- Log closed successfully.
+[2026-10-23 20:19:35] ScummVM 2026.3.1git
+[2026-10-23 20:19:35] RGB SDL2 
+[2026-10-23 20:19:35] --- Log opened.
+[2026-10-23 20:19:35] Using SDL Video Driver "dummy"
+[2026-10-23 20:19:35] Using SDL Audio Driver "wasapi"
+[2026-10-23 20:19:35] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-23 20:19:35] Output sample rate: 44100 Hz
+[2026-10-23 20:19:35] Output buffer size: 1024 samples
+[2026-10-23 20:19:35] Output channels: 2
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_START' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-23 20:19:36] CPU extensions:
+[2026-10-23 20:19:36] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-23 20:19:36] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-23 20:19:36] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-23 20:19:36] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_A' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_B' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_Y' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_X' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_UP' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-23 20:19:36] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-23 20:19:36] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-23 20:19:37] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-23 20:19:37] Astronomica static sprites: P1, 3 drawn
+[2026-10-23 20:19:37] Astronomica resource explorer: P522; nav 0,0,0
+[2026-10-23 20:19:37] Astronomica static sprites: P522, 15 drawn
+[2026-10-23 20:19:37] Astronomica probe slot fingerprint: e8e89a9f
+[2026-10-23 20:19:37] Probe audit poll: 17401 17280 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17431 17280 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17461 17280 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17491 17280 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17551 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17581 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17611 17521 200 0 1 6
+[2026-10-23 20:19:37] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-23 20:19:37] Astronomica static sprites: P117, 1 drawn
+[2026-10-23 20:19:37] Astronomica resource explorer: P522; nav 0,0,0
+[2026-10-23 20:19:37] Astronomica static sprites: P522, 15 drawn
+[2026-10-23 20:19:37] Probe audit poll: 17401 17280 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17431 17280 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17461 17280 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17491 17280 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17551 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17581 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17611 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17641 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17671 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17701 17521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17731 17521 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17791 17761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17821 17761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17851 17761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17881 17761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17911 17761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 17941 17761 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 17971 17761 200 1 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18031 18001 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18061 18001 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18091 18001 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18121 18001 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18151 18001 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18181 18001 200 0 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18211 18001 200 1 3 6
+[2026-10-23 20:19:37] Probe audit poll: 18271 18241 200 0 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18301 18241 200 0 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18331 18241 200 0 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18361 18241 200 0 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18391 18241 200 0 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18421 18241 200 0 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18451 18241 200 1 2 6
+[2026-10-23 20:19:37] Probe audit poll: 18511 18481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18541 18481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18571 18481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18601 18481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18631 18481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18661 18481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18691 18481 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18751 18721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18781 18721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18811 18721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18841 18721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18871 18721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18901 18721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18931 18721 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 18991 18961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19021 18961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19051 18961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19081 18961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19111 18961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19141 18961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19171 18961 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19231 19201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19261 19201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19291 19201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19321 19201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19351 19201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19381 19201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19411 19201 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19471 19441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19501 19441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19531 19441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19561 19441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19591 19441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19621 19441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19651 19441 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19711 19681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19741 19681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19771 19681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19801 19681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19831 19681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19861 19681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19891 19681 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19951 19921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 19981 19921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20011 19921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20041 19921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20071 19921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20101 19921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20131 19921 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20191 20161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20221 20161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20251 20161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20281 20161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20311 20161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20341 20161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20371 20161 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20431 20401 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20461 20401 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20491 20401 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20521 20401 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20551 20401 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20581 20401 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20611 20401 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20671 20641 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20701 20641 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20731 20641 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20761 20641 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20791 20641 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20821 20641 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20851 20641 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20911 20881 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20941 20881 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 20971 20881 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21001 20881 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21031 20881 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21061 20881 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21091 20881 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21151 21121 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21181 21121 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21211 21121 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21241 21121 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21271 21121 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21301 21121 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21331 21121 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21391 21361 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21421 21361 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21451 21361 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21481 21361 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21511 21361 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21541 21361 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21571 21361 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21631 21601 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21661 21601 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21691 21601 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21721 21601 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21751 21601 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21781 21601 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21811 21601 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21871 21841 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21901 21841 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21931 21841 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21961 21841 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 21991 21841 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22021 21841 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22051 21841 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22111 22081 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22141 22081 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22171 22081 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22201 22081 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22231 22081 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22261 22081 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22291 22081 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22351 22321 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22381 22321 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22411 22321 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22441 22321 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22471 22321 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22501 22321 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22531 22321 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22591 22561 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22621 22561 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22651 22561 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22681 22561 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22711 22561 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22741 22561 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22771 22561 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22831 22801 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22861 22801 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22891 22801 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22921 22801 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22951 22801 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 22981 22801 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23011 22801 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23071 23041 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23101 23041 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23131 23041 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23161 23041 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23191 23041 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23221 23041 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23251 23041 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23311 23281 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23341 23281 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23371 23281 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23401 23281 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23431 23281 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23461 23281 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23491 23281 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23551 23521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23581 23521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23611 23521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23641 23521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23671 23521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23701 23521 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23731 23521 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23791 23761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23821 23761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23851 23761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23881 23761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23911 23761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23941 23761 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 23971 23761 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24031 24001 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24061 24001 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24091 24001 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24121 24001 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24151 24001 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24181 24001 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24211 24001 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24271 24241 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24301 24241 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24331 24241 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24361 24241 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24391 24241 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24421 24241 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24451 24241 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24511 24481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24541 24481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24571 24481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24601 24481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24631 24481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24661 24481 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24691 24481 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24751 24721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24781 24721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24811 24721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24841 24721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24871 24721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24901 24721 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24931 24721 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 24991 24961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25021 24961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25051 24961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25081 24961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25111 24961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25141 24961 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25171 24961 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25231 25201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25261 25201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25291 25201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25321 25201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25351 25201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25381 25201 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25411 25201 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25471 25441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25501 25441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25531 25441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25561 25441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25591 25441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25621 25441 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25651 25441 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25711 25681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25741 25681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25771 25681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25801 25681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25831 25681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25861 25681 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25891 25681 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25951 25921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 25981 25921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26011 25921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26041 25921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26071 25921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26101 25921 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26131 25921 200 1 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26191 26161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26221 26161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26251 26161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26281 26161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26311 26161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26341 26161 200 0 1 6
+[2026-10-23 20:19:37] Probe audit poll: 26371 26161 200 1 1 6
+[2026-10-23 20:19:40] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-23 20:19:40] Astronomica static sprites: P388, 9 drawn
+[2026-10-23 20:19:40] Astronomica probe startup save: PASS (slot15, failed return and natural next success)
+[2026-10-23 20:19:40] Astronomica probe save verification: PASS
+[2026-10-23 20:19:40] --- Log closed successfully.

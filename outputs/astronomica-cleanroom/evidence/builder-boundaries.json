@@ -2,7 +2,7 @@
   "date": "2026-10-19",
   "status": "PASS",
   "scope": "Observed native route boundaries; no builder save support or original Windows execution claim",
-  "exe_sha256": "9994d088c56ed65f86de27c3681c4a5179a78a5e2c0190c52e11461c1913c601",
+  "exe_sha256": "c211fe7efe949995728705341bc741ed484cc5ba47f68f024ff8326789da6207",
   "original_inventory_sha256": "209db2cb3b8a169e9585463d5c890912e3b4d1945f5f203e3c416621509c46ff",
   "source_sha256": {
     "515": "d740db8e67a1ca6d600df71f0f1b6ed3b9e703ac2f2659c0ceba74a8fbd20360",

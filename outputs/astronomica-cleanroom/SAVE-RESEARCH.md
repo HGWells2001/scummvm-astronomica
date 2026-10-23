@@ -173,3 +173,8 @@ Version17 preserves settled P514 state across 87 measured native round trips/suc
 ## P518 planet saves,22 October2026
 
 Version18 preserves P518 idle-script boundaries across 59 measured native round trips/successors, with a fresh-process slot17 and unchanged verified v17 slot compatibility. Planet motion, random selection, hidden failed-attempt history and timer phases are retained. Queued commands, foreground audio and transitions remain excluded. All6184 truncations and6184 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.
+
+
+## P521 saves,23 October2026
+
+Version19 preserves P521 idle-script boundaries across 32 measured native round trips/successors, with a fresh-process slot18 and unchanged verified v18 slot compatibility. Retained external image, hidden fragment history, animation/timer phases and inherited runner values are preserved. Queued commands, flash, foreground audio and transitions remain excluded. All5392 truncations and5392 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.
