@@ -3,7 +3,7 @@
   "status": "PASS",
   "audio_driver": "native",
   "diagnostic": false,
-  "fresh_process_fingerprint": "56426d37",
+  "fresh_process_fingerprint": "ef898b5b",
   "slot": 12,
   "metadata_listed": true,
   "music_restart": true,
@@ -14,7 +14,7 @@
     "P536/S0.WAV": "ebbd34bb8ef1fb1e99a9d837833fc3bf209d954bc53e2f05637e773a3689c6f7",
     "P536/S1.WAV": "6df066c54000e9991d23a17120d79d24b1e3285a5d5a79924dbd3afae8e6457c"
   },
-  "variant_fixture_sha256": "a002f9e91ed52a3758c7afb8398f51a55810d5bb2444921169287ab825b65b00",
+  "variant_fixture_sha256": "17f42fe899ef8aa59cafea38693fdba6e0f6314d4be213f5f55eb82ba168c711",
   "variant_fixture_unchanged": true,
   "boundaries": 613,
   "routes": 6,

@@ -87,6 +87,11 @@ public:
  bool exportProbePollState(Common::Array<uint32> &words, uint32 &since) const;
  bool importProbePollState(const Common::Array<uint32> &words, uint32 since);
  bool verifyProbePollSnapshots() const;
+ void setP509PendingSupport(bool value) { _p509PendingSupport = value; }
+ bool exportP509PendingState(Common::Array<uint32> &words, uint32 now) const;
+ bool importP509PendingState(const Common::Array<uint32> &words, uint32 now);
+ bool verifyP509PendingSnapshots(const ScriptRunner &recipient, uint32 now) const;
+ void auditP509Snapshot(Common::Array<uint32> &values, Common::Array<uint32> &queue) const;
  uint32 probeDiagnosticHash(bool strict) const;
  bool exportPersistentState(Common::Array<uint32> &words) const;
  bool importPersistentState(const Common::Array<uint32> &words);
@@ -103,6 +108,9 @@ public:
  bool importVariantState(const Common::Array<uint32> &words);
  static bool supports(const Script &script, bool allowTimed = false);
 private:
+ bool _p509PendingSupport=false;
+ bool trustedP509Program() const;
+ bool validP509PendingValues(const Common::Array<uint32> &words, uint32 now) const;
  bool trustedProbePollProgram() const;
  void exportSettledValues(Common::Array<uint32> &words) const;
  void importSettledValues(const Common::Array<uint32> &words);

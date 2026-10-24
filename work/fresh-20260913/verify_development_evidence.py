@@ -110,11 +110,13 @@ probe_save_present=(root/'evidence/probe-saves-validation.json').is_file()
 rendezvous_save_present=(root/'evidence/rendezvous-saves-validation.json').is_file()
 planet_save_present=(root/'evidence/planet-saves-validation.json').is_file()
 p521_save_present=(root/'evidence/p521-saves-validation.json').is_file()
+p509_save_present=(root/'evidence/p509-saves-validation.json').is_file()
 expected_save_scenes={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
 if probe_save_present:expected_save_scenes.add(522)
 if rendezvous_save_present:expected_save_scenes.add(514)
 if planet_save_present:expected_save_scenes.add(518)
 if p521_save_present:expected_save_scenes.add(521)
+if p509_save_present:expected_save_scenes.add(509)
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
@@ -578,3 +580,39 @@ if p521_save_present:
   if key in v:assert proof[key]==v[key],key
  assert proof['choice_controls']==5 and proof['future_outcome_checks']>=4
  print('P521 v19 saves and frozen v18 continuation evidence integrity PASS')
+
+p509_inventory=root/'evidence/p509-save-original.json'
+if p509_inventory.exists():
+ research=json.loads(p509_inventory.read_text())
+ assert research['status']=='STATIC_ORIGINAL_PROFILE_ONLY'
+ assert (research['source']['size'],research['command_count'],research['sprite_count'],research['condition_count'],research['startup_program_count'])==(713948,312,19,17,6)
+ assert research['source']['sha256']==digest(Path('D:/astro/PLACES/P509/MEGAFILE.HYP'))=='053c47d65ba963ed0b1f4fc78f088fa1678586ed6a02c6c1178772e22f572e44'
+ assert research['reader_sha256']==digest(root/'astro_reader.py')
+ for asset in research['assets']:assert digest(Path('D:/astro/PLACES/P509')/asset['name'])==asset['sha256'],asset['name']
+ print('P509 original resource profile PASS; static evidence separate from native saves')
+if p509_save_present:
+ assert p509_inventory.is_file()
+ v=json.loads((root/'evidence/p509-saves-validation.json').read_text())
+ proof=json.loads((root/'evidence/p509-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['exe_sha256']==proof['exe_sha256']==m['exe_sha256'] and v['full_suite']
+ assert (v['format_version'],v['payload_bytes'],v['scene'])==(20,4540,509)
+ assert proof['metadata_listed'] and proof['slot']==19 and not proof['diagnostic']
+ assert proof['audio_driver']=='native' and proof['actual_audio_driver']=='wasapi'
+ assert proof['fresh_process_fingerprint']==v['fresh_process_fingerprint']
+ assert proof['truncations']==proof['corruptions']==4540 and proof['invalid_states']>0 and proof['variant_fixture_unchanged']
+ for key in ('boundaries','busy_rejections','history_boundaries','dormant_boundaries','ordinary_boundaries','natural_voice_ends','retained_image_boundaries','target_history_boundaries','animation_boundaries','successor_checks','future_outcome_checks','timer_cases'):
+  assert proof[key]>0,key
+  assert v[key]==proof[key],key
+ assert proof['choice_controls']==6 and proof['future_outcome_checks']>=4
+ assert proof['music_state_preserved'] and proof['ambient_stays_stopped'] and proof['extended_atomic_state']
+ for name,marker in [('p509-saves-runtime.log','P509 save verification: PASS'),('p509-saves-startup.log','P509 startup save: PASS'),('p521-previous-slot.log','P521 startup save: PASS')]:
+  text=(root/'evidence'/name).read_text()
+  assert marker in text and 'FAIL' not in text and text.rstrip().endswith('--- Log closed successfully.'),name
+  assert 'Using SDL Audio Driver "wasapi"' in text,name
+ previous=json.loads((root/'evidence/p521-previous-slot-proof.json').read_text())
+ assert previous['status']=='PASS' and previous['unchanged'] and previous['exe_sha256']==m['exe_sha256'] and previous['audio_driver']=='wasapi'
+ assert previous['producing_exe_sha256']=='c211fe7efe949995728705341bc741ed484cc5ba47f68f024ff8326789da6207'
+ assert previous['slot_sha256']=='4554f711cabb0606b92fe3799db3306e25cc1eaafadca75bc3a0d545133ef5c7'
+ assert previous['origin_commit']=='2e0d63a89a00447757affb086866906e5e3c6cf6'
+ for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+ print('P509 v20 pending-narrator saves and genuine frozen v19 integrity PASS')

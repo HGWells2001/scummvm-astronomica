@@ -209,6 +209,12 @@ private:
  bool verifyEclipsePuzzle();
  bool verifyP521Puzzle();
  bool verifyP518Puzzle();
+ bool verifyP509Saves();
+ bool canSaveP509() const;
+ Common::Error saveP509(Common::WriteStream *stream);
+ Common::Error loadP509(Common::SeekableReadStream *stream);
+ bool _p509AssetsValid=false;
+ bool verifyP509BoundaryAudit();
  bool verifyP521Saves();
  bool canSaveP521() const;
  Common::Error saveP521(Common::WriteStream *stream);

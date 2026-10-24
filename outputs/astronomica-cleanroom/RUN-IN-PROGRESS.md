@@ -1,1 +1,1 @@
-P521 v19 saves verified23October2026. Complete same-build native WASAPI suite, fresh-process slot18 and prior v18 slot PASS. Publication still requires export verification. Newest finisher finish_p521_saves.py. Automation remains PAUSED.
+P509 v20 saves verified24October2026. Complete same-build native WASAPI suite, fresh-process slot19 and genuine frozen v19 slot PASS. Publication requires export verification. Newest finisher finish_p509_saves.py. Automation remains PAUSED.

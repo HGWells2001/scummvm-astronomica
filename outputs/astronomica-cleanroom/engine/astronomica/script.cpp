@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "astronomica/script.h"
 #include "common/debug.h"
+#include <initializer_list>
 #include "astronomica/mentors.h"
 #include "astronomica/advice.h"
 namespace Astronomica {
@@ -67,6 +68,88 @@ uint16 ScriptRunner::random15() {
 bool ScriptRunner::exportIdleState(Common::Array<uint32> &words) const {
  if (!idle()) return false;
  exportSettledValues(words); return true;
+}
+static bool sameP509Script(const Script&a,const Script&b){if(a.size()!=b.size())return false;for(uint i=0;i<a.size();++i)if(a[i].opcode!=b[i].opcode||a[i].delay!=b[i].delay||a[i].args!=b[i].args||a[i].text!=b[i].text)return false;return true;}
+bool ScriptRunner::trustedP509Program()const{
+ if(!_p509PendingSupport||_programs.size()!=6||_programs[5].size()!=25)return false;
+ Script expected;auto add=[&](int opcode,int delay,std::initializer_list<int32>args){Command c;c.opcode=opcode;c.delay=delay;for(int32 v:args)c.args.push_back(v);expected.push_back(c);};
+ add(31,0,{1,15,0,0,0,0});
+ add(32,50,{1,14,1});
+ add(45,-1,{});
+ add(31,800,{1,3,1,0,0,0});
+ add(9,0,{10});
+ add(42,-1,{});
+ add(31,0,{1,15,0,0,0,0});
+ add(32,50,{1,14,1});
+ add(45,-1,{});
+ add(31,800,{1,4,1,0,0,0});
+ add(9,0,{9});
+ add(42,-1,{});
+ add(31,0,{1,15,0,0,0,0});
+ add(32,50,{1,14,1});
+ add(45,-1,{});
+ add(31,800,{1,5,1,0,0,0});
+ add(9,0,{8});
+ add(42,-1,{});
+ add(31,0,{1,15,0,0,0,0});
+ add(32,50,{1,14,1});
+ add(45,-1,{});
+ add(31,800,{1,1,1,0,0,0});
+ add(9,0,{11});
+ add(42,-1,{});
+ add(41,800,{5});
+
+ return sameP509Script(_programs[5],expected);
+}
+bool ScriptRunner::validP509PendingValues(const Common::Array<uint32>&w,uint32 now)const{
+ if(w.size()!=608)return false;Common::Array<uint32>state;for(uint i=0;i<605;++i)state.push_back(w[i]);
+ if(!validPersistentState(state)||w[605]!=5||w[606]!=3||int32(now-w[607])<0||int32(now-w[601])<0)return false;
+ const uint widths[]={6,1,1,1,1,1,1,6,1,1,1,1,1,6,1,1,3};
+ for(uint i=0;i<100;++i)if(w[3*i+2]!=1||(w[3*i+1]&&(i>=3||w[3*i+1]!=6))||w[302+3*i]!=uint32(i<17)||w[301+3*i]!=(i<17?widths[i]:0U))return false;
+ if(w[300]||w[321]>6||w[339]>2||w[342]!=1||w[345]!=1||(w[348]!=1&&w[348]!=2))return false;
+ for(uint i=1;i<=6;++i)if(w[300+3*i]>1)return false;for(uint i=8;i<=12;++i)if(w[300+3*i])return false;
+ return true;
+}
+bool ScriptRunner::exportP509PendingState(Common::Array<uint32>&words,uint32 now)const{
+ if(!trustedP509Program()||_pending.size()!=1||!_actions.empty()||_clicksBlocked)return false;const Pending&p=_pending[0];
+ if(p.index!=3||!sameP509Script(p.script,_programs[5]))return false;Common::Array<uint32>w;exportSettledValues(w);w.push_back(_variantRound);w.push_back(_variantMask);w.push_back(5);w.push_back(3);w.push_back(p.since);
+ if(!validP509PendingValues(w,now))return false;words=w;return true;
+}
+bool ScriptRunner::importP509PendingState(const Common::Array<uint32>&words,uint32 now){
+ if(!trustedP509Program()||!scriptsIdle()||!validP509PendingValues(words,now))return false;
+ for(uint i=0;i<100;++i)if(words[301+3*i]!=uint32(_widths[1][i])||words[302+3*i]!=uint32(_known[1][i]))return false;
+ // All checks precede mutation. The live recipient retains original bindings.
+ importSettledValues(words);_variantRound=words[603];_variantMask=words[604];_pending.push_back(Pending{_programs[5],3,words[607]});++_pendingEpoch;return true;
+}
+bool ScriptRunner::verifyP509PendingSnapshots(const ScriptRunner&recipient,uint32 observedNow)const{
+ Common::Array<uint32>saved;if(!exportP509PendingState(saved,observedNow)||!recipient.scriptsIdle()||!recipient.trustedP509Program())return false;uint cases=0,rejected=0,originChecks=0;
+ for(uint32 epoch:{saved[607],0xfffffff0U})for(uint32 age:{0U,1U,799U,800U,801U,1600U}){
+  Common::Array<uint32>w=saved;const uint32 delta=epoch-saved[607];w[601]+=delta;w[607]=epoch;const uint32 now=epoch+age;
+  ScriptRunner expected=*this,actual=recipient;expected.importSettledValues(w);expected._programLoadedAt=w[601];expected._pending[0].since=epoch;
+  if(!actual.importP509PendingState(w,now))return false;Common::Array<uint32>again;if(!actual.exportP509PendingState(again,now)||again!=w)return false;
+  // Diagnostic equality includes every605word, queued original command/index/
+  // since, actions and click lock. No queue is cleared to create eligibility.
+  auto equal=[&](){return expected.probeDiagnosticHash(false)==actual.probeDiagnosticHash(false);};
+  if(!equal())return false;expected.tick(now);actual.tick(now);if(!equal()||actual._pending.size()!=1||actual._pending[0].index!=(age>=800?4U:3U))return false;
+  for(uint32 at:{now,now+799,now+800,now+800,now+801,now+1600}){expected.tick(at);actual.tick(at);if(!equal())return false;}
+  bool seen=false;for(uint n=0;n<10000;++n){const uint32 at=now+1601+n;expected.tick(at);actual.tick(at);if(!equal())return false;if(actual._pending.size()==1&&actual._pending[0].index==0){if(actual._pending[0].since!=w[601])return false;expected.tick(at);actual.tick(at);if(!equal()||actual._pending[0].index!=3||actual._pending[0].since!=at)return false;seen=true;break;}}
+  if(!seen)return false;++originChecks;++cases;
+ }
+ auto reject=[&](const Common::Array<uint32>&bad,ScriptRunner target){const uint32 before=target.probeDiagnosticHash(true);if(target.importP509PendingState(bad,observedNow)||before!=target.probeDiagnosticHash(true))return false;++rejected;return true;};
+ for(uint i:{2U,301U,302U,321U,339U,342U,345U,348U,602U,603U,604U,605U,606U,607U}){Common::Array<uint32>bad=saved;bad[i]=i==607?observedNow+1:0xffffffffU;if(!reject(bad,recipient))return false;}
+ Common::Array<uint32>shortState=saved;shortState.resize(607);if(!reject(shortState,recipient))return false;
+ for(uint kind=0;kind<6;++kind){ScriptRunner bad=recipient;if(kind==0)bad._programs[5][3].delay=801;if(kind==1)bad._pending.push_back(_pending[0]);if(kind==2)bad._actions.push_back(Action{});if(kind==3)bad._clicksBlocked=true;if(kind==4)bad._p509PendingSupport=false;if(kind==5)bad._known[1][0]=false;if(!reject(saved,bad))return false;}
+ for(uint kind=0;kind<7;++kind){ScriptRunner bad=*this;if(kind==0)bad._pending.push_back(_pending[0]);if(kind==1)bad._pending[0].index=0;if(kind==2)bad._pending[0].index=4;if(kind==3)bad._pending[0].index=24;if(kind==4)bad._pending[0].script[3].delay=801;if(kind==5)bad._actions.push_back(Action{});if(kind==6)bad._clicksBlocked=true;Common::Array<uint32>out;out.push_back(123456);const Common::Array<uint32>before=out;const uint32 fingerprint=bad.probeDiagnosticHash(true);if(bad.exportP509PendingState(out,observedNow)||out!=before||bad.probeDiagnosticHash(true)!=fingerprint)return false;++rejected;}
+ debug("Astronomica P509 pending kernel: PASS (%u timing cases, %u origin/reschedule checks, %u atomic/shape rejections; configured live binding, no save support)",cases,originChecks,rejected);return true;
+}
+
+// Diagnostic observation only: never an admitted save/export API.
+void ScriptRunner::auditP509Snapshot(Common::Array<uint32>&values,Common::Array<uint32>&queue)const{
+ exportSettledValues(values);values.push_back(_variantRound);values.push_back(_variantMask);queue.clear();
+ for(const Pending&p:_pending){uint program=0xffffffffU;
+  for(uint i=0;i<_programs.size();++i){const Script&s=_programs[i];bool equal=s.size()==p.script.size();for(uint j=0;equal&&j<s.size();++j){const Command&a=s[j],&b=p.script[j];equal=a.opcode==b.opcode&&a.delay==b.delay&&a.args==b.args;}if(equal){program=i;break;}}
+  queue.push_back(program);queue.push_back(p.index);queue.push_back(p.since);queue.push_back(p.script[p.index].opcode);queue.push_back(p.script[p.index].delay);
+ }
 }
 uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
  uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());

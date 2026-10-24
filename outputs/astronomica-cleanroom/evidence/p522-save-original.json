@@ -2345,41 +2345,41 @@
     },
     {
       "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\outputs\\astronomica-cleanroom\\engine\\astronomica\\astronomica.cpp",
-      "sha256": "b0861a0d2aa83d5464ee21352415de4549f429feb9ee509b536dd4f5bc4af6dc",
+      "sha256": "30fcda7103c1022dc51328e785f992e04c0ac89332c87d1cd3730429d9a4d683",
       "anchors": [
         {
           "text": "_probe = ProbeMotion();",
-          "line": 2152
+          "line": 2194
         },
         {
           "text": "void AstronomicaEngine::onProbe(",
-          "line": 2985
+          "line": 3029
         },
         {
           "text": "advanceProbe(_scene,",
-          "line": 3054
+          "line": 3098
         },
         {
           "text": "_probe.expired)",
-          "line": 1402
+          "line": 1442
         }
       ]
     },
     {
       "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\outputs\\astronomica-cleanroom\\engine\\astronomica\\script.cpp",
-      "sha256": "c98b2b4195d02c70f3e79327596e8c85157a386c83f8bb811712c11ba5860b38",
+      "sha256": "cdf420ed3c31ea45e4eb3a37e8b1ceb39087b0e0af8a839919e3892cbaa5be80",
       "anchors": [
         {
           "text": "else if (c.args[0] == 15) {",
-          "line": 326
+          "line": 409
         },
         {
           "text": "_probeHandler->onProbe(c.args[1],c.args[2]);",
-          "line": 725
+          "line": 808
         },
         {
           "text": "void ScriptRunner::exportSettledValues(",
-          "line": 180
+          "line": 263
         }
       ]
     },

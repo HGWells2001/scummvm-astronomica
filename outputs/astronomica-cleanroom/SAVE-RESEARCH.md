@@ -178,3 +178,8 @@ Version18 preserves P518 idle-script boundaries across 59 measured native round 
 ## P521 saves,23 October2026
 
 Version19 preserves P521 idle-script boundaries across 32 measured native round trips/successors, with a fresh-process slot18 and unchanged verified v18 slot compatibility. Retained external image, hidden fragment history, animation/timer phases and inherited runner values are preserved. Queued commands, flash, foreground audio and transitions remain excluded. All5392 truncations and5392 byte corruptions reject atomically. The complete compatible native WASAPI suite passes on the same executable.
+
+
+## P509 saves,24 October2026
+
+Version20 preserves 59 measured ordinary P509 boundaries with the original pending narrator and exact timed continuation. Fresh-process slot19 and unchanged genuine frozen v19 compatibility pass. Retained sky identity, hidden bounce and timer epochs are preserved. Foreground audio, other queued work and phase3 exits remain excluded. All4540 truncations and4540 byte corruptions reject atomically. Complete same-build WASAPI suite PASS.

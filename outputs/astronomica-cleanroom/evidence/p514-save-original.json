@@ -4023,18 +4023,18 @@
       }
     },
     "astronomica.cpp": {
-      "sha256": "b0861a0d2aa83d5464ee21352415de4549f429feb9ee509b536dd4f5bc4af6dc",
+      "sha256": "30fcda7103c1022dc51328e785f992e04c0ac89332c87d1cd3730429d9a4d683",
       "anchors": {
-        "bool AstronomicaEngine::onRendezvous(": 2637,
-        "_runner.setRendezvousHandler(": 2189,
-        "bool AstronomicaEngine::verifyP514Puzzle()": 7370
+        "bool AstronomicaEngine::onRendezvous(": 2681,
+        "_runner.setRendezvousHandler(": 2233,
+        "bool AstronomicaEngine::verifyP514Puzzle()": 7414
       }
     },
     "script.cpp": {
-      "sha256": "c98b2b4195d02c70f3e79327596e8c85157a386c83f8bb811712c11ba5860b38",
+      "sha256": "cdf420ed3c31ea45e4eb3a37e8b1ceb39087b0e0af8a839919e3892cbaa5be80",
       "anchors": {
-        "case 514: return 30;": 36,
-        "_rendezvousHandler->onRendezvous(": 728
+        "case 514: return 30;": 37,
+        "_rendezvousHandler->onRendezvous(": 811
       }
     },
     "resource.h": {
