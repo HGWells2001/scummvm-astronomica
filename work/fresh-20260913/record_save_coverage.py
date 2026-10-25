@@ -149,6 +149,21 @@ if p511_validation.exists():
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
 
+p516_validation=root/'evidence/p516-saves-validation.json'
+if p516_validation.exists():
+ v=json.loads(p516_validation.read_text());proof=json.loads((root/'evidence/p516-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==21
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['scope']=='restricted_stopped_p516' and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/p516-saves-runtime.log';startup=root/'evidence/p516-saves-startup.log'
+ assert 'P516 save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'P516 startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=516,version=22,payload_bytes=6944,test_slot=21,
+  scope='Restricted quiet local2=0, configured active orbits, hidden stopped projectile; active flight, aborted unproved histories, local2=1, stopped moons and queued/success transitions excluded',
+  validation_file=p516_validation.relative_to(root).as_posix(),validation_sha256=digest(p516_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),

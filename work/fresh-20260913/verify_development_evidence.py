@@ -112,6 +112,7 @@ planet_save_present=(root/'evidence/planet-saves-validation.json').is_file()
 p521_save_present=(root/'evidence/p521-saves-validation.json').is_file()
 p509_save_present=(root/'evidence/p509-saves-validation.json').is_file()
 p511_save_present=(root/'evidence/p511-saves-validation.json').is_file()
+p516_save_present=(root/'evidence/p516-saves-validation.json').is_file()
 expected_save_scenes={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
 if probe_save_present:expected_save_scenes.add(522)
 if rendezvous_save_present:expected_save_scenes.add(514)
@@ -119,6 +120,7 @@ if planet_save_present:expected_save_scenes.add(518)
 if p521_save_present:expected_save_scenes.add(521)
 if p509_save_present:expected_save_scenes.add(509)
 if p511_save_present:expected_save_scenes.add(511)
+if p516_save_present:expected_save_scenes.add(516)
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
@@ -656,3 +658,37 @@ if p511_save_present:
  assert previous['origin_commit']=='5f05fd1d3c9e2c1715e202e58310eb7836e782ce'
  for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
  print('P511 v21 frame-history saves and genuine frozen v20 integrity PASS')
+
+p516_inventory=root/'evidence/p516-save-original.json'
+if p516_inventory.exists():
+ research=json.loads(p516_inventory.read_text())
+ assert research['status']=='STATIC_ORIGINAL_INVENTORY_ONLY'
+ assert (research['source']['size'],research['command_count'],research['sprite_count'],research['condition_count'],research['startup_program_count'])==(563403,133,37,3,2)
+ assert research['source']['sha256']==digest(Path('D:/astro/PLACES/P516/MEGAFILE.HYP'))=='fae86ac8d36038046a9d387f8fbc28d822d2cdcacc2cdb0ab4d941d55b58ced6'
+ assert research['reader_sha256']==digest(root/'astro_reader.py')
+ for asset in research['assets']:assert digest(Path('D:/astro/PLACES/P516')/asset['name'])==asset['sha256']
+ print('P516 original resource profile PASS; static evidence separate from native saves')
+if (root/'evidence/p516-saves-validation.json').exists():
+ v=json.loads((root/'evidence/p516-saves-validation.json').read_text());proof=json.loads((root/'evidence/p516-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and not proof['diagnostic']
+ assert v['scope']=='restricted_stopped_p516' and v['format_version']==22 and v['payload_bytes']==6944
+ assert v['exe_sha256']==proof['exe_sha256']==m['exe_sha256'] and proof['metadata_listed'] and proof['slot']==21
+ assert v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ assert proof['audio_driver']=='native' and proof['actual_audio_driver']=='wasapi'
+ assert proof['truncations']==proof['corruptions']==6944
+ for key in ('boundaries','history_boundaries','dormant_boundaries','ordinary_boundaries','busy_rejections','invalid_states','natural_voice_ends','retained_motion_boundaries','handoff_boundaries','animation_boundaries','successor_checks','timer_cases'):
+  assert proof[key]>0 and v[key]==proof[key],key
+ assert proof['choice_controls']==6 and proof['future_outcome_checks']>=2
+ assert (proof['direction_settings'],proof['speed_settings'])==(4,16)
+ assert proof['ambient_deadline_cases']==3 and proof['music_restart'] and proof['extended_atomic_state']
+ for name,marker in [('p516-saves-runtime.log','P516 save verification: PASS'),('p516-saves-startup.log','P516 startup save: PASS'),('p511-previous-slot.log','P511 startup save: PASS')]:
+  text=(root/'evidence'/name).read_text()
+  assert marker in text and 'FAIL' not in text and text.rstrip().endswith('--- Log closed successfully.'),name
+  assert 'Using SDL Audio Driver "wasapi"' in text,name
+ previous=json.loads((root/'evidence/p511-previous-slot-proof.json').read_text())
+ assert previous['status']=='PASS' and previous['unchanged'] and previous['exe_sha256']==m['exe_sha256'] and previous['audio_driver']=='wasapi'
+ assert previous['producing_exe_sha256']=='1e27c45d9b7f5f3ab780837931cc7a6b07639fac3b95d6b58d6e2bfdcce2e306'
+ assert previous['slot_sha256']=='91c0948e9407c17c1c848cf88f5b8561e098dd52bea2c50462579bca673a80bc'
+ assert previous['origin_commit']=='fa543e9319be616d8d946233ecb7f8e67bcc1a28'
+ for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+ print('Restricted P516v22 saves and genuine frozen v21 integrity PASS')

@@ -188,3 +188,8 @@ Version20 preserves 59 measured ordinary P509 boundaries with the original pendi
 ## P511 saves,25 October2026
 
 Version21 preserves 109 measured ordinary P511 boundaries with retained cloud image, independent frame/range history and exact timed continuation. Fresh-process slot20 and unchanged genuine frozen v20 compatibility pass. Original frame ranges, hidden animations and timer epochs are preserved. Foreground audio, queued work and success transitions remain excluded. All6256 truncations and6256 byte corruptions reject atomically. Complete same-build WASAPI suite PASS.
+
+
+## P516 saves,25 October2026
+
+Version22 preserves 86 measured quiet local2=0 P516 boundaries with active orbits and a hidden stopped projectile. Handoff frame/epoch history, hidden stopped motion, all605runner values, CometMotion and collision geometry are retained. Active flight, aborted unproved histories, local2=1,stopped moons,pending work,foreground audio and success/explosion transitions remain excluded. Fresh-process slot21,unchanged genuine frozen v21slot20,6944truncations and6944corruptions,and the complete native WASAPI suite PASS.

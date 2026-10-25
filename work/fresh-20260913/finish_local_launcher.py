@@ -26,6 +26,8 @@ if (root/'evidence/probe-saves-validation.json').exists():
  head=head.replace('Import GAMESTAT originale', 'P522 conserva solo confini ordinari senza volo, con poll e orbite attive. Import GAMESTAT originale')
 if (root/'evidence/rendezvous-saves-validation.json').exists():
  head=head.replace('Import GAMESTAT originale', 'P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. Import GAMESTAT originale')
+if (root/'evidence/p516-saves-validation.json').exists():
+ head=head.replace('Import GAMESTAT originale', 'P516 salva gli stati verificati con orbite attive e missile fermo. Import GAMESTAT originale')
 if (root/'evidence/p511-saves-validation.json').exists():
  head=head.replace('22 ottobre 2026','25 ottobre 2026').replace('21 ottobre 2026','25 ottobre 2026')
  head=head.replace('Import GAMESTAT originale', 'P511 conserva nuvole, fotogrammi e intervalli originali ai confini senza lavoro in coda. Import GAMESTAT originale')

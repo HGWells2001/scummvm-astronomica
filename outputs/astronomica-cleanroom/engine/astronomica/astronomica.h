@@ -131,6 +131,12 @@ private:
  CometMotion _comet;
  void onComet(int mode, uint32 now) override;
  bool verifyCometPuzzles();
+ bool verifyP516Saves();
+ bool canSaveP516() const;
+ Common::Error saveP516(Common::WriteStream*stream);
+ Common::Error loadP516(Common::SeekableReadStream*stream);
+ void p516Extra(Common::Array<uint32>&words) const;
+ bool _p516AssetsValid=false;
  bool verifyP516Puzzle();
  int _jupiterWidths[8] = {}, _jupiterHeights[8] = {};
  void cycleExplosion(int id, int x, int y, uint32 now);

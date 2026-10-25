@@ -2,7 +2,7 @@
   "date": "2026-10-21",
   "status": "PASS",
   "template_sha256": "ad59ed9e903cb90bc2a99ee18aaa7eddc81b0f2d0380037c89d1cb2c1bed0520",
-  "exe_sha256": "1e27c45d9b7f5f3ab780837931cc7a6b07639fac3b95d6b58d6e2bfdcce2e306",
+  "exe_sha256": "6727874da49ad53d05645971547ff544bc57d58ed3ad665cd4ae6dfce1adef8c",
   "target_listed": true,
   "normal_P1_startup": true,
   "no_verification_mode": true,
