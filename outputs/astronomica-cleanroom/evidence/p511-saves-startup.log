@@ -1,0 +1,44 @@
+[2026-10-25 00:19:44] ScummVM 2026.3.1git
+[2026-10-25 00:19:44] RGB SDL2 
+[2026-10-25 00:19:44] --- Log opened.
+[2026-10-25 00:19:44] Using SDL Video Driver "dummy"
+[2026-10-25 00:19:45] Using SDL Audio Driver "wasapi"
+[2026-10-25 00:19:45] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-25 00:19:45] Output sample rate: 44100 Hz
+[2026-10-25 00:19:45] Output buffer size: 1024 samples
+[2026-10-25 00:19:45] Output channels: 2
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_START' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-25 00:19:45] CPU extensions:
+[2026-10-25 00:19:45] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-25 00:19:45] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-25 00:19:45] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-25 00:19:45] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_A' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_B' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_Y' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_X' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_UP' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-25 00:19:45] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-25 00:19:45] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-25 00:19:46] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-25 00:19:46] Astronomica static sprites: P1, 3 drawn
+[2026-10-25 00:19:46] Astronomica resource explorer: P511; nav 0,0,0
+[2026-10-25 00:19:46] Astronomica static sprites: P511, 17 drawn
+[2026-10-25 00:19:46] Astronomica P511 slot fingerprint: 043517f7
+[2026-10-25 00:19:46] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 00:19:46] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 00:19:46] Astronomica resource explorer: P511; nav 0,0,0
+[2026-10-25 00:19:46] Astronomica static sprites: P511, 17 drawn
+[2026-10-25 00:19:48] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 00:19:48] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 00:19:48] Astronomica P511 startup save: PASS (slot20, retained CLOUD and animation range)
+[2026-10-25 00:19:48] Astronomica P511 save verification: PASS
+[2026-10-25 00:19:49] --- Log closed successfully.

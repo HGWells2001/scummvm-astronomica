@@ -132,9 +132,26 @@ if p509_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+p511_validation=root/'evidence/p511-saves-validation.json'
+if p511_validation.exists():
+ v=json.loads(p511_validation.read_text())
+ proof=json.loads((root/'evidence/p511-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==20
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/p511-saves-runtime.log';startup=root/'evidence/p511-saves-startup.log'
+ assert 'P511 save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'P511 startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=511,version=21,payload_bytes=v['payload_bytes'],test_slot=20,
+  scope='Idle-script P511, retained cloud image and independent frame/range history; foreground and queued work excluded',
+  validation_file=p511_validation.relative_to(root).as_posix(),validation_sha256=digest(p511_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
-result=dict(date='2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
+result=dict(date='2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
  engine_sha256={p.name:digest(p) for p in sorted((root/'engine/astronomica').iterdir()) if p.is_file()},
  exploration=dict(read_versions=[1,2],write_version=2,scope='Settled mode1 exploration screens; v1 inactive countdown compatibility'),
  puzzle_saves=rows,supported_puzzle_route_scenes=len(supported),inventoried_puzzle_route_scenes=len(all_scenes),

@@ -1,12 +1,12 @@
 # Astronomica — ripartenza dai file originali
 
-Stato verificato: 24 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
+Stato verificato: 25 ottobre 2026. Motore ScummVM nativo in sviluppo; build locale e suite completa WASAPI PASS.
 
 Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa la build reale attuale, parte dal menu P1 e attiva audio, animazioni e interazione. Preferenze e salvataggi personali sono in userdata/astronomica, separati dalle prove. Il vecchio collegamento bin/Avvia-Astronomica.cmd rimanda allo stesso avvio. Vedere LOCAL-PLAY.md.
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P509, P513, P514, P515, P517, P518, P519, P521, P522, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. P509 conserva il narratore originale in attesa, i due cieli ordinari e le animazioni nascoste; altre code e voci attive restano escluse. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P509, P511, P513, P514, P515, P517, P518, P519, P521, P522, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. P511 conserva nuvole, fotogrammi e intervalli originali ai confini senza lavoro in coda. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -1005,3 +1005,8 @@ Version19 preserves P521 idle-script boundaries across 32 measured native round 
 ## P509 saves,24 October2026
 
 Version20 preserves 59 measured ordinary P509 boundaries with the original pending narrator and exact timed continuation. Fresh-process slot19 and unchanged genuine frozen v19 compatibility pass. Retained sky identity, hidden bounce and timer epochs are preserved. Foreground audio, other queued work and phase3 exits remain excluded. All4540 truncations and4540 byte corruptions reject atomically. Complete same-build WASAPI suite PASS.
+
+
+## P511 saves,25 October2026
+
+Version21 preserves 109 measured ordinary P511 boundaries with retained cloud image, independent frame/range history and exact timed continuation. Fresh-process slot20 and unchanged genuine frozen v20 compatibility pass. Original frame ranges, hidden animations and timer epochs are preserved. Foreground audio, queued work and success transitions remain excluded. All6256 truncations and6256 byte corruptions reject atomically. Complete same-build WASAPI suite PASS.

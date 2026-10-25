@@ -183,3 +183,8 @@ Version19 preserves P521 idle-script boundaries across 32 measured native round 
 ## P509 saves,24 October2026
 
 Version20 preserves 59 measured ordinary P509 boundaries with the original pending narrator and exact timed continuation. Fresh-process slot19 and unchanged genuine frozen v19 compatibility pass. Retained sky identity, hidden bounce and timer epochs are preserved. Foreground audio, other queued work and phase3 exits remain excluded. All4540 truncations and4540 byte corruptions reject atomically. Complete same-build WASAPI suite PASS.
+
+
+## P511 saves,25 October2026
+
+Version21 preserves 109 measured ordinary P511 boundaries with retained cloud image, independent frame/range history and exact timed continuation. Fresh-process slot20 and unchanged genuine frozen v20 compatibility pass. Original frame ranges, hidden animations and timer epochs are preserved. Foreground audio, queued work and success transitions remain excluded. All6256 truncations and6256 byte corruptions reject atomically. Complete same-build WASAPI suite PASS.

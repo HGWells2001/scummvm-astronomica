@@ -1,0 +1,23 @@
+# P511 save candidate, version21
+
+Status: verified25October2026; same-build native WASAPI and complete compatible suite PASS.
+
+Authored25October2026 from fresh published P509v20 canonical sources. BASE23.json binds all23 files; BASE.json binds the six staged overrides. ORIGIN.json binds main b4d7e936aaaf39a379ee15765b7d49c16546d805bd57a1df5f36d823e097f59f and the independent frozen24October P511 audit. This candidate has not changed the canonical engine, mirror, official executable or publication metadata.
+
+The6256-byte stream starts with ASVM big-endian magic and little-endian version21, then11header words,35records of27sprite words,605runner words and one word checksum. Each data word is little-endian; checksum starts2166136261 and folds `(hash ^ word) * 16777619` over header/sprites/runner. It is an integrity check, not authentication. Slot20 description is `P511 continuation regression`.
+
+Header words: place511, puzzlesCompleted, logical script clock, previousPlace(-1or0..537), loopSound(-1or0), loopEnabled1, lastSoundAt, ambient-handle-active0/1, cometFrame1..12, previousCometFrame0..12, displayedCLOUD identity0..3. Active ambience requires direct sound0. Foreground voices are ineligible. Normal original entry enables local ambient sound0; the manually queued original startup used by the independent audit can retain loopSound-1. Both are represented; no P509 disabled-loop assumption is used.
+
+The27sprite words preserve visibility, selected frame, storedXY, renderedXY, autoFrame/autoMove, frame/movement epochs, standardMotion, dx/dy, orbit flag/sides, frameFirst/Last, clickEnabled, three frame parameters and five movement parameters. They do not contain private planetMotion/planetPeriod; both are explicitly guarded at original defaults0/-1. The35sprites retain their own fields: cloned indicators inherit only their frame asset. Drag/orbit/private motion and unoriginal flag/data changes are rejected.
+
+605runner words retain100global and100local value/width/known triples, RNG600, original programLoadedAt601, lastTrue602 and dormant variantRound603/mask604. Unknown local values are preserved, not fabricated as zero. Metadata must match six original local declarations(widths52,3,16,8,1,3); known globals retain the historically observed width0/6 for indices0..2 and0 elsewhere. All global known bits remain1. Original code, handlers and targets are rebound by loadPlace; only state is imported on the live configured runner.
+
+Eligibility is ordinary scriptsIdle, no pending work/actions/input lock/hover entry, no movie or retained movie surface, no pending image, enabled real audio/animation/input. Local0 is0..52in multiples of4; unused local1 remains0; local2 dial0..15; local3 type1..4; local4 dummy1. Local5 equals criterion bits(type1=1,dial15=2,cloud0=4) and is0..6. Original7and8 are queued success boundaries outside this candidate. No queued-success bypass or new recurring poll is introduced.
+
+CLOUD3/2/1/0 are derived from the original cloud thresholds below14/27/40/otherwise. The immutable315x190image is overlaid at325,0 on the complete original640x480background/control. The lower background is reconstructed, not replaced by an image-sized canvas.
+
+Original opcode48 only changes the explicit range. Sprite5 selected frame0..3 is saved independently and can lie outside the new range until its next500ms tick. Range history is2..3for dial0..3; either2..3or1..2for4..7;1..2for8; either1..2or0..1for9..13;0..1for14/15. Sprite20/21 retain their independent400/500ms animation epochs and frames. Type controls select one button frame, change skyY170/188/204 and cloud-related visibility. Dial indicators retain their prefix, including both34and35 at15. Cloud indicator stored/renderedXY is477,411-local0. No snapping, motion replay or setup script is used during load.
+
+Loading checks checksum/header/runner metadata/profile/sprite invariants and immutable original HYP/CLOUD identities before mutation. All four images are decoded and converted before loadPlace; a prepared runner validates metadata import without replacing live bindings. Successful load freezes the logical clock immediately, restores all35records and605words, commits the retained overlay and optionally restarts exactly one ambient sound. The immutable-resource contract does not claim atomicity against concurrent host filesystem replacement between preflight and commit.
+
+Native diagnostic evidence and measured coverage are recorded in CHECKPOINT.md after final source freeze. SDLdummy validates actual engine state and pixels; it is not a manual original playthrough, original executable execution or official WASAPI proof.
