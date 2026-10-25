@@ -1,582 +1,582 @@
-[2026-10-25 08:26:06] ScummVM 2026.3.1git
-[2026-10-25 08:26:06] RGB SDL2 
-[2026-10-25 08:26:06] --- Log opened.
-[2026-10-25 08:26:06] Using SDL Video Driver "dummy"
-[2026-10-25 08:26:07] Using SDL Audio Driver "wasapi"
-[2026-10-25 08:26:07] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-25 08:26:07] Output sample rate: 44100 Hz
-[2026-10-25 08:26:07] Output buffer size: 1024 samples
-[2026-10-25 08:26:07] Output channels: 2
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_START' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-25 08:26:07] CPU extensions:
-[2026-10-25 08:26:07] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-25 08:26:07] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-25 08:26:07] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-25 08:26:07] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_A' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_B' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_Y' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_X' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_UP' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-25 08:26:07] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-25 08:26:07] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-25 08:26:08] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-25 08:26:08] Astronomica static sprites: P1, 3 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:08] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:08] Planet audit header: 0 startup-follow clock10 setting0 mask1 selected1 count0 rng2292243178 releasedActive0 modes31,1,0 screencc6bb57e background48dc19e6
-[2026-10-25 08:26:08] Planet audit sprite: 0 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 6 0 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 8 1 0 603 10 603 10 0 1 0 0 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 9 1 0 1 10 573 10 1 1 0 0 1 0 2 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 1 10
-[2026-10-25 08:26:08] Planet audit sprite: 0 10 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 11 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 12 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 13 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 14 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 15 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 16 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 17 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 18 0 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 19 0 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 20 0 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 21 0 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 22 0 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 23 0 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 24 0 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 25 0 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 26 0 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 27 0 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 28 0 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 29 0 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 30 0 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Planet audit sprite: 0 31 0 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:08] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:08] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:08] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:08] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:08] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:08] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:08] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:08] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:08] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:08] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:09] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:09] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:09] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:10] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:10] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:10] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:10] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:10] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:10] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:10] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:10] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:10] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:10] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:10] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:11] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:11] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:11] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:11] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P532; nav 0,0,0
-[2026-10-25 08:26:11] Astronomica static sprites: P532, 8 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:11] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:11] Planet audit header: 1 dormant-startup-follow clock1010 setting0 mask1 selected1 count0 rng2292243178 releasedActive0 modes31,1,0 screen35f49cb8 background48dc19e6
-[2026-10-25 08:26:11] Planet audit sprite: 1 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 6 0 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 8 1 0 603 10 602 12 0 1 0 1000 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 9 1 1 1 10 573 12 1 1 1000 1000 1 0 2 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 1 10
-[2026-10-25 08:26:11] Planet audit sprite: 1 10 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 11 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 12 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 13 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 14 0 0 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 15 0 0 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 16 0 0 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 17 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 18 0 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 19 0 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 20 0 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 21 0 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 22 0 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 23 0 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 24 0 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 25 0 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 26 0 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 27 0 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 28 0 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 29 0 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 30 0 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Planet audit sprite: 1 31 0 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:11] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:11] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:11] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:11] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:14] Planet audit header: 2 seven-correct clock24070 setting5 mask383 selected2 count7 rng164123645 releasedActive0 modes24,1,7 screen0014d395 background48dc19e6
-[2026-10-25 08:26:14] Planet audit sprite: 2 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 8 1 0 603 10 602 64 0 1 0 24060 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 9 1 0 1 10 65 50 1 0 24050 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 10 1 0 2 10 558 60 1 1 24050 24060 1 0 2 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 1 10
-[2026-10-25 08:26:14] Planet audit sprite: 2 11 1 0 3 10 166 116 1 0 24050 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 12 1 0 4 10 228 62 1 0 24050 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 13 1 0 5 10 274 224 1 0 24050 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 14 1 0 6 10 306 46 1 0 24050 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 15 1 0 7 10 397 28 1 0 24050 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 16 0 0 580 10 580 10 1 0 24050 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 17 1 0 9 10 514 88 1 0 24050 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 22 0 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 23 0 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 24 0 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 25 0 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 26 0 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 27 0 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 28 0 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 29 0 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 30 0 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Planet audit sprite: 2 31 0 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:14] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:14] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:14] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:14] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:15] Planet audit header: 3 first-wrong-still-released clock30080 setting15 mask511 selected8 count7 rng2483190114 releasedActive1 modes23,1,8 screendefcc3ec background48dc19e6
-[2026-10-25 08:26:15] Planet audit sprite: 3 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 8 1 0 603 10 602 118 0 1 0 30070 1 0 -2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 9 1 0 1 10 65 50 1 0 30050 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 10 1 0 2 10 408 200 1 1 30050 30070 1 -2 0 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 2 10
-[2026-10-25 08:26:15] Planet audit sprite: 3 11 1 10 3 10 166 116 1 0 30050 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 12 1 10 4 10 228 62 1 0 30050 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 13 1 0 5 10 274 224 1 0 30050 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 14 1 0 6 10 306 46 1 0 30050 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 15 1 0 7 10 397 28 1 0 30050 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 16 1 0 8 10 552 118 1 1 30050 30070 1 0 -2 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 1 10
-[2026-10-25 08:26:15] Planet audit sprite: 3 17 1 0 9 10 514 88 1 0 30050 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 22 1 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 23 1 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 24 1 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 25 1 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 26 1 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 27 1 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 28 1 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 29 1 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 30 1 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 3 31 1 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:15] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:15] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:15] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:15] Planet audit header: 4 exhausted-mask-reattached-current clock30990 setting15 mask511 selected8 count7 rng1945304395 releasedActive1 modes23,1,8 screene698a115 background48dc19e6
-[2026-10-25 08:26:15] Planet audit sprite: 4 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 8 1 0 603 10 602 80 0 1 0 30980 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 9 1 0 1 10 65 50 1 0 30950 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 10 1 0 2 10 226 200 1 1 30950 30980 1 -2 0 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 2 10
-[2026-10-25 08:26:15] Planet audit sprite: 4 11 1 6 3 10 166 116 1 0 30950 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 12 1 6 4 10 228 62 1 0 30950 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 13 1 0 5 10 274 224 1 0 30950 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 14 1 0 6 10 306 46 1 0 30950 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 15 1 0 7 10 397 28 1 0 30950 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 16 1 0 8 10 552 80 1 1 30950 30980 1 0 2 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 1 10
-[2026-10-25 08:26:15] Planet audit sprite: 4 17 1 0 9 10 514 88 1 0 30950 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 22 1 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 23 1 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 24 1 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 25 1 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 26 1 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 27 1 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 28 1 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 29 1 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 30 1 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Planet audit sprite: 4 31 1 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:15] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:15] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:15] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:15] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Planet audit header: 5 old-wrong-arrived-hidden clock41120 setting15 mask509 selected8 count7 rng1945304395 releasedActive0 modes23,1,8 screen12199d8c background48dc19e6
-[2026-10-25 08:26:17] Planet audit sprite: 5 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 8 1 0 603 10 602 190 0 1 0 41110 1 0 -2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 9 1 2 1 10 65 50 1 0 41100 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 10 0 2 2 10 346 200 1 0 41100 33860 1 2 0 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 11 1 0 3 10 166 116 1 0 41100 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 12 1 0 4 10 228 62 1 0 41100 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 13 1 2 5 10 274 224 1 0 41100 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 14 1 0 6 10 306 46 1 0 41100 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 15 1 0 7 10 397 28 1 0 41100 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 16 1 0 8 10 552 194 1 1 41100 41110 1 0 -2 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 1 10
-[2026-10-25 08:26:17] Planet audit sprite: 5 17 1 2 9 10 514 88 1 0 41100 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 22 1 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 23 1 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 24 1 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 25 1 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 26 1 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 27 1 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 28 1 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 29 1 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 30 1 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Planet audit sprite: 5 31 1 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
-[2026-10-25 08:26:17] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:17] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:17] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:17] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:17] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:17] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:17] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:18] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:18] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:18] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:19] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:19] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:20] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:20] Astronomica planet timer epochs: PASS (30 native save/successor cases, before/at/after periods and uint32 wrap)
-[2026-10-25 08:26:28] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:28] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:28] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:28] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:28] Astronomica planet natural voice end: PASS (7377 ms, no stopHandle)
-[2026-10-25 08:26:28] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:26:28] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:26:28] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:28] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:26:28] Astronomica planet Music restart: PASS (one ambient start)
-[2026-10-25 08:26:28] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:26:28] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:25] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:25] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:25] Astronomica planet rejection verification: PASS (6184 truncations, 6184 corruptions, 55 invalid states, extended atomic state)
-[2026-10-25 08:27:25] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:25] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:27] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:27:27] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:27:27] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:27] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:27] Astronomica planet count8 zero-setting: PASS (delayed exhausted-mask RNG draw, unchanged count/selection, native follow, roundtrip)
-[2026-10-25 08:27:27] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:27] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:27] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:27:27] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:27:27] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:27] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:33] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:33] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:33] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:33] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:39] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:39] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:39] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:39] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:39] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:27:39] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:27:39] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:39] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:43] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:43] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:43] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:43] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:47] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:47] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:27:47] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:47] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:47] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:47] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:47] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:47] Astronomica resource explorer: P518; nav 0,0,0
-[2026-10-25 08:27:47] Astronomica static sprites: P518, 8 drawn
-[2026-10-25 08:27:47] Astronomica planet slot fingerprint: 719bc5d1
-[2026-10-25 08:27:53] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:27:53] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:27:53] Astronomica planet motion coverage: PASS (59 follow boundaries, 2 released boundaries, 1 failed arrivals, 18 correct arrivals, 16 speed settings, 62 successor checks, 3 future outcome checks, 2 exhausted mask checks)
-[2026-10-25 08:27:53] Astronomica planet saves: PASS (59 boundaries, 39 history boundaries, 40 dormant boundaries, 19 ordinary boundaries, 19540 busy rejections)
-[2026-10-25 08:27:53] Astronomica planet save verification: PASS
-[2026-10-25 08:27:53] --- Log closed successfully.
+[2026-10-25 13:50:57] ScummVM 2026.3.1git
+[2026-10-25 13:50:57] RGB SDL2 
+[2026-10-25 13:50:57] --- Log opened.
+[2026-10-25 13:50:57] Using SDL Video Driver "dummy"
+[2026-10-25 13:50:58] Using SDL Audio Driver "wasapi"
+[2026-10-25 13:50:58] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-25 13:50:58] Output sample rate: 44100 Hz
+[2026-10-25 13:50:58] Output buffer size: 1024 samples
+[2026-10-25 13:50:58] Output channels: 2
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_START' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-25 13:50:58] CPU extensions:
+[2026-10-25 13:50:58] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-25 13:50:58] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-25 13:50:58] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-25 13:50:58] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_A' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_B' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_Y' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_X' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_UP' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-25 13:50:58] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-25 13:50:58] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-25 13:50:59] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-25 13:50:59] Astronomica static sprites: P1, 3 drawn
+[2026-10-25 13:50:59] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:50:59] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:50:59] Planet audit header: 0 startup-follow clock10 setting0 mask1 selected1 count0 rng2292243178 releasedActive0 modes31,1,0 screencc6bb57e background48dc19e6
+[2026-10-25 13:50:59] Planet audit sprite: 0 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 6 0 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 8 1 0 603 10 603 10 0 1 0 0 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 9 1 0 1 10 573 10 1 1 0 0 1 0 2 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 1 10
+[2026-10-25 13:50:59] Planet audit sprite: 0 10 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 11 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 12 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 13 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 14 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 15 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 16 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 17 0 0 580 10 580 10 1 0 0 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 18 0 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 19 0 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 20 0 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 21 0 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 22 0 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 23 0 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 24 0 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 25 0 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 26 0 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 27 0 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 28 0 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 29 0 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 30 0 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Planet audit sprite: 0 31 0 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:50:59] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:59] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:59] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:50:59] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:50:59] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:59] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:59] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:50:59] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:50:59] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:59] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:59] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:50:59] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:00] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:00] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:01] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:01] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:01] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:01] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:01] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:01] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:01] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:01] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:01] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:01] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:01] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:01] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:01] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:02] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:02] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:02] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:02] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P532; nav 0,0,0
+[2026-10-25 13:51:02] Astronomica static sprites: P532, 8 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:02] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:02] Planet audit header: 1 dormant-startup-follow clock1010 setting0 mask1 selected1 count0 rng2292243178 releasedActive0 modes31,1,0 screen35f49cb8 background48dc19e6
+[2026-10-25 13:51:02] Planet audit sprite: 1 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 6 0 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 8 1 0 603 10 602 12 0 1 0 1000 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 9 1 1 1 10 573 12 1 1 1000 1000 1 0 2 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 1 10
+[2026-10-25 13:51:02] Planet audit sprite: 1 10 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 11 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 12 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 13 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 14 0 0 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 15 0 0 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 16 0 0 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 17 0 1 580 10 580 10 1 0 1000 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 18 0 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 19 0 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 20 0 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 21 0 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 22 0 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 23 0 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 24 0 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 25 0 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 26 0 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 27 0 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 28 0 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 29 0 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 30 0 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Planet audit sprite: 1 31 0 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:02] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:02] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:02] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:02] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:05] Planet audit header: 2 seven-correct clock24070 setting5 mask383 selected2 count7 rng164123645 releasedActive0 modes24,1,7 screen0014d395 background48dc19e6
+[2026-10-25 13:51:05] Planet audit sprite: 2 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 8 1 0 603 10 602 64 0 1 0 24060 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 9 1 0 1 10 65 50 1 0 24050 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 10 1 0 2 10 558 60 1 1 24050 24060 1 0 2 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 1 10
+[2026-10-25 13:51:05] Planet audit sprite: 2 11 1 0 3 10 166 116 1 0 24050 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 12 1 0 4 10 228 62 1 0 24050 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 13 1 0 5 10 274 224 1 0 24050 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 14 1 0 6 10 306 46 1 0 24050 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 15 1 0 7 10 397 28 1 0 24050 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 16 0 0 580 10 580 10 1 0 24050 0 0 0 0 0 0 0 0 -1 0 50 1 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 17 1 0 9 10 514 88 1 0 24050 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 22 0 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 23 0 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 24 0 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 25 0 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 26 0 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 27 0 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 28 0 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 29 0 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 30 0 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Planet audit sprite: 2 31 0 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:05] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:05] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:05] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:05] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:06] Planet audit header: 3 first-wrong-still-released clock30080 setting15 mask511 selected8 count7 rng2483190114 releasedActive1 modes23,1,8 screendefcc3ec background48dc19e6
+[2026-10-25 13:51:06] Planet audit sprite: 3 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 8 1 0 603 10 602 118 0 1 0 30070 1 0 -2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 9 1 0 1 10 65 50 1 0 30050 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 10 1 0 2 10 408 200 1 1 30050 30070 1 -2 0 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 2 10
+[2026-10-25 13:51:06] Planet audit sprite: 3 11 1 10 3 10 166 116 1 0 30050 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 12 1 10 4 10 228 62 1 0 30050 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 13 1 0 5 10 274 224 1 0 30050 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 14 1 0 6 10 306 46 1 0 30050 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 15 1 0 7 10 397 28 1 0 30050 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 16 1 0 8 10 552 118 1 1 30050 30070 1 0 -2 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 1 10
+[2026-10-25 13:51:06] Planet audit sprite: 3 17 1 0 9 10 514 88 1 0 30050 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 22 1 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 23 1 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 24 1 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 25 1 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 26 1 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 27 1 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 28 1 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 29 1 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 30 1 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 3 31 1 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:06] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:06] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:06] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:06] Planet audit header: 4 exhausted-mask-reattached-current clock30990 setting15 mask511 selected8 count7 rng1945304395 releasedActive1 modes23,1,8 screene698a115 background48dc19e6
+[2026-10-25 13:51:06] Planet audit sprite: 4 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 8 1 0 603 10 602 80 0 1 0 30980 1 0 2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 9 1 0 1 10 65 50 1 0 30950 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 10 1 0 2 10 226 200 1 1 30950 30980 1 -2 0 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 2 10
+[2026-10-25 13:51:06] Planet audit sprite: 4 11 1 6 3 10 166 116 1 0 30950 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 12 1 6 4 10 228 62 1 0 30950 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 13 1 0 5 10 274 224 1 0 30950 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 14 1 0 6 10 306 46 1 0 30950 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 15 1 0 7 10 397 28 1 0 30950 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 16 1 0 8 10 552 80 1 1 30950 30980 1 0 2 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 1 10
+[2026-10-25 13:51:06] Planet audit sprite: 4 17 1 0 9 10 514 88 1 0 30950 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 22 1 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 23 1 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 24 1 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 25 1 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 26 1 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 27 1 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 28 1 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 29 1 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 30 1 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Planet audit sprite: 4 31 1 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:06] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:06] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:06] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:06] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Planet audit header: 5 old-wrong-arrived-hidden clock41120 setting15 mask509 selected8 count7 rng1945304395 releasedActive0 modes23,1,8 screen12199d8c background48dc19e6
+[2026-10-25 13:51:08] Planet audit sprite: 5 0 1 0 23 365 23 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 1 1 0 23 416 23 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 2 1 0 589 365 589 365 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 3 1 0 589 416 589 416 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 4 1 0 182 419 182 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 5 1 0 258 419 258 419 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 6 1 0 179 408 179 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 7 1 0 373 398 373 398 0 0 0 0 0 0 0 0 0 0 0 -1 1 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 8 1 0 603 10 602 190 0 1 0 41110 1 0 -2 0 0 0 0 -1 0 0 0 0 10 0 2 1 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 9 1 2 1 10 65 50 1 0 41100 8290 1 -2 0 0 0 0 0 -1 0 50 1 0 9 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 10 0 2 2 10 346 200 1 0 41100 33860 1 2 0 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 11 1 0 3 10 166 116 1 0 41100 21670 1 -2 0 0 0 0 0 -1 0 50 1 0 7 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 12 1 0 4 10 228 62 1 0 41100 11520 1 -2 0 0 0 0 0 -1 0 50 1 0 6 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 13 1 2 5 10 274 224 1 0 41100 24060 1 -2 0 0 0 0 0 -1 0 50 1 0 5 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 14 1 0 6 10 306 46 1 0 41100 13500 1 -2 0 0 0 0 0 -1 0 50 1 0 4 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 15 1 0 7 10 397 28 1 0 41100 17690 1 -2 0 0 0 0 0 -1 0 50 1 0 3 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 16 1 0 8 10 552 194 1 1 41100 41110 1 0 -2 0 0 0 0 -1 0 50 1 0 15 0 0 0 0 1 10
+[2026-10-25 13:51:08] Planet audit sprite: 5 17 1 2 9 10 514 88 1 0 41100 15360 1 -2 0 0 0 0 0 -1 0 50 1 0 1 0 0 0 0 2 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 18 1 0 181 398 181 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 19 1 0 185 388 185 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 20 1 0 191 379 191 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 21 1 0 199 371 199 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 22 1 0 208 365 208 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 23 1 0 217 361 217 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 24 1 0 227 360 227 360 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 25 1 0 237 361 237 361 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 26 1 0 246 365 246 365 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 27 1 0 254 371 254 371 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 28 1 0 262 379 262 379 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 29 1 0 268 388 268 388 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 30 1 0 272 398 272 398 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Planet audit sprite: 5 31 1 0 274 408 274 408 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 -1
+[2026-10-25 13:51:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:08] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:08] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:09] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:09] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:09] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:10] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:10] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:11] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:11] Astronomica planet timer epochs: PASS (30 native save/successor cases, before/at/after periods and uint32 wrap)
+[2026-10-25 13:51:19] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:19] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:19] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:19] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:19] Astronomica planet natural voice end: PASS (7379 ms, no stopHandle)
+[2026-10-25 13:51:19] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:51:19] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:51:19] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:19] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:51:19] Astronomica planet Music restart: PASS (one ambient start)
+[2026-10-25 13:51:19] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:51:19] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:15] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:15] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:15] Astronomica planet rejection verification: PASS (6184 truncations, 6184 corruptions, 55 invalid states, extended atomic state)
+[2026-10-25 13:52:15] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:15] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:18] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:52:18] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:52:18] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:18] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:18] Astronomica planet count8 zero-setting: PASS (delayed exhausted-mask RNG draw, unchanged count/selection, native follow, roundtrip)
+[2026-10-25 13:52:18] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:18] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:18] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:52:18] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:52:18] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:18] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:24] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:24] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:24] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:24] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:30] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:30] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:30] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:30] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:52:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:52:30] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:30] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:34] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:34] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:34] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:34] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:37] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:37] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:37] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:37] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:37] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:52:37] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:52:38] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:38] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:38] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:38] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:38] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:38] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:38] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:38] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:38] Astronomica resource explorer: P518; nav 0,0,0
+[2026-10-25 13:52:38] Astronomica static sprites: P518, 8 drawn
+[2026-10-25 13:52:38] Astronomica planet slot fingerprint: 719bc5d1
+[2026-10-25 13:52:44] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:52:44] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:52:44] Astronomica planet motion coverage: PASS (59 follow boundaries, 2 released boundaries, 1 failed arrivals, 18 correct arrivals, 16 speed settings, 62 successor checks, 3 future outcome checks, 2 exhausted mask checks)
+[2026-10-25 13:52:44] Astronomica planet saves: PASS (59 boundaries, 39 history boundaries, 40 dormant boundaries, 19 ordinary boundaries, 19542 busy rejections)
+[2026-10-25 13:52:44] Astronomica planet save verification: PASS
+[2026-10-25 13:52:44] --- Log closed successfully.

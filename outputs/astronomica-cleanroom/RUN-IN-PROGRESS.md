@@ -1,1 +1,1 @@
-Restricted P516v22 native saves verified25October2026. Complete same-build WASAPI suite,fresh-process slot21 and genuine frozen v21slot20 PASS. Publication requires export verification. Newest finisher finish_p516_saves.py. Automation PAUSED.
+Quiet P527v23 native saves verified25October2026; complete same-build WASAPI suite PASS. Publication requires export verification. Newest finisher finish_p527_saves.py; automation PAUSED.

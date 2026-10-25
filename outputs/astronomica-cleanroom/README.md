@@ -6,7 +6,7 @@ Avvio corrente: aprire **Avvia-Astronomica.cmd nella radice del workspace**. Usa
 
 Sono verificati automaticamente percorsi in 35 scene di puzzle, oltre a navigazione, filmati, audio, aiuto e salvataggi di esplorazione. L'aiuto legge 781 articoli e 31 immagini originali fra testo e didascalie. I 13 esponenti originali sono resi con notazione ^(valore).
 
-Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P509, P511, P513, P514, P515, P516, P517, P518, P519, P521, P522, P524, P526, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. P516 salva gli stati verificati con orbite attive e missile fermo. P511 conserva nuvole, fotogrammi e intervalli originali ai confini senza lavoro in coda. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
+Salvataggi nativi verificati in esplorazione e in P505, P506, P508, P509, P511, P513, P514, P515, P516, P517, P518, P519, P521, P522, P524, P526, P527, P528, P529, P530, P531, P532, P533, P534, P535, P536, P537. P522 conserva solo confini ordinari senza volo, con poll e orbite attive. P514 conserva orbite attive, carburante e storia degli attracchi falliti ai confini senza comandi in coda. P516 salva gli stati verificati con orbite attive e missile fermo. P511 conserva nuvole, fotogrammi e intervalli originali ai confini senza lavoro in coda. Import GAMESTAT originale disponibile per esplorazione con countdown inattivo. Restano altri salvataggi, fedelta tipografica e verifica audiovisiva manuale integrale. Nessuna percentuale globale attendibile; 94.2% misura solo 114/121 template statici, non la giocabilita.
 
 Usare NEXT-STEPS.md per riprendere e verify_development_evidence.py per verificare il checkpoint. Eseguibile corrente: work/fresh-20260913/build/Releasex64/scummvm.exe. L'avvio richiede la build locale e i file originali D:/astro; non e un nuovo pacchetto distribuibile.
 
@@ -1015,3 +1015,8 @@ Version21 preserves 109 measured ordinary P511 boundaries with retained cloud im
 ## P516 saves,25 October2026
 
 Version22 preserves 86 measured quiet local2=0 P516 boundaries with active orbits and a hidden stopped projectile. Handoff frame/epoch history, hidden stopped motion, all605runner values, CometMotion and collision geometry are retained. Active flight, aborted unproved histories, local2=1,stopped moons,pending work,foreground audio and success/explosion transitions remain excluded. Fresh-process slot21,unchanged genuine frozen v21slot20,6944truncations and6944corruptions,and the complete native WASAPI suite PASS.
+
+
+## P527 saves,25 October2026
+
+Version23 preserves quiet stopped-movie boundaries, selection and seen history, independent retained movie sample and all605runner words. All1105native frame reconstructions,fresh-process slot22,unchanged genuine frozen v22slot21 and the complete WASAPI suite PASS. Active playback,queued work and foreground audio remain excluded.

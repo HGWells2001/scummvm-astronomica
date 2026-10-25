@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-25",
+  "status": "PASS",
+  "exe_sha256": "d0c181251ab0b4714d344a09134ba4f5aa3c4962314b4892fc82660c17fc8c95",
+  "slot_sha256": "54eaa0859f21014f21890b14f00b33ecb5c6a7a3f90c30a64b84d251934b8781",
+  "producing_exe_sha256": "6727874da49ad53d05645971547ff544bc57d58ed3ad665cd4ae6dfce1adef8c",
+  "origin_commit": "dcc18aed083b3957d6a72c5a3e1c3794814d5b9d",
+  "unchanged": true,
+  "audio_driver": "wasapi"
+}

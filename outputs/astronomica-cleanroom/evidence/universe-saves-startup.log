@@ -1,226 +1,226 @@
-[2026-10-25 08:32:17] ScummVM 2026.3.1git
-[2026-10-25 08:32:17] RGB SDL2 
-[2026-10-25 08:32:17] --- Log opened.
-[2026-10-25 08:32:17] Using SDL Video Driver "dummy"
-[2026-10-25 08:32:17] Using SDL Audio Driver "wasapi"
-[2026-10-25 08:32:17] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-25 08:32:17] Output sample rate: 44100 Hz
-[2026-10-25 08:32:17] Output buffer size: 1024 samples
-[2026-10-25 08:32:17] Output channels: 2
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_START' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-25 08:32:18] CPU extensions:
-[2026-10-25 08:32:18] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-25 08:32:18] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-25 08:32:18] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-25 08:32:18] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_A' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_B' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_Y' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_X' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_UP' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-25 08:32:18] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-25 08:32:18] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-25 08:32:18] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-25 08:32:18] Astronomica static sprites: P1, 3 drawn
-[2026-10-25 08:32:18] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:18] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica universe slot fingerprint: e77c3e29
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica P529 movie started at 160,40
-[2026-10-25 08:32:19] Astronomica movie segment finished: 1 frames drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica P529 movie started at 160,40
-[2026-10-25 08:32:19] Astronomica movie segment finished: 2 frames drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:19] stsd version =0
-[2026-10-25 08:32:19] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:19] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:19] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:20] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:20] stsd version =0
-[2026-10-25 08:32:20] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:20] stsd version =0
-[2026-10-25 08:32:20] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:20] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:20] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:20] Astronomica P529 movie started at 160,40
-[2026-10-25 08:32:20] Astronomica movie segment finished: 3 frames drawn
-[2026-10-25 08:32:22] Astronomica resource explorer: P98; nav 103,0,93
-[2026-10-25 08:32:22] Astronomica static sprites: P98, 1 drawn
-[2026-10-25 08:32:22] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:32:22] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:32:22] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:22] stsd version =0
-[2026-10-25 08:32:22] Audio Codec FourCC: 'raw '
-[2026-10-25 08:32:22] stsd version =0
-[2026-10-25 08:32:22] Astronomica P529 movie: 320x240, scale 30, duration 1261
-[2026-10-25 08:32:22] Astronomica resource explorer: P529; nav 0,0,0
-[2026-10-25 08:32:22] Astronomica static sprites: P529, 11 drawn
-[2026-10-25 08:32:22] Astronomica P529 movie started at 160,40
-[2026-10-25 08:32:22] Astronomica movie segment finished: 4 frames drawn
-[2026-10-25 08:32:24] Astronomica resource explorer: P98; nav 103,0,93
-[2026-10-25 08:32:24] Astronomica static sprites: P98, 1 drawn
-[2026-10-25 08:32:24] Astronomica universe startup save: PASS (slot14, dormant round2, prior movie/readout, full-mask completion)
-[2026-10-25 08:32:24] Astronomica universe save verification: PASS
-[2026-10-25 08:32:24] --- Log closed successfully.
+[2026-10-25 13:57:08] ScummVM 2026.3.1git
+[2026-10-25 13:57:08] RGB SDL2 
+[2026-10-25 13:57:08] --- Log opened.
+[2026-10-25 13:57:08] Using SDL Video Driver "dummy"
+[2026-10-25 13:57:09] Using SDL Audio Driver "wasapi"
+[2026-10-25 13:57:09] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-25 13:57:09] Output sample rate: 44100 Hz
+[2026-10-25 13:57:09] Output buffer size: 1024 samples
+[2026-10-25 13:57:09] Output channels: 2
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_START' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-25 13:57:09] CPU extensions:
+[2026-10-25 13:57:09] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-25 13:57:09] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-25 13:57:09] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-25 13:57:09] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_A' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_B' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_Y' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_X' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_UP' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-25 13:57:09] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-25 13:57:10] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-25 13:57:10] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-25 13:57:10] Astronomica static sprites: P1, 3 drawn
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:10] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:10] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:10] Astronomica universe slot fingerprint: e77c3e29
+[2026-10-25 13:57:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:10] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:10] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:10] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:10] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:10] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:10] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:10] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:10] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:10] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:10] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:10] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica P529 movie started at 160,40
+[2026-10-25 13:57:11] Astronomica movie segment finished: 1 frames drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica P529 movie started at 160,40
+[2026-10-25 13:57:11] Astronomica movie segment finished: 2 frames drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:11] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:11] stsd version =0
+[2026-10-25 13:57:11] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:11] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:11] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:11] Astronomica P529 movie started at 160,40
+[2026-10-25 13:57:11] Astronomica movie segment finished: 3 frames drawn
+[2026-10-25 13:57:14] Astronomica resource explorer: P98; nav 103,0,93
+[2026-10-25 13:57:14] Astronomica static sprites: P98, 1 drawn
+[2026-10-25 13:57:14] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:57:14] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:57:14] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:14] stsd version =0
+[2026-10-25 13:57:14] Audio Codec FourCC: 'raw '
+[2026-10-25 13:57:14] stsd version =0
+[2026-10-25 13:57:14] Astronomica P529 movie: 320x240, scale 30, duration 1261
+[2026-10-25 13:57:14] Astronomica resource explorer: P529; nav 0,0,0
+[2026-10-25 13:57:14] Astronomica static sprites: P529, 11 drawn
+[2026-10-25 13:57:14] Astronomica P529 movie started at 160,40
+[2026-10-25 13:57:14] Astronomica movie segment finished: 4 frames drawn
+[2026-10-25 13:57:16] Astronomica resource explorer: P98; nav 103,0,93
+[2026-10-25 13:57:16] Astronomica static sprites: P98, 1 drawn
+[2026-10-25 13:57:16] Astronomica universe startup save: PASS (slot14, dormant round2, prior movie/readout, full-mask completion)
+[2026-10-25 13:57:16] Astronomica universe save verification: PASS
+[2026-10-25 13:57:16] --- Log closed successfully.

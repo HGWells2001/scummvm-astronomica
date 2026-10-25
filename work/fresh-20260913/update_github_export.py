@@ -169,6 +169,20 @@ if p516_save_present:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
 
+p527_save_present=Path('outputs/astronomica-cleanroom/evidence/p527-saves-validation.json').is_file()
+if Path('outputs/astronomica-cleanroom/evidence/p527-save-original.json').is_file():
+    for name in ('P527-SAVE-PLAN.md','probe_p527_save.py','evidence/p527-save-original.json'):
+        source=Path('outputs/astronomica-cleanroom')/name
+        (root/source).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,root/source)
+if p527_save_present:
+    p527_paths=['outputs/astronomica-cleanroom/P527-SAVE-FORMAT.md',
+                *['work/fresh-20260913/'+name for name in ('check_p527_saves.py','check_p527_regressions.py','finish_p527_saves.py')],
+                *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p527-saves-validation.json','p527-save-proof.json','p527-saves-runtime.log','p527-saves-startup.log','p516-previous-slot.log','p516-previous-slot-proof.json')]]
+    for name in p527_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -267,6 +281,12 @@ if p516_save_present:
                 'twenty-six supported puzzle scenes (P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526, P528-P537)')
     if 'P516 v22' not in s:
         s=s.replace('- Automatically verified routes','- P516 v22 preserves restricted quiet local2=0 boundaries with active orbits and a hidden stopped projectile. Active flight, unproved aborted history, stopped moons, foreground audio and queued/success transitions remain excluded. Fresh-process continuation and unchanged genuine frozen v21 compatibility pass.\n- Automatically verified routes')
+    p.write_text(s.rstrip()+'\n')
+if p527_save_present:
+    s=s.replace('twenty-six supported puzzle scenes (P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526, P528-P537)',
+                'twenty-seven supported puzzle scenes (P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)')
+    if 'P527 v23' not in s:
+        s=s.replace('- Automatically verified routes','- P527 v23 preserves quiet stopped-movie boundaries, independent selected button, seen mask and committed movie sample. All1105original samples compare equal between sequential decoding and seeking. Fresh-process continuation and genuine frozen v22 compatibility pass.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()

@@ -193,3 +193,8 @@ Version21 preserves 109 measured ordinary P511 boundaries with retained cloud im
 ## P516 saves,25 October2026
 
 Version22 preserves 86 measured quiet local2=0 P516 boundaries with active orbits and a hidden stopped projectile. Handoff frame/epoch history, hidden stopped motion, all605runner values, CometMotion and collision geometry are retained. Active flight, aborted unproved histories, local2=1,stopped moons,pending work,foreground audio and success/explosion transitions remain excluded. Fresh-process slot21,unchanged genuine frozen v21slot20,6944truncations and6944corruptions,and the complete native WASAPI suite PASS.
+
+
+## P527 saves,25 October2026
+
+Version23 preserves quiet stopped-movie boundaries, selection and seen history, independent retained movie sample and all605runner words. All1105native frame reconstructions,fresh-process slot22,unchanged genuine frozen v22slot21 and the complete WASAPI suite PASS. Active playback,queued work and foreground audio remain excluded.

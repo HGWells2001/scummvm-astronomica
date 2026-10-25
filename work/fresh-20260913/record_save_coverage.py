@@ -164,6 +164,21 @@ if p516_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+p527_validation=root/'evidence/p527-saves-validation.json'
+if p527_validation.exists():
+ v=json.loads(p527_validation.read_text());proof=json.loads((root/'evidence/p527-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==22
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['scope']==proof['scope']=='quiet_p527' and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/p527-saves-runtime.log';startup=root/'evidence/p527-saves-startup.log'
+ assert 'P527 save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'P527 startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=527,version=23,payload_bytes=3940,test_slot=22,
+  scope='Quiet P527 with stopped movie, retained committed sample and complete selection/seen history; queued work and foreground audio excluded',
+  validation_file=p527_validation.relative_to(root).as_posix(),validation_sha256=digest(p527_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),

@@ -82,6 +82,11 @@ if (root/'evidence/p516-save-original.json').exists():
 if (root/'evidence/p516-saves-validation.json').exists():
  files.add(root/'P516-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p516-saves-validation.json','p516-save-proof.json','p516-saves-runtime.log','p516-saves-startup.log','p511-previous-slot.log','p511-previous-slot-proof.json'))
+if (root/'evidence/p527-save-original.json').exists():
+ files.update(root/name for name in ('P527-SAVE-PLAN.md','probe_p527_save.py','evidence/p527-save-original.json'))
+if (root/'evidence/p527-saves-validation.json').exists():
+ files.add(root/'P527-SAVE-FORMAT.md')
+ files.update(root/'evidence'/name for name in ('p527-saves-validation.json','p527-save-proof.json','p527-saves-runtime.log','p527-saves-startup.log','p516-previous-slot.log','p516-previous-slot-proof.json'))
 if (root/'evidence/p511-saves-validation.json').exists():
  files.add(root/'P511-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p511-saves-validation.json','p511-save-proof.json','p511-saves-runtime.log','p511-saves-startup.log','p509-previous-slot.log','p509-previous-slot-proof.json'))

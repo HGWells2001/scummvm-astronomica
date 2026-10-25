@@ -1,238 +1,238 @@
-[2026-10-25 08:24:11] ScummVM 2026.3.1git
-[2026-10-25 08:24:11] RGB SDL2 
-[2026-10-25 08:24:11] --- Log opened.
-[2026-10-25 08:24:11] Using SDL Video Driver "dummy"
-[2026-10-25 08:24:11] Using SDL Audio Driver "wasapi"
-[2026-10-25 08:24:11] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-25 08:24:12] Output sample rate: 44100 Hz
-[2026-10-25 08:24:12] Output buffer size: 1024 samples
-[2026-10-25 08:24:12] Output channels: 2
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_START' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-25 08:24:12] CPU extensions:
-[2026-10-25 08:24:12] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-25 08:24:12] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-25 08:24:12] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-25 08:24:12] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_A' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_B' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_Y' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_X' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_UP' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-25 08:24:12] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-25 08:24:12] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-25 08:24:13] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-25 08:24:13] Astronomica static sprites: P1, 3 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:13] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:13] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:13] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:13] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:13] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:13] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:13] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:13] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:16] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:16] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:16] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:16] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:17] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:17] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:17] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:17] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:19] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:19] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:19] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:19] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:22] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:22] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:22] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:22] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:22] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:22] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:22] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:22] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:22] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:22] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:22] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:22] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:23] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:23] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:23] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:23] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:25] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:25] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:25] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:25] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:25] Astronomica resource explorer: P532; nav 0,0,0
-[2026-10-25 08:24:25] Astronomica static sprites: P532, 8 drawn
-[2026-10-25 08:24:25] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:25] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:25] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:25] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:25] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:25] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:28] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:28] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:28] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:28] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:30] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:30] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:30] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:30] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:30] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:30] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:30] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:30] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:31] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:31] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:31] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:32] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:32] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:32] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:32] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:32] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:32] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:32] Astronomica P521 timer epochs: PASS (10 native save/successor cases, before/at/after periods and uint32 wrap)
-[2026-10-25 08:24:51] P521 natural postwait waited19528 active0 eligible1 clock60500/60500 loop-1/1 last1 idle1
-[2026-10-25 08:24:51] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:51] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:51] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:51] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:51] Astronomica P521 natural voice end: PASS (19528 ms, no stopHandle)
-[2026-10-25 08:24:51] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:24:51] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:24:52] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:52] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:24:52] Astronomica P521 Music restart: PASS (one ambient start)
-[2026-10-25 08:24:52] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:24:52] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:41] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:41] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:41] Astronomica P521 rejection verification: PASS (5392 truncations, 5392 corruptions, 55 invalid states, extended atomic state)
-[2026-10-25 08:25:41] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:41] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:42] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:25:42] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:25:42] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:42] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:44] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:44] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:44] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:44] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:47] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:47] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:47] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:47] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:47] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:25:47] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:25:47] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:47] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:47] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:47] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:47] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:47] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:48] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:48] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:25:48] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:48] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:48] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:48] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:48] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:48] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-25 08:25:48] Astronomica static sprites: P117, 1 drawn
-[2026-10-25 08:25:48] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:48] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:50] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:50] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:53] Astronomica resource explorer: P521; nav 0,0,0
-[2026-10-25 08:25:53] Astronomica static sprites: P521, 12 drawn
-[2026-10-25 08:25:53] Astronomica P521 slot fingerprint: 71a646f0
-[2026-10-25 08:25:55] Astronomica resource explorer: P388; nav 386,0,389
-[2026-10-25 08:25:55] Astronomica static sprites: P388, 9 drawn
-[2026-10-25 08:25:55] Astronomica P521 history coverage: PASS (5 choice controls, 26 retained-image boundaries, 26 fragment-history boundaries, 32 animation boundaries, 36 successor checks, 4 future outcome checks)
-[2026-10-25 08:25:55] Astronomica P521 saves: PASS (32 boundaries, 30 history boundaries, 21 dormant boundaries, 11 ordinary boundaries, 26921 busy rejections)
-[2026-10-25 08:25:55] Astronomica P521 save verification: PASS
-[2026-10-25 08:25:55] --- Log closed successfully.
+[2026-10-25 13:49:03] ScummVM 2026.3.1git
+[2026-10-25 13:49:03] RGB SDL2 
+[2026-10-25 13:49:03] --- Log opened.
+[2026-10-25 13:49:03] Using SDL Video Driver "dummy"
+[2026-10-25 13:49:03] Using SDL Audio Driver "wasapi"
+[2026-10-25 13:49:03] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-25 13:49:03] Output sample rate: 44100 Hz
+[2026-10-25 13:49:03] Output buffer size: 1024 samples
+[2026-10-25 13:49:03] Output channels: 2
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_START' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-25 13:49:04] CPU extensions:
+[2026-10-25 13:49:04] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-25 13:49:04] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-25 13:49:04] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-25 13:49:04] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_A' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_B' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_Y' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_X' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_UP' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-25 13:49:04] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-25 13:49:04] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-25 13:49:04] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-25 13:49:04] Astronomica static sprites: P1, 3 drawn
+[2026-10-25 13:49:04] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:04] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:05] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:05] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:05] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:05] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:05] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:05] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:05] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:05] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:05] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:05] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:05] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:05] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:08] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:08] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:08] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:08] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:10] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:10] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:11] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:11] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:13] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:13] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:13] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:13] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:13] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:13] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:13] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:13] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:14] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:14] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:14] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:14] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:14] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:14] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:14] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:14] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:17] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:17] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:17] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:17] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:17] Astronomica resource explorer: P532; nav 0,0,0
+[2026-10-25 13:49:17] Astronomica static sprites: P532, 8 drawn
+[2026-10-25 13:49:17] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:17] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:17] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:17] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:17] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:17] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:19] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:19] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:19] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:19] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:22] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:22] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:22] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:22] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:22] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:22] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:22] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:22] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:22] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:22] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:22] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:22] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:23] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:23] Astronomica P521 timer epochs: PASS (10 native save/successor cases, before/at/after periods and uint32 wrap)
+[2026-10-25 13:49:43] P521 natural postwait waited19521 active0 eligible1 clock60500/60500 loop-1/1 last1 idle1
+[2026-10-25 13:49:43] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:43] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:43] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:43] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:43] Astronomica P521 natural voice end: PASS (19521 ms, no stopHandle)
+[2026-10-25 13:49:43] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:49:43] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:49:43] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:43] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:49:43] Astronomica P521 Music restart: PASS (one ambient start)
+[2026-10-25 13:49:43] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:49:43] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:33] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:33] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:33] Astronomica P521 rejection verification: PASS (5392 truncations, 5392 corruptions, 55 invalid states, extended atomic state)
+[2026-10-25 13:50:33] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:33] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:33] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:33] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:33] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:33] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:36] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:36] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:36] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:36] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:38] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:38] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:38] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:38] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:38] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:38] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:38] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:38] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:39] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:39] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:39] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:39] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:39] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:39] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:39] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:39] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:39] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:39] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-25 13:50:39] Astronomica static sprites: P117, 1 drawn
+[2026-10-25 13:50:39] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:39] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:42] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:42] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:44] Astronomica resource explorer: P521; nav 0,0,0
+[2026-10-25 13:50:44] Astronomica static sprites: P521, 12 drawn
+[2026-10-25 13:50:44] Astronomica P521 slot fingerprint: 71a646f0
+[2026-10-25 13:50:47] Astronomica resource explorer: P388; nav 386,0,389
+[2026-10-25 13:50:47] Astronomica static sprites: P388, 9 drawn
+[2026-10-25 13:50:47] Astronomica P521 history coverage: PASS (5 choice controls, 26 retained-image boundaries, 26 fragment-history boundaries, 32 animation boundaries, 36 successor checks, 4 future outcome checks)
+[2026-10-25 13:50:47] Astronomica P521 saves: PASS (32 boundaries, 30 history boundaries, 21 dormant boundaries, 11 ordinary boundaries, 26915 busy rejections)
+[2026-10-25 13:50:47] Astronomica P521 save verification: PASS
+[2026-10-25 13:50:47] --- Log closed successfully.

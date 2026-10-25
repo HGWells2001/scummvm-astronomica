@@ -131,6 +131,11 @@ private:
  CometMotion _comet;
  void onComet(int mode, uint32 now) override;
  bool verifyCometPuzzles();
+ bool verifyP527Saves();
+ bool canSaveP527() const;
+ Common::Error saveP527(Common::WriteStream*stream);
+ Common::Error loadP527(Common::SeekableReadStream*stream);
+ bool _p527AssetsValid=false;
  bool verifyP516Saves();
  bool canSaveP516() const;
  Common::Error saveP516(Common::WriteStream*stream);
