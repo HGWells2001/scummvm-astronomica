@@ -203,3 +203,8 @@ Version23 preserves quiet stopped-movie boundaries, selection and seen history, 
 ## P502 saves,26 October2026
 
 Version24 preserves quiet nonflight choices and hidden stopped failed-return history, all605runner words,CometMotion scratch and dormant Jupiter geometry. Fresh-process slot23, all6728truncations/corruptions and genuine frozen v23slot22 compatibility plus complete native WASAPI suite PASS. Active flight,success transitions,pending work and foreground audio remain excluded.
+
+
+## P503 saves,26 October2026
+
+Version25 preserves quiet choices, never-solved stopped failures and healthy partial orbits with independent partner frames and motion epochs, all605runner words,CometMotion scratch and dormant Jupiter geometry. Fresh-process slot24, all8132truncations/corruptions and genuine frozen v24slot23 compatibility plus complete native WASAPI suite PASS. Primary ascent, solved-target failed relaunch histories, complete-solution transitions, pending work and foreground audio remain excluded.

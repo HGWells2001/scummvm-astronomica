@@ -197,6 +197,20 @@ if p502_save_present:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
 
+p503_save_present=Path('outputs/astronomica-cleanroom/evidence/p503-saves-validation.json').is_file()
+if Path('outputs/astronomica-cleanroom/evidence/p503-save-original.json').is_file():
+    for name in ('P503-SAVE-PLAN.md','probe_p503_save.py','evidence/p503-save-original.json'):
+        source=Path('outputs/astronomica-cleanroom')/name
+        (root/source).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,root/source)
+if p503_save_present:
+    p503_paths=['outputs/astronomica-cleanroom/P503-SAVE-FORMAT.md',
+                *['work/fresh-20260913/'+name for name in ('check_p503_saves.py','check_p503_regressions.py','finish_p503_saves.py')],
+                *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p503-saves-validation.json','p503-save-proof.json','p503-saves-runtime.log','p503-saves-startup.log','p502-previous-slot.log','p502-previous-slot-proof.json')]]
+    for name in p503_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -307,6 +321,12 @@ if p502_save_present:
                 'twenty-eight supported puzzle scenes (P502, P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)')
     if 'P502 v24' not in s:
         s=s.replace('- Automatically verified routes','- P502 v24 preserves quiet nonflight choices and hidden stopped failed comet/explosion history, all605runner words and dormant Jupiter geometry. Active flight, foreground audio and queued work remain excluded. Fresh-process continuation and genuine frozen v23 compatibility pass.\n- Automatically verified routes')
+    p.write_text(s.rstrip()+'\n')
+if p503_save_present:
+    s=s.replace('twenty-eight supported puzzle scenes (P502, P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)',
+                'twenty-nine supported puzzle scenes (P502, P503, P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)')
+    if 'P503 v25' not in s:
+        s=s.replace('- Automatically verified routes','- P503 v25 preserves quiet choices, never-solved failures and healthy partial orbit pairs with independent frames and motion epochs. All30 proper partial masks and fresh-process continuation pass. Primary ascent, solved-target failed relaunch histories, full solution transitions and foreground audio remain excluded.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()

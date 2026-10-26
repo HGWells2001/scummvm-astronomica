@@ -2,7 +2,7 @@
   "date": "2026-10-20",
   "status": "PASS",
   "diagnostic": false,
-  "exe_sha256": "5245e9d449b34ae81cf463db644016e5d1081cfaa64ae1aaf1f3bb52065e0ccd",
+  "exe_sha256": "1777ebb503b6a9389be9f55f46d1a2fc9a14357ea3042ab4bf9d0599083f4974",
   "original_resource_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
   "original_callback_evidence_sha256": "1e828270d72bcc24b0872c258c1c0110e41ca9636044c1a223cf1bb3c9f4c086",
   "pixel_format": [

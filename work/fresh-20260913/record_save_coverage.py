@@ -194,6 +194,21 @@ if p502_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+p503_validation=root/'evidence/p503-saves-validation.json'
+if p503_validation.exists():
+ v=json.loads(p503_validation.read_text());proof=json.loads((root/'evidence/p503-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==24
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['scope']==proof['scope']=='quiet_p503_partial_orbits' and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/p503-saves-runtime.log';startup=root/'evidence/p503-saves-startup.log'
+ assert 'P503 save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'P503 startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=503,version=25,payload_bytes=8132,test_slot=24,
+  scope='Quiet P503 choices, never-solved stopped failures and healthy partial orbits with independent partner motion; ascent, stale solved relaunch histories and queued work excluded',
+  validation_file=p503_validation.relative_to(root).as_posix(),validation_sha256=digest(p503_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-26' if (root/'evidence/p502-saves-validation.json').exists() else '2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),

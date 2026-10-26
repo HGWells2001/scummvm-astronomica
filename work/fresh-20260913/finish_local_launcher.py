@@ -36,6 +36,11 @@ elif (root/'evidence/p509-saves-validation.json').exists():
  head=head.replace('Import GAMESTAT originale', 'P509 conserva il narratore originale in attesa, i due cieli ordinari e le animazioni nascoste; altre code e voci attive restano escluse. Import GAMESTAT originale')
 elif (root/'evidence/p521-saves-validation.json').exists():
  head=head.replace('22 ottobre 2026','23 ottobre 2026')
+if (root/'evidence/p503-saves-validation.json').exists():
+ head=head.replace('25 ottobre 2026','26 ottobre 2026')
+ head=head.replace('Import GAMESTAT originale', 'P503 conserva scelte e orbite parziali con timer indipendenti dei partner; ascesa, rilanci falliti di bersagli gia risolti e transizioni restano esclusi. Import GAMESTAT originale')
+elif (root/'evidence/p502-saves-validation.json').exists():
+ head=head.replace('25 ottobre 2026','26 ottobre 2026')
 p.write_text(head+history)
 for name in ('refresh_research_evidence.py','save_development_evidence.py','verify_development_evidence.py'):subprocess.run([sys.executable,str(work/name)],check=True)
 print('Current local launcher and README checkpoint PASS')

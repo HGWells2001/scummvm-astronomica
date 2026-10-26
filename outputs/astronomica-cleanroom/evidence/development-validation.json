@@ -4,8 +4,8 @@
   "research_manifest": "research-oct01.json",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "a31690aa90136247c41b6c75d98cac02b0944c5bc34c0dcf0fd944d4b95ccc79",
-    "astronomica.h": "d284ed0e75406dc8d62a546619b6dd5f071760fce88acb12b25ad131d2589713",
+    "astronomica.cpp": "3d415ac2f76eba7f3585847e2198d1c0fa1f084e0e1f470fa93841df05e648ef",
+    "astronomica.h": "4a5929fc79abeb062bda4deb7df5b1c17dbb55a78a0c16c78b5a6895e399ef7d",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -27,8 +27,8 @@
     "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
     "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
   },
-  "exe_sha256": "5245e9d449b34ae81cf463db644016e5d1081cfaa64ae1aaf1f3bb52065e0ccd",
-  "runtime_log_sha256": "45ceb07103ec686e54bd52457f6cfb683d7ba1b9488024716325c7093c4cd646",
+  "exe_sha256": "1777ebb503b6a9389be9f55f46d1a2fc9a14357ea3042ab4bf9d0599083f4974",
+  "runtime_log_sha256": "9dc3f54805537ad905429ae1f05f2a1e1eeaa05b0d513c7787140566763b65a8",
   "build_exit": 0,
   "runtime_exit": 0,
   "complete_route_scenes": [

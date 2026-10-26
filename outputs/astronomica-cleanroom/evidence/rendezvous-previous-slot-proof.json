@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
   "status": "PASS",
-  "exe_sha256": "5245e9d449b34ae81cf463db644016e5d1081cfaa64ae1aaf1f3bb52065e0ccd",
+  "exe_sha256": "1777ebb503b6a9389be9f55f46d1a2fc9a14357ea3042ab4bf9d0599083f4974",
   "slot_sha256": "53fba4c58fe6caf096c349fa65efba43a588feb79386895fe434f09afcf04fa0",
   "producing_exe_sha256": "33980e92277d656d45f3383af5868db2567915de53642d3f5ec08dea87ae3faa",
   "origin_commit": "ab9094909911ca5d1f73e6ad2b0e507b67f7a10f",
