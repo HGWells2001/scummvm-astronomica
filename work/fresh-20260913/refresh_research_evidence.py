@@ -87,13 +87,18 @@ if (root/'evidence/p527-save-original.json').exists():
 if (root/'evidence/p527-saves-validation.json').exists():
  files.add(root/'P527-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p527-saves-validation.json','p527-save-proof.json','p527-saves-runtime.log','p527-saves-startup.log','p516-previous-slot.log','p516-previous-slot-proof.json'))
+if (root/'evidence/p502-save-original.json').exists():
+ files.update(root/name for name in ('P502-SAVE-PLAN.md','probe_p502_save.py','evidence/p502-save-original.json'))
+if (root/'evidence/p502-saves-validation.json').exists():
+ files.add(root/'P502-SAVE-FORMAT.md')
+ files.update(root/'evidence'/name for name in ('p502-saves-validation.json','p502-save-proof.json','p502-saves-runtime.log','p502-saves-startup.log','p527-previous-slot.log','p527-previous-slot-proof.json'))
 if (root/'evidence/p511-saves-validation.json').exists():
  files.add(root/'P511-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p511-saves-validation.json','p511-save-proof.json','p511-saves-runtime.log','p511-saves-startup.log','p509-previous-slot.log','p509-previous-slot-proof.json'))
 if (root/'evidence/p509-saves-validation.json').exists():
  files.add(root/'P509-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p509-saves-validation.json','p509-save-proof.json','p509-saves-runtime.log','p509-saves-startup.log','p521-previous-slot.log','p521-previous-slot-proof.json'))
-manifest=dict(date='2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if (root/'evidence/p521-saves-validation.json').exists() else '2026-10-22' if (root/'evidence/probe-saves-validation.json').exists() else '2026-10-19',scope='Original research; P501, comet, P516, P510 and P523 native routes',
+manifest=dict(date='2026-10-26' if (root/'evidence/p502-saves-validation.json').exists() else '2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if (root/'evidence/p521-saves-validation.json').exists() else '2026-10-22' if (root/'evidence/probe-saves-validation.json').exists() else '2026-10-19',scope='Original research; P501, comet, P516, P510 and P523 native routes',
     sha256={p.relative_to(root).as_posix():digest(p) for p in sorted(files)},
     original_inputs_sha256={name:digest(Path('D:/astro')/name) for name in sorted(set(previous['original_inputs_sha256']) | {*[f'PLACES/P{n}/{m}' for n,m in [(0,'HQLOGO.MOV'),(2,'FLATOPEN.MOV'),(2,'FLATOPN2.MOV'),(2,'OPEN2_B'),(432,'RMC2.MOV'),(433,'FX.MOV'),(423,'F24.MOV'),(424,'FFATE_1.MOV'),(435,'FFATE_2.MOV'),(436,'FFATE_3.MOV'),(437,'FFATE_4.MOV')]],'PLACES/P82/MOV','PLACES/P222/MOV','PLACES/P231/MOV','PLACES/P82/MEGAFILE.HYP','PLACES/P222/MEGAFILE.HYP','PLACES/P231/MEGAFILE.HYP','HELP/ASTRONOM.HLP','QTW/QCMC.QTC','PLACES/P29/FLAT29.MOV','PLACES/P29/MEGAFILE.HYP','PLACES/P409/MEGAFILE.HYP',*[f'SOUNDS/S{i}.WAV' for i in range(13,20)],'SOUNDS/S10.WAV','SOUNDS/S11.WAV','PLACES/P429/F21G.MOV','PLACES/P427/END_BOOM.MOV','PLACES/P426/F23B.MOV','PLACES/P428/F23A.MOV','PLACES/P510/FLATPLOT.MOV','PLACES/P523/DANGERS.MOV','PLACES/P408/MEGAFILE.HYP','PLACES/P408/MENTORS.MOV'})})
 path.write_text(json.dumps(manifest,indent=2))

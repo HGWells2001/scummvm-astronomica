@@ -179,9 +179,24 @@ if p527_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+p502_validation=root/'evidence/p502-saves-validation.json'
+if p502_validation.exists():
+ v=json.loads(p502_validation.read_text());proof=json.loads((root/'evidence/p502-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==23
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['scope']==proof['scope']=='quiet_p502_nonflight' and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/p502-saves-runtime.log';startup=root/'evidence/p502-saves-startup.log'
+ assert 'P502 save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'P502 startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=502,version=24,payload_bytes=6728,test_slot=23,
+  scope='Quiet P502 nonflight choices and hidden stopped failed returns; retained projectile/explosion/private history; active flight and queued work excluded',
+  validation_file=p502_validation.relative_to(root).as_posix(),validation_sha256=digest(p502_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
-result=dict(date='2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
+result=dict(date='2026-10-26' if (root/'evidence/p502-saves-validation.json').exists() else '2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
  engine_sha256={p.name:digest(p) for p in sorted((root/'engine/astronomica').iterdir()) if p.is_file()},
  exploration=dict(read_versions=[1,2],write_version=2,scope='Settled mode1 exploration screens; v1 inactive countdown compatibility'),
  puzzle_saves=rows,supported_puzzle_route_scenes=len(supported),inventoried_puzzle_route_scenes=len(all_scenes),

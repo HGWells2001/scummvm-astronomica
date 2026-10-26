@@ -183,6 +183,20 @@ if p527_save_present:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
 
+p502_save_present=Path('outputs/astronomica-cleanroom/evidence/p502-saves-validation.json').is_file()
+if Path('outputs/astronomica-cleanroom/evidence/p502-save-original.json').is_file():
+    for name in ('P502-SAVE-PLAN.md','probe_p502_save.py','evidence/p502-save-original.json'):
+        source=Path('outputs/astronomica-cleanroom')/name
+        (root/source).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,root/source)
+if p502_save_present:
+    p502_paths=['outputs/astronomica-cleanroom/P502-SAVE-FORMAT.md',
+                *['work/fresh-20260913/'+name for name in ('check_p502_saves.py','check_p502_regressions.py','finish_p502_saves.py')],
+                *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p502-saves-validation.json','p502-save-proof.json','p502-saves-runtime.log','p502-saves-startup.log','p527-previous-slot.log','p527-previous-slot-proof.json')]]
+    for name in p502_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -288,7 +302,13 @@ if p527_save_present:
     if 'P527 v23' not in s:
         s=s.replace('- Automatically verified routes','- P527 v23 preserves quiet stopped-movie boundaries, independent selected button, seen mask and committed movie sample. All1105original samples compare equal between sequential decoding and seeking. Fresh-process continuation and genuine frozen v22 compatibility pass.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
-manifest['date']='2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
+if p502_save_present:
+    s=s.replace('twenty-seven supported puzzle scenes (P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)',
+                'twenty-eight supported puzzle scenes (P502, P505, P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)')
+    if 'P502 v24' not in s:
+        s=s.replace('- Automatically verified routes','- P502 v24 preserves quiet nonflight choices and hidden stopped failed comet/explosion history, all605runner words and dormant Jupiter geometry. Active flight, foreground audio and queued work remain excluded. Fresh-process continuation and genuine frozen v23 compatibility pass.\n- Automatically verified routes')
+    p.write_text(s.rstrip()+'\n')
+manifest['date']='2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

@@ -1,7 +1,7 @@
 {
   "date": "2026-10-20",
   "status": "PASS",
-  "exe_sha256": "d0c181251ab0b4714d344a09134ba4f5aa3c4962314b4892fc82660c17fc8c95",
+  "exe_sha256": "5245e9d449b34ae81cf463db644016e5d1081cfaa64ae1aaf1f3bb52065e0ccd",
   "format_version": 13,
   "payload_bytes": 8960,
   "scenes": [
@@ -17,7 +17,7 @@
   "byte_corruptions": 8960,
   "invalid_checksummed_states": 52,
   "fresh_process_slot": 12,
-  "fresh_process_fingerprint": "40145253",
+  "fresh_process_fingerprint": "8dc57b7f",
   "dormant_sequence_retained": true,
   "comet_phase_retained": true,
   "first_completion_count": true,

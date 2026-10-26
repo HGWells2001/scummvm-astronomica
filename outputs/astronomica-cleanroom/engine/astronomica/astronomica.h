@@ -130,6 +130,11 @@ private:
  BallMotion _ball;
  CometMotion _comet;
  void onComet(int mode, uint32 now) override;
+ bool verifyP502Saves();
+ bool canSaveP502() const;
+ Common::Error saveP502(Common::WriteStream*stream);
+ Common::Error loadP502(Common::SeekableReadStream*stream);
+ bool _p502AssetsValid=false;
  bool verifyCometPuzzles();
  bool verifyP527Saves();
  bool canSaveP527() const;

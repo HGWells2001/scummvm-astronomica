@@ -1,14 +1,14 @@
 {
   "date": "2026-10-20",
   "status": "PASS",
-  "exe_sha256": "d0c181251ab0b4714d344a09134ba4f5aa3c4962314b4892fc82660c17fc8c95",
+  "exe_sha256": "5245e9d449b34ae81cf463db644016e5d1081cfaa64ae1aaf1f3bb52065e0ccd",
   "fixtures": 96,
   "steps": 14592,
   "combined_fnv32": "292dc3fd",
   "original_evidence_sha256": "1e828270d72bcc24b0872c258c1c0110e41ca9636044c1a223cf1bb3c9f4c086",
-  "readout_proof_sha256": "2e13e4f5b9ec3c51ac24c6dfdb94bd8d8c220ec0b5a9e527644fba4afe28b366",
+  "readout_proof_sha256": "efe5e84bfc16ddf0b5549bc7f152d113c58a9205e9433aed906f1f34cdd60af9",
   "rendered_pixels": 12096,
-  "native_runtime_sha256": "3ab51d7237af415f91660ae5aab3113881600078f5182e4f0b6d0a47bf89f13c",
+  "native_runtime_sha256": "45ceb07103ec686e54bd52457f6cfb683d7ba1b9488024716325c7093c4cd646",
   "inactive_digit_timers": 21,
   "full_suite": true,
   "corrections": [

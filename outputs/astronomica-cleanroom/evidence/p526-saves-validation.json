@@ -18,7 +18,7 @@
   "byte_corruptions": 4956,
   "invalid_checksummed_states": 25,
   "fresh_process_slot": 6,
-  "fresh_process_fingerprint": "60127fe3",
+  "fresh_process_fingerprint": "158a6873",
   "music": "Ambient restarts from beginning",
   "compatibility": "Exploration v1/v2, P508 v3, P505 v4, P519 v5 and P524 v6 retained; previous-build slots unchanged",
   "limitations": [

@@ -198,3 +198,8 @@ Version22 preserves 86 measured quiet local2=0 P516 boundaries with active orbit
 ## P527 saves,25 October2026
 
 Version23 preserves quiet stopped-movie boundaries, selection and seen history, independent retained movie sample and all605runner words. All1105native frame reconstructions,fresh-process slot22,unchanged genuine frozen v22slot21 and the complete WASAPI suite PASS. Active playback,queued work and foreground audio remain excluded.
+
+
+## P502 saves,26 October2026
+
+Version24 preserves quiet nonflight choices and hidden stopped failed-return history, all605runner words,CometMotion scratch and dormant Jupiter geometry. Fresh-process slot23, all6728truncations/corruptions and genuine frozen v23slot22 compatibility plus complete native WASAPI suite PASS. Active flight,success transitions,pending work and foreground audio remain excluded.
