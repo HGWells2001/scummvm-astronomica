@@ -151,6 +151,47 @@ void ScriptRunner::auditP509Snapshot(Common::Array<uint32>&values,Common::Array<
   queue.push_back(program);queue.push_back(p.index);queue.push_back(p.since);queue.push_back(p.script[p.index].opcode);queue.push_back(p.script[p.index].delay);
  }
 }
+bool ScriptRunner::trustedP504PollProgram()const{
+ if(!_p504PollSupport||!_cometHandler||_programs.size()!=3||_programs[0].size()!=11)return false;
+ const int ops[]={31,32,45,31,32,9,23,9,5,42,41},delays[]={0,0,-1,0,0,400,4400,6500,3500,-1,200},counts[]={6,3,0,6,3,1,6,1,1,0,1};
+ const int32 args[11][6]={{1,8,1,0,0,0},{1,8,1},{},{1,7,1,0,0,0},{1,8,1},{3},{25,0,0,0,0,0},{15},{527},{},{0}};
+ for(uint i=0;i<11;++i){const Command&c=_programs[0][i];if(c.opcode!=ops[i]||c.delay!=delays[i]||c.args.size()!=uint(counts[i])||!c.text.empty())return false;for(uint j=0;j<c.args.size();++j)if(c.args[j]!=args[i][j])return false;}
+ return true;
+}
+bool ScriptRunner::validP504PollValues(const Common::Array<uint32>&w,uint32 now)const{
+ if(w.size()!=607||int32(now-w[601])<0||int32(now-w[606])<0||(w[605]!=0&&w[605]!=10)||(w[605]==0&&w[606]!=w[601]))return false;
+ Common::Array<uint32>base;for(uint i=0;i<605;++i)base.push_back(w[i]);if(!validPersistentState(base)||w[300]<1||w[300]>4||w[303]>15||w[306]<1||w[306]>4||w[321]||w[324])return false;
+ uint mask=0;for(uint i=3;i<=6;++i){if(w[300+3*i]>1)return false;mask|=w[300+3*i]<<(i-3);}if(mask==15)return false;
+ for(uint i=0;i<100;++i){const uint width=i==0?8U:i==8?1U:i<9?20U:0U;if(w[301+3*i]!=width||w[302+3*i]!=uint32(i<9)||w[301+3*i]!=uint32(_widths[1][i])||w[302+3*i]!=uint32(_known[1][i]))return false;}
+ return true;
+}
+bool ScriptRunner::exportP504PollState(Common::Array<uint32>&w,uint32 now)const{
+ if(!trustedP504PollProgram()||_pending.size()!=1||!_actions.empty()||_clicksBlocked)return false;
+ const Pending&p=_pending[0];if((p.index!=0&&p.index!=10)||p.script.size()!=11)return false;
+ for(uint i=0;i<11;++i){const Command&a=p.script[i],&b=_programs[0][i];if(a.opcode!=b.opcode||a.delay!=b.delay||a.args!=b.args||a.text!=b.text)return false;}
+ Common::Array<uint32>saved;exportSettledValues(saved);saved.push_back(_variantRound);saved.push_back(_variantMask);saved.push_back(p.index);saved.push_back(p.since);if(!validP504PollValues(saved,now))return false;w=saved;return true;
+}
+bool ScriptRunner::importP504PollState(const Common::Array<uint32>&w,uint32 now){
+ if(!trustedP504PollProgram()||!scriptsIdle()||!validP504PollValues(w,now))return false;
+ importSettledValues(w);_variantRound=w[603];_variantMask=w[604];_pending.push_back(Pending{_programs[0],w[605],w[606]});++_pendingEpoch;return true;
+}
+bool ScriptRunner::verifyP504PollSnapshots()const{
+ Common::Array<uint32>base;if(!exportP504PollState(base,0))return false;uint cases=0,rejected=0,excluded=0;
+ for(uint index:{0U,10U})for(uint32 origin:{1000U,0xfffffff0U})for(uint age:{0U,1U,199U,200U,201U,1000U}){
+  Common::Array<uint32>w=base;w[601]=origin;w[605]=index;w[606]=index?origin+200:origin;const uint32 now=w[606]+age;
+  ScriptRunner expected=*this,actual=*this;expected.clear();actual.clear();expected.importSettledValues(w);expected._variantRound=w[603];expected._variantMask=w[604];expected._pending.push_back(Pending{expected._programs[0],index,w[606]});
+  if(!actual.importP504PollState(w,now)||expected.probeDiagnosticHash(false)!=actual.probeDiagnosticHash(false))return false;
+  for(uint n=0;n<101;++n){const uint32 at=now+n*10;expected.tick(at);actual.tick(at);if(expected.probeDiagnosticHash(false)!=actual.probeDiagnosticHash(false))return false;for(const Pending&p:actual._pending)if(p.index==0&&p.since!=origin)return false;}
+  ++cases;
+ }
+ ScriptRunner recipient=*this;recipient.clear();const uint32 untouched=recipient.probeDiagnosticHash(true);
+ auto reject=[&](const Common::Array<uint32>&w,uint32 now){if(recipient.importP504PollState(w,now)||recipient.probeDiagnosticHash(true)!=untouched)return false;++rejected;return true;};
+ for(uint at:{300U,303U,306U,309U,321U,324U,301U,302U,601U,605U,606U}){Common::Array<uint32>w=base;w[at]=(at==601||at==606)?1U:0xfffffffeU;if(!reject(w,0)){debug("P504 poll invalid fixture failed at%u",at);return false;}}
+ Common::Array<uint32>bad=base;bad[605]=3;if(!reject(bad,0))return false;bad=base;bad.remove_at(606);if(!reject(bad,0))return false;
+ for(uint kind=0;kind<6;++kind){ScriptRunner badRunner=*this;if(kind==0)badRunner._pending[0].index=3;if(kind==1)badRunner._pending.push_back(badRunner._pending[0]);if(kind==2)badRunner._actions.push_back(Action{});if(kind==3)badRunner._clicksBlocked=true;if(kind==4)badRunner._programs[0][3].args[2]=0;if(kind==5)badRunner._p504PollSupport=false;Common::Array<uint32>out;out.push_back(123);const Common::Array<uint32>before=out;const uint32 old=badRunner.probeDiagnosticHash(true);if(badRunner.exportP504PollState(out,0)||out!=before||badRunner.probeDiagnosticHash(true)!=old)return false;++excluded;}
+ debug("Astronomica P504 poll kernel snapshots: PASS (%u timing cases, %u atomic import rejections, %u rejected export shapes; index3 explicitly excluded)",cases,rejected,excluded);return cases==24&&rejected==13&&excluded==6;
+}
+
 uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
  uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());
  for(const Pending&p:_pending){add(p.index);add(p.since);add(p.script.size());for(const Command&c:p.script){add(c.opcode);add(c.delay);add(c.args.size());for(int32 v:c.args)add(v);}}
@@ -986,7 +1027,7 @@ void ScriptRunner::tick(uint32 now) {
  for (uint i = 0; i < count; ++i) {
   const Pending p = _pending[index];
   const int32 delay = p.script[p.index].delay;
-  if (p.script[p.index].opcode == 41 && p.script[p.index].args.size() == 1 && !p.script[p.index].args[0] && delay == 200)
+  if (_programs.size() == 11 && _programs[0].size() == 7 && p.script[p.index].opcode == 41 && p.script[p.index].args.size() == 1 && !p.script[p.index].args[0] && delay == 200)
    debug("Probe audit poll: %u %u %d %u %u %u",now,p.since,delay,uint(int32(now-p.since) >= delay),count,p.index);
 
   if (delay == 0 || int32(now - p.since) >= delay) {

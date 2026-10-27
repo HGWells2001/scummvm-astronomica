@@ -36,7 +36,10 @@ elif (root/'evidence/p509-saves-validation.json').exists():
  head=head.replace('Import GAMESTAT originale', 'P509 conserva il narratore originale in attesa, i due cieli ordinari e le animazioni nascoste; altre code e voci attive restano escluse. Import GAMESTAT originale')
 elif (root/'evidence/p521-saves-validation.json').exists():
  head=head.replace('22 ottobre 2026','23 ottobre 2026')
-if (root/'evidence/p503-saves-validation.json').exists():
+if (root/'evidence/p504-saves-validation.json').exists():
+ head=head.replace('25 ottobre 2026','27 ottobre 2026').replace('26 ottobre 2026','27 ottobre 2026')
+ head=head.replace('Import GAMESTAT originale', 'P504 conserva orbite parziali e il poll originale agli indici0/10, con posizione e timer indipendenti; altre code e transizioni restano escluse. Import GAMESTAT originale')
+elif (root/'evidence/p503-saves-validation.json').exists():
  head=head.replace('25 ottobre 2026','26 ottobre 2026')
  head=head.replace('Import GAMESTAT originale', 'P503 conserva scelte e orbite parziali con timer indipendenti dei partner; ascesa, rilanci falliti di bersagli gia risolti e transizioni restano esclusi. Import GAMESTAT originale')
 elif (root/'evidence/p502-saves-validation.json').exists():

@@ -91,6 +91,10 @@ public:
  bool exportP509PendingState(Common::Array<uint32> &words, uint32 now) const;
  bool importP509PendingState(const Common::Array<uint32> &words, uint32 now);
  bool verifyP509PendingSnapshots(const ScriptRunner &recipient, uint32 now) const;
+ void setP504PollSupport(bool value) { _p504PollSupport=value; }
+ bool exportP504PollState(Common::Array<uint32>&words,uint32 now) const;
+ bool importP504PollState(const Common::Array<uint32>&words,uint32 now);
+ bool verifyP504PollSnapshots() const;
  void auditP509Snapshot(Common::Array<uint32> &values, Common::Array<uint32> &queue) const;
  uint32 probeDiagnosticHash(bool strict) const;
  bool exportPersistentState(Common::Array<uint32> &words) const;
@@ -108,6 +112,9 @@ public:
  bool importVariantState(const Common::Array<uint32> &words);
  static bool supports(const Script &script, bool allowTimed = false);
 private:
+ bool _p504PollSupport=false;
+ bool trustedP504PollProgram() const;
+ bool validP504PollValues(const Common::Array<uint32>&words,uint32 now) const;
  bool _p509PendingSupport=false;
  bool trustedP509Program() const;
  bool validP509PendingValues(const Common::Array<uint32> &words, uint32 now) const;

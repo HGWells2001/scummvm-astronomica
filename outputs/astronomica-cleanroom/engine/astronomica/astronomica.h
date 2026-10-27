@@ -140,6 +140,11 @@ private:
  Common::Error saveP503(Common::WriteStream*stream);
  Common::Error loadP503(Common::SeekableReadStream*stream);
  bool _p503AssetsValid=false;
+ bool verifyP504Saves();
+ bool canSaveP504() const;
+ Common::Error saveP504(Common::WriteStream*stream);
+ Common::Error loadP504(Common::SeekableReadStream*stream);
+ bool _p504AssetsValid=false;
  bool verifyCometPuzzles();
  bool verifyP527Saves();
  bool canSaveP527() const;

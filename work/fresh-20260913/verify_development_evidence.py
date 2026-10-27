@@ -116,6 +116,7 @@ p516_save_present=(root/'evidence/p516-saves-validation.json').is_file()
 p527_save_present=(root/'evidence/p527-saves-validation.json').is_file()
 p502_save_present=(root/'evidence/p502-saves-validation.json').is_file()
 p503_save_present=(root/'evidence/p503-saves-validation.json').is_file()
+p504_save_present=(root/'evidence/p504-saves-validation.json').is_file()
 expected_save_scenes={505,506,508,513,515,517,519,524,526,528,529,530,531,532,533,534,535,536,537}
 if probe_save_present:expected_save_scenes.add(522)
 if rendezvous_save_present:expected_save_scenes.add(514)
@@ -127,6 +128,7 @@ if p516_save_present:expected_save_scenes.add(516)
 if p527_save_present:expected_save_scenes.add(527)
 if p502_save_present:expected_save_scenes.add(502)
 if p503_save_present:expected_save_scenes.add(503)
+if p504_save_present:expected_save_scenes.add(504)
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
@@ -814,3 +816,46 @@ if p503_save_present:
  assert previous['origin_commit']=='13ea40c1adb016b2521fc51bf55785654d9ea0f5'
  for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
  print('P503v25 quiet partial-orbit saves and genuine frozen v24 integrity PASS')
+
+p504_inventory=root/'evidence/p504-save-original.json'
+if p504_inventory.exists():
+ research=json.loads(p504_inventory.read_text())
+ assert research['status']=='STATIC_ORIGINAL_INVENTORY_ONLY'
+ assert (research['source']['size'],research['command_count'],research['sprite_count'])==(805459,225,45)
+ original=Path('D:/astro/PLACES/P504/MEGAFILE.HYP');raw=original.read_bytes()
+ assert research['source']['sha256']==digest(original)=='dde86ef89aa520e16d006b41ddefece537f81901ad3e8db13c5a3bbe5e6009ba'
+ assert research['reader_sha256']==digest(root/'astro_reader.py')
+ assert research['structured_prefix']['size']==research['opaque_tail']['offset']==656595 and research['opaque_tail']['size']==148864
+ assert research['structured_prefix']['sha256']==hashlib.sha256(raw[:656595]).hexdigest()
+ assert research['opaque_tail']['sha256']==hashlib.sha256(raw[656595:]).hexdigest()
+ for asset in research['assets']:assert digest(Path('D:/astro/PLACES/P504')/asset['name'])==asset['sha256']
+ print('P504 original prefix profile and opaque original tail identities PASS; separate from native saves')
+if p504_save_present:
+ v=json.loads((root/'evidence/p504-saves-validation.json').read_text());proof=json.loads((root/'evidence/p504-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and not proof['diagnostic']
+ assert v['scope']==proof['scope']=='trusted_p504_partial_orbits' and v['format_version']==26 and v['payload_bytes']==7816
+ assert v['exe_sha256']==proof['exe_sha256']==m['exe_sha256'] and proof['metadata_listed'] and proof['slot']==25
+ assert v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ assert proof['audio_driver']=='native' and proof['actual_audio_driver']=='wasapi'
+ assert proof['truncations']==proof['corruptions']==proof['payload_bytes']==7816
+ assert (proof['direction_settings'],proof['speed_settings'])==(4,16)
+ assert proof['failed_launch_combinations']==252 and proof['timer_cases']>=18
+ assert proof['target_settings']==4 and proof['proper_solved_masks']==14 and proof['first_kind4_transitions']==4
+ assert proof['partial_boundaries']>0 and proof['handoffs']>0 and proof['excluded_solved_failure_histories']==4
+ assert proof['poll_timer_cases']>=24 and proof['rejected_poll_phases']>0
+ assert proof['future_outcome_checks']>=2 and proof['music_restart'] and proof['extended_atomic_state']
+ for key in ('boundaries','history_boundaries','dormant_boundaries','ordinary_boundaries','busy_rejections','prelaunch_boundaries',
+             'low_failure_boundaries','high_failure_boundaries','changed_control_history','retained_explosion_boundaries',
+             'private_cache_boundaries','successor_checks','invalid_states','natural_voice_ends'):
+  assert proof[key]>0 and v[key]==proof[key],key
+ for name,marker in [('p504-saves-runtime.log','P504 save verification: PASS'),('p504-saves-startup.log','P504 startup save: PASS'),('p503-previous-slot.log','P503 startup save: PASS')]:
+  text=(root/'evidence'/name).read_text()
+  assert marker in text and 'FAIL' not in text and text.rstrip().endswith('--- Log closed successfully.'),name
+  assert 'Using SDL Audio Driver "wasapi"' in text,name
+ previous=json.loads((root/'evidence/p503-previous-slot-proof.json').read_text())
+ assert previous['status']=='PASS' and previous['unchanged'] and previous['exe_sha256']==m['exe_sha256'] and previous['audio_driver']=='wasapi'
+ assert previous['producing_exe_sha256']=='1777ebb503b6a9389be9f55f46d1a2fc9a14357ea3042ab4bf9d0599083f4974'
+ assert previous['slot_sha256']=='eab9b475a17744f1ed29b4c6f3a0d69886a9b9a7ddb1d4a625cf1fb67654193f'
+ assert previous['origin_commit']=='768a3fd5cfd1c484d3dcacdf297a64ce8f1c6fd9'
+ for name,expected in proof['original_wav_sha256'].items():assert digest(Path('D:/astro/PLACES')/name)==expected
+ print('P504v26 trusted-poll partial-orbit saves and genuine frozen v25 integrity PASS')

@@ -1,0 +1,13 @@
+# P504 save research, 27 October 2026
+
+Status: same-build native WASAPI and complete compatibility verification PASS27October2026. Publication requires the separate export gate.
+
+The whole original `D:/astro/PLACES/P504/MEGAFILE.HYP` is 805459 bytes, SHA256 `dde86ef89aa520e16d006b41ddefece537f81901ad3e8db13c5a3bbe5e6009ba`. Its 656595-byte structured prefix contains 45 sprites, 9 local declarations, 3 initial programs and 225 commands. The remaining 148864 bytes are opaque and remain included in whole-file identity. No original Windows executable runtime is claimed.
+
+The 728-record native observation audit covers all 256 target/direction/speed settings, 252 failed launches, 14 proper partial solutions and 44 visible partner handoffs. It records the actual pending queue, all 605 runner words, every independent sprite record and private motion history. Bulk audio stops in that audit do not prove natural voice completion. The proposed 703-record state classification and observed sprite/control catalogs are evidence for validator design, not save/restore proofs.
+
+Unlike P503, ordinary P504 has a recurring original program. Native observations show index10 waiting for 200ms, index0 rescheduled using the original loadedAt, and a separate index3 conditional phase. The first contract retains exact original program0 at index0 or10 only, with literal since, a single pending program, no actions or input lock. Index3 must be rejected, and later execution through it after restoring an admitted phase must match the original queue/action timing. Do not drop the poll or restart it at load time.
+
+The proposed version26/slot25 payload is 7816 bytes: 11 header words, 45 independent 27-word sprite records, 607 runner words (605 persistent plus index/since), 118 private words, and 12 bytes of magic/version/checksum. Healthy incomplete masks0..14 and never-solved stopped failures are the initial useful scope. P504 failed relaunches clear solved flags while retaining a hidden partner's old motion; these histories require explicit exclusion rather than reconstruction from the flags.
+
+Before promotion, require whole original and exact scene/program profile binding, capability reset on every scene load, a prepared recipient runner before live mutation, all controls and partial masks, partner/clock/poll continuation, malformed-load atomicity, natural voice and Music handling, first/repeated completion, physical slot25 in a fresh process and metadata. Independent final review must bind exact source/executable/proof hashes. Production then requires native WASAPI target tests and the complete compatibility chain, including the genuine frozen P503 version25 slot24. All global project-completion percentages remain unestablished.
