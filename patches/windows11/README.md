@@ -50,14 +50,14 @@ For the second layout, the game also needs these unchanged verified files beneat
 
 These fingerprints were already used by the project's experimental engine to validate scene assets. A wrong signature produces a diagnostic report rather than a forced install. The new detector uses the known `ASTRO.EXE` signature, while the installer enforces the stronger resource-file fingerprints, so direct ScummVM imports are less guarded than this installer.
 
-The 5,000-byte MD5 convention matches the default ScummVM advanced detector. Do **not** substitute full-file MD5 for `ASTRO.EXE`. The script searches for these two files side-by-side, copies their containing folder including subdirectories, rechecks the copies, verifies `--list-engines`, then runs native `--detect`.
+The 5,000-byte MD5 convention matches the default ScummVM advanced detector. Do **not** substitute full-file MD5 for `ASTRO.EXE`. In the installed-folder layout the script searches for these files side-by-side. In the CD-root layout it instead verifies the resource fingerprints. In both cases it copies unchanged source files, verifies the local copy and runs the custom engine's `--detect`.
 
 If the ISO contains only installation archives or a different English revision, it reports that limitation without touching the binaries. Such variants need an additional verified extraction/detection path, not blindly changed hashes.
 
 
 ## When the installer says ASTRO.EXE was found but GAMEDATA was not recognized
 
-**Do not edit the accepted MD5 values to bypass this message.** The Astronomica engine has the same strict version detector as the installer. The CD might have an installer layout (files only materialize after a Windows 3.1 setup run), a GAMEDATA directory rather than a detector file, a split directory structure, or an unsupported executable/data revision.
+**Do not edit the accepted MD5 values to bypass this message.** The installer now supports a validated direct-CD `PLACES` folder layout as well. If detection still fails, your disc might require original setup extraction, a supported `ASTRO.EXE` copied from another directory, or additional validation of an unrecognized game revision. The updated engine recognizes the exact known `ASTRO.EXE` fingerprint without needing a separate `GAMEDATA` file for the CD-root variant.
 
 The updated installer now writes a **read-only** report automatically when detection fails. Find it at:
 
@@ -81,7 +81,7 @@ Share the report to identify whether the data must be extracted by running the o
 * Existing engine validation covers many scenes and tests, but it is not proof of an uninterrupted, complete audiovisual playthrough.
 * No original commercial data, Windows 3.1 binaries, or proprietary media is distributed.
 
-If the ISO is a different version, record the installer's error plus the names and hashes found, and add a separate verified detector entry only after checking format and engine compatibility.
+If the ISO is a different version, record the installer's error plus the names and hashes found; support requires checking actual file formats and engine compatibility, not simply changing the detector.
 
 ### Alternative for original Win16 behavior
 
