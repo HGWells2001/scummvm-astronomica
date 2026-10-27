@@ -107,9 +107,20 @@ try {
     }
     if ($null -eq $gameSource) {
         $discovered = if ($exes.Count -eq 0) { "No ASTRO.EXE exists on the CD." } else {
-            "Found ASTRO.EXE, but no adjacent GAMEDATA with the supported English version signatures."
+            "Found ASTRO.EXE, but not a same-directory ASTRO.EXE / GAMEDATA pair with the supported English signatures."
         }
-        throw "$discovered This engine accepts only the checked game revision. No binaries were patched."
+        $diagnosticScript = Join-Path $PSScriptRoot "Diagnose-Astronomica.ps1"
+        $diagnosticReport = Join-Path $env:TEMP "Astronomica-ISO-Diagnostic.txt"
+        if (Test-Path -LiteralPath $diagnosticScript -PathType Leaf) {
+            try {
+                & $diagnosticScript -SourceRoot $isoRoot -ReportPath $diagnosticReport
+                Write-Warning "Copy the diagnostic text report from: $diagnosticReport"
+            } catch {
+                Write-Warning "Automatic ISO diagnosis failed: $($_.Exception.Message)"
+                Write-Warning "You can run Diagnose-Astronomica.ps1 -SourceRoot $isoRoot separately."
+            }
+        }
+        throw "$discovered The engine supports only the checked game revision; changing the installer signatures alone cannot fix the native engine. No binaries were patched."
     }
 
     Write-Host "Verified supported English ASTRO.EXE and GAMEDATA."
