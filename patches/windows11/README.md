@@ -26,12 +26,29 @@ All copied original game files are kept under `Game\`; settings, saves, and logs
 
 ## Version integrity
 
-The installer recognizes exactly the English game-data revision in `outputs/astronomica-cleanroom/engine/astronomica/detection.cpp`:
+The installer recognizes the supported English game-data revision in `outputs/astronomica-cleanroom/engine/astronomica/detection.cpp` using **two layouts**:
+
+1. **Installed folder:** `ASTRO.EXE` and the **file** `GAMEDATA` are present alongside each other, with the original exact ScummVM detector signatures.
+2. **Original CD-root resource folders:** `PLACES` (including `PLACES\P1\MEGAFILE.HYP`) contains the actual assets but there is **no** `GAMEDATA` detector file. A genuine original `ASTRO.EXE` with the recognized signature is required, along with three full-file verified `MEGAFILE.HYP` resource fingerprints. If the executable is elsewhere on the CD, the installer copies the validated executable beside the resource folders in the local destination, leaving the ISO untouched.
+
+**Important:** The second detection entry is new in this branch. You **must recompile** the custom ScummVM engine from these branch sources before `--detect` will recognize the CD-root layout. An older build will still reject it.
+
+
 
 | File | Expected bytes | MD5 of first 5,000 bytes |
 | --- | ---: | --- |
 | `ASTRO.EXE` | 418376 | `14929fa8e52d7e3bc539244413703ecb` |
 | `GAMEDATA` | 1604 | `84099c2580e5c71beec97ca3e52a5967` |
+
+For the second layout, the game also needs these unchanged verified files beneath the same `PLACES` directory root:
+
+| File | Expected bytes | Full-file FNV-1a 32-bit |
+| --- | ---: | ---: |
+| `PLACES/P502/MEGAFILE.HYP` | 669631 | 2443827672 |
+| `PLACES/P503/MEGAFILE.HYP` | 782595 | 231093171 |
+| `PLACES/P527/MEGAFILE.HYP` | 348102 | 3684137004 |
+
+These fingerprints were already used by the project's experimental engine to validate scene assets. A wrong signature produces a diagnostic report rather than a forced install. The new detector uses the known `ASTRO.EXE` signature, while the installer enforces the stronger resource-file fingerprints, so direct ScummVM imports are less guarded than this installer.
 
 The 5,000-byte MD5 convention matches the default ScummVM advanced detector. Do **not** substitute full-file MD5 for `ASTRO.EXE`. The script searches for these two files side-by-side, copies their containing folder including subdirectories, rechecks the copies, verifies `--list-engines`, then runs native `--detect`.
 
