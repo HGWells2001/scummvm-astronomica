@@ -46,6 +46,43 @@ function Test-OriginalFile {
     return (Get-DetectionMd5 -FilePath $Path) -eq $ExpectedMd5
 }
 
+
+# The native engine reads PLACES/P*/MEGAFILE.HYP; GAMEDATA is a detector
+# marker for the installed revision, not a prerequisite for scene decoding.
+# FNV-1a fingerprints below come from the engine's existing asset guards.
+function Get-Fnv1a32 {
+    param([Parameter(Mandatory = $true)][string] $FilePath)
+    $stream = [IO.File]::OpenRead($FilePath)
+    try {
+        [long]$hash = 2166136261
+        $buffer = New-Object byte[] 65536
+        while (($n = $stream.Read($buffer, 0, $buffer.Length)) -gt 0) {
+            for ($i = 0; $i -lt $n; $i++) {
+                $hash = ((($hash -bxor [long]$buffer[$i]) * [long]16777619) % [long]4294967296)
+            }
+        }
+        return [uint32]$hash
+    }
+    finally { $stream.Dispose() }
+}
+
+function Test-CdRootResources {
+    param([Parameter(Mandatory = $true)][string] $GameFolder)
+    if (-not (Test-Path -LiteralPath (Join-Path $GameFolder "PLACES\P1\MEGAFILE.HYP") -PathType Leaf)) { return $false }
+    $expected = @(
+        @("PLACES\P502\MEGAFILE.HYP", [long]669631, [uint32]2443827672),
+        @("PLACES\P503\MEGAFILE.HYP", [long]782595, [uint32]231093171),
+        @("PLACES\P527\MEGAFILE.HYP", [long]348102, [uint32]3684137004)
+    )
+    foreach ($record in $expected) {
+        $file = Join-Path $GameFolder ([string]$record[0])
+        if (-not (Test-Path -LiteralPath $file -PathType Leaf)) { return $false }
+        if ((Get-Item -LiteralPath $file).Length -ne [long]$record[1]) { return $false }
+        if ((Get-Fnv1a32 -FilePath $file) -ne [uint32]$record[2]) { return $false }
+    }
+    return $true
+}
+
 function Find-Engine {
     param([string] $RequestedExe, [string] $ProjectRoot)
     $proposals = New-Object System.Collections.Generic.List[string]
@@ -96,13 +133,35 @@ try {
     Write-Host "ISO mounted at $isoRoot"
     $exes = @(Get-ChildItem -LiteralPath $isoRoot -Filter "ASTRO.EXE" -Recurse -File -Force -ErrorAction Stop)
     $gameSource = $null
+    $layoutMode = ""
+    $overlayExe = ""
     foreach ($exe in $exes) {
         $base = $exe.DirectoryName
         $data = Join-Path $base "GAMEDATA"
         if ((Test-OriginalFile -Path $exe.FullName -ExpectedLength 418376 -ExpectedMd5 "14929fa8e52d7e3bc539244413703ecb") -and
             (Test-OriginalFile -Path $data -ExpectedLength 1604 -ExpectedMd5 "84099c2580e5c71beec97ca3e52a5967")) {
             $gameSource = $base
+            $layoutMode = "installed"
             break
+        }
+    }
+    if ($null -eq $gameSource) {
+        # Many original CDs store PLACES and SOUNDS directly on disc.
+        # Accept that layout only if the exact supported ASTRO.EXE and
+        # three full-file original scene signatures also match.
+        $placeDirectories = @(Get-ChildItem -LiteralPath $isoRoot -Directory -Filter "PLACES" -Recurse -Force -ErrorAction Stop)
+        foreach ($exe in $exes) {
+            if (-not (Test-OriginalFile -Path $exe.FullName -ExpectedLength 418376 -ExpectedMd5 "14929fa8e52d7e3bc539244413703ecb")) { continue }
+            foreach ($places in $placeDirectories) {
+                $candidate = $places.Parent.FullName
+                if (Test-CdRootResources -GameFolder $candidate) {
+                    $gameSource = $candidate
+                    $overlayExe = $exe.FullName
+                    $layoutMode = "cd-root"
+                    break
+                }
+            }
+            if ($null -ne $gameSource) { break }
         }
     }
     if ($null -eq $gameSource) {
@@ -123,12 +182,17 @@ try {
         throw "$discovered The engine supports only the checked game revision; changing the installer signatures alone cannot fix the native engine. No binaries were patched."
     }
 
-    Write-Host "Verified supported English ASTRO.EXE and GAMEDATA."
+    Write-Host "Verified supported English game resources (layout: $layoutMode)."
     New-Item -ItemType Directory -Force -Path $dataRoot, $savesRoot | Out-Null
     Write-Host "Copying unchanged game data to $dataRoot"
     & robocopy.exe $gameSource $dataRoot /E /COPY:DAT /DCOPY:DAT /R:2 /W:1 /NFL /NDL /NP
     if ($LASTEXITCODE -ge 8) {
         throw "Robocopy failed with exit code $LASTEXITCODE."
+    }
+    if ($layoutMode -eq "cd-root" -and $overlayExe) {
+        # Copy the verified executable to the data root if it was stored
+        # elsewhere on the disc. The mounted ISO itself is never changed.
+        Copy-Item -LiteralPath $overlayExe -Destination (Join-Path $dataRoot "ASTRO.EXE") -Force
     }
 }
 finally {
@@ -137,8 +201,13 @@ finally {
     }
 }
 
-if (-not (Test-OriginalFile -Path (Join-Path $dataRoot "ASTRO.EXE") -ExpectedLength 418376 -ExpectedMd5 "14929fa8e52d7e3bc539244413703ecb") -or
-    -not (Test-OriginalFile -Path (Join-Path $dataRoot "GAMEDATA") -ExpectedLength 1604 -ExpectedMd5 "84099c2580e5c71beec97ca3e52a5967")) {
+$exeValid = Test-OriginalFile -Path (Join-Path $dataRoot "ASTRO.EXE") -ExpectedLength 418376 -ExpectedMd5 "14929fa8e52d7e3bc539244413703ecb"
+$resourcesValid = if ($layoutMode -eq "cd-root") {
+    Test-CdRootResources -GameFolder $dataRoot
+} else {
+    Test-OriginalFile -Path (Join-Path $dataRoot "GAMEDATA") -ExpectedLength 1604 -ExpectedMd5 "84099c2580e5c71beec97ca3e52a5967"
+}
+if (-not $exeValid -or -not $resourcesValid) {
     throw "Game files failed post-copy integrity verification."
 }
 
@@ -205,6 +274,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Launch-Astronomica
 
 Write-Host ""
 Write-Host "Original game files verified and installed: $dataRoot"
+if ($layoutMode -eq "cd-root") { Write-Host "CD-root variant requires a newly compiled Astronomica engine with the updated detection.cpp in this branch." }
 if ([string]::IsNullOrWhiteSpace($engine)) {
     Write-Warning "An Astronomica-enabled custom ScummVM executable was NOT found. Build it first, then re-run this installer with -ScummVMExe."
     exit 2
