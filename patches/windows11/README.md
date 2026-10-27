@@ -37,6 +37,25 @@ The 5,000-byte MD5 convention matches the default ScummVM advanced detector. Do 
 
 If the ISO contains only installation archives or a different English revision, it reports that limitation without touching the binaries. Such variants need an additional verified extraction/detection path, not blindly changed hashes.
 
+
+## When the installer says ASTRO.EXE was found but GAMEDATA was not recognized
+
+**Do not edit the accepted MD5 values to bypass this message.** The Astronomica engine has the same strict version detector as the installer. The CD might have an installer layout (files only materialize after a Windows 3.1 setup run), a GAMEDATA directory rather than a detector file, a split directory structure, or an unsupported executable/data revision.
+
+The updated installer now writes a **read-only** report automatically when detection fails. Find it at:
+
+`%TEMP%\Astronomica-ISO-Diagnostic.txt`
+
+Open the report in Notepad. It lists candidate files with sizes and MD5s of their first 5,000 bytes, the main CD directory entries, and common installer/archives. It does not copy or modify original game data when detection fails.
+
+To produce the report independently after mounting the ISO (for example at `E:\`), open PowerShell in the repository root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\patches\windows11\Diagnose-Astronomica.ps1 -SourceRoot "E:\"
+```
+
+Share the report to identify whether the data must be extracted by running the original installer in Windows 3.1/DOSBox-X, reorganized safely, or specifically ported to a different English revision. Because the actual ISO contents have not yet been verified on the development machine, no claim is made that this diagnostic alone repairs an unsupported revision.
+
 ## Important limitations
 
 * This is **not** a patch that makes the 16-bit original `ASTRO.EXE` itself run on Windows 11.
