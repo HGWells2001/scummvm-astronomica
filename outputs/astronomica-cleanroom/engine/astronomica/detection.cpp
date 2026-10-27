@@ -6,6 +6,7 @@ static const PlainGameDescriptor games[] = {
 };
 static const ADGameDescription descriptions[] = {
  {"astronomica", "Experimental", AD_ENTRY2s("GAMEDATA", "84099c2580e5c71beec97ca3e52a5967", 1604, "ASTRO.EXE", "14929fa8e52d7e3bc539244413703ecb", 418376), Common::EN_ANY, Common::kPlatformWindows, ADGF_UNSTABLE, GUIO0()},
+ {"astronomica", "CD root data layout (verified by installer)", AD_ENTRY1s("ASTRO.EXE", "14929fa8e52d7e3bc539244413703ecb", 418376), Common::EN_ANY, Common::kPlatformWindows, ADGF_UNSTABLE, GUIO0()},
  AD_TABLE_END_MARKER
 };
 static const char *const globs[] = {"PLACES", "SETUP", nullptr};
