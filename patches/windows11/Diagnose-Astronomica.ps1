@@ -32,6 +32,23 @@ function Get-DetectorMd5 {
     } finally { $stream.Dispose() }
 }
 
+
+function Get-Fnv1a32 {
+    param([Parameter(Mandatory = $true)][string] $FilePath)
+    $stream = [IO.File]::OpenRead($FilePath)
+    try {
+        [long]$hash = 2166136261
+        $buffer = New-Object byte[] 65536
+        while (($n = $stream.Read($buffer, 0, $buffer.Length)) -gt 0) {
+            for ($i = 0; $i -lt $n; $i++) {
+                $hash = ((($hash -bxor [long]$buffer[$i]) * [long]16777619) % [long]4294967296)
+            }
+        }
+        return [uint32]$hash
+    }
+    finally { $stream.Dispose() }
+}
+
 $root = (Resolve-Path -LiteralPath $SourceRoot).ProviderPath
 if (-not (Test-Path -LiteralPath $root -PathType Container)) {
     throw "SourceRoot must be a mounted CD or a directory."
@@ -94,6 +111,38 @@ foreach ($item in $archives) {
     $relative = $item.FullName.Substring($root.TrimEnd('\').Length).TrimStart('\')
     $lines.Add("$relative  bytes=$($item.Length)")
 }
+
+$lines.Add("")
+$lines.Add("CD ROOT PLACES LAYOUT (FNV-1a 32-bit is full-file)")
+$placesDirs = @($dirs | Where-Object { $_.Name -ieq "PLACES" } | Sort-Object FullName)
+if ($placesDirs.Count -eq 0) { $lines.Add("No PLACES directory found.") }
+foreach ($places in $placesDirs) {
+    $game = $places.Parent.FullName
+    $lines.Add("PLACES folder: $($places.FullName)")
+    $startScene = Join-Path $game "PLACES\P1\MEGAFILE.HYP"
+    $lines.Add("Startup scene P1: $(if (Test-Path -LiteralPath $startScene -PathType Leaf) { 'PRESENT' } else { 'MISSING' })")
+    foreach ($record in @(
+        @("PLACES\P502\MEGAFILE.HYP", [long]669631, [uint32]2443827672),
+        @("PLACES\P503\MEGAFILE.HYP", [long]782595, [uint32]231093171),
+        @("PLACES\P527\MEGAFILE.HYP", [long]348102, [uint32]3684137004)
+    )) {
+        $candidate = Join-Path $game ([string]$record[0])
+        if (Test-Path -LiteralPath $candidate -PathType Leaf) {
+            try {
+                $size = (Get-Item -LiteralPath $candidate).Length
+                $fnv = Get-Fnv1a32 -FilePath $candidate
+                $ok = $size -eq [long]$record[1] -and $fnv -eq [uint32]$record[2]
+                $label = if ($ok) { "MATCH" } else { "DIFFERENT" }
+                $lines.Add("$label $candidate size=$size fnv32=$fnv expected_size=$($record[1]) expected_fnv32=$($record[2])")
+            } catch {
+                $lines.Add("READ_ERROR $candidate $($_.Exception.Message)")
+            }
+        } else {
+            $lines.Add("MISSING $candidate")
+        }
+    }
+}
+
 $lines.Add("")
 $lines.Add("SUPPORTED SAME-DIRECTORY FILE PAIRS")
 $pairs = 0
