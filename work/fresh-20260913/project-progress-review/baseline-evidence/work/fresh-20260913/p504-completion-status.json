@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+  "published_commit": "1af25c6ced7b315e2c7bbd7bba3c58d125a0c022",
+  "native_save_scenes": 30,
+  "clean_clone": true,
+  "remote_verified": true
+}

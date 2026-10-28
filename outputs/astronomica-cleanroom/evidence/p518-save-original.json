@@ -3670,20 +3670,20 @@
     },
     "astronomica.cpp": {
       "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\outputs\\astronomica-cleanroom\\engine\\astronomica\\astronomica.cpp",
-      "sha256": "920fe2dfad10610dd66b0eaf215a1cd0ba38a14d79bc45296b4de437eb54ef71",
+      "sha256": "7e239eab473b8c686e4b4e5b93f1f3049ac6d09552cc6efbf664dfa9bb4c627d",
       "anchors": {
-        "planet.planetMotion = 1;": 3213,
-        "planet.planetMotion = 2;": 3220,
-        "const int result = advancePlanet(": 3525,
-        "bool AstronomicaEngine::verifyP518Puzzle()": 8598
+        "planet.planetMotion = 1;": 3294,
+        "planet.planetMotion = 2;": 3301,
+        "const int result = advancePlanet(": 3606,
+        "bool AstronomicaEngine::verifyP518Puzzle()": 8735
       }
     },
     "script.cpp": {
       "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\outputs\\astronomica-cleanroom\\engine\\astronomica\\script.cpp",
-      "sha256": "3f203ec5e43006321dc9a3c0f0dd86ef659b4134f61b79798a977a00c3a03cc5",
+      "sha256": "d9a73fe1bc6a8291d2bb0625a293141ee3f79b19f101254986813562927b6913",
       "anchors": {
-        "else if (c.args[0] == 12) {": 469,
-        "} else if (c.opcode == 39) {": 931
+        "else if (c.args[0] == 12) {": 488,
+        "} else if (c.opcode == 39) {": 950
       }
     },
     "resource.h": {

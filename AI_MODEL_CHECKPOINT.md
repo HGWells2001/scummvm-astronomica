@@ -1,10 +1,10 @@
-# Astronomica: checkpoint AI,27 ottobre2026
+# Astronomica: checkpoint AI,28 ottobre2026
 
 Modello dichiarato dall'utente: GPT-6.1 Sol, ragionamento medio,25 ottobre2026. Nessun cambio automatico applicato; selezione del client non verificabile tramite i tool disponibili.
 
-# Ripresa: salvataggi P504,27 ottobre2026
+# Ripresa: salvataggi P501,28 ottobre2026
 
-Formato v26:7816byte,885 ripristini verificati. Conserva scelte e orbite parziali, con posizione,fotogramma e timer indipendenti dei due oggetti di ogni coppia. Tutti i 4 bersagli, 4 direzioni e 16 velocita, 14 maschere parziali, 605 valori e indice/epoca del poll originale conservati, geometria Jupiter dormiente, slot25 in nuovo processo e metadata PASS. Vero slotv25 congelato invariato e suite completa WASAPI sullo stesso eseguibile PASS.
-Sono esclusi ascesa, indice3, rilanci falliti di bersagli gia risolti, altre code, voci e transizioni complete. 30/35 scene con salvataggi verificati (85.7% della copertura salvataggi), nessuna percentuale globale attendibile. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+Formato v27:5896byte,63 ripristini verificati. Conserva i confini pronti al lancio, il poll originale0/7, sette identita di sfondo, la storia dei fotogrammi nascosti e dei movimenti privati della palla. Slot26 in nuovo processo, metadata, vero slotv26 congelato e suite completa WASAPI sullo stesso eseguibile PASS.
+Voli, pulizia generata in coda, voci in primo piano e completamento esclusi. 31/35 scene con salvataggi verificati (88.6% della copertura salvataggi). Indice complessivo e criteri di accettazione: PROJECT-PROGRESS.md; nessuna stima delle ore residue. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
 
-Originali D:/astro; cleanroom dal13settembre2026. Checkpoint:finish_p504_saves.py; non eseguire finalizzatori precedenti da soli.
+Originali D:/astro; cleanroom dal13settembre2026. Checkpoint:finish_p501_saves.py; non eseguire finalizzatori precedenti da soli.

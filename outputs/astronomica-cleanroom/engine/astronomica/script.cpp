@@ -192,6 +192,25 @@ bool ScriptRunner::verifyP504PollSnapshots()const{
  debug("Astronomica P504 poll kernel snapshots: PASS (%u timing cases, %u atomic import rejections, %u rejected export shapes; index3 explicitly excluded)",cases,rejected,excluded);return cases==24&&rejected==13&&excluded==6;
 }
 
+bool ScriptRunner::trustedP501ReadyProgram()const{
+ if(!_p501ReadySupport||!_ballHandler||_programs.size()!=1||_programs[0].size()!=8)return false;
+ const int ops[]={31,28,10,23,5,29,42,41},delays[]={0,0,3500,0,3500,150,-1,200},counts[]={6,1,1,6,1,1,0,1};const int32 args[8][6]={{1,3,1,0,0,0},{-1},{-1},{25,0,0,0,0,0},{388},{-1},{},{0}};
+ for(uint i=0;i<8;++i){const Command&c=_programs[0][i];if(c.opcode!=ops[i]||c.delay!=delays[i]||c.args.size()!=uint(counts[i])||!c.text.empty())return false;for(uint j=0;j<c.args.size();++j)if(c.args[j]!=args[i][j])return false;}return true;
+}
+bool ScriptRunner::validP501ReadyValues(const Common::Array<uint32>&w,uint32 now)const{
+ if(w.size()!=607||int32(now-w[601])<0||int32(now-w[606])<0||(w[605]!=0&&w[605]!=7)||(w[605]==0&&w[606]!=w[601]))return false;
+ Common::Array<uint32>base;for(uint i=0;i<605;++i)base.push_back(w[i]);if(!validPersistentState(base)||w[300]>5||w[303]||w[306]>2||w[309]||w[312]!=1)return false;
+ for(uint i=0;i<100;++i)if(w[301+3*i]!=uint32(_widths[1][i])||w[302+3*i]!=uint32(_known[1][i]))return false;return true;
+}
+bool ScriptRunner::exportP501ReadyState(Common::Array<uint32>&w,uint32 now)const{
+ if(!trustedP501ReadyProgram()||_pending.size()!=1||!_actions.empty()||_clicksBlocked)return false;const Pending&p=_pending[0];if((p.index!=0&&p.index!=7)||p.script.size()!=8)return false;
+ for(uint i=0;i<8;++i){const Command&a=p.script[i],&b=_programs[0][i];if(a.opcode!=b.opcode||a.delay!=b.delay||a.args!=b.args||a.text!=b.text)return false;}
+ Common::Array<uint32>saved;exportSettledValues(saved);saved.push_back(_variantRound);saved.push_back(_variantMask);saved.push_back(p.index);saved.push_back(p.since);if(!validP501ReadyValues(saved,now))return false;w=saved;return true;
+}
+bool ScriptRunner::importP501ReadyState(const Common::Array<uint32>&w,uint32 now){
+ if(!trustedP501ReadyProgram()||!scriptsIdle()||!validP501ReadyValues(w,now))return false;importSettledValues(w);_variantRound=w[603];_variantMask=w[604];_pending.push_back(Pending{_programs[0],w[605],w[606]});++_pendingEpoch;return true;
+}
+
 uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
  uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());
  for(const Pending&p:_pending){add(p.index);add(p.since);add(p.script.size());for(const Command&c:p.script){add(c.opcode);add(c.delay);add(c.args.size());for(int32 v:c.args)add(v);}}

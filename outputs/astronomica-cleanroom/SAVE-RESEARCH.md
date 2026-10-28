@@ -213,3 +213,8 @@ Version25 preserves quiet choices, never-solved stopped failures and healthy par
 ## P504 saves,27 October2026
 
 Version26 preserves choices, never-solved stopped failures and healthy partial orbits with independent partner frames and motion epochs, all605runner words plus literal original poll index/since,CometMotion scratch and dormant Jupiter geometry. Fresh-process slot25, all7816truncations/corruptions and genuine frozen v25slot24 compatibility plus complete native WASAPI suite PASS. Primary ascent, index3, solved-target failed relaunch histories, completion, pending work other than the trusted poll and foreground audio remain excluded.
+
+
+## P501 saves,28 October2026
+
+Version27 preserves stopped ready-to-pitch boundaries, literal original poll0/7, seven background identities,all605runner words,independent sprite records and retained private ball/Comet/Jupiter history. All5896truncations/corruptions,fresh-process slot26 and genuine frozen v26slot25 plus complete native WASAPI suite PASS. Active pitches,generated cleanup,foreground voice and completion remain excluded.

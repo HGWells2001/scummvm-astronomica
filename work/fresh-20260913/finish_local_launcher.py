@@ -44,6 +44,8 @@ elif (root/'evidence/p503-saves-validation.json').exists():
  head=head.replace('Import GAMESTAT originale', 'P503 conserva scelte e orbite parziali con timer indipendenti dei partner; ascesa, rilanci falliti di bersagli gia risolti e transizioni restano esclusi. Import GAMESTAT originale')
 elif (root/'evidence/p502-saves-validation.json').exists():
  head=head.replace('25 ottobre 2026','26 ottobre 2026')
+if (root/'evidence/p501-saves-validation.json').exists():
+ head=head.replace('Import GAMESTAT originale', 'P501 conserva i confini pronti al lancio con poll originale0/7, sfondo e storia dei tentativi precedenti; voli, pulizia in coda e completamento restano esclusi. Import GAMESTAT originale')
 p.write_text(head+history)
 for name in ('refresh_research_evidence.py','save_development_evidence.py','verify_development_evidence.py'):subprocess.run([sys.executable,str(work/name)],check=True)
 print('Current local launcher and README checkpoint PASS')

@@ -1,11 +1,11 @@
 {
   "date": "2026-10-27",
   "status": "PASS",
-  "exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+  "exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "920fe2dfad10610dd66b0eaf215a1cd0ba38a14d79bc45296b4de437eb54ef71",
-    "astronomica.h": "3928e8a2d70fab053482e3cb5a4a9d3c2d4d3a6da32dd5566cc48ab7a226bca7",
+    "astronomica.cpp": "7e239eab473b8c686e4b4e5b93f1f3049ac6d09552cc6efbf664dfa9bb4c627d",
+    "astronomica.h": "e16859c3bb26d14ac271d6c8b842ddd5c696f6c695bb0d0e63777143a34bc057",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -21,8 +21,8 @@
     "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
     "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
     "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
-    "script.cpp": "3f203ec5e43006321dc9a3c0f0dd86ef659b4134f61b79798a977a00c3a03cc5",
-    "script.h": "6669ca5dafcf0b39db2bba60dc8579e9c03dce70bececc965408809adecbbd9d",
+    "script.cpp": "d9a73fe1bc6a8291d2bb0625a293141ee3f79b19f101254986813562927b6913",
+    "script.h": "f625e1f19dec01c30ee977fc06329b83f04460ce69d6e0d732b869f47fd676cc",
     "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
     "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
     "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
@@ -44,8 +44,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p508-saves-validation.json",
       "validation_sha256": "924dab6076d79b92adbe4e3f9ddd03516701eec0fab287c77eb6956da1c6ae34",
-      "runtime_sha256": "04bd3fa565068b4ee9b16a45379808c8f8c0ce7cf1aa07dcf697a9e692dbe139",
-      "startup_sha256": "bdcca743f5088ea7b463116e69fe968a0fd2f865fdec2a29ed83c6adf88014de",
+      "runtime_sha256": "455da0c6df6bb1072be697e9695e9c2e0861dc4949add0f180022b2c30ecea13",
+      "startup_sha256": "3db4da424675e8147aa12aa0b494c90c8815ffd5623f7778e3a4b3e583511760",
       "fresh_process_fingerprint": "01944964"
     },
     {
@@ -56,8 +56,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p505-saves-validation.json",
       "validation_sha256": "190b341d565a61bc74b8344463bcd9e277de2d7ce70bba3434b2389f0cbaf539",
-      "runtime_sha256": "81d5052936927d9fa33909c48a2a564619b2827b48387524f4d86946d0c73f81",
-      "startup_sha256": "6c630c3e086c42595d93f2b1a2dd159b8519d4394fbd5e54e1f697276e4dd491",
+      "runtime_sha256": "86e5e6f2c9ab7116e50c4199712ced5527d92699d7f3bb6f5357b3b576c2fff1",
+      "startup_sha256": "dc50900678eefbed089b41bbc767f05ed3510eaa3750b3280a00f60209bc99a8",
       "fresh_process_fingerprint": "cf874c94"
     },
     {
@@ -68,8 +68,8 @@
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p519-saves-validation.json",
       "validation_sha256": "6d2abe68bee7bc584bdba3a450aa34b3be5386982580308a2795319ad5880aa0",
-      "runtime_sha256": "c00dde278aa1e0739d86f4b5d18a8071edf40cd978b4154f9ce3fcc3e00d66c8",
-      "startup_sha256": "d86223e57f8d21692e4c6430e6312307e2c0d08dc1b15eec84cca78c1ec7d4a0",
+      "runtime_sha256": "5301a9980cb468c70b75ae4f0340fd85e53a6ef7e828c95070a793d18b5b8c03",
+      "startup_sha256": "93a625ffd26be3e146653cf335dd6518160ba90e8d309b3d183231049caa741f",
       "fresh_process_fingerprint": "c7504357"
     },
     {
@@ -79,10 +79,10 @@
       "test_slot": 5,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p524-saves-validation.json",
-      "validation_sha256": "29a356d569245662c3a1ecfafd85d31acc532f42f3356112732b6256b70e044c",
-      "runtime_sha256": "6c56f13adb3577a3e4e0508fca9a0dbb2f1dbb3deafff30505da6b9002d746e9",
-      "startup_sha256": "2a53350e79fdc74e7179bec0c0947e130a4bf933bd3137f6b0b922f1e7466cbb",
-      "fresh_process_fingerprint": "6666fc2a"
+      "validation_sha256": "e01bdfadd3e809222eb1addd99912bee669dfbfbc9236f844dc5b30b79e0f2af",
+      "runtime_sha256": "be925061cb2c8db42b9a865e7ee041daf815f810b0074b8e30f2b82ace6e9973",
+      "startup_sha256": "29757a558168e599877af02c3618845c657897faf72c8e1d28215c276a2c8b40",
+      "fresh_process_fingerprint": "6a74ae1d"
     },
     {
       "scene": 526,
@@ -91,10 +91,10 @@
       "test_slot": 6,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p526-saves-validation.json",
-      "validation_sha256": "4df88a3de8520c3963355df3cf0593247097193ba442670ce571e547cb996c52",
-      "runtime_sha256": "f9b03b7abe658facbbb56b7558565ceb2060c4d851a84de20626e26f7da482ff",
-      "startup_sha256": "94d16c2b48e9d0833d40460d8a6b4c43d0f7fd503ad1e3fbbe880007c2dc5b88",
-      "fresh_process_fingerprint": "541d7fe7"
+      "validation_sha256": "122e4ad0ce6ae009ef3e08c9121772963e58db18df71f785904c3a4f12b6b170",
+      "runtime_sha256": "2e94a01ecb5b0197573bd7a8a50bbbbd9516803d083ec89489c0cf04bd005afa",
+      "startup_sha256": "0b36eaff8446c884521b36ccdf92544952bf53b801895799472528de2b8e51d6",
+      "fresh_process_fingerprint": "e0daee03"
     },
     {
       "scene": 528,
@@ -103,10 +103,10 @@
       "test_slot": 7,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p528-saves-validation.json",
-      "validation_sha256": "999c768314b299f58c7d8f9629f91addd7dc4e65bf0ee483c2b65b2c8cff8b18",
-      "runtime_sha256": "c69d39ac438630858fb0b25e48c09831d43aedcf1f18b45714093612d0197eb2",
-      "startup_sha256": "f8d7b954216824416a7a4dad2c4316b4b8f7001bd5798eb237b1326cb65912b9",
-      "fresh_process_fingerprint": "d47d98af"
+      "validation_sha256": "723745371c18fc3068d9b8797a12e1c89ae6da93d8330106657b2b7a1538ca03",
+      "runtime_sha256": "88e14f409aebecd548fa328773ac281a0010fdbb74432143bd040a719d1df20c",
+      "startup_sha256": "77757ca534eec27ed8db908d7388ce9da14e202b82671c61a1930a9421ea4ee1",
+      "fresh_process_fingerprint": "ea7a9551"
     },
     {
       "scene": 530,
@@ -115,10 +115,10 @@
       "test_slot": 8,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p530-saves-validation.json",
-      "validation_sha256": "5e5499f2e86dc944b7791bed9f76d84f04a10c760b2ba79cf94981852468e51f",
-      "runtime_sha256": "8268273fd5cc6aa5079cfa54435e114e9362aecc7fda5ca4c7b5762181f70736",
-      "startup_sha256": "7a77582f529c42c669fbe4b66546be977fc0731f076f804a1d569f43db6d545f",
-      "fresh_process_fingerprint": "0dc235bf"
+      "validation_sha256": "a2a2550b85eef42c014df505a8fb3571f4861222f5f670b389d90766ecdd50fe",
+      "runtime_sha256": "fecc12db6dfeeb7decfcf98c8d771cc3545801a5d9cc1229ed9eba50c1df8c34",
+      "startup_sha256": "c11913f710f4a2afd12e470aecc80f7738bc5ebc7827b18e0724c0f63ec98c0a",
+      "fresh_process_fingerprint": "cdc03dff"
     },
     {
       "scene": 513,
@@ -127,10 +127,10 @@
       "test_slot": 10,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p513-saves-validation.json",
-      "validation_sha256": "d3deff3692e01a1dd467fbe498458f2d3140ee42697dda036b657a86f5faf21d",
-      "runtime_sha256": "e14db0066bf38db56f3f311751ff4015b9f9b06b8f5d4a48313bcdba771d3ef5",
-      "startup_sha256": "7ca85eb5ce1ce7b3872dda33b7f84479426d5b738d7e795da85ccc71cb988bd0",
-      "fresh_process_fingerprint": "cc64425d"
+      "validation_sha256": "7e051285df9125c4cafb6060caf7fea9face64ca7348b868aaf192b94b514775",
+      "runtime_sha256": "922131cb4dbc09bf7433bcc0ac48c8b2972342a92655ca52d849313ab08787d0",
+      "startup_sha256": "32458757f35dacc9022d0b7afc236ff0d21a8df2b19fad13b5dec467d413aa9e",
+      "fresh_process_fingerprint": "243d1a89"
     },
     {
       "scene": 517,
@@ -139,10 +139,10 @@
       "test_slot": 11,
       "scope": "Settled native puzzle boundaries; no pending foreground work",
       "validation_file": "evidence/p517-saves-validation.json",
-      "validation_sha256": "1035fe88e19e2e33ecf2baa3f08b9a36d87a35de0c4d5b36826943d93e5cf701",
-      "runtime_sha256": "2b97802a83599c2987f5c3ef9937b7516a9b3797f9c3f183172bea7eecc5d78c",
-      "startup_sha256": "bf32fb6fad63d69aecab9d4f3bf77befb88adb106e787ea360b905937a79faec",
-      "fresh_process_fingerprint": "bb421c1a"
+      "validation_sha256": "11bad4253ead0ff7945dce7256e50d20e8ca6cbc608408d5c6ee68e591c8709a",
+      "runtime_sha256": "5a4102de247b5c1547985eafb3ded2a3749244d52c53e82f44233a3e0fe9e077",
+      "startup_sha256": "32426eb7e2e9957a772e93b1057e5c8b09f56dde27ee17d066cae74b8722cb42",
+      "fresh_process_fingerprint": "e753fd2a"
     },
     {
       "scene": 506,
@@ -152,12 +152,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "0a281f3cbe48bd4ce08f73c42ae5b8f82891f1c30c945457a9cb99e0f4c9b351",
+      "validation_sha256": "5b61fe5425951efa5e00b32880092c624e4578fde85d2e8529455521216fc38f",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "90c3e42053ab0a078a6824ff65fbef89d46bb3c60e01ad0c1e52a01c4827a099",
+      "runtime_sha256": "7023f354f4a1aecae0fbbc67a84ef10889922d6a7ecfdb797f9702bfa9b3f2ed",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "5420974e8ad59ed1ed74e45bdc5f108caa8f5c778a6b0b346d81c3879c058428",
-      "fresh_process_fingerprint": "f64680e7"
+      "startup_sha256": "cf97bfdc51149797ffaf69ed2733627cd5b804aa3303ecf8ad9b0a5c9ac37ff4",
+      "fresh_process_fingerprint": "e4466491"
     },
     {
       "scene": 531,
@@ -167,12 +167,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "0a281f3cbe48bd4ce08f73c42ae5b8f82891f1c30c945457a9cb99e0f4c9b351",
+      "validation_sha256": "5b61fe5425951efa5e00b32880092c624e4578fde85d2e8529455521216fc38f",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "90c3e42053ab0a078a6824ff65fbef89d46bb3c60e01ad0c1e52a01c4827a099",
+      "runtime_sha256": "7023f354f4a1aecae0fbbc67a84ef10889922d6a7ecfdb797f9702bfa9b3f2ed",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "5420974e8ad59ed1ed74e45bdc5f108caa8f5c778a6b0b346d81c3879c058428",
-      "fresh_process_fingerprint": "f64680e7"
+      "startup_sha256": "cf97bfdc51149797ffaf69ed2733627cd5b804aa3303ecf8ad9b0a5c9ac37ff4",
+      "fresh_process_fingerprint": "e4466491"
     },
     {
       "scene": 532,
@@ -182,12 +182,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "0a281f3cbe48bd4ce08f73c42ae5b8f82891f1c30c945457a9cb99e0f4c9b351",
+      "validation_sha256": "5b61fe5425951efa5e00b32880092c624e4578fde85d2e8529455521216fc38f",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "90c3e42053ab0a078a6824ff65fbef89d46bb3c60e01ad0c1e52a01c4827a099",
+      "runtime_sha256": "7023f354f4a1aecae0fbbc67a84ef10889922d6a7ecfdb797f9702bfa9b3f2ed",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "5420974e8ad59ed1ed74e45bdc5f108caa8f5c778a6b0b346d81c3879c058428",
-      "fresh_process_fingerprint": "f64680e7"
+      "startup_sha256": "cf97bfdc51149797ffaf69ed2733627cd5b804aa3303ecf8ad9b0a5c9ac37ff4",
+      "fresh_process_fingerprint": "e4466491"
     },
     {
       "scene": 533,
@@ -197,12 +197,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "0a281f3cbe48bd4ce08f73c42ae5b8f82891f1c30c945457a9cb99e0f4c9b351",
+      "validation_sha256": "5b61fe5425951efa5e00b32880092c624e4578fde85d2e8529455521216fc38f",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "90c3e42053ab0a078a6824ff65fbef89d46bb3c60e01ad0c1e52a01c4827a099",
+      "runtime_sha256": "7023f354f4a1aecae0fbbc67a84ef10889922d6a7ecfdb797f9702bfa9b3f2ed",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "5420974e8ad59ed1ed74e45bdc5f108caa8f5c778a6b0b346d81c3879c058428",
-      "fresh_process_fingerprint": "f64680e7"
+      "startup_sha256": "cf97bfdc51149797ffaf69ed2733627cd5b804aa3303ecf8ad9b0a5c9ac37ff4",
+      "fresh_process_fingerprint": "e4466491"
     },
     {
       "scene": 534,
@@ -212,12 +212,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "0a281f3cbe48bd4ce08f73c42ae5b8f82891f1c30c945457a9cb99e0f4c9b351",
+      "validation_sha256": "5b61fe5425951efa5e00b32880092c624e4578fde85d2e8529455521216fc38f",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "90c3e42053ab0a078a6824ff65fbef89d46bb3c60e01ad0c1e52a01c4827a099",
+      "runtime_sha256": "7023f354f4a1aecae0fbbc67a84ef10889922d6a7ecfdb797f9702bfa9b3f2ed",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "5420974e8ad59ed1ed74e45bdc5f108caa8f5c778a6b0b346d81c3879c058428",
-      "fresh_process_fingerprint": "f64680e7"
+      "startup_sha256": "cf97bfdc51149797ffaf69ed2733627cd5b804aa3303ecf8ad9b0a5c9ac37ff4",
+      "fresh_process_fingerprint": "e4466491"
     },
     {
       "scene": 535,
@@ -227,12 +227,12 @@
       "family": "custom17",
       "scope": "Settled partial solutions; all six scenes in memory; one representative family slot in a fresh process",
       "validation_file": "evidence/variant-saves-validation.json",
-      "validation_sha256": "0a281f3cbe48bd4ce08f73c42ae5b8f82891f1c30c945457a9cb99e0f4c9b351",
+      "validation_sha256": "5b61fe5425951efa5e00b32880092c624e4578fde85d2e8529455521216fc38f",
       "runtime_file": "evidence/variant-saves-runtime.log",
-      "runtime_sha256": "90c3e42053ab0a078a6824ff65fbef89d46bb3c60e01ad0c1e52a01c4827a099",
+      "runtime_sha256": "7023f354f4a1aecae0fbbc67a84ef10889922d6a7ecfdb797f9702bfa9b3f2ed",
       "startup_file": "evidence/variant-saves-startup.log",
-      "startup_sha256": "5420974e8ad59ed1ed74e45bdc5f108caa8f5c778a6b0b346d81c3879c058428",
-      "fresh_process_fingerprint": "f64680e7"
+      "startup_sha256": "cf97bfdc51149797ffaf69ed2733627cd5b804aa3303ecf8ad9b0a5c9ac37ff4",
+      "fresh_process_fingerprint": "e4466491"
     },
     {
       "scene": 515,
@@ -242,12 +242,12 @@
       "family": "builder",
       "scope": "Settled construction; both scenes in memory and partial P536 in a fresh process; dormant custom17 sequence retained",
       "validation_file": "evidence/builder-saves-validation.json",
-      "validation_sha256": "143e57612400a97992a5d3db280608f8bb3a7f242d5806ce668d8b5f971356cb",
+      "validation_sha256": "8a595704560f0fa537b94310d5d4468cf988442db4322d0305ee64c09d367b89",
       "runtime_file": "evidence/builder-saves-runtime.log",
-      "runtime_sha256": "1e312ce67470c4c84cefe9922c3af07f97a3ee621ed28b046b7e3348b4d3bd52",
+      "runtime_sha256": "ce21823d9cb7b6bdf981f1bd09ad7ef1a5677741b9cca837b0a6b8ac26a118c2",
       "startup_file": "evidence/builder-saves-startup.log",
-      "startup_sha256": "4783a4a05d164e63904c8be32aa1fbba07cb52a2207c6d8420c8da086f3c38c6",
-      "fresh_process_fingerprint": "4fb131eb"
+      "startup_sha256": "4bac3902fefd3486ba6c2ce4cbee2ddb87e6b109259977fb55df701ad920f6e6",
+      "fresh_process_fingerprint": "9bb626bd"
     },
     {
       "scene": 536,
@@ -257,12 +257,12 @@
       "family": "builder",
       "scope": "Settled construction; both scenes in memory and partial P536 in a fresh process; dormant custom17 sequence retained",
       "validation_file": "evidence/builder-saves-validation.json",
-      "validation_sha256": "143e57612400a97992a5d3db280608f8bb3a7f242d5806ce668d8b5f971356cb",
+      "validation_sha256": "8a595704560f0fa537b94310d5d4468cf988442db4322d0305ee64c09d367b89",
       "runtime_file": "evidence/builder-saves-runtime.log",
-      "runtime_sha256": "1e312ce67470c4c84cefe9922c3af07f97a3ee621ed28b046b7e3348b4d3bd52",
+      "runtime_sha256": "ce21823d9cb7b6bdf981f1bd09ad7ef1a5677741b9cca837b0a6b8ac26a118c2",
       "startup_file": "evidence/builder-saves-startup.log",
-      "startup_sha256": "4783a4a05d164e63904c8be32aa1fbba07cb52a2207c6d8420c8da086f3c38c6",
-      "fresh_process_fingerprint": "4fb131eb"
+      "startup_sha256": "4bac3902fefd3486ba6c2ce4cbee2ddb87e6b109259977fb55df701ad920f6e6",
+      "fresh_process_fingerprint": "9bb626bd"
     },
     {
       "scene": 537,
@@ -271,11 +271,11 @@
       "test_slot": 13,
       "scope": "Settled selector and failed-return boundaries; previous readout and motion epoch preserved; no mid-launch saving",
       "validation_file": "evidence/rocket-saves-validation.json",
-      "validation_sha256": "7a0c396b116e8aee3c54f8de6768be4155a0eb56c3023dc208dcf79234761b85",
+      "validation_sha256": "e9f43f463f240400a341b55212f9085f2adbe29ebb97cf892811d0968fad703a",
       "runtime_file": "evidence/rocket-saves-runtime.log",
-      "runtime_sha256": "1a7215f41a3b857754f4fd747be2b751164194a3655d05f188676092234ac28b",
+      "runtime_sha256": "7f53bd599ae2a8c7fd38f8f170ca327a6320458b40cdb469aff111f8dcfba074",
       "startup_file": "evidence/rocket-saves-startup.log",
-      "startup_sha256": "103caeada044962629376a73b5f74af0d6ca4e3ba08c2cfd230b76a1f925aabe",
+      "startup_sha256": "b2a3a5de863f77822a3cc7b9d9ed9cbe23c0a0b5c8d3a7e32d3cb64a4bce524d",
       "fresh_process_fingerprint": "c7d5ee19"
     },
     {
@@ -285,11 +285,11 @@
       "test_slot": 14,
       "scope": "Settled universe boundaries; last presented original movie frame independent of selector and attempted segment",
       "validation_file": "evidence/universe-saves-validation.json",
-      "validation_sha256": "c0e88bd5a33f9036a40a88f8f5ab28b6ecb1cef60d34519e6cbf0fa7212e6624",
+      "validation_sha256": "7edd7986a72021c39ba63cc7cce33f359c896839082e1c1244fc47e110efaa19",
       "runtime_file": "evidence/universe-saves-runtime.log",
-      "runtime_sha256": "019a0a705e97e44b4cca44eb9a972ed8f556718c640197dc51ff9d824e1088bb",
+      "runtime_sha256": "ce69c1d7ceeabe0273ec871d02d61bf5084ebc5c44bae4865b48275a36576e55",
       "startup_file": "evidence/universe-saves-startup.log",
-      "startup_sha256": "084a05da1e54b8464d9286085fc3f4b0a39eaecb3adbe0e9bd45f8143be76175",
+      "startup_sha256": "7348d81aea44bca160fe846a455ed90c8b2f746332a3456f2b573b904bba1413",
       "fresh_process_fingerprint": "e77c3e29"
     },
     {
@@ -299,11 +299,11 @@
       "test_slot": 15,
       "scope": "Ordinary nonflight P522 boundaries; recurring poll, orbit and calendar epochs retained; flight excluded",
       "validation_file": "evidence/probe-saves-validation.json",
-      "validation_sha256": "5024c3619559a7e1141dc8ce3a40cc2e6f56d98c2f6d637d1b63f3644a8450be",
+      "validation_sha256": "3bb0420fb07c954536f3240f5dfc605846c08c6600914cf45a9a6488bcf8344a",
       "runtime_file": "evidence/probe-saves-runtime.log",
-      "runtime_sha256": "bd298326d991bb661a4782385ee7caea8ae8df2d3f68bdfa20da7d3f75c0c1bf",
+      "runtime_sha256": "80196bfd7a1db2126b8c194fddc0f43680669ee00fceb1ece84abd8365519e45",
       "startup_file": "evidence/probe-saves-startup.log",
-      "startup_sha256": "a4be3a208604a919295c3a2edacd4fe5f8a72329d0cee5b262daf57674331c99",
+      "startup_sha256": "3121d2f2294a3c111f01a5c674cf1d5853f5af47739f9e7915787987bd8d2a20",
       "fresh_process_fingerprint": "e8e89a9f"
     },
     {
@@ -313,11 +313,11 @@
       "test_slot": 16,
       "scope": "Settled P514 boundaries, including active orbit/fuel motion and hidden failed-docking history; queued transitions excluded",
       "validation_file": "evidence/rendezvous-saves-validation.json",
-      "validation_sha256": "26b93653cec5a540cb579c3db0afb8f7f93c02f0c3b24abb301499b6e97cbd98",
+      "validation_sha256": "886ee80119c85a1eb260f9eb951722a3e1aee975c5a20058ba66a435cb62e0d9",
       "runtime_file": "evidence/rendezvous-saves-runtime.log",
-      "runtime_sha256": "e4bb66af2bcfc40b93e2abeeb21eec46de447bc0c4a14d09446230a5fbac3e7e",
+      "runtime_sha256": "e26432893751b4603f3504e3b0c682917c590d517c901488241b1bca5d98d15c",
       "startup_file": "evidence/rendezvous-saves-startup.log",
-      "startup_sha256": "00184d82ab00a3e296576974b384f7b08c78276318ee0ee6d7ccf9d534ff9cb2",
+      "startup_sha256": "35fee0d211150d04d90660e4a5acc6a08249b16eb2e3a55fa452e155c80c205a",
       "fresh_process_fingerprint": "9df6460b"
     },
     {
@@ -327,11 +327,11 @@
       "test_slot": 17,
       "scope": "Idle-script P518 boundaries with following/released planets, random state and hidden failed-attempt history; queued transitions excluded",
       "validation_file": "evidence/planet-saves-validation.json",
-      "validation_sha256": "84dc76d6c4f44e22b76a1f265f1bfb7c10ab3c4801b391eb0cbd9cab5e1ac6c7",
+      "validation_sha256": "61d3dbad6457ff61f8b656aaf044652490b2de35e5fac4c72cff561cdd2524c6",
       "runtime_file": "evidence/planet-saves-runtime.log",
-      "runtime_sha256": "189d1eac447273a85e3c4e97e7cc640b0c436ea4dca7ac9c3b841e2f77b03d43",
+      "runtime_sha256": "951b9e4aa9da41d12b5343900629074c4f1f5f936e1b101a20e4fc04579e0b6e",
       "startup_file": "evidence/planet-saves-startup.log",
-      "startup_sha256": "8389e3335b4a8414dadaaccf70970df859b1ce93e0633d900b823686229e4ce1",
+      "startup_sha256": "490129f86aad9c15a22f906911d88c5182e4f1e018d2ed8611cb121a784f33c2",
       "fresh_process_fingerprint": "719bc5d1"
     },
     {
@@ -341,11 +341,11 @@
       "test_slot": 18,
       "scope": "Idle-script P521 boundaries, retained external image, animated timer and hidden fragment history; queued transitions excluded",
       "validation_file": "evidence/p521-saves-validation.json",
-      "validation_sha256": "696573f2da5d51105a9f9552ce6597f3bcefd4bd7c87018de9a3d271ce31ecf7",
+      "validation_sha256": "e3956f4f19117e32b6c7b3721ab625f12313019f4ec8af346132991ed15f6903",
       "runtime_file": "evidence/p521-saves-runtime.log",
-      "runtime_sha256": "88b4b4149f0ee62bb712d3e206ea9c36020cba7fa9d156cf2f739e816e902bde",
+      "runtime_sha256": "84b6916c5614d61cc7b5f0fd0ebc175980d9f29fb0508962c0a2e6761ea6f018",
       "startup_file": "evidence/p521-saves-startup.log",
-      "startup_sha256": "4b50f64b3d2eb8464dd93d287467740da3681d985701d2ac6c55fa0e1fd4180b",
+      "startup_sha256": "219392e4ece73f54f78d9aa8514a0f58a1d6ba462f2ad94e8072d544c0073972",
       "fresh_process_fingerprint": "71a646f0"
     },
     {
@@ -355,11 +355,11 @@
       "test_slot": 19,
       "scope": "Original P5/index3 pending narrator, phase1/2, retained sky image and hidden bounce; foreground and other queued work excluded",
       "validation_file": "evidence/p509-saves-validation.json",
-      "validation_sha256": "5d3b1ca2d1c5c13276b998d47e3666e022e7965368b91886346d434deccbee9d",
+      "validation_sha256": "c9ef9213dbe822ca462ef78f15b46c0508867f3306282702714a5d8f3a3aafe5",
       "runtime_file": "evidence/p509-saves-runtime.log",
-      "runtime_sha256": "08431306fb7ae1c29093d28c502ce7ed00d95fd70c1205b2d4db9e4bccef1326",
+      "runtime_sha256": "86b5bc4dce210b993512d5703c5d9be3b6eeb0ac5d80e12a65c640f4b9ca98c5",
       "startup_file": "evidence/p509-saves-startup.log",
-      "startup_sha256": "bc0e9b31dd9db0e2b96d9fe855110cdd915983c457f46a7b211dac68bb0c836d",
+      "startup_sha256": "7f620fad56ee061a98dbc1ec1da0c3cc9226f02d3e8fbdb64a79bef33a91e68f",
       "fresh_process_fingerprint": "44c301ab"
     },
     {
@@ -369,11 +369,11 @@
       "test_slot": 20,
       "scope": "Idle-script P511, retained cloud image and independent frame/range history; foreground and queued work excluded",
       "validation_file": "evidence/p511-saves-validation.json",
-      "validation_sha256": "be2cd989fb4b3637f267b655950140ed598a36814d250a5633cb09e5c1c506ae",
+      "validation_sha256": "184a8a11a1a542e3992beb732d07768ce60002e236b26fc30336e1332285f4e2",
       "runtime_file": "evidence/p511-saves-runtime.log",
-      "runtime_sha256": "d3e33e2b8e1ec01f9e1a1931dc8a0f0c83165481b61b593695e1d9ff771be05a",
+      "runtime_sha256": "0595844f528a5799f3b6871769392d9300104b774ac6b53925c87c71aabb910f",
       "startup_file": "evidence/p511-saves-startup.log",
-      "startup_sha256": "161e96c2b54a5d84551049af9a9a7fd9833ebd4d195ae12b1f7526fcf0186e49",
+      "startup_sha256": "25ceb589ce6917e7ce9175fcf2fc5bd5ac61ab17ade6cf4aa5c63581679184ef",
       "fresh_process_fingerprint": "043517f7"
     },
     {
@@ -383,11 +383,11 @@
       "test_slot": 21,
       "scope": "Restricted quiet local2=0, configured active orbits, hidden stopped projectile; active flight, aborted unproved histories, local2=1, stopped moons and queued/success transitions excluded",
       "validation_file": "evidence/p516-saves-validation.json",
-      "validation_sha256": "3b758af6f372f1a8faf571108767751454d6d7496f39db629b92afeae84d8f47",
+      "validation_sha256": "01113b6f37e106fdedd67db7f074429b87d2b6f1f3fab04110b8af11ac1022a3",
       "runtime_file": "evidence/p516-saves-runtime.log",
-      "runtime_sha256": "663bd1470ceb94eb0e9dc12062fa3dbb2ff768b6c66ccd9b03e9ee01bf9a3813",
+      "runtime_sha256": "c392137f652c79b8a70e5548bbf8ee21943e65f36f7f5d1a96be675c41763779",
       "startup_file": "evidence/p516-saves-startup.log",
-      "startup_sha256": "da94878f764aaefbe549fbaae69026616737301c15d082434236432ff2b409da",
+      "startup_sha256": "fe3e703af4aa73d2ed88cc55cc3a7a3fe0659f69a27173fb732b38e47567686f",
       "fresh_process_fingerprint": "b943da4b"
     },
     {
@@ -397,11 +397,11 @@
       "test_slot": 22,
       "scope": "Quiet P527 with stopped movie, retained committed sample and complete selection/seen history; queued work and foreground audio excluded",
       "validation_file": "evidence/p527-saves-validation.json",
-      "validation_sha256": "51c03746fc87b8aebf099dc285505502828d732c75e352f98ecc2c2b5e9702a7",
+      "validation_sha256": "1dd16449ff2977f6e95e874636290e8b34508bfbd5e3cc30bf1725a1e5b08f73",
       "runtime_file": "evidence/p527-saves-runtime.log",
-      "runtime_sha256": "bf4f71119fa6a8e203b5b8931f5a135ac6c2c9a8a7545641866787d2a29bd6cf",
+      "runtime_sha256": "4ba225fe5161507eddfd45ab48dabdac229d4fe8a448fd75b68d3b9db77c4ec7",
       "startup_file": "evidence/p527-saves-startup.log",
-      "startup_sha256": "6e13559f7fc39987651d81c119cec544f129b46ee4c9b5023136998977b1bc84",
+      "startup_sha256": "48e54490f5f357a291ef45e5cd34e888127332f8eb058913b647dbe4c6839311",
       "fresh_process_fingerprint": "dd192f6a"
     },
     {
@@ -411,11 +411,11 @@
       "test_slot": 23,
       "scope": "Quiet P502 nonflight choices and hidden stopped failed returns; retained projectile/explosion/private history; active flight and queued work excluded",
       "validation_file": "evidence/p502-saves-validation.json",
-      "validation_sha256": "b3b77266b614a2fcd56edeac6ef5d3ce0e1353e19c6494c05feeed8005d1d2b3",
+      "validation_sha256": "1862dc45a779529aef2fc4c6cc19c7a56e440bf6b6d45c8f5d8a33efbf150d5c",
       "runtime_file": "evidence/p502-saves-runtime.log",
-      "runtime_sha256": "04f77fe9ca3ce5929cb96f079e779945783a25682311dfbca594839ea43d8829",
+      "runtime_sha256": "183fb36a9179989b8116608a7e5c00c9856d5cee786ef22e644435705847ca39",
       "startup_file": "evidence/p502-saves-startup.log",
-      "startup_sha256": "658696be86efb3315c9413432b0fd1687681a8c3b645d0bc148474b89abcfcb6",
+      "startup_sha256": "d95a1aece2d64c64028eadcb645dc21c9b58b9f48ba1017b1e3b2897432ea5c3",
       "fresh_process_fingerprint": "471bd955"
     },
     {
@@ -425,11 +425,11 @@
       "test_slot": 24,
       "scope": "Quiet P503 choices, never-solved stopped failures and healthy partial orbits with independent partner motion; ascent, stale solved relaunch histories and queued work excluded",
       "validation_file": "evidence/p503-saves-validation.json",
-      "validation_sha256": "e82b92b09a34a33c138ede50398a87ca5a8cd4c4d2fd9ce4b446ab3fd62d1296",
+      "validation_sha256": "b829f52aa1c636cd1145cc323076a5de391481a08612f3801eaf2d77d9e3922f",
       "runtime_file": "evidence/p503-saves-runtime.log",
-      "runtime_sha256": "c47deae8923070e61b5a8e8eef3f96a7ea8eb3f2a083f30716dd3465bab05978",
+      "runtime_sha256": "81bc79416cbe4cad94d19c625fe8bef274661347f4cd675a5cd1125440be93c0",
       "startup_file": "evidence/p503-saves-startup.log",
-      "startup_sha256": "37642f651160f78aa6808a5131e3c8eba8e133dadb86f2a5cf650a8666165cf2",
+      "startup_sha256": "5d9a68ffbe632bbbcca59087959ad75f18f78447a9bb6dbe4b6fbe45a1e60781",
       "fresh_process_fingerprint": "698ca461"
     },
     {
@@ -439,18 +439,31 @@
       "test_slot": 25,
       "scope": "P504 choices, never-solved stopped failures and healthy partial orbits with literal original poll index0/10 and independent motion; other pending work, index3, ascent and stale histories excluded",
       "validation_file": "evidence/p504-saves-validation.json",
-      "validation_sha256": "ee6f1b4bb1159c273f634ea63f1f55bc9bcd3e23858214d4080cdec35cd3df67",
+      "validation_sha256": "52d0ce1dc3fcb4b14badf53aa79ff886a7ce4cbce79452e959f2c058f67abb0d",
       "runtime_file": "evidence/p504-saves-runtime.log",
-      "runtime_sha256": "8f90a7ac2518e361d28a83dcc0548dac29bf40c2e652f15cf98307736905830b",
+      "runtime_sha256": "80ba1da08082f7ff7e2484822a23658099db3c73bbbf264651561718029c9803",
       "startup_file": "evidence/p504-saves-startup.log",
-      "startup_sha256": "e4c20a1f73905b3f91615b4856d82f86e1afdbb181aef9cdb1f03f06c436413e",
+      "startup_sha256": "6f8a1fceabe99f844e2845e6360a2ba67e3a7a657d84fb39004462ed94c03e1e",
       "fresh_process_fingerprint": "f90f73f1"
+    },
+    {
+      "scene": 501,
+      "version": 27,
+      "payload_bytes": 5896,
+      "test_slot": 26,
+      "scope": "P501 ready-to-pitch boundaries with literal original poll index0/7, background identity and retained sprite/private ball history; active pitches, generated cleanup and completion excluded",
+      "validation_file": "evidence/p501-saves-validation.json",
+      "validation_sha256": "19cfda88b2e462f17fba7df5379e0aca367a6c0be967688d1214fa75af1fa067",
+      "runtime_file": "evidence/p501-saves-runtime.log",
+      "runtime_sha256": "665fdc8aa0d45e98b61de8f773e8644dd295b8e8fbe4e9901cf1a8672b6c8db4",
+      "startup_file": "evidence/p501-saves-startup.log",
+      "startup_sha256": "29b1fcc1ff68cf9816c319cde4ed692569ee651d7142525e76d081db316c6899",
+      "fresh_process_fingerprint": "cdb9f9cd"
     }
   ],
-  "supported_puzzle_route_scenes": 30,
+  "supported_puzzle_route_scenes": 31,
   "inventoried_puzzle_route_scenes": 35,
   "unsupported_puzzle_route_scenes": [
-    501,
     510,
     512,
     523,

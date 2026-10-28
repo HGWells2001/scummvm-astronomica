@@ -1,0 +1,24 @@
+{
+  "status": "FROZEN_INITIAL_ACCEPTANCE_BASELINE",
+  "published_commit": "1af25c6ced7b315e2c7bbd7bba3c58d125a0c022",
+  "exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+  "evidence_sha256": {
+    "outputs/astronomica-cleanroom/LOCAL-PLAY.md": "48d23007ee42f7f1d14702312578c639879bc28c2ed7d2fc65c1fa6547cd9e7a",
+    "outputs/astronomica-cleanroom/NEXT-STEPS.md": "6bb36ebb0d43c12afd6d5ce6eab61d8eb89598d5cfdda2389be3b0319bf77b1f",
+    "outputs/astronomica-cleanroom/P504-SAVE-FORMAT.md": "9604ebbc636b02932bc296f26a02f07aa116c5d6cf609651823da023b49658b3",
+    "outputs/astronomica-cleanroom/README.md": "9740660c05e923ffaae6eee77ccea6f2bc78666cf7ca50247a57ad94032491e0",
+    "outputs/astronomica-cleanroom/engine/astronomica/detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "outputs/astronomica-cleanroom/evidence/audio-channels-validation.json": "5217ae303930c2dca36fe668f25d8b04f47a391704e6ddc181e61dd108fae94a",
+    "outputs/astronomica-cleanroom/evidence/development-validation.json": "735dfeb6bc516a5d4256ceddb5ffa661c24273ff47b4d7f0acf688658a91a738",
+    "outputs/astronomica-cleanroom/evidence/help-native-runtime.log": "69dbfe09a057e5485981ffa4df76d0be800079b12d60abee1c916ea3bfbb5c85",
+    "outputs/astronomica-cleanroom/evidence/help-native-validation.json": "21b4857eb057cf61e78822231a0cda83967a2415d35330c896148b007329c739",
+    "outputs/astronomica-cleanroom/evidence/local-launcher-validation.json": "73be8d000fdb1a68548bed3bfc553e47f4c969a155ac96617fdd9ae72f89b18e",
+    "outputs/astronomica-cleanroom/evidence/native-save-coverage.json": "9f5f1196a450a09bf7d01cfa6eb429d747cd6335bdf945e9c72b5d2b10e4be07",
+    "outputs/astronomica-cleanroom/evidence/presentation-validation.json": "29b9e92957933f7b422cae4ecde1f62dcea4d9adfe65848d459861f3a3b421a4",
+    "outputs/astronomica-cleanroom/evidence/puzzle-coverage.json": "43e3ae3edc0f5bfbbe6a0c01650f8bc6998a9493150ac7744ebda09e5840025e",
+    "outputs/astronomica-cleanroom/evidence/runtime.log": "805e0ba73d8ffe7b1e179ed024cf6b39d2d3d38ec16f67107adfa355514c1616",
+    "work/fresh-20260913/p504-checkpoint-status.json": "74d26f473aeab88cebbbff11c35c92f968d10e6d48cd09d941931735c561a006",
+    "work/fresh-20260913/p504-completion-status.json": "b1c4b36f78ef5c65b90b78ee4e1153c7fb2353abd82655b9f6f4cec33f5c46fd",
+    "work/fresh-20260913/p504-seal-status.json": "22769ded995ef36adbdbfbb3e2d8fba104cd719d4e7f88587cbd831706c49025"
+  }
+}

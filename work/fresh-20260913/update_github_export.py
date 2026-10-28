@@ -11,6 +11,22 @@ for rule in ('!outputs/astronomica-cleanroom/astronomica-play.ini','userdata/'):
 ignore.write_text(rules)
 # Only refresh paths already in the reviewed export. Do not add game media,
 # binaries, saves or the full workspace through a recursive wildcard copy.
+if Path('outputs/astronomica-cleanroom/PROJECT-PROGRESS.md').is_file():
+    for name in ('PROJECT-PROGRESS.md','evidence/project-acceptance-index.json'):
+        relative='outputs/astronomica-cleanroom/'+name
+        (root/relative).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(relative,root/relative)
+    progress=Path('work/fresh-20260913/project-progress-review')
+    frozen=json.loads((progress/'baseline-manifest.json').read_text())
+    progress_paths=[progress/name for name in ('REPORT.md','acceptance-index.json','baseline-manifest.json','verify_frozen.py','reproduce.py')]
+    for name,expected in frozen['evidence_sha256'].items():
+        path=progress/'baseline-evidence'/name
+        assert hashlib.sha256(path.read_bytes()).hexdigest()==expected,name
+        progress_paths.append(path)
+    for path in progress_paths:
+        target=root/path
+        target.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(path,target)
 for name in manifest['sha256']:
     if name.startswith(('outputs/astronomica-cleanroom/','work/fresh-20260913/')):
         src=Path(name); assert src.is_file(),name
@@ -225,6 +241,20 @@ if p504_save_present:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
 
+p501_save_present=Path('outputs/astronomica-cleanroom/evidence/p501-saves-validation.json').is_file()
+if Path('outputs/astronomica-cleanroom/evidence/p501-save-original.json').is_file():
+    for name in ('P501-SAVE-PLAN.md','probe_p501_save.py','evidence/p501-save-original.json'):
+        source=Path('outputs/astronomica-cleanroom')/name
+        (root/source).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,root/source)
+if p501_save_present:
+    p501_paths=['outputs/astronomica-cleanroom/P501-SAVE-FORMAT.md',
+                *['work/fresh-20260913/'+name for name in ('check_p501_saves.py','check_p501_regressions.py','finish_p501_saves.py')],
+                *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p501-saves-validation.json','p501-save-proof.json','p501-saves-runtime.log','p501-saves-startup.log','p504-previous-slot.log','p504-previous-slot-proof.json')]]
+    for name in p501_paths:
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -347,6 +377,12 @@ if p504_save_present:
                 'thirty supported puzzle scenes (P502-P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)')
     if 'P504 v26' not in s:
         s=s.replace('- Automatically verified routes','- P504 v26 preserves healthy partial orbits and never-solved stopped failures with literal original pending poll index0/10 and independent partner frames/epochs. Other pending phases/work, ascent, stale solved-target failed relaunch histories and completion remain excluded. Fresh-process continuation and genuine frozen v25 compatibility pass.\n- Automatically verified routes')
+    p.write_text(s.rstrip()+'\n')
+if p501_save_present:
+    s=s.replace('thirty supported puzzle scenes (P502-P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)',
+                'thirty-one supported puzzle scenes (P501-P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)')
+    if 'P501 v27' not in s:
+        s=s.replace('- Automatically verified routes','- P501 v27 preserves stopped ready-to-pitch states, the original pending poll at index0/7, seven background identities and retained sprite/private ball history. Active pitches, generated cleanup work, foreground audio and completion remain excluded. Fresh-process continuation and genuine frozen v26 compatibility pass.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-27' if p504_save_present else '2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()

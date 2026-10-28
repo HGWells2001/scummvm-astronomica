@@ -162,6 +162,11 @@ private:
  void cycleExplosion(int id, int x, int y, uint32 now);
  void onBall(int mode, uint32 now) override;
  void queueBallCommand(int opcode, int value, int frame, int delay, uint32 now);
+ bool verifyP501Saves();
+ bool canSaveP501() const;
+ Common::Error saveP501(Common::WriteStream*stream);
+ Common::Error loadP501(Common::SeekableReadStream*stream);
+ bool _p501AssetsValid=false;
  bool verifyP501Puzzle();
  void onProbe(int mode, int id) override;
  bool verifyProbeBoundaries();

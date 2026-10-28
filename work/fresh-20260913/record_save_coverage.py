@@ -224,6 +224,21 @@ if p504_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+p501_validation=root/'evidence/p501-saves-validation.json'
+if p501_validation.exists():
+ v=json.loads(p501_validation.read_text());proof=json.loads((root/'evidence/p501-save-proof.json').read_text())
+ assert v['status']==proof['status']=='PASS' and v['full_suite'] and proof['metadata_listed'] and proof['slot']==26
+ assert v['exe_sha256']==proof['exe_sha256']==digest(work/'build/Releasex64/scummvm.exe')
+ assert v['scope']==proof['scope']=='trusted_p501_ready' and v['fresh_process_fingerprint']==proof['fresh_process_fingerprint']
+ log=root/'evidence/p501-saves-runtime.log';startup=root/'evidence/p501-saves-startup.log'
+ assert 'P501 save verification: PASS' in log.read_text() and 'FAIL' not in log.read_text()
+ assert 'P501 startup save: PASS' in startup.read_text() and 'FAIL' not in startup.read_text()
+ rows.append(dict(scene=501,version=27,payload_bytes=5896,test_slot=26,
+  scope='P501 ready-to-pitch boundaries with literal original poll index0/7, background identity and retained sprite/private ball history; active pitches, generated cleanup and completion excluded',
+  validation_file=p501_validation.relative_to(root).as_posix(),validation_sha256=digest(p501_validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
+  startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-27' if p504_validation.exists() else '2026-10-26' if (root/'evidence/p502-saves-validation.json').exists() else '2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),

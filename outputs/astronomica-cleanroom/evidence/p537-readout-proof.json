@@ -2,7 +2,7 @@
   "date": "2026-10-20",
   "status": "PASS",
   "diagnostic": false,
-  "exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+  "exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
   "original_resource_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
   "original_callback_evidence_sha256": "1e828270d72bcc24b0872c258c1c0110e41ca9636044c1a223cf1bb3c9f4c086",
   "pixel_format": [
@@ -19,25 +19,25 @@
       "setting": 1,
       "checked_pixels": 3024,
       "old_shift_mismatch_pixels": 313,
-      "png_sha256": "fd2fed4928fcb1d1237f7100e0c12be9d0ae1d063046dc22c256f55950363021"
+      "png_sha256": "c8d7eee51ed6a4089942ba70e767d52d3f5be2cbe80f1d15d628cf38f20ca5a1"
     },
     {
       "setting": 7,
       "checked_pixels": 3024,
       "old_shift_mismatch_pixels": 313,
-      "png_sha256": "62b78d73b924fd0c545a8e93524eaca2c68b94a54dc568c92671cbd631d13e77"
+      "png_sha256": "1bbbb5046653c4b3ac561fdd602a54996343ad8cfc3329bf752481e1a5c81a24"
     },
     {
       "setting": 11,
       "checked_pixels": 3024,
       "old_shift_mismatch_pixels": 279,
-      "png_sha256": "83067642af3cccfdc1d5502041de738c1c12952a069227edfe5b6fc78577709b"
+      "png_sha256": "dbdc70717db600bbd37deb71313bc9df024d81cf19adcb5cf88ee2a8e80511b6"
     },
     {
       "setting": 13,
       "checked_pixels": 3024,
       "old_shift_mismatch_pixels": 279,
-      "png_sha256": "9d5bdbb26135f54d6f400b6250d141c970d755c1e3532ba3a70a6084f2bf8a1a"
+      "png_sha256": "0bf0badccc4b3cd502a18233c88710cbad40393e8c1eacdb05ed0171a163e900"
     }
   ],
   "scope": "Actual production rendering of controlled final callback states; raw original BMP/mask pixel checks; not a Windows-runtime or full manual playthrough claim"

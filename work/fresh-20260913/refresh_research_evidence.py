@@ -6,6 +6,8 @@ path=root/'evidence/research-oct01.json'
 previous=json.loads(path.read_text())
 files=set(root.glob('probe_*.py')) | set((root/'evidence').glob('p5*.json'))
 files.add(root/'evidence/puzzle-save-requirements.json')
+if (root/'PROJECT-PROGRESS.md').exists():
+ files.update(root/name for name in ('PROJECT-PROGRESS.md','evidence/project-acceptance-index.json'))
 files.add(root/'P519-SAVE-PLAN.md')
 files.add(root/'P505-SAVE-FORMAT.md')
 files.add(root/'P519-SAVE-FORMAT.md')
@@ -102,6 +104,11 @@ if (root/'evidence/p504-save-original.json').exists():
 if (root/'evidence/p504-saves-validation.json').exists():
  files.add(root/'P504-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p504-saves-validation.json','p504-save-proof.json','p504-saves-runtime.log','p504-saves-startup.log','p503-previous-slot.log','p503-previous-slot-proof.json'))
+if (root/'evidence/p501-save-original.json').exists():
+ files.update(root/name for name in ('P501-SAVE-PLAN.md','probe_p501_save.py','evidence/p501-save-original.json'))
+if (root/'evidence/p501-saves-validation.json').exists():
+ files.add(root/'P501-SAVE-FORMAT.md')
+ files.update(root/'evidence'/name for name in ('p501-saves-validation.json','p501-save-proof.json','p501-saves-runtime.log','p501-saves-startup.log','p504-previous-slot.log','p504-previous-slot-proof.json'))
 if (root/'evidence/p511-saves-validation.json').exists():
  files.add(root/'P511-SAVE-FORMAT.md')
  files.update(root/'evidence'/name for name in ('p511-saves-validation.json','p511-save-proof.json','p511-saves-runtime.log','p511-saves-startup.log','p509-previous-slot.log','p509-previous-slot-proof.json'))
