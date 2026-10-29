@@ -1,3 +1,138 @@
+# P510 ASVM28: suite nativa completa PASS
+
+Eseguibile `6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81`. Salvataggi32/35 (91,4%), criteri complessivi6/10 (60%). Restano P512, P523 e P525; consultare P512-RESUME-STAGED.md e P525-RESUME-STAGED.md nel lavoro locale. Verificare separatamente completion/seal per la pubblicazione. Non modificare il motore durante export e sigillo. Le note seguenti sono cronologia.
+
+# Ripresa: salvataggi P501,28 ottobre2026
+
+Formato v27:5896byte,63 ripristini verificati. Conserva i confini pronti al lancio, il poll originale0/7, sette identita di sfondo, la storia dei fotogrammi nascosti e dei movimenti privati della palla. Slot26 in nuovo processo, metadata, vero slotv26 congelato e suite completa WASAPI sullo stesso eseguibile PASS.
+Voli, pulizia generata in coda, voci in primo piano e completamento esclusi. 31/35 scene con salvataggi verificati (88.6% della copertura salvataggi). Indice complessivo e criteri di accettazione: PROJECT-PROGRESS.md; nessuna stima delle ore residue. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P504,27 ottobre2026
+
+Formato v26:7816byte,885 ripristini verificati. Conserva scelte e orbite parziali, con posizione,fotogramma e timer indipendenti dei due oggetti di ogni coppia. Tutti i 4 bersagli, 4 direzioni e 16 velocita, 14 maschere parziali, 605 valori e indice/epoca del poll originale conservati, geometria Jupiter dormiente, slot25 in nuovo processo e metadata PASS. Vero slotv25 congelato invariato e suite completa WASAPI sullo stesso eseguibile PASS.
+Sono esclusi ascesa, indice3, rilanci falliti di bersagli gia risolti, altre code, voci e transizioni complete. 30/35 scene con salvataggi verificati (85.7% della copertura salvataggi), nessuna percentuale globale attendibile. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P503,26 ottobre2026
+
+Formato v25:8132byte,1088 ripristini verificati. Conserva scelte e orbite parziali, con posizione,fotogramma e timer indipendenti dei due oggetti di ogni coppia. Tutti5bersagli,4direzioni e16velocita,30maschere parziali,605valori e geometria Jupiter dormiente,slot24 in nuovo processo e metadata PASS. Vero slotv24 congelato invariato e suite completa WASAPI sullo stesso eseguibile PASS.
+Ascesa iniziale,rilanci falliti di bersagli gia risolti,code,voci e transizioni complete escluse. 29/35scene con salvataggi verificati (82.9% della copertura salvataggi),nessuna percentuale globale attendibile. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P502,26 ottobre2026
+
+Formato v24:6728byte,203 ripristini verificati. Conserva scelte,proiettile nascosto fermo,coordinate e timer dei fallimenti,CometMotion ed esplosione indipendenti. Tutte4direzioni e16velocita,605valori e geometria Jupiter dormiente,slot23 in nuovo processo e metadata PASS. Vero slotv23 congelato invariato e suite completa WASAPI sullo stesso eseguibile PASS.
+Confini quieti senza volo; code,voci e transizioni di successo escluse. 28/35scene con salvataggi verificati (80% della copertura salvataggi),nessuna percentuale globale attendibile. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P527,25 ottobre2026
+
+Formato v23:3940byte,112 ripristini verificati. Conserva selezione,maschera,ultimo intervallo tentato e fotogramma realmente presentato indipendenti. Tutti1105fotogrammi originali confrontati tra decodifica sequenziale e seek; slot22 in nuovo processo e metadata PASS. Vero slotv22 congelato invariato e suite completa WASAPI sullo stesso eseguibile PASS.
+Confini quieti con filmato fermo; riproduzione attiva,code e voci in primo piano escluse. 27/35scene con salvataggi verificati (77,1% della copertura salvataggi),nessuna percentuale globale attendibile. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P516,25 ottobre2026
+
+Formato v22:6944byte,86 ripristini verificati. Conserva orbite, handoff, animazioni e timer indipendenti, storia del missile fermo,605valori e stato cometa. Slot21 in nuovo processo PASS; compatibilita v1-v21 e vero slotv21 congelato invariato PASS.
+Scope ristretto:locale2=0,orbite configurate attive e missile nascosto/fermo; volo attivo, altre storie non provate, locale2=1,orbite ferme,code,voci e transizioni escluse. Suite completa WASAPI sullo stesso eseguibile PASS.
+Checkpoint:finish_p516_saves.py;check_p516_saves.py;check_p516_regressions.py;P516-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.26/35scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P511,25 ottobre2026
+
+Formato v21:6256byte,109 ripristini verificati. Conserva immagini CLOUD, fotogrammi e intervalli anche discordanti, animazioni nascoste, clock, valori ereditati e stato dormiente. Slot20 in nuovo processo PASS.
+Compatibilita v1-v20, vero slotv20 congelato, rifiuto atomico dei file alterati, suite completa WASAPI e avvio normale sullo stesso eseguibile. Altre code, voci attive e transizioni restano escluse.
+Checkpoint:finish_p511_saves.py;check_p511_saves.py;check_p511_regressions.py;P511-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Venticinque scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi, tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P509,24 ottobre2026
+
+Formato v20:4540byte,59 ripristini verificati. Conserva il narratore originale P5/indice3 in attesa, SKY1/SKY2, bersagli e animazioni nascoste, clock, valori ereditati e stato dormiente. Slot19 in nuovo processo PASS.
+Compatibilita v1-v19, vero slotv19 congelato, rifiuto atomico dei file alterati, suite completa WASAPI e avvio normale sullo stesso eseguibile. Altre code, voci attive e transizioni restano escluse.
+Checkpoint:finish_p509_saves.py;check_p509_saves.py;check_p509_regressions.py;P509-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Ventiquattro scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi, tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED.
+
+# Ripresa: salvataggi P521,23 ottobre2026
+
+Formato v19:5392 byte,32 ripristini/successori verificati. Conserva lo sfondo esterno visualizzato, la storia dei frammenti nascosti, animazioni e timer, valori ereditati e stato dormiente. Slot18 in un nuovo processo PASS.
+Compatibilita v1-v18, vero slotv18 congelato, rifiuto atomico dei file alterati, suite completa WASAPI e avvio normale verificati sullo stesso eseguibile. Comandi in attesa, flash, voci e transizioni restano esclusi.
+Checkpoint:finish_p521_saves.py;check_p521_saves.py;check_p521_regressions.py;P521-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Ventitre scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi, tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED; preferenze e salvataggi personali intatti.
+
+# Ripresa: salvataggi pianeti P518,22 ottobre2026
+
+Formato v18:6184 byte,59 ripristini/successori verificati. Conserva pianeti agganciati e rilasciati, scelta casuale, maschera, contatori, timer e storia nascosta dei tentativi falliti. Slot17 in un nuovo processo PASS.
+Compatibilita v1-v17, vero slotv17 congelato, rifiuto atomico dei file alterati, suite completa WASAPI e avvio normale verificati sullo stesso eseguibile. Comandi in attesa, voci e transizioni restano esclusi.
+Checkpoint:finish_planet_saves.py;check_planet_saves.py;check_planet_regressions.py;P518-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Ventidue scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi, tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED; preferenze e salvataggi personali intatti.
+
+# Ripresa: salvataggi attracco P514,22 ottobre2026
+
+Formato v17:4632 byte,87 ripristini/successori verificati. Conserva orbite attive, carburante, velocita0..15, posizione nascosta dell'ultimo attracco fallito, timer e stato dormiente degli altri puzzle. Slot16 in un nuovo processo PASS.
+Sono supportati i confini senza comandi/azioni in coda, voci in primo piano o transizioni ancora attive. I periodi restano indipendenti dalla posizione e dalla fase delle animazioni.
+Compatibilita v1-v16, vero slotv16 congelato, rifiuto atomico dei file alterati, suite completa WASAPI e avvio normale verificati sullo stesso eseguibile.
+Checkpoint:finish_rendezvous_saves.py;check_rendezvous_saves.py;check_rendezvous_regressions.py;P514-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Ventuno scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi, tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED; preferenze e salvataggi personali intatti.
+
+# Ripresa: salvataggi sonda P522,22 ottobre2026
+
+Formato v16:4472 byte,31 ripristini/successori verificati. Conserva calendario, orbite attive, sonda nascosta, timer del poll originale200ms, stato dormiente degli altri puzzle e cometa. Slot15 in un nuovo processo PASS.
+Sono supportati solo confini ordinari senza volo con local1=0 e poll fidato index6. Volo, expiry, successo speciale e fase differita index0 restano esclusi.
+Compatibilita v1-v15, vero slotv15 congelato, rifiuto atomico dei file alterati, suite completa WASAPI e avvio normale verificati sullo stesso eseguibile.
+Checkpoint:finish_probe_saves.py;check_probe_saves.py;check_probe_regressions.py;P522-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Venti scene con salvataggi verificati non misurano il completamento globale. Restano altri salvataggi, tipografia aiuto e verifica audiovisiva manuale integrale. Automazione PAUSED; preferenze e salvataggi personali intatti.
+
+# Ripresa: salvataggi universo P529,21 ottobre2026
+
+Formato v15:3684 byte,188 ripristini/successori,121 confini con immagini/cifre precedenti,149 con custom17 sospeso PASS.
+Tutti16 selector,quattro gruppi,primo/ripetuto successo,uscita e slot14 in nuovo processo PASS. Immagine realmente presentata indipendente dal cursore decoder e dall'ultimo segmento tentato; verificati anche primo filmato senza fotogramma e immagine residua di gruppo precedente.
+Audit indipendente253 fotogrammi originali e137 confini; fine voce naturale,Music restart,stati ordinari round0 e rifiuto atomico esteso PASS. Compatibilita v1-v14,suite completa WASAPI e avvio normale PASS sullo stesso eseguibile.
+Checkpoint:finish_universe_saves.py;check_universe_saves.py/check_universe_regressions.py/check_universe_boundaries.py/P529-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Prossimo studio:P522-SAVE-PLAN.md/P522-NATIVE-AUDIT.md eprobe_p522_save.py;18sprite,2locali,poll200ms eanimazioni attive;126osservazioni diagnostiche conservate. Serve contrattoesplicito del lavoro ricorrente;nessunsupportoP522salvataggi giaimplementato.
+Diciannove scene con salvataggi verificati non sono una percentuale globale. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Avvio:Avvia-Astronomica.cmd;userdata/astronomica intatti.
+
+# Ripresa: salvataggi razzo P537,21 ottobre2026
+
+Formato v14:7680byte,577 ripristini/successori,385 confini con display precedente,385 con custom17 sospeso PASS. Tutti16 selector,limiti,rilanciozero,uscita/help,primo/ripetuto successo verificati.
+Slot13 in nuovo processo:precedente fallimento veloce,selector11,round2 sospeso e successo contato una volta PASS. Delta/since del moto fermo e cometa conservati. Audit nativo indipendente402confini. Compatibilita v1-v13 e suite completa WASAPI/avvio normale PASS sullo stesso eseguibile.
+Checkpoint:finish_rocket_saves.py;check_rocket_saves.py/check_rocket_regressions.py/check_rocket_boundaries.py/P537-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Diciotto scene con salvataggi verificati non sono una percentuale globale. Restano altri salvataggi,tipografia aiuto e verifica audiovisiva manuale integrale. Avvio:Avvia-Astronomica.cmd;userdata/astronomica intatti.
+
+# Ripresa: salvataggi costruttore,20 ottobre2026
+
+Formato v13:8960 byte,613 ripristini/successori,420 casi controlli,sei percorsi e cinque progetti PASS. P515/P536 conservano anche round/mask custom17 sospesi.
+Slot12 in nuovo processo da P536 parziale con round2 sospeso PASS; primo/ripetuto conteggio,Launch anticipato,P515 no-op,cap/ripristino e stati senza immagine PASS. Compatibilita v1-v12 e suite completa WASAPI PASS sullo stesso eseguibile.
+P537:corretti gli ID delle cifre finali e21 periodi fermi;96 fixture/14592 passi originali e12096 pixel di quattro schermate PASS. P537 non ha ancora salvataggi.
+Checkpoint:finish_builder_saves.py;check_builder_saves.py,check_builder_regressions.py,BUILDER-SAVE-FORMAT.md. Non eseguire finalizzatori precedenti da soli.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Diciassette scene con salvataggi non sono una percentuale globale.
+
+# Ripresa: salvataggi P517,19 ottobre2026
+
+Formato v12:2278 ripristini/successori,14 posizioni,2240 casi animazione PASS. Conserva fasi attive/ferme, timer,immagine,indicatore e cursore grafico.
+Slot11 in nuovo processo dalla posizione12 PASS; primo/ripetuto successo,limite minimo e uscita volontaria PASS. Compatibilita v1-v11,vecchi slot v3-v11 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint:finish_p517_saves.py;check_p517_saves.py,check_p517_regressions.py e P517-SAVE-FORMAT.md. Non rieseguire finalizzatori precedenti da soli.
+Avvio:Avvia-Astronomica.cmd;preferenze/salvataggi personali in userdata/astronomica. Restano altri salvataggi,verifica audiovisiva manuale integrale e tipografia aiuto. Quindici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi P513,19 ottobre2026
+
+Formato v11: 728 ripristini/successori, cinque percorsi,14 scenari e nove risultati fotone PASS. Conserva fotone fermo nascosto, vecchie cifre, immagine cubo, RNG e conteggio silenzioso originale.
+Slot10 in nuovo processo dopo due risposte corrette PASS; limiti, dieci errori, primo/ripetuto successo e uscita volontaria PASS. Compatibilita v1-v10, vecchi slot v3-v10 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_p513_saves.py; check_p513_saves.py, check_p513_regressions.py e P513-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio: Avvia-Astronomica.cmd; preferenze e salvataggi personali in userdata/astronomica. Prossimo: altri salvataggi, verifica audiovisiva manuale integrale e tipografia aiuto. Quattordici scene con salvataggi non misurano il completamento globale.
+
+# Ripresa: salvataggi della sequenza P506,19 ottobre2026
+
+Formato v10 per P506/P531/P532/P533/P534/P535: 1222 ripristini/successori, 15 percorsi, sei scene in ciascuna fase0..3 PASS.
+Conserva soluzioni parziali, RNG e statica originale round/mask anche dopo uscita/rientro. Slot9 in nuovo processo e contatori primo/ripetuto completamento PASS.
+Corretto il rifiuto dei salvataggi P524/P526/P528/P530 dopo altri enigmi: quattro ingressi originali da P509,12 estremi inattivi e8 rifiuti di metadati incoerenti PASS; layout v6-v9 invariati.
+Compatibilita v1-v9, vecchi slot v3-v9, avvio P1 e suite completa WASAPI PASS sullo stesso eseguibile.
+Checkpoint: finish_variant_saves.py; check_variant_saves.py, check_variant_regressions.py e VARIANT-SAVE-FORMAT.md. Non rieseguire finalizzatori storici da soli.
+Avvio locale: Avvia-Astronomica.cmd nella radice; configurazione/salvataggi personali in userdata/astronomica, separati dalle prove.
+Prossimo: altri puzzle dall'inventario; restano verifica audiovisiva manuale integrale e tipografia aiuto. Tredici scene con salvataggi non misurano il completamento globale.
+
+# Sessione 29 ottobre: verifiche native e spegnimento richiesto
+
+Leggere prima work/fresh-20260913/development-stop-20261029.json, SESSION-20261029-THIRD-WINDOW.md e gli stati finali delle due catene. P510main6dd09d64 ha superato ingresso normale/fresh; la suite completa/pubblicazione è ancora in corso al checkpoint. P512ASVM29 isolato763272 ha revisione indipendente e generalPASS; la prova più ampia normal-routes può terminare autonomamente, con esito in p512-normal-finalization-status.json. P281callback281 ha review/PASS isolati ma gate ritorniround1/2/3 non avviato; P525runner-onlyPASS. Nessun nuovo supporto pubblico per queste tre scene. Spegnimento autorizzato dopo tutte le suite: manifest shutdown-after-development.json. Non ricominciare dal vecchio main772 riportato nella cronologia seguente.
+
+# P510 ASVM28: compilato, suite nativa in corso
+
+Vedere work/fresh-20260913/SESSION-20261028.md e p510-running-jobs.json. Main SHA7726a019dd23df260fa27f7cc0b4f1ad177f78fd83fdc45cbf90db18ccab3243; non cambiare sorgenti/eseguibile mentre la catena e attiva. Ripresa da p510-checkpoint-status.json e completion/seal;31/35 confermati fino al sigillo PASS. Non rieseguire finalizzatori precedenti isolati.
+
 # Ripresa: salvataggi P501,28 ottobre2026
 
 Formato v27:5896byte,63 ripristini verificati. Conserva i confini pronti al lancio, il poll originale0/7, sette identita di sfondo, la storia dei fotogrammi nascosti e dei movimenti privati della palla. Slot26 in nuovo processo, metadata, vero slotv26 congelato e suite completa WASAPI sullo stesso eseguibile PASS.

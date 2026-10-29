@@ -1,206 +1,206 @@
-[2026-10-28 19:29:18] ScummVM 2026.3.1git
-[2026-10-28 19:29:18] RGB SDL2 
-[2026-10-28 19:29:18] --- Log opened.
-[2026-10-28 19:29:18] Using SDL Video Driver "dummy"
-[2026-10-28 19:29:19] Using SDL Audio Driver "wasapi"
-[2026-10-28 19:29:19] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-28 19:29:19] Output sample rate: 44100 Hz
-[2026-10-28 19:29:19] Output buffer size: 1024 samples
-[2026-10-28 19:29:19] Output channels: 2
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_START' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-28 19:29:20] CPU extensions:
-[2026-10-28 19:29:20] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-28 19:29:20] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-28 19:29:20] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-28 19:29:20] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_A' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_B' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_Y' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_X' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_UP' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-28 19:29:20] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-28 19:29:20] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-28 19:29:20] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-28 19:29:20] Astronomica static sprites: P1, 3 drawn
-[2026-10-28 19:29:20] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:29:58] Audio Codec FourCC: 'raw '
-[2026-10-28 19:29:58] stsd version =0
-[2026-10-28 19:29:58] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:29:58] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:29:58] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:29:58] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:29:59] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:03] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:03] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:03] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:08] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:08] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:08] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:12] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:12] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:12] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:16] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:16] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:16] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:21] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:21] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:21] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:26] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:26] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:26] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:30] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:30] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:30] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:37] Audio Codec FourCC: 'raw '
-[2026-10-28 19:30:37] stsd version =0
-[2026-10-28 19:30:37] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:30:37] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:30:37] Astronomica P505 save route: PASS (seed 1, route 0, 8 boundaries)
-[2026-10-28 19:30:37] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:45] Astronomica resource explorer: P321; nav 326,0,316
-[2026-10-28 19:30:45] Astronomica static sprites: P321, 1 drawn
-[2026-10-28 19:30:45] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:45] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:45] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:49] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:49] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:49] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:53] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:30:53] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:30:53] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:30:53] Astronomica resource explorer: P321; nav 326,0,316
-[2026-10-28 19:30:53] Astronomica static sprites: P321, 1 drawn
-[2026-10-28 19:30:53] Astronomica P505 save route: PASS (seed 1, route 1, 3 boundaries)
-[2026-10-28 19:30:53] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:29] Audio Codec FourCC: 'raw '
-[2026-10-28 19:31:29] stsd version =0
-[2026-10-28 19:31:29] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:31:29] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:31:29] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:29] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:29] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:34] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:34] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:34] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:38] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:38] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:38] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:42] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:42] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:42] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:45] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:45] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:45] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:49] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:49] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:49] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:55] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:55] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:55] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:31:59] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:31:59] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:31:59] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:32:05] Audio Codec FourCC: 'raw '
-[2026-10-28 19:32:05] stsd version =0
-[2026-10-28 19:32:05] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:32:05] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:32:05] Astronomica P505 save route: PASS (seed 1, route 2, 8 boundaries)
-[2026-10-28 19:32:05] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:32:43] Audio Codec FourCC: 'raw '
-[2026-10-28 19:32:43] stsd version =0
-[2026-10-28 19:32:43] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:32:43] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:32:43] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:32:43] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:32:43] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:32:47] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:32:47] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:32:47] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:32:51] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:32:51] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:32:51] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:32:56] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:32:56] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:32:56] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:01] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:01] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:01] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:05] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:05] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:05] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:10] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:10] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:10] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:14] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:14] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:14] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:22] Audio Codec FourCC: 'raw '
-[2026-10-28 19:33:22] stsd version =0
-[2026-10-28 19:33:22] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:33:22] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:33:22] Astronomica P505 save route: PASS (seed 48879, route 0, 8 boundaries)
-[2026-10-28 19:33:22] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:30] Astronomica resource explorer: P321; nav 326,0,316
-[2026-10-28 19:33:30] Astronomica static sprites: P321, 1 drawn
-[2026-10-28 19:33:30] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:30] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:30] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:34] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:34] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:34] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:38] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:33:38] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:33:38] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:38] Astronomica resource explorer: P321; nav 326,0,316
-[2026-10-28 19:33:38] Astronomica static sprites: P321, 1 drawn
-[2026-10-28 19:33:38] Astronomica P505 save route: PASS (seed 48879, route 1, 3 boundaries)
-[2026-10-28 19:33:38] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:33:46] Astronomica P505 slot fingerprint: cf874c94
-[2026-10-28 19:34:16] Audio Codec FourCC: 'raw '
-[2026-10-28 19:34:16] stsd version =0
-[2026-10-28 19:34:16] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:34:16] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:34:16] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:16] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:16] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:20] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:20] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:20] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:24] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:24] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:24] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:30] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:30] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:30] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:34] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:34] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:34] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:38] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:38] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:38] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:43] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:43] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:44] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:47] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:47] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:34:47] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:34:55] Audio Codec FourCC: 'raw '
-[2026-10-28 19:34:55] stsd version =0
-[2026-10-28 19:34:55] Astronomica P520 movie: 160x120, scale 30, duration 67222
-[2026-10-28 19:34:55] Astronomica resource explorer: P520; nav 0,0,0
-[2026-10-28 19:34:55] Astronomica P505 save route: PASS (seed 48879, route 2, 8 boundaries)
-[2026-10-28 19:34:55] Astronomica resource explorer: P117; nav 122,0,114
-[2026-10-28 19:34:55] Astronomica static sprites: P117, 1 drawn
-[2026-10-28 19:35:06] Astronomica resource explorer: P505; nav 0,0,0
-[2026-10-28 19:35:06] Astronomica P505 saves: PASS (38 boundaries and successor comparisons, 38 hover resumptions, 2472 truncations, 2472 corruptions, 16 invalid states)
-[2026-10-28 19:35:06] Astronomica resource explorer: P103; nav 101,0,98
-[2026-10-28 19:35:06] Astronomica P505 save verification: PASS
-[2026-10-28 19:35:06] --- Log closed successfully.
+[2026-10-29 23:28:52] ScummVM 2026.3.1git
+[2026-10-29 23:28:52] RGB SDL2 
+[2026-10-29 23:28:52] --- Log opened.
+[2026-10-29 23:28:52] Using SDL Video Driver "dummy"
+[2026-10-29 23:28:53] Using SDL Audio Driver "wasapi"
+[2026-10-29 23:28:53] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-10-29 23:28:53] Output sample rate: 44100 Hz
+[2026-10-29 23:28:53] Output buffer size: 1024 samples
+[2026-10-29 23:28:53] Output channels: 2
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_START' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-10-29 23:28:53] CPU extensions:
+[2026-10-29 23:28:53] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-10-29 23:28:53] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-10-29 23:28:53] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-10-29 23:28:53] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_A' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_B' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_Y' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_X' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_UP' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_DOWN' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_LEFT' not known
+[2026-10-29 23:28:53] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-10-29 23:28:54] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-10-29 23:28:54] Astronomica resource explorer: P1; nav 0,0,0
+[2026-10-29 23:28:54] Astronomica static sprites: P1, 3 drawn
+[2026-10-29 23:28:54] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:29:32] Audio Codec FourCC: 'raw '
+[2026-10-29 23:29:32] stsd version =0
+[2026-10-29 23:29:32] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:29:32] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:29:32] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:29:32] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:29:32] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:29:37] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:29:37] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:29:37] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:29:42] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:29:42] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:29:42] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:29:46] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:29:46] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:29:46] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:29:49] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:29:49] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:29:49] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:29:54] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:29:54] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:29:54] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:00] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:30:00] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:30:00] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:04] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:30:04] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:30:04] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:10] Audio Codec FourCC: 'raw '
+[2026-10-29 23:30:10] stsd version =0
+[2026-10-29 23:30:10] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:30:10] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:30:10] Astronomica P505 save route: PASS (seed 1, route 0, 8 boundaries)
+[2026-10-29 23:30:10] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:19] Astronomica resource explorer: P321; nav 326,0,316
+[2026-10-29 23:30:19] Astronomica static sprites: P321, 1 drawn
+[2026-10-29 23:30:19] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:30:19] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:30:19] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:30:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:30:23] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:27] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:30:27] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:30:27] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:30:27] Astronomica resource explorer: P321; nav 326,0,316
+[2026-10-29 23:30:27] Astronomica static sprites: P321, 1 drawn
+[2026-10-29 23:30:27] Astronomica P505 save route: PASS (seed 1, route 1, 3 boundaries)
+[2026-10-29 23:30:27] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:03] Audio Codec FourCC: 'raw '
+[2026-10-29 23:31:03] stsd version =0
+[2026-10-29 23:31:03] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:31:03] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:31:03] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:03] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:03] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:08] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:12] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:12] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:12] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:15] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:15] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:15] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:19] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:19] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:19] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:23] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:23] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:23] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:29] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:29] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:29] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:33] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:31:33] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:31:33] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:31:39] Audio Codec FourCC: 'raw '
+[2026-10-29 23:31:39] stsd version =0
+[2026-10-29 23:31:39] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:31:39] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:31:39] Astronomica P505 save route: PASS (seed 1, route 2, 8 boundaries)
+[2026-10-29 23:31:39] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:17] Audio Codec FourCC: 'raw '
+[2026-10-29 23:32:17] stsd version =0
+[2026-10-29 23:32:17] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:32:17] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:32:17] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:17] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:17] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:21] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:21] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:21] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:24] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:24] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:24] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:30] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:30] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:30] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:35] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:35] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:35] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:39] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:39] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:39] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:44] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:44] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:44] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:48] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:32:48] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:32:48] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:32:55] Audio Codec FourCC: 'raw '
+[2026-10-29 23:32:55] stsd version =0
+[2026-10-29 23:32:55] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:32:55] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:32:55] Astronomica P505 save route: PASS (seed 48879, route 0, 8 boundaries)
+[2026-10-29 23:32:55] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:03] Astronomica resource explorer: P321; nav 326,0,316
+[2026-10-29 23:33:03] Astronomica static sprites: P321, 1 drawn
+[2026-10-29 23:33:03] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:33:03] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:33:03] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:07] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:33:07] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:33:07] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:12] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:33:12] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:33:12] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:12] Astronomica resource explorer: P321; nav 326,0,316
+[2026-10-29 23:33:12] Astronomica static sprites: P321, 1 drawn
+[2026-10-29 23:33:12] Astronomica P505 save route: PASS (seed 48879, route 1, 3 boundaries)
+[2026-10-29 23:33:12] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:19] Astronomica P505 slot fingerprint: cf874c94
+[2026-10-29 23:33:50] Audio Codec FourCC: 'raw '
+[2026-10-29 23:33:50] stsd version =0
+[2026-10-29 23:33:50] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:33:50] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:33:50] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:33:50] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:33:50] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:54] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:33:54] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:33:54] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:33:58] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:33:58] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:33:58] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:03] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:34:03] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:34:03] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:08] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:34:08] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:34:08] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:12] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:34:12] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:34:12] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:17] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:34:17] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:34:17] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:21] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:34:21] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:34:21] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:28] Audio Codec FourCC: 'raw '
+[2026-10-29 23:34:28] stsd version =0
+[2026-10-29 23:34:28] Astronomica P520 movie: 160x120, scale 30, duration 67222
+[2026-10-29 23:34:28] Astronomica resource explorer: P520; nav 0,0,0
+[2026-10-29 23:34:28] Astronomica P505 save route: PASS (seed 48879, route 2, 8 boundaries)
+[2026-10-29 23:34:28] Astronomica resource explorer: P117; nav 122,0,114
+[2026-10-29 23:34:28] Astronomica static sprites: P117, 1 drawn
+[2026-10-29 23:34:38] Astronomica resource explorer: P505; nav 0,0,0
+[2026-10-29 23:34:38] Astronomica P505 saves: PASS (38 boundaries and successor comparisons, 38 hover resumptions, 2472 truncations, 2472 corruptions, 16 invalid states)
+[2026-10-29 23:34:38] Astronomica resource explorer: P103; nav 101,0,98
+[2026-10-29 23:34:38] Astronomica P505 save verification: PASS
+[2026-10-29 23:34:38] --- Log closed successfully.

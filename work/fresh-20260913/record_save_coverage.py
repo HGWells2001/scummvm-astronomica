@@ -239,6 +239,18 @@ if p501_validation.exists():
   runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),startup_file=startup.relative_to(root).as_posix(),
   startup_sha256=digest(startup),fresh_process_fingerprint=proof['fresh_process_fingerprint']))
 
+from p510_evidence_gate import validated_p510
+p510 = validated_p510(root, work)
+if p510 is not None:
+ v, proof = p510
+ validation=root/'evidence/p510-saves-validation.json';log=root/'evidence/p510-saves-runtime.log';startup=root/'evidence/p510-saves-startup.log'
+ rows.append(dict(scene=510,version=28,payload_bytes=4540,test_slot=27,
+  scope='Ordinary original countdown program1/index6, active media and independent presented frame; foreground voice, hints, unrelated work and unsupported lag excluded',
+  validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),
+  runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
+  startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),
+  fresh_process_slot_sha256=proof['slot_sha256']))
+
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-27' if p504_validation.exists() else '2026-10-26' if (root/'evidence/p502-saves-validation.json').exists() else '2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
@@ -247,5 +259,6 @@ result=dict(date='2026-10-27' if p504_validation.exists() else '2026-10-26' if (
  puzzle_saves=rows,supported_puzzle_route_scenes=len(supported),inventoried_puzzle_route_scenes=len(all_scenes),
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
+if p510 is not None:result['date']=p510[0]['date']
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
 print(f'Native save coverage: {len(supported)} supported puzzle scenes; no global completion percentage')

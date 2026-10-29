@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS",
+  "exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+  "scenes": [
+    505,
+    508,
+    519,
+    524,
+    526,
+    528
+  ],
+  "music_loops": 6,
+  "foreground_replacements": 6,
+  "music_muted": true,
+  "music_volume": 0,
+  "effects_volume": 256,
+  "effects_unmuted": true,
+  "controls_restored": true,
+  "full_suite": true,
+  "scope": "Looping WAVs use Music; foreground WAVs retain Effects and the original single-handle replacement behavior",
+  "limitations": [
+    "Mixer channel/control assertions use real WASAPI; this is not manual listening or a PCM amplitude measurement",
+    "No new Speech classification is inferred for foreground recordings",
+    "No original game media is included in the export"
+  ]
+}

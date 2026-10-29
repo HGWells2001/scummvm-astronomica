@@ -1,0 +1,225 @@
+{
+  "scheme": "astronomica-acceptance-v1",
+  "scheme_date": "2026-10-27",
+  "scheme_status": "FORWARD_FIXED_ACCEPTANCE_CHECKLIST",
+  "observed_at_utc": "2026-10-28T19:49:22.102333+00:00",
+  "verified_baseline": {
+    "scene": 501,
+    "format_version": 27,
+    "exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+    "published_commit": "ad2ec32fa658919c65e920c2c2609d3610061acd",
+    "snapshot": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\verified-checkpoints\\p501-025e82d8bd3b"
+  },
+  "overall_acceptance_index": {
+    "passed": 6,
+    "total": 10,
+    "percent": 60.0,
+    "calculation": "100 * count(PASS) / 10; PARTIAL and UNVERIFIED each count zero",
+    "meaning": "Fixed milestone acceptance index; not a measured fraction of engineering effort or a guarantee of whole-game playability"
+  },
+  "whole_game_completion_percent": null,
+  "estimated_remaining_effort_percent": null,
+  "metrics": {
+    "native_safe_save_scene_coverage": {
+      "supported": 31,
+      "total": 35,
+      "percent": 88.6,
+      "unsupported": [
+        510,
+        512,
+        523,
+        525
+      ]
+    },
+    "static_entry_templates": {
+      "accepted": 114,
+      "total": 121,
+      "percent": 94.2,
+      "meaning": "Static canRun validation, audio enabled, animation disabled; not execution/playability"
+    },
+    "automated_route_scene_inventory": {
+      "passed": 35,
+      "total": 35,
+      "meaning": "Inventoried route scenes include variants; not a count of distinct puzzles or an exhaustive whole-game denominator"
+    }
+  },
+  "evidence_base": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p501-progress-review\\baseline-evidence",
+  "gates": [
+    {
+      "id": "A01",
+      "title": "Native ScummVM integration and reproducible local build",
+      "status": "PASS",
+      "weight": 1,
+      "pass_condition": "The actual Windows x64 ScummVM engine detects the supported original copy, builds against the pinned core, and passes its current same-build execution checks.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/engine/astronomica/detection.cpp",
+        "outputs/astronomica-cleanroom/evidence/development-validation.json",
+        "work/fresh-20260913/p501-checkpoint-status.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "A02",
+      "title": "Ordinary launcher, input and navigation baseline",
+      "status": "PASS",
+      "weight": 1,
+      "pass_condition": "Normal P1 startup uses the playable configuration and original input/navigation routes, with personal preferences and saves preserved and diagnostic mode disabled.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/LOCAL-PLAY.md",
+        "outputs/astronomica-cleanroom/evidence/local-launcher-validation.json",
+        "outputs/astronomica-cleanroom/evidence/runtime.log"
+      ],
+      "remaining": [
+        "This gate covers the automated ordinary-start/input baseline; the integrated human UI check is A09."
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Exhaustive required original-behavior and branch inventory",
+      "status": "UNVERIFIED",
+      "weight": 1,
+      "pass_condition": "A versioned inventory identifies all required game routes and important alternative/failure/time-dependent branches from the original assets, maps each to execution evidence or an explicit accepted limitation, and leaves no required unknown branch.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/evidence/development-validation.json",
+        "outputs/astronomica-cleanroom/evidence/puzzle-coverage.json",
+        "outputs/astronomica-cleanroom/NEXT-STEPS.md"
+      ],
+      "remaining": [
+        "The 35 inventoried route scenes include variants and do not establish an exhaustive whole-game route/branch denominator.",
+        "114/121 is static canRun with animation disabled, not executed original behavior; classify those seven rejects without automatically calling them bugs.",
+        "No new execution of the original Windows program is implied. Bounded unknowns remain until evidence or a documented scope decision resolves them."
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "All currently inventoried puzzle route suites",
+      "status": "PASS",
+      "weight": 1,
+      "pass_condition": "Every one of the 35 declared puzzle route scenes has passing automated native route checks on the same verified executable.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/evidence/development-validation.json",
+        "outputs/astronomica-cleanroom/evidence/runtime.log",
+        "work/fresh-20260913/p501-checkpoint-status.json"
+      ],
+      "remaining": [
+        "This gate closes the existing automated route inventory; A03 and A09 separately address its coverage limits and integrated play."
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "Automated audiovisual pipeline and presentation",
+      "status": "PASS",
+      "weight": 1,
+      "pass_condition": "The supported original video/WAV pipeline, Music/Effects behavior and full-frame presentation checks pass on the verified executable.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/evidence/audio-channels-validation.json",
+        "outputs/astronomica-cleanroom/evidence/presentation-validation.json",
+        "outputs/astronomica-cleanroom/evidence/development-validation.json"
+      ],
+      "remaining": [
+        "These are automated decoder/state/channel/pixel checks, not a claim of complete manual listening or whole-game audiovisual parity."
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "Native reference-help content and interaction",
+      "status": "PASS",
+      "weight": 1,
+      "pass_condition": "The native help reads and renders all781 original articles and31 original images with working article navigation, scrolling, search and modal return.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/evidence/help-native-validation.json",
+        "outputs/astronomica-cleanroom/evidence/help-native-runtime.log"
+      ],
+      "remaining": [
+        "Original typography fidelity is deliberately a separate acceptance gate A08."
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "Useful safe-boundary native saves for the complete puzzle-route inventory",
+      "status": "PARTIAL",
+      "weight": 1,
+      "pass_condition": "Exploration and all35 inventoried puzzle-route scenes support documented useful stable-progress save boundaries, with exact successor/fresh-process/metadata tests, malformed-load atomicity and backward compatibility.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/evidence/native-save-coverage.json",
+        "outputs/astronomica-cleanroom/P501-SAVE-FORMAT.md"
+      ],
+      "remaining": [
+        "Four remaining scene scopes: P510,P512,P523,P525.",
+        "31supported scopes retain their explicit exclusions; arbitrary saves during every active voice, transition or pending command are not silently promised.",
+        "Current ambient restart convention does not preserve sample cursor; determine whether that convention is acceptable for the fixed release scope."
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "Reference-help typography and layout fidelity",
+      "status": "PARTIAL",
+      "weight": 1,
+      "pass_condition": "Original paragraph/table measurements and required font/superscript presentation are reproduced and checked against original reference images.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/evidence/help-native-validation.json",
+        "outputs/astronomica-cleanroom/README.md"
+      ],
+      "remaining": [
+        "Exact typography and original paragraph/table measurements remain outstanding.",
+        "13 original exponent runs are currently rendered using explicit ^(value) notation rather than faithful original superscript typography."
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "Integrated manual audiovisual playthrough",
+      "status": "UNVERIFIED",
+      "weight": 1,
+      "pass_condition": "A human completes a normal new-game-to-ending playthrough on the supported original copy, checks mouse/UI/audio/video/help/save-resume at representative progress points and records reproducible outcomes; required alternate routes are checked or explicitly scoped.",
+      "evidence": [
+        "outputs/astronomica-cleanroom/LOCAL-PLAY.md",
+        "outputs/astronomica-cleanroom/evidence/local-launcher-validation.json",
+        "outputs/astronomica-cleanroom/evidence/help-native-validation.json"
+      ],
+      "remaining": [
+        "User/manual confirmation is still required; automated component suites cannot mark this gate passed.",
+        "Observed issues may reopen the relevant gates."
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Regression integrity, compatibility and recoverable source publication",
+      "status": "PASS",
+      "weight": 1,
+      "pass_condition": "The same executable completes the full suite, genuine previous-version slots remain compatible, exact source/build hashes are retained, and a clean source-only clone plus remote commit are verified and sealed.",
+      "evidence": [
+        "work/fresh-20260913/p501-checkpoint-status.json",
+        "work/fresh-20260913/p501-completion-status.json",
+        "work/fresh-20260913/p501-seal-status.json",
+        "outputs/astronomica-cleanroom/evidence/development-validation.json"
+      ],
+      "remaining": []
+    }
+  ],
+  "evidence_sha256": {
+    "outputs/astronomica-cleanroom/LOCAL-PLAY.md": "48d23007ee42f7f1d14702312578c639879bc28c2ed7d2fc65c1fa6547cd9e7a",
+    "outputs/astronomica-cleanroom/NEXT-STEPS.md": "5df5d2ef176159de8291013a3b881e384724bfe58fdf573a9611b63982b11e9a",
+    "outputs/astronomica-cleanroom/P501-SAVE-FORMAT.md": "97c64b50744e031c30dc356a2fe6e59de5b2a75a1b9dcf83106467148ad30ea6",
+    "outputs/astronomica-cleanroom/README.md": "fae40efd37ff4a57a06b526ef5afa09a532f181b0a193847b6789aaa42792b03",
+    "outputs/astronomica-cleanroom/engine/astronomica/detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "outputs/astronomica-cleanroom/evidence/audio-channels-validation.json": "dcbe94d5239d403bc676e6cb3a88322b1904b84f37e2f48fbbfe44e8ae69de93",
+    "outputs/astronomica-cleanroom/evidence/development-validation.json": "6f57482406b9f9c47264ebb0c09b68b6e1a4900f127d085024a45f65be785d1b",
+    "outputs/astronomica-cleanroom/evidence/help-native-runtime.log": "b9a149ce33cfb5c110e05bc83e287f1e7e4eea8f518258a1303aade2049347e7",
+    "outputs/astronomica-cleanroom/evidence/help-native-validation.json": "21b4857eb057cf61e78822231a0cda83967a2415d35330c896148b007329c739",
+    "outputs/astronomica-cleanroom/evidence/local-launcher-validation.json": "db460e34fd333a1320140ef0b4afb0dcad687a92445cb5098ed2364a2e52ec1c",
+    "outputs/astronomica-cleanroom/evidence/native-save-coverage.json": "1426a5d01ba763d2065b537396cc04fa0aba4e86326f3f81f10f3ac20b43872e",
+    "outputs/astronomica-cleanroom/evidence/presentation-validation.json": "731c3832382dd2dc347e4e2f94618ca2c538d38ae57cfa8cd1f22b3ccc100927",
+    "outputs/astronomica-cleanroom/evidence/puzzle-coverage.json": "43e3ae3edc0f5bfbbe6a0c01650f8bc6998a9493150ac7744ebda09e5840025e",
+    "outputs/astronomica-cleanroom/evidence/runtime.log": "1c3a8bb70f1590bce24c11599b0b4f86398a338568c799e421eb66515263c911",
+    "work/fresh-20260913/p501-checkpoint-status.json": "38505c1e59e65f6cc6dcdb3c08f7641390819295dad440124c934f0380eb70ab",
+    "work/fresh-20260913/p501-completion-status.json": "22986adf0f691c22afe49e8fbe3ce32affa03e6503d0b331a9a2f8d6eb13b6f1",
+    "work/fresh-20260913/p501-seal-status.json": "9c12501e046f9bd1af8996840d023c7d3120cdd3b8731b102c53edcdbb099153"
+  },
+  "frozen_rules": [
+    "Keep exactly these ten gates and binary PASS scoring for future reports; do not split or merge gates to alter the percentage.",
+    "New acceptance requirements require an explicit versioned scheme change, not silent denominator changes.",
+    "A pending candidate does not invalidate the last verified baseline or earn a PASS before its required checks finish.",
+    "Do not overwrite existing official manifests containing whole_game_completion_percent=null with this different index.",
+    "Upstream merge acceptance, additional platforms/editions and distribution packaging are outside this Windows-original-copy target unless separately requested; official ScummVM submission readiness is not established by the private source publication."
+  ]
+}

@@ -163,6 +163,11 @@ private:
  void onBall(int mode, uint32 now) override;
  void queueBallCommand(int opcode, int value, int frame, int delay, uint32 now);
  bool verifyP501Saves();
+ bool canSaveP510() const;
+ Common::Error saveP510(Common::WriteStream*stream);
+ Common::Error loadP510(Common::SeekableReadStream*stream);
+ bool testP510FileSave(uint32 now);
+ bool testP510FreshFile();
  bool canSaveP501() const;
  Common::Error saveP501(Common::WriteStream*stream);
  Common::Error loadP501(Common::SeekableReadStream*stream);
@@ -195,6 +200,25 @@ private:
  int _dangerEvent[2] = {};
  uint32 _dangerTime[2] = {};
  bool verifyP510Puzzle();
+ bool verifyP510OrdinaryEntry();
+ struct P510Prepared {
+  Scene scene; ScriptRunner runner; Graphics::Surface background,displayed,composed;
+  Video::QuickTimeDecoder *decoder=nullptr; Common::Array<uint32>packet;bool ready=false;
+  P510Prepared()=default;
+  P510Prepared(const P510Prepared&)=delete;P510Prepared&operator=(const P510Prepared&)=delete;
+  P510Prepared(P510Prepared&&)=delete;P510Prepared&operator=(P510Prepared&&)=delete;
+  ~P510Prepared();void clearOwned();bool empty()const;
+ };
+ bool captureP510Packet(Common::Array<uint32>&words,uint32 now)const;
+ bool prepareP510Packet(const Common::Array<uint32>&words,P510Prepared&prepared);
+ bool testP510Combined(uint32 now);
+ bool bindP510Prepared(P510Prepared&prepared);
+ void commitP510Prepared(P510Prepared&prepared);
+ bool installP510Packet(const Common::Array<uint32>&words);
+ uint32 p510WholeLiveHash()const;
+ bool testP510LiveInstall(uint32 now);
+ uint _p510InstallStarts=0,_p510InstallCommits=0;
+
  int _plotEvent = 0;
  uint32 _plotTime = 0;
  int _place;

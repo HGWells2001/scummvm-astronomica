@@ -3,6 +3,8 @@ from pathlib import Path
 import hashlib,json,shutil,subprocess,sys
 root=Path('publish/scummvm-astronomica')
 subprocess.run([sys.executable,'work/fresh-20260913/verify_development_evidence.py'],check=True)
+from p510_evidence_gate import validated_p510
+p510_save_present=validated_p510(Path('outputs/astronomica-cleanroom'),Path('work/fresh-20260913')) is not None
 assert subprocess.check_output(['git','-C',str(root),'remote','get-url','origin'],text=True).strip()=='https://github.com/HGWells2001/scummvm-astronomica.git'
 manifest=json.loads((root/'SOURCE-MANIFEST.json').read_text())
 ignore=root/'.gitignore';rules=ignore.read_text()
@@ -22,6 +24,20 @@ if Path('outputs/astronomica-cleanroom/PROJECT-PROGRESS.md').is_file():
     for name,expected in frozen['evidence_sha256'].items():
         path=progress/'baseline-evidence'/name
         assert hashlib.sha256(path.read_bytes()).hexdigest()==expected,name
+        progress_paths.append(path)
+    # The later sealed-P501 acceptance snapshot is separate from the immutable
+    # original project-progress-review evidence. Copy only these 17 known paths.
+    fixed=Path('work/fresh-20260913/p501-progress-review')
+    fixed_index=json.loads((fixed/'acceptance-index.json').read_text())
+    fixed_names={
+        *['outputs/astronomica-cleanroom/'+name for name in ('LOCAL-PLAY.md','NEXT-STEPS.md','P501-SAVE-FORMAT.md','README.md','engine/astronomica/detection.cpp')],
+        *['outputs/astronomica-cleanroom/evidence/'+name for name in ('audio-channels-validation.json','development-validation.json','help-native-runtime.log','help-native-validation.json','local-launcher-validation.json','native-save-coverage.json','presentation-validation.json','puzzle-coverage.json','runtime.log')],
+        *['work/fresh-20260913/'+name for name in ('p501-checkpoint-status.json','p501-completion-status.json','p501-seal-status.json')]}
+    assert set(fixed_index['evidence_sha256'])==fixed_names and len(fixed_names)==17
+    progress_paths.extend(fixed/name for name in ('acceptance-index.json','verify.py'))
+    for name in sorted(fixed_names):
+        path=fixed/'baseline-evidence'/name
+        assert hashlib.sha256(path.read_bytes()).hexdigest()==fixed_index['evidence_sha256'][name],name
         progress_paths.append(path)
     for path in progress_paths:
         target=root/path
@@ -255,6 +271,20 @@ if p501_save_present:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
 
+if p510_save_present:
+    p510_paths=['outputs/astronomica-cleanroom/P510-SAVE-FORMAT.md',
+                *['work/fresh-20260913/'+name for name in ('check_p510_saves.py','check_p510_regressions.py','finish_p510_saves.py','p510_evidence_gate.py','p510_ordinary_gate.py','check_p510_ordinary_entry.py')],
+                *['outputs/astronomica-cleanroom/evidence/'+name for name in ('p510-saves-validation.json','p510-save-proof.json','p510-saves-runtime.log','p510-saves-startup.log','p510-saves-list.log','p501-v27-previous-slot.log','p501-v27-previous-slot-proof.json')]]
+    p510_paths += ['outputs/astronomica-cleanroom/evidence/p510-ordinary-entry/'+name for name in ('ordinary-entry-gate-proof.json','initial.log','fresh-true.log','fresh-false.log','listed.log')]
+    for name in p510_paths:
+        assert Path(name).is_file(),name
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+# The shared read-only gate is needed even when P510 validation is absent.
+gate='work/fresh-20260913/p510_evidence_gate.py'
+(root/gate).parent.mkdir(parents=True,exist_ok=True)
+shutil.copyfile(gate,root/gate)
+
 m=json.loads(Path('outputs/astronomica-cleanroom/evidence/development-validation.json').read_text())
 p=root/'SCUMMVM_BASE.json';j=json.loads(p.read_text())
 j.update(engine_sha256=m['engine_sha256'],validated_executable_sha256=m['exe_sha256']);p.write_text(json.dumps(j,indent=2)+'\n')
@@ -384,7 +414,14 @@ if p501_save_present:
     if 'P501 v27' not in s:
         s=s.replace('- Automatically verified routes','- P501 v27 preserves stopped ready-to-pitch states, the original pending poll at index0/7, seven background identities and retained sprite/private ball history. Active pitches, generated cleanup work, foreground audio and completion remain excluded. Fresh-process continuation and genuine frozen v26 compatibility pass.\n- Automatically verified routes')
     p.write_text(s.rstrip()+'\n')
-manifest['date']='2026-10-27' if p504_save_present else '2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
+if p510_save_present:
+    s=s.replace('thirty-one supported puzzle scenes (P501-P506, P508, P509, P511, P513-P519, P521, P522, P524, P526-P537)',
+                'thirty-two supported puzzle scenes (P501-P506, P508-P511, P513-P519, P521, P522, P524, P526-P537)')
+    if 'P510 v28' not in s:
+        s=s.replace('- Automatically verified routes','- P510 v28 preserves the sole original countdown at program1/index6, independent media frames and literal sprites. Native WASAPI, nested pause restoration, 4540 truncations and byte corruptions, fresh physical slot loading, metadata listing and genuine frozen v27 compatibility pass. Foreground voice, hints, unrelated pending work and unsupported media lag remain excluded.\n- Automatically verified routes')
+    assert 'thirty-two supported puzzle scenes' in s and 'P510 v28' in s
+    p.write_text(s.rstrip()+'\n')
+manifest['date']='2026-10-28' if p510_save_present else '2026-10-27' if p504_save_present else '2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

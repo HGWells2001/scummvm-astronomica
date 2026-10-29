@@ -100,6 +100,15 @@ public:
  bool importP501ReadyState(const Common::Array<uint32>&words,uint32 now);
  void auditP509Snapshot(Common::Array<uint32> &values, Common::Array<uint32> &queue) const;
  uint32 probeDiagnosticHash(bool strict) const;
+ void swapP510PreparedRunner(ScriptRunner&other);
+ uint32 p510CompleteHash()const;
+ bool p510Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const;
+ void p510AuditPending(const char *tag,uint32 now) const;
+ void p510AuditExportState(Common::Array<uint32>&words)const;
+ bool exportP510ActiveState(Common::Array<uint32>&words,uint32 now)const;
+ bool importP510ActiveState(const Common::Array<uint32>&words,uint32 now);
+ bool testP510ActiveState(uint32 now)const;
+
  bool exportPersistentState(Common::Array<uint32> &words) const;
  bool importPersistentState(const Common::Array<uint32> &words);
  static bool validPersistentState(const Common::Array<uint32> &words) { return validVariantState(words); }
@@ -170,6 +179,8 @@ private:
  int _zodiacRegion = 0;
  bool _noopSuccess = false;
  uint _variantRound = 0, _variantMask = 0; // Original process statics DS:014b/014f.
+ bool trustedP510ActiveProgram()const;
+ bool validP510ActiveValues(const Common::Array<uint32>&words,uint32 now)const;
  bool ready(const Script &script, bool allowTimed) const;
  void execute(const Script &script, uint index, uint32 now);
 };

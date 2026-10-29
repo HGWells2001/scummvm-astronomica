@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "status": "PASS",
   "scope": "trusted_p501_ready",
   "payload_bytes": 5896,
@@ -7,7 +7,7 @@
   "audio_driver": "native",
   "actual_audio_driver": "wasapi",
   "diagnostic": false,
-  "exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+  "exe_sha256": "6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81",
   "metadata_listed": true,
   "fresh_process_fingerprint": "cdb9f9cd",
   "original_wav_sha256": {
@@ -73,13 +73,13 @@
     "S9.WAV": "12a4caee54f8af612583931b368cbcf193fd8c19812095a3f8dd3dfaf1b89083",
     "VESTA": "73b63990bb24b60fb0cc57f1d50cf768c72248ddb0fdda5c6bb7855d1240beeb"
   },
-  "variant_fixture_sha256": "ed451b5e93f1fd4d9cd2900009ca51217282fd6a91f165ee1dd72083384a85fa",
+  "variant_fixture_sha256": "4f8c80819cc77de9f85fda1db68df6a8f1188119467a74a4f516fba3761d2ae4",
   "variant_fixture_unchanged": true,
   "boundaries": 63,
   "history_boundaries": 21,
   "dormant_boundaries": 28,
   "ordinary_boundaries": 35,
-  "busy_rejections": 13519,
+  "busy_rejections": 13522,
   "world_states": 6,
   "background_identities": 7,
   "cross_world_histories": 15,

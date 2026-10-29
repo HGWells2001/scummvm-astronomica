@@ -1,3 +1,4 @@
+#include "astronomica/sprites.h"
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "astronomica/script.h"
 #include "common/debug.h"
@@ -211,6 +212,262 @@ bool ScriptRunner::importP501ReadyState(const Common::Array<uint32>&w,uint32 now
  if(!trustedP501ReadyProgram()||!scriptsIdle()||!validP501ReadyValues(w,now))return false;importSettledValues(w);_variantRound=w[603];_variantMask=w[604];_pending.push_back(Pending{_programs[0],w[605],w[606]});++_pendingEpoch;return true;
 }
 
+void ScriptRunner::swapP510PreparedRunner(ScriptRunner&o){
+ _programs.swap(o._programs);
+ _pending.swap(o._pending);
+ _actions.swap(o._actions);
+ _spriteTargets.swap(o._spriteTargets);
+ _soundTargets.swap(o._soundTargets);
+ _movieDurations.swap(o._movieDurations);
+ _imageTargets.swap(o._imageTargets);
+ {auto value=_p501ReadySupport;_p501ReadySupport=o._p501ReadySupport;o._p501ReadySupport=value;}
+ {auto value=_p504PollSupport;_p504PollSupport=o._p504PollSupport;o._p504PollSupport=value;}
+ {auto value=_p509PendingSupport;_p509PendingSupport=o._p509PendingSupport;o._p509PendingSupport=value;}
+ {auto value=_programLoadedAt;_programLoadedAt=o._programLoadedAt;o._programLoadedAt=value;}
+ {auto value=_pendingEpoch;_pendingEpoch=o._pendingEpoch;o._pendingEpoch=value;}
+ {auto value=_ballHandler;_ballHandler=o._ballHandler;o._ballHandler=value;}
+ {auto value=_cometHandler;_cometHandler=o._cometHandler;o._cometHandler=value;}
+ {auto value=_nativePaletteSupport;_nativePaletteSupport=o._nativePaletteSupport;o._nativePaletteSupport=value;}
+ {auto value=_jupiterSupport;_jupiterSupport=o._jupiterSupport;o._jupiterSupport=value;}
+ {auto value=_plotSupport;_plotSupport=o._plotSupport;o._plotSupport=value;}
+ {auto value=_dangerSupport;_dangerSupport=o._dangerSupport;o._dangerSupport=value;}
+ {auto value=_probeHandler;_probeHandler=o._probeHandler;o._probeHandler=value;}
+ {auto value=_rendezvousHandler;_rendezvousHandler=o._rendezvousHandler;o._rendezvousHandler=value;}
+ {auto value=_lastTrue;_lastTrue=o._lastTrue;o._lastTrue=value;}
+ {auto value=_clicksBlocked;_clicksBlocked=o._clicksBlocked;o._clicksBlocked=value;}
+ {auto value=_executed;_executed=o._executed;o._executed=value;}
+ {auto value=_randomState;_randomState=o._randomState;o._randomState=value;}
+ {auto value=_gameStateHandler;_gameStateHandler=o._gameStateHandler;o._gameStateHandler=value;}
+ {auto value=_soundHandler;_soundHandler=o._soundHandler;o._soundHandler=value;}
+ {auto value=_orbitHandler;_orbitHandler=o._orbitHandler;o._orbitHandler=value;}
+ {auto value=_successHandler;_successHandler=o._successHandler;o._successHandler=value;}
+ {auto value=_successGlobal;_successGlobal=o._successGlobal;o._successGlobal=value;}
+ {auto value=_successExtraGlobal;_successExtraGlobal=o._successExtraGlobal;o._successExtraGlobal=value;}
+ {auto value=_rocketSupport;_rocketSupport=o._rocketSupport;o._rocketSupport=value;}
+ {auto value=_eclipseSupport;_eclipseSupport=o._eclipseSupport;o._eclipseSupport=value;}
+ {auto value=_planetSupport;_planetSupport=o._planetSupport;o._planetSupport=value;}
+ {auto value=_variantSupport;_variantSupport=o._variantSupport;o._variantSupport=value;}
+ {auto value=_weatherSupport;_weatherSupport=o._weatherSupport;o._weatherSupport=value;}
+ {auto value=_mentorSupport;_mentorSupport=o._mentorSupport;o._mentorSupport=value;}
+ {auto value=_adviceSupport;_adviceSupport=o._adviceSupport;o._adviceSupport=value;}
+ {auto value=_mentorPrevious;_mentorPrevious=o._mentorPrevious;o._mentorPrevious=value;}
+ {auto value=_worldMovieSupport;_worldMovieSupport=o._worldMovieSupport;o._worldMovieSupport=value;}
+ {auto value=_helpSupport;_helpSupport=o._helpSupport;o._helpSupport=value;}
+ {auto value=_legacyResumeSupport;_legacyResumeSupport=o._legacyResumeSupport;o._legacyResumeSupport=value;}
+ {auto value=_resumeSupport;_resumeSupport=o._resumeSupport;o._resumeSupport=value;}
+ {auto value=_resumeFromHelp;_resumeFromHelp=o._resumeFromHelp;o._resumeFromHelp=value;}
+ {auto value=_photonSupport;_photonSupport=o._photonSupport;o._photonSupport=value;}
+ {auto value=_zodiacSupport;_zodiacSupport=o._zodiacSupport;o._zodiacSupport=value;}
+ {auto value=_zodiacRegion;_zodiacRegion=o._zodiacRegion;o._zodiacRegion=value;}
+ {auto value=_noopSuccess;_noopSuccess=o._noopSuccess;o._noopSuccess=value;}
+ {auto value=_variantRound;_variantRound=o._variantRound;o._variantRound=value;}
+ {auto value=_variantMask;_variantMask=o._variantMask;o._variantMask=value;}
+ for(uint scope=0;scope<2;++scope)for(uint i=0;i<100;++i){int32 value=_values[scope][i];_values[scope][i]=o._values[scope][i];o._values[scope][i]=value;value=_widths[scope][i];_widths[scope][i]=o._widths[scope][i];o._widths[scope][i]=value;bool known=_known[scope][i];_known[scope][i]=o._known[scope][i];o._known[scope][i]=known;}
+}
+
+uint32 ScriptRunner::p510CompleteHash()const{
+ uint32 h=probeDiagnosticHash(true);auto add=[&](uint32 v){h=(h^v)*16777619U;};
+ add(uint32(_p501ReadySupport));
+ add(uint32(_p504PollSupport));
+ add(uint32(_p509PendingSupport));
+ add(uint32(_programLoadedAt));
+ add(uint32(_pendingEpoch));
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_ballHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_cometHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ add(uint32(_nativePaletteSupport));
+ add(uint32(_jupiterSupport));
+ add(uint32(_plotSupport));
+ add(uint32(_dangerSupport));
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_probeHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_rendezvousHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ add(uint32(_lastTrue));
+ add(uint32(_clicksBlocked));
+ add(uint32(_executed));
+ add(uint32(_randomState));
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_gameStateHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_soundHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_orbitHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ {uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_successHandler));add(uint32(ptr));add(uint32(ptr>>32));}
+ add(uint32(_successGlobal));
+ add(uint32(_successExtraGlobal));
+ add(uint32(_rocketSupport));
+ add(uint32(_eclipseSupport));
+ add(uint32(_planetSupport));
+ add(uint32(_variantSupport));
+ add(uint32(_weatherSupport));
+ add(uint32(_mentorSupport));
+ add(uint32(_adviceSupport));
+ add(uint32(_mentorPrevious));
+ add(uint32(_worldMovieSupport));
+ add(uint32(_helpSupport));
+ add(uint32(_legacyResumeSupport));
+ add(uint32(_resumeSupport));
+ add(uint32(_resumeFromHelp));
+ add(uint32(_photonSupport));
+ add(uint32(_zodiacSupport));
+ add(uint32(_zodiacRegion));
+ add(uint32(_noopSuccess));
+ add(uint32(_variantRound));
+ add(uint32(_variantMask));
+
+ for(uint32 value:_movieDurations)add(value);for(const Common::String&name:_imageTargets)for(char c:name)add(byte(c));
+ for(const Script&program:_programs){add(program.size());for(const Command&c:program){add(c.opcode);add(c.delay);for(int32 v:c.args)add(uint32(v));for(char v:c.text)add(byte(v));}}return h;
+}
+bool ScriptRunner::p510Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const{
+ if(!_plotSupport||_gameStateHandler!=g||_soundHandler!=s||_successHandler!=success||_successGlobal!=26||_successExtraGlobal!=-1||_spriteTargets.size()!=14||_soundTargets.size()!=923||!_soundTargets[912]||_movieDurations.size()!=1||_movieDurations[0]!=11340||!_imageTargets.empty())return false;
+ if(_p501ReadySupport||_p504PollSupport||_p509PendingSupport||_ballHandler||_cometHandler||_nativePaletteSupport||_jupiterSupport||_dangerSupport||_probeHandler||_rendezvousHandler||_orbitHandler||_rocketSupport||_eclipseSupport||_planetSupport||_variantSupport||_weatherSupport||_mentorSupport||_adviceSupport||_worldMovieSupport||_helpSupport||_legacyResumeSupport||_resumeSupport||_resumeFromHelp||_photonSupport||_zodiacSupport||_noopSuccess)return false;
+ for(uint i=0;i<14;++i)if(_spriteTargets[i]!=spriteFrameCount(scene,i))return false;return true;
+}
+
+bool ScriptRunner::trustedP510ActiveProgram()const{
+if(!_plotSupport||_programs.size()!=4)return false;
+if(_programs[0].size()!=13)return false;
+{const Command&c=_programs[0][0];if(c.opcode!=4||c.delay!=0||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=0)return false;
+}
+{const Command&c=_programs[0][1];if(c.opcode!=36||c.delay!=0||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[0][2];if(c.opcode!=40||c.delay!=0||c.args.size()!=4||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=3)return false;
+}
+{const Command&c=_programs[0][3];if(c.opcode!=31||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][4];if(c.opcode!=23||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=23)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][5];if(c.opcode!=45||c.delay!=-1||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][6];if(c.opcode!=31||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=2)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][7];if(c.opcode!=23||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=23)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][8];if(c.opcode!=45||c.delay!=-1||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][9];if(c.opcode!=31||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=3)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][10];if(c.opcode!=23||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=23)return false;
+if(c.args[1]!=3)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][11];if(c.opcode!=42||c.delay!=-1||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][12];if(c.opcode!=3||c.delay!=0||c.args.size()!=4||!c.text.empty())return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=261)return false;
+if(c.args[2]!=33)return false;
+if(c.args[3]!=0)return false;
+}
+if(_programs[1].size()!=7)return false;
+{const Command&c=_programs[1][0];if(c.opcode!=46||c.delay!=0||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=-1)return false;
+}
+{const Command&c=_programs[1][1];if(c.opcode!=47||c.delay!=0||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=8)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=1)return false;
+}
+{const Command&c=_programs[1][2];if(c.opcode!=47||c.delay!=0||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=9)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=1)return false;
+}
+{const Command&c=_programs[1][3];if(c.opcode!=31||c.delay!=0||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[1][4];if(c.opcode!=5||c.delay!=0||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=136)return false;
+}
+{const Command&c=_programs[1][5];if(c.opcode!=42||c.delay!=-1||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[1][6];if(c.opcode!=41||c.delay!=2750||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+}
+if(_programs[2].size()!=1)return false;
+{const Command&c=_programs[2][0];if(c.opcode!=15||c.delay!=0||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=12)return false;
+if(c.args[1]!=1)return false;
+}
+if(_programs[3].size()!=1)return false;
+{const Command&c=_programs[3][0];if(c.opcode!=25||c.delay!=0||c.args.size()!=0||!c.text.empty())return false;
+}
+return true;
+}
+
+bool ScriptRunner::validP510ActiveValues(const Common::Array<uint32>&w,uint32 now)const{
+ if(w.size()!=607||w[605]!=6||int32(now-w[601])<0||int32(now-w[606])<0)return false;
+ Common::Array<uint32>base;for(uint i=0;i<605;++i)base.push_back(w[i]);if(!validPersistentState(base))return false;
+ const uint widths[]={12,52,3,16,8,1,3};for(uint i=0;i<100;++i)if(w[301+3*i]!=(i<7?widths[i]:0U)||w[302+3*i]!=uint32(i<7))return false;
+ return w[300]>=1&&w[300]<=3&&w[303]>=1&&w[303]<=51&&!w[306]&&!w[309]&&w[312]>=1&&w[312]<=5&&w[315]==1&&!w[318];
+}
+bool ScriptRunner::exportP510ActiveState(Common::Array<uint32>&words,uint32 now)const{
+ if(!trustedP510ActiveProgram()||_pending.size()!=1||!_actions.empty()||_clicksBlocked)return false;const Pending&p=_pending[0];if(p.index!=6||p.script.size()!=_programs[1].size())return false;
+ for(uint i=0;i<p.script.size();++i){const Command&a=p.script[i],&b=_programs[1][i];if(a.opcode!=b.opcode||a.delay!=b.delay||a.args!=b.args||a.text!=b.text)return false;}
+ Common::Array<uint32>w;exportSettledValues(w);w.push_back(_variantRound);w.push_back(_variantMask);w.push_back(p.index);w.push_back(p.since);if(!validP510ActiveValues(w,now))return false;words=w;return true;
+}
+bool ScriptRunner::importP510ActiveState(const Common::Array<uint32>&words,uint32 now){
+ if(!trustedP510ActiveProgram()||!scriptsIdle()||_clicksBlocked||!validP510ActiveValues(words,now))return false;
+ importSettledValues(words);_variantRound=words[603];_variantMask=words[604];_pending.push_back(Pending{_programs[1],words[605],words[606]});++_pendingEpoch;return true;
+}
+bool ScriptRunner::testP510ActiveState(uint32 now)const{
+ Common::Array<uint32>w;if(!exportP510ActiveState(w,now))return false;ScriptRunner prepared;prepared.setPrograms(_programs,w[601]);prepared.setPlotSupport(true);
+ if(!prepared.importP510ActiveState(w,now)||prepared.probeDiagnosticHash(false)!=probeDiagnosticHash(false))return false;
+ Common::Array<uint32>again;if(!prepared.exportP510ActiveState(again,now)||again!=w)return false;
+ ScriptRunner expected=*this;for(uint32 at:{now,now+2749,now+2750,now+2751}){expected.tick(at);prepared.tick(at);if(expected.probeDiagnosticHash(false)!=prepared.probeDiagnosticHash(false))return false;}
+
+ {Common::Array<uint32>bad=w;bad[303]=52;ScriptRunner target;target.setPrograms(_programs,w[601]);target.setPlotSupport(true);const uint32 before=target.probeDiagnosticHash(true);if(target.importP510ActiveState(bad,now)||target.probeDiagnosticHash(true)!=before)return false;debug("P510 countdown52 phase rejection: PASS (literal width52 unchanged)");}
+ for(uint offset:{300U,303U,304U,306U,309U,312U,313U,315U,318U,602U,605U,606U}){Common::Array<uint32>bad=w;bad[offset]=offset==606?now+1:0xffffffffU;ScriptRunner target;target.setPrograms(_programs,w[601]);target.setPlotSupport(true);const uint32 before=target.probeDiagnosticHash(true);if(target.importP510ActiveState(bad,now)||target.probeDiagnosticHash(true)!=before){debug("P510 runner invalid fixture FAIL offset%u",offset);return false;}}
+ return true;
+}
+void ScriptRunner::p510AuditExportState(Common::Array<uint32>&words)const{exportSettledValues(words);words.push_back(_variantRound);words.push_back(_variantMask);}
+void ScriptRunner::p510AuditPending(const char*tag,uint32 now)const{
+ debug("P510QUEUE %s now=%u loaded=%u pending=%u actions=%u blocked=%u",tag,now,_programLoadedAt,_pending.size(),_actions.size(),uint(_clicksBlocked));
+ for(uint i=0;i<_pending.size();++i){const Pending&p=_pending[i];int program=-1;for(uint j=0;j<_programs.size();++j)if(p.script.size()==_programs[j].size()){bool same=true;for(uint k=0;k<p.script.size();++k){const Command&a=p.script[k],&b=_programs[j][k];same&=a.opcode==b.opcode&&a.delay==b.delay&&a.args==b.args&&a.text==b.text;}if(same)program=j;}debug("P510PENDING %s now=%u program=%d index=%u since=%u count=%u",tag,now,program,p.index,p.since,p.script.size());}
+}
 uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
  uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());
  for(const Pending&p:_pending){add(p.index);add(p.since);add(p.script.size());for(const Command&c:p.script){add(c.opcode);add(c.delay);add(c.args.size());for(int32 v:c.args)add(v);}}

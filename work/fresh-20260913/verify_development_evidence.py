@@ -131,9 +131,16 @@ if p502_save_present:expected_save_scenes.add(502)
 if p503_save_present:expected_save_scenes.add(503)
 if p504_save_present:expected_save_scenes.add(504)
 if p501_save_present:expected_save_scenes.add(501)
+from p510_evidence_gate import validated_p510
+p510 = validated_p510(root, work)
+if p510 is not None:expected_save_scenes.add(510)
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
+ if row['scene']==510:
+  assert row['version']==28 and row['payload_bytes']==4540 and row['test_slot']==27
+  assert row['fresh_process_slot_sha256']==p510[1]['slot_sha256']
+  assert 'fresh_process_fingerprint' not in row
  assert digest(root/row['validation_file'])==row['validation_sha256']
  assert digest(root/row.get('runtime_file',f"evidence/p{row['scene']}-saves-runtime.log"))==row['runtime_sha256']
  assert digest(root/row.get('startup_file',f"evidence/p{row['scene']}-saves-startup.log"))==row['startup_sha256']

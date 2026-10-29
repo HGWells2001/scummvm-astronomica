@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+  "native_save_scenes": 31,
+  "full_suite": true,
+  "local_only": true
+}

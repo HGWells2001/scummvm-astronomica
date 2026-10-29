@@ -14,7 +14,7 @@
     "P537/S0.WAV": "f86ed5d8ad91f741682137bc12d20d0593eb7a2b618c4b7f89f4e1332bf85847",
     "P537/S1.WAV": "0662b39bd3a5a7156ba90f63e35ca4f21980a7efad94fd14ffb2bb8af423df71"
   },
-  "variant_fixture_sha256": "ed451b5e93f1fd4d9cd2900009ca51217282fd6a91f165ee1dd72083384a85fa",
+  "variant_fixture_sha256": "4f8c80819cc77de9f85fda1db68df6a8f1188119467a74a4f516fba3761d2ae4",
   "variant_fixture_unchanged": true,
   "boundaries": 577,
   "history_boundaries": 385,

@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-29",
+  "status": "PASS",
+  "scope": "trusted_p510_ordinary_countdown",
+  "format_version": 28,
+  "payload_bytes": 4540,
+  "slot": 27,
+  "exe_sha256": "6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81",
+  "diagnostic": false,
+  "audio_driver": "native",
+  "actual_audio_driver": "wasapi",
+  "metadata_listed": true,
+  "fresh_process": true,
+  "fresh_slot_unchanged": true,
+  "paused_source_save": true,
+  "paused_recipient_load": true,
+  "original_assets_sha256": {
+    "FLATPLOT.MOV": "3fcaf735bb714a8d3ea9a7822de9641768e99b4380aedc545013e7baf7687dc0",
+    "MEGAFILE.HYP": "c02ffb9b00da37a0d6d081746250b38b84b3be970ea942009baaf2c349ee97b0",
+    "S0.WAV": "ce810e10b319f0ef6fe1f93b61b868baa1446506d008a9e6569628f8f37f313f",
+    "S1.WAV": "64456416a2366a91cdba8650bc3232df115a14d45b97f5bb29d46a781bde0b50",
+    "S10.WAV": "7e1851920ea3ceb4d1c641d482990d889067f281892776345b398218e5df1a38",
+    "S2.WAV": "4647840923173ccff69b60df013e527f013a2f048951b83362f3e0fed8fbec4c",
+    "S3.WAV": "ac01153632c8f39f46d2fe50c9bbc70bc6c51a53a90679acb9a016a6e0a3d3ff",
+    "S300.WAV": "f1b28eab8ff17d5ca704a161c26d3c9a7320785dca1647921d17a9e0520db12a",
+    "S4.WAV": "a45d372397bcbb6fb0413832317b34be5d463d8bad357d9494179b92a24b83cb",
+    "S5.WAV": "27015fe9145a55e89f2d68f35e6f5d9e8835e63e0e3bd15d1965f225189032d8",
+    "S6.WAV": "1ff866d48d4b0d600b9e396b9e0fbee44e6e4dae0170579e3fa2b52d329a99d7",
+    "S7.WAV": "287380fef3abb8986f1a07f42932caee7d8b70d56e2522f5b6932cbf7664d1b7",
+    "S8.WAV": "a8844dc0eefe70383b175302d2ca8204681db094975b98f993f76a81df436551",
+    "S9.WAV": "a5ea32f5fa5e0cfd146b8969f94285655775821ea53a83a42be339fe9efa5985"
+  },
+  "global_success_wav_sha256": "0f6ae457c4de027503a1027212e9eccc949fac17d39eb4d6b181f66a39b1377c",
+  "fixture_sha256": {
+    "99": "2cb6bf34b1e42c895a9aa4ddddafd931253545d5f59d802b4458946787f8b92a",
+    "98": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa"
+  },
+  "fixtures_unchanged": true,
+  "slot_sha256": "3af0c600dba212763a1c8fd26856604f9fab84e72deeafa52904733e8176d6d2",
+  "log_sha256": {
+    "p510-saves": "ea02d8ce7f8bfd16eb7e88490788058271c6545993f70d1399ddc3f12ee65403",
+    "p510-saves-startup": "80a9e037cc31550b7063c625fc6946217601680245023f12b7b8b47ba2611fb1"
+  },
+  "boundaries": 46,
+  "cross_destinations": 7,
+  "commits": 101,
+  "starts": 101,
+  "truncations": 4540,
+  "corruptions": 4540,
+  "invalid_states": 23,
+  "original_routes": 8,
+  "scene": 510,
+  "full_suite": true,
+  "compatibility": "Versions1-27 retained; genuine frozen verified v27 slot26 read unchanged",
+  "limitations": [
+    "Ordinary countdown sole original program1/index6 only; count1..51,width52 literal",
+    "Foreground voice,hints,pending images,unrelated work,unsupported media lag/rate excluded",
+    "Integer-ms floor audio cursor; physical sample-exact audio not claimed",
+    "Full manual audiovisual playthrough remains outstanding"
+  ],
+  "ordinary_entry_proof_sha256": "f37f5c1eb02d870dd4e2bc635582f911c9f52482552ee9d59b6e0fd2dcb3d65a"
+}
