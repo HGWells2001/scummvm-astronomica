@@ -5,7 +5,7 @@
 #include "engines/engine.h"
 #include "audio/mixer.h"
 namespace Video { class QuickTimeDecoder; }
-namespace Audio { class SeekableAudioStream; }
+namespace Audio { class SeekableAudioStream; class AudioStream; }
 #include "graphics/surface.h"
 #include "astronomica/resource.h"
 #include "astronomica/help.h"
@@ -287,6 +287,35 @@ private:
  bool _planetAssetsValid=false;
  bool verifyP526Puzzle();
  bool verifyP512Puzzle();
+ struct P512Prepared {
+  Scene scene;ScriptRunner runner;Graphics::Surface background,displayed,composed;
+  Video::QuickTimeDecoder*decoder=nullptr;Audio::AudioStream*ambient=nullptr;Common::Array<uint32>packet;bool ready=false;
+  P512Prepared()=default;P512Prepared(const P512Prepared&)=delete;P512Prepared&operator=(const P512Prepared&)=delete;
+  P512Prepared(P512Prepared&&)=delete;P512Prepared&operator=(P512Prepared&&)=delete;
+  Common::String displayedName;
+  ~P512Prepared();void clearOwned();bool empty()const;
+ };
+ bool p512OriginalAssets()const;
+ bool captureP512Stopped(Common::Array<uint32>&out,uint32 now)const;
+ bool prepareP512Stopped(const Common::Array<uint32>&words,P512Prepared&out);
+ bool testP512Stopped(uint32 now);
+ void commitP512Prepared(P512Prepared&prepared,Audio::AudioStream**audit=nullptr);
+ bool installP512Memory(const Common::Array<uint32>&words,Audio::AudioStream**audit=nullptr);
+ bool verifyP512OrdinaryAudio();
+ bool verifyP512NormalRoutes();
+ bool testP512AnswerContinuation();
+ bool testP512FileSave();
+ bool testP512FreshFile();
+ bool canSaveP512()const;
+ Common::Error saveP512(Common::WriteStream*stream);
+ Common::Error loadP512(Common::SeekableReadStream*stream);
+ bool testP512MemoryInstall(uint32 now);
+ bool testP512PauseMatrix(uint32 now);
+ uint _p512MemoryCommits=0,_p512OriginalSeekSerial=0,_p512RequiredSeekSerial=0,_p512OriginalPlays=0,_p512PlayWithoutRequiredSeek=0;
+ bool _p512NeedsOriginalSeek=false;
+
+
+
  bool verifyBuilderPuzzle();
  bool verifyP514Puzzle();
  bool verifyP513Puzzle();

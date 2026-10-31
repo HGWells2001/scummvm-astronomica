@@ -1,0 +1,16 @@
+{
+  "status": "SOURCE_PROMOTED_AWAITING_MAIN_CLOSURE",
+  "base_exe": "6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81",
+  "base_commit": "a56d2fd646ac440cf01139db32edc3483f0f25f7",
+  "stage_sha256": {
+    "astronomica.cpp": "d254fa4396cb547a6d3a90de2bfd2e1b09f6d9f6be59974806de0e0240f5c8dc",
+    "astronomica.h": "4f7729cf05d4fc1d7c95fb3d2cadb15a275a1547bb4ab2c835808f99100b19d4",
+    "script.cpp": "3834b5f0465755baef384f7c932ca6ec62d0033fe4f848b7d3b4a84a835b1c0e",
+    "script.h": "de1287d67161d813de7e72162ae60b273fba0cfccc71439bede62a3d3db37b30",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "root_source_review_sha256": "9379ea678e6546482ff5e6c64cf2de457be5d98e5877344196e5323e54c40645",
+  "isolated_normal_proof_sha256": "bb3de4b586df1448ced6a9ce087b1f3b19880558b8e3336ddb1f00e06b270345",
+  "main_exe_sha256": "932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b"
+}

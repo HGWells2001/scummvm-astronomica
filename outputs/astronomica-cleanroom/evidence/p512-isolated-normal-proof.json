@@ -1,0 +1,61 @@
+{
+  "status": "PASS_ISOLATED_P512_ALL_NORMAL_MUSIC_FILE",
+  "candidate_exe_sha256": "fa69d556a170d92b2e54436a8b9d6a5446ec626fb3eeee089c7d8288e0f87164",
+  "stage_sha256": {
+    "astronomica.cpp": "d254fa4396cb547a6d3a90de2bfd2e1b09f6d9f6be59974806de0e0240f5c8dc",
+    "astronomica.h": "4f7729cf05d4fc1d7c95fb3d2cadb15a275a1547bb4ab2c835808f99100b19d4",
+    "script.cpp": "3834b5f0465755baef384f7c932ca6ec62d0033fe4f848b7d3b4a84a835b1c0e",
+    "script.h": "de1287d67161d813de7e72162ae60b273fba0cfccc71439bede62a3d3db37b30",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "base_file_proof_sha256": "55c540b8210ee304f0c6547ec010d7ffaee069555324ab2858db202a664435e8",
+  "prior_independent_review_sha256": "2cf2617e5427f3338a0b61f4e6bdbce033d40573be541350364a31dc0266bfbf",
+  "production_mechanisms_unchanged_from_independent_review": true,
+  "actual_audio_driver": "wasapi",
+  "ordinary_natural_active_music_boundaries": 12,
+  "normal_scenarios_each_route": 6,
+  "original_entry_programs_automatically_queued": true,
+  "manual_startup_enqueue": false,
+  "first_repeated_completion": true,
+  "final_mask127_first_repeated_fresh_true_false": true,
+  "physical_final_slots": {
+    "29": {
+      "slot_sha256": "62f3e6f458a64e063a103397dbc8403e95c8d8c78011f05a697f488ee51627b7",
+      "prior_global28": 0,
+      "mask": 127,
+      "loop_id": 0,
+      "ambient_active": true,
+      "puzzles_completed": 0
+    },
+    "30": {
+      "slot_sha256": "463d71161ea921d821c2c0fd89963184b0a376219d597dd2a502845e35203a5a",
+      "prior_global28": 1,
+      "mask": 127,
+      "loop_id": 0,
+      "ambient_active": true,
+      "puzzles_completed": 1
+    }
+  },
+  "log_sha256": {
+    "all-normal.log": "90e5fd1afadd5dd0b29dc85350b6423de579964550285500b0a85b6c08d71990",
+    "fresh-final-29-true.log": "0fa3c175e89bdeadad7c957d02e59f6f5cf98787f46e7d566ace34258296c4e5",
+    "fresh-final-29-false.log": "366c09d6df4a7c0290d169863746bf79554e561b022a6f9a617a8a8850295d79",
+    "fresh-final-30-true.log": "56872b91f41fa41fa3509e496dc2f4395c4483a21d13f9fea30429041f74c1be",
+    "fresh-final-30-false.log": "e7e844897a4a6215aa500c3d7f6c0cac10c45be75121d058ddaf564ea7c9db61"
+  },
+  "implementation_author": "/root/p512_rebase_oct30",
+  "independent_review_of_new_diagnostics": false,
+  "production_promoted": false,
+  "remaining": "Genuine v28 compatibility and full same-main inherited chain; isolated rebase only, no33/35 count yet",
+  "rebase_provenance_sha256": "5baea41eccf72f1de85fea234e357fcb87b1e54a518ddfb5367c1978e22126e5",
+  "sealed28_source_preserved": true,
+  "inherited_link_inputs": 404,
+  "link_input_manifest_sha256": "2042524de59453dfd7e3b4efe67e85209a5588215b8ab52f2738b393197f2ed5",
+  "root_main_unchanged_sha256": "6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81",
+  "sealed28_sha256": "b868e72f2ecb0e0e35741f68d5c2b27dc9d2a0d7efa0c01cfbed0365cfcfce48",
+  "preparer_sha256": "7832dfcc9ebe58539a41472f5d35db02176ce9c9b216343c9c0867ad1b80168a",
+  "builder_sha256": "a28c6e2f4dd953cc7acf8eb981148aa90670230cbaf0f733c35423a9c9d48341",
+  "normal_finalizer_sha256": "24fdcd91b120c40f334da012e8563b153f9de954ad26c38fbb5428becdbec9c7",
+  "file_finalizer_sha256": "baf6ddde5f5f4b712f4a94494095209a331e62fa06bf058049facc7d1e8c3ad1"
+}

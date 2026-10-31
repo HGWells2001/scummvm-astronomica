@@ -251,6 +251,15 @@ if p510 is not None:
   startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),
   fresh_process_slot_sha256=proof['slot_sha256']))
 
+from p512_evidence_gate import validated_p512
+p512=validated_p512(root,work)
+if p512 is not None:
+ v,proof=p512
+ validation=root/'evidence/p512-saves-validation.json';log=root/'evidence/p512-native/all-normal.log';startup=root/'evidence/p512-native/fresh-true.log'
+ rows.append(dict(scene=512,version=29,payload_bytes=9932,test_slot=28,
+  scope='Stopped-ready original P512 questions,independent media clock/current/presented frame,all64 sprites and retained process state; Music restarts from beginning',
+  validation_file=validation.relative_to(root).as_posix(),validation_sha256=digest(validation),runtime_file=log.relative_to(root).as_posix(),runtime_sha256=digest(log),
+  startup_file=startup.relative_to(root).as_posix(),startup_sha256=digest(startup),fresh_process_slot_sha256=proof['slot_sha256']))
 supported={row['scene'] for row in rows};all_scenes={row['place'] for row in inventory['rows']}
 assert supported<=all_scenes
 result=dict(date='2026-10-27' if p504_validation.exists() else '2026-10-26' if (root/'evidence/p502-saves-validation.json').exists() else '2026-10-25' if (root/'evidence/p511-saves-validation.json').exists() else '2026-10-24' if (root/'evidence/p509-saves-validation.json').exists() else '2026-10-23' if p521_validation.exists() else '2026-10-22' if probe_validation.exists() else '2026-10-21',status='PASS',exe_sha256=digest(work/'build/Releasex64/scummvm.exe'),
@@ -260,5 +269,6 @@ result=dict(date='2026-10-27' if p504_validation.exists() else '2026-10-26' if (
  unsupported_puzzle_route_scenes=sorted(all_scenes-supported),whole_game_completion_percent=None,
  limitations=['These 35 route scenes include variants and are not a count of distinct puzzles','The supported save scenes are a feature-specific count, not whole-game completion','Ambient sample position is not retained','Complete manual audiovisual playthrough remains outstanding'])
 if p510 is not None:result['date']=p510[0]['date']
+if p512 is not None:result['date']=p512[0]['date']
 (root/'evidence/native-save-coverage.json').write_text(json.dumps(result,indent=2))
 print(f'Native save coverage: {len(supported)} supported puzzle scenes; no global completion percentage')

@@ -30,6 +30,14 @@ public:
  static int photonAnswer(int setting, int scenario);
  void setNoopSuccess(bool enabled) { _noopSuccess = enabled; }
  static int weatherAnswer(int scenario, int a, int b, int c);
+ bool trustedP512SettledProgram()const;
+ bool validP512SettledValues(const Common::Array<uint32>&words)const;
+ bool exportP512SettledState(Common::Array<uint32>&words)const;
+ bool importP512SettledState(const Common::Array<uint32>&words);
+ bool testP512SettledState(uint32 now)const;
+ void p512AuditExportState(Common::Array<uint32>&words)const;
+ void p512AuditPending(uint row,uint32 now)const;
+
  struct BallHandler { virtual ~BallHandler() {} virtual void onBall(int mode, uint32 now) = 0; };
  void setBallHandler(BallHandler *handler) { _ballHandler = handler; }
  struct CometHandler { virtual ~CometHandler() {} virtual void onComet(int mode, uint32 now) = 0; };
@@ -103,6 +111,7 @@ public:
  void swapP510PreparedRunner(ScriptRunner&other);
  uint32 p510CompleteHash()const;
  bool p510Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const;
+ bool p512Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const;
  void p510AuditPending(const char *tag,uint32 now) const;
  void p510AuditExportState(Common::Array<uint32>&words)const;
  bool exportP510ActiveState(Common::Array<uint32>&words,uint32 now)const;

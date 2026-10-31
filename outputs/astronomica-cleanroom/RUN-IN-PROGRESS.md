@@ -1,1 +1,1 @@
-P510 ASVM28 same-main native validation PASS. Publication/evidence/export finalization remains a separate gate. Do not run older finishers independently.
+ASVM29 exact-main P512/full inherited native suite PASS. Publication and sealed snapshot remain separate gates. Newest finisher: finish_p512_saves.py.

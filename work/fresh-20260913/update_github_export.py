@@ -5,6 +5,8 @@ root=Path('publish/scummvm-astronomica')
 subprocess.run([sys.executable,'work/fresh-20260913/verify_development_evidence.py'],check=True)
 from p510_evidence_gate import validated_p510
 p510_save_present=validated_p510(Path('outputs/astronomica-cleanroom'),Path('work/fresh-20260913')) is not None
+from p512_evidence_gate import validated_p512
+p512_save_present=validated_p512(Path('outputs/astronomica-cleanroom'),Path('work/fresh-20260913')) is not None
 assert subprocess.check_output(['git','-C',str(root),'remote','get-url','origin'],text=True).strip()=='https://github.com/HGWells2001/scummvm-astronomica.git'
 manifest=json.loads((root/'SOURCE-MANIFEST.json').read_text())
 ignore=root/'.gitignore';rules=ignore.read_text()
@@ -281,6 +283,14 @@ if p510_save_present:
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
 # The shared read-only gate is needed even when P510 validation is absent.
+if p512_save_present:
+    from p512_export_paths import paths as p512_paths
+    for name in p512_paths():
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+gate512='work/fresh-20260913/p512_evidence_gate.py'
+(root/gate512).parent.mkdir(parents=True,exist_ok=True)
+shutil.copyfile(gate512,root/gate512)
 gate='work/fresh-20260913/p510_evidence_gate.py'
 (root/gate).parent.mkdir(parents=True,exist_ok=True)
 shutil.copyfile(gate,root/gate)
@@ -419,9 +429,17 @@ if p510_save_present:
                 'thirty-two supported puzzle scenes (P501-P506, P508-P511, P513-P519, P521, P522, P524, P526-P537)')
     if 'P510 v28' not in s:
         s=s.replace('- Automatically verified routes','- P510 v28 preserves the sole original countdown at program1/index6, independent media frames and literal sprites. Native WASAPI, nested pause restoration, 4540 truncations and byte corruptions, fresh physical slot loading, metadata listing and genuine frozen v27 compatibility pass. Foreground voice, hints, unrelated pending work and unsupported media lag remain excluded.\n- Automatically verified routes')
-    assert 'thirty-two supported puzzle scenes' in s and 'P510 v28' in s
+    assert ('thirty-two supported puzzle scenes' in s or (p512_save_present and 'thirty-three supported puzzle scenes' in s)) and 'P510 v28' in s
+    p.write_text(s.rstrip()+'\n')
+if p512_save_present:
+    s=s.replace('thirty-two supported puzzle scenes (P501-P506, P508-P511, P513-P519, P521, P522, P524, P526-P537)',
+                'thirty-three supported puzzle scenes (P501-P506, P508-P519, P521, P522, P524, P526-P537)')
+    if 'P512 v29' not in s:
+        s=s.replace('- Automatically verified routes','- P512 v29 saves stopped-ready original questions with independent media clock/current/presented frames, all64 sprites and original S0 Music restoration. All six normal scenarios, first/repeated final questions in fresh processes, nested engine pauses, malformed atomic refusal and both genuine v28 loop identities pass on the same WASAPI build. Active movies, foreground voices and pending work remain excluded; Music restarts from its beginning.\n- Automatically verified routes')
+    assert 'thirty-three supported puzzle scenes' in s and 'P512 v29' in s
     p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-28' if p510_save_present else '2026-10-27' if p504_save_present else '2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
+if p512_save_present:manifest['date']='2026-10-30'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

@@ -2,7 +2,7 @@
 
 Indice complessivo di accettazione: **60% — 6 criteri superati su 10**. È un nuovo indice esplicito dei traguardi del progetto, basato su una checklist fissa. Non misura il lavoro già svolto in ore e non certifica che il60% del gioco sia giocabile. La percentuale del lavoro totale rimane non determinabile finché manca un inventario completo delle obbligazioni e una stima del lavoro residuo.
 
-La versione verificata corrente è P501/formato27, eseguibile SHA256 `025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3`, pubblicata nel commit `ad2ec32fa658919c65e920c2c2609d3610061acd`. Suite completa, compatibilità, copia indipendente, remoto e checkpoint congelato sono PASS. Lo stato successivo di P510 � riportato nel prossimo aggiornamento, quando presente.
+La versione verificata corrente è P501/formato27, eseguibile SHA256 `025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3`, pubblicata nel commit `ad2ec32fa658919c65e920c2c2609d3610061acd`. Suite completa, compatibilità, copia indipendente, remoto e checkpoint congelato sono PASS. Lo stato successivo di P510 � riportato nel prossimo aggiornamento, quando presente.
 
 ## I dieci criteri fissi
 
@@ -53,4 +53,8 @@ Aggiornamento verificato P501: `work/fresh-20260913/p501-progress-review/accepta
 
 ## Aggiornamento locale P510 ASVM28
 
-Suite completa sul medesimo eseguibile `6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81`, audio WASAPI, salvataggio fisico in nuovo processo, metadati, rifiuto atomico e compatibilit� v1-v27: PASS. Copertura corrente dei salvataggi: **32/35 (91,4%)**; restano P512, P523 e P525. P510 conserva solo il conto alla rovescia ordinario documentato. Il punteggio dei dieci criteri resta **60% (6/10)**: A07 � ancora parziale. La fotografia P501 sopra resta storica e immutata. La pubblicazione � un passaggio separato: consultare p510-completion-status.json e p510-seal-status.json.
+Suite completa sul medesimo eseguibile `6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81`, audio WASAPI, salvataggio fisico in nuovo processo, metadati, rifiuto atomico e compatibilit� v1-v27: PASS. Copertura corrente dei salvataggi: **32/35 (91,4%)**; restano P512, P523 e P525. P510 conserva solo il conto alla rovescia ordinario documentato. Il punteggio dei dieci criteri resta **60% (6/10)**: A07 � ancora parziale. La fotografia P501 sopra resta storica e immutata. La pubblicazione � un passaggio separato: consultare p510-completion-status.json e p510-seal-status.json.
+
+## Aggiornamento locale P512 ASVM29
+
+Salvataggi verificati **33/35 (94,3%)**; restano P523 e P525. Criteri complessivi **6/10 (60%)**; non � una percentuale delle ore o della giocabilit�. P512 salva le domande pronte con filmato fermo,64sprite,clock/fotogrammi indipendenti e musica originale. Tutti6scenari in due percorsi normali,pausa del motore,slot28/29/30 in nuovi processi,metadati,9932troncamenti/alterazioni e compatibilit� v1-v28 PASS sul medesimo eseguibile `932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b`. La musica riparte dall�inizio; filmati attivi,voci e code restano esclusi. Pubblicazione separata; verificare p512-completion-status.json e p512-seal-status.json.

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "genuine_sealed_v28_two_literal_disabled_loop_ids",
+  "exe_sha256": "932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b",
+  "origin_commit": "a56d2fd646ac440cf01139db32edc3483f0f25f7",
+  "producing_exe_sha256": "6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81",
+  "cases": {
+    "frozen-slot27-true": {
+      "loop_id": -1,
+      "entry_scripts": true,
+      "slot_sha256": "3af0c600dba212763a1c8fd26856604f9fab84e72deeafa52904733e8176d6d2",
+      "log_sha256": "950e9b35c084913d873d3245f8864c950777dca5f8b6a17d565e4ba206bbe5a9",
+      "config_sha256": "afa1e75a7dbd29d6d4439949bda75cbf6865fa5a34a9a25893772ee3fe3ff6f7",
+      "unchanged": true
+    },
+    "frozen-slot27-false": {
+      "loop_id": -1,
+      "entry_scripts": false,
+      "slot_sha256": "3af0c600dba212763a1c8fd26856604f9fab84e72deeafa52904733e8176d6d2",
+      "log_sha256": "723c45fb54b75d84311633d8717101f2840f46e054fd1fa8f0303c2f5ad5f70b",
+      "config_sha256": "c09a68698f35651d81dfbe2e3bca211f73b3e184008c72900cd5b655255d0446",
+      "unchanged": true
+    },
+    "frozen-ordinary-slot27-true": {
+      "loop_id": 0,
+      "entry_scripts": true,
+      "slot_sha256": "4866b333e816f36ec6ce6e80d640d2b2260ec0d52a1a984d31c8f2f35dacbb5f",
+      "log_sha256": "8da1621d9c8aa611c3f53065748661114cdede50ffd6457d6d0a436dfffce8c3",
+      "config_sha256": "511c33d94f815574d75066dc5e89ea08647a66f32acd141a0e552d0f19b3b4bd",
+      "unchanged": true
+    },
+    "frozen-ordinary-slot27-false": {
+      "loop_id": 0,
+      "entry_scripts": false,
+      "slot_sha256": "4866b333e816f36ec6ce6e80d640d2b2260ec0d52a1a984d31c8f2f35dacbb5f",
+      "log_sha256": "c8e8bd96fa1f1969e8100e66ab4e14099c26c87ebf1bd7df5015e2b74c35aa80",
+      "config_sha256": "c41fa2b33925b9cd0082ac98139ac28fab768f060149a753c5a5e94c7e7ab82a",
+      "unchanged": true
+    }
+  },
+  "actual_audio_driver": "wasapi",
+  "public_validation": false
+}

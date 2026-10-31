@@ -134,9 +134,15 @@ if p501_save_present:expected_save_scenes.add(501)
 from p510_evidence_gate import validated_p510
 p510 = validated_p510(root, work)
 if p510 is not None:expected_save_scenes.add(510)
+from p512_evidence_gate import validated_p512
+p512=validated_p512(root,work)
+if p512 is not None:expected_save_scenes.add(512)
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:
+ if row['scene']==512:
+  assert row['version']==29 and row['payload_bytes']==9932 and row['test_slot']==28
+  assert row['fresh_process_slot_sha256']==p512[1]['slot_sha256'] and 'fresh_process_fingerprint' not in row
  if row['scene']==510:
   assert row['version']==28 and row['payload_bytes']==4540 and row['test_slot']==27
   assert row['fresh_process_slot_sha256']==p510[1]['slot_sha256']

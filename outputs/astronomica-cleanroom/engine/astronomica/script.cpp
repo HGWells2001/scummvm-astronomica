@@ -468,6 +468,1017 @@ void ScriptRunner::p510AuditPending(const char*tag,uint32 now)const{
  debug("P510QUEUE %s now=%u loaded=%u pending=%u actions=%u blocked=%u",tag,now,_programLoadedAt,_pending.size(),_actions.size(),uint(_clicksBlocked));
  for(uint i=0;i<_pending.size();++i){const Pending&p=_pending[i];int program=-1;for(uint j=0;j<_programs.size();++j)if(p.script.size()==_programs[j].size()){bool same=true;for(uint k=0;k<p.script.size();++k){const Command&a=p.script[k],&b=_programs[j][k];same&=a.opcode==b.opcode&&a.delay==b.delay&&a.args==b.args&&a.text==b.text;}if(same)program=j;}debug("P510PENDING %s now=%u program=%d index=%u since=%u count=%u",tag,now,program,p.index,p.since,p.script.size());}
 }
+bool ScriptRunner::p512Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const{
+ if(!trustedP512SettledProgram()||!_weatherSupport||_gameStateHandler!=g||_soundHandler!=s||_successHandler!=success||_successGlobal!=28||_successExtraGlobal!=-1||_spriteTargets.size()!=64||_soundTargets.size()!=923||!_soundTargets[912]||!_soundTargets[302]||_movieDurations.size()!=1||_movieDurations[0]!=1928||_imageTargets.size()!=6)return false;
+ if(_p501ReadySupport||_p504PollSupport||_p509PendingSupport||_ballHandler||_cometHandler||_nativePaletteSupport||_jupiterSupport||_plotSupport||_dangerSupport||_probeHandler||_rendezvousHandler||_orbitHandler||_rocketSupport||_eclipseSupport||_planetSupport||_variantSupport||_mentorSupport||_adviceSupport||_worldMovieSupport||_helpSupport||_legacyResumeSupport||_resumeSupport||_resumeFromHelp||_photonSupport||_zodiacSupport||_noopSuccess)return false;
+ for(uint i=0;i<64;++i)if(_spriteTargets[i]!=spriteFrameCount(scene,i))return false;for(uint i=0;i<=14;++i)if(!_soundTargets[i])return false;
+ const char*names[]={"MOONCOR","MOONHALO","SUNDOGS","SUNHALO","SUNPILL","CREPRAYS"};for(uint i=0;i<6;++i)if(_imageTargets[i]!=names[i])return false;return true;
+}
+bool ScriptRunner::trustedP512SettledProgram()const{
+if(!_weatherSupport||_programs.size()!=6)return false;
+if(_programs[0].size()!=1)return false;
+{const Command&c=_programs[0][0];if(c.opcode!=39||c.delay!=0||c.offset!=367810||c.args.size()!=4||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=3)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=4)return false;
+}
+if(_programs[1].size()!=8)return false;
+{const Command&c=_programs[1][0];if(c.opcode!=17||c.delay!=0||c.offset!=367838||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=15)return false;
+}
+{const Command&c=_programs[1][1];if(c.opcode!=17||c.delay!=-1||c.offset!=367850||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=16)return false;
+}
+{const Command&c=_programs[1][2];if(c.opcode!=17||c.delay!=-1||c.offset!=367862||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=17)return false;
+}
+{const Command&c=_programs[1][3];if(c.opcode!=17||c.delay!=-1||c.offset!=367874||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=18)return false;
+}
+{const Command&c=_programs[1][4];if(c.opcode!=17||c.delay!=-1||c.offset!=367886||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=19)return false;
+}
+{const Command&c=_programs[1][5];if(c.opcode!=17||c.delay!=-1||c.offset!=367898||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=20)return false;
+}
+{const Command&c=_programs[1][6];if(c.opcode!=17||c.delay!=-1||c.offset!=367910||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=21)return false;
+}
+{const Command&c=_programs[1][7];if(c.opcode!=17||c.delay!=-1||c.offset!=367922||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=22)return false;
+}
+if(_programs[2].size()!=45)return false;
+{const Command&c=_programs[2][0];if(c.opcode!=31||c.delay!=0||c.offset!=367938||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][1];if(c.opcode!=20||c.delay!=-1||c.offset!=367970||c.args.size()!=2||c.text!="mooncor")return false;
+if(c.args[0]!=79)return false;
+if(c.args[1]!=358)return false;
+}
+{const Command&c=_programs[2][2];if(c.opcode!=49||c.delay!=-1||c.offset!=368241||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][3];if(c.opcode!=16||c.delay!=0||c.offset!=368249||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=16)return false;
+}
+{const Command&c=_programs[2][4];if(c.opcode!=37||c.delay!=0||c.offset!=368261||c.args.size()!=3||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=150)return false;
+}
+{const Command&c=_programs[2][5];if(c.opcode!=36||c.delay!=0||c.offset!=368281||c.args.size()!=2||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[2][6];if(c.opcode!=45||c.delay!=-1||c.offset!=368297||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][7];if(c.opcode!=31||c.delay!=0||c.offset!=368305||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=2)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][8];if(c.opcode!=20||c.delay!=-1||c.offset!=368337||c.args.size()!=2||c.text!="moonhalo")return false;
+if(c.args[0]!=79)return false;
+if(c.args[1]!=358)return false;
+}
+{const Command&c=_programs[2][9];if(c.opcode!=49||c.delay!=-1||c.offset!=368608||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][10];if(c.opcode!=16||c.delay!=0||c.offset!=368616||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=17)return false;
+}
+{const Command&c=_programs[2][11];if(c.opcode!=37||c.delay!=0||c.offset!=368628||c.args.size()!=3||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=150)return false;
+if(c.args[2]!=204)return false;
+}
+{const Command&c=_programs[2][12];if(c.opcode!=36||c.delay!=0||c.offset!=368648||c.args.size()!=2||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=150)return false;
+}
+{const Command&c=_programs[2][13];if(c.opcode!=45||c.delay!=-1||c.offset!=368664||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][14];if(c.opcode!=31||c.delay!=0||c.offset!=368672||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=3)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][15];if(c.opcode!=20||c.delay!=-1||c.offset!=368704||c.args.size()!=2||c.text!="sundogs")return false;
+if(c.args[0]!=79)return false;
+if(c.args[1]!=358)return false;
+}
+{const Command&c=_programs[2][16];if(c.opcode!=49||c.delay!=-1||c.offset!=368975||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][17];if(c.opcode!=16||c.delay!=0||c.offset!=368983||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=20)return false;
+}
+{const Command&c=_programs[2][18];if(c.opcode!=37||c.delay!=0||c.offset!=368995||c.args.size()!=3||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1272)return false;
+if(c.args[2]!=184)return false;
+}
+{const Command&c=_programs[2][19];if(c.opcode!=36||c.delay!=0||c.offset!=369015||c.args.size()!=2||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1272)return false;
+}
+{const Command&c=_programs[2][20];if(c.opcode!=45||c.delay!=-1||c.offset!=369031||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][21];if(c.opcode!=31||c.delay!=0||c.offset!=369039||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=4)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][22];if(c.opcode!=20||c.delay!=-1||c.offset!=369071||c.args.size()!=2||c.text!="sunhalo")return false;
+if(c.args[0]!=79)return false;
+if(c.args[1]!=358)return false;
+}
+{const Command&c=_programs[2][23];if(c.opcode!=49||c.delay!=-1||c.offset!=369342||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][24];if(c.opcode!=16||c.delay!=0||c.offset!=369350||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=21)return false;
+}
+{const Command&c=_programs[2][25];if(c.opcode!=37||c.delay!=0||c.offset!=369362||c.args.size()!=3||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1456)return false;
+if(c.args[2]!=186)return false;
+}
+{const Command&c=_programs[2][26];if(c.opcode!=36||c.delay!=0||c.offset!=369382||c.args.size()!=2||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1456)return false;
+}
+{const Command&c=_programs[2][27];if(c.opcode!=45||c.delay!=-1||c.offset!=369398||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][28];if(c.opcode!=31||c.delay!=0||c.offset!=369406||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=5)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][29];if(c.opcode!=20||c.delay!=-1||c.offset!=369438||c.args.size()!=2||c.text!="sunpill")return false;
+if(c.args[0]!=79)return false;
+if(c.args[1]!=358)return false;
+}
+{const Command&c=_programs[2][30];if(c.opcode!=49||c.delay!=-1||c.offset!=369709||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][31];if(c.opcode!=16||c.delay!=0||c.offset!=369717||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=22)return false;
+}
+{const Command&c=_programs[2][32];if(c.opcode!=37||c.delay!=0||c.offset!=369729||c.args.size()!=3||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1642)return false;
+if(c.args[2]!=189)return false;
+}
+{const Command&c=_programs[2][33];if(c.opcode!=36||c.delay!=0||c.offset!=369749||c.args.size()!=2||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1642)return false;
+}
+{const Command&c=_programs[2][34];if(c.opcode!=45||c.delay!=-1||c.offset!=369765||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][35];if(c.opcode!=31||c.delay!=0||c.offset!=369773||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=6)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][36];if(c.opcode!=20||c.delay!=-1||c.offset!=369805||c.args.size()!=2||c.text!="creprays")return false;
+if(c.args[0]!=79)return false;
+if(c.args[1]!=358)return false;
+}
+{const Command&c=_programs[2][37];if(c.opcode!=49||c.delay!=-1||c.offset!=370076||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][38];if(c.opcode!=16||c.delay!=0||c.offset!=370084||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=15)return false;
+}
+{const Command&c=_programs[2][39];if(c.opcode!=37||c.delay!=0||c.offset!=370096||c.args.size()!=3||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1834)return false;
+if(c.args[2]!=85)return false;
+}
+{const Command&c=_programs[2][40];if(c.opcode!=36||c.delay!=0||c.offset!=370116||c.args.size()!=2||c.text!="")return false;
+if(c.args[0]!=0)return false;
+if(c.args[1]!=1834)return false;
+}
+{const Command&c=_programs[2][41];if(c.opcode!=42||c.delay!=-1||c.offset!=370132||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[2][42];if(c.opcode!=23||c.delay!=0||c.offset!=370140||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=24)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=160)return false;
+if(c.args[3]!=57)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][43];if(c.opcode!=23||c.delay!=0||c.offset!=370172||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=24)return false;
+if(c.args[1]!=3)return false;
+if(c.args[2]!=160)return false;
+if(c.args[3]!=57)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][44];if(c.opcode!=29||c.delay!=150||c.offset!=370204||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=-1)return false;
+}
+if(_programs[3].size()!=62)return false;
+{const Command&c=_programs[3][0];if(c.opcode!=31||c.delay!=0||c.offset!=370220||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=15)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][1];if(c.opcode!=16||c.delay!=-1||c.offset!=370252||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=36)return false;
+}
+{const Command&c=_programs[3][2];if(c.opcode!=45||c.delay!=-1||c.offset!=370264||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][3];if(c.opcode!=31||c.delay!=-1||c.offset!=370272||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=14)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][4];if(c.opcode!=17||c.delay!=-1||c.offset!=370304||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=36)return false;
+}
+{const Command&c=_programs[3][5];if(c.opcode!=16||c.delay!=-1||c.offset!=370316||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=35)return false;
+}
+{const Command&c=_programs[3][6];if(c.opcode!=45||c.delay!=-1||c.offset!=370328||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][7];if(c.opcode!=31||c.delay!=-1||c.offset!=370336||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=13)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][8];if(c.opcode!=17||c.delay!=-1||c.offset!=370368||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=35)return false;
+}
+{const Command&c=_programs[3][9];if(c.opcode!=16||c.delay!=-1||c.offset!=370380||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=34)return false;
+}
+{const Command&c=_programs[3][10];if(c.opcode!=45||c.delay!=-1||c.offset!=370392||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][11];if(c.opcode!=31||c.delay!=-1||c.offset!=370400||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=12)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][12];if(c.opcode!=17||c.delay!=-1||c.offset!=370432||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=34)return false;
+}
+{const Command&c=_programs[3][13];if(c.opcode!=16||c.delay!=-1||c.offset!=370444||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=33)return false;
+}
+{const Command&c=_programs[3][14];if(c.opcode!=45||c.delay!=-1||c.offset!=370456||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][15];if(c.opcode!=31||c.delay!=-1||c.offset!=370464||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=11)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][16];if(c.opcode!=17||c.delay!=-1||c.offset!=370496||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=33)return false;
+}
+{const Command&c=_programs[3][17];if(c.opcode!=16||c.delay!=-1||c.offset!=370508||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=32)return false;
+}
+{const Command&c=_programs[3][18];if(c.opcode!=45||c.delay!=-1||c.offset!=370520||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][19];if(c.opcode!=31||c.delay!=-1||c.offset!=370528||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=10)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][20];if(c.opcode!=17||c.delay!=-1||c.offset!=370560||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=32)return false;
+}
+{const Command&c=_programs[3][21];if(c.opcode!=16||c.delay!=-1||c.offset!=370572||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=31)return false;
+}
+{const Command&c=_programs[3][22];if(c.opcode!=45||c.delay!=-1||c.offset!=370584||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][23];if(c.opcode!=31||c.delay!=-1||c.offset!=370592||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=9)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][24];if(c.opcode!=17||c.delay!=-1||c.offset!=370624||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=31)return false;
+}
+{const Command&c=_programs[3][25];if(c.opcode!=16||c.delay!=-1||c.offset!=370636||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=30)return false;
+}
+{const Command&c=_programs[3][26];if(c.opcode!=45||c.delay!=-1||c.offset!=370648||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][27];if(c.opcode!=31||c.delay!=-1||c.offset!=370656||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=8)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][28];if(c.opcode!=17||c.delay!=-1||c.offset!=370688||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=30)return false;
+}
+{const Command&c=_programs[3][29];if(c.opcode!=16||c.delay!=-1||c.offset!=370700||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=29)return false;
+}
+{const Command&c=_programs[3][30];if(c.opcode!=45||c.delay!=-1||c.offset!=370712||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][31];if(c.opcode!=31||c.delay!=-1||c.offset!=370720||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=7)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][32];if(c.opcode!=17||c.delay!=-1||c.offset!=370752||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=29)return false;
+}
+{const Command&c=_programs[3][33];if(c.opcode!=16||c.delay!=-1||c.offset!=370764||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=28)return false;
+}
+{const Command&c=_programs[3][34];if(c.opcode!=45||c.delay!=-1||c.offset!=370776||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][35];if(c.opcode!=31||c.delay!=-1||c.offset!=370784||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=6)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][36];if(c.opcode!=17||c.delay!=-1||c.offset!=370816||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=28)return false;
+}
+{const Command&c=_programs[3][37];if(c.opcode!=16||c.delay!=-1||c.offset!=370828||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=27)return false;
+}
+{const Command&c=_programs[3][38];if(c.opcode!=45||c.delay!=-1||c.offset!=370840||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][39];if(c.opcode!=31||c.delay!=-1||c.offset!=370848||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=5)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][40];if(c.opcode!=17||c.delay!=-1||c.offset!=370880||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=27)return false;
+}
+{const Command&c=_programs[3][41];if(c.opcode!=16||c.delay!=-1||c.offset!=370892||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=26)return false;
+}
+{const Command&c=_programs[3][42];if(c.opcode!=45||c.delay!=-1||c.offset!=370904||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][43];if(c.opcode!=31||c.delay!=-1||c.offset!=370912||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=4)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][44];if(c.opcode!=17||c.delay!=-1||c.offset!=370944||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=26)return false;
+}
+{const Command&c=_programs[3][45];if(c.opcode!=16||c.delay!=-1||c.offset!=370956||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=25)return false;
+}
+{const Command&c=_programs[3][46];if(c.opcode!=45||c.delay!=-1||c.offset!=370968||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][47];if(c.opcode!=31||c.delay!=-1||c.offset!=370976||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=3)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][48];if(c.opcode!=17||c.delay!=-1||c.offset!=371008||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=25)return false;
+}
+{const Command&c=_programs[3][49];if(c.opcode!=16||c.delay!=-1||c.offset!=371020||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=24)return false;
+}
+{const Command&c=_programs[3][50];if(c.opcode!=45||c.delay!=-1||c.offset!=371032||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][51];if(c.opcode!=31||c.delay!=-1||c.offset!=371040||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=2)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][52];if(c.opcode!=17||c.delay!=-1||c.offset!=371072||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=24)return false;
+}
+{const Command&c=_programs[3][53];if(c.opcode!=16||c.delay!=-1||c.offset!=371084||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=23)return false;
+}
+{const Command&c=_programs[3][54];if(c.opcode!=45||c.delay!=-1||c.offset!=371096||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][55];if(c.opcode!=31||c.delay!=-1||c.offset!=371104||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][56];if(c.opcode!=17||c.delay!=-1||c.offset!=371136||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=23)return false;
+}
+{const Command&c=_programs[3][57];if(c.opcode!=16||c.delay!=-1||c.offset!=371148||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[3][58];if(c.opcode!=45||c.delay!=-1||c.offset!=371160||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[3][59];if(c.opcode!=31||c.delay!=-1||c.offset!=371168||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[3][60];if(c.opcode!=17||c.delay!=-1||c.offset!=371200||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[3][61];if(c.opcode!=42||c.delay!=-1||c.offset!=371212||c.args.size()!=0||c.text!="")return false;
+}
+if(_programs[4].size()!=62)return false;
+{const Command&c=_programs[4][0];if(c.opcode!=31||c.delay!=0||c.offset!=371224||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=15)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][1];if(c.opcode!=16||c.delay!=-1||c.offset!=371256||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=50)return false;
+}
+{const Command&c=_programs[4][2];if(c.opcode!=45||c.delay!=-1||c.offset!=371268||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][3];if(c.opcode!=31||c.delay!=-1||c.offset!=371276||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=14)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][4];if(c.opcode!=17||c.delay!=-1||c.offset!=371308||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=50)return false;
+}
+{const Command&c=_programs[4][5];if(c.opcode!=16||c.delay!=-1||c.offset!=371320||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=49)return false;
+}
+{const Command&c=_programs[4][6];if(c.opcode!=45||c.delay!=-1||c.offset!=371332||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][7];if(c.opcode!=31||c.delay!=-1||c.offset!=371340||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=13)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][8];if(c.opcode!=17||c.delay!=-1||c.offset!=371372||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=49)return false;
+}
+{const Command&c=_programs[4][9];if(c.opcode!=16||c.delay!=-1||c.offset!=371384||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=48)return false;
+}
+{const Command&c=_programs[4][10];if(c.opcode!=45||c.delay!=-1||c.offset!=371396||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][11];if(c.opcode!=31||c.delay!=-1||c.offset!=371404||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=12)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][12];if(c.opcode!=17||c.delay!=-1||c.offset!=371436||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=48)return false;
+}
+{const Command&c=_programs[4][13];if(c.opcode!=16||c.delay!=-1||c.offset!=371448||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=47)return false;
+}
+{const Command&c=_programs[4][14];if(c.opcode!=45||c.delay!=-1||c.offset!=371460||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][15];if(c.opcode!=31||c.delay!=-1||c.offset!=371468||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=11)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][16];if(c.opcode!=17||c.delay!=-1||c.offset!=371500||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=47)return false;
+}
+{const Command&c=_programs[4][17];if(c.opcode!=16||c.delay!=-1||c.offset!=371512||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=46)return false;
+}
+{const Command&c=_programs[4][18];if(c.opcode!=45||c.delay!=-1||c.offset!=371524||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][19];if(c.opcode!=31||c.delay!=-1||c.offset!=371532||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=10)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][20];if(c.opcode!=17||c.delay!=-1||c.offset!=371564||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=46)return false;
+}
+{const Command&c=_programs[4][21];if(c.opcode!=16||c.delay!=-1||c.offset!=371576||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=45)return false;
+}
+{const Command&c=_programs[4][22];if(c.opcode!=45||c.delay!=-1||c.offset!=371588||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][23];if(c.opcode!=31||c.delay!=-1||c.offset!=371596||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=9)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][24];if(c.opcode!=17||c.delay!=-1||c.offset!=371628||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=45)return false;
+}
+{const Command&c=_programs[4][25];if(c.opcode!=16||c.delay!=-1||c.offset!=371640||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=44)return false;
+}
+{const Command&c=_programs[4][26];if(c.opcode!=45||c.delay!=-1||c.offset!=371652||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][27];if(c.opcode!=31||c.delay!=-1||c.offset!=371660||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=8)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][28];if(c.opcode!=17||c.delay!=-1||c.offset!=371692||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=44)return false;
+}
+{const Command&c=_programs[4][29];if(c.opcode!=16||c.delay!=-1||c.offset!=371704||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=43)return false;
+}
+{const Command&c=_programs[4][30];if(c.opcode!=45||c.delay!=-1||c.offset!=371716||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][31];if(c.opcode!=31||c.delay!=-1||c.offset!=371724||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=7)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][32];if(c.opcode!=17||c.delay!=-1||c.offset!=371756||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=43)return false;
+}
+{const Command&c=_programs[4][33];if(c.opcode!=16||c.delay!=-1||c.offset!=371768||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=42)return false;
+}
+{const Command&c=_programs[4][34];if(c.opcode!=45||c.delay!=-1||c.offset!=371780||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][35];if(c.opcode!=31||c.delay!=-1||c.offset!=371788||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=6)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][36];if(c.opcode!=17||c.delay!=-1||c.offset!=371820||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=42)return false;
+}
+{const Command&c=_programs[4][37];if(c.opcode!=16||c.delay!=-1||c.offset!=371832||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=41)return false;
+}
+{const Command&c=_programs[4][38];if(c.opcode!=45||c.delay!=-1||c.offset!=371844||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][39];if(c.opcode!=31||c.delay!=-1||c.offset!=371852||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=5)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][40];if(c.opcode!=17||c.delay!=-1||c.offset!=371884||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=41)return false;
+}
+{const Command&c=_programs[4][41];if(c.opcode!=16||c.delay!=-1||c.offset!=371896||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=40)return false;
+}
+{const Command&c=_programs[4][42];if(c.opcode!=45||c.delay!=-1||c.offset!=371908||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][43];if(c.opcode!=31||c.delay!=-1||c.offset!=371916||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=4)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][44];if(c.opcode!=17||c.delay!=-1||c.offset!=371948||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=40)return false;
+}
+{const Command&c=_programs[4][45];if(c.opcode!=16||c.delay!=-1||c.offset!=371960||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=39)return false;
+}
+{const Command&c=_programs[4][46];if(c.opcode!=45||c.delay!=-1||c.offset!=371972||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][47];if(c.opcode!=31||c.delay!=-1||c.offset!=371980||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=3)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][48];if(c.opcode!=17||c.delay!=-1||c.offset!=372012||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=39)return false;
+}
+{const Command&c=_programs[4][49];if(c.opcode!=16||c.delay!=-1||c.offset!=372024||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=38)return false;
+}
+{const Command&c=_programs[4][50];if(c.opcode!=45||c.delay!=-1||c.offset!=372036||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][51];if(c.opcode!=31||c.delay!=-1||c.offset!=372044||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=2)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][52];if(c.opcode!=17||c.delay!=-1||c.offset!=372076||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=38)return false;
+}
+{const Command&c=_programs[4][53];if(c.opcode!=16||c.delay!=-1||c.offset!=372088||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=37)return false;
+}
+{const Command&c=_programs[4][54];if(c.opcode!=45||c.delay!=-1||c.offset!=372100||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][55];if(c.opcode!=31||c.delay!=-1||c.offset!=372108||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][56];if(c.opcode!=17||c.delay!=-1||c.offset!=372140||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=37)return false;
+}
+{const Command&c=_programs[4][57];if(c.opcode!=16||c.delay!=-1||c.offset!=372152||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=10)return false;
+}
+{const Command&c=_programs[4][58];if(c.opcode!=45||c.delay!=-1||c.offset!=372164||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[4][59];if(c.opcode!=31||c.delay!=-1||c.offset!=372172||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][60];if(c.opcode!=17||c.delay!=-1||c.offset!=372204||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=10)return false;
+}
+{const Command&c=_programs[4][61];if(c.opcode!=42||c.delay!=-1||c.offset!=372216||c.args.size()!=0||c.text!="")return false;
+}
+if(_programs[5].size()!=62)return false;
+{const Command&c=_programs[5][0];if(c.opcode!=31||c.delay!=0||c.offset!=372228||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=15)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][1];if(c.opcode!=16||c.delay!=-1||c.offset!=372260||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=64)return false;
+}
+{const Command&c=_programs[5][2];if(c.opcode!=45||c.delay!=-1||c.offset!=372272||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][3];if(c.opcode!=31||c.delay!=-1||c.offset!=372280||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=14)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][4];if(c.opcode!=17||c.delay!=-1||c.offset!=372312||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=64)return false;
+}
+{const Command&c=_programs[5][5];if(c.opcode!=16||c.delay!=-1||c.offset!=372324||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=63)return false;
+}
+{const Command&c=_programs[5][6];if(c.opcode!=45||c.delay!=-1||c.offset!=372336||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][7];if(c.opcode!=31||c.delay!=-1||c.offset!=372344||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=13)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][8];if(c.opcode!=17||c.delay!=-1||c.offset!=372376||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=63)return false;
+}
+{const Command&c=_programs[5][9];if(c.opcode!=16||c.delay!=-1||c.offset!=372388||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=62)return false;
+}
+{const Command&c=_programs[5][10];if(c.opcode!=45||c.delay!=-1||c.offset!=372400||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][11];if(c.opcode!=31||c.delay!=-1||c.offset!=372408||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=12)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][12];if(c.opcode!=17||c.delay!=-1||c.offset!=372440||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=62)return false;
+}
+{const Command&c=_programs[5][13];if(c.opcode!=16||c.delay!=-1||c.offset!=372452||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=61)return false;
+}
+{const Command&c=_programs[5][14];if(c.opcode!=45||c.delay!=-1||c.offset!=372464||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][15];if(c.opcode!=31||c.delay!=-1||c.offset!=372472||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=11)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][16];if(c.opcode!=17||c.delay!=-1||c.offset!=372504||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=61)return false;
+}
+{const Command&c=_programs[5][17];if(c.opcode!=16||c.delay!=-1||c.offset!=372516||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=60)return false;
+}
+{const Command&c=_programs[5][18];if(c.opcode!=45||c.delay!=-1||c.offset!=372528||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][19];if(c.opcode!=31||c.delay!=-1||c.offset!=372536||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=10)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][20];if(c.opcode!=17||c.delay!=-1||c.offset!=372568||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=60)return false;
+}
+{const Command&c=_programs[5][21];if(c.opcode!=16||c.delay!=-1||c.offset!=372580||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=59)return false;
+}
+{const Command&c=_programs[5][22];if(c.opcode!=45||c.delay!=-1||c.offset!=372592||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][23];if(c.opcode!=31||c.delay!=-1||c.offset!=372600||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=9)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][24];if(c.opcode!=17||c.delay!=-1||c.offset!=372632||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=59)return false;
+}
+{const Command&c=_programs[5][25];if(c.opcode!=16||c.delay!=-1||c.offset!=372644||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=58)return false;
+}
+{const Command&c=_programs[5][26];if(c.opcode!=45||c.delay!=-1||c.offset!=372656||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][27];if(c.opcode!=31||c.delay!=-1||c.offset!=372664||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=8)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][28];if(c.opcode!=17||c.delay!=-1||c.offset!=372696||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=58)return false;
+}
+{const Command&c=_programs[5][29];if(c.opcode!=16||c.delay!=-1||c.offset!=372708||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=57)return false;
+}
+{const Command&c=_programs[5][30];if(c.opcode!=45||c.delay!=-1||c.offset!=372720||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][31];if(c.opcode!=31||c.delay!=-1||c.offset!=372728||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=7)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][32];if(c.opcode!=17||c.delay!=-1||c.offset!=372760||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=57)return false;
+}
+{const Command&c=_programs[5][33];if(c.opcode!=16||c.delay!=-1||c.offset!=372772||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=56)return false;
+}
+{const Command&c=_programs[5][34];if(c.opcode!=45||c.delay!=-1||c.offset!=372784||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][35];if(c.opcode!=31||c.delay!=-1||c.offset!=372792||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=6)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][36];if(c.opcode!=17||c.delay!=-1||c.offset!=372824||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=56)return false;
+}
+{const Command&c=_programs[5][37];if(c.opcode!=16||c.delay!=-1||c.offset!=372836||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=55)return false;
+}
+{const Command&c=_programs[5][38];if(c.opcode!=45||c.delay!=-1||c.offset!=372848||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][39];if(c.opcode!=31||c.delay!=-1||c.offset!=372856||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=5)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][40];if(c.opcode!=17||c.delay!=-1||c.offset!=372888||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=55)return false;
+}
+{const Command&c=_programs[5][41];if(c.opcode!=16||c.delay!=-1||c.offset!=372900||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=54)return false;
+}
+{const Command&c=_programs[5][42];if(c.opcode!=45||c.delay!=-1||c.offset!=372912||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][43];if(c.opcode!=31||c.delay!=-1||c.offset!=372920||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=4)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][44];if(c.opcode!=17||c.delay!=-1||c.offset!=372952||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=54)return false;
+}
+{const Command&c=_programs[5][45];if(c.opcode!=16||c.delay!=-1||c.offset!=372964||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=53)return false;
+}
+{const Command&c=_programs[5][46];if(c.opcode!=45||c.delay!=-1||c.offset!=372976||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][47];if(c.opcode!=31||c.delay!=-1||c.offset!=372984||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=3)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][48];if(c.opcode!=17||c.delay!=-1||c.offset!=373016||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=53)return false;
+}
+{const Command&c=_programs[5][49];if(c.opcode!=16||c.delay!=-1||c.offset!=373028||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=52)return false;
+}
+{const Command&c=_programs[5][50];if(c.opcode!=45||c.delay!=-1||c.offset!=373040||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][51];if(c.opcode!=31||c.delay!=-1||c.offset!=373048||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=2)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][52];if(c.opcode!=17||c.delay!=-1||c.offset!=373080||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=52)return false;
+}
+{const Command&c=_programs[5][53];if(c.opcode!=16||c.delay!=-1||c.offset!=373092||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=51)return false;
+}
+{const Command&c=_programs[5][54];if(c.opcode!=45||c.delay!=-1||c.offset!=373104||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][55];if(c.opcode!=31||c.delay!=-1||c.offset!=373112||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][56];if(c.opcode!=17||c.delay!=-1||c.offset!=373144||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=51)return false;
+}
+{const Command&c=_programs[5][57];if(c.opcode!=16||c.delay!=-1||c.offset!=373156||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=13)return false;
+}
+{const Command&c=_programs[5][58];if(c.opcode!=45||c.delay!=-1||c.offset!=373168||c.args.size()!=0||c.text!="")return false;
+}
+{const Command&c=_programs[5][59];if(c.opcode!=31||c.delay!=-1||c.offset!=373176||c.args.size()!=6||c.text!="")return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[5][60];if(c.opcode!=17||c.delay!=-1||c.offset!=373208||c.args.size()!=1||c.text!="")return false;
+if(c.args[0]!=13)return false;
+}
+{const Command&c=_programs[5][61];if(c.opcode!=42||c.delay!=-1||c.offset!=373220||c.args.size()!=0||c.text!="")return false;
+}
+return true;}
+bool ScriptRunner::validP512SettledValues(const Common::Array<uint32>&w)const{
+ if(!validPersistentState(w))return false;const uint widths[]={20,20,20,6,6,1};
+ for(uint i=0;i<100;++i){if(w[3*i+2]!=1||(w[3*i+1]&&(i>=3||w[3*i+1]!=6)))return false;if(w[301+3*i]!=(i<6?widths[i]:0U)||w[302+3*i]!=uint32(i<6))return false;}
+ if(w[300]>15||w[303]>15||w[306]>15||!w[309]||(w[309]>63&&w[309]!=127)||w[312]<1||w[312]>6||w[315]>1)return false;
+ return (w[309]&(1U<<(w[312]-1)))!=0;
+}
+bool ScriptRunner::exportP512SettledState(Common::Array<uint32>&words)const{
+ if(!trustedP512SettledProgram()||!scriptsIdle())return false;Common::Array<uint32>w;if(!exportPersistentState(w)||!validP512SettledValues(w))return false;words=w;return true;
+}
+bool ScriptRunner::importP512SettledState(const Common::Array<uint32>&words){
+ if(!trustedP512SettledProgram()||!scriptsIdle()||!validP512SettledValues(words))return false;return importPersistentState(words);
+}
+bool ScriptRunner::testP512SettledState(uint32 now)const{
+ Common::Array<uint32>w;if(!exportP512SettledState(w))return false;ScriptRunner prepared=*this;if(!prepared.importP512SettledState(w)||prepared.probeDiagnosticHash(false)!=probeDiagnosticHash(false))return false;Common::Array<uint32>again;if(!prepared.exportP512SettledState(again)||again!=w)return false;
+ for(uint program:{3U,4U,5U}){ScriptRunner expected=*this,actual=prepared;if(!expected.enqueue(_programs[program],now,true)||!actual.enqueue(_programs[program],now,true))return false;for(uint32 at:{now,now+1,now+150,now+500}){expected.tick(at);actual.tick(at);if(expected.probeDiagnosticHash(false)!=actual.probeDiagnosticHash(false))return false;}}
+ const uint offsets[]={1,2,300,301,302,303,306,309,310,311,312,315,319,320,602,603,604};for(uint offset:offsets){Common::Array<uint32>bad=w;bad[offset]=0xffffffffU;ScriptRunner target=*this;const uint32 before=target.probeDiagnosticHash(true);if(target.importP512SettledState(bad)||target.probeDiagnosticHash(true)!=before)return false;}
+ for(uint badMask:{0U,64U,128U}){Common::Array<uint32>bad=w;bad[309]=badMask;ScriptRunner target=*this;const uint32 before=target.probeDiagnosticHash(true);if(target.importP512SettledState(bad)||target.probeDiagnosticHash(true)!=before)return false;}
+ {Common::Array<uint32>bad=w;bad[309]&=~(1U<<(bad[312]-1));ScriptRunner target=*this;const uint32 before=target.probeDiagnosticHash(true);if(target.importP512SettledState(bad)||target.probeDiagnosticHash(true)!=before)return false;}
+ for(uint kind=0;kind<4;++kind){ScriptRunner bad=*this;if(kind==0)bad._weatherSupport=false;if(kind==1)bad._programs[2][4].delay=1;if(kind==2)bad._pending.push_back(Pending{_programs[3],0,now});if(kind==3)bad._actions.push_back(Action{});Common::Array<uint32>out;out.push_back(123456);const uint32 before=bad.probeDiagnosticHash(true);if(bad.exportP512SettledState(out)||out.size()!=1||out[0]!=123456||bad.probeDiagnosticHash(true)!=before)return false;}
+ debug("P512 settled runner preflight: PASS (605 words,3 original redraw futures,21 invalid states,4 export exclusions)");return true;
+}
+
+void ScriptRunner::p512AuditExportState(Common::Array<uint32>&words)const{exportSettledValues(words);words.push_back(_variantRound);words.push_back(_variantMask);}
+void ScriptRunner::p512AuditPending(uint row,uint32 now)const{
+ debug("P512QUEUE row=%u now=%u loaded=%u pending=%u actions=%u blocked=%u",row,now,_programLoadedAt,_pending.size(),_actions.size(),uint(_clicksBlocked));
+ for(uint i=0;i<_pending.size();++i){const Pending&p=_pending[i];int program=-1;for(uint j=0;j<_programs.size();++j)if(p.script.size()==_programs[j].size()){bool same=true;for(uint k=0;k<p.script.size();++k){const Command&a=p.script[k],&b=_programs[j][k];same&=a.opcode==b.opcode&&a.delay==b.delay&&a.args==b.args&&a.text==b.text;}if(same)program=j;}debug("P512PENDING row=%u program=%d index=%u since=%u count=%u",row,program,p.index,p.since,p.script.size());}
+}
+
+
 uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
  uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());
  for(const Pending&p:_pending){add(p.index);add(p.since);add(p.script.size());for(const Command&c:p.script){add(c.opcode);add(c.delay);add(c.args.size());for(int32 v:c.args)add(v);}}

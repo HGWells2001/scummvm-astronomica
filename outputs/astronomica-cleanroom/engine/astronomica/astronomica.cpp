@@ -1,3 +1,4 @@
+#include "common/mutex.h"
 #include <type_traits>
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "astronomica/astronomica.h"
@@ -2225,7 +2226,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveP510() || canSaveP501() || canSaveP504() || canSaveP503() || canSaveP502() || canSaveP527() || canSaveP516() || canSaveP511() || canSaveP509() || canSaveP521() || canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSaveP512() || canSaveP510() || canSaveP501() || canSaveP504() || canSaveP503() || canSaveP502() || canSaveP527() || canSaveP516() || canSaveP511() || canSaveP509() || canSaveP521() || canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -2243,6 +2244,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  if (_place == 528) return saveP528(stream);
  if (_place == 530) return saveP530(stream);
  if (_place == 537) return saveRocket(stream);
+ if (_place == 512) return saveP512(stream);
  if (_place == 510) return saveP510(stream);
  if (_place == 501) return saveP501(stream);
  if (_place == 504) return saveP504(stream);
@@ -2286,6 +2288,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
  if (version == 14) return loadRocket(stream);
+ if (version == 29) return loadP512(stream);
  if (version == 28) return loadP510(stream);
  if (version == 27) return loadP501(stream);
  if (version == 26) return loadP504(stream);
@@ -3271,11 +3274,14 @@ void AstronomicaEngine::applyScriptActions(uint32 now) {
    if (action.x == 1) {
     // _ShowMovie also sends MCActionPlay at the preferred rate (17:0494).
     _mixer->stopHandle(_soundHandle); _movieX = 160; _movieY = 57;
+    if(_p512NeedsOriginalSeek){if(_p512OriginalSeekSerial<=_p512RequiredSeekSerial)++_p512PlayWithoutRequiredSeek;_p512NeedsOriginalSeek=false;}++_p512OriginalPlays;
     _movie->start(); _moviePlaying = true;
    } else if (action.x == 2) {
     _mixer->stopHandle(_soundHandle);
-    if (_movie->endOfVideo() || _movie->getTime() >= uint32(_movie->getEndTime().msecs()))
-     _movie->seek(Audio::Timestamp(0,_movieSegmentStart,_movie->getTimeScale()));
+    if (_movie->endOfVideo() || _movie->getTime() >= uint32(_movie->getEndTime().msecs())){
+     if(_movie->seek(Audio::Timestamp(0,_movieSegmentStart,_movie->getTimeScale())))++_p512OriginalSeekSerial;
+    }
+    if(_p512NeedsOriginalSeek){if(_p512OriginalSeekSerial<=_p512RequiredSeekSerial)++_p512PlayWithoutRequiredSeek;_p512NeedsOriginalSeek=false;}++_p512OriginalPlays;
     _movie->start(); _moviePlaying = true;
    } else { updateMovie(); presentScene(); }
    continue;
@@ -3328,7 +3334,7 @@ void AstronomicaEngine::applyScriptActions(uint32 now) {
    continue;
   }
   if (action.opcode == 36 && _movie) {
-   if (!_movie->seek(Audio::Timestamp(0,action.x,_movie->getTimeScale()))) warning("Astronomica: movie time seek failed");
+   if (!_movie->seek(Audio::Timestamp(0,action.x,_movie->getTimeScale()))) warning("Astronomica: movie time seek failed");else if(_place==512)++_p512OriginalSeekSerial;
    continue;
   }
   if (action.opcode == 3 && _movie) {
@@ -8779,7 +8785,414 @@ bool AstronomicaEngine::verifyBuilderPuzzle() {
  debug("Astronomica P515/P536 interaction verification: %s (five designs, original clicks, wrong size/recovery, two phases, repeated success, early Launch and P515 no-op success)",ok ? "PASS" : "FAIL");
  return ok;
 }
+static const char*const kP512Panels[]={"mooncor","moonhalo","sundogs","sunhalo","sunpill","creprays"};
+static const uint kP512Starts[]={0,150,1272,1456,1642,1834},kP512Ends[]={150,354,1456,1642,1831,1919};
+bool AstronomicaEngine::p512OriginalAssets()const{
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/CREPRAYS"),10486,3262426781U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/DARK"),205878,3248410454U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/FLATPHEN.MOV"),3019753,1827196452U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/LIGHT"),205878,2119384201U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/MEGAFILE.HYP"),373384,3967222371U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/MOONCOR"),10486,2984345620U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/MOONHALO"),10486,1564779840U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S0.WAV"),261388,2118871242U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S1.WAV"),70956,2960400807U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S10.WAV"),18348,2554060193U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S11.WAV"),18856,2850344131U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S12.WAV"),22316,3254480498U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S13.WAV"),21036,1478402176U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S14.WAV"),8492,1180151194U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S2.WAV"),3672,981227600U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S3.WAV"),4316,3180464351U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S302.WAV"),70956,2960400807U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S4.WAV"),14042,1687987592U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S5.WAV"),19560,3404543360U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S6.WAV"),1042,1942962011U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S7.WAV"),1420,3490832024U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S8.WAV"),10828,2734960218U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/S9.WAV"),24044,1015545718U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/SUNDOGS"),10486,1754918059U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/SUNHALO"),10486,1290016853U))return false;
+if(!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P512/SUNPILL"),10486,3269007940U))return false;
+return true;}
+static int p512ExpectedVisibility(uint id,int original,const Common::Array<uint32>&r){
+if(id>=15&&id<=22){const uint ids[]={16,17,20,21,22,15};return id==ids[r[312]-1];}
+if(id==7)return r[300]>=1;
+if(id==23)return r[300]>=2;
+if(id==24)return r[300]>=3;
+if(id==25)return r[300]>=4;
+if(id==26)return r[300]>=5;
+if(id==27)return r[300]>=6;
+if(id==28)return r[300]>=7;
+if(id==29)return r[300]>=8;
+if(id==30)return r[300]>=9;
+if(id==31)return r[300]>=10;
+if(id==32)return r[300]>=11;
+if(id==33)return r[300]>=12;
+if(id==34)return r[300]>=13;
+if(id==35)return r[300]>=14;
+if(id==36)return r[300]>=15;
+if(id==10)return r[303]>=1;
+if(id==37)return r[303]>=2;
+if(id==38)return r[303]>=3;
+if(id==39)return r[303]>=4;
+if(id==40)return r[303]>=5;
+if(id==41)return r[303]>=6;
+if(id==42)return r[303]>=7;
+if(id==43)return r[303]>=8;
+if(id==44)return r[303]>=9;
+if(id==45)return r[303]>=10;
+if(id==46)return r[303]>=11;
+if(id==47)return r[303]>=12;
+if(id==48)return r[303]>=13;
+if(id==49)return r[303]>=14;
+if(id==50)return r[303]>=15;
+if(id==13)return r[306]>=1;
+if(id==51)return r[306]>=2;
+if(id==52)return r[306]>=3;
+if(id==53)return r[306]>=4;
+if(id==54)return r[306]>=5;
+if(id==55)return r[306]>=6;
+if(id==56)return r[306]>=7;
+if(id==57)return r[306]>=8;
+if(id==58)return r[306]>=9;
+if(id==59)return r[306]>=10;
+if(id==60)return r[306]>=11;
+if(id==61)return r[306]>=12;
+if(id==62)return r[306]>=13;
+if(id==63)return r[306]>=14;
+if(id==64)return r[306]>=15;
+return original;}
+// Isolated diagnostic memory packet only. No byte serializer/version/slot.
+static const uint kP512Header=24,kP512Runner=24,kP512Sprite=629,kP512Extra=2357,kP512Ball=2475,kP512Words=2481;
+static uint32 p512PacketHash(const Common::Array<uint32>&w){uint32 h=2166136261U;for(uint i=0;i+1<w.size();++i)h=(h^w[i])*16777619U;return h;}
+// A newly submitted mixer channel does not inherit pauseAll's earlier call.
+// Feed silence without consuming S0 until its own pause level is installed.
+class P512AmbientGate final:public Audio::AudioStream {
+ Audio::AudioStream*_source;mutable Common::Mutex _mutex;bool _armed=false;uint64 _consumed=0;
+public:
+ explicit P512AmbientGate(Audio::AudioStream*source):_source(source){}
+ ~P512AmbientGate()override{delete _source;}
+ bool isStereo()const override{return _source->isStereo();}
+ int getRate()const override{return _source->getRate();}
+ bool endOfData()const override{return false;}
+ bool endOfStream()const override{return false;}
+ int readBuffer(int16*buffer,const int count)override{
+  Common::StackLock lock(_mutex);if(!_armed){memset(buffer,0,count*sizeof(int16));return count;}
+  const int n=_source->readBuffer(buffer,count);if(n>0)_consumed+=n;return n;
+ }
+ void arm(){Common::StackLock lock(_mutex);_armed=true;}
+ uint64 consumed()const{Common::StackLock lock(_mutex);return _consumed;}
+};
+
+AstronomicaEngine::P512Prepared::~P512Prepared(){clearOwned();}
+void AstronomicaEngine::P512Prepared::clearOwned(){delete decoder;decoder=nullptr;delete ambient;ambient=nullptr;background.free();displayed.free();composed.free();scene=Scene();runner=ScriptRunner();packet.clear();displayedName.clear();ready=false;}
+bool AstronomicaEngine::P512Prepared::empty()const{return !ready&&!decoder&&!ambient&&!background.getPixels()&&!displayed.getPixels()&&!composed.getPixels()&&scene.sprites.empty()&&scene.scripts.empty()&&scene.conditions.empty()&&scene.mouseRects.empty()&&scene.movies.empty()&&!runner.pendingCount()&&packet.empty()&&displayedName.empty();}
+bool AstronomicaEngine::captureP512Stopped(Common::Array<uint32>&out,uint32 now)const{
+ if(_place!=512||!_movie||_moviePlaying||_movie->isPlaying()||_movie->isPaused()!=_clockPaused||_movie->getRate()!=Common::Rational(0,1)||!_runner.scriptsIdle())return false;
+ if(_pendingImage.w||!_pendingImageName.empty()||(_mixer->isSoundHandleActive(_soundHandle)&&(_loopSound!=0||_lastSound!=0))||!_loopEnabled||(_loopSound!=-1&&_loopSound!=0)||_plotEvent||_plotTime||_dangerEvent[0]||_dangerEvent[1]||_dangerButtons)return false;
+ if(!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return false;
+ if(_scene.sprites.size()!=64||!_hoverSprites.empty()||!_hoverRects.empty()||_nav[0]||_nav[1]||_nav[2]||!_questionSaveBaseline.empty())return false;
+ if(_rocket.kind!=RocketMotion::kStopped||_rocket.delta||_rocket.since||_probe.year!=1991||_probe.yearArmed||_probe.specialHit||_probe.flying||_probe.expired||_worldMovieCursorBottom!=-1||_universeSegmentEnd||_universeAssetsValid)return false;
+ for(uint i=0;i<3;++i)if(_probe.widths[i]||_probe.heights[i])return false;
+ if(_p519LargeImage||_p519SmallImage||_p528EarthImage||_p528MoonImage||_p528TallMoon||!_p528HistoryValid||!_p530HistoryValid||!_p513HistoryValid||!_p517HistoryValid||!_builderHistoryValid)return false;
+ if(_probeAssetsValid||_rendezvousAssetsValid||_p501AssetsValid||_p502AssetsValid||_p503AssetsValid||_p504AssetsValid||_p527AssetsValid||_p516AssetsValid||_p511AssetsValid||_p509AssetsValid||_p521AssetsValid||_planetAssetsValid)return false;
+ Common::Array<uint32>r;if(!_runner.exportP512SettledState(r))return false;const int scenario=r[312];if(scenario<1||scenario>6||_displayedImageName!=kP512Panels[scenario-1])return false;
+ for(const Sprite&s:_scene.sprites)if(s.dragEnabled||s.orbitMotion||s.planetMotion||s.planetPeriod!=-1)return false;
+ const uint32 header[]={512,_puzzlesCompleted,now,uint32(_previousPlace),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_mixer->isSoundHandleActive(_soundHandle)),uint32(_comet.frame),uint32(_comet.previousFrame),_movie->getTime(),uint32(_movie->getCurFrame()),uint32(_moviePresentedFrame),_movieSegmentStart,uint32(_movie->getEndTime().convertToFramerate(30).totalNumberOfFrames()),uint32(scenario),_movieFramesDrawn,0,uint32(_movieX),uint32(_movieY),uint32(_movie->getVolume()),uint32(_lastSound),_lastBlockingSoundEnd,_lastSuccessEnd};
+ Common::Array<uint32>w;for(uint32 v:header)w.push_back(v);for(uint32 v:r)w.push_back(v);for(const Sprite&s:_scene.sprites)p526SpriteWords(s,w);Common::Array<uint32>extra;p516Extra(extra);for(uint32 v:extra)w.push_back(v);for(int32 v:{_ball.scenario,_ball.centerX,_ball.centerY,_ball.side,_ball.period})w.push_back(uint32(v));w.push_back(0);if(w.size()!=kP512Words)return false;w.back()=p512PacketHash(w);out=w;return true;
+}
+class P512StoppedDecoder final:public Video::QuickTimeDecoder{public:void retainStoppedClock(uint32 ms){_lastTimeChange=Audio::Timestamp(ms);}};
+bool AstronomicaEngine::prepareP512Stopped(const Common::Array<uint32>&w,P512Prepared&out){
+ if(!out.empty())return false;
+ if(w.size()!=kP512Words||w.back()!=p512PacketHash(w)||w[0]!=512||(w[3]>537&&w[3]!=0xffffffffU)||(w[4]!=0xffffffffU&&w[4]!=0)||w[5]!=1||w[7]>1||(w[7]&&(w[4]!=0||w[21]!=0))||w[8]<1||w[8]>12||w[9]>12||w[10]>64266||w[11]>=643||(w[12]>=643&&w[12]!=0xffffffffU)||w[15]<1||w[15]>6||w[17]||w[18]!=160||w[19]!=57||w[20]>255||(w[21]>922&&w[21]!=0xffffffffU))return (debug("P512 prepare rejection line%d",__LINE__),false);
+ const uint scenario=w[15]-1;if(w[13]!=kP512Starts[scenario]||w[14]!=kP512Ends[scenario]||uint64(w[10])<uint64(w[14])*1000/30)return (debug("P512 prepare rejection line%d",__LINE__),false);
+ for(uint i=0;i<100;++i)if(w[kP512Extra+i])return (debug("P512 prepare rejection line%d",__LINE__),false);if(w[kP512Extra+100]!=0xffffffffU||w[kP512Extra+101])return (debug("P512 prepare rejection line%d",__LINE__),false);
+ if(w[kP512Ball]||w[kP512Ball+1]||w[kP512Ball+2]||w[kP512Ball+3]!=2||w[kP512Ball+4]!=10)return (debug("P512 prepare rejection line%d",__LINE__),false);
+ if(!p512OriginalAssets())return (debug("P512 prepare rejection line%d",__LINE__),false);
+ P512Prepared p;Common::File file;if(!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P512/MEGAFILE.HYP"))))return (debug("P512 prepare rejection line%d",__LINE__),false);ResourceReader reader(file);
+ if(!reader.read(p.scene)||p.scene.mode||p.scene.layers!=1||p.scene.sprites.size()!=64||p.scene.conditions.size()!=6||p.scene.scripts.size()!=6||!p.scene.mouseRects.empty()||p.scene.consumed!=373384||p.scene.trailing||p.scene.commandCount!=326)return (debug("P512 prepare rejection line%d",__LINE__),false);
+ Common::Array<uint32>r;for(uint i=0;i<605;++i)r.push_back(w[kP512Runner+i]);p.runner.loadLocalConditions(p.scene.conditions);p.runner.setPrograms(p.scene.scripts,r[601]);p.runner.setWeatherSupport(true);if(!p.runner.importP512SettledState(r)||r[312]!=w[15])return (debug("P512 prepare rejection line%d",__LINE__),false);
+ bool emptyCache=true;for(uint i=0;i<16;++i)emptyCache&=!w[kP512Extra+102+i];if(!emptyCache){Common::File jfile;if(!jfile.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P516/MEGAFILE.HYP"))))return (debug("P512 prepare rejection line%d",__LINE__),false);Scene jscene;ResourceReader jr(jfile);if(!jr.read(jscene)||!supportsJupiter(jscene))return (debug("P512 prepare rejection line%d",__LINE__),false);for(uint i=0;i<8;++i){const Frame*f=spriteFrameAt(jscene,13+i,0);if(!f)return (debug("P512 prepare rejection line%d",__LINE__),false);jfile.seek(f->image.offset+18);const int32 width=jfile.readSint32LE(),height=jfile.readSint32LE();if(width<=0||height<=0||w[kP512Extra+102+i]!=uint32(width)||w[kP512Extra+110+i]!=uint32(height))return (debug("P512 prepare rejection line%d",__LINE__),false);}}
+ for(uint i=0;i<64;++i){Sprite expected=p.scene.sprites[i];expected.selectedFrame=0;expected.visible=p512ExpectedVisibility(i+1,expected.visible,r);Common::Array<uint32>b;p526SpriteWords(expected,b);for(uint j=0;j<27;++j)if(w[kP512Sprite+i*27+j]!=b[j])return (debug("P512 prepare rejection line%d",__LINE__),false);p526RestoreSprite(p.scene.sprites[i],&w[kP512Sprite+i*27]);}
+ file.seek(0);if(file.readSint32LE())return (debug("P512 prepare rejection line%d",__LINE__),false);p.background.create(640,480,_screen.format);p.background.fillRect(Common::Rect(640,480),0);if(!readImage(file,p.background,false)||!readImage(file,p.background,true))return (debug("P512 prepare rejection line%d",__LINE__),false);
+ Graphics::Surface*panel=openBackgroundImage(kP512Panels[scenario],512);if(!panel||panel->w!=112||panel->h!=84){if(panel){panel->free();delete panel;}return (debug("P512 prepare rejection line%d",__LINE__),false);}p.background.copyRectToSurface(panel->getPixels(),panel->pitch,79,358,panel->w,panel->h);panel->free();delete panel;
+ auto open=[&](){Common::File*f=new Common::File();if(!f->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P512/FLATPHEN.MOV")))){delete f;return (Video::QuickTimeDecoder*)nullptr;}Video::QuickTimeDecoder*d=new P512StoppedDecoder();if(!d->loadStream(f)){delete d;return (Video::QuickTimeDecoder*)nullptr;}return d;};
+ if(w[12]!=0xffffffffU){Video::QuickTimeDecoder*d=open();if(!d)return (debug("P512 prepare rejection line%d",__LINE__),false);bool valid=d->seekToFrame(w[12]);const Graphics::Surface*f=valid?d->decodeNextFrame():nullptr;Graphics::Surface*rgb=f?f->convertTo(_screen.format,d->getPalette()):nullptr;if(rgb){p.displayed.copyFrom(*rgb);rgb->free();delete rgb;}delete d;if(!p.displayed.w)return (debug("P512 prepare rejection line%d",__LINE__),false);}
+ p.decoder=open();if(!p.decoder||p.decoder->getFrameCount()!=643||p.decoder->getWidth()!=320||p.decoder->getHeight()!=240||p.decoder->getTimeScale()!=30)return false;p.decoder->setVolume(w[20]);if(!p.decoder->seekToFrame(w[11])||!p.decoder->decodeNextFrame()||p.decoder->getCurFrame()!=int(w[11]))return false;static_cast<P512StoppedDecoder*>(p.decoder)->retainStoppedClock(w[10]);if(p.decoder->isPlaying()||p.decoder->getRate()!=Common::Rational(0,1)||p.decoder->getTime()!=w[10]||p.decoder->getCurFrame()!=int(w[11]))return false;p.decoder->setEndTime(Audio::Timestamp(0,w[14],30));debug("P512 independent stopped cursor/clock: PASS (media%u,current%d,end%u;audio not aligned)",w[10],p.decoder->getCurFrame(),w[14]);
+ Common::Array<uint>targets;for(uint i=0;i<64;++i)targets.push_back(spriteFrameCount(p.scene,i));p.runner.setSpriteTargets(targets);Common::Array<uint32>movies;movies.push_back(1928);p.runner.setMovieTargets(movies);Common::Array<Common::String>images;for(const char*name:kP512Panels){Common::String target=name;target.toUppercase();images.push_back(target);}p.runner.setImageTargets(images);
+ Common::Array<bool>sounds;sounds.resize(923);for(uint i=0;i<923;++i)sounds[i]=false;auto wav=[&](const Common::Path&path){Common::File f;if(!f.open(Common::FSNode(path)))return (debug("P512 prepare rejection line%d",__LINE__),false);int size,rate;byte flags;uint16 type;return Audio::loadWAVFromStream(f,size,rate,flags,&type)&&type==1;};for(uint id=0;id<=14;++id)sounds[id]=wav(ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P512/S%d.WAV",id))));for(uint id=900;id<=922;++id)sounds[id]=wav(ConfMan.getPath("path").join(Common::Path(Common::String::format("SOUNDS/S%d.WAV",id-900))));if(!sounds[912])return (debug("P512 prepare rejection line%d",__LINE__),false);p.runner.setSoundTargets(sounds);p.runner.setGameStateHandler(this);p.runner.setSoundHandler(this);p.runner.setSuccessHandler(this,512);
+ sounds[302]=wav(ConfMan.getPath("path").join("PLACES/P512/S302.WAV"));p.runner.setSoundTargets(sounds);
+ for(const Script&program:p.scene.scripts)if(!p.runner.canRun(program,true))return (debug("P512 prepare rejection line%d",__LINE__),false);for(const Sprite&sprite:p.scene.sprites)for(const Script*program:{&sprite.click,&sprite.drag,&sprite.mouseIn,&sprite.mouseOut})if(!program->empty()&&!p.runner.canRun(*program,true))return (debug("P512 prepare rejection line%d",__LINE__),false);
+ p.composed.copyFrom(p.background);renderStaticSprites(file,p.scene,p.composed);if(p.displayed.w)p.composed.copyRectToSurface(p.displayed.getPixels(),p.displayed.pitch,160,57,p.displayed.w,p.displayed.h);
+ if(w[7]){Common::File*f=new Common::File();if(!f->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P512/S0.WAV")))){delete f;return false;}Audio::SeekableAudioStream*raw=Audio::makeWAVStream(f,DisposeAfterUse::YES);if(!raw)return false;p.ambient=new P512AmbientGate(Audio::makeLoopingAudioStream(raw,0));}
+ p.displayedName=kP512Panels[scenario];p.packet=w;p.ready=true;p510SwapScene(p.scene,out.scene);p.runner.swapP510PreparedRunner(out.runner);p510SwapSurface(p.background,out.background);p510SwapSurface(p.displayed,out.displayed);p510SwapSurface(p.composed,out.composed);p510SwapValue(p.decoder,out.decoder);p510SwapValue(p.ambient,out.ambient);p.packet.swap(out.packet);out.displayedName=static_cast<Common::String&&>(p.displayedName);p510SwapValue(p.ready,out.ready);return p.empty();
+}
+bool AstronomicaEngine::testP512Stopped(uint32 now){
+ static uint calls=0,accepted=0,excluded=0;Common::Array<uint32>w;++calls;if(!captureP512Stopped(w,now)){++excluded;debug("P512 full preflight excluded: calls%u excluded%u",calls,excluded);return true;}
+ const uint32 live=p510WholeLiveHash();Video::QuickTimeDecoder*const decoder=_movie;const void*screen=_screen.getPixels(),*movie=_movieFrame.getPixels(),*background=_background.getPixels();
+ auto unchanged=[&](){return p510WholeLiveHash()==live&&_movie==decoder&&_screen.getPixels()==screen&&_movieFrame.getPixels()==movie&&_background.getPixels()==background;};
+ auto hash=[](const Graphics::Surface&s){uint32 h=2166136261U;for(int y=0;y<s.h;++y)for(int x=0;x<s.w*s.format.bytesPerPixel;++x)h=(h^*((const byte*)s.getBasePtr(0,y)+x))*16777619U;return h;};
+ P512Prepared p;const bool prepared=prepareP512Stopped(w,p);if(!prepared||!p.ready||!unchanged()||p.decoder->isPlaying()||hash(p.background)!=hash(_background)||hash(p.displayed)!=hash(_movieFrame)||hash(p.composed)!=hash(_screen)){debug("P512 full preflight valid FAIL call%u prepared%d ready%d unchanged%d bg%08x/%08x display%08x/%08x composite%08x/%08x",calls,prepared,p.ready,unchanged(),hash(p.background),hash(_background),hash(p.displayed),hash(_movieFrame),hash(p.composed),hash(_screen));return false;}
+ Common::Array<uint32>r;if(!p.runner.exportP512SettledState(r))return false;for(uint i=0;i<605;++i)if(r[i]!=w[kP512Runner+i])return false;
+ Video::QuickTimeDecoder*const owned=p.decoder;if(prepareP512Stopped(w,p)||p.decoder!=owned||!p.ready||!unchanged())return false;
+ if(!accepted){for(uint size=0;size<kP512Words;++size){Common::Array<uint32>bad=w;bad.resize(size);P512Prepared x;if(prepareP512Stopped(bad,x)||!x.empty()||!unchanged())return false;}for(uint i=0;i<kP512Words;++i){Common::Array<uint32>bad=w;bad[i]^=1;P512Prepared x;if(prepareP512Stopped(bad,x)||!x.empty()||!unchanged())return false;}}
+ const uint offsets[]={0,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,20,21,kP512Runner+300,kP512Runner+309,kP512Runner+310,kP512Runner+312,kP512Runner+315,kP512Extra,kP512Extra+100,kP512Extra+102,kP512Ball+3};
+ for(uint offset:offsets){Common::Array<uint32>bad=w;bad[offset]=0xfffffffeU;bad.back()=p512PacketHash(bad);P512Prepared x;if(prepareP512Stopped(bad,x)||!x.empty()||!unchanged())return false;}
+ for(uint sprite=0;sprite<64;++sprite){Common::Array<uint32>bad=w;bad[kP512Sprite+sprite*27+4]^=1;bad.back()=p512PacketHash(bad);P512Prepared x;if(prepareP512Stopped(bad,x)||!x.empty()||!unchanged())return false;}
+ if(!accepted){for(uint displayed:{0xffffffffU,0U,642U}){Common::Array<uint32>different=w;different[12]=displayed;different.back()=p512PacketHash(different);P512Prepared x;if(!prepareP512Stopped(different,x)||x.decoder->getCurFrame()!=p.decoder->getCurFrame()||x.displayed.w!=(displayed==0xffffffffU?0:320)||!unchanged())return false;}debug("P512 independent display preparation: PASS (absent,first,last;decoder retained)");}
+ ++accepted;p.clearOwned();if(!p.empty()||!unchanged())return false;debug("P512 full stopped preflight: PASS (calls%u,accepted%u,excluded%u,64sprites,605runner,118private,11127Hz,28semantic,64coordinate)",calls,accepted,excluded);return true;
+}
+
+void AstronomicaEngine::commitP512Prepared(P512Prepared&out,Audio::AudioStream**audit){
+ assert(out.ready&&out.decoder&&!out.decoder->isPlaying());const Common::Array<uint32>&w=out.packet;
+ // Scene, codec, target, string, pixel and stream preflight is complete.
+ // Transfer releases old owners; a new mixer channel is allocated at commit.
+ _mixer->stopHandle(_soundHandle);if(_movie)_movie->stop();delete _movie;_movie=out.decoder;out.decoder=nullptr;
+ p510SwapScene(_scene,out.scene);_runner.swapP510PreparedRunner(out.runner);
+ p510SwapSurface(_background,out.background);p510SwapSurface(_movieFrame,out.displayed);p510SwapSurface(_screen,out.composed);
+ _displayedImageName=static_cast<Common::String&&>(out.displayedName);
+ _place=512;_previousPlace=int32(w[3]);_puzzlesCompleted=w[1];_pausedMillis=(_clockPaused?_pauseStarted:_system->getMillis())-w[2];
+ _loopSound=int32(w[4]);_loopEnabled=w[5]!=0;_lastSoundAt=w[6];_lastSound=int32(w[21]);_lastBlockingSoundEnd=w[22];_lastSuccessEnd=w[23];
+ _comet.frame=w[8];_comet.previousFrame=w[9];for(uint i=0;i<50;++i){_comet.kind[i]=int32(w[kP512Extra+i]);_comet.partner[i]=int32(w[kP512Extra+50+i]);}_comet.sound=int32(w[kP512Extra+100]);_comet.explosion=int32(w[kP512Extra+101]);
+ for(uint i=0;i<8;++i){_jupiterWidths[i]=w[kP512Extra+102+i];_jupiterHeights[i]=w[kP512Extra+110+i];}
+ _ball.scenario=int32(w[kP512Ball]);_ball.centerX=int32(w[kP512Ball+1]);_ball.centerY=int32(w[kP512Ball+2]);_ball.side=int32(w[kP512Ball+3]);_ball.period=int32(w[kP512Ball+4]);
+ _rocket=RocketMotion();_probe=ProbeMotion();_plotEvent=0;_plotTime=0;_movieSegmentStart=w[13];_moviePresentedFrame=int32(w[12]);_movieX=w[18];_movieY=w[19];_movieFramesDrawn=w[16];_moviePlaying=false;
+ _dangerEvent[0]=_dangerEvent[1]=0;_dangerButtons=0;
+ _worldMovieCursorBottom=-1;_universeSegmentEnd=0;_universeAssetsValid=false;
+ _pendingImage.free();_pendingImageName.clear();_pendingImageX=_pendingImageY=0;
+ _hoverSprites.clear();_hoverRects.clear();_nav[0]=_nav[1]=_nav[2]=0;_questionSaveBaseline.clear();
+ _p519LargeImage=_p519SmallImage=_p528EarthImage=_p528MoonImage=_p528TallMoon=0;
+ _p528HistoryValid=_p530HistoryValid=_p513HistoryValid=_p517HistoryValid=_builderHistoryValid=true;
+ _probeAssetsValid=_rendezvousAssetsValid=_p501AssetsValid=_p502AssetsValid=_p503AssetsValid=_p504AssetsValid=_p527AssetsValid=_p516AssetsValid=_p511AssetsValid=_p509AssetsValid=_p521AssetsValid=_planetAssetsValid=false;
+ // Keep recipient preferences, soundsStarted, help/legacy cache and inactive
+ // danger channels/times. Decoder audio remains stopped until original seek.
+ _p512RequiredSeekSerial=_p512OriginalSeekSerial;_p512NeedsOriginalSeek=true;
+ if(out.ambient){P512AmbientGate*gate=static_cast<P512AmbientGate*>(out.ambient);_mixer->playStream(Audio::Mixer::kMusicSoundType,&_soundHandle,out.ambient);out.ambient=nullptr;if(!_mixer->isSoundHandleActive(_soundHandle))error("P512 ambient mixer allocation failed after commit");_mixer->pauseHandle(_soundHandle,true);gate->arm();++_soundsStarted;if(audit)*audit=gate;}
+ out.clearOwned();assert(out.empty());++_p512MemoryCommits;
+}
+bool AstronomicaEngine::installP512Memory(const Common::Array<uint32>&words,Audio::AudioStream**audit){
+ // Paired GUI/Engine paused recipients retain their outer token ownership.
+ // Validate before acquiring our inner token; invalid input changes nothing.
+ if(_movie&&_movie->isPaused()!=_clockPaused)return false;const bool receiverPaused=_clockPaused;P512Prepared prepared;if(!prepareP512Stopped(words,prepared))return false;
+ PauseToken ownershipPause=pauseEngine();prepared.decoder->pauseVideo(true);commitP512Prepared(prepared,audit);ownershipPause.clear();
+ if(_clockPaused!=receiverPaused||_movie->isPaused()!=receiverPaused||_movie->isPlaying()||!prepared.empty())error("P512 postcommit ownership invariant failed");
+ presentScene();debug("P512 memory ownership release: PASS (empty holder,stopped decoder,internal Engine token released)");return true;
+}
+bool AstronomicaEngine::testP512MemoryInstall(uint32 now){
+ static_assert(!std::is_copy_constructible<P512Prepared>::value,"P512 owned holder cannot copy");static_assert(!std::is_move_constructible<P512Prepared>::value,"P512 owned holder cannot move");
+ static uint boundaries=0,cross=0,finalFirst=0,finalRepeated=0;Common::Array<uint32>words;if(!captureP512Stopped(words,now))return false;
+ const uint initialMusic=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),initialFX=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);const bool initialMute=_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType);
+ auto pixelHash=[](const Graphics::Surface&s){uint32 h=2166136261U;for(int y=0;y<s.h;++y)for(int x=0;x<s.w*s.format.bytesPerPixel;++x)h=(h^*((const byte*)s.getBasePtr(0,y)+x))*16777619U;return h;};
+ const uint32 backgroundHash=pixelHash(_background),displayHash=pixelHash(_movieFrame),screenHash=pixelHash(_screen);
+ auto check=[&](const char*label){Common::Array<uint32>again;if(!captureP512Stopped(again,words[2])||again!=words||!_runner.p512Capabilities(this,this,this,_scene)||_runner.executedCount()||_clockPaused||_movie->isPaused()||_movie->isPlaying()||_moviePlaying||_mixer->isSoundHandleActive(_soundHandle)||pixelHash(_background)!=backgroundHash||pixelHash(_movieFrame)!=displayHash||pixelHash(_screen)!=screenHash)return false;hoverAtTime(0,0,now);debug("P512 installed full state: PASS (%s,packet2481,callbacks/weather,hover/nav clean,startup not replayed)",label);return true;};
+ auto restore=[&](const char*label){const uint commits=_p512MemoryCommits,sounds=_soundsStarted;const int music=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),fx=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);const bool muted=_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType);if(!installP512Memory(words)||_p512MemoryCommits!=commits+1||_soundsStarted!=sounds||_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)!=music||_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType)!=fx||_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType)!=muted||!check(label))return false;return true;};
+ auto reject=[&](){const uint32 hash=p510WholeLiveHash();const uint commits=_p512MemoryCommits;const Audio::SoundHandle handle=_soundHandle;for(uint kind=0;kind<8;++kind){Common::Array<uint32>bad=words;switch(kind){case 0:bad[kP512Runner+309]=64;break;case 1:bad[11]=643;break;case 2:bad[12]=643;break;case 3:bad[10]=64267;break;case 4:bad[3]=9999;break;case 5:bad[10]=uint64(bad[14])*1000/30-1;break;case 6:bad[kP512Sprite+4]^=1;break;default:bad.back()^=1;break;}if(kind!=7)bad.back()=p512PacketHash(bad);if(installP512Memory(bad)||p510WholeLiveHash()!=hash||_p512MemoryCommits!=commits||!(_soundHandle==handle))return false;}return true;};
+ if(!cross){
+  _mixer->setVolumeForSoundType(Audio::Mixer::kMusicSoundType,93);_mixer->setVolumeForSoundType(Audio::Mixer::kSFXSoundType,127);_mixer->muteSoundType(Audio::Mixer::kMusicSoundType,true);
+  for(uint destination:{519U,526U,117U}){if(!loadPlace(destination))return false;if((destination==519||destination==526)&&_hoverSprites.size()<=14)return false;if(destination==117&&!_nav[0]&&!_nav[1]&&!_nav[2])return false;const uint hover=_hoverSprites.size();if(!reject()||!restore("cross hover/navigation"))return false;debug("P512 cross-scene memory install: PASS (P%u,oldhover%u)",destination,hover);++cross;}
+  if(loadGameState(98).getCode()!=Common::kNoError||!_ball.scenario||!_jupiterWidths[0]||!reject()||!restore("P501 retained Ball/Jupiter"))return false;debug("P512 cross-scene memory install: PASS (P501,retained Ball/Jupiter)");++cross;
+  if(!loadPlace(516))return false;uint32 cacheNow=scriptClock();_runner.enqueueStartup(_scene.scripts,cacheNow,true);for(uint tick=0;tick<1000&&!_runner.scriptsIdle();++tick){runScriptsAt(cacheNow);cacheNow+=10;}if(!_runner.scriptsIdle()||!_jupiterWidths[0]||!reject()||!restore("P516 cache"))return false;debug("P512 cross-scene memory install: PASS (P516,native cache)");++cross;
+  if(!loadPlace(510)||!_movie)return false;uint32 plotNow=scriptClock();_runner.enqueueStartup(_scene.scripts,plotNow,true);for(uint tick=0;tick<100;++tick){runScriptsAt(plotNow);updateMovie();plotNow+=10;}if(!_moviePlaying||!_movie->isPlaying()||!_plotEvent||!reject()||!restore("active P510"))return false;debug("P512 cross-scene memory install: PASS (P510,active movie/callback/countdown)");++cross;
+  if(!loadPlace(523)||!_movie)return false;uint32 dangerNow=scriptClock();_runner.enqueueStartup(_scene.scripts,dangerNow,true);for(uint tick=0;tick<100;++tick){runScriptsAt(dangerNow);dangerNow+=10;}if((!_dangerEvent[0]&&!_dangerEvent[1])||!playSound(922,dangerNow)||!_mixer->isSoundHandleActive(_soundHandle))return false;const int channels[]={_dangerChannels[0],_dangerChannels[1],_dangerChannels[2]};const uint32 times[]={_dangerTime[0],_dangerTime[1]};if(!reject()||!_mixer->isSoundHandleActive(_soundHandle)||!restore("P523 callbacks/foreground"))return false;for(uint i=0;i<3;++i)if(_dangerChannels[i]!=channels[i])return false;for(uint i=0;i<2;++i)if(_dangerTime[i]!=times[i])return false;debug("P512 cross-scene memory install: PASS (P523,foreground retained on refusal,callbacks cleared at commit,inactive times retained)");++cross;
+  _mixer->setVolumeForSoundType(Audio::Mixer::kMusicSoundType,initialMusic);_mixer->setVolumeForSoundType(Audio::Mixer::kSFXSoundType,initialFX);_mixer->muteSoundType(Audio::Mixer::kMusicSoundType,initialMute);
+ }
+ _runner.defineValue(0,90,12345);_runner.defineValue(1,0,words[kP512Runner+300]?0:15);_runner.defineValue(1,3,0);_runner.defineValue(1,5,1-words[kP512Runner+315]);_runner.seedRandom(0x5555);_puzzlesCompleted=999;
+ if(!reject()||!restore("same scene displaced globals/settings/RNG/local5/mask"))return false;
+ // Caller-held tokens are exercised separately by the actual pause matrix.
+ uint32 logical=now;auto settle=[&](){for(uint tick=0;tick<4000&&_place==512&&_runner.pendingCount();++tick){runScriptsAt(logical);updateMovie();logical+=50;}return _place!=512||(!_runner.pendingCount()&&!_runner.clicksBlocked());};
+ const int plus[]={280,391,501},minus[]={204,315,425};auto press=[&](int x,int y){if(_place!=512||spriteAt(x,y)<0)return false;clickAtTime(x,y,logical);return settle();};auto select=[&](int local,int target){for(uint step=0;step<=16;++step){int32 value=-1;if(!_runner.getValue(1,local,value))return false;if(value==target)return true;if(!press(value<target?plus[local]:minus[local],417))return false;}return false;};
+ int32 beforeGlobal=0;_runner.getValue(0,28,beforeGlobal);const uint completed=_puzzlesCompleted;for(int local=0;local<3;++local)if(!select(local,0))return false;if(!press(537,374)||_place!=512)return false;int32 accepted=-1,mask=-1,global=-1;if(!_runner.getValue(1,5,accepted)||accepted||!_runner.getValue(1,3,mask)||uint32(mask)!=words[kP512Runner+309]||!_runner.getValue(0,28,global)||global!=beforeGlobal||_puzzlesCompleted!=completed)return false;debug("P512 restored actual wrong answer: PASS (scenario%u,mask%d,local5%d,global%d,count%u)",words[15],mask,accepted,global,_puzzlesCompleted);
+ if(!restore("before correct original future"))return false;logical=now;const int required[6][3]={{8,8,15},{15,8,8},{15,8,8},{15,8,8},{8,15,8},{8,15,15}};for(int local=0;local<3;++local)if(!select(local,required[words[15]-1][local]))return false;
+ const uint plays=_p512OriginalPlays,seeks=_p512OriginalSeekSerial;clickAtTime(537,374,logical);for(uint tick=0;tick<1000&&_place==512&&_p512OriginalPlays==plays;++tick){runScriptsAt(logical);updateMovie();logical+=25;}
+ if(_place!=512||_p512OriginalPlays!=plays+1||_p512OriginalSeekSerial<=seeks||_p512NeedsOriginalSeek||_p512PlayWithoutRequiredSeek||!_moviePlaying||!_movie->isPlaying()||_movie->getTime()>=uint32(_movie->getEndTime().msecs()))return false;
+ const uint frames=_movieFramesDrawn;const uint32 realStart=_system->getMillis();while(_system->getMillis()-realStart<140){updateMovie();_system->delayMillis(5);}if(_movieFramesDrawn<=frames)return false;debug("P512 restored original seek-before-Play: PASS (scenario%u,seeks%u,plays%u,actual140ms/new frames%u;no preseek audio alignment claim)",words[15],_p512OriginalSeekSerial,_p512OriginalPlays,_movieFramesDrawn-frames);
+ if(!settle())return false;
+ if(words[kP512Runner+309]==127){if(_place!=157||!_runner.getValue(0,28,global)||global!=1||_puzzlesCompleted!=completed+uint(!beforeGlobal))return false;if(beforeGlobal)++finalRepeated;else ++finalFirst;debug("P512 memory final correct continuation: PASS (priorGlobal%d,P157,count%u,first%u,repeated%u)",beforeGlobal,_puzzlesCompleted,finalFirst,finalRepeated);}
+ else {int32 next=0,newMask=0;if(_place!=512||!_runner.getValue(1,4,next)||next==int(words[15])||!_runner.getValue(1,3,newMask)||!(uint32(newMask)&(1U<<(next-1)))||_puzzlesCompleted!=completed)return false;debug("P512 memory next-question continuation: PASS (old%u,next%d,mask%d)",words[15],next,newMask);}
+ if(!restore("after original future proof"))return false;++boundaries;debug("P512 full memory install: PASS (boundaries%u,cross%u,commits%u,firstFinal%u,repeatedFinal%u)",boundaries,cross,_p512MemoryCommits,finalFirst,finalRepeated);return true;
+}
+
+bool AstronomicaEngine::testP512PauseMatrix(uint32 now){
+ static uint boundaries=0,cells=0,mismatches=0;Common::Array<uint32>baseline;if(!captureP512Stopped(baseline,now)||_clockPaused||!_movie||_movie->isPaused())return false;
+ auto refuseMismatch=[&](const Common::Array<uint32>&valid){const uint32 hash=p510WholeLiveHash();const uint commits=_p512MemoryCommits;Common::Array<uint32>sentinel;sentinel.push_back(123456);if(captureP512Stopped(sentinel,scriptClock())||sentinel.size()!=1||sentinel[0]!=123456||installP512Memory(valid)||p510WholeLiveHash()!=hash||_p512MemoryCommits!=commits)return false;++mismatches;return true;};
+ for(uint sourcePaused=0;sourcePaused<2;++sourcePaused){
+  PauseToken sourceOuter,sourceInner;if(sourcePaused){sourceOuter=pauseEngine();sourceInner=pauseEngine();}
+  if(_clockPaused!=bool(sourcePaused)||_movie->isPaused()!=bool(sourcePaused))return false;
+  const uint32 sourceClock=scriptClock(),sourceMedia=_movie->getTime();const int sourceFrame=_movie->getCurFrame();Common::Array<uint32>source;if(!captureP512Stopped(source,sourceClock))return false;
+  // Make an impossible Engine/decoder ownership pair without editing either
+  // saved packet or Engine flags. Both capture and install must refuse it.
+  _movie->pauseVideo(!sourcePaused);if(!refuseMismatch(source))return false;_movie->pauseVideo(sourcePaused);
+  if(sourcePaused){_system->delayMillis(40);if(scriptClock()!=sourceClock||_movie->getTime()!=sourceMedia||_movie->getCurFrame()!=sourceFrame)return false;Common::Array<uint32>again;if(!captureP512Stopped(again,scriptClock())||again!=source)return false;sourceInner.clear();if(!_clockPaused||!_movie->isPaused()||scriptClock()!=sourceClock)return false;sourceOuter.clear();if(_clockPaused||_movie->isPaused())return false;}
+  debug("P512 actual paused source capture: PASS (sourcePaused%u,clock%u,media%u,current%d,inner/outer ownership)",sourcePaused,sourceClock,sourceMedia,sourceFrame);
+  for(uint receiverPaused=0;receiverPaused<2;++receiverPaused){
+   if(!loadPlace(510)||!_movie)return false;uint32 plotNow=scriptClock();_runner.enqueueStartup(_scene.scripts,plotNow,true);for(uint tick=0;tick<100;++tick){runScriptsAt(plotNow);updateMovie();plotNow+=10;}if(!_moviePlaying||!_movie->isPlaying()||!_plotEvent)return false;
+   PauseToken receiverOuter,receiverInner;if(receiverPaused){receiverOuter=pauseEngine();receiverInner=pauseEngine();}
+   if(_clockPaused!=bool(receiverPaused)||_movie->isPaused()!=bool(receiverPaused))return false;
+   _movie->pauseVideo(!receiverPaused);const uint32 mismatchHash=p510WholeLiveHash();const uint commitsBeforeMismatch=_p512MemoryCommits;if(installP512Memory(source)||p510WholeLiveHash()!=mismatchHash||_p512MemoryCommits!=commitsBeforeMismatch)return false;++mismatches;_movie->pauseVideo(receiverPaused);
+   Common::Array<uint32>bad=source;bad[11]=643;bad.back()=p512PacketHash(bad);const uint32 hash=p510WholeLiveHash();const uint commits=_p512MemoryCommits;if(installP512Memory(bad)||p510WholeLiveHash()!=hash||_p512MemoryCommits!=commits)return false;
+   const uint sounds=_soundsStarted;if(!installP512Memory(source)||_p512MemoryCommits!=commits+1||_soundsStarted!=sounds||_place!=512||_plotEvent||_plotTime||_moviePlaying||_movie->isPlaying()||_movie->getRate()!=Common::Rational(0,1)||_clockPaused!=bool(receiverPaused)||_movie->isPaused()!=bool(receiverPaused))return false;
+   Common::Array<uint32>again;if(!captureP512Stopped(again,source[2])||again!=source||!_runner.p512Capabilities(this,this,this,_scene))return false;
+   const uint32 frozenClock=scriptClock(),frozenMedia=_movie->getTime();const int frozenFrame=_movie->getCurFrame();const int presented=_moviePresentedFrame;
+   if(receiverPaused){if(frozenClock!=source[2])return false;_system->delayMillis(40);if(scriptClock()!=frozenClock||_movie->getTime()!=frozenMedia||_movie->getCurFrame()!=frozenFrame||_moviePresentedFrame!=presented)return false;receiverInner.clear();if(!_clockPaused||!_movie->isPaused()||scriptClock()!=frozenClock)return false;_system->delayMillis(40);if(scriptClock()!=frozenClock||_movie->getTime()!=frozenMedia)return false;receiverOuter.clear();if(_clockPaused||_movie->isPaused())return false;}
+   _system->delayMillis(40);if(scriptClock()-frozenClock<30||_movie->getTime()!=frozenMedia||_movie->getCurFrame()!=frozenFrame||_moviePresentedFrame!=presented||_movie->isPlaying()||_movie->getRate()!=Common::Rational(0,1))return false;
+   ++cells;debug("P512 actual Engine pause matrix: PASS (sourcePaused%u,receiverPaused%u,cell%u,stoppedclock%u,current%d,inner retains/outer releases,decoder never started)",sourcePaused,receiverPaused,cells,frozenMedia,frozenFrame);
+  }
+ }
+ if(!installP512Memory(baseline))return false;Common::Array<uint32>again;if(!captureP512Stopped(again,now)||again!=baseline||_clockPaused||_movie->isPaused())return false;
+ ++boundaries;debug("P512 pause boundary matrix: PASS (boundaries%u,cells%u,mismatches%u,commits%u;entry_scripts=false scope only)",boundaries,cells,mismatches,_p512MemoryCommits);return true;
+}
+
+bool AstronomicaEngine::verifyP512OrdinaryAudio(){
+ ConfMan.setBool("astronomica_entry_scripts",true);_runner.resetGlobals();_runner.seedRandom(137);
+ const uint starts=_soundsStarted;if(!loadPlace(512)||!_movie||_lastSound!=302||_loopSound!=0||!_loopEnabled||_soundsStarted!=starts+1||_runner.pendingCount()!=6)return false;
+ debug("P512 ordinary original entry: PASS (S302 drained,loop0 enabled,six startup programs queued once)");
+ Common::Array<uint32>waiting;uint32 now=scriptClock();const uint32 began=_system->getMillis();
+ while(_system->getMillis()-began<45000){now=scriptClock();runScriptsAt(now);animateSpritesAt(now);resumeLoopAt(now);updateMovie();
+  if(captureP512Stopped(waiting,now))break;_system->delayMillis(10);
+ }
+ if(waiting.empty()||waiting[4]!=0||waiting[5]!=1||waiting[7]||_moviePlaying||_movie->isPlaying())return false;
+ debug("P512 ordinary inactive waiting: PASS (media%u,current%u,clock%u,lastSoundAt%u)",waiting[10],waiting[11],waiting[2],waiting[6]);
+ const uint startsWaiting=_soundsStarted;if(!installP512Memory(waiting)||_soundsStarted!=startsWaiting)return false;
+ Common::Array<uint32>again;if(!captureP512Stopped(again,waiting[2])||again!=waiting)return false;if(!testP512FileSave())return false;
+ const uint32 loopWait=_system->getMillis();
+ while(!_mixer->isSoundHandleActive(_soundHandle)&&_system->getMillis()-loopWait<6500){now=scriptClock();resumeLoopAt(now);_system->delayMillis(10);}
+ if(!_mixer->isSoundHandleActive(_soundHandle)||_lastSound!=0||_soundsStarted!=startsWaiting+1)return false;
+ Common::Array<uint32>active;if(!captureP512Stopped(active,scriptClock())||active[7]!=1||active[4]!=0||active[21]!=0)return false;if(!testP512FileSave())return false;
+ debug("P512 ordinary natural S0: PASS (one Music loop after original delay,active flag retained)");
+ for(uint receiverPaused=0;receiverPaused<2;++receiverPaused){
+  _mixer->muteSoundType(Audio::Mixer::kMusicSoundType,receiverPaused!=0);
+  _mixer->muteSoundType(Audio::Mixer::kSFXSoundType,receiverPaused==0);
+  const int volumeMusic=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),volumeSFX=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);
+  const bool muteMusic=_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType),muteSFX=_mixer->isSoundTypeMuted(Audio::Mixer::kSFXSoundType);
+  // An unrelated foreground must survive malformed input, then be replaced.
+  if(!playSound(1,scriptClock())||!_mixer->isSoundHandleActive(_soundHandle))return false;
+  PauseToken outer,inner;if(receiverPaused){outer=pauseEngine();inner=pauseEngine();}
+  Common::Array<uint32>bad=active;bad[4]=0xffffffffU;bad.back()=p512PacketHash(bad);
+  const uint32 before=p510WholeLiveHash();const uint sounds=_soundsStarted,commits=_p512MemoryCommits;
+  if(installP512Memory(bad)||p510WholeLiveHash()!=before||_soundsStarted!=sounds||_p512MemoryCommits!=commits||!_mixer->isSoundHandleActive(_soundHandle)||_lastSound!=1)return false;
+  Audio::AudioStream*audit=nullptr;if(!installP512Memory(active,&audit)||!audit||_soundsStarted!=sounds+1||_p512MemoryCommits!=commits+1||!_mixer->isSoundHandleActive(_soundHandle)||_lastSound!=0)return false;
+  P512AmbientGate*gate=static_cast<P512AmbientGate*>(audit);
+  if(_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)!=volumeMusic||_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType)!=volumeSFX||_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType)!=muteMusic||_mixer->isSoundTypeMuted(Audio::Mixer::kSFXSoundType)!=muteSFX)return false;
+  debug("P512 actual recipient preferences: PASS (Music%d/muted%d,Effects%d/muted%d)",volumeMusic,int(muteMusic),volumeSFX,int(muteSFX));
+  if(!captureP512Stopped(again,active[2])||again!=active)return false;
+  if(receiverPaused){const uint64 samples=gate->consumed();const uint32 clock=scriptClock();_system->delayMillis(80);if(samples||gate->consumed()!=samples||scriptClock()!=clock)return false;inner.clear();_system->delayMillis(80);if(!_clockPaused||gate->consumed()!=samples)return false;outer.clear();}
+  _system->delayMillis(250);if(_clockPaused||!gate->consumed()||_movie->isPlaying())return false;
+  debug("P512 ordinary active restore: PASS (receiverPaused%u,malformed preserves foreground,one Music restart,paused PCM consumption0,outer release resumes)",receiverPaused);
+ }
+ return testP512AnswerContinuation();
+}
+bool AstronomicaEngine::testP512AnswerContinuation(){
+ uint32 now=scriptClock();int32 originalScenario=-1;if(!_runner.getValue(1,4,originalScenario))return false;
+ int32 originalMask=-1,priorGlobal=-1;if(!_runner.getValue(1,3,originalMask)||!_runner.getValue(0,28,priorGlobal))return false;const uint completed=_puzzlesCompleted;
+ // Use the original answer controls and submit: a correct answer selects
+ // another scenario and its original startup range seek precedes Play.
+ const int required[6][3]={{8,8,15},{15,8,8},{15,8,8},{15,8,8},{8,15,8},{8,15,15}};
+ const int plus[]={280,391,501},minus[]={204,315,425};
+ auto settle=[&](){const uint32 began=_system->getMillis();while(_place==512&&_runner.pendingCount()&&_system->getMillis()-began<15000){now=scriptClock();runScriptsAt(now);animateSpritesAt(now);resumeLoopAt(now);updateMovie();_system->delayMillis(5);}return _place==512&&_runner.scriptsIdle();};
+ auto press=[&](int x,int y){now=scriptClock();clickAtTime(x,y,now);return settle();};
+ // A later question may retain the previous correct settings. Zero is
+ // wrong for every original scenario; reach it using the actual controls.
+ for(int local=0;local<3;++local)for(uint tick=0;tick<=16;++tick){int32 value=-1;if(!_runner.getValue(1,local,value))return false;if(!value)break;if(tick==16||!press(minus[local],417))return false;}
+ if(!press(537,374))return false;int32 accepted=-1,scenario=-1;
+ if(!_runner.getValue(1,5,accepted)||accepted||!_runner.getValue(1,4,scenario)||scenario!=originalScenario)return false;
+ debug("P512 ordinary wrong answer: PASS (same question,not accepted)");
+ for(int local=0;local<3;++local){for(uint tick=0;tick<=16;++tick){int32 value=-1;if(!_runner.getValue(1,local,value))return false;const int target=required[scenario-1][local];if(value==target)break;if(tick==16||!press(value<target?plus[local]:minus[local],417))return false;}}
+ now=scriptClock();const uint seeks=_p512OriginalSeekSerial,plays=_p512OriginalPlays;
+ clickAtTime(537,374,now);
+ if(originalMask==127){const uint32 began=_system->getMillis();while(_place==512&&_system->getMillis()-began<45000){now=scriptClock();runScriptsAt(now);animateSpritesAt(now);resumeLoopAt(now);updateMovie();_system->delayMillis(10);}int32 solved=-1;
+  if(_place!=157||!_runner.getValue(0,28,solved)||solved!=1||_puzzlesCompleted!=completed+uint(!priorGlobal))return false;
+  debug("P512 ordinary final continuation: PASS (priorGlobal%d,P157,count%u,actual original correct controls)",priorGlobal,_puzzlesCompleted);return true;
+ }
+ const uint32 replayStart=_system->getMillis();
+ while(_system->getMillis()-replayStart<15000&&!_moviePlaying){now=scriptClock();runScriptsAt(now);animateSpritesAt(now);resumeLoopAt(now);updateMovie();_system->delayMillis(10);}
+ if(!_moviePlaying||!_movie->isPlaying()||_p512OriginalSeekSerial<=seeks||_p512OriginalPlays<=plays||_p512PlayWithoutRequiredSeek)return false;
+ const uint frames=_movieFramesDrawn;const uint32 frameStart=_system->getMillis();while(_system->getMillis()-frameStart<200){updateMovie();_system->delayMillis(5);}if(_movieFramesDrawn<=frames)return false;
+ debug("P512 ordinary original continuation: PASS (actual correct controls,seek before Play,new frames,stopped audio position never reused)");
+ return true;
+}
+bool AstronomicaEngine::canSaveP512()const{Common::Array<uint32>w;return captureP512Stopped(w,scriptClock());}
+Common::Error AstronomicaEngine::saveP512(Common::WriteStream*stream){
+ Common::Array<uint32>w;if(!captureP512Stopped(w,scriptClock()))return Common::kWritingFailed;
+ P512Prepared p;if(!prepareP512Stopped(w,p))return Common::kWritingFailed;
+ stream->writeUint32BE(MKTAG('A','S','V','M'));stream->writeUint32LE(29);for(uint32 v:w)stream->writeUint32LE(v);
+ return stream->err()?Common::kWritingFailed:Common::kNoError;
+}
+Common::Error AstronomicaEngine::loadP512(Common::SeekableReadStream*stream){
+ if(stream->size()-stream->pos()<kP512Words*4||!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return Common::kReadingFailed;
+ Common::Array<uint32>w;w.resize(kP512Words);for(uint32&v:w)v=stream->readUint32LE();if(stream->err()||!installP512Memory(w))return Common::kReadingFailed;return Common::kNoError;
+}
+bool AstronomicaEngine::testP512FileSave(){
+ static uint boundaries=0;PauseToken outer=pauseEngine();const uint32 now=scriptClock();
+ Common::MemoryWriteStreamDynamic output(DisposeAfterUse::YES);
+ if(!canSaveGameStateCurrently()||saveGameStream(&output).getCode()!=Common::kNoError||output.size()!=9932)return false;
+ Common::Array<byte>bytes;bytes.resize(output.size());memcpy(&bytes[0],output.getData(),bytes.size());
+ const uint32 savedLoop=READ_LE_UINT32(&bytes[24]),savedAmbient=READ_LE_UINT32(&bytes[36]);
+ const int musicVolume=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),sfxVolume=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);
+ const bool musicMuted=_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType),sfxMuted=_mixer->isSoundTypeMuted(Audio::Mixer::kSFXSoundType);
+ auto restore=[&](){Common::MemoryReadStream in(&bytes[0],bytes.size());return loadGameStream(&in).getCode()==Common::kNoError;};
+ if(!restore()||!_clockPaused||!_movie->isPaused()||scriptClock()!=now||_movie->isPlaying())return false;
+ Common::MemoryWriteStreamDynamic again(DisposeAfterUse::YES);if(saveGameStream(&again).getCode()!=Common::kNoError||again.size()!=bytes.size()||memcmp(again.getData(),&bytes[0],bytes.size()))return false;
+ if(_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)!=musicVolume||_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType)!=sfxVolume||_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType)!=musicMuted||_mixer->isSoundTypeMuted(Audio::Mixer::kSFXSoundType)!=sfxMuted)return false;
+ if(!boundaries){
+  const uint32 live=p510WholeLiveHash();const uint sounds=_soundsStarted,commits=_p512MemoryCommits;Video::QuickTimeDecoder*const decoder=_movie;const void*pixels=_screen.getPixels();
+  auto reject=[&](const Common::Array<byte>&bad){Common::MemoryReadStream in(bad.empty()?nullptr:&bad[0],bad.size());return loadGameStream(&in).getCode()!=Common::kNoError&&p510WholeLiveHash()==live&&_soundsStarted==sounds&&_p512MemoryCommits==commits&&_movie==decoder&&_screen.getPixels()==pixels;};
+  for(uint size=0;size<bytes.size();++size){Common::Array<byte>bad=bytes;bad.resize(size);if(!reject(bad))return false;}
+  for(uint i=0;i<bytes.size();++i){Common::Array<byte>bad=bytes;bad[i]^=1;if(!reject(bad))return false;}
+  auto checksum=[](Common::Array<byte>&bad){uint32 h=2166136261U;for(uint i=0;i<kP512Words-1;++i)h=(h^READ_LE_UINT32(&bad[8+i*4]))*16777619U;WRITE_LE_UINT32(&bad[8+(kP512Words-1)*4],h);};
+  const uint fields[]={0,3,4,5,7,8,9,10,11,12,13,14,15,17,18,19,20,21,kP512Runner+300,kP512Runner+309,kP512Runner+310,kP512Runner+312,kP512Runner+315,kP512Extra,kP512Extra+100,kP512Extra+102,kP512Ball+3};
+  for(uint offset:fields){Common::Array<byte>bad=bytes;WRITE_LE_UINT32(&bad[8+offset*4],0xfffffffeU);checksum(bad);if(!reject(bad))return false;}
+  debug("P512 ASVM29 malformed atomic: PASS (9932 truncations,9932 byte flips,27 checksummed fields,decoder/surface/audio/commit unchanged)");
+ }
+ // Preserve caller token ownership and the literal active/inactive audio bit.
+ ++boundaries;debug("P512 ASVM29 byte roundtrip: PASS (boundary%u,9932bytes,loop%u,ambient%u,paired Engine pause,preferences retained)",boundaries,savedLoop,savedAmbient);
+ if(savedLoop==0&&savedAmbient){if(saveGameState(28,"P512 native stopped continuation").getCode()!=Common::kNoError)return false;debug("P512 ASVM29 physical slot28: PASS (ordinary loop0 active,metadata)");}
+ outer.clear();return !_clockPaused&&!_movie->isPaused()&&!_movie->isPlaying();
+}
+bool AstronomicaEngine::testP512FreshFile(){
+ Common::Array<uint32>w;if(_place!=512||!_movie||_runner.executedCount()||!_runner.p512Capabilities(this,this,this,_scene)||!captureP512Stopped(w,scriptClock())||w[4]!=0||w[7]!=1)return false;
+ const bool ok=testP512AnswerContinuation();debug("P512 ASVM29 fresh physical continuation: %s (physical ASVM29,original wrong/correct controls,seek or final P157,no startup replay)",ok?"PASS":"FAIL");return ok;
+}
+
+bool AstronomicaEngine::verifyP512NormalRoutes(){
+ ConfMan.setBool("astronomica_entry_scripts",true);_runner.resetGlobals();_runner.defineValue(0,29,1);
+ for(uint route=0;route<2;++route){
+  _runner.seedRandom(713+route);const uint completed=_puzzlesCompleted,starts=_soundsStarted;
+  if(!loadPlace(512)||_loopSound!=0||!_loopEnabled||_lastSound!=302||_soundsStarted!=starts+1||_runner.pendingCount()!=6)return false;
+  uint seen=0;
+  for(uint question=0;question<6;++question){
+   Common::Array<uint32>words;const uint32 began=_system->getMillis();
+   while(_place==512&&_system->getMillis()-began<45000){const uint32 now=scriptClock();runScriptsAt(now);animateSpritesAt(now);resumeLoopAt(now);updateMovie();
+    if(captureP512Stopped(words,now)&&words[7]==1)break;words.clear();_system->delayMillis(10);
+   }
+   if(words.empty()||words[4]!=0||words[5]!=1||words[7]!=1||words[21]!=0||words[15]<1||words[15]>6||(seen&(1U<<words[15])))return false;
+   seen|=1U<<words[15];if(!testP512FileSave())return false;
+   if(question==5){int32 mask=-1,prior=-1;if(!_runner.getValue(1,3,mask)||mask!=127||!_runner.getValue(0,28,prior)||prior!=int(route))return false;
+    if(saveGameState(29+route,route?"P512 normal final repeated":"P512 normal final first").getCode()!=Common::kNoError)return false;
+    debug("P512 normal final physical slot: PASS (slot%u,priorGlobal%d,mask127,active original S0)",29+route,prior);
+   }
+   debug("P512 all-normal Music boundary: PASS (route%u,question%u,scenario%u,mask%u,actual natural stop,loop0active,ASVM29 bytes)",route,question,words[15],words[kP512Runner+309]);
+   if(!testP512AnswerContinuation())return false;
+   if(question<5&&(_place!=512||!_moviePlaying))return false;
+  }
+  int32 solved=-1;if(seen!=0x7e||_place!=157||!_runner.getValue(0,28,solved)||solved!=1||_puzzlesCompleted!=completed+uint(route==0))return false;
+  debug("P512 all-normal original route: PASS (route%u,all six natural questions/active Music/file restores,P157,count%u)",route,_puzzlesCompleted);
+ }
+ debug("P512 all-normal Music/file verification: PASS (12 natural active-loop boundaries,first/repeated original completion,final physical slots29/30)");return true;
+}
+
 bool AstronomicaEngine::verifyP512Puzzle() {
+ // Paired Engine pause and file-clock tests need real time even when called
+ // by the all-scenes diagnostic, whose default script clock is otherwise0.
+ struct VerifyP512ClockScope {
+  bool enabled;
+  VerifyP512ClockScope():enabled(ConfMan.hasKey("astronomica_verify")&&ConfMan.getBool("astronomica_verify")){if(enabled)ConfMan.setBool("astronomica_verify",false);}
+  ~VerifyP512ClockScope(){if(enabled)ConfMan.setBool("astronomica_verify",true);}
+ } verifyP512ClockScope;
+
+ if(ConfMan.hasKey("save_slot")&&ConfMan.getInt("save_slot")>=28&&ConfMan.getInt("save_slot")<=30)return testP512FreshFile();
+ if(ConfMan.hasKey("astronomica_verify_p512_normal_routes")&&ConfMan.getBool("astronomica_verify_p512_normal_routes"))return verifyP512NormalRoutes();
+ if(ConfMan.hasKey("astronomica_verify_p512_ordinary_audio")&&ConfMan.getBool("astronomica_verify_p512_ordinary_audio"))return verifyP512OrdinaryAudio();
  uint32 hash = 2166136261U;
  for (int scenario = 1; scenario <= 6; ++scenario)
   for (int a = 0; a < 16; ++a) for (int b = 0; b < 16; ++b) for (int c = 0; c < 16; ++c) {
@@ -8788,11 +9201,22 @@ bool AstronomicaEngine::verifyP512Puzzle() {
    hash = (hash ^ uint32(sound < 0 ? 255 : sound))*16777619U;
   }
  bool ok = hash == 0x685e2531U; // Original x86, probe_p512_weather.py.
+
+ uint auditRows=0,naturalEnds=0,settledStopped=0;uint32 naturalMillis=0;
+ auto observe=[&](const char*tag,uint32 now){if(_place!=512)return;const uint row=auditRows++;if(!testP512Stopped(now))error("P512 full preflight FAIL row%u",row);if(!strcmp(tag,"natural-end")&&!testP512MemoryInstall(now))error("P512 memory install FAIL row%u",row);if(!strcmp(tag,"natural-end")&&!testP512PauseMatrix(now))error("P512 pause matrix FAIL row%u",row);if(!strcmp(tag,"natural-end")&&!testP512FileSave())error("P512 file save FAIL row%u",row);if(_runner.scriptsIdle()&&!_runner.testP512SettledState(now))error("P512 runner preflight FAIL row%u",row);Common::Array<uint32>state,sprites,extra,ball;_runner.p512AuditExportState(state);for(const Sprite&s:_scene.sprites)p526SpriteWords(s,sprites);p516Extra(extra);for(int32 v:{_ball.scenario,_ball.centerX,_ball.centerY,_ball.side,_ball.period})ball.push_back(uint32(v));
+  int32 scenario=-1;_runner.getValue(1,4,scenario);debug("P512BOUNDARY row=%u tag=%s now=%u scenario=%d playing=%u decoderplaying=%u paused=%u media=%u current=%d presented=%d end=%u start=%u drawn=%u foreground=%u lastsound=%d loopsound=%d loopenabled=%u pendingimage=%u pendingpixels=%u background=%s moviex=%d moviey=%d framehash=%08x backgroundhash=%08x screenhash=%08x cometframe=%d cometprevious=%d",row,tag,now,scenario,uint(_moviePlaying),uint(_movie&&_movie->isPlaying()),uint(_movie&&_movie->isPaused()),_movie?_movie->getTime():0,_movie?_movie->getCurFrame():-1,_moviePresentedFrame,_movie?uint(_movie->getEndTime().convertToFramerate(30).totalNumberOfFrames()):0,_movieSegmentStart,_movieFramesDrawn,uint(_mixer->isSoundHandleActive(_soundHandle)),_lastSound,_loopSound,uint(_loopEnabled),uint(!_pendingImageName.empty()),uint(_pendingImage.w),_displayedImageName.c_str(),_movieX,_movieY,_movieFrame.w?screenRGBHash(_movieFrame,_movieFrame.h):0,screenRGBHash(_background,_background.h),screenRGBHash(_screen,_screen.h),_comet.frame,_comet.previousFrame);
+  _runner.p512AuditPending(row,now);auto words=[&](const char*kind,const Common::Array<uint32>&data){Common::String line=Common::String::format("P512WORDS row=%u kind=%s count=%u",row,kind,data.size());for(uint32 v:data)line+=Common::String::format(" %u",v);debug("%s",line.c_str());};words("runner",state);words("sprites",sprites);words("extra",extra);words("ball",ball);
+  if(!_moviePlaying&&_movie&&!_runner.pendingCount()&&!_runner.clicksBlocked()&&!_mixer->isSoundHandleActive(_soundHandle)&&!_pendingImage.w&&_pendingImageName.empty())++settledStopped;
+ };
+ auto naturalEnd=[&](uint32&now){if(_place!=512||!_movie||!_moviePlaying)return false;const uint32 began=_system->getMillis();const uint32 logical=now;const int beforeFrame=_movieFramesDrawn;observe("before-natural-end",now);while(_place==512&&_movie&&_moviePlaying&&_system->getMillis()-began<10000){now=logical+(_system->getMillis()-began);runScriptsAt(now);animateSpritesAt(now);updateMovie();_system->delayMillis(10);}now=logical+(_system->getMillis()-began);const bool ended=_place==512&&_movie&&!_moviePlaying&&!_movie->isPlaying()&&_movieFramesDrawn>uint(beforeFrame);if(ended){++naturalEnds;naturalMillis+=_system->getMillis()-began;}observe("natural-end",now);debug("P512 natural movie end: %s (elapsed%u,start%u,end%u,current%d,presented%d)",ended?"PASS":"FAIL",_system->getMillis()-began,_movieSegmentStart,_movie?uint(_movie->getEndTime().convertToFramerate(30).totalNumberOfFrames()):0,_movie?_movie->getCurFrame():-1,_moviePresentedFrame);return ended;};
+
  const int plus[] = {280,391,501}, minus[] = {204,315,425};
  const int requirements[6][3] = {{8,8,15},{15,8,8},{15,8,8},{15,8,8},{8,15,8},{8,15,15}};
  const uint32 starts[] = {0,150,1272,1456,1642,1834};
  for (int route = 0; route < 3; ++route) {
   _runner.resetGlobals(); _runner.seedRandom(137+route);
+
+  if(route==1){if(loadGameState(99).getCode()!=Common::kNoError)return false;if(!loadPlace(516))return false;uint32 cacheNow=scriptClock();_runner.enqueueStartup(_scene.scripts,cacheNow,true);for(uint tick=0;tick<1000&&!_runner.scriptsIdle();++tick){runScriptsAt(cacheNow);cacheNow+=10;}if(!_runner.scriptsIdle()||!_jupiterWidths[0])return false;_comet.frame=3;_comet.previousFrame=4;debug("P512 inherited variant/P516 cache fixture: PASS");}
   if (route == 1) _runner.defineValue(0,28,1);
   if (!loadPlace(512) || !_movie) return false;
   Script invalidSeek; Command assign; assign.opcode = 32; assign.delay = -1;
@@ -8823,6 +9247,7 @@ bool AstronomicaEngine::verifyP512Puzzle() {
   const uint frames = _movieFramesDrawn;
   ok = _runner.enqueueStartup(_scene.scripts,0,true) == 6 && settle() && ok;
   ok = _movieFramesDrawn > frames && _movieX == 160 && _movieY == 57 && ok;
+  observe("startup-settled",now);
   if (route == 2) {
    ok = press(24,417) && _place == 174 && ok;
   } else {
@@ -8832,6 +9257,7 @@ bool AstronomicaEngine::verifyP512Puzzle() {
     if (!_runner.getValue(1,4,scenario) || scenario < 1 || scenario > 6) return false;
     ok = !(seen & (1U << scenario)) && _movieSegmentStart == starts[scenario-1] && ok;
     seen |= 1U << scenario;
+    ok=naturalEnd(now)&&ok;
     if (round == 0 && route == 0) {
      // The default zero settings are wrong for every scenario. The
      // rejected attempt must keep the same selection and not advance it.
@@ -8842,6 +9268,10 @@ bool AstronomicaEngine::verifyP512Puzzle() {
     }
     for (int local = 0; local < 3; ++local)
      ok = select(local,requirements[scenario-1][local] == 15 ? 15 : route == 0 ? 0 : 8) && ok;
+
+    observe("settings-selected",now);
+    for(int local=0;local<3;++local){int32 value=-1;if(!_runner.getValue(1,local,value))return false;const int original=value;ok=select(local,0)&&press(minus[local],417)&&_runner.getValue(1,local,value)&&value==0&&ok;observe("lower-clamp",now);ok=select(local,15)&&press(plus[local],417)&&_runner.getValue(1,local,value)&&value==15&&ok;observe("upper-clamp",now);ok=select(local,original)&&ok;}
+    observe("before-submit",now);
     ok = press(537,374) && ok;
     debug("Astronomica P512 route %d round %d: %s (scenario %d, P%d)",route,round,ok ? "PASS" : "FAIL",scenario,_place);
    }
@@ -8854,6 +9284,7 @@ bool AstronomicaEngine::verifyP512Puzzle() {
  for (int i = 0; i < 5; ++i) custom.args.push_back(0);
  invalidContext.push_back(custom);
  ok = loadPlace(526) && !_runner.canRun(invalidContext,true) && ok;
+ ok=naturalEnds==12&&settledStopped>=12&&auditRows>80&&ok;debug("P512 natural boundary audit: %s (%u rows,%u natural ends,%u settled stopped,%u natural ms)",ok?"PASS":"FAIL",auditRows,naturalEnds,settledStopped,naturalMillis);
  debug("Astronomica P512 interaction verification: %s (24576 original answers, six scenarios, three controls, wrong/recovery, repeated success, unsolved exit, seek/context rejection)",ok ? "PASS" : "FAIL");
  return ok;
 }
