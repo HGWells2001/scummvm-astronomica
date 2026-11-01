@@ -1,0 +1,174 @@
+[2026-11-01 14:11:52] ScummVM 2026.3.1git
+[2026-11-01 14:11:52] RGB SDL2 
+[2026-11-01 14:11:52] --- Log opened.
+[2026-11-01 14:11:52] Using SDL Video Driver "dummy"
+[2026-11-01 14:11:52] Using SDL Audio Driver "wasapi"
+[2026-11-01 14:11:52] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-11-01 14:11:52] Output sample rate: 44100 Hz
+[2026-11-01 14:11:52] Output buffer size: 1024 samples
+[2026-11-01 14:11:52] Output channels: 2
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_START' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-11-01 14:11:53] CPU extensions:
+[2026-11-01 14:11:53] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-11-01 14:11:53] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-11-01 14:11:53] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-11-01 14:11:53] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_A' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_B' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_Y' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_X' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_UP' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_DOWN' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_LEFT' not known
+[2026-11-01 14:11:53] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-11-01 14:11:53] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-11-01 14:11:54] Astronomica resource explorer: P1; nav 0,0,0
+[2026-11-01 14:11:54] Astronomica static sprites: P1, 3 drawn
+[2026-11-01 14:11:54] Astronomica P1 entry scripts: 1 queued, 0 skipped
+[2026-11-01 14:11:54] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:11:54] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:11:54] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:11:54] P281 gateway capability: PASS (original two-command click rejected without support,admitted with bound variant/success/audio targets)
+[2026-11-01 14:11:59] Astronomica resource explorer: P534; nav 0,0,0
+[2026-11-01 14:11:59] Astronomica static sprites: P534, 11 drawn
+[2026-11-01 14:11:59] Astronomica P534 introduction: S300.WAV
+[2026-11-01 14:12:12] Astronomica P534 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:12:12] P281 actual gateway click: PASS (original voice,5000ms pending custom17,one selected variant,P534,round1)
+[2026-11-01 14:12:20] Astronomica resource explorer: P535; nav 0,0,0
+[2026-11-01 14:12:20] Astronomica static sprites: P535, 8 drawn
+[2026-11-01 14:12:20] Astronomica P535 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:12:20] P281 original selected puzzle: PASS (route0,round1,P534 -> P535,automatic startup only)
+[2026-11-01 14:12:25] Astronomica resource explorer: P533; nav 0,0,0
+[2026-11-01 14:12:25] Astronomica static sprites: P533, 8 drawn
+[2026-11-01 14:12:25] Astronomica P533 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:12:25] P281 original selected puzzle: PASS (route0,round2,P535 -> P533,automatic startup only)
+[2026-11-01 14:12:30] P281 original blocking voice: S912
+[2026-11-01 14:12:32] P281 original blocking voice: S922
+[2026-11-01 14:12:38] Astronomica resource explorer: P519; nav 0,0,0
+[2026-11-01 14:12:38] Astronomica static sprites: P519, 4 drawn
+[2026-11-01 14:12:38] Astronomica P519 introduction: S300.WAV
+[2026-11-01 14:12:52] Astronomica P519 entry scripts: 3 queued, 0 skipped
+[2026-11-01 14:12:52] P281 original selected puzzle: PASS (route0,round3,P533 -> P519,automatic startup only)
+[2026-11-01 14:12:52] P281 full gateway route: PASS (route0,P519,first/repeated count1,three nonrepeating variants,global23=1,S922)
+[2026-11-01 14:12:52] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:12:52] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:12:52] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:12:52] P281 gateway capability: PASS (original two-command click rejected without support,admitted with bound variant/success/audio targets)
+[2026-11-01 14:12:57] Astronomica resource explorer: P534; nav 0,0,0
+[2026-11-01 14:12:57] Astronomica static sprites: P534, 11 drawn
+[2026-11-01 14:12:57] Astronomica P534 introduction: S300.WAV
+[2026-11-01 14:13:11] Astronomica P534 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:13:11] P281 actual gateway click: PASS (original voice,5000ms pending custom17,one selected variant,P534,round1)
+[2026-11-01 14:13:19] Astronomica resource explorer: P535; nav 0,0,0
+[2026-11-01 14:13:19] Astronomica static sprites: P535, 8 drawn
+[2026-11-01 14:13:19] Astronomica P535 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:13:19] P281 original selected puzzle: PASS (route1,round1,P534 -> P535,automatic startup only)
+[2026-11-01 14:13:24] Astronomica resource explorer: P531; nav 0,0,0
+[2026-11-01 14:13:24] Astronomica static sprites: P531, 9 drawn
+[2026-11-01 14:13:24] Astronomica P531 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:13:24] P281 original selected puzzle: PASS (route1,round2,P535 -> P531,automatic startup only)
+[2026-11-01 14:13:30] P281 original blocking voice: S922
+[2026-11-01 14:13:36] Astronomica resource explorer: P519; nav 0,0,0
+[2026-11-01 14:13:36] Astronomica static sprites: P519, 4 drawn
+[2026-11-01 14:13:36] Astronomica P519 introduction: S300.WAV
+[2026-11-01 14:13:50] Astronomica P519 entry scripts: 3 queued, 0 skipped
+[2026-11-01 14:13:50] P281 original selected puzzle: PASS (route1,round3,P531 -> P519,automatic startup only)
+[2026-11-01 14:13:50] P281 full gateway route: PASS (route1,P519,first/repeated count1,three nonrepeating variants,global23=1,S922)
+[2026-11-01 14:13:50] P281 real original gateway verification: PASS (normal click,actual delay,automatic entries,first and repeated full completion)
+[2026-11-01 14:13:50] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:13:50] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:13:50] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:13:50] Astronomica resource explorer: P286; nav 284,0,279
+[2026-11-01 14:13:50] Astronomica P286 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:13:50] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:13:50] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:13:50] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:13:50] P281 idle v2 roundtrip: PASS (route0,424 bytes,restored original gateway,custom25 excluded)
+[2026-11-01 14:13:50] P281 save refusal: PASS (pending gateway,route0,round0,zero bytes,unchanged runner)
+[2026-11-01 14:13:55] Astronomica resource explorer: P533; nav 0,0,0
+[2026-11-01 14:13:55] Astronomica static sprites: P533, 8 drawn
+[2026-11-01 14:13:55] Astronomica P533 introduction: S300.WAV
+[2026-11-01 14:14:09] Astronomica P533 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:14:09] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:14:09] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:14:09] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:14:09] P281 save refusal: PASS (returned nonzero round,route0,round1,zero bytes,unchanged runner)
+[2026-11-01 14:14:09] P281 unsolved return: PASS (route0,round1,P533 -> P281,mask8 retained)
+[2026-11-01 14:14:09] P281 save refusal: PASS (pending gateway,route0,round1,zero bytes,unchanged runner)
+[2026-11-01 14:14:14] Astronomica resource explorer: P534; nav 0,0,0
+[2026-11-01 14:14:14] Astronomica static sprites: P534, 11 drawn
+[2026-11-01 14:14:14] Astronomica P534 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:14:15] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:14:15] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:14:15] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:14:15] P281 save refusal: PASS (returned nonzero round,route0,round2,zero bytes,unchanged runner)
+[2026-11-01 14:14:15] P281 unsolved return: PASS (route0,round2,P534 -> P281,mask24 retained)
+[2026-11-01 14:14:15] P281 save refusal: PASS (pending gateway,route0,round2,zero bytes,unchanged runner)
+[2026-11-01 14:14:20] Astronomica resource explorer: P535; nav 0,0,0
+[2026-11-01 14:14:20] Astronomica static sprites: P535, 8 drawn
+[2026-11-01 14:14:20] Astronomica P535 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:14:20] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:14:20] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:14:20] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:14:20] P281 save refusal: PASS (returned nonzero round,route0,round3,zero bytes,unchanged runner)
+[2026-11-01 14:14:20] P281 unsolved return: PASS (route0,round3,P535 -> P281,mask56 retained)
+[2026-11-01 14:14:20] P281 save refusal: PASS (pending gateway,route0,round3,zero bytes,unchanged runner)
+[2026-11-01 14:14:25] P281 original blocking voice: S912
+[2026-11-01 14:14:28] P281 original blocking voice: S922
+[2026-11-01 14:14:34] Astronomica resource explorer: P519; nav 0,0,0
+[2026-11-01 14:14:34] Astronomica static sprites: P519, 4 drawn
+[2026-11-01 14:14:34] Astronomica P519 introduction: S300.WAV
+[2026-11-01 14:14:48] Astronomica P519 entry scripts: 3 queued, 0 skipped
+[2026-11-01 14:14:48] P281 unsolved full route: PASS (route0,P519,first/repeated count2,original third-round completion retained)
+[2026-11-01 14:14:48] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:14:48] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:14:48] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:14:48] Astronomica resource explorer: P286; nav 284,0,279
+[2026-11-01 14:14:48] Astronomica P286 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:14:48] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:14:48] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:14:48] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:14:48] P281 idle v2 roundtrip: PASS (route1,424 bytes,restored original gateway,custom25 excluded)
+[2026-11-01 14:14:48] P281 save refusal: PASS (pending gateway,route1,round0,zero bytes,unchanged runner)
+[2026-11-01 14:14:53] Astronomica resource explorer: P533; nav 0,0,0
+[2026-11-01 14:14:53] Astronomica static sprites: P533, 8 drawn
+[2026-11-01 14:14:53] Astronomica P533 introduction: S300.WAV
+[2026-11-01 14:15:06] Astronomica P533 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:15:07] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:15:07] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:15:07] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:15:07] P281 save refusal: PASS (returned nonzero round,route1,round1,zero bytes,unchanged runner)
+[2026-11-01 14:15:07] P281 unsolved return: PASS (route1,round1,P533 -> P281,mask8 retained)
+[2026-11-01 14:15:07] P281 save refusal: PASS (pending gateway,route1,round1,zero bytes,unchanged runner)
+[2026-11-01 14:15:12] Astronomica resource explorer: P534; nav 0,0,0
+[2026-11-01 14:15:12] Astronomica static sprites: P534, 11 drawn
+[2026-11-01 14:15:12] Astronomica P534 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:15:12] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:15:12] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:15:12] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:15:12] P281 save refusal: PASS (returned nonzero round,route1,round2,zero bytes,unchanged runner)
+[2026-11-01 14:15:12] P281 unsolved return: PASS (route1,round2,P534 -> P281,mask24 retained)
+[2026-11-01 14:15:12] P281 save refusal: PASS (pending gateway,route1,round2,zero bytes,unchanged runner)
+[2026-11-01 14:15:17] Astronomica resource explorer: P531; nav 0,0,0
+[2026-11-01 14:15:17] Astronomica static sprites: P531, 9 drawn
+[2026-11-01 14:15:17] Astronomica P531 entry scripts: 2 queued, 0 skipped
+[2026-11-01 14:15:18] Astronomica resource explorer: P281; nav 286,0,276
+[2026-11-01 14:15:18] Astronomica static sprites: P281, 1 drawn
+[2026-11-01 14:15:18] Astronomica P281 entry scripts: 0 queued, 0 skipped
+[2026-11-01 14:15:18] P281 save refusal: PASS (returned nonzero round,route1,round3,zero bytes,unchanged runner)
+[2026-11-01 14:15:18] P281 unsolved return: PASS (route1,round3,P531 -> P281,mask26 retained)
+[2026-11-01 14:15:18] P281 save refusal: PASS (pending gateway,route1,round3,zero bytes,unchanged runner)
+[2026-11-01 14:15:23] P281 original blocking voice: S922
+[2026-11-01 14:15:29] Astronomica resource explorer: P519; nav 0,0,0
+[2026-11-01 14:15:29] Astronomica static sprites: P519, 4 drawn
+[2026-11-01 14:15:29] Astronomica P519 introduction: S300.WAV
+[2026-11-01 14:15:43] Astronomica P519 entry scripts: 3 queued, 0 skipped
+[2026-11-01 14:15:43] P281 unsolved full route: PASS (route1,P519,first/repeated count2,original third-round completion retained)
+[2026-11-01 14:15:43] P281 return-round verification: PASS (six actual unsolved exits,two idle v2 loads,fourteen zero-byte refusals,first/repeated completion)
+[2026-11-01 14:15:43] --- Log closed successfully.

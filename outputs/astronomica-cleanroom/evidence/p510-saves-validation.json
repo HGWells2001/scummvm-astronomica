@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-30",
+  "date": "2026-11-01",
   "status": "PASS",
   "scope": "trusted_p510_ordinary_countdown",
   "format_version": 28,
   "payload_bytes": 4540,
   "slot": 27,
-  "exe_sha256": "932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b",
+  "exe_sha256": "1f042e2c55c06c959f8f75e043d343ed3fd07bf1ef4995b0d47e9cdbb9191362",
   "diagnostic": false,
   "audio_driver": "native",
   "actual_audio_driver": "wasapi",
@@ -36,10 +36,10 @@
     "98": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa"
   },
   "fixtures_unchanged": true,
-  "slot_sha256": "34fc0037524983db4dec511b8acf2fb2aa4997f4a19a988e5a09493800b023b7",
+  "slot_sha256": "55d7b85c380c1d085a96d0a55fdc06ea6a32ab97606868c5e37b7c8ee44307a1",
   "log_sha256": {
-    "p510-saves": "7e56cbb361f1106bd6368399c0452b0c6dab96ab25f3f186f158244b5ca94aac",
-    "p510-saves-startup": "955e0b789a2af2fc9abf306e3c2831df2bb8edb6d55504260b591312ba885cac"
+    "p510-saves": "83baf2a80959f9b3bb9809e2a3d5e3fbb3ad86ee297852b6bea1b808d1dfe4a6",
+    "p510-saves-startup": "90c9bcde234cef564a4bc3775e03639cc7b3e996f68271e3ccf5df625d57c920"
   },
   "boundaries": 46,
   "cross_destinations": 7,
@@ -58,5 +58,5 @@
     "Integer-ms floor audio cursor; physical sample-exact audio not claimed",
     "Full manual audiovisual playthrough remains outstanding"
   ],
-  "ordinary_entry_proof_sha256": "1db4f1e643a89b81750a47b1236bfc9d9282701ee50c4f4678d0ee69730eaa27"
+  "ordinary_entry_proof_sha256": "f3ddf502d09a7795234ac101e879b12e02f8b324d6102df6e0d7e1168a91bf80"
 }

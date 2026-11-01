@@ -137,6 +137,10 @@ if p510 is not None:expected_save_scenes.add(510)
 from p512_evidence_gate import validated_p512
 p512=validated_p512(root,work)
 if p512 is not None:expected_save_scenes.add(512)
+from p281_evidence_gate import validated_p281
+p281=validated_p281(root,work)
+if p281 is not None:
+ assert p512 is not None and p281[0]['save_scene_count']==33
 assert save_coverage['whole_game_completion_percent'] is None and save_coverage['supported_puzzle_route_scenes']==len(expected_save_scenes)
 assert {row['scene'] for row in save_coverage['puzzle_saves']}==expected_save_scenes
 for row in save_coverage['puzzle_saves']:

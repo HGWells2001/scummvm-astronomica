@@ -2902,6 +2902,15 @@ void AstronomicaEngine::configureSounds() {
   }
  }
  _runner.setSoundTargets(targets);
+ // P281's original exploration voice button dispatches custom17 after5s.
+ // It is the gateway into the variant sequence, with the same global23 and
+ // completion voices as P506/P531..535, despite being a mode1 scene.
+ if(_place==281&&_scene.mode==1&&_scene.layers==1&&_scene.sprites.size()==1&&_scene.scripts.empty()&&ConfMan.getBool("astronomica_audio")){
+  const Script&click=_scene.sprites[0].click;
+  bool original=click.size()==2&&click[0].opcode==9&&click[0].args.size()==1&&click[0].args[0]==2&&click[0].delay==0&&click[1].opcode==23&&click[1].args.size()==6&&click[1].args[0]==17&&click[1].delay==5000;
+  if(original)for(uint i=1;i<6;++i)original&=click[1].args[i]==0;
+  if(original&&targets[912]&&targets[922]){_runner.setSuccessHandler(this,281);_runner.setVariantSupport(true);}
+ }
  if (_place == 513) _runner.setSuccessHandler(this,_place); // Counter only; no global S12 dependency.
  if (ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio")) _runner.setSoundHandler(this);
  if (ScriptRunner::successGlobalForPlace(_place) >= 0 && ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio")) {
@@ -2943,6 +2952,7 @@ bool AstronomicaEngine::isBlockingSound(int id) const {
  return id == 912 || id == 922 || _moviePlaying || (_place == 505 && id >= 2 && id <= 10) || (_place == 512 && id == 14);
 }
 uint32 AstronomicaEngine::onBlockingSound(int id, uint32 now) {
+ if(ConfMan.hasKey("astronomica_verify_p281_gateway")&&ConfMan.getBool("astronomica_verify_p281_gateway"))debug("P281 original blocking voice: S%d",id);
  applyScriptActions(now);
  // _playSound 9:3b1a/3bda/3c14 pauses active QuickTime playback, waits
  // for the foreground sound, then resumes the remaining selection.
@@ -8906,7 +8916,7 @@ class P512StoppedDecoder final:public Video::QuickTimeDecoder{public:void retain
 bool AstronomicaEngine::prepareP512Stopped(const Common::Array<uint32>&w,P512Prepared&out){
  if(!out.empty())return false;
  if(w.size()!=kP512Words||w.back()!=p512PacketHash(w)||w[0]!=512||(w[3]>537&&w[3]!=0xffffffffU)||(w[4]!=0xffffffffU&&w[4]!=0)||w[5]!=1||w[7]>1||(w[7]&&(w[4]!=0||w[21]!=0))||w[8]<1||w[8]>12||w[9]>12||w[10]>64266||w[11]>=643||(w[12]>=643&&w[12]!=0xffffffffU)||w[15]<1||w[15]>6||w[17]||w[18]!=160||w[19]!=57||w[20]>255||(w[21]>922&&w[21]!=0xffffffffU))return (debug("P512 prepare rejection line%d",__LINE__),false);
- const uint scenario=w[15]-1;if(w[13]!=kP512Starts[scenario]||w[14]!=kP512Ends[scenario]||uint64(w[10])<uint64(w[14])*1000/30)return (debug("P512 prepare rejection line%d",__LINE__),false);
+ const uint scenario=w[15]-1;if(w[13]!=kP512Starts[scenario]||w[14]!=kP512Ends[scenario])return (debug("P512 prepare rejection line%d",__LINE__),false);
  for(uint i=0;i<100;++i)if(w[kP512Extra+i])return (debug("P512 prepare rejection line%d",__LINE__),false);if(w[kP512Extra+100]!=0xffffffffU||w[kP512Extra+101])return (debug("P512 prepare rejection line%d",__LINE__),false);
  if(w[kP512Ball]||w[kP512Ball+1]||w[kP512Ball+2]||w[kP512Ball+3]!=2||w[kP512Ball+4]!=10)return (debug("P512 prepare rejection line%d",__LINE__),false);
  if(!p512OriginalAssets())return (debug("P512 prepare rejection line%d",__LINE__),false);
@@ -8987,7 +8997,7 @@ bool AstronomicaEngine::testP512MemoryInstall(uint32 now){
  const uint32 backgroundHash=pixelHash(_background),displayHash=pixelHash(_movieFrame),screenHash=pixelHash(_screen);
  auto check=[&](const char*label){Common::Array<uint32>again;if(!captureP512Stopped(again,words[2])||again!=words||!_runner.p512Capabilities(this,this,this,_scene)||_runner.executedCount()||_clockPaused||_movie->isPaused()||_movie->isPlaying()||_moviePlaying||_mixer->isSoundHandleActive(_soundHandle)||pixelHash(_background)!=backgroundHash||pixelHash(_movieFrame)!=displayHash||pixelHash(_screen)!=screenHash)return false;hoverAtTime(0,0,now);debug("P512 installed full state: PASS (%s,packet2481,callbacks/weather,hover/nav clean,startup not replayed)",label);return true;};
  auto restore=[&](const char*label){const uint commits=_p512MemoryCommits,sounds=_soundsStarted;const int music=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),fx=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);const bool muted=_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType);if(!installP512Memory(words)||_p512MemoryCommits!=commits+1||_soundsStarted!=sounds||_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)!=music||_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType)!=fx||_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType)!=muted||!check(label))return false;return true;};
- auto reject=[&](){const uint32 hash=p510WholeLiveHash();const uint commits=_p512MemoryCommits;const Audio::SoundHandle handle=_soundHandle;for(uint kind=0;kind<8;++kind){Common::Array<uint32>bad=words;switch(kind){case 0:bad[kP512Runner+309]=64;break;case 1:bad[11]=643;break;case 2:bad[12]=643;break;case 3:bad[10]=64267;break;case 4:bad[3]=9999;break;case 5:bad[10]=uint64(bad[14])*1000/30-1;break;case 6:bad[kP512Sprite+4]^=1;break;default:bad.back()^=1;break;}if(kind!=7)bad.back()=p512PacketHash(bad);if(installP512Memory(bad)||p510WholeLiveHash()!=hash||_p512MemoryCommits!=commits||!(_soundHandle==handle))return false;}return true;};
+ auto reject=[&](){const uint32 hash=p510WholeLiveHash();const uint commits=_p512MemoryCommits;const Audio::SoundHandle handle=_soundHandle;for(uint kind=0;kind<8;++kind){Common::Array<uint32>bad=words;switch(kind){case 0:bad[kP512Runner+309]=64;break;case 1:bad[11]=643;break;case 2:bad[12]=643;break;case 3:bad[10]=64267;break;case 4:bad[3]=9999;break;case 5:bad[14]^=1;break;case 6:bad[kP512Sprite+4]^=1;break;default:bad.back()^=1;break;}if(kind!=7)bad.back()=p512PacketHash(bad);if(installP512Memory(bad)||p510WholeLiveHash()!=hash||_p512MemoryCommits!=commits||!(_soundHandle==handle))return false;}return true;};
  if(!cross){
   _mixer->setVolumeForSoundType(Audio::Mixer::kMusicSoundType,93);_mixer->setVolumeForSoundType(Audio::Mixer::kSFXSoundType,127);_mixer->muteSoundType(Audio::Mixer::kMusicSoundType,true);
   for(uint destination:{519U,526U,117U}){if(!loadPlace(destination))return false;if((destination==519||destination==526)&&_hoverSprites.size()<=14)return false;if(destination==117&&!_nav[0]&&!_nav[1]&&!_nav[2])return false;const uint hover=_hoverSprites.size();if(!reject()||!restore("cross hover/navigation"))return false;debug("P512 cross-scene memory install: PASS (P%u,oldhover%u)",destination,hover);++cross;}
@@ -9122,7 +9132,36 @@ Common::Error AstronomicaEngine::loadP512(Common::SeekableReadStream*stream){
  if(stream->size()-stream->pos()<kP512Words*4||!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return Common::kReadingFailed;
  Common::Array<uint32>w;w.resize(kP512Words);for(uint32&v:w)v=stream->readUint32LE();if(stream->err()||!installP512Memory(w))return Common::kReadingFailed;return Common::kNoError;
 }
+bool AstronomicaEngine::testP512StoppedClockDomain() {
+ static uint seen=0;Common::Array<uint32>original;
+ if(!captureP512Stopped(original,scriptClock())||_clockPaused)return false;
+ const uint scenario=original[15];if(seen&(1U<<scenario))return true;
+ const uint32 endMs=uint64(original[14])*1000/30;
+ // The stopped clock is independent of the selected range and decoder frame.
+ // VideoDecoder::stop() switches from mixer time to system time before saving it.
+ Common::Array<uint32>clocks;clocks.push_back(0);clocks.push_back(endMs-1);
+ if(scenario==3)clocks.push_back(48529); // Actual former rejected ordinary capture.
+ for(uint32 clock:clocks){
+  Common::Array<uint32>source=original;source[10]=clock;source.back()=p512PacketHash(source);
+  const uint32 live=p510WholeLiveHash();Video::QuickTimeDecoder*const decoder=_movie;
+  const void*const pixels=_screen.getPixels();P512Prepared prepared;
+  if(!prepareP512Stopped(source,prepared)||!prepared.ready||prepared.decoder->getTime()!=clock||prepared.decoder->getCurFrame()!=int(source[11])||prepared.decoder->isPlaying()||p510WholeLiveHash()!=live||_movie!=decoder||_screen.getPixels()!=pixels)return false;
+  prepared.clearOwned();if(!prepared.empty()||!installP512Memory(source))return false;
+  Common::Array<uint32>again;if(!captureP512Stopped(again,source[2])||again!=source||_movie->getTime()!=clock||_movie->getCurFrame()!=int(source[11])||_moviePresentedFrame!=int(source[12])||_movie->isPlaying()||_movie->isPaused()||_clockPaused)return false;
+  debug("P512 stopped clock domain: PASS (scenario%u,clock%u,current%u,presented%u,end%u,literal prepare/install/recapture)",scenario,clock,source[11],source[12],source[14]);
+ }
+ const uint32 live=p510WholeLiveHash();Video::QuickTimeDecoder*const decoder=_movie;const void*const pixels=_screen.getPixels();const uint commits=_p512MemoryCommits;
+ for(uint kind=0;kind<5;++kind){Common::Array<uint32>bad=original;
+  switch(kind){case 0:bad[10]=64267;break;case 1:bad[13]^=1;break;case 2:bad[14]^=1;break;case 3:bad[11]=643;break;default:bad[12]=643;break;}
+  bad.back()=p512PacketHash(bad);P512Prepared prepared;
+  if(prepareP512Stopped(bad,prepared)||!prepared.empty()||installP512Memory(bad)||p510WholeLiveHash()!=live||_movie!=decoder||_screen.getPixels()!=pixels||_p512MemoryCommits!=commits)return false;
+ }
+ if(!installP512Memory(original))return false;Common::Array<uint32>again;if(!captureP512Stopped(again,original[2])||again!=original)return false;
+ seen|=1U<<scenario;debug("P512 stopped clock invalid domain: PASS (scenario%u,upper/range/current/presented refusals5,source restored)",scenario);return true;
+}
+
 bool AstronomicaEngine::testP512FileSave(){
+ if(!testP512StoppedClockDomain())return false;
  static uint boundaries=0;PauseToken outer=pauseEngine();const uint32 now=scriptClock();
  Common::MemoryWriteStreamDynamic output(DisposeAfterUse::YES);
  if(!canSaveGameStateCurrently()||saveGameStream(&output).getCode()!=Common::kNoError||output.size()!=9932)return false;
@@ -9181,7 +9220,92 @@ bool AstronomicaEngine::verifyP512NormalRoutes(){
  debug("P512 all-normal Music/file verification: PASS (12 natural active-loop boundaries,first/repeated original completion,final physical slots29/30)");return true;
 }
 
+bool AstronomicaEngine::verifyP281ReturnRounds(){
+ ConfMan.setBool("astronomica_entry_scripts",true);
+ _runner.resetGlobals();_runner.defineValue(0,29,1);
+ auto fail=[&](const char*where){debug("P281 return-round verification: FAIL (%s,P%d,round%u)",where,_place,_runner.variantRound());return false;};
+ auto group=[&](){return _place==506||(_place>=531&&_place<=535);};
+ auto settle=[&](){const uint32 began=_system->getMillis();while(_runner.pendingCount()&&_system->getMillis()-began<90000&&!shouldQuit()){runScriptsAt(scriptClock());animateSpritesAt(scriptClock());_system->delayMillis(5);}return !_runner.pendingCount()&&!_runner.clicksBlocked()&&!shouldQuit();};
+ auto refused=[&](const char*kind,uint route,uint round){
+  const uint32 before=_runner.probeDiagnosticHash(true);const int place=_place;const uint count=_puzzlesCompleted;
+  Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);
+  if(canSaveGameStateCurrently()||saveGameStream(&out).getCode()==Common::kNoError||out.size()!=0||before!=_runner.probeDiagnosticHash(true)||place!=_place||count!=_puzzlesCompleted)return false;
+  debug("P281 save refusal: PASS (%s,route%u,round%u,zero bytes,unchanged runner)",kind,route,round);return true;
+ };
+ for(uint route=0;route<2;++route){
+  _runner.seedRandom(809+route);
+  if(!loadPlace(281)||_runner.variantRound()||!settle())return fail("initial entry");
+  Script extra;Command command;command.opcode=23;command.delay=0;for(int32 v:{25,0,0,0,0,0})command.args.push_back(v);extra.push_back(command);
+  if(_runner.canRun(extra,true))return fail("unrelated custom25 admitted");
+  Common::MemoryWriteStreamDynamic saved(DisposeAfterUse::YES);
+  if(!canSaveGameStateCurrently()||saveGameStream(&saved).getCode()!=Common::kNoError||saved.size()!=424)return fail("idle v2 save");
+  Common::MemoryReadStream header(saved.getData(),saved.size());
+  if(header.readUint32BE()!=MKTAG('A','S','V','M')||header.readUint32LE()!=2)return fail("v2 header");
+  if(!loadPlace(286))return fail("displace scene");
+  Common::MemoryReadStream restore(saved.getData(),saved.size());
+  if(loadGameStream(&restore).getCode()!=Common::kNoError||_place!=281||_runner.variantRound()||!_runner.canRun(_scene.sprites[0].click,true)||!settle())return fail("idle v2 restore capability");
+  debug("P281 idle v2 roundtrip: PASS (route%u,424 bytes,restored original gateway,custom25 excluded)",route);
+  const uint completed=_puzzlesCompleted;uint seen=0;
+  auto gateway=[&](uint expectedRound){
+   if(_place!=281||spriteAt(37,384)!=0)return false;
+   const uint32 start=scriptClock();clickAtTime(37,384,start);
+   if(!refused("pending gateway",route,expectedRound))return false;
+   const uint32 began=_system->getMillis();while(_place==281&&_system->getMillis()-began<30000&&!shouldQuit()){runScriptsAt(scriptClock());animateSpritesAt(scriptClock());_system->delayMillis(5);}
+   return _place!=281&&scriptClock()-start>=5000&&settle();
+  };
+  if(!gateway(0))return fail("first gateway");
+  for(uint round=1;round<=3;++round){
+   if(!group()||_runner.variantRound()!=round)return fail("selected round");
+   const uint variant=_place==506?0:_place-530;const int original=_place;
+   if(seen&(1U<<variant))return fail("repeated selection");seen|=1U<<variant;
+   int32 solved=-1;if(!_runner.getValue(0,23,solved)||solved!=int32(route!=0)||_puzzlesCompleted!=completed)return fail("unexpected puzzle completion");
+   Common::Array<uint32>before;_runner.p510AuditExportState(before);
+   if(before.size()!=605||before[603]!=round)return fail("statics snapshot");
+   clickAtTime(24,417,scriptClock());if(!settle()||_place!=281)return fail("actual unsolved exit");
+   Common::Array<uint32>after;_runner.p510AuditExportState(after);
+   if(after.size()!=605||after[603]!=before[603]||after[604]!=before[604]||_puzzlesCompleted!=completed)return fail("exit altered process statics");
+   if(!refused("returned nonzero round",route,round))return fail("nonzero round save");
+   debug("P281 unsolved return: PASS (route%u,round%u,P%d -> P281,mask%u retained)",route,round,original,after[604]);
+   if(!gateway(round))return fail("returned gateway");
+  }
+  int32 solved=-1;
+  if(_place!=519||_runner.variantRound()||!_runner.getValue(0,23,solved)||solved!=1||_puzzlesCompleted!=completed+uint(route==0))return fail("original third-round completion");
+  debug("P281 unsolved full route: PASS (route%u,P519,first/repeated count%u,original third-round completion retained)",route,_puzzlesCompleted);
+ }
+ debug("P281 return-round verification: PASS (six actual unsolved exits,two idle v2 loads,fourteen zero-byte refusals,first/repeated completion)");return true;
+}
+
+bool AstronomicaEngine::verifyP281Gateway(){
+ const int targets[6][5]={{12,13,14,0,0},{10,11,12,14,0},{12,10,11,0,0},{9,10,11,0,0},{14,15,16,17,18},{9,10,11,0,0}};
+ const int answers[6][5]={{3,4,5,0,0},{1,2,3,5,0},{1,3,4,0,0},{1,2,3,0,0},{3,4,5,6,7},{1,2,3,0,0}};
+ ConfMan.setBool("astronomica_entry_scripts",true);_runner.resetGlobals();_runner.defineValue(0,29,1);
+ for(uint route=0;route<2;++route){
+  _runner.seedRandom(631+route);if(!loadPlace(281)||_scene.sprites.size()!=1||_runner.variantRound())return false;
+  ScriptRunner unsupported=_runner;unsupported.setVariantSupport(false);
+  if(unsupported.canRun(_scene.sprites[0].click,true)||!_runner.canRun(_scene.sprites[0].click,true)||spriteAt(37,384)!=0)return false;
+  debug("P281 gateway capability: PASS (original two-command click rejected without support,admitted with bound variant/success/audio targets)");
+  const uint completed=_puzzlesCompleted;const uint32 start=scriptClock();clickAtTime(37,384,start);
+  const uint32 realStart=_system->getMillis();
+  while(_place==281&&_system->getMillis()-realStart<12000){runScriptsAt(scriptClock());animateSpritesAt(scriptClock());_system->delayMillis(5);}
+  if(_place==281||scriptClock()-start<5000||_runner.variantRound()!=1)return false;
+  debug("P281 actual gateway click: PASS (original voice,5000ms pending custom17,one selected variant,P%d,round1)",_place);
+  auto group=[&](){return _place==506||(_place>=531&&_place<=535);};
+  auto settle=[&](){const uint32 began=_system->getMillis();while((group()||_place==519)&&_runner.pendingCount()&&_system->getMillis()-began<90000){runScriptsAt(scriptClock());animateSpritesAt(scriptClock());_system->delayMillis(5);}return !_runner.pendingCount()&&!_runner.clicksBlocked();};
+  auto press=[&](uint id){if(!group()||id<1||id>_scene.sprites.size())return false;const Sprite&s=_scene.sprites[id-1];int hx=-1,hy=-1;for(int y=MAX(0,int(s.renderY));y<480&&hx<0;y+=8)for(int x=MAX(0,int(s.renderX));x<640;x+=8)if(spriteAt(x,y)==int(id)-1){hx=x;hy=y;break;}if(hx<0)return false;clickAtTime(hx,hy,scriptClock());return settle();};
+  if(!settle())return false;uint seen=0;
+  for(uint round=1;round<=3;++round){
+   if(!group()||_runner.variantRound()!=round)return false;const uint variant=_place==506?0:_place-530;if(seen&(1U<<variant))return false;seen|=1U<<variant;const int original=_place;
+   for(uint i=0;i<5&&targets[variant][i]&&_place==original;++i)if(!press(answers[variant][i]+4)||!press(targets[variant][i]))return false;
+   debug("P281 original selected puzzle: PASS (route%u,round%u,P%d -> P%d,automatic startup only)",route,round,original,_place);
+  }
+  int32 solved=-1;if(_place!=519||_runner.variantRound()||!_runner.getValue(0,23,solved)||solved!=1||_puzzlesCompleted!=completed+uint(route==0))return false;
+  debug("P281 full gateway route: PASS (route%u,P519,first/repeated count%u,three nonrepeating variants,global23=1,S922)",route,_puzzlesCompleted);
+ }
+ debug("P281 real original gateway verification: PASS (normal click,actual delay,automatic entries,first and repeated full completion)");return verifyP281ReturnRounds();
+}
+
 bool AstronomicaEngine::verifyP512Puzzle() {
+ if(ConfMan.hasKey("astronomica_verify_p281_gateway")&&ConfMan.getBool("astronomica_verify_p281_gateway"))return verifyP281Gateway();
  // Paired Engine pause and file-clock tests need real time even when called
  // by the all-scenes diagnostic, whose default script clock is otherwise0.
  struct VerifyP512ClockScope {

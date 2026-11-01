@@ -1,8 +1,18 @@
 """Explicit reviewed ASVM29 descendant context; never relax historical v28 gates."""
 from pathlib import Path
-import hashlib,json
+import hashlib,json,os
+
+def active_context_path(work):
+    context=os.environ.get('ASTRONOMICA_REVIEWED_DESCENDANT','')
+    assert context in ('','p281-sealed29'),'Unknown reviewed descendant context'
+    return Path(work)/('p281-integration.json' if context else 'p512-integration.json')
 
 def validated_integration(root,work,expected):
+    context=os.environ.get('ASTRONOMICA_REVIEWED_DESCENDANT','')
+    assert context in ('','p281-sealed29'),'Unknown reviewed descendant context'
+    if context:
+        from p281_integration_gate import validated_p281_integration
+        return validated_p281_integration(root,work,expected)
     root,work=Path(root),Path(work);d=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     p=json.loads((work/'p512-integration.json').read_text())
     assert p['status']=='SOURCE_PROMOTED_AWAITING_MAIN_CLOSURE' and p['base_exe']=='6dd09d6494b2c115579f46718b6c924b6f37c13307343e045e5bb38c87ba0f81'

@@ -287,6 +287,8 @@ private:
  bool _planetAssetsValid=false;
  bool verifyP526Puzzle();
  bool verifyP512Puzzle();
+ bool verifyP281Gateway();
+ bool verifyP281ReturnRounds();
  struct P512Prepared {
   Scene scene;ScriptRunner runner;Graphics::Surface background,displayed,composed;
   Video::QuickTimeDecoder*decoder=nullptr;Audio::AudioStream*ambient=nullptr;Common::Array<uint32>packet;bool ready=false;
@@ -304,6 +306,7 @@ private:
  bool verifyP512OrdinaryAudio();
  bool verifyP512NormalRoutes();
  bool testP512AnswerContinuation();
+ bool testP512StoppedClockDomain();
  bool testP512FileSave();
  bool testP512FreshFile();
  bool canSaveP512()const;

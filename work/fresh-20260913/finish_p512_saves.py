@@ -2,19 +2,20 @@
 from pathlib import Path
 from datetime import datetime
 import hashlib,json,shutil,subprocess,sys
-from p512_integration_gate import validated_integration
+from p512_integration_gate import validated_integration,active_context_path
 
 w=Path(__file__).resolve().parent;root=w.parents[1];r=root/'outputs/astronomica-cleanroom'
 d=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();exe=w/'build/Releasex64/scummvm.exe';expected=d(exe)
 integration,_=validated_integration(root,w,expected)
 reg=json.loads((w/'p512-regressions-status.json').read_text());p=json.loads((w/'p512-save-proof.json').read_text())
 assert reg['status']=='PASS' and reg['full_suite'] and reg['native_save_scenes']==33 and reg['exe_sha256']==expected
+assert reg['descendant_context_sha256']==d(active_context_path(w))
 assert p['status']=='PASS' and p['exe_sha256']==expected and not p['diagnostic'] and p['format_version']==29
 assert p['actual_audio_driver']=='wasapi' and p['payload_bytes']==9932
 # During the recursive v1-v27 finalizers the former v28 validation must not
 # impersonate a proof of this new executable. Preserve it before removing its
 # activation marker. finish_p510_saves reinstates it with fresh evidence.
-held=w/'p512-prior-p510-validation.json';active=r/'evidence/p510-saves-validation.json'
+held=w/('p281-prior-p510-validation.json' if active_context_path(w).name=='p281-integration.json' else 'p512-prior-p510-validation.json');active=r/'evidence/p510-saves-validation.json'
 if active.exists():
     old=json.loads(active.read_text())
     if old['exe_sha256']!=expected:
@@ -33,7 +34,7 @@ for name in ['frozen-v28-proof.json',*[label+'.log' for label in old['cases']]]:
 shutil.copyfile(w/'p512-save-proof.json',r/'evidence/p512-save-proof.json')
 for source,target in [(w/'p512-integration.json','p512-source-integration.json'),(w/'p512-sealed28-rebase-stage/root-source-review.json','p512-source-review.json'),(w/'p512-sealed28-rebase-stage/normal-routes-proof.json','p512-isolated-normal-proof.json')]:shutil.copyfile(source,r/'evidence'/target)
 v=dict(p,date=datetime.now().date().isoformat(),scene=512,full_suite=True,public_validation=True,
-    genuine_v28_proof_sha256=d(compat/'frozen-v28-proof.json'),descendant_context_sha256=d(w/'p512-integration.json'),
+    genuine_v28_proof_sha256=d(compat/'frozen-v28-proof.json'),descendant_context_sha256=d(active_context_path(w)),active_source_context=active_context_path(w).name,
     compatibility='Versions1-28 retained; both genuine sealed v28 literal loop identities (-1 and0) read unchanged,each entrytrue/false',
     limitations=['Stopped-ready question boundaries only; active movies,queued work,foreground voice,pending images and unsupported private histories excluded',
         'Music restarts from its beginning while preserving active/waiting state and recipient volume/mute preferences; sample-exact audio is not claimed',

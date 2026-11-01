@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "scope": "actual_ordinary_entry_retained_disabled_loop0",
-  "exe_sha256": "932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b",
+  "exe_sha256": "1f042e2c55c06c959f8f75e043d343ed3fd07bf1ef4995b0d47e9cdbb9191362",
   "entry_scripts": true,
   "source_loop_id": 0,
   "loop_enabled": false,
@@ -15,7 +15,7 @@
   "payload_bytes": 4540,
   "format_version": 28,
   "slot": 27,
-  "slot_sha256": "aa407608ccca711eb7bde150c8ce6bcfc3ba0c5e4f8ed8567c93395bb6d35b9b",
+  "slot_sha256": "6dd40882a0adb544b91270bb6b809f9c2ce6d11fb8d437d3f3ab732837a73966",
   "paused_source_byte_roundtrip": true,
   "fresh_entry_true": true,
   "fresh_entry_false": true,
@@ -44,9 +44,9 @@
   "global_success_wav_sha256": "0f6ae457c4de027503a1027212e9eccc949fac17d39eb4d6b181f66a39b1377c",
   "frozen_v27_slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
   "log_sha256": {
-    "initial.log": "5a501b595e0641321060160fa010ef594f13511938fd8f04a4d01ed3c1b86ce3",
-    "fresh-true.log": "215bdb8483b6d90034c60c2685509635724de1189ef4d1bb2ad77ac456d4332b",
-    "fresh-false.log": "06d006e25efdd1e455832cff01cc486890e140d5816c8965a47f23c875b19f6b",
+    "initial.log": "6d469c1678d7dac9cfdec0e5afa6f2d998ca3642497f92339eb170802c717426",
+    "fresh-true.log": "30bb95cbfc2863f7a46236b6d414b8ec56d3360ae7b7149439a2f8e22b90da20",
+    "fresh-false.log": "b3f3b6aaf7932e995dbd5af20d90406c966e30612123b50ad2074e0d04472fb2",
     "listed.log": "b3f89f617d7665814f5d17677a8469a909c5ed37062cc178108ecd03727a0035"
   },
   "configuration_evidence": "Dedicated checker writes immutable per-run configs",

@@ -4023,11 +4023,11 @@
       }
     },
     "astronomica.cpp": {
-      "sha256": "d254fa4396cb547a6d3a90de2bfd2e1b09f6d9f6be59974806de0e0240f5c8dc",
+      "sha256": "4c126c32dd96b6f6a203899d6c2d63a12456f03e847402fcad9cb0079e70fe3d",
       "anchors": {
-        "bool AstronomicaEngine::onRendezvous(": 3206,
+        "bool AstronomicaEngine::onRendezvous(": 3216,
         "_runner.setRendezvousHandler(": 2758,
-        "bool AstronomicaEngine::verifyP514Puzzle()": 8636
+        "bool AstronomicaEngine::verifyP514Puzzle()": 8646
       }
     },
     "script.cpp": {

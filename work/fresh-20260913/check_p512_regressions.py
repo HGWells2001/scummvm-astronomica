@@ -7,7 +7,7 @@ v28 identities, genuine v27, P510 native contract, and the entire prior chain.
 from pathlib import Path
 from datetime import datetime,timezone
 import hashlib,json,os,subprocess,sys,traceback
-from p512_integration_gate import validated_integration
+from p512_integration_gate import validated_integration,active_context_path
 from p510_ordinary_gate import validated_ordinary
 
 w=Path(__file__).resolve().parent;root=w.parents[1];os.chdir(root)
@@ -41,10 +41,10 @@ try:
     run('check_p510_saves.py')
     run('check_p501_regressions.py')
     validated_integration(root,w,expected)
-    journal(w/'p510-regressions-status.json','PASS',full_suite=True,native_save_scenes=32,descendant_context='p512-integration.json',genuine_v28_proof_sha256=d(w/'p512-main-frozen-v28/frozen-v28-proof.json'))
+    journal(w/'p510-regressions-status.json','PASS',full_suite=True,native_save_scenes=32,descendant_context=active_context_path(w).name,genuine_v28_proof_sha256=d(w/'p512-main-frozen-v28/frozen-v28-proof.json'))
     run('check_p512_saves.py')
     validated_integration(root,w,expected);assert d(exe)==expected
-    journal(state,'PASS',full_suite=True,native_save_scenes=33,descendant_context_sha256=d(w/'p512-integration.json'),genuine_v28_proof_sha256=d(w/'p512-main-frozen-v28/frozen-v28-proof.json'))
+    journal(state,'PASS',full_suite=True,native_save_scenes=33,descendant_context_sha256=d(active_context_path(w)),genuine_v28_proof_sha256=d(w/'p512-main-frozen-v28/frozen-v28-proof.json'))
     print('ASVM29 exact-main P512,real v28/v27 and full inherited native chain PASS',flush=True)
 except Exception:
     journal(state,'FAILED',error=traceback.format_exc());raise

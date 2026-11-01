@@ -1,3 +1,11 @@
+# Fotografia pubblicata P512 — 31 ottobre 2026
+
+Indice complessivo verificato: **60% dei criteri di accettazione (6/10)**. Copertura dei salvataggi: **33/35 scene (94,3%)**; restano P523 e P525. Queste due misure hanno denominatori diversi e non vanno sommate. Non è disponibile una percentuale attendibile delle ore o della porzione di gioco completata.
+
+Questa fotografia si riferisce alla versione P512/ASVM29, eseguibile `932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b`, pubblicata nel commit `5000da749a05de7604fd6dc9f0d9313a4aa901bb`, con suite completa, copia indipendente, remoto e sigillo PASS. Le prove dei dieci criteri invariati sono congelate separatamente in `work/fresh-20260913/p512-progress-review-oct31`; `verify.py` le verifica senza leggere le evidenze del successore in lavorazione. Per revisioni successive consultare i relativi stati di chiusura e sigillo, senza attribuire loro automaticamente questa fotografia.
+
+Le sezioni seguenti conservano le misurazioni storiche e la definizione dei dieci criteri.
+
 # Avanzamento del progetto Astronomica — 28 ottobre 2026
 
 Indice complessivo di accettazione: **60% — 6 criteri superati su 10**. È un nuovo indice esplicito dei traguardi del progetto, basato su una checklist fissa. Non misura il lavoro già svolto in ore e non certifica che il60% del gioco sia giocabile. La percentuale del lavoro totale rimane non determinabile finché manca un inventario completo delle obbligazioni e una stima del lavoro residuo.

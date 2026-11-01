@@ -2,7 +2,7 @@
   "status": "PASS",
   "scope": "stopped_ready_p512",
   "diagnostic": false,
-  "exe_sha256": "932d7f5822152b41edeaddc6f0bdefdcbad1a334f439507c82497a6471b8932b",
+  "exe_sha256": "1f042e2c55c06c959f8f75e043d343ed3fd07bf1ef4995b0d47e9cdbb9191362",
   "actual_audio_driver": "wasapi",
   "format_version": 29,
   "payload_bytes": 9932,
@@ -27,17 +27,17 @@
   "no_intro_replay": true,
   "final_mask127_first_repeated_fresh": true,
   "slot": 28,
-  "slot_sha256": "593ba739a24a429cf574bdbd1c2e55a9263d4674ce3305184809c7c7adbf6a75",
+  "slot_sha256": "5ec4735c12dfd869c4554cd729d01cf4cbb5fd923bba419ce8ef3d8621919198",
   "final_slots": {
     "29": {
-      "sha256": "0fe72555055d995b6f4b89de95cf666286ed0227e0a90cf3915e43928ccee4ce",
+      "sha256": "344b3fc89974e10dc8032cf21ec1b92f6d296f35a28bf264a51a911696e336cf",
       "prior_global28": 0,
       "mask": 127,
       "active_music": true,
       "puzzles_completed": 0
     },
     "30": {
-      "sha256": "4ce119a412bf51ac99a952e8e2568b6a72bb921317ed1089861a0407a5a5535d",
+      "sha256": "ea67ca905c32ed795fc70d84bf23490d911c7b15dc2bf37ef9dda0faf657ccb2",
       "prior_global28": 1,
       "mask": 127,
       "active_music": true,
@@ -79,16 +79,16 @@
     "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
   },
   "log_sha256": {
-    "ordinary.log": "1e27e1e7dd571ca4d590a664d4bfbc24ca5891ecf18253e3d580e451a7740636",
-    "fresh-true.log": "4d09a38995d853c3a622c123a6605f2bbbe12f010c36ba44b75459500aa7d293",
-    "fresh-false.log": "e3959bb860c9159629c1d51d5fb50f1c0be55b865222a8adff54140b040357fb",
+    "ordinary.log": "1bc33eb4dfdb8cda43ab8668621c99afb696a2b285c1844e93a85624768c2105",
+    "fresh-true.log": "59325fcc365de1737362447210275288082a47ac57d39027b3a785f180fc2870",
+    "fresh-false.log": "97ff6c36af68edf628afa91e375ad181583dcab80698d032d0a6a0a9b7a79b12",
     "listed.log": "e60280a6f4fe5946d4db4f7cc7cbbb7405bb9381425fe87f0a4025f6520b1afb",
-    "legacy.log": "f1b83b79b71add6b17bc6b17800582d1bc4adfc59ee24b8636618b47739597f0",
-    "all-normal.log": "b152a27b9aa760f246d8ace4c1a76f2f66115b4991310c22b0ac2c8f90280004",
-    "fresh-final-29-true.log": "6101b5dcaa8c6c38a4bcff50198d04dbcfc2d862c73e9bead2ee8a696f0ad3b8",
-    "fresh-final-29-false.log": "5db4146e9003ecac70fe5080a4364fdfeda73996394074fccf73ab92edd0956c",
-    "fresh-final-30-true.log": "745df0761c6012cbc7632cf3ada0253a05b6f68bf8983540b35a8c69ee83c5cd",
-    "fresh-final-30-false.log": "69c65fd9ed8b271ae03aecc68e97d85217c39165aa24aed701d4c9157ee79223"
+    "legacy.log": "d1caae61490f52aa99fb65a85ccef256eb71c4ee1fc4c47e746f6d26bd4afcb2",
+    "all-normal.log": "d3c9e012f64a5bd4ac7af487b4ecae1848507e69ec1a092274730a745700b3e3",
+    "fresh-final-29-true.log": "15a0cc4773ea05878df7cb9c16a6eb01215a7082573197205168771aa6118e8a",
+    "fresh-final-29-false.log": "625d5aba2f36585ac4bcc8223a8e8c822d262649ca3b2880e75a0fd7f61ac101",
+    "fresh-final-30-true.log": "e1192392ce651a7b0c1b8b1d7eff4f79c6d100f9f2fa36089180639a5506278c",
+    "fresh-final-30-false.log": "efc24853d9b976849949a38803b5d3a652eb59ded829e34689922cdaf58378b8"
   },
   "config_sha256": {
     "ordinary.ini": "9fa79f3f42bafb11446add86b5006b788498d7bc31e591fc4163089a370bedb7",
@@ -104,11 +104,12 @@
   },
   "music_convention": "Restart the original Music loop from its beginning while preserving logical active/waiting state; no sample-exact audio claim",
   "public_validation": true,
-  "date": "2026-10-30",
+  "date": "2026-11-01",
   "scene": 512,
   "full_suite": true,
-  "genuine_v28_proof_sha256": "46b7b379bb8f1e4a71f1439c8a0cf98090b519b73634c5f3a3bcc3ff00228b5e",
-  "descendant_context_sha256": "6f7c6e7567b1ea93be3f7d822e3efbef915115b6fafa28f125bb7f37e08da49b",
+  "genuine_v28_proof_sha256": "bdd9a33c0e0d2838d40fb8e4f5115db92ac25ae9c7f076e2a2f860d633e4b451",
+  "descendant_context_sha256": "54d8fd70718cc2df9ca801c6618349b3aad0bb4a0bf42ee6bd3ae7ebaa816e34",
+  "active_source_context": "p281-integration.json",
   "compatibility": "Versions1-28 retained; both genuine sealed v28 literal loop identities (-1 and0) read unchanged,each entrytrue/false",
   "limitations": [
     "Stopped-ready question boundaries only; active movies,queued work,foreground voice,pending images and unsupported private histories excluded",

@@ -7,6 +7,8 @@ from p510_evidence_gate import validated_p510
 p510_save_present=validated_p510(Path('outputs/astronomica-cleanroom'),Path('work/fresh-20260913')) is not None
 from p512_evidence_gate import validated_p512
 p512_save_present=validated_p512(Path('outputs/astronomica-cleanroom'),Path('work/fresh-20260913')) is not None
+from p281_evidence_gate import validated_p281
+p281_gateway_present=validated_p281(Path('outputs/astronomica-cleanroom'),Path('work/fresh-20260913')) is not None
 assert subprocess.check_output(['git','-C',str(root),'remote','get-url','origin'],text=True).strip()=='https://github.com/HGWells2001/scummvm-astronomica.git'
 manifest=json.loads((root/'SOURCE-MANIFEST.json').read_text())
 ignore=root/'.gitignore';rules=ignore.read_text()
@@ -288,6 +290,14 @@ if p512_save_present:
     for name in p512_paths():
         (root/name).parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(name,root/name)
+if p281_gateway_present:
+    from p281_export_paths import paths as p281_paths
+    for name in p281_paths():
+        (root/name).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(name,root/name)
+gate281='work/fresh-20260913/p281_evidence_gate.py'
+(root/gate281).parent.mkdir(parents=True,exist_ok=True)
+shutil.copyfile(gate281,root/gate281)
 gate512='work/fresh-20260913/p512_evidence_gate.py'
 (root/gate512).parent.mkdir(parents=True,exist_ok=True)
 shutil.copyfile(gate512,root/gate512)
@@ -440,6 +450,10 @@ if p512_save_present:
     p.write_text(s.rstrip()+'\n')
 manifest['date']='2026-10-28' if p510_save_present else '2026-10-27' if p504_save_present else '2026-10-26' if p502_save_present else '2026-10-25' if p511_save_present else '2026-10-24' if p509_save_present else '2026-10-23' if p521_save_present else '2026-10-22' if probe_save_present else '2026-10-21'
 if p512_save_present:manifest['date']='2026-10-30'
+if p281_gateway_present:
+    if 'P281 original gateway' not in s:
+        s=s.replace('- Automatically verified routes','- P281 original gateway now admits its original delayed custom17 voice button. Actual solved and unsolved returns preserve the process round/mask, idle v2 saves retain the restored gateway, and pending/nonzero-round saves refuse before writing. The original third-round unsolved-exit completion remains unchanged. Full inherited native checks and all three genuine v29 slots pass.\n- Automatically verified routes')
+    p.write_text(s.rstrip()+'\n');manifest['date']='2026-10-31'
 manifest['sha256']={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted(root.rglob('*')) if p.is_file()
                    and not {'.git','__pycache__','userdata'}.intersection(p.parts) and p.name!='SOURCE-MANIFEST.json'}

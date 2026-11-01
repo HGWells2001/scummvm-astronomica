@@ -1,0 +1,105 @@
+{
+  "status": "ROOT_P281_STOPCLOCK_SOURCE_NATIVE_REVIEW_PASS",
+  "baseline23_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "20abaa582bd70b875ec342c3222fab8b1872ceaf64a8501fc31ba11b553b0b29",
+    "astronomica.h": "36f403affe56baa3e129309d2cc5592f4b7346d0e8267ffa750a5d3843f1c00f",
+    "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "3834b5f0465755baef384f7c932ca6ec62d0033fe4f848b7d3b4a84a835b1c0e",
+    "script.h": "de1287d67161d813de7e72162ae60b273fba0cfccc71439bede62a3d3db37b30",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "stage_sha256": {
+    "astronomica.cpp": "4c126c32dd96b6f6a203899d6c2d63a12456f03e847402fcad9cb0079e70fe3d",
+    "astronomica.h": "1b82f1fdeca06f6fce56b361251da6c336a71b05e2a88bbdc2b9bcfe1f90ab86",
+    "script.cpp": "3834b5f0465755baef384f7c932ca6ec62d0033fe4f848b7d3b4a84a835b1c0e",
+    "script.h": "de1287d67161d813de7e72162ae60b273fba0cfccc71439bede62a3d3db37b30",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "parent_source_preserved": true,
+  "format_version": 29,
+  "format_changed": false,
+  "native_proof_sha256": "c038ede7b31afb48ae4f7b6c40a1be914fc1387b2d101ea7142d34fce40c989e",
+  "candidate_exe_sha256": "fb23fc33844c2f4b1e9590c91afb2ba15076e48cf4c7f27b20c8465ee0458113",
+  "original_ranges": [
+    [
+      0,
+      150
+    ],
+    [
+      150,
+      354
+    ],
+    [
+      1272,
+      1456
+    ],
+    [
+      1456,
+      1642
+    ],
+    [
+      1642,
+      1831
+    ],
+    [
+      1834,
+      1919
+    ]
+  ],
+  "decoder_source_sha256": "7c4e7fe501344677c7bc9fadd5b5eb6416e9a14511b32a89daa5130ef2532fdd",
+  "diagnostic_source_sha256": "a4d2fefb1142a599ba7ae3a259af21eaa24a7a460f5b69f1a033e16feefdc7c7",
+  "reviewer_source_sha256": "e32b704a013d1995831b1a75d1b855cf755ecb14838e68127e7f0dcd57ffd1a1",
+  "original_assets_sha256": {
+    "CREPRAYS": "a588834b8ca0a41cf07fc7fbf31ab73386076984992671aad7b25cf120ec1ea9",
+    "DARK": "f5c4466356fad35de300d70234a70a7d9125b8e0618459d748f5ffc98b986284",
+    "FLATPHEN.MOV": "afda9ee5e5a2297630a2f35aba1b519bb693317285487562dae231dedc9ba7bd",
+    "LIGHT": "89b640ecac39cd47aaaa94c2412f02c602840a5013eeb41c470592953bf425d6",
+    "MEGAFILE.HYP": "0a870dea63fae0ea1732f40c627a63bc659a2c88d1a4cc2edfab4497d814c952",
+    "MOONCOR": "18784542332ffe8b27502da7a36d4f22f3d29ba0003fe892753d0dc4c86af33d",
+    "MOONHALO": "fd0ebe373bb10b8c8789d07a92369bafcfc7d5be27fcdcac476f71d89b3da010",
+    "S0.WAV": "293e947857b1c724aef860fe73bd1825714074edbb85e9283142cf99f6edbcb5",
+    "S1.WAV": "498411fc3af87b8956b5a0290c424fe4bd496c20c063cd6e5292a6a05b31dd47",
+    "S10.WAV": "f97297addfc7ed55a070bf4a5c3777323147c2e4ca8cc747429451e2a17d6afe",
+    "S11.WAV": "b5e3b6a6ee55de501b4aa3a1c9b1592b8af6a6b39f2e92afa615a72a000ea27d",
+    "S12.WAV": "b6e565e6aad63ce8ea05d7544edee1b29d5b8d084afdbfdfd4374447dae05ccf",
+    "S13.WAV": "a91a6f10ef5d9cf0fd961e7b0c91c8d3c1356cad9c98124f4e08cf0c272badd6",
+    "S14.WAV": "8a4bb7d97def3ff51850b2cf43fdc12de0a8411665875450f0ebe2354b8babd9",
+    "S2.WAV": "4647840923173ccff69b60df013e527f013a2f048951b83362f3e0fed8fbec4c",
+    "S3.WAV": "ac01153632c8f39f46d2fe50c9bbc70bc6c51a53a90679acb9a016a6e0a3d3ff",
+    "S302.WAV": "498411fc3af87b8956b5a0290c424fe4bd496c20c063cd6e5292a6a05b31dd47",
+    "S4.WAV": "a45d372397bcbb6fb0413832317b34be5d463d8bad357d9494179b92a24b83cb",
+    "S5.WAV": "27015fe9145a55e89f2d68f35e6f5d9e8835e63e0e3bd15d1965f225189032d8",
+    "S6.WAV": "0942d33f1c6635725c317ba4fef3cf7144f201a65f252cc80ad69cdfc3c3d3db",
+    "S7.WAV": "59d4db98c8b0a0fb9c2a4a4b605bed95cd10d95255a52508e7031862563211ab",
+    "S8.WAV": "02c6b5ba032374c46c08850aae94ed6b4179e6101e2f9c086b08252e2fc11c2c",
+    "S9.WAV": "5d1a387f5b3d10a4471a0cedb07297b39dcf8cd8a52067d074dfb459b48d3f18",
+    "SUNDOGS": "0a719cc2c84648f5e01fe1db591de05c4da81b88bc78cb341883b6ae8653d4f6",
+    "SUNHALO": "c8d7149d82fc0f3707b568683050873af57323bda92a08c71fb8878ecee437ac",
+    "SUNPILL": "8845b715138e27b295dbcd471e6d882144b3838c289bb840b4c6350560b1313c"
+  },
+  "production_delta": "Remove only an invalid relation between independently stored stopped media clock and range end",
+  "deterministic_cases": "All six original scenarios: clock0/endMillis-1; scenario3 also actual former failure48529; literal prepare/install/recapture and five atomic invalid refusals per scenario",
+  "limits": [
+    "Native data-domain cases do not assert every clock/frame pair is naturally reachable",
+    "Existing upper clock bound retained; no active-video/audio-cursor restoration or sample-exact Music claim",
+    "Main closure/publication remain separate"
+  ]
+}

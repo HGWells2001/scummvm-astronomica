@@ -1,47 +1,47 @@
-[2026-10-30 21:38:43] ScummVM 2026.3.1git
-[2026-10-30 21:38:43] RGB SDL2 
-[2026-10-30 21:38:43] --- Log opened.
-[2026-10-30 21:38:43] Using SDL Video Driver "dummy"
-[2026-10-30 21:38:43] Using SDL Audio Driver "wasapi"
-[2026-10-30 21:38:43] SDL mixer sound format: 33056 differs from desired: 32784
-[2026-10-30 21:38:43] Output sample rate: 44100 Hz
-[2026-10-30 21:38:43] Output buffer size: 1024 samples
-[2026-10-30 21:38:43] Output channels: 2
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_START' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
-[2026-10-30 21:38:44] CPU extensions:
-[2026-10-30 21:38:44] SSE2(not supported) AVX2(not supported) NEON(not supported)
-[2026-10-30 21:38:44] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
-[2026-10-30 21:38:44] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
-[2026-10-30 21:38:44] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_A' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_B' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_Y' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_X' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_UP' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_DOWN' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_LEFT' not known
-[2026-10-30 21:38:44] HardwareInput with ID 'JOY_RIGHT' not known
-[2026-10-30 21:38:44] Setting 640 x 480 -> 640 x 480 -- 1
-[2026-10-30 21:38:44] Astronomica resource explorer: P1; nav 0,0,0
-[2026-10-30 21:38:44] Astronomica static sprites: P1, 3 drawn
-[2026-10-30 21:38:44] Audio Codec FourCC: 'raw '
-[2026-10-30 21:38:44] stsd version =0
-[2026-10-30 21:38:44] Audio Codec FourCC: 'raw '
-[2026-10-30 21:38:44] stsd version =0
-[2026-10-30 21:38:44] P512 independent stopped cursor/clock: PASS (media61057,current610,end1831;audio not aligned)
-[2026-10-30 21:38:45] P512 memory ownership release: PASS (empty holder,stopped decoder,internal Engine token released)
-[2026-10-30 21:39:06] P512 ordinary wrong answer: PASS (same question,not accepted)
-[2026-10-30 21:39:30] Astronomica movie segment finished: 672 frames drawn
-[2026-10-30 21:39:30] Astronomica P512 loop: S0.WAV
-[2026-10-30 21:39:37] Astronomica movie closed while playing: 710 frames, time 58424, end 61033
-[2026-10-30 21:39:37] Astronomica resource explorer: P157; nav 162,0,152
-[2026-10-30 21:39:37] Astronomica static sprites: P157, 1 drawn
-[2026-10-30 21:39:37] P512 ordinary final continuation: PASS (priorGlobal0,P157,count1,actual original correct controls)
-[2026-10-30 21:39:37] P512 ASVM29 fresh physical continuation: PASS (physical ASVM29,original wrong/correct controls,seek or final P157,no startup replay)
-[2026-10-30 21:39:37] --- Log closed successfully.
+[2026-11-01 14:09:19] ScummVM 2026.3.1git
+[2026-11-01 14:09:19] RGB SDL2 
+[2026-11-01 14:09:19] --- Log opened.
+[2026-11-01 14:09:19] Using SDL Video Driver "dummy"
+[2026-11-01 14:09:20] Using SDL Audio Driver "wasapi"
+[2026-11-01 14:09:20] SDL mixer sound format: 33056 differs from desired: 32784
+[2026-11-01 14:09:20] Output sample rate: 44100 Hz
+[2026-11-01 14:09:20] Output buffer size: 1024 samples
+[2026-11-01 14:09:20] Output channels: 2
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_START' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_LEFT_STICK_Y-' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_LEFT_STICK_Y+' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_LEFT_STICK_X-' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_LEFT_STICK_X+' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_RIGHT_SHOULDER' not known
+[2026-11-01 14:09:20] CPU extensions:
+[2026-11-01 14:09:20] SSE2(not supported) AVX2(not supported) NEON(not supported)
+[2026-11-01 14:09:20] Running Astronomica: The Quest for the Edge of the Universe (Experimental/Windows/English)
+[2026-11-01 14:09:20] ASTRO.EXE: 14929fa8e52d7e3bc539244413703ecb, 418376 bytes.
+[2026-11-01 14:09:20] GAMEDATA: 84099c2580e5c71beec97ca3e52a5967, 1604 bytes.
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_A' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_B' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_LEFT_SHOULDER' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_Y' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_X' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_UP' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_DOWN' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_LEFT' not known
+[2026-11-01 14:09:20] HardwareInput with ID 'JOY_RIGHT' not known
+[2026-11-01 14:09:21] Setting 640 x 480 -> 640 x 480 -- 1
+[2026-11-01 14:09:21] Astronomica resource explorer: P1; nav 0,0,0
+[2026-11-01 14:09:21] Astronomica static sprites: P1, 3 drawn
+[2026-11-01 14:09:21] Audio Codec FourCC: 'raw '
+[2026-11-01 14:09:21] stsd version =0
+[2026-11-01 14:09:21] Audio Codec FourCC: 'raw '
+[2026-11-01 14:09:21] stsd version =0
+[2026-11-01 14:09:21] P512 independent stopped cursor/clock: PASS (media61065,current610,end1831;audio not aligned)
+[2026-11-01 14:09:21] P512 memory ownership release: PASS (empty holder,stopped decoder,internal Engine token released)
+[2026-11-01 14:09:43] P512 ordinary wrong answer: PASS (same question,not accepted)
+[2026-11-01 14:10:07] Astronomica movie segment finished: 672 frames drawn
+[2026-11-01 14:10:07] Astronomica P512 loop: S0.WAV
+[2026-11-01 14:10:14] Astronomica movie closed while playing: 710 frames, time 58421, end 61033
+[2026-11-01 14:10:14] Astronomica resource explorer: P157; nav 162,0,152
+[2026-11-01 14:10:14] Astronomica static sprites: P157, 1 drawn
+[2026-11-01 14:10:14] P512 ordinary final continuation: PASS (priorGlobal0,P157,count1,actual original correct controls)
+[2026-11-01 14:10:14] P512 ASVM29 fresh physical continuation: PASS (physical ASVM29,original wrong/correct controls,seek or final P157,no startup replay)
+[2026-11-01 14:10:14] --- Log closed successfully.
