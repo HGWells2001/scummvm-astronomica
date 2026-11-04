@@ -1,0 +1,235 @@
+{
+  "status": "P525_PHYSICAL_FRESH_WASAPI_PASS",
+  "completed_at": "2026-11-03T21:21:18.438418+00:00",
+  "driver_sha256": "1ba84ed4d8698aa9f13f8141cbfe2e89544906c178c660f512d6f36afec7acc7",
+  "source_native_review_sha256": "6594f98068641909eaff8a4ca38eb876d7119b18664a1b3030bf7029414cc914",
+  "candidate_exe_sha256": "b20721ee19d08ec5aa91d31e7de8bb42fe79f2e510004e2815d3f7539934cbc7",
+  "stage_sha256": {
+    "astronomica.cpp": "666d2044eb06f4667ef41539be849ada930adc520cd8ff9066738d451ed6e509",
+    "astronomica.h": "cbdcca7b14b2cf8eb0e51b9b241aa825a7e1c0eab5eb5fbe62d3049870cb66df",
+    "script.cpp": "596f84b48cfb63c627c067067eb904c26e3aed3ecaf04b4e4f76995e1db14059",
+    "script.h": "1cd2ddd11c37e951f9dfcdaa3560c14fe7682790916aa3958d2c69757ada2be7",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "payload_version": 30,
+  "payload_bytes": 5396,
+  "packet_words": 1347,
+  "metadata_offset": 5396,
+  "slots": [
+    {
+      "slot": 31,
+      "pixels": 3650808667,
+      "background": 900965477,
+      "future_pixels": 2926499922,
+      "future_background": 900965477,
+      "playtime": 285072,
+      "sidecar_sha256": "c7013efe4b5596d19a5873edbe8ab5389e5275e3c4189285e5cd52b43247bb13",
+      "physical_sha256": "bab474e5eb59f8b8f575694fda75b88f9de6f0995aa894792c8d5a74e9ccd36a",
+      "payload_sha256": "b8333952357426a648e6e078957665107fc9b1270210ee9ee4c721af21e205b7",
+      "description": "P525 initial inactive",
+      "metadata_date": 51054570,
+      "metadata_time": 5651,
+      "metadata_playtime": 285072,
+      "thumbnail": {
+        "version": 2,
+        "width": 160,
+        "height": 120,
+        "bpp": 2,
+        "bytes": 38422
+      }
+    },
+    {
+      "slot": 32,
+      "pixels": 3650808667,
+      "background": 900965477,
+      "future_pixels": 2926499922,
+      "future_background": 900965477,
+      "playtime": 289801,
+      "sidecar_sha256": "6dadbbb0e6f56b50b0e477c677bea0bbe947c92d5b175821f3b4dabb8f6c8e11",
+      "physical_sha256": "1d600abf8fcced30f1238297206db8a748f3a242c3732d2efcef8591d23c4965",
+      "payload_sha256": "dd465eb641cd1465e3b0b944e613f6c720f2b2143749c6b082d019deeda2f540",
+      "description": "P525 initial active",
+      "metadata_date": 51054570,
+      "metadata_time": 5651,
+      "metadata_playtime": 289801,
+      "thumbnail": {
+        "version": 2,
+        "width": 160,
+        "height": 120,
+        "bpp": 2,
+        "bytes": 38422
+      }
+    },
+    {
+      "slot": 33,
+      "pixels": 3650808667,
+      "background": 900965477,
+      "future_pixels": 2926499922,
+      "future_background": 900965477,
+      "playtime": 325792,
+      "sidecar_sha256": "ce4362206295383981c8c6b09648b39d6bb1430d2fca3edc1e5c09c855ff61bf",
+      "physical_sha256": "dadb92546018164ba413691034c7d1f59ac5fc92ecffbe4bf58991368d71c312",
+      "payload_sha256": "8c75bc6c9afaeff7d15449cae161344b8581775e672884239cacb00bda1245d3",
+      "description": "P525 postvideo inactive",
+      "metadata_date": 51054570,
+      "metadata_time": 5652,
+      "metadata_playtime": 325792,
+      "thumbnail": {
+        "version": 2,
+        "width": 160,
+        "height": 120,
+        "bpp": 2,
+        "bytes": 38422
+      }
+    },
+    {
+      "slot": 34,
+      "pixels": 3650808667,
+      "background": 900965477,
+      "future_pixels": 2926499922,
+      "future_background": 900965477,
+      "playtime": 330490,
+      "sidecar_sha256": "7dab3e467faefa300211abc72a3ccf4fb07d0842faf5602f688ec489a1545b7e",
+      "physical_sha256": "2d7c9ad2ba10f8bc7b5e21c8e60a635143df7aaa5c84ef4d678d58b1a5d4bba6",
+      "payload_sha256": "59067099fc9061fd2ac53a77f9d116c760aa8a8844c16de4b4797666e454df6c",
+      "description": "P525 postvideo active",
+      "metadata_date": 51054570,
+      "metadata_time": 5652,
+      "metadata_playtime": 330490,
+      "thumbnail": {
+        "version": 2,
+        "width": 160,
+        "height": 120,
+        "bpp": 2,
+        "bytes": 38422
+      }
+    }
+  ],
+  "fresh_processes": [
+    {
+      "label": "fresh-31-false",
+      "pid": 22840,
+      "started_at": "2026-11-03T21:20:58.873767+00:00",
+      "entry_scripts": "false",
+      "slot": 31
+    },
+    {
+      "label": "fresh-31-true",
+      "pid": 23188,
+      "started_at": "2026-11-03T21:21:01.428325+00:00",
+      "entry_scripts": "true",
+      "slot": 31
+    },
+    {
+      "label": "fresh-32-false",
+      "pid": 39612,
+      "started_at": "2026-11-03T21:21:03.856274+00:00",
+      "entry_scripts": "false",
+      "slot": 32
+    },
+    {
+      "label": "fresh-32-true",
+      "pid": 36996,
+      "started_at": "2026-11-03T21:21:06.125128+00:00",
+      "entry_scripts": "true",
+      "slot": 32
+    },
+    {
+      "label": "fresh-33-false",
+      "pid": 40484,
+      "started_at": "2026-11-03T21:21:08.477086+00:00",
+      "entry_scripts": "false",
+      "slot": 33
+    },
+    {
+      "label": "fresh-33-true",
+      "pid": 30788,
+      "started_at": "2026-11-03T21:21:10.832414+00:00",
+      "entry_scripts": "true",
+      "slot": 33
+    },
+    {
+      "label": "fresh-34-false",
+      "pid": 14340,
+      "started_at": "2026-11-03T21:21:13.193257+00:00",
+      "entry_scripts": "false",
+      "slot": 34
+    },
+    {
+      "label": "fresh-34-true",
+      "pid": 7660,
+      "started_at": "2026-11-03T21:21:15.556740+00:00",
+      "entry_scripts": "true",
+      "slot": 34
+    }
+  ],
+  "entry_true_false": true,
+  "full_packet_and_pixel_reconstruction": true,
+  "no_startup_or_intro_replay": true,
+  "original_selector_successor": true,
+  "listed_descriptions": true,
+  "audio_driver": "wasapi",
+  "mute": true,
+  "frozen_fixtures_unchanged": {
+    "astro-verify.098": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+    "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
+  },
+  "original_assets_sha256": {
+    "4BACK_1": "2535768e92c6f3341cf96a13a2475ea32578bcfdb64a4864444bfc92557fb893",
+    "4BACK_2": "bfc4da9f6c57049bbef06fa5b27fc5505c843e8c672b5dcc30463f6d610b4f7b",
+    "6BACK_2": "b3da5f0e06478870ad5b8266a198c57396dfc958cde43c3df23a8c2b1ff14cee",
+    "FSUN.MOV": "ff92ff4a4584a75af8cb6db9e1ffeb1a8310d64825d111652d28a29f3efe0684",
+    "MEGAFILE.HYP": "64187c16330172e257aca4ff8b2499cc98fdd8a556bdbba8946c51d406dad1b1",
+    "S0.WAV": "cbedf12e5bd258f502428bae943b2c67ef09ad051df7b5fc6d588bb8fd97f1a8",
+    "S1.WAV": "6905cb7697c37c36eb8fb79f8bd3d3744d46d5eb60f1fdf5f876a250cd261145",
+    "S10.WAV": "8b11c97951114cb2f8b05d03c4294ca60963f85e0a3f76017a1b9beccc110704",
+    "S11.WAV": "7a40ce40c6ca1acf01ded8b84da715aa941050ca3507bd4341fa2d09fe62b2ce",
+    "S12.WAV": "bf88406317358f6e5c29ebcc4e10ed4365eb5b1e4d9087b38d8065c492e026ac",
+    "S13.WAV": "d783b0c3eab31faf1cc7bbc67199415df9ed92702a7fa55d26ac0baa484326d7",
+    "S14.WAV": "8d621810ac771ff1a5b63b9c717504793ca7381e14e82cc43f2325603e1b4fe4",
+    "S15.WAV": "af0d4f51bb996ee7059d70fe38c9f9ba8baeb1bb97d0ac5256179ce10969db1e",
+    "S16.WAV": "d6633e79c0580faca70496d45d3790c22c8b895d5fcfc42afc86a5056bca6fbb",
+    "S2.WAV": "4647840923173ccff69b60df013e527f013a2f048951b83362f3e0fed8fbec4c",
+    "S3.WAV": "ac01153632c8f39f46d2fe50c9bbc70bc6c51a53a90679acb9a016a6e0a3d3ff",
+    "S300.WAV": "7507dfb15340a140e148dbcda65323ec5ce8fb2bfa137f5ab44f08d627515489",
+    "S4.WAV": "a45d372397bcbb6fb0413832317b34be5d463d8bad357d9494179b92a24b83cb",
+    "S5.WAV": "27015fe9145a55e89f2d68f35e6f5d9e8835e63e0e3bd15d1965f225189032d8",
+    "S6.WAV": "c48965e978ff8f351ae883823864d625858d8158fbdefaf1b948ba9bf3113fa7",
+    "S7.WAV": "9ee251b548817cd02b068829cb124f452568ef636cf79d79577471a78a67526d",
+    "S8.WAV": "5ea467ba49af82c4977c143161aa8c79ee2b915ba69abe13c3058b63ff72fd32",
+    "S9.WAV": "d23a3f2326450f2611ec573f8ced6b79cac977f443ea1a70d54ac9eac3aacb9b",
+    "SKY_B": "da9167b5143d6209346bff2cc00431fb0e2c5c14fe4be0372aa88b88fc7e237b"
+  },
+  "log_sha256": {
+    "fresh-31-false.log": "b74fecf3201b10a9b7364f9f9a03081d434316662384a31cb6eae9710d02ef06",
+    "fresh-31-true.log": "38d3f9be2041c23717230a0e3762a11321a2f36b02d9cf39e6306411689aa8e8",
+    "fresh-32-false.log": "2d83fcd92805e8e598a821284463787b33ff912e63885219ad1fae339a2f0ee6",
+    "fresh-32-true.log": "82d5b30518e96053cf4507925092caf0522d5ecc37413e0e6e2dd2e039d8f567",
+    "fresh-33-false.log": "eb6821d666333b7d0a9ff5f8179ce846b9ee8005fc7cb564d1965671637a9490",
+    "fresh-33-true.log": "055acf2b93955caaa659dda5af04abbf34dfcf6ae93655c1a5c24b11e5fb12f6",
+    "fresh-34-false.log": "e2e2c30d4e92da7bea28ae02255eaaef9b3d0e517e2cae291080585d92046e23",
+    "fresh-34-true.log": "c226caa0f0ab997ff0d4b8fe52477db47f584d4b155adf041ce28c6e368d69db",
+    "listed.log": "030404ca538ce723a374b0385ae30faaa83ca0bed2242c445e9e007fbe5e4cbc"
+  },
+  "config_sha256": {
+    "fresh-31-false.ini": "2bcf169402a7d9d6dd245501c5df5afaad03140d0b7aa6bffcfefb23e48a7151",
+    "fresh-31-true.ini": "82e3ce90df4b9bd809a08a07c6da6dafbb35248f5a4a09562df850dab692d02c",
+    "fresh-32-false.ini": "2bcf169402a7d9d6dd245501c5df5afaad03140d0b7aa6bffcfefb23e48a7151",
+    "fresh-32-true.ini": "82e3ce90df4b9bd809a08a07c6da6dafbb35248f5a4a09562df850dab692d02c",
+    "fresh-33-false.ini": "2bcf169402a7d9d6dd245501c5df5afaad03140d0b7aa6bffcfefb23e48a7151",
+    "fresh-33-true.ini": "82e3ce90df4b9bd809a08a07c6da6dafbb35248f5a4a09562df850dab692d02c",
+    "fresh-34-false.ini": "2bcf169402a7d9d6dd245501c5df5afaad03140d0b7aa6bffcfefb23e48a7151",
+    "fresh-34-true.ini": "82e3ce90df4b9bd809a08a07c6da6dafbb35248f5a4a09562df850dab692d02c",
+    "list.ini": "2bcf169402a7d9d6dd245501c5df5afaad03140d0b7aa6bffcfefb23e48a7151"
+  },
+  "main_modified": false,
+  "public_support": false,
+  "limitations": [
+    "Four loop0 inactive/active initial/postvideo states; no loop-1 file gate here",
+    "Source S0 restarts at beginning; no listening, audible waveform, backend-latency or sample-phase claim",
+    "Selector continuation uses actual original scripts with synthetic logical ticks, not an additional natural MOV ending",
+    "Same producer/fresh continuation algorithm; stored actual producer packet/pixels are the baseline",
+    "No broad ASVM1-29 compatibility, arbitrary recipient, full-game or public integration proof"
+  ]
+}

@@ -1,3 +1,7 @@
+# Current update: P525 ASVM30 (4 November 2026)
+
+Native save coverage: **34/35 route scenes (97.1%)**, with P523 outstanding. See [P525 save contract and verified limits](outputs/astronomica-cleanroom/P525-SAVE-FORMAT.md). The historical notes below retain their original scope; whole-game completion remains unmeasured.
+
 # Astronomica for ScummVM
 
 Native experimental ScummVM engine for **Astronomica: The Quest for the Edge of the Universe** (Windows, 1994).

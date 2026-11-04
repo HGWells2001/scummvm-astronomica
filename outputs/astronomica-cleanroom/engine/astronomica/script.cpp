@@ -1479,6 +1479,882 @@ void ScriptRunner::p512AuditPending(uint row,uint32 now)const{
 }
 
 
+bool ScriptRunner::trustedP525SettledProgram()const{
+if(_programs.size()!=5)return false;
+if(_programs[0].size()!=28)return false;
+{const Command&c=_programs[0][0];if(c.opcode!=31||c.delay!=0||c.offset!=497936||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][1];if(c.opcode!=32||c.delay!=0||c.offset!=497968||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=2)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][2];if(c.opcode!=45||c.delay!=-1||c.offset!=497988||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][3];if(c.opcode!=31||c.delay!=0||c.offset!=497996||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=3)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][4];if(c.opcode!=32||c.delay!=0||c.offset!=498028||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=3)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][5];if(c.opcode!=45||c.delay!=-1||c.offset!=498048||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][6];if(c.opcode!=31||c.delay!=0||c.offset!=498056||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][7];if(c.opcode!=32||c.delay!=0||c.offset!=498088||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=4)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][8];if(c.opcode!=45||c.delay!=-1||c.offset!=498108||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][9];if(c.opcode!=31||c.delay!=0||c.offset!=498116||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=5)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][10];if(c.opcode!=32||c.delay!=0||c.offset!=498148||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=5)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][11];if(c.opcode!=45||c.delay!=-1||c.offset!=498168||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][12];if(c.opcode!=31||c.delay!=0||c.offset!=498176||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=6)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][13];if(c.opcode!=32||c.delay!=0||c.offset!=498208||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=6)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][14];if(c.opcode!=45||c.delay!=-1||c.offset!=498228||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][15];if(c.opcode!=31||c.delay!=0||c.offset!=498236||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=7)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][16];if(c.opcode!=32||c.delay!=0||c.offset!=498268||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=7)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][17];if(c.opcode!=45||c.delay!=-1||c.offset!=498288||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][18];if(c.opcode!=31||c.delay!=0||c.offset!=498296||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=8)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][19];if(c.opcode!=32||c.delay!=0||c.offset!=498328||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=8)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[0][20];if(c.opcode!=45||c.delay!=-1||c.offset!=498348||c.args.size()!=0||!c.text.empty())return false;
+}
+{const Command&c=_programs[0][21];if(c.opcode!=31||c.delay!=0||c.offset!=498356||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=8)return false;
+if(c.args[2]!=1)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][22];if(c.opcode!=28||c.delay!=0||c.offset!=498388||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[0][23];if(c.opcode!=23||c.delay!=3500||c.offset!=498400||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=25)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[0][24];if(c.opcode!=9||c.delay!=3500||c.offset!=498432||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=17)return false;
+}
+{const Command&c=_programs[0][25];if(c.opcode!=5||c.delay!=3500||c.offset!=498444||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=509)return false;
+}
+{const Command&c=_programs[0][26];if(c.opcode!=29||c.delay!=0||c.offset!=498456||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[0][27];if(c.opcode!=42||c.delay!=-1||c.offset!=498468||c.args.size()!=0||!c.text.empty())return false;
+}
+if(_programs[1].size()!=17)return false;
+{const Command&c=_programs[1][0];if(c.opcode!=28||c.delay!=0||c.offset!=498480||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[1][1];if(c.opcode!=17||c.delay!=0||c.offset!=498492||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[1][2];if(c.opcode!=17||c.delay!=0||c.offset!=498504||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+}
+{const Command&c=_programs[1][3];if(c.opcode!=7||c.delay!=0||c.offset!=498516||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=256)return false;
+if(c.args[2]!=210)return false;
+}
+{const Command&c=_programs[1][4];if(c.opcode!=7||c.delay!=0||c.offset!=498536||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=268)return false;
+if(c.args[2]!=180)return false;
+}
+{const Command&c=_programs[1][5];if(c.opcode!=16||c.delay!=0||c.offset!=498556||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[1][6];if(c.opcode!=16||c.delay!=-1||c.offset!=498568||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+}
+{const Command&c=_programs[1][7];if(c.opcode!=15||c.delay!=0||c.offset!=498580||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=17)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[1][8];if(c.opcode!=15||c.delay!=-1||c.offset!=498596||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=18)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[1][9];if(c.opcode!=15||c.delay!=-1||c.offset!=498612||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=19)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[1][10];if(c.opcode!=15||c.delay!=-1||c.offset!=498628||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=20)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[1][11];if(c.opcode!=16||c.delay!=0||c.offset!=498644||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=17)return false;
+}
+{const Command&c=_programs[1][12];if(c.opcode!=16||c.delay!=-1||c.offset!=498656||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=18)return false;
+}
+{const Command&c=_programs[1][13];if(c.opcode!=16||c.delay!=-1||c.offset!=498668||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=19)return false;
+}
+{const Command&c=_programs[1][14];if(c.opcode!=16||c.delay!=-1||c.offset!=498680||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=20)return false;
+}
+{const Command&c=_programs[1][15];if(c.opcode!=16||c.delay!=-1||c.offset!=498692||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=15)return false;
+}
+{const Command&c=_programs[1][16];if(c.opcode!=29||c.delay!=0||c.offset!=498704||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+if(_programs[2].size()!=87)return false;
+{const Command&c=_programs[2][0];if(c.opcode!=31||c.delay!=0||c.offset!=498720||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=10)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[2][1];if(c.opcode!=28||c.delay!=0||c.offset!=498752||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[2][2];if(c.opcode!=17||c.delay!=0||c.offset!=498764||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[2][3];if(c.opcode!=17||c.delay!=0||c.offset!=498776||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+}
+{const Command&c=_programs[2][4];if(c.opcode!=7||c.delay!=0||c.offset!=498788||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=256)return false;
+if(c.args[2]!=380)return false;
+}
+{const Command&c=_programs[2][5];if(c.opcode!=7||c.delay!=0||c.offset!=498808||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=268)return false;
+if(c.args[2]!=350)return false;
+}
+{const Command&c=_programs[2][6];if(c.opcode!=16||c.delay!=0||c.offset!=498828||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[2][7];if(c.opcode!=16||c.delay!=-1||c.offset!=498840||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+}
+{const Command&c=_programs[2][8];if(c.opcode!=47||c.delay!=10||c.offset!=498852||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][9];if(c.opcode!=47||c.delay!=-1||c.offset!=498872||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][10];if(c.opcode!=47||c.delay!=10||c.offset!=498892||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][11];if(c.opcode!=47||c.delay!=-1||c.offset!=498912||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][12];if(c.opcode!=47||c.delay!=10||c.offset!=498932||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][13];if(c.opcode!=47||c.delay!=-1||c.offset!=498952||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][14];if(c.opcode!=47||c.delay!=10||c.offset!=498972||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][15];if(c.opcode!=47||c.delay!=-1||c.offset!=498992||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][16];if(c.opcode!=47||c.delay!=10||c.offset!=499012||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][17];if(c.opcode!=47||c.delay!=-1||c.offset!=499032||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][18];if(c.opcode!=47||c.delay!=10||c.offset!=499052||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][19];if(c.opcode!=47||c.delay!=-1||c.offset!=499072||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][20];if(c.opcode!=47||c.delay!=10||c.offset!=499092||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][21];if(c.opcode!=47||c.delay!=-1||c.offset!=499112||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][22];if(c.opcode!=47||c.delay!=10||c.offset!=499132||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][23];if(c.opcode!=47||c.delay!=-1||c.offset!=499152||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][24];if(c.opcode!=47||c.delay!=10||c.offset!=499172||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][25];if(c.opcode!=47||c.delay!=-1||c.offset!=499192||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][26];if(c.opcode!=47||c.delay!=10||c.offset!=499212||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][27];if(c.opcode!=47||c.delay!=-1||c.offset!=499232||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][28];if(c.opcode!=47||c.delay!=10||c.offset!=499252||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][29];if(c.opcode!=47||c.delay!=-1||c.offset!=499272||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][30];if(c.opcode!=47||c.delay!=10||c.offset!=499292||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][31];if(c.opcode!=47||c.delay!=-1||c.offset!=499312||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][32];if(c.opcode!=47||c.delay!=10||c.offset!=499332||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][33];if(c.opcode!=47||c.delay!=-1||c.offset!=499352||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][34];if(c.opcode!=47||c.delay!=10||c.offset!=499372||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][35];if(c.opcode!=47||c.delay!=-1||c.offset!=499392||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][36];if(c.opcode!=47||c.delay!=10||c.offset!=499412||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][37];if(c.opcode!=47||c.delay!=-1||c.offset!=499432||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][38];if(c.opcode!=47||c.delay!=10||c.offset!=499452||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][39];if(c.opcode!=47||c.delay!=-1||c.offset!=499472||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][40];if(c.opcode!=47||c.delay!=10||c.offset!=499492||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][41];if(c.opcode!=47||c.delay!=-1||c.offset!=499512||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][42];if(c.opcode!=47||c.delay!=10||c.offset!=499532||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][43];if(c.opcode!=47||c.delay!=-1||c.offset!=499552||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][44];if(c.opcode!=47||c.delay!=10||c.offset!=499572||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][45];if(c.opcode!=47||c.delay!=-1||c.offset!=499592||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][46];if(c.opcode!=47||c.delay!=10||c.offset!=499612||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][47];if(c.opcode!=47||c.delay!=-1||c.offset!=499632||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][48];if(c.opcode!=47||c.delay!=10||c.offset!=499652||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][49];if(c.opcode!=47||c.delay!=-1||c.offset!=499672||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][50];if(c.opcode!=47||c.delay!=10||c.offset!=499692||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][51];if(c.opcode!=47||c.delay!=-1||c.offset!=499712||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][52];if(c.opcode!=47||c.delay!=10||c.offset!=499732||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][53];if(c.opcode!=47||c.delay!=-1||c.offset!=499752||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][54];if(c.opcode!=47||c.delay!=10||c.offset!=499772||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][55];if(c.opcode!=47||c.delay!=-1||c.offset!=499792||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][56];if(c.opcode!=47||c.delay!=10||c.offset!=499812||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][57];if(c.opcode!=47||c.delay!=-1||c.offset!=499832||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][58];if(c.opcode!=47||c.delay!=10||c.offset!=499852||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][59];if(c.opcode!=47||c.delay!=-1||c.offset!=499872||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][60];if(c.opcode!=47||c.delay!=10||c.offset!=499892||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][61];if(c.opcode!=47||c.delay!=-1||c.offset!=499912||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][62];if(c.opcode!=47||c.delay!=10||c.offset!=499932||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][63];if(c.opcode!=47||c.delay!=-1||c.offset!=499952||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][64];if(c.opcode!=47||c.delay!=10||c.offset!=499972||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][65];if(c.opcode!=47||c.delay!=-1||c.offset!=499992||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][66];if(c.opcode!=47||c.delay!=10||c.offset!=500012||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][67];if(c.opcode!=47||c.delay!=-1||c.offset!=500032||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][68];if(c.opcode!=47||c.delay!=10||c.offset!=500052||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][69];if(c.opcode!=47||c.delay!=-1||c.offset!=500072||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][70];if(c.opcode!=47||c.delay!=10||c.offset!=500092||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][71];if(c.opcode!=47||c.delay!=-1||c.offset!=500112||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][72];if(c.opcode!=47||c.delay!=10||c.offset!=500132||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][73];if(c.opcode!=47||c.delay!=-1||c.offset!=500152||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][74];if(c.opcode!=47||c.delay!=10||c.offset!=500172||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][75];if(c.opcode!=47||c.delay!=-1||c.offset!=500192||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=6)return false;
+if(c.args[1]!=0)return false;
+if(c.args[2]!=-5)return false;
+}
+{const Command&c=_programs[2][76];if(c.opcode!=15||c.delay!=0||c.offset!=500212||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=17)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[2][77];if(c.opcode!=15||c.delay!=-1||c.offset!=500228||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=18)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[2][78];if(c.opcode!=15||c.delay!=-1||c.offset!=500244||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=19)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[2][79];if(c.opcode!=15||c.delay!=-1||c.offset!=500260||c.args.size()!=2||!c.text.empty())return false;
+if(c.args[0]!=20)return false;
+if(c.args[1]!=0)return false;
+}
+{const Command&c=_programs[2][80];if(c.opcode!=16||c.delay!=0||c.offset!=500276||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=17)return false;
+}
+{const Command&c=_programs[2][81];if(c.opcode!=16||c.delay!=-1||c.offset!=500288||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=18)return false;
+}
+{const Command&c=_programs[2][82];if(c.opcode!=16||c.delay!=-1||c.offset!=500300||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=19)return false;
+}
+{const Command&c=_programs[2][83];if(c.opcode!=16||c.delay!=-1||c.offset!=500312||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=20)return false;
+}
+{const Command&c=_programs[2][84];if(c.opcode!=16||c.delay!=-1||c.offset!=500324||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=15)return false;
+}
+{const Command&c=_programs[2][85];if(c.opcode!=29||c.delay!=0||c.offset!=500336||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[2][86];if(c.opcode!=42||c.delay!=-1||c.offset!=500348||c.args.size()!=0||!c.text.empty())return false;
+}
+if(_programs[3].size()!=5)return false;
+{const Command&c=_programs[3][0];if(c.opcode!=28||c.delay!=0||c.offset!=500360||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[3][1];if(c.opcode!=17||c.delay!=0||c.offset!=500372||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+}
+{const Command&c=_programs[3][2];if(c.opcode!=7||c.delay!=0||c.offset!=500384||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=3)return false;
+if(c.args[2]!=95)return false;
+}
+{const Command&c=_programs[3][3];if(c.opcode!=16||c.delay!=0||c.offset!=500404||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+}
+{const Command&c=_programs[3][4];if(c.opcode!=29||c.delay!=0||c.offset!=500416||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+if(_programs[4].size()!=43)return false;
+{const Command&c=_programs[4][0];if(c.opcode!=41||c.delay!=0||c.offset!=500432||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=0)return false;
+}
+{const Command&c=_programs[4][1];if(c.opcode!=31||c.delay!=0||c.offset!=500444||c.args.size()!=6||!c.text.empty())return false;
+if(c.args[0]!=1)return false;
+if(c.args[1]!=1)return false;
+if(c.args[2]!=0)return false;
+if(c.args[3]!=0)return false;
+if(c.args[4]!=0)return false;
+if(c.args[5]!=0)return false;
+}
+{const Command&c=_programs[4][2];if(c.opcode!=28||c.delay!=0||c.offset!=500476||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[4][3];if(c.opcode!=17||c.delay!=0||c.offset!=500488||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+}
+{const Command&c=_programs[4][4];if(c.opcode!=7||c.delay!=0||c.offset!=500500||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=-337)return false;
+if(c.args[2]!=95)return false;
+}
+{const Command&c=_programs[4][5];if(c.opcode!=16||c.delay!=0||c.offset!=500520||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+}
+{const Command&c=_programs[4][6];if(c.opcode!=9||c.delay!=0||c.offset!=500532||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=7)return false;
+}
+{const Command&c=_programs[4][7];if(c.opcode!=47||c.delay!=10||c.offset!=500544||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][8];if(c.opcode!=47||c.delay!=10||c.offset!=500564||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][9];if(c.opcode!=47||c.delay!=10||c.offset!=500584||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][10];if(c.opcode!=47||c.delay!=10||c.offset!=500604||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][11];if(c.opcode!=47||c.delay!=10||c.offset!=500624||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][12];if(c.opcode!=47||c.delay!=10||c.offset!=500644||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][13];if(c.opcode!=47||c.delay!=10||c.offset!=500664||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][14];if(c.opcode!=47||c.delay!=10||c.offset!=500684||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][15];if(c.opcode!=47||c.delay!=10||c.offset!=500704||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][16];if(c.opcode!=47||c.delay!=10||c.offset!=500724||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][17];if(c.opcode!=47||c.delay!=10||c.offset!=500744||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][18];if(c.opcode!=47||c.delay!=10||c.offset!=500764||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][19];if(c.opcode!=47||c.delay!=10||c.offset!=500784||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][20];if(c.opcode!=47||c.delay!=10||c.offset!=500804||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][21];if(c.opcode!=47||c.delay!=10||c.offset!=500824||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][22];if(c.opcode!=47||c.delay!=10||c.offset!=500844||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][23];if(c.opcode!=47||c.delay!=10||c.offset!=500864||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][24];if(c.opcode!=47||c.delay!=10||c.offset!=500884||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][25];if(c.opcode!=47||c.delay!=10||c.offset!=500904||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][26];if(c.opcode!=47||c.delay!=10||c.offset!=500924||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][27];if(c.opcode!=47||c.delay!=10||c.offset!=500944||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][28];if(c.opcode!=47||c.delay!=10||c.offset!=500964||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][29];if(c.opcode!=47||c.delay!=10||c.offset!=500984||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][30];if(c.opcode!=47||c.delay!=10||c.offset!=501004||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][31];if(c.opcode!=47||c.delay!=10||c.offset!=501024||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][32];if(c.opcode!=47||c.delay!=10||c.offset!=501044||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][33];if(c.opcode!=47||c.delay!=10||c.offset!=501064||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][34];if(c.opcode!=47||c.delay!=10||c.offset!=501084||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][35];if(c.opcode!=47||c.delay!=10||c.offset!=501104||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][36];if(c.opcode!=47||c.delay!=10||c.offset!=501124||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][37];if(c.opcode!=47||c.delay!=10||c.offset!=501144||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][38];if(c.opcode!=47||c.delay!=10||c.offset!=501164||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][39];if(c.opcode!=47||c.delay!=10||c.offset!=501184||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][40];if(c.opcode!=47||c.delay!=10||c.offset!=501204||c.args.size()!=3||!c.text.empty())return false;
+if(c.args[0]!=5)return false;
+if(c.args[1]!=10)return false;
+if(c.args[2]!=0)return false;
+}
+{const Command&c=_programs[4][41];if(c.opcode!=29||c.delay!=0||c.offset!=501224||c.args.size()!=1||!c.text.empty())return false;
+if(c.args[0]!=-1)return false;
+}
+{const Command&c=_programs[4][42];if(c.opcode!=42||c.delay!=-1||c.offset!=501236||c.args.size()!=0||!c.text.empty())return false;
+}
+return true;}
+bool ScriptRunner::validP525SettledValues(const Common::Array<uint32>&w)const{
+ if(!validPersistentState(w)||w[300]!=1||w[303]>7)return false;
+ // Global values/widths are inherited literal process data; P525 declares no
+ // global records. Unknown local values are also dormant and are preserved.
+ for(uint i=0;i<100;++i){if(w[3*i+2]!=1)return false;const uint width=i<2?8:i<9?1:0;if(w[301+3*i]!=width||w[302+3*i]!=uint32(i<9))return false;}
+ for(uint i=2;i<9;++i)if(w[300+3*i]>1)return false;
+ return true;
+}
+bool ScriptRunner::exportP525SettledState(Common::Array<uint32>&words)const{
+ if(!trustedP525SettledProgram()||!scriptsIdle())return false;Common::Array<uint32>w;if(!exportPersistentState(w)||!validP525SettledValues(w))return false;words=w;return true;
+}
+bool ScriptRunner::importP525SettledState(const Common::Array<uint32>&words){
+ if(!trustedP525SettledProgram()||!scriptsIdle()||!validP525SettledValues(words))return false;return importPersistentState(words);
+}
+bool ScriptRunner::p525Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const{
+ if(!trustedP525SettledProgram()||_gameStateHandler!=g||_soundHandler!=s||_successHandler!=success||_successGlobal!=41||_successExtraGlobal!=-1||_spriteTargets.size()!=22||_soundTargets.size()!=923||!_soundTargets[912]||!_soundTargets[300]||_movieDurations.size()!=1||_movieDurations[0]!=2402||_imageTargets.size()!=4)return false;
+ if(_p501ReadySupport||_p504PollSupport||_p509PendingSupport||_ballHandler||_cometHandler||_nativePaletteSupport||_jupiterSupport||_plotSupport||_dangerSupport||_probeHandler||_rendezvousHandler||_orbitHandler||_rocketSupport||_eclipseSupport||_planetSupport||_variantSupport||_weatherSupport||_mentorSupport||_adviceSupport||_worldMovieSupport||_helpSupport||_legacyResumeSupport||_resumeSupport||_resumeFromHelp||_photonSupport||_zodiacSupport||_noopSuccess)return false;
+ for(uint i=0;i<22;++i)if(_spriteTargets[i]!=spriteFrameCount(scene,i))return false;
+ for(uint i=0;i<=16;++i)if(!_soundTargets[i])return false;
+ for(const char*n:{"4BACK_1","4BACK_2","6BACK_2","SKY_B"}){bool found=false;for(const Common::String&t:_imageTargets)found|=t==n;if(!found)return false;}return true;
+}
+bool ScriptRunner::testP525SettledState(const ScriptRunner&prepared,const Scene&scene,uint32 now)const{
+ Common::Array<uint32>w,again;if(!exportP525SettledState(w)||!prepared.exportP525SettledState(again)||again!=w)return false;
+ const uint32 live=probeDiagnosticHash(true);
+ // Isolated future effects are collected as actions; these two original
+ // scripts do not call success/blocking voice, so live handlers are not run.
+ for(const Script*program:{&_programs[1],&scene.sprites[21].click}){
+  ScriptRunner expected=*this,actual=prepared;if(!expected.enqueue(*program,now,true)||!actual.enqueue(*program,now,true))return false;
+  for(uint32 at:{now,now+1,now+150,now+500}){expected.tick(at);actual.tick(at);if(expected.probeDiagnosticHash(false)!=actual.probeDiagnosticHash(false))return false;}
+ }
+ uint rejects=0;
+ auto reject=[&](const Common::Array<uint32>&bad){ScriptRunner target=prepared;const uint32 before=target.probeDiagnosticHash(true);++rejects;return !target.importP525SettledState(bad)&&target.probeDiagnosticHash(true)==before;};
+ for(uint n=0;n<605;++n){Common::Array<uint32>bad=w;bad.resize(n);if(!reject(bad))return false;}
+ {Common::Array<uint32>bad=w;bad.push_back(0);if(!reject(bad))return false;}
+ for(uint offset:{2U,300U,301U,302U,303U,304U,305U,306U,307U,308U,324U,325U,326U,328U,329U,602U,603U,604U}){Common::Array<uint32>bad=w;bad[offset]=0xffffffffU;if(!reject(bad))return false;}
+ for(uint kind=0;kind<5;++kind){ScriptRunner bad=prepared;if(kind==0)bad._programs[0][0].offset++;if(kind==1)bad._programs[4][1].args[2]++;if(kind==2)bad._pending.push_back(Pending{_programs[1],0,now});if(kind==3)bad._actions.push_back(Action{});if(kind==4)bad._clicksBlocked=true;Common::Array<uint32>out;out.push_back(123456);const uint32 before=bad.probeDiagnosticHash(true);if(bad.exportP525SettledState(out)||out.size()!=1||out[0]!=123456||bad.importP525SettledState(w)||bad.probeDiagnosticHash(true)!=before)return false;}
+ if(probeDiagnosticHash(true)!=live)return false;
+ debug("P525 settled runner data: PASS (605 literal words,2 original action futures,%u atomic invalids,5 program/queue exclusions,variant%u/mask%u)",rejects,w[603],w[604]);return true;
+}
+void ScriptRunner::p525AuditExport(Common::Array<uint32>&words)const{exportSettledValues(words);words.push_back(_variantRound);words.push_back(_variantMask);}
+void ScriptRunner::p525AuditPending(uint row,uint32 now)const{
+ debug("P525QUEUE row=%u now=%u loaded=%u pending=%u actions=%u blocked=%u",row,now,_programLoadedAt,_pending.size(),_actions.size(),uint(_clicksBlocked));
+ for(uint i=0;i<_pending.size();++i){const Pending&p=_pending[i];int program=-1;for(uint j=0;j<_programs.size();++j)if(p.script.size()==_programs[j].size()){bool same=true;for(uint k=0;k<p.script.size();++k){const Command&a=p.script[k],&b=_programs[j][k];same&=a.opcode==b.opcode&&a.delay==b.delay&&a.args==b.args&&a.text==b.text;}if(same)program=j;}debug("P525PENDING row=%u program=%d index=%u since=%u count=%u",row,program,p.index,p.since,p.script.size());}
+}
+
 uint32 ScriptRunner::probeDiagnosticHash(bool strict) const {
  uint32 h=2166136261U;auto add=[&](uint32 v){h=(h^v)*16777619U;};Common::Array<uint32>w;exportSettledValues(w);for(uint32 v:w)add(v);add(_variantRound);add(_variantMask);add(_clicksBlocked);add(_pending.size());add(_actions.size());
  for(const Pending&p:_pending){add(p.index);add(p.since);add(p.script.size());for(const Command&c:p.script){add(c.opcode);add(c.delay);add(c.args.size());for(int32 v:c.args)add(v);}}
@@ -2053,6 +2929,91 @@ uint ScriptRunner::enqueueStartup(const Common::Array<Script> &scripts, uint32 n
   if (!scripts[i].empty() && enqueue(scripts[i], _programLoadedAt, allowTimed)) ++accepted;
  return accepted;
 }
+static bool p525ExactOriginalSubmit(const Script&script){
+ if(script.size()!=79)return false;
+ auto exact=[&](uint index,uint32 offset,int opcode,int delay,std::initializer_list<int32>args,const char*text){const Command&c=script[index];if(c.offset!=offset||c.opcode!=opcode||c.delay!=delay||c.args.size()!=args.size()||c.text!=text)return false;uint i=0;for(int32 value:args)if(c.args[i++]!=value)return false;return true;};
+ return
+  exact(0,501272,28,0,{-1},"") &&
+  exact(1,501284,9,0,{9},"") &&
+  exact(2,501296,16,0,{11},"") &&
+  exact(3,501308,17,2000,{11},"") &&
+  exact(4,501320,9,-1,{10},"") &&
+  exact(5,501332,17,-1,{21},"") &&
+  exact(6,501344,17,-1,{5},"") &&
+  exact(7,501356,17,-1,{7},"") &&
+  exact(8,501368,17,-1,{6},"") &&
+  exact(9,501380,17,-1,{17},"") &&
+  exact(10,501392,17,-1,{18},"") &&
+  exact(11,501404,17,-1,{19},"") &&
+  exact(12,501416,17,-1,{20},"") &&
+  exact(13,501428,17,-1,{15},"") &&
+  exact(14,501440,31,0,{1,1,1,0,0,0},"") &&
+  exact(15,501472,32,0,{1,2,1},"") &&
+  exact(16,501492,9,0,{11},"") &&
+  exact(17,501504,16,-1,{9},"") &&
+  exact(18,501516,17,4000,{9},"") &&
+  exact(19,501528,45,-1,{},"") &&
+  exact(20,501536,31,0,{1,1,2,0,0,0},"") &&
+  exact(21,501568,32,0,{1,3,1},"") &&
+  exact(22,501588,9,0,{12},"") &&
+  exact(23,501600,16,-1,{10},"") &&
+  exact(24,501612,17,4000,{10},"") &&
+  exact(25,501624,45,-1,{},"") &&
+  exact(26,501632,31,0,{1,1,3,0,0,0},"") &&
+  exact(27,501664,32,0,{1,4,1},"") &&
+  exact(28,501684,9,0,{13},"") &&
+  exact(29,501696,16,-1,{8},"") &&
+  exact(30,501708,17,4000,{8},"") &&
+  exact(31,501720,45,-1,{},"") &&
+  exact(32,501728,31,0,{1,1,4,0,0,0},"") &&
+  exact(33,501760,32,0,{1,5,1},"") &&
+  exact(34,501780,37,0,{0,150,179},"") &&
+  exact(35,501800,3,-1,{0,160,40,0},"") &&
+  exact(36,501824,20,8000,{169,0},"4BACK_1") &&
+  exact(37,502095,49,-1,{},"") &&
+  exact(38,502103,20,1300,{0,0},"4BACK_2") &&
+  exact(39,502374,49,-1,{},"") &&
+  exact(40,502382,20,0,{0,0},"sky_b") &&
+  exact(41,502653,49,1300,{},"") &&
+  exact(42,502661,37,0,{0,453,209},"") &&
+  exact(43,502681,3,300,{0,160,40,0},"") &&
+  exact(44,502705,20,10000,{0,0},"sky_b") &&
+  exact(45,502976,49,-1,{},"") &&
+  exact(46,502984,45,-1,{},"") &&
+  exact(47,502992,31,0,{1,1,5,0,0,0},"") &&
+  exact(48,503024,32,0,{1,6,1},"") &&
+  exact(49,503044,37,0,{0,900,452},"") &&
+  exact(50,503064,3,1000,{0,160,40,0},"") &&
+  exact(51,503088,20,16000,{0,0},"sky_b") &&
+  exact(52,503359,49,-1,{},"") &&
+  exact(53,503367,45,-1,{},"") &&
+  exact(54,503375,31,0,{1,1,6,0,0,0},"") &&
+  exact(55,503407,32,0,{1,7,1},"") &&
+  exact(56,503427,9,0,{14},"") &&
+  exact(57,503439,16,-1,{12},"") &&
+  exact(58,503451,9,5000,{15},"") &&
+  exact(59,503463,17,4000,{12},"") &&
+  exact(60,503475,20,-1,{0,0},"6BACK_2") &&
+  exact(61,503746,49,-1,{},"") &&
+  exact(62,503754,20,3000,{0,0},"sky_b") &&
+  exact(63,504025,49,-1,{},"") &&
+  exact(64,504033,16,-1,{13},"") &&
+  exact(65,504045,9,-1,{16},"") &&
+  exact(66,504057,17,4000,{13},"") &&
+  exact(67,504069,45,-1,{},"") &&
+  exact(68,504077,31,0,{1,1,7,0,0,0},"") &&
+  exact(69,504109,32,0,{1,8,1},"") &&
+  exact(70,504129,37,0,{0,1800,480},"") &&
+  exact(71,504149,3,5000,{0,160,40,0},"") &&
+  exact(72,504173,20,17000,{0,0},"sky_b") &&
+  exact(73,504444,49,-1,{},"") &&
+  exact(74,504452,42,-1,{},"") &&
+  exact(75,504460,32,0,{1,1,0},"") &&
+  exact(76,504480,41,2000,{1},"") &&
+  exact(77,504492,41,-1,{4},"") &&
+  exact(78,504504,29,150,{-1},"");
+}
+
 void ScriptRunner::execute(const Script &script, uint index, uint32 now) {
  // Reproduce the reader's single last-condition pointer, not a nesting stack.
  Common::Array<int> links; links.resize(script.size());
@@ -2261,7 +3222,7 @@ void ScriptRunner::execute(const Script &script, uint index, uint32 now) {
    skipElse = _lastTrue;
   }
   if (c.opcode == 3 || c.opcode == 37) {
-   Action movie = {c.opcode, c.args[0], c.args[1], c.args[2]}; _actions.push_back(movie);
+   Action movie = {c.opcode, c.args[0], c.args[1], c.args[2]}; if(trustedP525SettledProgram()&&p525ExactOriginalSubmit(script)){movie.p525OriginalOffset=c.offset;movie.p525OriginalIndex=index;} _actions.push_back(movie);
   }
   if (c.opcode == 19) {
    Action frames = {19,c.args[0],c.args[1],c.args[2]}; _actions.push_back(frames);

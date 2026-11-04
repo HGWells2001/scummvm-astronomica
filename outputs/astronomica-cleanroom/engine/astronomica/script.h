@@ -62,7 +62,7 @@ public:
  struct SuccessHandler { virtual ~SuccessHandler() {} virtual uint32 onPuzzleSuccess(uint32 now) = 0; };
  static int successGlobalForPlace(int place);
  void setSuccessHandler(SuccessHandler *handler, int place) { _successHandler = handler; _successGlobal = successGlobalForPlace(place); _successExtraGlobal = place == 529 ? 60 : -1; }
- struct Action { int32 opcode, value, x, y; Common::String text; int32 motion[3] = {}; };
+ struct Action { int32 opcode, value, x, y; Common::String text; int32 motion[3] = {}; uint32 p525OriginalOffset=0,p525OriginalIndex=0xffffffffU; };
  ScriptRunner() : _lastTrue(false), _clicksBlocked(false), _executed(0), _randomState(1) { memset(_widths, 0, sizeof(_widths)); memset(_known, 0, sizeof(_known)); memset(_values, 0, sizeof(_values)); }
  void loadLocalConditions(const Common::Array<Condition> &conditions);
  void resetGlobals();
@@ -118,6 +118,13 @@ public:
  bool importP510ActiveState(const Common::Array<uint32>&words,uint32 now);
  bool testP510ActiveState(uint32 now)const;
 
+
+ bool exportP525SettledState(Common::Array<uint32>&words)const;
+ bool importP525SettledState(const Common::Array<uint32>&words);
+ bool testP525SettledState(const ScriptRunner&prepared,const Scene&scene,uint32 now)const;
+ bool p525Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const;
+ void p525AuditExport(Common::Array<uint32>&words)const;
+ void p525AuditPending(uint row,uint32 now)const;
  bool exportPersistentState(Common::Array<uint32> &words) const;
  bool importPersistentState(const Common::Array<uint32> &words);
  static bool validPersistentState(const Common::Array<uint32> &words) { return validVariantState(words); }
@@ -133,6 +140,8 @@ public:
  bool importVariantState(const Common::Array<uint32> &words);
  static bool supports(const Script &script, bool allowTimed = false);
 private:
+ bool trustedP525SettledProgram()const;
+ bool validP525SettledValues(const Common::Array<uint32>&words)const;
  bool _p501ReadySupport=false;
  bool trustedP501ReadyProgram() const;
  bool validP501ReadyValues(const Common::Array<uint32>&words,uint32 now) const;

@@ -1,0 +1,57 @@
+{
+  "status": "P525_VERIFIED_CANDIDATE_READY_FOR_MAIN_INTEGRATION",
+  "completed_at": "2026-11-03T21:29:04.435792+00:00",
+  "candidate_exe_sha256": "b20721ee19d08ec5aa91d31e7de8bb42fe79f2e510004e2815d3f7539934cbc7",
+  "stage_sha256": {
+    "astronomica.cpp": "666d2044eb06f4667ef41539be849ada930adc520cd8ff9066738d451ed6e509",
+    "astronomica.h": "cbdcca7b14b2cf8eb0e51b9b241aa825a7e1c0eab5eb5fbe62d3049870cb66df",
+    "script.cpp": "596f84b48cfb63c627c067067eb904c26e3aed3ecaf04b4e4f76995e1db14059",
+    "script.h": "1cd2ddd11c37e951f9dfcdaa3560c14fe7682790916aa3958d2c69757ada2be7",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "canonical_audit_sha256": "988dbdc94de3a6009de5f45ece3ac44df80d2e8578304dc4d1e27bbe28221b19",
+  "completed_gates": {
+    "physical": {
+      "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p525-physical-nov3c-stage\\review-proof.json",
+      "sha256": "6594f98068641909eaff8a4ca38eb876d7119b18664a1b3030bf7029414cc914",
+      "status": "ROOT_P525_PHYSICAL_NATIVE_REVIEW_PASS"
+    },
+    "fresh": {
+      "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p525-physical-fresh-nov3c\\proof.json",
+      "sha256": "f45e22bc583f444c39332348ada837150c6af557a8e14e32115dce129139e255",
+      "status": "P525_PHYSICAL_FRESH_WASAPI_PASS"
+    },
+    "general": {
+      "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p525-general-candidate-nov3c\\proof.json",
+      "sha256": "e63103a3f889675d2404d7efebffd235af05875fc2e8fc558033f5ddf7c00b40",
+      "status": "P525_EXACT_CANDIDATE_GENERAL_NATIVE_PASS"
+    },
+    "v27_v29": {
+      "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p525-prior-versions-nov3c\\proof.json",
+      "sha256": "a95ea1aee0591f64787ea7698c30d93740a15ce2e6282db19c553f4f42877cde",
+      "status": "P525_BOUNDED_GENUINE_PRIOR_V27_V28_V29_PASS"
+    },
+    "v14_v26": {
+      "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p525-genuine-v14-v26-entryfalse-nov3c\\proof.json",
+      "sha256": "92d6290d556ef9fada7db457c0a59f87a594be213b4f341982dde6d015eaa9db",
+      "status": "P525_GENUINE_V14_V26_ENTRYFALSE_WASAPI_PASS"
+    },
+    "p281": {
+      "path": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p525-p281-gateway-nov3c\\gateway-proof.json",
+      "sha256": "8e0f6b3f30729b44cb2e39932d7ddf64df009472fca507135192b3bff98a1eb5",
+      "status": "PASS"
+    }
+  },
+  "proposed_format": 30,
+  "payload_bytes": 5396,
+  "main_modified": false,
+  "public_support": false,
+  "public_save_scenes_unchanged": 33,
+  "limits": [
+    "No canonical/mirror/binary promotion, source publication or new sealed checkpoint yet",
+    "Genuinev14..26 use original false-entry verifier contract; expected true-entry fixture failure reproduced on sealed prior main",
+    "Genuinev27..29 and P525 use their separate supported entry matrices; no newly recovered genuinev1..13 inputs",
+    "Bounded stopped-ready P525 sources/recipients, S0 restart from beginning; no manual whole-game proof"
+  ]
+}

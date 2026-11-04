@@ -1,0 +1,34 @@
+{
+  "status": "ROOT_P525_PHYSICAL_NATIVE_REVIEW_PASS",
+  "reviewed_at": "2026-11-03T21:20:58.672929+00:00",
+  "reviewer_sha256": "ff88438e7d67d48bb2818eda168081ab07cde20f2d4c1ed6c0a81137dd8dfe3a",
+  "source_review_sha256": "9eab61793e8c54bbeeccf8be02d2aede5baeda7670706c0eb4b3ad4fea6efa8f",
+  "producer_sha256": "ca3c15acd5d90d6c7abd857c86c868a61e6366709e6f35fa8e2e759026d91835",
+  "candidate_exe_sha256": "b20721ee19d08ec5aa91d31e7de8bb42fe79f2e510004e2815d3f7539934cbc7",
+  "stage_sha256": {
+    "astronomica.cpp": "666d2044eb06f4667ef41539be849ada930adc520cd8ff9066738d451ed6e509",
+    "astronomica.h": "cbdcca7b14b2cf8eb0e51b9b241aa825a7e1c0eab5eb5fbe62d3049870cb66df",
+    "script.cpp": "596f84b48cfb63c627c067067eb904c26e3aed3ecaf04b4e4f76995e1db14059",
+    "script.h": "1cd2ddd11c37e951f9dfcdaa3560c14fe7682790916aa3958d2c69757ada2be7",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "native_log_sha256": "c1d3996a905cb7d81ec05e6874c5526cfaf8e15056bb3d24a2f58aefa1014844",
+  "physical_slots": [
+    31,
+    32,
+    33,
+    34
+  ],
+  "full_source_future_words": 1347,
+  "source_pixels_and_background": true,
+  "native_metadata_query_list_thumbnail": true,
+  "main_modified": false,
+  "public_support": false,
+  "fresh_processes_pending": 8,
+  "limitations": [
+    "Four loop0 initial/postvideo inactive/active sources only",
+    "Producer only; Python metadata checks and fresh-process continuation remain separate",
+    "No all-prior-version, full general suite, release or whole-game completion claim"
+  ]
+}
