@@ -1,3 +1,15 @@
+# Current update: P523 ASVM31 (6 November 2026)
+
+Native saves now cover **35/35 inventoried route scenes**, each within its documented useful-boundary scope. P523 retains the active movie timeline and resumes from physical saves in fresh processes. See [the exact ASVM31 contract](outputs/astronomica-cleanroom/P523-SAVE-FORMAT.md). This is not a whole-game completion percentage.
+
+**Build requirement changed:** install the paired three-file video-core overlay with the 23 engine files and perform a full clean rebuild. The current preparation tools apply and verify that pair. Read [BUILDING.md](BUILDING.md); old no-core-change statements below describe earlier versions.
+
+The reviewed Windows executable f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182 was freshly built from 410 translation units. Eleven same-binary gates passed, including six fresh ASVM31 loads, 185 recorded-state loads/rewrites, 21 active recipient cases, 32 genuine prior-save processes (v14â€“30), the general suite, and real WASAPI movie-clock/audio gates. The 185 packets are newly encoded recorded native states, not historical ASVM31 save files. Original mixer/resampler phase is not recovered. No new genuine v1â€“13 compatibility claim is made.
+
+Source publication is independently checked before and after pushing. Current manual audiovisual playthrough, exhaustive original-branch inventory and exact help typography remain outstanding. Historical reports below retain their producing versions and limitations.
+
+---
+
 # Current update: P525 ASVM30 (4 November 2026)
 
 Native save coverage: **34/35 route scenes (97.1%)**, with P523 outstanding. See [P525 save contract and verified limits](outputs/astronomica-cleanroom/P525-SAVE-FORMAT.md). The historical notes below retain their original scope; whole-game completion remains unmeasured.
@@ -49,7 +61,7 @@ The local Windows x64 build passed its complete WASAPI regression on 25 October 
 - PageUp/PageDown/Home/End scroll the native help reader; all 781 articles pass keyboard navigation and boundary checks.
 - Help checks cover all articles, image pixels, wheel/drag scrolling and narrow-width/height reflow. Save/import regressions passed on the same executable.
 
-The game is still experimental. Saving during the other puzzles, exact help typography/layout and a complete manual audiovisual playthrough remain outstanding. There is **no measured total completion percentage**; the historical 94.2% refers only to 114 of 121 static entry-script templates.
+The game is still experimental. Native saves have documented scene-specific boundaries; arbitrary-instant saving, exact help typography/layout and a complete manual audiovisual playthrough remain outstanding. There is **no measured total completion percentage**; the historical 94.2% refers only to 114 of 121 static entry-script templates.
 
 ## Build and use
 

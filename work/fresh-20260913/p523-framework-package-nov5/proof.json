@@ -1,0 +1,12 @@
+{
+  "status": "P523_EXACT_FRAMEWORK_PACKAGE_INSTALL_CHECK_PASS",
+  "installer_sha256": "898812f3bb534e82f8b65fa389c085c73ec2a626f417644b04a8efcde2ec3346",
+  "manifest_sha256": "65fb31d27d9ec0359c3ecfdb1c143fe2b11aa3e1b178c70b8b8653f52bbee338",
+  "stock_check": true,
+  "paired_engine_required": true,
+  "installation_exact": true,
+  "idempotent": true,
+  "incompatible_core_refused_without_changes": true,
+  "original_core_backup": true,
+  "main_untouched": true
+}

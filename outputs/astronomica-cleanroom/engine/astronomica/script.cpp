@@ -2324,6 +2324,15 @@ bool ScriptRunner::exportP525SettledState(Common::Array<uint32>&words)const{
 bool ScriptRunner::importP525SettledState(const Common::Array<uint32>&words){
  if(!trustedP525SettledProgram()||!scriptsIdle()||!validP525SettledValues(words))return false;return importPersistentState(words);
 }
+
+bool ScriptRunner::p523PreparedEquivalent(const ScriptRunner&source)const{
+ Common::Array<uint32>a,b;if(!exportPersistentState(a)||!source.exportPersistentState(b)||a!=b||!scriptsIdle()||!source.scriptsIdle())return false;
+ if(!_dangerSupport||!source._dangerSupport||_gameStateHandler!=source._gameStateHandler||_soundHandler!=source._soundHandler||_successHandler!=source._successHandler||_successGlobal!=39||source._successGlobal!=39||_successExtraGlobal!=-1||source._successExtraGlobal!=-1)return false;
+ if(_spriteTargets!=source._spriteTargets||_soundTargets!=source._soundTargets||_movieDurations!=source._movieDurations||_imageTargets.size()!=source._imageTargets.size()||_programs.size()!=source._programs.size()||_resumeFromHelp!=source._resumeFromHelp||_mentorPrevious!=source._mentorPrevious)return false;
+ for(const Common::String&name:_imageTargets){bool found=false;for(const Common::String&other:source._imageTargets)found|=name==other;if(!found)return false;}
+ for(uint i=0;i<_programs.size();++i){if(_programs[i].size()!=source._programs[i].size())return false;for(uint j=0;j<_programs[i].size();++j){const Command&c=_programs[i][j],&e=source._programs[i][j];if(c.opcode!=e.opcode||c.offset!=e.offset||c.delay!=e.delay||c.args!=e.args||c.text!=e.text)return false;}}
+ return true;
+}
 bool ScriptRunner::p525Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const{
  if(!trustedP525SettledProgram()||_gameStateHandler!=g||_soundHandler!=s||_successHandler!=success||_successGlobal!=41||_successExtraGlobal!=-1||_spriteTargets.size()!=22||_soundTargets.size()!=923||!_soundTargets[912]||!_soundTargets[300]||_movieDurations.size()!=1||_movieDurations[0]!=2402||_imageTargets.size()!=4)return false;
  if(_p501ReadySupport||_p504PollSupport||_p509PendingSupport||_ballHandler||_cometHandler||_nativePaletteSupport||_jupiterSupport||_plotSupport||_dangerSupport||_probeHandler||_rendezvousHandler||_orbitHandler||_rocketSupport||_eclipseSupport||_planetSupport||_variantSupport||_weatherSupport||_mentorSupport||_adviceSupport||_worldMovieSupport||_helpSupport||_legacyResumeSupport||_resumeSupport||_resumeFromHelp||_photonSupport||_zodiacSupport||_noopSuccess)return false;

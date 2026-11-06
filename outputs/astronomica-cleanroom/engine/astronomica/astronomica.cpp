@@ -1,3 +1,4 @@
+#include "video/paused_audio_gate.h"
 #include "common/mutex.h"
 #include "common/savefile.h"
 #include "common/ptr.h"
@@ -2230,7 +2231,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- const bool enabled = canSaveP525() || canSaveP512() || canSaveP510() || canSaveP501() || canSaveP504() || canSaveP503() || canSaveP502() || canSaveP527() || canSaveP516() || canSaveP511() || canSaveP509() || canSaveP521() || canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
+ const bool enabled = canSaveP523() || canSaveP525() || canSaveP512() || canSaveP510() || canSaveP501() || canSaveP504() || canSaveP503() || canSaveP502() || canSaveP527() || canSaveP516() || canSaveP511() || canSaveP509() || canSaveP521() || canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
@@ -2240,6 +2241,7 @@ bool AstronomicaEngine::canLoadGameStateCurrently(Common::U32String *msg) {
  return enabled;
 }
 Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, bool) {
+ if (_place == 523) return saveP523(stream);
  if (_place == 525) return saveP525(stream);
  if (!canSaveGameStateCurrently()) return Common::kWritingFailed;
  if (questionProfile(_place)) return saveQuestion(stream);
@@ -2293,6 +2295,7 @@ Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stre
  if (version == 9) return loadP530(stream);
  if (version == 10) return loadVariant(stream);
  if (version == 14) return loadRocket(stream);
+ if (version == 31) return loadP523(stream);
  if (version == 30) return loadP525(stream);
  if (version == 29) return loadP512(stream);
  if (version == 28) return loadP510(stream);
@@ -2373,6 +2376,36 @@ void AstronomicaEngine::closeMovie() {
  _dangerEvent[0] = _dangerEvent[1] = 0; _dangerButtons = 0;
  _movieFrame.free(); _moviePresentedFrame = -1;
 }
+// Read-only P523 observer. No playback, seeking, timing or virtual overrides.
+class P523AudioClockObserver:public Video::QuickTimeDecoder {
+public:
+ bool pausedAudioObservation(Common::Array<uint32>&out){
+  if(!isPlaying()||!isPaused()||getRate()!=Common::Rational(1,1))return false;
+  AudioTrack*audio=nullptr;uint count=0;
+  for(auto it=getTrackListBegin();it!=getTrackListEnd();++it)if((*it)->getTrackType()==Track::kTrackTypeAudio){audio=static_cast<AudioTrack*>(*it);++count;}
+  if(count!=1||!audio)return false;
+  const bool ended=audio->endOfTrack(),paused=audio->isPaused(),sync=useAudioSync();
+  const uint32 elapsed=audio->getRunningTime(),base=_lastTimeChange.msecs();
+  const bool nonzero=elapsed!=0,wouldUse=sync&&!ended&&nonzero;
+  const uint32 anchor=wouldUse?elapsed+base:0;
+  const uint32 words[]={count,uint32(paused),uint32(ended),elapsed,base,uint32(sync),uint32(nonzero),uint32(wouldUse),anchor,wouldUse?anchor:getTime(),audio->getVolume(),uint32(int32(audio->getBalance())),uint32(audio->getSoundType())};
+  for(uint32 value:words)out.push_back(value);return true;
+ }
+ // Four new words are a separate versioned role plan. The old13 audio words
+ // retain their physical-raw/hypothetical meaning and are never normalized.
+ bool pausedResumeObservation(Common::Array<uint32>&out){
+  if(!out.empty())return false;
+  Common::Array<uint32>raw;if(!pausedAudioObservation(raw)||raw.size()!=13||raw[2]||!raw[5])return false;
+  const uint32 offset=getAudioTimelineOffset(),elapsed=raw[3]+offset;
+  if(uint64(raw[4])+elapsed>0x7fffffffU)return false;
+  const bool audio=elapsed!=0;const uint32 active=audio?raw[4]+elapsed:getTime();
+  if(active>209166)return false;
+  for(uint32 value:{offset,elapsed,active,uint32(audio)})out.push_back(value);
+  return true;
+ }
+
+};
+
 void AstronomicaEngine::configureMovie() {
  Common::Array<uint32> durations;
  // _load_place 9:2651-266f redirects P520's shared movie to P408.
@@ -2404,7 +2437,7 @@ void AstronomicaEngine::configureMovie() {
   Common::File *file = new Common::File();
   const Common::Path path = ConfMan.getPath("path").join(Common::Path(world ? Common::String::format("PLACES/P%d/%s",_place,world29 ? "FLAT29.MOV" : "MOV") : interlude ? Common::String::format("PLACES/P%d/%s",_place == 4 ? 2 : _place,transitionMovie) : danger ? "PLACES/P523/DANGERS.MOV" : plot ? "PLACES/P510/FLATPLOT.MOV" : shared ? "PLACES/P408/MENTORS.MOV" : solar ? "PLACES/P525/FSUN.MOV" : universe ? "PLACES/P529/FUNIV.MOV" : weather ? "PLACES/P512/FLATPHEN.MOV" : "PLACES/P527/FLATRING.MOV"));
   if (file->open(Common::FSNode(path))) {
-   _movie = new Video::QuickTimeDecoder();
+   _movie = danger ? static_cast<Video::QuickTimeDecoder*>(new P523AudioClockObserver()) : new Video::QuickTimeDecoder();
    if (_movie->loadStream(file) && _movie->isSeekable() && _movie->getWidth() <= 640 && _movie->getHeight() <= 480) {
     durations.push_back(_movie->getDuration().totalNumberOfFrames());
     // P523 starts playback before custom5 selects the first active segment.
@@ -7067,8 +7100,90 @@ bool AstronomicaEngine::verifyMentors() {
  debug("Astronomica mentors interaction verification: %s (%u decoded selections, no-hint speech, timed return)",ok ? "PASS" : "FAIL",decoded);
  return ok;
 }
+// Observation-only ordinary entry: genuine S301, startup and first failed round.
+// No synthetic seek, callback dispatch, channel/button edit or public save change.
+bool AstronomicaEngine::testP523NormalEntry(){
+ auto fail=[&](const char*reason){debug("P523 normal entry verification: FAIL (%s)",reason);return false;};
+ const bool entry=ConfMan.getBool("astronomica_entry_scripts");
+ ConfMan.setBool("astronomica_entry_scripts",false);
+ if(!loadPlace(117))return fail("prerequisite scene");
+ _runner.resetGlobals();_runner.resetVariantSequence();_runner.defineValue(0,29,1);
+ const uint completed=_puzzlesCompleted,started=_soundsStarted;
+ ConfMan.setBool("astronomica_entry_scripts",true);
+ const bool entered=loadPlace(523);
+ ConfMan.setBool("astronomica_entry_scripts",entry);
+ if(!entered||!_scene.introSound||_scene.introSoundId!=301||_lastSound!=301||_soundsStarted!=started+1||_mixer->isSoundHandleActive(_soundHandle)||_loopSound!=0||!_loopEnabled||!_runner.pendingCount())return fail("real synchronous S301/startup");
+ debug("P523 ordinary introduction: PASS (original S301,one completed real sound,startup pending,loop0 enabled,lastSoundAt%u,clock%u)",_lastSoundAt,scriptClock());
+ const int musicVolume=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),effectsVolume=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);
+ const bool musicMute=_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType),effectsMute=_mixer->isSoundTypeMuted(Audio::Mixer::kSFXSoundType);
+ bool startupSeen=false,readySeen=false,promptSeen=false,failureSeen=false;
+ const bool liveRequested=ConfMan.hasKey("astronomica_verify_p523_live_resume")&&ConfMan.getBool("astronomica_verify_p523_live_resume");
+ const int target=ConfMan.hasKey("astronomica_p523_live_resume_row")?ConfMan.getInt("astronomica_p523_live_resume_row"):0;
+ if(liveRequested&&(target<0||target>3))return fail("invalid live resume target");
+ uint liveResumes=0;
+
+ uint row=0;const uint32 began=_system->getMillis();
+ auto observe=[&](const char*tag){
+  if(_loopSound!=0||!_loopEnabled||_lastSoundAt||_mixer->isSoundHandleActive(_soundHandle)||!_movie||!_moviePlaying||!_movie->isPlaying())return false;
+  if(!testP523ActiveCapture(row,tag))return false;
+  debug("P523 ordinary source observation: PASS (row%u,tag%s,clock%u,loop%d,lastSound%d,soundStarts%u,activeForeground%u,range%u..%u,events%d/%d,times%u/%u,current%d,presented%d,channels%d/%d/%d,buttons%d)",row,tag,scriptClock(),_loopSound,_lastSound,_soundsStarted-started,uint(_mixer->isSoundHandleActive(_soundHandle)),_movieSegmentStart,uint(_movie->getEndTime().convertToFramerate(30).totalNumberOfFrames()),_dangerEvent[0],_dangerEvent[1],_dangerTime[0],_dangerTime[1],_movie->getCurFrame(),_moviePresentedFrame,_dangerChannels[0],_dangerChannels[1],_dangerChannels[2],_dangerButtons);
+  if(liveRequested&&row>=1&&(target==0||row==uint(target))){
+   PauseToken outer=pauseEngine(),inner=pauseEngine();P523Capture source;Common::Array<uint32>mapping;
+   if(!captureP523Active(source)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping))return false;
+   const uint sounds=_soundsStarted;P523TrustedPrepared prepared;
+   const bool rebuild=ConfMan.hasKey("astronomica_p523_live_resume_rebuild")&&ConfMan.getBool("astronomica_p523_live_resume_rebuild");
+   P523Capture fromOriginal;
+   if(rebuild&&!rebuildP523OriginalCapture(source,fromOriginal))return false;
+   if(!prepareP523TrustedState(rebuild?fromOriginal:source,mapping,prepared)||!commitP523TrustedState(prepared)||_soundsStarted!=sounds||!_movie||!_movie->isPlaying()||!_movie->isPaused())return false;
+   P523Capture restored;Common::Array<uint32>restoredPlan;
+   if(!captureP523Active(restored)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(restoredPlan)||restoredPlan.size()!=4)return false;
+   if(restored.values!=source.values||restored.sprites!=source.sprites||restored.privateState!=source.privateState||restored.displayedName!=source.displayedName)return false;
+   for(uint i=0;i<54;++i)if(restored.header[i]!=source.header[i])return false;
+   for(uint i=1;i<4;++i)if(restoredPlan[i]!=mapping[i])return false;
+   if(screenRGBHash(restored.background,480)!=screenRGBHash(source.background,480)||screenRGBHash(restored.composed,480)!=screenRGBHash(source.composed,480)||screenRGBHash(restored.frame,240)!=screenRGBHash(source.frame,240))return false;
+   // This is a permanent restoration, not the rollback test: destroy retired
+   // original movie/scene/runner owners before the final aggregate release.
+   prepared.clearOwned();if(!prepared.empty())return false;
+   inner.clear();_system->delayMillis(20);
+   if(!_clockPaused||!_movie->isPaused()||scriptClock()!=source.header[2]||_movie->getTime()!=source.header[7])return false;
+   outer.clear();if(_clockPaused||_movie->isPaused()||!_movie->isPlaying())return false;
+   ++liveResumes;
+   debug("P523 ordinary permanent resume: PASS (row%u,target%d,retired original owners destroyed,inner retains/outer resumes,sourceSystem%u,effectiveElapsed%u,effectiveAnchor%u,one actual state commit,no intro/startup replay)",row,target,source.header[7],mapping[1],mapping[2]);
+  }
+  ++row;return true;
+ };
+ while(_place==523&&_system->getMillis()-began<45000){
+  runScriptsAt(scriptClock());updateWorldAt(scriptClock());animateSpritesAt(scriptClock());resumeLoopAt(scriptClock());updateMovie();
+  if(_place!=523)break;
+  if(_moviePlaying&&!startupSeen){
+   if(_runner.scriptsIdle()||!observe("normal-startup-pending"))return fail("startup capture refusal");startupSeen=true;
+  }
+  if(_moviePlaying&&_runner.scriptsIdle()&&!readySeen){
+   if(_movieSegmentStart||_dangerEvent[0]!=1||_dangerEvent[1]!=13||_dangerTime[0]!=600||_dangerTime[1]!=510||!observe("normal-ready"))return fail("original ready capture");readySeen=true;
+  }
+  if(readySeen&&!promptSeen&&_dangerEvent[1]==0){
+   if(_movieSegmentStart||_dangerEvent[0]!=1||_dangerTime[0]!=600||_dangerTime[1]!=510||!_scene.sprites[4].visible||!_scene.sprites[5].visible||!observe("normal-prompt13"))return fail("natural prompt13");promptSeen=true;
+  }
+  if(promptSeen&&!failureSeen&&_movieSegmentStart==602){
+   if(_dangerEvent[0]!=3||_dangerTime[0]!=708||_dangerEvent[1]||_dangerButtons||!observe("normal-failure1"))return fail("natural first failure");failureSeen=true;
+  }
+  _system->delayMillis(10);
+ }
+ int32 solved=-1;
+ if(_place!=117||!startupSeen||!readySeen||!promptSeen||!failureSeen||row!=4||_movie||_moviePlaying||_dangerEvent[0]||_dangerEvent[1]||_puzzlesCompleted!=completed||!_runner.getValue(0,39,solved)||solved)return fail("natural event3 departure");
+ if(_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)!=musicVolume||_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType)!=effectsVolume||_mixer->isSoundTypeMuted(Audio::Mixer::kMusicSoundType)!=musicMute||_mixer->isSoundTypeMuted(Audio::Mixer::kSFXSoundType)!=effectsMute)return fail("mixer preferences");
+ if(liveRequested){
+  if(liveResumes!=uint(target==0?3:1))return fail("permanent restoration count");
+  debug("P523 ordinary live resume natural continuation: PASS (target%d,resumes%u,original S301 once,natural callbacks13/1/3,actual seek/play lifecycle after restored timeline,P117 unsolved,completion and preferences retained,no external save codec)",target,liveResumes);
+ }else debug("P523 normal entry verification: PASS (original S301/loop0,4observations,3owned/1pending-refusal,natural callbacks13/1/3,first failure to117,unchanged completion and mixer preferences,no seeks/active restore by source observer; optional physical saves verified separately)");
+ return true;
+}
+
 bool AstronomicaEngine::verifyP523Puzzle() {
  _runner.defineValue(0,29,1); // Legitimate entry state for help/return.
+ uint captureRows=0;
+ auto observe=[&](const char*tag,uint32 now){if(_place!=523)return;const uint row=captureRows++;if(!testP523ActiveCapture(row,tag))error("P523 active capture FAIL row%u tag%s",row,tag);};
+
  uint32 hash = 2166136261U;
  const int levels[] = {0,19,20,29,30,39,40,59,60,74,75,99};
  auto fold = [&](int value) { hash = (hash ^ uint32(value))*16777619U; };
@@ -7123,11 +7238,12 @@ bool AstronomicaEngine::verifyP523Puzzle() {
    if (_runner.clicksBlocked() || spriteAt(x,y) != id-1 || !_runner.canRun(button.click,true)) {
     debug("P523 button %d: blocked %d hit %d ready %d",id,int(_runner.clicksBlocked()),spriteAt(x,y),int(_runner.canRun(button.click,true)));return false;
    }
-   clickAtTime(x,y,now);wait(350);return true;
+   clickAtTime(x,y,now);wait(350);observe("after-input",now);return true;
   };
   bool good = _runner.enqueueStartup(_scene.scripts,now,true) == 1; wait(200);
   good = _moviePlaying && _dangerEvent[0] == 1 && _dangerEvent[1] == 13 && good;
   good = _dangerChannels[0] == 33 && _dangerChannels[1] == 33 && _dangerChannels[2] == 33 && good;
+  observe("startup",now);
   if (route == 9) good = press(41) && _dangerChannels[2] > 33 && press(5) && _dangerButtons == 1 && good;
   if (route >= 8) { good = press(route == 8 ? 42 : 43) && good; wait(10000); }
   uint callbacks = 0, frames = 0; int answered = 0, prepared = 0;
@@ -7135,6 +7251,7 @@ bool AstronomicaEngine::verifyP523Puzzle() {
   while (route < 8 && _place == 523 && _moviePlaying && callbacks < 30 && _system->getMillis()-started < 240000) {
    int slot = _dangerEvent[0] ? 0 : 1;
    if (_dangerEvent[1] && (! _dangerEvent[0] || _dangerTime[1] < _dangerTime[0])) slot = 1;
+   observe("before-callback",now);
    const int event = _dangerEvent[slot]; if (!event) break;
    bool decision = false; for (int e : decisions) decision = decision || event == e;
    const int prepareEvent = continuous ? _dangerEvent[0] : event;
@@ -7160,6 +7277,7 @@ bool AstronomicaEngine::verifyP523Puzzle() {
    } else {
     good = _movie->seek(Audio::Timestamp(0,_dangerTime[slot]+1,30)) && good; updateMovie();
    }
+   observe("after-callback",now);
    if (_place != 523 || _dangerEvent[slot] != event) ++callbacks;
   }
   int32 solved = 0; _runner.getValue(0,39,solved);
@@ -7189,6 +7307,7 @@ bool AstronomicaEngine::verifyP523Puzzle() {
   ok = good && ok;
  }
  debug("Astronomica P523 interaction verification: %s",ok ? "PASS" : "FAIL");
+ debug("P523 capture observation: PASS (rows%u; capture only,no active restore/audio cursor/public save)",captureRows);
  return ok;
 }
 
@@ -7351,6 +7470,896 @@ uint32 AstronomicaEngine::p510WholeLiveHash()const{
  for(const Graphics::Surface*image:{&_screen,&_background,&_movieFrame,&_pendingImage}){uint64 ptr=uint64(reinterpret_cast<uintptr_t>(image->getPixels()));add(uint32(ptr));add(uint32(ptr>>32));add(image->w);add(image->h);for(int y=0;y<image->h;++y)for(int x=0;x<image->w*image->format.bytesPerPixel;++x)add(*((const byte*)image->getBasePtr(0,y)+x));}
  uint64 ptr=uint64(reinterpret_cast<uintptr_t>(_movie));add(uint32(ptr));add(uint32(ptr>>32));if(_movie){add(_movie->isPlaying());add(_movie->isPaused());add(_movie->getRate().getNumerator());add(_movie->getRate().getDenominator());add(_movie->getCurFrame());add(_movie->getVolume());add(_movie->getEndTime().msecs());}return h;
 }
+// Capture-only diagnostic. This owns a snapshot, not a decoder or audio cursor.
+// AUTHOR ONLY. Prepares actual original media while stopped and locally paused.
+// The caller's PCM sample is an independent test coordinate, never a captured
+// live cursor inferred from millisecond clocks. There is NO activation method.
+class P523DetachedQuickTime final:public P523AudioClockObserver {
+public:
+ bool exactAudioShape()const{
+  return _audioTracks.size()==1&&_audioTracks[0]->getRate()==11127&&!_audioTracks[0]->isStereo()&&_audioTracks[0]->getLength().convertToFramerate(11127).totalNumberOfFrames()==2327026;
+ }
+ bool seekDetachedAudio(uint32 sample){
+  if(isPlaying()||!exactAudioShape()||sample>=2327026)return false;
+  return _audioTracks[0]->seek(Audio::Timestamp(0,sample,11127));
+ }
+ // Optional independent preparation test. Reseek restores the chosen source
+ // coordinate; decoder video frame/end/clock remain independent and stopped.
+ bool probeDetachedAudio(uint32 sample,uint count,Common::Array<int16>&out){
+  if(count>257||uint64(sample)+count>2327026||!seekDetachedAudio(sample))return false;
+  _audioTracks[0]->queueRemainingAudio();Common::Array<int16>samples;samples.resize(count);
+  if(count&&_audioTracks[0]->readBuffer(&samples[0],count)!=int(count))return false;
+  if(!seekDetachedAudio(sample))return false;out.swap(samples);return true;
+ }
+ bool detachedAudioProperties(uint32 volume,int32 balance,uint32 type){
+  if(isPlaying()||volume>255||balance<-128||balance>127||type!=uint32(Audio::Mixer::kPlainSoundType))return false;
+  uint count=0;for(auto it=getTrackListBegin();it!=getTrackListEnd();++it)if((*it)->getTrackType()==Track::kTrackTypeAudio){
+   AudioTrack*a=static_cast<AudioTrack*>(*it);a->setVolume(byte(volume));a->setBalance(int8(balance));a->setSoundType(Audio::Mixer::kPlainSoundType);++count;
+  }
+  return count==1;
+ }
+ void retainStoppedSystemClock(uint32 ms){_lastTimeChange=Audio::Timestamp(ms);}
+ uint32 resumeRawElapsed(){
+  for(auto it=getTrackListBegin();it!=getTrackListEnd();++it)
+   if((*it)->getTrackType()==Track::kTrackTypeAudio)return static_cast<AudioTrack*>(*it)->getRunningTime();
+  return 0;
+ }
+ bool startFromSourceClock(const Common::Array<uint32>&h){
+  if(h.size()!=67||isPlaying()||!isPaused()||!exactAudioShape()||h[56]||h[59]!=1||uint64(h[63])*30>=uint64(h[11])*1000)return false;
+  // The limiting stream must start with end minus effective active anchor.
+  // importPausedTimeline then retains the separately represented old base.
+  _lastTimeChange=Audio::Timestamp(h[63]);start();
+  if(!importPausedTimeline(h[7],h[58],h[57])){stop();return false;}
+  return isPlaying()&&isPaused()&&getTime()==h[7];
+ }
+ bool startFromResumePlan(const Common::Array<uint32>&h,const Common::Array<uint32>&plan){
+  if(h.size()!=67||plan.size()!=4||isPlaying()||!isPaused()||!exactAudioShape()||h[56]||h[59]!=1)return false;
+  const uint32 effective=h[57]+plan[0];const bool audio=effective!=0;
+  if(effective!=plan[1]||plan[3]!=uint32(audio)||uint64(h[58])+effective>0x7fffffffU)return false;
+  const uint32 active=audio?h[58]+effective:h[7];
+  if(active!=plan[2]||uint64(active)*30>=uint64(h[11])*1000)return false;
+  _lastTimeChange=Audio::Timestamp(active);start();
+  if(!importPausedTimeline(h[7],h[58],effective)){stop();return false;}
+  return isPlaying()&&isPaused()&&getTime()==h[7];
+ }
+ bool probePausedResumeCursor(uint32 sample,uint count,Common::Array<int16>&out){
+  if(!isPlaying()||!isPaused()||!exactAudioShape()||count>257||uint64(sample)+count>2327026)return false;
+  // This test-only read observes the actual cursor AFTER mixer admission.
+  // It does not seek before reading, so any premature source reads are visible.
+  _audioTracks[0]->queueRemainingAudio();Common::Array<int16>values;values.resize(count);
+  if(count&&_audioTracks[0]->readBuffer(&values[0],count)!=int(count))return false;
+  // Never recreate a registered stream queue: the mixer checks endOfStream
+  // even for a paused handle. This diagnostic tap advances only its own
+  // disposable prepared stream; no reseek is performed while registered.
+  out.swap(values);return true;
+ }
+
+};
+
+AstronomicaEngine::P523DetachedMedia::~P523DetachedMedia(){clearOwned();}
+void AstronomicaEngine::P523DetachedMedia::clearOwned(){
+ delete decoder;decoder=nullptr;current.free();presented.free();background.free();composed.free();sourceHeader.clear();sourceResumePlan.clear();preparedResumePlan.clear();independentPcmSample=0;ready=false;
+}
+bool AstronomicaEngine::P523DetachedMedia::empty()const{
+ return !ready&&!decoder&&!current.getPixels()&&!presented.getPixels()&&!background.getPixels()&&!composed.getPixels()&&sourceHeader.empty()&&sourceResumePlan.empty()&&preparedResumePlan.empty()&&!independentPcmSample;
+}
+bool AstronomicaEngine::prepareP523DetachedMedia(const P523Capture&source,uint32 independentPcmSample,P523DetachedMedia&out){
+ if(!out.empty()||!source.ready||source.header.size()!=67||source.values.size()!=605||source.sprites.size()!=1320||source.privateState.size()!=142)return false;
+ const Common::Array<uint32>&h=source.header;
+ if(h[0]!=523||h[4]!=1||h[5]!=1||h[6]!=1||h[16]!=1||h[17]!=1||h[54]!=1||h[55]!=1||h[56]||h[59]!=1)return false;
+ if(h[60]>1||h[61]>1||h[60]!=uint32(h[57]!=0)||h[61]!=h[60]||uint64(h[57])+h[58]>0xffffffffU)return false;
+ if(h[62]!=(h[61]?h[57]+h[58]:0)||h[63]!=(h[61]?h[62]:h[7]))return false;
+ if((h[30]!=0xffffffffU&&h[30]!=0)||h[31]!=1||h[37]||h[15]>255||h[64]>255||int32(h[65])<-128||int32(h[65])>127||h[66]!=uint32(Audio::Mixer::kPlainSoundType))return false;
+ if((h[8]!=0xffffffffU&&h[8]>=2092)||(h[9]!=0xffffffffU&&h[9]>=2092)||h[10]>=h[11]||h[11]>6275||h[7]>209166||h[58]>209166||h[63]>209166||independentPcmSample>=2327026)return false;
+ if(source.background.w!=640||source.background.h!=480||source.composed.w!=640||source.composed.h!=480)return false;
+ if(h[9]==0xffffffffU){if(source.frame.getPixels())return false;}else if(source.frame.w!=320||source.frame.h!=240)return false;
+ const Common::Path path=ConfMan.getPath("path");
+ if(!universeFileIdentity(path.join("PLACES/P523/MEGAFILE.HYP"),627978,1311441806U)||!universeFileIdentity(path.join("PLACES/P523/DANGERS.MOV"),13472367,132671667U))return false;
+ P523DetachedMedia p;P523DetachedQuickTime*d=new P523DetachedQuickTime();p.decoder=d;
+ Common::File*file=new Common::File();if(!file->open(Common::FSNode(path.join("PLACES/P523/DANGERS.MOV")))){delete file;return false;}
+ if(!d->loadStream(file)||d->getFrameCount()!=2092||d->getWidth()!=320||d->getHeight()!=240||d->getTimeScale()!=30||!d->exactAudioShape())return false;
+ d->setVolume(byte(h[15]));
+ if(h[8]!=0xffffffffU){
+  if(!d->seekToFrame(h[8]))return false;const Graphics::Surface*f=d->decodeNextFrame();
+  if(!f||d->getCurFrame()!=int32(h[8]))return false;
+  Graphics::Surface*rgb=f->convertTo(_screen.format,d->getPalette());if(!rgb)return false;p.current.copyFrom(*rgb);rgb->free();delete rgb;
+ }
+ if(d->getCurFrame()!=int32(h[8])||!d->seekDetachedAudio(independentPcmSample))return false;
+ d->setEndTime(Audio::Timestamp(0,h[11],30));
+ if(!d->detachedAudioProperties(h[64],int32(h[65]),h[66]))return false;
+ d->retainStoppedSystemClock(h[7]);d->pauseVideo(true);
+ if(d->isPlaying()||!d->isPaused()||d->getRate()!=Common::Rational(0,1)||d->getTime()!=h[7]||d->getCurFrame()!=int32(h[8])||d->getEndTime().convertToFramerate(30).totalNumberOfFrames()!=h[11])return false;
+ p.background.copyFrom(source.background);p.composed.copyFrom(source.composed);if(source.frame.getPixels())p.presented.copyFrom(source.frame);
+ if(h[8]!=0xffffffffU&&h[8]==h[9]&&screenRGBHash(p.current,240)!=screenRGBHash(source.frame,240))return false;
+ // All67 source words survive literally, including original audio elapsed,
+ // original base, paused-system clock and hypothetical unpaused anchor.
+ // The prepared stopped decoder's base is intentionally not claimed to be
+ // that original live base. Activation/elapsed policy remains unresolved.
+ p.sourceHeader=h;p.independentPcmSample=independentPcmSample;p.ready=true;
+ p510SwapValue(p.decoder,out.decoder);p510SwapSurface(p.current,out.current);p510SwapSurface(p.presented,out.presented);p510SwapSurface(p.background,out.background);p510SwapSurface(p.composed,out.composed);p.sourceHeader.swap(out.sourceHeader);p510SwapValue(p.independentPcmSample,out.independentPcmSample);p510SwapValue(p.ready,out.ready);
+ return p.empty();
+}
+
+// Proposed native preparation proof, called only inside an existing real
+// nested-pause accepted source capture. These three PCM coordinates come from
+// independently checked original raw8 tables; none is a source capture cursor.
+bool AstronomicaEngine::testP523DetachedPreparation(const P523Capture&source,uint row){
+ if(!_clockPaused||!_movie||!_movie->isPaused())return false;
+ const uint32 live=p510WholeLiveHash();Video::QuickTimeDecoder*const movie=_movie;
+ const Audio::SoundHandle sound=_soundHandle;
+ auto unchanged=[&](){
+  P523Capture again;if(!captureP523Active(again))return false;
+  return _movie==movie&&_soundHandle==sound&&p510WholeLiveHash()==live&&again.header==source.header&&again.values==source.values&&again.sprites==source.sprites&&again.privateState==source.privateState&&screenRGBHash(again.background,480)==screenRGBHash(source.background,480)&&screenRGBHash(again.composed,480)==screenRGBHash(source.composed,480)&&screenRGBHash(again.frame,240)==screenRGBHash(source.frame,240);
+ };
+ P523DetachedMedia vacant;P523Capture missing;
+ if(prepareP523DetachedMedia(missing,0,vacant)||!vacant.empty()||!unchanged()||prepareP523DetachedMedia(source,2327026,vacant)||!vacant.empty()||!unchanged())return false;
+ static const struct{uint32 sample,count,hash;}cases[]={{0,257,2536459551U},{11127,257,510760735U},{2327025,1,79537951U}};
+ for(const auto&test:cases){
+  P523DetachedMedia p;if(!prepareP523DetachedMedia(source,test.sample,p)||!p.ready||!p.decoder||p.sourceHeader!=source.header||p.independentPcmSample!=test.sample||!unchanged())return false;
+  if(p.decoder->isPlaying()||!p.decoder->isPaused()||p.decoder->getRate()!=Common::Rational(0,1)||p.decoder->getCurFrame()!=int32(source.header[8])||p.decoder->getTime()!=source.header[7])return false;
+  if(p.background.getPixels()==source.background.getPixels()||p.composed.getPixels()==source.composed.getPixels()||(source.frame.getPixels()&&p.presented.getPixels()==source.frame.getPixels()))return false;
+  const uint32 beforeFrame=screenRGBHash(p.current,240),beforePresented=screenRGBHash(p.presented,240);
+  if(screenRGBHash(p.background,480)!=screenRGBHash(source.background,480)||screenRGBHash(p.composed,480)!=screenRGBHash(source.composed,480)||beforePresented!=screenRGBHash(source.frame,240))return false;
+  P523DetachedQuickTime*const d=static_cast<P523DetachedQuickTime*>(p.decoder);Common::Array<int16>samples;
+  if(!d->probeDetachedAudio(test.sample,test.count,samples)||samples.size()!=test.count)return false;
+  uint32 hash=2166136261U;for(int16 sample:samples)hash=(hash^uint16(sample))*16777619U;
+  if(hash!=test.hash||d->isPlaying()||!d->isPaused()||d->getTime()!=source.header[7]||d->getCurFrame()!=int32(source.header[8])||screenRGBHash(p.current,240)!=beforeFrame||screenRGBHash(p.presented,240)!=beforePresented||!unchanged())return false;
+  // Ready-holder rejection must leave every owned pointer and retained plan
+  // unchanged. No implicit replacement or double ownership is admitted.
+  const void*current=p.current.getPixels(),*presented=p.presented.getPixels(),*bg=p.background.getPixels(),*screen=p.composed.getPixels();
+  if(prepareP523DetachedMedia(source,test.sample,p)||p.decoder!=d||p.current.getPixels()!=current||p.presented.getPixels()!=presented||p.background.getPixels()!=bg||p.composed.getPixels()!=screen||p.sourceHeader!=source.header||p.independentPcmSample!=test.sample||!unchanged())return false;
+  p.clearOwned();if(!p.empty()||!unchanged())return false;
+  debug("P523 detached preparation cell: PASS (row%u,sample%u,count%u,pcm%08x,sourceClock%u,sourceBase%u,sourceElapsed%u,sourceAnchor%u,branch%u,current%d,presented%d,stopped/locally-paused/no-start,67source words retained,source unchanged)",row,test.sample,test.count,hash,source.header[7],source.header[58],source.header[57],source.header[62],source.header[61],int32(source.header[8]),int32(source.header[9]));
+ }
+ debug("P523 detached preparation boundary: PASS (row%u,3independent PCM offsets,no inferred source cursor,no live activation)",row);return true;
+}
+
+AstronomicaEngine::P523Capture::~P523Capture(){clearOwned();}
+void AstronomicaEngine::P523Capture::clearOwned(){sourceOwner=nullptr;background.free();frame.free();composed.free();scene=Scene();runner=ScriptRunner();header.clear();values.clear();sprites.clear();privateState.clear();displayedName.clear();ready=false;}
+bool AstronomicaEngine::P523Capture::vacantOwners()const{return !sourceOwner&&!ready&&!background.getPixels()&&!frame.getPixels()&&!composed.getPixels()&&scene.sprites.empty()&&scene.scripts.empty()&&scene.conditions.empty()&&scene.mouseRects.empty()&&scene.movies.empty()&&!runner.pendingCount();}
+// Real owned decoder preparation under the source's aggregate Engine pause.
+// The selected PCM sample is a declared millisecond-to-sample convention,
+// never a captured original mixer/resampler/backend cursor.
+bool AstronomicaEngine::testP523PausedResumePreparation(const P523Capture&source,uint row){
+ if(!_clockPaused||!_movie||!_movie->isPaused()||source.header.size()!=67)return false;
+ const Common::Array<uint32>&h=source.header;
+ const uint64 cursor=uint64(h[63])*11127/1000;
+ if(cursor>=2327026||uint64(h[63])*30>=uint64(h[11])*1000)return false;
+ Video::QuickTimeDecoder*const movie=_movie;const uint32 live=p510WholeLiveHash();
+ auto unchanged=[&](){
+  P523Capture again;if(!captureP523Active(again))return false;
+  return _movie==movie&&p510WholeLiveHash()==live&&again.header==source.header&&again.values==source.values&&again.sprites==source.sprites&&again.privateState==source.privateState&&screenRGBHash(again.background,480)==screenRGBHash(source.background,480)&&screenRGBHash(again.composed,480)==screenRGBHash(source.composed,480)&&screenRGBHash(again.frame,240)==screenRGBHash(source.frame,240);
+ };
+ P523DetachedMedia prepared;
+ if(!prepareP523DetachedMedia(source,uint32(cursor),prepared)||!unchanged())return false;
+ P523DetachedQuickTime*d=static_cast<P523DetachedQuickTime*>(prepared.decoder);
+ if(!d->startFromSourceClock(h)||!d->isPlaying()||!d->isPaused()||d->getTime()!=h[7]||d->getCurFrame()!=int32(h[8])||prepared.sourceHeader!=h||!unchanged())return false;
+ const uint32 raw=d->resumeRawElapsed(),paused=d->getTime();
+ Common::Array<uint32>mapped;
+ if(!d->pausedResumeObservation(mapped)||mapped.size()!=4||mapped[1]!=h[57]||mapped[2]!=h[63]||mapped[3]!=h[61])return false;
+ // Recapture actual new raw roles while retaining the separate effective plan.
+ // Game-owned data remains literal because this component has not installed it.
+ P523Capture recaptured;recaptured.values=source.values;recaptured.sprites=source.sprites;recaptured.privateState=source.privateState;recaptured.displayedName=source.displayedName;
+ for(uint i=0;i<54;++i)recaptured.header.push_back(h[i]);
+ Common::Array<uint32>actualRaw;if(!d->pausedAudioObservation(actualRaw)||actualRaw.size()!=13)return false;
+ for(uint32 value:actualRaw)recaptured.header.push_back(value);
+ recaptured.background.copyFrom(prepared.background);recaptured.composed.copyFrom(prepared.composed);if(prepared.presented.getPixels())recaptured.frame.copyFrom(prepared.presented);recaptured.ready=true;
+ if(recaptured.header[57]!=raw||recaptured.header[58]!=h[58]||recaptured.header[57]+mapped[0]!=mapped[1])return false;
+ P523DetachedMedia second;
+ if(!prepareP523DetachedMedia(recaptured,uint32(cursor),second)||!unchanged())return false;
+ P523DetachedQuickTime*again=static_cast<P523DetachedQuickTime*>(second.decoder);
+ if(!again->startFromResumePlan(recaptured.header,mapped)||!unchanged())return false;
+ Common::Array<uint32>secondPlan;
+ if(!again->pausedResumeObservation(secondPlan)||secondPlan.size()!=4||secondPlan[1]!=mapped[1]||secondPlan[2]!=mapped[2]||secondPlan[3]!=mapped[3]||again->getTime()!=h[7]||again->getCurFrame()!=int32(h[8]))return false;
+ Common::Array<int16>secondSamples;const uint secondCount=MIN<uint32>(257,2327026-uint32(cursor));
+ if(!again->probePausedResumeCursor(uint32(cursor),secondCount,secondSamples)||secondSamples.size()!=secondCount||!unchanged())return false;
+ uint32 secondPcm=2166136261U;for(int16 sample:secondSamples)secondPcm=(secondPcm^uint16(sample))*16777619U;
+ const uint32 secondRaw=again->resumeRawElapsed();second.clearOwned();if(!second.empty()||!unchanged())return false;
+ debug("P523 resumed role plan: PASS (row%u,sourceRaw%u,firstRaw%u,secondRaw%u,offset%u,effectiveElapsed%u,effectiveAnchor%u,sourceSystem%u,sample%u,count%u,pcm%08x,old67raw words distinct,new4role words,reanchor retains logical roles)",row,h[57],raw,secondRaw,mapped[0],mapped[1],mapped[2],h[7],uint32(cursor),secondCount,secondPcm);
+
+ _system->delayMillis(20);
+ if(d->getTime()!=paused||d->resumeRawElapsed()!=raw||!unchanged())return false;
+ const uint count=MIN<uint32>(257,2327026-uint32(cursor));Common::Array<int16>samples;
+ if(!d->probePausedResumeCursor(uint32(cursor),count,samples)||samples.size()!=count||d->getTime()!=h[7]||d->resumeRawElapsed()!=raw||!unchanged())return false;
+ uint32 pcm=2166136261U;for(int16 sample:samples)pcm=(pcm^uint16(sample))*16777619U;
+ d->pauseVideo(false);_system->delayMillis(80);
+ const uint32 before=d->resumeRawElapsed(),time=d->getTime(),after=d->resumeRawElapsed();
+ if(before<=raw||time<h[58]+h[57]+before-raw||time>h[58]+h[57]+after-raw||!unchanged())return false;
+ d->pauseVideo(true);
+ if(!d->isPaused()||prepared.sourceHeader!=h||!unchanged())return false;
+ prepared.clearOwned();if(!prepared.empty()||!unchanged())return false;
+ debug("P523 paused resume preparation: PASS (row%u,sample%u,count%u,pcm%08x,sourceSystem%u,sourceBase%u,sourceElapsed%u,sourceAnchor%u,newPausedRaw%u,laterRaw%u,laterTime%u,original source retained,owned started decoder cleaned)",row,uint32(cursor),count,pcm,h[7],h[58],h[57],h[63],raw,before,time);
+ return true;
+}
+
+// Narrow real-engine media ownership commit. This does not import runner/game
+// state: admission requires the receiver to match the captured logical state.
+bool AstronomicaEngine::prepareP523SameCaptureMedia(const P523Capture&source,const Common::Array<uint32>&plan,P523DetachedMedia&out){
+ if(!out.empty()||!source.ready||source.header.size()!=67||plan.size()!=4)return false;
+ const Common::Array<uint32>&h=source.header;const uint32 elapsed=h[57]+plan[0];
+ if(elapsed!=plan[1]||plan[3]!=uint32(elapsed!=0)||uint64(h[58])+elapsed>0x7fffffffU)return false;
+ const uint32 anchor=elapsed?h[58]+elapsed:h[7];const uint64 cursor=uint64(anchor)*11127/1000;
+ if(plan[2]!=anchor||cursor>=2327026||uint64(anchor)*30>=uint64(h[11])*1000)return false;
+ P523DetachedMedia p;
+ if(!prepareP523DetachedMedia(source,uint32(cursor),p))return false;
+ p.sourceResumePlan=plan;P523DetachedQuickTime*d=static_cast<P523DetachedQuickTime*>(p.decoder);
+ if(!d->startFromResumePlan(h,plan)||!d->pausedResumeObservation(p.preparedResumePlan)||p.preparedResumePlan.size()!=4)return false;
+ for(uint i=1;i<4;++i)if(p.preparedResumePlan[i]!=plan[i])return false;
+ p510SwapValue(p.decoder,out.decoder);p510SwapSurface(p.current,out.current);p510SwapSurface(p.presented,out.presented);p510SwapSurface(p.background,out.background);p510SwapSurface(p.composed,out.composed);
+ p.sourceHeader.swap(out.sourceHeader);p.sourceResumePlan.swap(out.sourceResumePlan);p.preparedResumePlan.swap(out.preparedResumePlan);p510SwapValue(p.independentPcmSample,out.independentPcmSample);p510SwapValue(p.ready,out.ready);
+ return p.empty();
+}
+bool AstronomicaEngine::installP523SameCaptureMedia(const P523Capture&source,const Common::Array<uint32>&plan,P523DetachedMedia&p){
+ if(!_clockPaused||_place!=523||!_movie||!_movie->isPaused()||!source.ready||source.header.size()!=67||plan.size()!=4||!p.ready||p.decoder==_movie||p.sourceHeader!=source.header||p.sourceResumePlan!=plan||p.preparedResumePlan.size()!=4)return false;
+ PauseToken internal=pauseEngine();P523Capture current;Common::Array<uint32>currentPlan,preparedPlan;
+ if(!captureP523Active(current)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(currentPlan)||currentPlan.size()!=4)return false;
+ if(current.values!=source.values||current.sprites!=source.sprites||current.privateState!=source.privateState||current.displayedName!=source.displayedName)return false;
+ for(uint i=0;i<54;++i)if(current.header[i]!=source.header[i])return false;
+ for(uint i:{54U,55U,56U,58U,59U,64U,65U,66U})if(current.header[i]!=source.header[i])return false;
+ for(uint i=1;i<4;++i)if(currentPlan[i]!=plan[i])return false;
+ if(!p.decoder||!p.decoder->isPlaying()||!p.decoder->isPaused()||p.decoder->getRate()!=Common::Rational(1,1)||p.decoder->getTime()!=source.header[7]||p.decoder->getCurFrame()!=int32(source.header[8])||p.decoder->getEndTime().convertToFramerate(30).totalNumberOfFrames()!=source.header[11])return false;
+ if(!static_cast<P523AudioClockObserver*>(p.decoder)->pausedResumeObservation(preparedPlan)||preparedPlan!=p.preparedResumePlan)return false;
+ if(screenRGBHash(current.background,480)!=screenRGBHash(p.background,480)||screenRGBHash(current.composed,480)!=screenRGBHash(p.composed,480)||screenRGBHash(current.frame,240)!=screenRGBHash(p.presented,240))return false;
+ // All fallible work precedes these ownership swaps. The caller's holder now
+ // owns the previous media and must clean it; it cannot be installed twice.
+ p510SwapValue(_movie,p.decoder);p510SwapSurface(_movieFrame,p.presented);p510SwapSurface(_background,p.background);p510SwapSurface(_screen,p.composed);
+ p.ready=false;p.sourceHeader.clear();p.sourceResumePlan.clear();p.preparedResumePlan.clear();
+ return true;
+}
+bool AstronomicaEngine::testP523SameCaptureExchange(const P523Capture&source,uint row){
+ if(!_clockPaused||!_movie||!_movie->isPaused())return false;
+ Common::Array<uint32>originalPlan;if(!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(originalPlan)||originalPlan.size()!=4)return false;
+ const uint32 live=p510WholeLiveHash();Video::QuickTimeDecoder*const original=_movie;
+ auto equal=[&](const P523Capture&c,const Common::Array<uint32>&plan){
+  if(plan.size()!=4||c.values!=source.values||c.sprites!=source.sprites||c.privateState!=source.privateState||c.displayedName!=source.displayedName)return false;
+  for(uint i=0;i<54;++i)if(c.header[i]!=source.header[i])return false;
+  for(uint i:{54U,55U,56U,58U,59U,64U,65U,66U})if(c.header[i]!=source.header[i])return false;
+  for(uint i=1;i<4;++i)if(plan[i]!=originalPlan[i])return false;
+  return screenRGBHash(c.background,480)==screenRGBHash(source.background,480)&&screenRGBHash(c.composed,480)==screenRGBHash(source.composed,480)&&screenRGBHash(c.frame,240)==screenRGBHash(source.frame,240);
+ };
+ struct Rollback {
+  AstronomicaEngine*engine;P523DetachedMedia*held;bool installed=false;
+  void restore(){if(!installed)return;p510SwapValue(engine->_movie,held->decoder);p510SwapSurface(engine->_movieFrame,held->presented);p510SwapSurface(engine->_background,held->background);p510SwapSurface(engine->_screen,held->composed);installed=false;}
+  ~Rollback(){restore();}
+ };
+ P523DetachedMedia first;if(!prepareP523SameCaptureMedia(source,originalPlan,first))return false;
+ Rollback rollback1{this,&first};
+ // A different logical active anchor must refuse without consuming the holder.
+ Common::Array<uint32>wrong=originalPlan;wrong[2]^=1;
+ if(installP523SameCaptureMedia(source,wrong,first)||!first.ready||p510WholeLiveHash()!=live)return false;
+ if(!installP523SameCaptureMedia(source,originalPlan,first))return false;rollback1.installed=true;
+ if(_movie==original||!_movie->isPaused()||first.ready||first.decoder!=original)return false;
+ P523Capture once;Common::Array<uint32>plan1;
+ if(!captureP523Active(once)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(plan1)||!equal(once,plan1))return false;
+ {PauseToken nested=pauseEngine();nested.clear();if(!_clockPaused||!_movie->isPaused()||_movie->getTime()!=source.header[7])return false;}
+ P523DetachedMedia second;if(!prepareP523SameCaptureMedia(once,plan1,second))return false;
+ Rollback rollback2{this,&second};Video::QuickTimeDecoder*const firstInstalled=_movie;
+ if(!installP523SameCaptureMedia(once,plan1,second))return false;rollback2.installed=true;
+ if(_movie==firstInstalled||second.decoder!=firstInstalled||!_movie->isPaused())return false;
+ P523Capture twice;Common::Array<uint32>plan2;
+ if(!captureP523Active(twice)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(plan2)||!equal(twice,plan2))return false;
+ const uint32 firstRaw=once.header[57],secondRaw=twice.header[57];
+ rollback2.restore();second.clearOwned();rollback1.restore();first.clearOwned();
+ P523Capture retained;
+ if(_movie!=original||p510WholeLiveHash()!=live||!captureP523Active(retained)||retained.header!=source.header||retained.values!=source.values||retained.sprites!=source.sprites||retained.privateState!=source.privateState||!first.empty()||!second.empty())return false;
+ debug("P523 same-capture media exchange: PASS (row%u,two actual engine decoder commits,two recaptures,sourceRaw%u,firstRaw%u,secondRaw%u,effective%u/anchor%u,nested aggregate pause,refusal retains holder,RAII restores original owners/state)",row,source.header[57],firstRaw,secondRaw,originalPlan[1],originalPlan[2]);
+ return true;
+}
+
+// Private trusted-capture state import. There is no external packet decoder.
+AstronomicaEngine::P523TrustedPrepared::~P523TrustedPrepared(){clearOwned();}
+void AstronomicaEngine::P523TrustedPrepared::clearOwned(){
+ sourceOwner=nullptr; media.clearOwned();scene=Scene();runner=ScriptRunner();header.clear();mapping.clear();values.clear();sprites.clear();privateState.clear();displayedName.clear();ready=false;
+}
+bool AstronomicaEngine::P523TrustedPrepared::empty()const{
+ return !sourceOwner&&!ready&&media.empty()&&scene.sprites.empty()&&scene.scripts.empty()&&!runner.pendingCount()&&header.empty()&&mapping.empty()&&values.empty()&&sprites.empty()&&privateState.empty()&&displayedName.empty();
+}
+bool AstronomicaEngine::prepareP523TrustedState(const P523Capture&source,const Common::Array<uint32>&mapping,P523TrustedPrepared&out){
+ if(!out.empty()||source.sourceOwner!=this||!source.ready||source.header.size()!=67||mapping.size()!=4||source.values.size()!=605||source.sprites.size()!=1320||source.privateState.size()!=142)return false;
+ if(source.scene.layers!=1||source.scene.sprites.size()!=44||source.scene.scripts.size()!=1||source.scene.commandCount!=41)return false;
+ Common::Array<uint32>values,sprites;if(!source.runner.exportPersistentState(values)||values!=source.values)return false;
+ for(const Sprite&s:source.scene.sprites){p526SpriteWords(s,sprites);for(int32 value:{int32(s.dragEnabled),s.planetMotion,s.planetPeriod})sprites.push_back(uint32(value));}
+ if(sprites!=source.sprites)return false;
+ int32 global39=0;const bool known=source.runner.getValue(0,39,global39);
+ if(source.header[0]!=523||source.header[28]!=uint32(known)||source.header[29]!=uint32(global39))return false;
+ P523TrustedPrepared p;p.scene=source.scene;p.runner=source.runner;p.header=source.header;p.mapping=mapping;p.values=source.values;p.sprites=source.sprites;p.privateState=source.privateState;p.displayedName=source.displayedName;
+ if(!prepareP523SameCaptureMedia(source,mapping,p.media))return false;
+ p.ready=true;p.sourceOwner=this;
+ p510SwapScene(p.scene,out.scene);p.runner.swapP510PreparedRunner(out.runner);
+ p510SwapValue(p.media.decoder,out.media.decoder);p510SwapSurface(p.media.current,out.media.current);p510SwapSurface(p.media.presented,out.media.presented);p510SwapSurface(p.media.background,out.media.background);p510SwapSurface(p.media.composed,out.media.composed);
+ p.media.sourceHeader.swap(out.media.sourceHeader);p.media.sourceResumePlan.swap(out.media.sourceResumePlan);p.media.preparedResumePlan.swap(out.media.preparedResumePlan);p510SwapValue(p.media.independentPcmSample,out.media.independentPcmSample);p510SwapValue(p.media.ready,out.media.ready);
+ p.header.swap(out.header);p.mapping.swap(out.mapping);p.values.swap(out.values);p.sprites.swap(out.sprites);p.privateState.swap(out.privateState);out.displayedName=static_cast<Common::String&&>(p.displayedName);p510SwapValue(p.sourceOwner,out.sourceOwner);p510SwapValue(p.ready,out.ready);
+ return p.empty();
+}
+void AstronomicaEngine::applyP523CapturedScalars(const Common::Array<uint32>&h,const Common::Array<uint32>&v){
+ assert(h.size()==67&&v.size()==142&&h[0]==523);
+ _place=523;_puzzlesCompleted=h[1];_previousPlace=int32(h[3]);_pausedMillis=(_clockPaused?_pauseStarted:_system->getMillis())-h[2];
+ _moviePlaying=h[4]!=0;_moviePresentedFrame=int32(h[9]);_movieSegmentStart=h[10];_movieFramesDrawn=h[12];_movieX=int32(h[13]);_movieY=int32(h[14]);
+ for(uint i=0;i<3;++i)_dangerChannels[i]=int32(h[18+i]);_dangerButtons=int32(h[21]);_dangerEvent[0]=int32(h[22]);_dangerTime[0]=h[23];_dangerEvent[1]=int32(h[24]);_dangerTime[1]=h[25];
+ _loopSound=int32(h[30]);_loopEnabled=h[31]!=0;_lastSoundAt=h[32];_lastSound=int32(h[33]);_lastBlockingSoundEnd=h[34];_lastSuccessEnd=h[35];
+ // Recipient soundsStarted, inactive sound handle, preferences and unrelated
+ // asset caches remain recipient-owned; none are started by this commit.
+ _worldMovieCursorBottom=int32(h[39]);_universeSegmentEnd=h[40];_universeAssetsValid=h[41]!=0;
+ _p519LargeImage=h[42];_p519SmallImage=h[43];_p528EarthImage=h[44];_p528MoonImage=h[45];_p528TallMoon=h[46];
+ _p528HistoryValid=h[47]!=0;_p530HistoryValid=h[48]!=0;_p513HistoryValid=h[49]!=0;_p517HistoryValid=h[50]!=0;_builderHistoryValid=h[51]!=0;_pendingImageX=int32(h[52]);_pendingImageY=int32(h[53]);
+ for(uint i=0;i<50;++i){_comet.kind[i]=int32(v[i]);_comet.partner[i]=int32(v[50+i]);}_comet.sound=int32(v[100]);_comet.explosion=int32(v[101]);
+ for(uint i=0;i<8;++i){_jupiterWidths[i]=v[102+i];_jupiterHeights[i]=v[110+i];}
+ _comet.frame=v[118];_comet.previousFrame=v[119];_rocket.kind=RocketMotion::Kind(int32(v[120]));_rocket.delta=int32(v[121]);_rocket.since=v[122];
+ _probe.year=int32(v[123]);_probe.yearArmed=v[124]!=0;_probe.specialHit=v[125]!=0;_probe.flying=v[126]!=0;_probe.expired=v[127]!=0;
+ for(uint i=0;i<3;++i){_probe.widths[i]=v[128+i*3];_probe.heights[i]=v[129+i*3];_nav[i]=int32(v[130+i*3]);}
+ _ball.scenario=int32(v[137]);_ball.centerX=int32(v[138]);_ball.centerY=int32(v[139]);_ball.side=int32(v[140]);_ball.period=int32(v[141]);
+}
+bool AstronomicaEngine::commitP523TrustedState(P523TrustedPrepared&p){
+ if(p.sourceOwner!=this||!_clockPaused||_place!=523||!p.ready||!p.media.ready||p.header.size()!=67||p.header[0]!=523||p.mapping.size()!=4||p.privateState.size()!=142||p.values.size()!=605||p.sprites.size()!=1320||p.media.sourceHeader!=p.header||p.media.sourceResumePlan!=p.mapping)return false;
+ P523Capture receiver;if(!captureP523Active(receiver))return false;
+ Common::Array<uint32>values,preparedPlan;if(!p.runner.exportPersistentState(values)||values!=p.values||!static_cast<P523AudioClockObserver*>(p.media.decoder)->pausedResumeObservation(preparedPlan)||preparedPlan!=p.media.preparedResumePlan)return false;
+ if(!p.media.decoder->isPlaying()||!p.media.decoder->isPaused()||p.media.decoder->getTime()!=p.header[7]||p.media.decoder->getCurFrame()!=int32(p.header[8]))return false;
+ PauseToken internal=pauseEngine();
+ // Prepared owners, callbacks, runner and scalar plan are complete. The holder
+ // receives retired owners; no startup program or movie seek is replayed here.
+ p510SwapScene(_scene,p.scene);_runner.swapP510PreparedRunner(p.runner);
+ p510SwapValue(_movie,p.media.decoder);p510SwapSurface(_movieFrame,p.media.presented);p510SwapSurface(_background,p.media.background);p510SwapSurface(_screen,p.media.composed);
+ Common::String oldName=static_cast<Common::String&&>(_displayedImageName);_displayedImageName=static_cast<Common::String&&>(p.displayedName);p.displayedName=static_cast<Common::String&&>(oldName);
+ applyP523CapturedScalars(p.header,p.privateState);
+ p.ready=false;p.sourceOwner=nullptr;p.media.ready=false;p.media.sourceHeader.clear();p.media.sourceResumePlan.clear();p.media.preparedResumePlan.clear();p.media.independentPcmSample=0;
+ return true;
+}
+bool AstronomicaEngine::testP523TrustedState(const P523Capture&source,uint row){
+ if(source.sourceOwner!=this||!_clockPaused||!_movie||!_movie->isPaused())return false;
+ Common::Array<uint32>mapping;if(!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping))return false;
+ const uint32 live=p510WholeLiveHash(),sounds=_soundsStarted;Video::QuickTimeDecoder*const original=_movie;
+ P523TrustedPrepared prepared;P523Capture untrusted;untrusted.ready=true;uint refusals=0;
+ if(prepareP523TrustedState(untrusted,mapping,prepared)||!prepared.empty()||p510WholeLiveHash()!=live)return false;
+ ++refusals;
+ P523Capture bad;bad.sourceOwner=this;bad.ready=true;bad.header=source.header;bad.values=source.values;bad.sprites=source.sprites;bad.privateState=source.privateState;bad.scene=source.scene;bad.runner=source.runner;bad.displayedName=source.displayedName;
+ bad.background.copyFrom(source.background);bad.composed.copyFrom(source.composed);if(source.frame.getPixels())bad.frame.copyFrom(source.frame);
+ auto reject=[&](){P523TrustedPrepared empty;const bool refused=!prepareP523TrustedState(bad,mapping,empty)&&empty.empty()&&p510WholeLiveHash()==live;if(refused)++refusals;return refused;};
+ ++bad.scene.sprites[0].x;if(!reject())return false;bad.scene=source.scene;
+ bad.runner.seedRandom(uint16(source.values[600]^1U));if(!reject())return false;bad.runner=source.runner;
+ bad.header[29]^=1;if(!reject())return false;
+ if(!prepareP523TrustedState(source,mapping,prepared)||!prepared.ready||p510WholeLiveHash()!=live)return false;
+ if(prepared.sourceOwner!=this)return false;
+ struct Restore {
+  AstronomicaEngine*engine;const P523Capture*source;P523TrustedPrepared*held;bool committed=false;
+  ~Restore(){
+   if(committed){p510SwapValue(engine->_movie,held->media.decoder);p510SwapSurface(engine->_movieFrame,held->media.presented);p510SwapSurface(engine->_background,held->media.background);p510SwapSurface(engine->_screen,held->media.composed);}
+   engine->_scene=source->scene;engine->_runner=source->runner;engine->_displayedImageName=source->displayedName;engine->applyP523CapturedScalars(source->header,source->privateState);
+  }
+ };
+ {
+  Restore restore{this,&source,&prepared};
+  _runner.defineValue(0,39,1-int32(source.header[29]));_runner.defineValue(1,0,99);_runner.seedRandom(0x5555);_puzzlesCompleted=999;_previousPlace=9999;_pausedMillis-=123;
+  _scene.sprites[8].visible=1-_scene.sprites[8].visible;++_scene.sprites[8].x;++_scene.sprites[8].renderX;
+  _dangerButtons^=1;_dangerEvent[0]=_dangerEvent[1]=0;_dangerTime[0]+=17;_dangerChannels[0]^=1;_movieSegmentStart+=1;_movieX+=1;_movieY+=1;
+  _rocket.kind=RocketMotion::kFast;_comet.kind[0]=99;_jupiterWidths[0]^=1;_ball.centerX+=1;_nav[0]=999;
+  const uint32 displaced=p510WholeLiveHash();if(displaced==live)return false;
+  prepared.sourceOwner=nullptr;
+  if(commitP523TrustedState(prepared)||!prepared.ready||p510WholeLiveHash()!=displaced)return false;prepared.sourceOwner=this;++refusals;
+  const uint32 oldPlace=prepared.header[0];prepared.header[0]=0;
+  if(commitP523TrustedState(prepared)||!prepared.ready||p510WholeLiveHash()!=displaced)return false;prepared.header[0]=oldPlace;++refusals;
+  if(!commitP523TrustedState(prepared))return false;restore.committed=true;
+  if(prepared.ready||prepared.sourceOwner||_movie==original||prepared.media.decoder!=original||_soundsStarted!=sounds||!_clockPaused||!_movie->isPaused())return false;
+  P523Capture again;Common::Array<uint32>after;
+  if(!captureP523Active(again)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(after)||after.size()!=4)return false;
+  if(again.values!=source.values||again.sprites!=source.sprites||again.privateState!=source.privateState||again.displayedName!=source.displayedName)return false;
+  for(uint i=0;i<54;++i)if(again.header[i]!=source.header[i])return false;
+  for(uint i:{54U,55U,56U,58U,59U,64U,65U,66U})if(again.header[i]!=source.header[i])return false;
+  for(uint i=1;i<4;++i)if(after[i]!=mapping[i])return false;
+  if(screenRGBHash(again.background,480)!=screenRGBHash(source.background,480)||screenRGBHash(again.composed,480)!=screenRGBHash(source.composed,480)||screenRGBHash(again.frame,240)!=screenRGBHash(source.frame,240))return false;
+  {PauseToken nested=pauseEngine();nested.clear();if(!_movie->isPaused()||scriptClock()!=source.header[2])return false;}
+ }
+ prepared.clearOwned();P523Capture retained;
+ if(!prepared.empty()||_movie!=original||p510WholeLiveHash()!=live||!captureP523Active(retained)||retained.header!=source.header||retained.values!=source.values||retained.sprites!=source.sprites||retained.privateState!=source.privateState)return false;
+ if(refusals!=6)return false;debug("P523 trusted rejection matrix: PASS (row%u,6 real refusals,source/prepared owner and scene/runner/header coherence,unchanged source/receiver/holder)",row);
+ debug("P523 trusted state commit: PASS (row%u,actual Scene/Runner/media commit,605values/1320sprite/142private,displaced globals/RNG/local/sprite/callbacks/clock restored,invalid prepare/commit atomic,nested pause retained,retired owners cleaned,no startup replay)",row);
+ return true;
+}
+
+// Reconstruct immutable scene/programs/targets and all pixels from original
+// assets. Only the trusted capture's scalar/word data is used as input.
+bool AstronomicaEngine::rebuildP523OriginalCapture(const P523Capture&source,P523Capture&out){
+ if(!out.vacantOwners()||source.sourceOwner!=this||!source.ready||source.header.size()!=67||source.values.size()!=605||source.sprites.size()!=1320||source.privateState.size()!=142||!source.displayedName.empty())return false;
+ if(!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return false;
+ if(ConfMan.hasKey("astronomica_debug_overlay")&&ConfMan.getBool("astronomica_debug_overlay"))return false;
+ const Common::Array<uint32>&h=source.header;
+ if(h[0]!=523||h[13]!=160||h[14]!=37||h[39]!=0xffffffffU||(h[9]!=0xffffffffU&&h[9]>=2092))return false;
+ const Common::Path root=ConfMan.getPath("path");
+ if(!universeFileIdentity(root.join("PLACES/P523/MEGAFILE.HYP"),627978,1311441806U)||!universeFileIdentity(root.join("PLACES/P523/DANGERS.MOV"),13472367,132671667U))return false;
+ P523Capture p;Common::File file;if(!file.open(Common::FSNode(root.join("PLACES/P523/MEGAFILE.HYP"))))return false;
+ ResourceReader reader(file);if(!reader.read(p.scene)||p.scene.layers!=1||p.scene.sprites.size()!=44||p.scene.scripts.size()!=1||p.scene.commandCount!=41||p.scene.movies.size()!=1||!p.scene.movies[0].equalsIgnoreCase("DANGERS.MOV")||!p.scene.mouseRects.empty())return false;
+ Common::Array<uint>spriteTargets;
+ for(uint i=0;i<p.scene.sprites.size();++i){
+  Sprite&s=p.scene.sprites[i];spriteTargets.push_back(supportsSpriteLayers(p.scene)&&s.layer>=1&&s.layer<=p.scene.layers?spriteFrameCount(p.scene,i):0);
+  p526RestoreSprite(s,&source.sprites[i*30]);s.dragEnabled=source.sprites[i*30+27]!=0;s.planetMotion=int32(source.sprites[i*30+28]);s.planetPeriod=int32(source.sprites[i*30+29]);
+ }
+ p.runner.loadLocalConditions(p.scene.conditions);p.runner.setPrograms(p.scene.scripts,source.values[601]);
+ if(!p.runner.importPersistentState(source.values))return false;
+ p.runner.setSpriteTargets(spriteTargets);p.runner.setGameStateHandler(this);p.runner.setSoundHandler(this);
+ p.runner.setDangerSupport(true);Common::Array<uint32>durations;durations.push_back(6275);p.runner.setMovieTargets(durations);
+ p.runner.setAdviceSupport(false,int32(h[3]));p.runner.setMentorSupport(false,int32(h[3]));p.runner.setResumeSupport(false,h[3]==408);
+ Common::Array<bool>sounds;sounds.resize(923);for(uint i=0;i<923;++i)sounds[i]=false;
+ Common::FSList files;Common::FSNode(root.join("PLACES/P523")).getChildren(files,Common::FSNode::kListFilesOnly);
+ for(const Common::FSNode&node:files){
+  Common::String name=node.getName();name.toUppercase();
+  if(!name.hasPrefix("S")||!name.hasSuffix(".WAV"))continue;const int id=atoi(name.c_str()+1);
+  if(id<0||id>=900||name!=Common::String::format("S%d.WAV",id))continue;
+  Common::File wav;if(!wav.open(node))continue;int size,rate;byte flags;uint16 type;
+  if(Audio::loadWAVFromStream(wav,size,rate,flags,&type)&&type==1)sounds[id]=true;
+ }
+ for(int id=900;id<=922;++id){Audio::SeekableAudioStream*stream=openSound(id);sounds[id]=stream!=nullptr;delete stream;}
+ if(!sounds[912])return false;p.runner.setSoundTargets(sounds);p.runner.setSuccessHandler(this,523);
+ Common::Array<Common::String>images;
+ for(const Common::FSNode&node:files){Common::String name=node.getName();name.toUppercase();Graphics::Surface*image=openBackgroundImage(name,523);if(image){images.push_back(name);image->free();delete image;}}
+ p.runner.setImageTargets(images);
+ file.seek(0);const int32 mode=file.readSint32LE();if(mode!=p.scene.mode||(mode!=0&&mode!=1&&mode!=3))return false;
+ if(mode==1)for(uint i=0;i<3;++i)file.readSint32LE();
+ p.background.create(640,480,_screen.format);p.background.fillRect(Common::Rect(640,480),0);
+ if(!readImage(file,p.background,false)||!readImage(file,p.background,true))return false;
+ p.composed.copyFrom(p.background);renderStaticSprites(file,p.scene,p.composed);
+ if(h[9]!=0xffffffffU){
+  Video::QuickTimeDecoder decoder;Common::File*movie=new Common::File();
+  if(!movie->open(Common::FSNode(root.join("PLACES/P523/DANGERS.MOV")))){delete movie;return false;}
+  if(!decoder.loadStream(movie)||decoder.getFrameCount()!=2092||decoder.getWidth()!=320||decoder.getHeight()!=240||!decoder.seekToFrame(h[9]))return false;
+  const Graphics::Surface*frame=decoder.decodeNextFrame();if(!frame||decoder.getCurFrame()!=int32(h[9]))return false;
+  Graphics::Surface*rgb=frame->convertTo(_screen.format,decoder.getPalette());if(!rgb)return false;p.frame.copyFrom(*rgb);rgb->free();delete rgb;
+  p.composed.copyRectToSurface(p.frame.getPixels(),p.frame.pitch,160,37,p.frame.w,p.frame.h);
+ }
+ p.header=h;p.values=source.values;p.sprites=source.sprites;p.privateState=source.privateState;p.ready=true;p.sourceOwner=this;
+ p510SwapScene(p.scene,out.scene);p.runner.swapP510PreparedRunner(out.runner);p510SwapSurface(p.background,out.background);p510SwapSurface(p.frame,out.frame);p510SwapSurface(p.composed,out.composed);
+ p.header.swap(out.header);p.values.swap(out.values);p.sprites.swap(out.sprites);p.privateState.swap(out.privateState);out.displayedName=static_cast<Common::String&&>(p.displayedName);out.sourceOwner=this;out.ready=true;return true;
+}
+bool AstronomicaEngine::testP523OriginalRebuild(const P523Capture&source,uint row){
+ const uint32 live=p510WholeLiveHash();P523Capture rebuilt;
+ if(!rebuildP523OriginalCapture(source,rebuilt)||p510WholeLiveHash()!=live)return false;
+ Common::Array<uint32>sprites;
+ for(const Sprite&s:rebuilt.scene.sprites){p526SpriteWords(s,sprites);for(int32 value:{int32(s.dragEnabled),s.planetMotion,s.planetPeriod})sprites.push_back(uint32(value));}
+ if(rebuilt.header!=source.header||rebuilt.values!=source.values||sprites!=source.sprites||rebuilt.privateState!=source.privateState||rebuilt.runner.executedCount()||!rebuilt.runner.p523PreparedEquivalent(source.runner)||rebuilt.sourceOwner!=this)return false;
+ const uint32 background=screenRGBHash(rebuilt.background,480),composed=screenRGBHash(rebuilt.composed,480),frame=screenRGBHash(rebuilt.frame,240);
+ if(background!=screenRGBHash(source.background,480)||composed!=screenRGBHash(source.composed,480)||frame!=screenRGBHash(source.frame,240))return false;
+ Common::Array<uint32>mapping;if(!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping))return false;
+ P523TrustedPrepared prepared;if(!prepareP523TrustedState(rebuilt,mapping,prepared)||p510WholeLiveHash()!=live)return false;
+ prepared.clearOwned();rebuilt.clearOwned();if(!prepared.empty()||!rebuilt.vacantOwners()||p510WholeLiveHash()!=live)return false;
+ debug("P523 original reconstruction: PASS (row%u,original HYP Scene/programs/targets,no source Scene/Runner/pixels copied,605/1320/142word data,background%08x/frame%08x/composed%08x,fresh runner executed0,prepared original media/source unchanged)",row,background,frame,composed);
+ return true;
+}
+
+// ASVM31 bounded transport. Decoding never grants trusted capture ownership.
+enum {kP523PacketHeader=0,kP523PacketMapping=67,kP523PacketRunner=71,
+ kP523PacketSprites=676,kP523PacketPrivate=1996,kP523PacketHash=2138,
+ kP523PacketWords=2139,kP523PacketBytes=8564};
+static uint32 p523WordsHash(const Common::Array<uint32>&w){
+ uint32 hash=2166136261U;for(uint i=0;i<kP523PacketHash;++i)hash=(hash^w[i])*16777619U;return hash;
+}
+bool AstronomicaEngine::encodeP523Packet(const P523Capture&source,const Common::Array<uint32>&mapping,Common::Array<uint32>&out)const{
+ if(source.sourceOwner!=this||!source.ready||source.header.size()!=67||mapping.size()!=4||source.values.size()!=605||source.sprites.size()!=1320||source.privateState.size()!=142||!source.displayedName.empty())return false;
+ Common::Array<uint32>words;
+ for(const Common::Array<uint32>*a:{&source.header,&mapping,&source.values,&source.sprites,&source.privateState})for(uint32 value:*a)words.push_back(value);
+ if(words.size()!=kP523PacketHash)return false;words.push_back(0);words.back()=p523WordsHash(words);out.swap(words);return true;
+}
+bool AstronomicaEngine::writeP523Packet(Common::WriteStream*stream,const Common::Array<uint32>&words)const{
+ if(!stream||words.size()!=kP523PacketWords||words.back()!=p523WordsHash(words))return false;
+ stream->writeUint32BE(MKTAG('A','S','V','M'));stream->writeUint32LE(31);
+ for(uint32 value:words)stream->writeUint32LE(value);
+ return !stream->err();
+}
+bool AstronomicaEngine::readP523Packet(Common::SeekableReadStream*stream,Common::Array<uint32>&out)const{
+ // The bound precedes every allocation/read. ScummVM may append metadata;
+ // consume exactly the native packet and leave its footer to the caller.
+ if(!stream||stream->pos()<0||stream->size()<stream->pos()||stream->size()-stream->pos()<kP523PacketBytes)return false;
+ if(stream->readUint32BE()!=MKTAG('A','S','V','M')||stream->readUint32LE()!=31)return false;
+ Common::Array<uint32>words;words.resize(kP523PacketWords);
+ for(uint i=0;i<kP523PacketWords;++i)words[i]=stream->readUint32LE();
+ if(stream->err()||stream->eos()||words.back()!=p523WordsHash(words))return false;
+ out.swap(words);return true;
+}
+bool AstronomicaEngine::testP523Packet(const P523Capture&source,uint row){
+ Common::Array<uint32>mapping,words;
+ if(!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping)||!encodeP523Packet(source,mapping,words))return false;
+ const uint32 live=p510WholeLiveHash();Common::MemoryWriteStreamDynamic bytes(DisposeAfterUse::YES);
+ if(!writeP523Packet(&bytes,words)||bytes.size()!=kP523PacketBytes)return false;
+ Common::MemoryReadStream input(bytes.getData(),bytes.size());Common::Array<uint32>decoded;
+ if(!readP523Packet(&input,decoded)||decoded!=words||input.pos()!=kP523PacketBytes||p510WholeLiveHash()!=live)return false;
+ // Output keeps its preexisting sentinel on every refusal, including checksum,
+ // magic, version and truncation. No owners or engine state are adopted here.
+ uint truncated=0,corrupted=0;
+ auto rejects=[&](const byte*data,uint size){
+  Common::MemoryReadStream stream(data,size);Common::Array<uint32>retained;retained.push_back(0xdecafbadU);
+  return !readP523Packet(&stream,retained)&&retained.size()==1&&retained[0]==0xdecafbadU;
+ };
+ if(row==1){
+  for(uint n=0;n<bytes.size();++n){if(!rejects(bytes.getData(),n))return false;++truncated;}
+  Common::Array<byte>bad;bad.resize(bytes.size());memcpy(&bad[0],bytes.getData(),bytes.size());
+  for(uint n=0;n<bad.size();++n){bad[n]^=1;if(!rejects(&bad[0],bad.size()))return false;bad[n]^=1;++corrupted;}
+ }
+ Common::Array<byte>withFooter;withFooter.resize(bytes.size()+7);memcpy(&withFooter[0],bytes.getData(),bytes.size());
+ for(uint i=0;i<7;++i)withFooter[bytes.size()+i]=byte(0x90+i);
+ Common::MemoryReadStream footer(&withFooter[0],withFooter.size());decoded.clear();
+ if(!readP523Packet(&footer,decoded)||decoded!=words||footer.pos()!=kP523PacketBytes||footer.readByte()!=0x90)return false;
+ Common::Array<uint32>bad=words;bad.pop_back();Common::MemoryWriteStreamDynamic denied(DisposeAfterUse::YES);
+ if(writeP523Packet(&denied,bad)||denied.size())return false;
+ bad=words;bad[0]^=1;if(writeP523Packet(&denied,bad)||denied.size())return false;
+ debug("P523 packet transport: PASS (row%u,%uwords,%ubytes,%utruncations,%ubyte flips,output atomic,footer retained,no state adoption)",row,uint(kP523PacketWords),uint(kP523PacketBytes),truncated,corrupted);
+ return p510WholeLiveHash()==live;
+}
+
+// Untrusted ASVM31 words are checked before giving reconstructed data an owner.
+static bool p523OriginalRange(uint32 start,uint32 end){
+ if(!start&&end==602)return true;
+ for(int event=1;event<=18;++event)for(int level:{0,100})for(int buttons=0;buttons<4;++buttons)for(bool solved:{false,true}){
+  const int channels[]={level,level,level};const DangerStep step=dangerCallback(event,channels,buttons,solved);
+  for(const DangerAction&a:step.actions)if(a.op==kDangerRange&&uint32(a.a)==start&&uint32(a.a+a.b)==end)return true;
+ }
+ return false;
+}
+static bool p523OriginalCallback(uint slot,uint32 event,uint32 frame){
+ if(!event)return frame<=6275; // Inactive slot retains its previous timestamp.
+ if((slot==0&&event==1&&frame==600)||(slot==1&&event==13&&frame==510))return true;
+ for(int e=1;e<=18;++e)for(int level:{0,100})for(int buttons=0;buttons<4;++buttons)for(bool solved:{false,true}){
+  const int channels[]={level,level,level};const DangerStep step=dangerCallback(e,channels,buttons,solved);
+  for(const DangerAction&a:step.actions)if(a.op==kDangerCallback&&uint(a.a)==slot&&uint32(a.b)==event&&uint32(a.c)==frame)return true;
+ }
+ return false;
+}
+bool AstronomicaEngine::validateP523Packet(const Common::Array<uint32>&w)const{
+ if(w.size()!=kP523PacketWords||w.back()!=p523WordsHash(w))return (debug("P523 validation rejection line%d",__LINE__),false);
+ auto boundedSigned=[](uint32 v,int32 low,int32 high){return int32(v)>=low&&int32(v)<=high;};
+ if(w[0]!=523||(w[3]>537&&w[3]!=0xffffffffU)||w[13]!=160||w[14]!=37||w[39]!=0xffffffffU)return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i:{4U,5U,6U,16U,17U,28U,31U,54U,55U,59U})if(w[i]!=1)return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i:{27U,37U,38U,40U,41U,42U,43U,44U,45U,46U,52U,53U,56U})if(w[i])return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i=47;i<=51;++i)if(w[i]!=1)return (debug("P523 validation rejection line%d",__LINE__),false);
+ if((w[30]!=0xffffffffU&&w[30])||(w[33]>922&&w[33]!=0xffffffffU)||w[15]>255||w[64]>255||!boundedSigned(w[65],-128,127)||w[66]!=uint32(Audio::Mixer::kPlainSoundType))return (debug("P523 validation rejection line%d",__LINE__),false);
+ if(w[18]>100||w[19]>100||w[20]>100||w[21]>3||w[29]>1||!p523OriginalRange(w[10],w[11]))return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint slot=0;slot<2;++slot)if(!p523OriginalCallback(slot,w[22+slot*2],w[23+slot*2]))return (debug("P523 validation rejection line%d",__LINE__),false);
+ int next=-1;for(uint slot=0;slot<2;++slot)if(w[22+slot*2]&&(next<0||w[23+slot*2]<w[23+uint(next)*2]))next=slot;
+ if(w[26]!=uint32(next)||(w[8]!=0xffffffffU&&w[8]>=2092)||(w[9]!=0xffffffffU&&w[9]>=2092)||w[7]>209166||w[58]>209166||w[63]>209166)return (debug("P523 validation rejection line%d",__LINE__),false);
+ if(w[60]>1||w[61]!=w[60]||w[60]!=uint32(w[57]!=0)||uint64(w[57])+w[58]>0x7fffffffU)return (debug("P523 validation rejection line%d",__LINE__),false);
+ if(w[62]!=(w[61]?w[57]+w[58]:0)||w[63]!=(w[61]?w[62]:w[7]))return (debug("P523 validation rejection line%d",__LINE__),false);
+ const uint32 elapsed=w[57]+w[kP523PacketMapping];const uint64 anchor=elapsed?uint64(w[58])+elapsed:w[7];
+ if(w[kP523PacketMapping+1]!=elapsed||w[kP523PacketMapping+2]!=anchor||w[kP523PacketMapping+3]!=uint32(elapsed!=0)||anchor>209166||anchor<uint64(w[10])*1000/30||anchor*30>=uint64(w[11])*1000||anchor*11127/1000>=2327026)return (debug("P523 validation rejection line%d",__LINE__),false);
+ Common::Array<uint32>values;for(uint i=0;i<605;++i)values.push_back(w[kP523PacketRunner+i]);
+ if(!ScriptRunner::validPersistentState(values)||values[603]||values[604]||values[117]!=w[29]||values[119]!=w[28])return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i=0;i<100;++i)if(values[3*i+1]||values[3*i+2]!=1)return (debug("P523 validation rejection line%d",__LINE__),false);
+ const uint v=kP523PacketPrivate;
+ for(uint i=0;i<100;++i)if(w[v+i])return (debug("P523 validation rejection line%d",__LINE__),false);
+ if(w[v+100]!=0xffffffffU||w[v+101]||w[v+118]!=4||w[v+119])return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i=120;i<=122;++i)if(w[v+i])return (debug("P523 validation rejection line%d",__LINE__),false);
+ if(w[v+123]!=1991)return (debug("P523 validation rejection line%d",__LINE__),false);for(uint i=124;i<=139;++i)if(w[v+i])return (debug("P523 validation rejection line%d",__LINE__),false);
+ if(w[v+140]!=2||w[v+141]!=10)return (debug("P523 validation rejection line%d",__LINE__),false);
+ const Common::Path root=ConfMan.getPath("path");
+ if(!universeFileIdentity(root.join("PLACES/P523/MEGAFILE.HYP"),627978,1311441806U))return (debug("P523 validation rejection line%d",__LINE__),false);
+ Common::File file;if(!file.open(Common::FSNode(root.join("PLACES/P523/MEGAFILE.HYP"))))return (debug("P523 validation rejection line%d",__LINE__),false);
+ Scene scene;ResourceReader reader(file);if(!reader.read(scene)||scene.sprites.size()!=44||scene.scripts.size()!=1||scene.commandCount!=41||scene.layers!=1)return (debug("P523 validation rejection line%d",__LINE__),false);
+ ScriptRunner schema;schema.loadLocalConditions(scene.conditions);Common::Array<uint32>initial;
+ if(!schema.exportPersistentState(initial))return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i=0;i<100;++i)if(values[301+3*i]!=initial[301+3*i]||values[302+3*i]!=initial[302+3*i])return (debug("P523 validation rejection line%d",__LINE__),false);
+ for(uint i=0;i<44;++i){
+  const uint offset=kP523PacketSprites+30*i;const uint32*data=&w[offset];Sprite sprite=scene.sprites[i];
+  const uint frames=spriteFrameCount(scene,i);if(data[0]>1||int32(data[1])<0||(frames?data[1]>=frames:data[1]!=0))return (debug("P523 validation rejection line%d",__LINE__),false);
+  for(uint j:{2U,3U,4U,5U,11U,12U})if(!boundedSigned(data[j],-32768,32767))return (debug("P523 validation rejection line%d",__LINE__),false);
+  for(uint j:{6U,7U,10U,13U,18U,27U})if(data[j]>1)return (debug("P523 validation rejection line%d",__LINE__),false);
+  Common::Array<uint32>baseline;p526SpriteWords(sprite,baseline);
+  // P523 animates frames and visibility; it never activates other puzzle motion.
+  for(uint j:{7U,10U,11U,12U,13U,14U,15U,16U,17U,19U,20U,21U,22U,23U,24U,25U,26U})if(data[j]!=baseline[j])return (debug("P523 validation rejection line%d",__LINE__),false);
+  if(data[27]!=uint32(sprite.dragEnabled)||data[28]!=uint32(sprite.planetMotion)||data[29]!=uint32(sprite.planetPeriod))return (debug("P523 validation rejection line%d",__LINE__),false);
+  p526RestoreSprite(sprite,data);Common::Array<uint32>again;p526SpriteWords(sprite,again);
+  for(uint j=0;j<27;++j)if(again[j]!=data[j])return (debug("P523 validation rejection line%d",__LINE__),false);
+ }
+ bool emptyCache=true;for(uint i=102;i<118;++i)emptyCache&=!w[v+i];
+ if(!emptyCache){
+  Common::File jf;if(!jf.open(Common::FSNode(root.join("PLACES/P516/MEGAFILE.HYP"))))return (debug("P523 validation rejection line%d",__LINE__),false);
+  Scene js;ResourceReader jr(jf);if(!jr.read(js)||!supportsJupiter(js))return (debug("P523 validation rejection line%d",__LINE__),false);
+  for(uint i=0;i<8;++i){const Frame*f=spriteFrameAt(js,13+i,0);if(!f||uint64(f->image.offset)+26>uint64(jf.size()))return (debug("P523 validation rejection line%d",__LINE__),false);
+   jf.seek(f->image.offset+18);const int32 width=jf.readSint32LE(),height=jf.readSint32LE();
+   if(width<=0||height<=0||w[v+102+i]!=uint32(width)||w[v+110+i]!=uint32(height))return (debug("P523 validation rejection line%d",__LINE__),false);
+  }
+ }
+ return true;
+}
+bool AstronomicaEngine::prepareP523Packet(const Common::Array<uint32>&w,P523TrustedPrepared&out){
+ if(!out.empty()||!validateP523Packet(w))return false;
+ P523Capture data,rebuilt;Common::Array<uint32>mapping;
+ for(uint i=0;i<67;++i)data.header.push_back(w[i]);for(uint i=0;i<4;++i)mapping.push_back(w[kP523PacketMapping+i]);
+ for(uint i=0;i<605;++i)data.values.push_back(w[kP523PacketRunner+i]);
+ for(uint i=0;i<1320;++i)data.sprites.push_back(w[kP523PacketSprites+i]);
+ for(uint i=0;i<142;++i)data.privateState.push_back(w[kP523PacketPrivate+i]);
+ // Identity is granted only to this validated temporary, never to decoded words.
+ data.sourceOwner=this;data.ready=true;
+ if(!rebuildP523OriginalCapture(data,rebuilt)||!prepareP523TrustedState(rebuilt,mapping,out))return false;
+ return out.ready&&out.sourceOwner==this;
+}
+bool AstronomicaEngine::testP523PacketSemantics(const P523Capture&source,uint row){
+ Common::Array<uint32>mapping,words;
+ if(!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping)||!encodeP523Packet(source,mapping,words))return false;
+ const uint32 live=p510WholeLiveHash();P523TrustedPrepared prepared;
+ if(!validateP523Packet(words)||!prepareP523Packet(words,prepared))return (debug("P523 semantic positive refusal row%u",row),false);
+ if(prepared.header!=source.header||prepared.values!=source.values||prepared.sprites!=source.sprites||prepared.privateState!=source.privateState||!prepared.runner.p523PreparedEquivalent(source.runner))return false;
+ if(screenRGBHash(prepared.media.background,480)!=screenRGBHash(source.background,480)||screenRGBHash(prepared.media.presented,240)!=screenRGBHash(source.frame,240)||screenRGBHash(prepared.media.composed,480)!=screenRGBHash(source.composed,480))return false;
+ prepared.clearOwned();if(!prepared.empty())return false;
+ uint refusals=0;
+ for(uint field:{0U,3U,4U,7U,8U,9U,10U,11U,13U,14U,15U,16U,18U,21U,22U,23U,24U,25U,26U,27U,28U,29U,30U,31U,37U,39U,41U,47U,52U,54U,57U,58U,59U,60U,61U,62U,63U,64U,65U,66U,uint(kP523PacketMapping+1),uint(kP523PacketMapping+2),uint(kP523PacketMapping+3),uint(kP523PacketRunner+1),uint(kP523PacketRunner+119),uint(kP523PacketRunner+301),uint(kP523PacketRunner+603),uint(kP523PacketSprites),uint(kP523PacketSprites+1),uint(kP523PacketSprites+4),uint(kP523PacketSprites+6),uint(kP523PacketSprites+7),uint(kP523PacketSprites+19),uint(kP523PacketSprites+27),uint(kP523PacketPrivate),uint(kP523PacketPrivate+100),uint(kP523PacketPrivate+118),uint(kP523PacketPrivate+120),uint(kP523PacketPrivate+123),uint(kP523PacketPrivate+124),uint(kP523PacketPrivate+140)}){
+  Common::Array<uint32>bad=words;bad[field]=(field==65?128U:field==kP523PacketSprites+4?32768U:0xfffffffeU);bad.back()=p523WordsHash(bad);P523TrustedPrepared denied;
+  if(validateP523Packet(bad)||prepareP523Packet(bad,denied)||!denied.empty())return (debug("P523 semantic rejection failed field%u row%u",field,row),false);++refusals;
+ }
+ debug("P523 packet semantic preparation: PASS (row%u,%urehashed field refusals,original resource schema,605/1320/142 values and RGB reconstructed,no source owners used)",row,refusals);
+ return p510WholeLiveHash()==live;
+}
+
+bool AstronomicaEngine::commitP523Packet(P523TrustedPrepared&p){
+ if(p.sourceOwner!=this||!_clockPaused||!p.ready||!p.media.ready||!p.media.decoder||p.header.size()!=67||p.header[0]!=523||p.mapping.size()!=4||p.privateState.size()!=142||p.values.size()!=605||p.sprites.size()!=1320||p.media.sourceHeader!=p.header||p.media.sourceResumePlan!=p.mapping)return false;
+
+ Common::Array<uint32>values,preparedPlan;if(!p.runner.exportPersistentState(values)||values!=p.values||!static_cast<P523AudioClockObserver*>(p.media.decoder)->pausedResumeObservation(preparedPlan)||preparedPlan!=p.media.preparedResumePlan)return false;
+ if(!p.media.decoder->isPlaying()||!p.media.decoder->isPaused()||p.media.decoder->getTime()!=p.header[7]||p.media.decoder->getCurFrame()!=int32(p.header[8]))return false;
+ PauseToken internal=pauseEngine();
+ _mixer->stopHandle(_soundHandle);_pendingImage.free();_pendingImageName.clear();_hoverSprites.clear();_hoverRects.clear();_questionSaveBaseline.clear();_plotEvent=0;_plotTime=0;
+ _probeAssetsValid=_rendezvousAssetsValid=_p501AssetsValid=_p502AssetsValid=_p503AssetsValid=_p504AssetsValid=_p527AssetsValid=_p516AssetsValid=_p511AssetsValid=_p509AssetsValid=_p521AssetsValid=_planetAssetsValid=false;
+
+ // Prepared owners, callbacks, runner and scalar plan are complete. The holder
+ // receives retired owners; no startup program or movie seek is replayed here.
+ p510SwapScene(_scene,p.scene);_runner.swapP510PreparedRunner(p.runner);
+ p510SwapValue(_movie,p.media.decoder);p510SwapSurface(_movieFrame,p.media.presented);p510SwapSurface(_background,p.media.background);p510SwapSurface(_screen,p.media.composed);
+ Common::String oldName=static_cast<Common::String&&>(_displayedImageName);_displayedImageName=static_cast<Common::String&&>(p.displayedName);p.displayedName=static_cast<Common::String&&>(oldName);
+ applyP523CapturedScalars(p.header,p.privateState);
+ p.ready=false;p.sourceOwner=nullptr;p.media.ready=false;p.media.sourceHeader.clear();p.media.sourceResumePlan.clear();p.media.preparedResumePlan.clear();p.media.independentPcmSample=0;
+ return true;
+}
+bool AstronomicaEngine::canSaveP523(){
+ if(_place!=523||!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return false;
+ if(ConfMan.hasKey("astronomica_debug_overlay")&&ConfMan.getBool("astronomica_debug_overlay"))return false;
+ PauseToken hold=pauseEngine();P523Capture source;Common::Array<uint32>mapping,words;
+ return captureP523Active(source)&&static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping)&&encodeP523Packet(source,mapping,words)&&validateP523Packet(words);
+}
+Common::Error AstronomicaEngine::saveP523(Common::WriteStream*stream){
+ if(_place!=523||!stream||!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input"))return Common::kWritingFailed;
+ if(ConfMan.hasKey("astronomica_debug_overlay")&&ConfMan.getBool("astronomica_debug_overlay"))return Common::kWritingFailed;
+ PauseToken hold=pauseEngine();P523Capture source;Common::Array<uint32>mapping,words;
+ if(!captureP523Active(source)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping)||!encodeP523Packet(source,mapping,words)||!validateP523Packet(words))return Common::kWritingFailed;
+ return writeP523Packet(stream,words)?Common::kNoError:Common::kWritingFailed;
+}
+Common::Error AstronomicaEngine::loadP523(Common::SeekableReadStream*stream){
+ // Public dispatch has consumed ASVM/version. Re-read the bounded native
+ // packet without consuming the ScummVM metadata after its fixed payload.
+ if(!stream||stream->pos()<8||!stream->seek(stream->pos()-8))return Common::kReadingFailed;
+ Common::Array<uint32>words;if(!readP523Packet(stream,words))return Common::kReadingFailed;
+ P523TrustedPrepared prepared;if(!prepareP523Packet(words,prepared))return Common::kReadingFailed;
+ PauseToken hold=pauseEngine();if(!commitP523Packet(prepared))return Common::kReadingFailed;
+ // Retired receiver resources must be destroyed before this hold releases
+ // the one local pause belonging to the newly installed movie.
+ prepared.clearOwned();return Common::kNoError;
+}
+bool AstronomicaEngine::captureP523Physical(const P523Capture&source,uint row){
+ if(row<1||row>3||ConfMan.getPath("savepath").baseName()!="p523-physical-slots")return false;
+ const int slot=40+row;const Common::String name=getSaveStateName(slot);
+ const Common::Path sidecar=ConfMan.getPath("savepath").join(Common::Path(name+".expected"));
+ if(_saveFileMan->exists(name)||Common::FSNode(sidecar).exists())return false;
+ Common::Array<uint32>mapping,words;
+ if(!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping)||!encodeP523Packet(source,mapping,words)||!validateP523Packet(words))return false;
+ const uint32 live=p510WholeLiveHash();Common::MemoryWriteStreamDynamic output(DisposeAfterUse::YES);
+ if(!canSaveGameStateCurrently()||saveGameStream(&output).getCode()!=Common::kNoError||output.size()!=kP523PacketBytes)return false;
+ for(uint i=0;i<kP523PacketWords;++i)if(READ_LE_UINT32(output.getData()+8+i*4)!=words[i])return false;
+ uint rejected=0;
+ if(row==1){
+  auto reject=[&](const byte*data,uint length){
+   Video::QuickTimeDecoder*movie=_movie;const void*screen=_screen.getPixels();const uint32 clock=scriptClock();
+   Common::MemoryReadStream input(data,length);
+   return loadGameStream(&input).getCode()==Common::kReadingFailed&&_movie==movie&&_screen.getPixels()==screen&&scriptClock()==clock;
+  };
+  for(uint n=0;n<output.size();++n){if(!reject(output.getData(),n))return false;++rejected;}
+  Common::Array<byte>bad;bad.resize(output.size());memcpy(&bad[0],output.getData(),output.size());
+  for(uint n=0;n<bad.size();++n){bad[n]^=1;if(!reject(&bad[0],bad.size()))return false;bad[n]^=1;++rejected;}
+  const int x=_movieX;_movieX=32768;Common::MemoryWriteStreamDynamic denied(DisposeAfterUse::YES);
+  const bool refused=!canSaveGameStateCurrently()&&saveGameStream(&denied).getCode()==Common::kWritingFailed&&denied.size()==0;_movieX=x;
+  if(!refused)return false;
+ }
+ if(p510WholeLiveHash()!=live)return false;
+ const Common::String description=Common::String::format("P523 active original row%u",row);
+ if(saveGameState(slot,description).getCode()!=Common::kNoError||p510WholeLiveHash()!=live)return false;
+ Common::ScopedPtr<Common::InSaveFile>physical(_saveFileMan->openForLoading(name));Common::Array<uint32>disk;
+ if(!physical||!readP523Packet(physical.get(),disk)||disk!=words||physical->pos()!=kP523PacketBytes)return false;
+ const SaveStateDescriptor metadata=getMetaEngine()->querySaveMetaInfos(_targetName.c_str(),slot);
+ if(!metadata.isValid()||metadata.getDescription()!=description||!metadata.getThumbnail()||!metadata.getThumbnail()->w||!metadata.getThumbnail()->h||metadata.getSaveDate().empty()||metadata.getSaveTime().empty())return false;
+ bool listed=false;for(const SaveStateDescriptor&entry:getMetaEngine()->listSaves(_targetName.c_str()))if(entry.getSaveSlot()==slot&&entry.getDescription()==description)listed=true;
+ if(!listed)return false;
+ Common::DumpFile expected;if(!expected.open(Common::FSNode(sidecar)))return false;
+ expected.writeUint32BE(MKTAG('P','5','3','E'));
+ for(uint32 value:{1U,uint32(slot),screenRGBHash(source.background,480),screenRGBHash(source.frame,240),screenRGBHash(source.composed,480)})expected.writeUint32LE(value);
+ for(uint32 value:words)expected.writeUint32LE(value);
+ if(expected.err()||expected.pos()!=8580)return false;expected.close();
+ debug("P523 ASVM31 physical capture: PASS (slot%d,row%u,2139words,8564native bytes,%upublic parser refusals,zero-byte writer refusal,original pixels,metadata query/list/thumbnail)",slot,row,rejected);
+ return p510WholeLiveHash()==live;
+}
+bool AstronomicaEngine::testP523FreshPhysical(PauseToken&startup){
+ auto fail=[&](const char*why){debug("P523 ASVM31 fresh process: FAIL (%s)",why);return false;};
+ if(!ConfMan.hasKey("save_slot")||!_clockPaused||!isPaused())return fail("real startup pause required");
+ const int slot=ConfMan.getInt("save_slot");if(slot<41||slot>43)return fail("slot");
+ Common::File expected;const Common::Path path=ConfMan.getPath("savepath").join(Common::Path(getSaveStateName(slot)+".expected"));
+ if(!expected.open(Common::FSNode(path))||expected.size()!=8580||expected.readUint32BE()!=MKTAG('P','5','3','E')||expected.readUint32LE()!=1||expected.readUint32LE()!=uint(slot))return fail("sidecar");
+ const uint32 background=expected.readUint32LE(),frame=expected.readUint32LE(),pixels=expected.readUint32LE();Common::Array<uint32>words;
+ for(uint i=0;i<kP523PacketWords;++i)words.push_back(expected.readUint32LE());
+ if(expected.err()||!validateP523Packet(words))return fail("source packet");
+ P523Capture current;Common::Array<uint32>mapping;
+ if(!captureP523Active(current)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping))return fail("installed capture");
+ for(uint i=0;i<54;++i)if(i!=36&&i!=38&&current.header[i]!=words[i])return fail("game header");
+ for(uint i:{54U,55U,56U,58U,59U,64U,65U,66U})if(current.header[i]!=words[i])return fail("media properties");
+ for(uint i=0;i<605;++i)if(current.values[i]!=words[kP523PacketRunner+i])return fail("runner");
+ for(uint i=0;i<1320;++i)if(current.sprites[i]!=words[kP523PacketSprites+i])return fail("sprites");
+ for(uint i=0;i<142;++i)if(current.privateState[i]!=words[kP523PacketPrivate+i])return fail("private state");
+ for(uint i=1;i<4;++i)if(mapping[i]!=words[kP523PacketMapping+i])return fail("logical clock");
+ if(screenRGBHash(current.background,480)!=background||screenRGBHash(current.frame,240)!=frame||screenRGBHash(current.composed,480)!=pixels)return fail("original pixel hashes");
+ if(_runner.executedCount())return fail("startup was replayed");
+ const uint32 sounds=_soundsStarted,completed=_puzzlesCompleted;
+ Common::Array<uint32>preferences;for(Audio::Mixer::SoundType t:{Audio::Mixer::kMusicSoundType,Audio::Mixer::kSFXSoundType,Audio::Mixer::kPlainSoundType}){preferences.push_back(_mixer->getVolumeForSoundType(t));preferences.push_back(_mixer->isSoundTypeMuted(t));}
+ {PauseToken inner=pauseEngine();inner.clear();_system->delayMillis(15);if(!_clockPaused||!_movie->isPaused()||_movie->getTime()!=words[7])return fail("nested hold");}
+ startup.clear();if(_clockPaused||_movie->isPaused()||!_movie->isPlaying())return fail("final pause release");
+ Common::Array<int>events;const uint32 began=_system->getMillis();
+ while(_place==523&&_system->getMillis()-began<45000){
+  int slotNext=-1;for(uint i=0;i<2;++i)if(_dangerEvent[i]&&(slotNext<0||_dangerTime[i]<_dangerTime[slotNext]))slotNext=i;
+  const int event=slotNext<0?0:_dangerEvent[slotNext];const uint32 due=slotNext<0?0:_dangerTime[slotNext];
+  const uint32 now=scriptClock();runScriptsAt(now);updateWorldAt(now);animateSpritesAt(now);resumeLoopAt(now);updateMovie();
+  if(event&&(_place!=523||_dangerEvent[slotNext]!=event||_dangerTime[slotNext]!=due))events.push_back(event);
+  _system->delayMillis(2);
+ }
+ Common::Array<int>wanted;if(slot==41)wanted.push_back(13);if(slot<=42)wanted.push_back(1);wanted.push_back(3);
+ if(events!=wanted||_place!=117||_puzzlesCompleted!=completed||_soundsStarted!=sounds+1||_lastSound!=911){
+  debug("P523 fresh outcome detail slot%d events%u/wanted%u place%d completed%u/%u sounds%u/%u lastSound%d",slot,events.size(),wanted.size(),_place,_puzzlesCompleted,completed,_soundsStarted,sounds+1,_lastSound);
+  for(int event:events)debug("P523 actual fresh callback%d",event);return fail("natural original continuation");
+ }
+ Common::Array<uint32>after;for(Audio::Mixer::SoundType t:{Audio::Mixer::kMusicSoundType,Audio::Mixer::kSFXSoundType,Audio::Mixer::kPlainSoundType}){after.push_back(_mixer->getVolumeForSoundType(t));after.push_back(_mixer->isSoundTypeMuted(t));}
+ if(after!=preferences)return fail("recipient preferences");
+ debug("P523 ASVM31 fresh process: PASS (slot%d,original file load from P1,605/1320/142 and RGB restored,logical clock retained,nested hold/final resume,no startup or S301 replay,%unatural callbacks,P117 unsolved,recipient telemetry/preferences retained)",slot,events.size());return true;
+}
+
+bool AstronomicaEngine::testP523RecordedPackets(){
+ auto fail=[&](uint row,const char*why){debug("P523 recorded ASVM31 replay: FAIL (row%u,%s)",row,why);return false;};
+ Common::File file;if(!file.open(Common::FSNode(ConfMan.getPath("astronomica_p523_replay"))))return fail(0,"manifest");
+ if(file.readUint32BE()!=MKTAG('P','5','3','R')||file.readUint32LE()!=1)return fail(0,"manifest version");
+ const uint count=file.readUint32LE();if(count!=185||file.size()!=12+int64(count)*(16+4*kP523PacketWords))return fail(0,"bounded manifest size");
+ PauseToken hold=pauseEngine();uint accepted=0,expired=0;
+ for(uint n=0;n<count;++n){
+  const uint row=file.readUint32LE();const uint32 bg=file.readUint32LE(),frame=file.readUint32LE(),pixels=file.readUint32LE();Common::Array<uint32>words;
+  for(uint i=0;i<kP523PacketWords;++i)words.push_back(file.readUint32LE());
+  if(file.err()||!validateP523Packet(words))return fail(row,"recorded semantic preflight");
+  Common::MemoryWriteStreamDynamic bytes(DisposeAfterUse::YES);if(!writeP523Packet(&bytes,words))return fail(row,"transport");
+  const uint sounds=_soundsStarted;Common::MemoryReadStream input(bytes.getData(),bytes.size());
+  if(loadGameStream(&input).getCode()!=Common::kNoError||input.pos()!=kP523PacketBytes||_soundsStarted!=sounds||!_clockPaused||!_movie||!_movie->isPaused())return fail(row,"public atomic adoption");
+  P523Capture current;Common::Array<uint32>mapping;
+  if(!captureP523Active(current)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping))return fail(row,"adopted capture");
+  for(uint i=0;i<54;++i)if(i!=36&&i!=38&&current.header[i]!=words[i])return fail(row,"game header");
+  for(uint i:{54U,55U,56U,58U,59U,64U,65U,66U})if(current.header[i]!=words[i])return fail(row,"media properties");
+  for(uint i=0;i<605;++i)if(current.values[i]!=words[kP523PacketRunner+i])return fail(row,"runner");
+  for(uint i=0;i<1320;++i)if(current.sprites[i]!=words[kP523PacketSprites+i])return fail(row,"sprites");
+  for(uint i=0;i<142;++i)if(current.privateState[i]!=words[kP523PacketPrivate+i])return fail(row,"private state");
+  for(uint i=1;i<4;++i)if(mapping[i]!=words[kP523PacketMapping+i])return fail(row,"logical clock");
+  if(screenRGBHash(current.background,480)!=bg||screenRGBHash(current.frame,240)!=frame||screenRGBHash(current.composed,480)!=pixels||_runner.executedCount())return fail(row,"original pixels/no startup");
+  Common::MemoryWriteStreamDynamic rewrite(DisposeAfterUse::YES);Common::Array<uint32>rewritten;
+  if(!canSaveGameStateCurrently()||saveGameStream(&rewrite).getCode()!=Common::kNoError)return fail(row,"new-capture rewrite");
+  Common::MemoryReadStream reread(rewrite.getData(),rewrite.size());if(!readP523Packet(&reread,rewritten)||!validateP523Packet(rewritten))return fail(row,"rewritten semantic preflight");
+  // Rehashed transport-valid input with an elapsed audio anchor beyond the
+  // current original range must refuse, with every live owner unchanged.
+  Common::Array<uint32>bad=words;const uint32 after=uint32(uint64(words[11])*1000/30)+1;
+  bad[57]=after-bad[58];bad[60]=bad[61]=1;bad[62]=bad[63]=after;
+  bad[kP523PacketMapping]=0;bad[kP523PacketMapping+1]=bad[57];bad[kP523PacketMapping+2]=after;bad[kP523PacketMapping+3]=1;bad.back()=p523WordsHash(bad);
+  Common::MemoryWriteStreamDynamic deniedBytes(DisposeAfterUse::YES);if(!writeP523Packet(&deniedBytes,bad))return fail(row,"expired transport");
+  const uint32 live=p510WholeLiveHash();Video::QuickTimeDecoder*movie=_movie;const void*screen=_screen.getPixels();
+  Common::MemoryReadStream denied(deniedBytes.getData(),deniedBytes.size());
+  if(loadGameStream(&denied).getCode()!=Common::kReadingFailed||_movie!=movie||_screen.getPixels()!=screen||p510WholeLiveHash()!=live)return fail(row,"expired input atomic refusal");
+  ++accepted;++expired;debug("P523 recorded ASVM31 row: PASS (row%u,actual public load/commit,rewrite,605/1320/142 and recorded RGB,logical clock,no donor owners,expired rehashed input refused atomically)",row);
+ }
+ if(file.pos()!=file.size())return fail(0,"manifest tail");
+ hold.clear();if(_clockPaused||!_movie||_movie->isPaused())return fail(0,"aggregate release");
+ debug("P523 recorded ASVM31 replay: PASS (%u original recorded states,%u public commits,%u expired-input atomic refusals,no donor objects or startup replay)",count,accepted,expired);return true;
+}
+
+bool AstronomicaEngine::testP523PacketRecipients(){
+ auto fail=[&](int place,uint mode,const char*why){debug("P523 ASVM31 recipient: FAIL (P%d,pause%u,%s)",place,mode,why);return false;};
+ Common::File input;if(!input.open(Common::FSNode(ConfMan.getPath("astronomica_p523_source"))))return fail(0,0,"physical source");
+ Common::Array<uint32>words;if(!readP523Packet(&input,words)||!validateP523Packet(words))return fail(0,0,"source packet");
+ const bool entry=ConfMan.getBool("astronomica_entry_scripts");ConfMan.setBool("astronomica_entry_scripts",false);
+ uint commits=0,refused=0,activeMovies=0,pending=0;
+ for(int place:{1,117,519,510,512,525,523})for(uint mode=0;mode<3;++mode){
+  if(_clockPaused||isPaused()||!loadPlace(place))return fail(place,mode,"recipient load");
+  if(_movie){if(!_movie->seekToFrame(0))return fail(place,mode,"recipient movie seek");_movie->start();_moviePlaying=true;if(!_movie->isPlaying())return fail(place,mode,"recipient movie activation");++activeMovies;}
+  _runner.enqueueStartup(_scene.scripts,scriptClock(),true);const uint oldPending=_runner.pendingCount();pending+=uint(oldPending!=0);
+  if(_runner.clicksBlocked()||!playSound(922,scriptClock())||!_mixer->isSoundHandleActive(_soundHandle))return fail(place,mode,"receiver foreground");
+  _pendingImage.create(3,2,_screen.format);_pendingImageName="__p523_receiver_fixture";_hoverSprites.push_back(HoverTarget());_hoverRects.push_back(HoverTarget());_questionSaveBaseline.push_back(Sprite());_plotEvent=20;_plotTime=37;
+  _mixer->setVolumeForSoundType(Audio::Mixer::kMusicSoundType,37+mode);_mixer->setVolumeForSoundType(Audio::Mixer::kSFXSoundType,91+mode);_mixer->setVolumeForSoundType(Audio::Mixer::kPlainSoundType,173+mode);
+  Common::Array<uint32>preferences;for(Audio::Mixer::SoundType t:{Audio::Mixer::kMusicSoundType,Audio::Mixer::kSFXSoundType,Audio::Mixer::kPlainSoundType}){preferences.push_back(_mixer->getVolumeForSoundType(t));preferences.push_back(_mixer->isSoundTypeMuted(t));}
+  PauseToken outer,inner;if(mode)outer=pauseEngine();if(mode==2)inner=pauseEngine();
+  const uint sounds=_soundsStarted;const Audio::SoundHandle sound=_soundHandle;Video::QuickTimeDecoder*movie=_movie;const void*screen=_screen.getPixels(),*background=_background.getPixels();
+  {
+   PauseToken audit=pauseEngine();const uint32 live=p510WholeLiveHash();
+   for(bool repaired:{false,true}){
+    Common::Array<uint32>bad=words;bad[0]=0;if(repaired)bad.back()=p523WordsHash(bad);
+    Common::MemoryWriteStreamDynamic bytes(DisposeAfterUse::YES);
+    bytes.writeUint32BE(MKTAG('A','S','V','M'));bytes.writeUint32LE(31);for(uint32 word:bad)bytes.writeUint32LE(word);
+    Common::MemoryReadStream stream(bytes.getData(),bytes.size());
+    if(loadGameStream(&stream).getCode()!=Common::kReadingFailed||p510WholeLiveHash()!=live||_movie!=movie||_screen.getPixels()!=screen||_background.getPixels()!=background||!(_soundHandle==sound)||!_mixer->isSoundHandleActive(sound)||_runner.pendingCount()!=oldPending)return fail(place,mode,"atomic invalid input refusal");++refused;
+   }
+  }
+  Common::MemoryWriteStreamDynamic bytes(DisposeAfterUse::YES);if(!writeP523Packet(&bytes,words))return fail(place,mode,"transport");Common::MemoryReadStream stream(bytes.getData(),bytes.size());
+  if(loadGameStream(&stream).getCode()!=Common::kNoError||stream.pos()!=kP523PacketBytes)return fail(place,mode,"public adoption");
+  if(_place!=523||_clockPaused!=bool(mode)||isPaused()!=bool(mode)||!_movie||_movie==movie||_movie->isPaused()!=bool(mode)||!_movie->isPlaying()||_screen.getPixels()==screen||_background.getPixels()==background)return fail(place,mode,"ownership/pause transfer");
+  if(_soundsStarted!=sounds||!(_soundHandle==sound)||_mixer->isSoundHandleActive(sound)||_mixer->hasActiveChannelOfType(Audio::Mixer::kSFXSoundType)||!_runner.scriptsIdle()||_runner.executedCount()||_pendingImage.w||!_pendingImageName.empty()||!_hoverSprites.empty()||!_hoverRects.empty()||!_questionSaveBaseline.empty()||_plotEvent||_plotTime)return fail(place,mode,"retired receiver cleanup");
+  {
+   PauseToken audit=pauseEngine();P523Capture current;Common::Array<uint32>mapping;
+   if(!captureP523Active(current)||!static_cast<P523AudioClockObserver*>(_movie)->pausedResumeObservation(mapping))return fail(place,mode,"installed capture");
+   for(uint i=0;i<605;++i)if(current.values[i]!=words[kP523PacketRunner+i])return fail(place,mode,"persistent values");
+   for(uint i=0;i<1320;++i)if(current.sprites[i]!=words[kP523PacketSprites+i])return fail(place,mode,"sprite values");
+   for(uint i=0;i<142;++i)if(current.privateState[i]!=words[kP523PacketPrivate+i])return fail(place,mode,"private values");
+   if(mode&&(current.header[7]!=words[7]||scriptClock()!=words[2]))return fail(place,mode,"paused clocks");
+   if(!mode&&(uint32(scriptClock()-words[2])>500||uint32(mapping[1]-words[kP523PacketMapping+1])>500))return fail(place,mode,"unpaused clock progression");
+  }
+  Common::Array<uint32>after;for(Audio::Mixer::SoundType t:{Audio::Mixer::kMusicSoundType,Audio::Mixer::kSFXSoundType,Audio::Mixer::kPlainSoundType}){after.push_back(_mixer->getVolumeForSoundType(t));after.push_back(_mixer->isSoundTypeMuted(t));}
+  if(after!=preferences)return fail(place,mode,"recipient preferences");
+  if(mode==2){inner.clear();if(!_clockPaused||!_movie->isPaused())return fail(place,mode,"inner release");}
+  if(mode)outer.clear();if(_clockPaused||isPaused()||_movie->isPaused()||!_movie->isPlaying())return fail(place,mode,"final release");
+  ++commits;debug("P523 ASVM31 recipient: PASS (P%d,pause%u,pending%u,actual movie/foreground and pending-image/hover disposal,invalid inputs atomic,source605/1320/142,caller pause and mixer preferences retained)",place,mode,oldPending);
+ }
+ ConfMan.setBool("astronomica_entry_scripts",entry);
+ if(commits!=21||refused!=42||activeMovies!=12||!pending)return fail(0,0,"matrix counts");
+ debug("P523 ASVM31 recipient matrix: PASS (%u commits,%u invalid-input refusals,%u live movie fixtures,%u queued original scripts,7scenes/3pause levels)",commits,refused,activeMovies,pending);return true;
+}
+
+bool AstronomicaEngine::captureP523Active(P523Capture&out)const{
+ if(!out.vacantOwners()||_place!=523||!_movie||!_moviePlaying||!_movie->isPlaying()||!_clockPaused||!_movie->isPaused()||_movie->getRate()!=Common::Rational(1,1))return false;
+ if(_scene.sprites.size()!=44||_scene.scripts.size()!=1||_scene.layers!=1||_scene.commandCount!=41||_pendingImage.w||!_pendingImageName.empty()||!_hoverSprites.empty()||!_hoverRects.empty()||_plotEvent||_plotTime)return false;
+ if(_mixer->isSoundHandleActive(_soundHandle)||!_questionSaveBaseline.empty())return false;
+ P523Capture p;if(!_runner.exportPersistentState(p.values)||p.values.size()!=605)return false;
+ int32 global39=0;const bool known39=_runner.getValue(0,39,global39);
+ int next=-1;for(uint slot=0;slot<2;++slot)if(_dangerEvent[slot]&&(next<0||_dangerTime[slot]<_dangerTime[next]))next=slot;
+ const uint32 header[]={uint32(_place),_puzzlesCompleted,scriptClock(),uint32(_previousPlace),uint32(_moviePlaying),uint32(_movie->isPlaying()),uint32(_movie->isPaused()),_movie->getTime(),uint32(_movie->getCurFrame()),uint32(_moviePresentedFrame),_movieSegmentStart,uint32(_movie->getEndTime().convertToFramerate(30).totalNumberOfFrames()),_movieFramesDrawn,uint32(_movieX),uint32(_movieY),uint32(_movie->getVolume()),uint32(_movie->getRate().getNumerator()),uint32(_movie->getRate().getDenominator()),uint32(_dangerChannels[0]),uint32(_dangerChannels[1]),uint32(_dangerChannels[2]),uint32(_dangerButtons),uint32(_dangerEvent[0]),_dangerTime[0],uint32(_dangerEvent[1]),_dangerTime[1],uint32(next),0,uint32(known39),uint32(global39),uint32(_loopSound),uint32(_loopEnabled),_lastSoundAt,uint32(_lastSound),_lastBlockingSoundEnd,_lastSuccessEnd,_soundsStarted,uint32(_mixer->isSoundHandleActive(_soundHandle)),_mixer->getSoundElapsedTime(_soundHandle),uint32(_worldMovieCursorBottom),_universeSegmentEnd,uint32(_universeAssetsValid),_p519LargeImage,_p519SmallImage,_p528EarthImage,_p528MoonImage,_p528TallMoon,uint32(_p528HistoryValid),uint32(_p530HistoryValid),uint32(_p513HistoryValid),uint32(_p517HistoryValid),uint32(_builderHistoryValid),uint32(_pendingImageX),uint32(_pendingImageY)};
+ for(uint32 v:header)p.header.push_back(v);
+ Common::Array<uint32>audioObservation;if(!static_cast<P523AudioClockObserver*>(_movie)->pausedAudioObservation(audioObservation)||audioObservation.size()!=13)return false;for(uint32 v:audioObservation)p.header.push_back(v);
+ for(const Sprite&s:_scene.sprites){p526SpriteWords(s,p.sprites);for(int32 v:{int32(s.dragEnabled),s.planetMotion,s.planetPeriod})p.sprites.push_back(uint32(v));}
+ p516Extra(p.privateState);for(int32 v:{_comet.frame,_comet.previousFrame,int32(_rocket.kind),_rocket.delta,int32(_rocket.since),_probe.year,int32(_probe.yearArmed),int32(_probe.specialHit),int32(_probe.flying),int32(_probe.expired)})p.privateState.push_back(uint32(v));
+ for(uint i=0;i<3;++i){p.privateState.push_back(_probe.widths[i]);p.privateState.push_back(_probe.heights[i]);p.privateState.push_back(_nav[i]);}
+ for(int32 v:{_ball.scenario,_ball.centerX,_ball.centerY,_ball.side,_ball.period})p.privateState.push_back(uint32(v));
+ p.scene=_scene;p.runner=_runner;p.displayedName=_displayedImageName;
+ p.background.copyFrom(_background);p.composed.copyFrom(_screen);if(_movieFrame.w)p.frame.copyFrom(_movieFrame);
+ if(p.header.size()!=67||p.sprites.size()!=1320||p.privateState.size()!=142)return false;
+ p510SwapScene(p.scene,out.scene);p.runner.swapP510PreparedRunner(out.runner);p510SwapSurface(p.background,out.background);p510SwapSurface(p.frame,out.frame);p510SwapSurface(p.composed,out.composed);p.header.swap(out.header);p.values.swap(out.values);p.sprites.swap(out.sprites);p.privateState.swap(out.privateState);out.displayedName=static_cast<Common::String&&>(p.displayedName);out.sourceOwner=this;out.ready=true;return true;
+}
+bool AstronomicaEngine::testP523ActiveCapture(uint row,const char*tag){
+ static uint accepted=0,refused=0,both=0;
+ if(_place!=523||!_movie||!_moviePlaying)return false;
+ const uint32 runnerBefore=_runner.p510CompleteHash(),sounds=_soundsStarted;Video::QuickTimeDecoder*const decoder=_movie;
+ const void*const background=_background.getPixels(),*const pixels=_screen.getPixels(),*const frame=_movieFrame.getPixels();
+ const uint32 screenHash=screenRGBHash(_screen,480),backgroundHash=screenRGBHash(_background,480),frameHash=screenRGBHash(_movieFrame,480);
+ int events[2]={_dangerEvent[0],_dangerEvent[1]};uint32 times[2]={_dangerTime[0],_dangerTime[1]};
+ const uint32 prePauseMedia=_movie->getTime();
+ P523Capture unpaused;unpaused.header.push_back(0xdecafbad);if(captureP523Active(unpaused)||unpaused.header.size()!=1||unpaused.header[0]!=0xdecafbad||unpaused.ready)return false;
+ PauseToken outer=pauseEngine(),inner=pauseEngine();if(!_clockPaused||!_movie->isPaused())return false;
+ const uint32 live=p510WholeLiveHash(),clock=scriptClock(),media=_movie->getTime();const int current=_movie->getCurFrame();
+ const bool complete=_runner.scriptsIdle();P523Capture captured;captured.header.push_back(0xdecafbad);const bool result=captureP523Active(captured);
+ if(result!=complete||p510WholeLiveHash()!=live||scriptClock()!=clock||_movie->getTime()!=media||_movie->getCurFrame()!=current)return false;
+ if(!result){if(!captured.vacantOwners()||captured.header.size()!=1||captured.header[0]!=0xdecafbad)return false;++refused;debug("P523 capture refusal: PASS (row%u,tag%s,incomplete runner,pending%u,output sentinel/source unchanged)",row,tag,_runner.pendingCount());}
+ else{
+  if(ConfMan.hasKey("astronomica_verify_p523_detached_media")&&ConfMan.getBool("astronomica_verify_p523_detached_media")&&!testP523DetachedPreparation(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_verify_p523_paused_resume")&&ConfMan.getBool("astronomica_verify_p523_paused_resume")&&!testP523PausedResumePreparation(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_verify_p523_media_exchange")&&ConfMan.getBool("astronomica_verify_p523_media_exchange")&&!testP523SameCaptureExchange(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_verify_p523_trusted_state")&&ConfMan.getBool("astronomica_verify_p523_trusted_state")&&!testP523TrustedState(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_verify_p523_original_rebuild")&&ConfMan.getBool("astronomica_verify_p523_original_rebuild")&&!testP523OriginalRebuild(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_verify_p523_packet")&&ConfMan.getBool("astronomica_verify_p523_packet")&&!testP523Packet(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_verify_p523_semantic")&&ConfMan.getBool("astronomica_verify_p523_semantic")&&!testP523PacketSemantics(captured,row))return false;
+  if(ConfMan.hasKey("astronomica_capture_p523_physical")&&ConfMan.getBool("astronomica_capture_p523_physical")&&!captureP523Physical(captured,row))return false;
+  P523Capture again;if(!captureP523Active(again)||again.header!=captured.header||again.values!=captured.values||again.sprites!=captured.sprites||again.privateState!=captured.privateState||again.displayedName!=captured.displayedName)return false;
+  if(captured.background.getPixels()==background||captured.composed.getPixels()==pixels||screenRGBHash(captured.background,480)!=backgroundHash||screenRGBHash(captured.composed,480)!=screenHash||screenRGBHash(captured.frame,480)!=frameHash)return false;
+  if(_movieFrame.w&&captured.frame.getPixels()==frame)return false;
+  Common::Array<uint32>copied;if(!captured.runner.exportPersistentState(copied)||copied!=captured.values||captured.scene.sprites.size()!=44||captured.scene.commandCount!=41)return false;
+  if(captureP523Active(captured)||!captured.ready)return false;
+  _system->delayMillis(5);P523Capture later;if(!captureP523Active(later)||later.header!=captured.header||later.values!=captured.values||later.sprites!=captured.sprites||later.privateState!=captured.privateState||p510WholeLiveHash()!=live)return false;
+  ++accepted;both+=events[0]&&events[1];
+  debug("P523 paused audio clock capture: PASS (row%u,tracks%u,trackPaused%u,reportedEnd%u,elapsed%u,base%u,sync%u,nonzero%u,wouldUseAudio%u,anchor%u,wouldResumeTime%u,pausedSystem%u,current%d; stable3captures/no sample cursor)",row,captured.header[54],captured.header[55],captured.header[56],captured.header[57],captured.header[58],captured.header[59],captured.header[60],captured.header[61],captured.header[62],captured.header[63],captured.header[7],current);
+  debug("P523 capture: PASS (row%u,tag%s,header67,runner605,sprites1320,private142,events%d/%d,times%u/%u,next%u,tie0,media%u,current%d,presented%d,prePauseMedia%u,global39%u,completed%u,background%08x,frame%08x,screen%08x)",row,tag,events[0],events[1],times[0],times[1],captured.header[26],media,current,_moviePresentedFrame,prePauseMedia,captured.header[29],_puzzlesCompleted,backgroundHash,frameHash,screenHash);
+  auto words=[&](const char*kind,const Common::Array<uint32>&data){Common::String line=Common::String::format("P523CAPTUREWORDS row=%u kind=%s count=%u",row,kind,data.size());for(uint32 v:data)line+=Common::String::format(" %u",v);debug("%s",line.c_str());};words("header",captured.header);words("runner",captured.values);words("sprites",captured.sprites);words("private",captured.privateState);
+  captured.clearOwned();if(!captured.vacantOwners()||!captured.header.empty())return false;
+ }
+ inner.clear();if(!_clockPaused||!_movie->isPaused()||scriptClock()!=clock||_movie->getTime()!=media)return false;
+ outer.clear();if(_clockPaused||_movie->isPaused()||!_movie->isPlaying()||!_moviePlaying)return false;
+ if(_movie!=decoder||_background.getPixels()!=background||_screen.getPixels()!=pixels||_movieFrame.getPixels()!=frame||_runner.p510CompleteHash()!=runnerBefore||_soundsStarted!=sounds||screenRGBHash(_screen,480)!=screenHash||screenRGBHash(_background,480)!=backgroundHash||screenRGBHash(_movieFrame,480)!=frameHash)return false;
+ for(uint i=0;i<2;++i)if(_dangerEvent[i]!=events[i]||_dangerTime[i]!=times[i])return false;
+ debug("P523 capture source ownership: PASS (row%u,accepted%u,refused%u,bothLive%u,real inner retains/outer releases,owners/pixels/runner/callbacks unchanged;audio sample cursor unavailable)",row,accepted,refused,both);return true;
+}
+
 bool AstronomicaEngine::canSaveP510()const{Common::Array<uint32>words;return captureP510Packet(words,scriptClock());}
 Common::Error AstronomicaEngine::saveP510(Common::WriteStream*stream){
  Common::Array<uint32>words;if(!captureP510Packet(words,scriptClock()))return Common::kWritingFailed;
@@ -11881,12 +12890,180 @@ bool AstronomicaEngine::verifySpectrumPuzzle() {
  debug("Astronomica P519 interaction verification: %s (five original pairings, two orders, wrong Sun pairing, flash and unsolved exit)",ok ? "PASS" : "FAIL");
  return ok;
 }
+// Actual mixer/startup gate tests, compiled into the real engine candidate.
+struct P523GateCounter {
+ Common::Mutex mutex;
+ uint samples = 0, destroyed = 0;
+ uint read() { Common::StackLock lock(mutex); return samples; }
+};
+class P523CountingAudio final : public Audio::AudioStream {
+public:
+ explicit P523CountingAudio(P523GateCounter &counter) : _counter(counter) {}
+ ~P523CountingAudio() override { Common::StackLock lock(_counter.mutex); ++_counter.destroyed; }
+ int readBuffer(int16 *buffer, int samples) override {
+  Common::StackLock lock(_counter.mutex);
+  for (int i=0;i<samples;++i) buffer[i]=int16(100+((_counter.samples+i)%300));
+  _counter.samples+=samples; return samples;
+ }
+ bool isStereo() const override { return false; }
+ int getRate() const override { return 11127; }
+ bool endOfData() const override { return false; }
+private:
+ P523GateCounter &_counter;
+};
+static bool verifyP523PausedGate(Audio::Mixer *mixer, OSystem *system) {
+ for (uint owned=0;owned<2;++owned) {
+  P523GateCounter counter;P523CountingAudio *source=new P523CountingAudio(counter);
+  {
+   Video::PausedAudioGate gate(source,owned?DisposeAfterUse::YES:DisposeAfterUse::NO);
+   int16 samples[64];
+   for(uint n=0;n<8;++n){
+    if(gate.readBuffer(samples,64)!=64||counter.read()||gate.endOfData()||gate.endOfStream())return false;
+    for(int16 sample:samples)if(sample)return false;
+   }
+   gate.arm();if(gate.readBuffer(samples,64)!=64||counter.read()!=64||samples[0]!=100||samples[63]!=163)return false;
+  }
+  if(counter.destroyed!=owned)return false;
+  if(!owned)delete source;
+  if(counter.destroyed!=1)return false;
+  debug("P523 paused gate direct: PASS (owned%u,8 pre-arm reads,512 silence samples,no source advancement)",owned);
+ }
+ for(uint limited=0;limited<2;++limited) {
+  P523GateCounter counter;P523CountingAudio *source=new P523CountingAudio(counter);
+  Audio::AudioStream *stream=source;
+  if(limited)stream=Audio::makeLimitingAudioStream(source,Audio::Timestamp(3000),DisposeAfterUse::NO);
+  Audio::SoundHandle handle;
+  // Obtain a definitely stale, inactive handle before testing the helper.
+  P523GateCounter primeCounter;
+  mixer->playStream(Audio::Mixer::kPlainSoundType,&handle,new P523CountingAudio(primeCounter));mixer->stopHandle(handle);
+  const uint destroyedBefore=counter.destroyed;
+  if(!Video::playPausedAudioStream(mixer,Audio::Mixer::kPlainSoundType,&handle,stream,255,0,limited?DisposeAfterUse::YES:DisposeAfterUse::NO,11127))return false;
+  const uint before=counter.read();system->delayMillis(120);
+  if(counter.read()!=before||before||!mixer->isSoundHandleActive(handle))return false;
+  mixer->pauseHandle(handle,true);mixer->pauseHandle(handle,false);system->delayMillis(80);
+  if(counter.read())return false;
+  mixer->pauseHandle(handle,false);
+  for(uint n=0;n<30&&!counter.read();++n)system->delayMillis(10);
+  if(!counter.read())return false;
+  mixer->stopHandle(handle);
+  if(counter.destroyed!=destroyedBefore)return false;
+  delete source;if(counter.destroyed!=destroyedBefore+1)return false;
+  debug("P523 paused gate mixer: PASS (limited%u,nested pause retains source,final release reads PCM)",limited);
+ }
+ {
+  P523GateCounter fillCounter,primeCounter;Audio::SoundHandle failed,handles[32];
+  mixer->playStream(Audio::Mixer::kPlainSoundType,&failed,new P523CountingAudio(primeCounter));mixer->stopHandle(failed);
+  bool ok=true;
+  for(uint i=0;i<32;++i){mixer->playStream(Audio::Mixer::kPlainSoundType,&handles[i],new P523CountingAudio(fillCounter));ok=mixer->isSoundHandleActive(handles[i])&&ok;}
+  if(ok)for(uint kind=0;kind<3;++kind){
+   P523GateCounter counter;P523CountingAudio *source=new P523CountingAudio(counter);
+   Audio::AudioStream *stream=kind==2?Audio::makeLimitingAudioStream(source,Audio::Timestamp(3000),DisposeAfterUse::NO):source;
+   const bool admitted=Video::playPausedAudioStream(mixer,Audio::Mixer::kPlainSoundType,&failed,stream,255,0,kind?DisposeAfterUse::YES:DisposeAfterUse::NO,11127);
+   ok=!admitted&&!mixer->isSoundHandleActive(failed)&&!counter.read()&&counter.destroyed==uint(kind==1)&&ok;
+   if(kind!=1)delete source;
+   ok=counter.destroyed==1&&ok;
+   debug("P523 paused gate allocation refusal: %s (kind%u,no source reads,exact ownership)",ok?"PASS":"FAIL",kind);
+  }
+  for(uint i=0;i<32;++i)mixer->stopHandle(handles[i]);
+  if(!ok||fillCounter.destroyed!=32)return false;
+ }
+ debug("P523 paused startup gate verification: PASS");return true;
+}
+
+// Real original QuickTime media; clock-role tests only, no save/PCM policy.
+class P523TimelineQuickTime final : public Video::QuickTimeDecoder {
+public:
+ bool importClock(uint32 system,uint32 base,uint32 elapsed) { return importPausedTimeline(system,base,elapsed); }
+ uint32 rawElapsed() {
+  for(auto it=getTrackListBegin();it!=getTrackListEnd();++it)
+   if((*it)->getTrackType()==Track::kTrackTypeAudio)return static_cast<AudioTrack*>(*it)->getRunningTime();
+  return 0;
+ }
+ uint32 baseMillis() const { return _lastTimeChange.msecs(); }
+ bool audioEnded() {
+  for(auto it=getTrackListBegin();it!=getTrackListEnd();++it)
+   if((*it)->getTrackType()==Track::kTrackTypeAudio)return (*it)->endOfTrack();
+  return true;
+ }
+};
+static bool verifyP523Timeline(OSystem *system) {
+ const uint32 rows[][3]={{7,0,0},{17029,0,17010},{20074,20066,0}};
+ for(uint warm=0;warm<2;++warm)for(uint row=0;row<3;++row){
+  P523TimelineQuickTime decoder;
+  Common::File *file=new Common::File();
+  if(!file->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P523/DANGERS.MOV")))){delete file;return false;}
+  if(!decoder.loadStream(file)||decoder.getFrameCount()!=2092||!decoder.seekToFrame(0)||!decoder.decodeNextFrame())return false;
+  if(decoder.importClock(7,0,0))return false;
+  if(warm){decoder.start();system->delayMillis(100);decoder.pauseVideo(true);}
+  else{decoder.pauseVideo(true);decoder.start();}
+  const uint32 raw=decoder.rawElapsed();if(warm&&!raw)return false;
+  const uint32 before=decoder.getTime(),base=decoder.baseMillis();
+  if(decoder.importClock(0x80000000U,0,0)||decoder.importClock(0,0x7fffffffU,1)||decoder.getTime()!=before||decoder.baseMillis()!=base||decoder.rawElapsed()!=raw)return false;
+  const uint32 h7=rows[row][0],h58=rows[row][1],h57=rows[row][2];
+  if(!decoder.importClock(h7,h58,h57)||decoder.getTime()!=h7||decoder.baseMillis()!=h58||decoder.rawElapsed()!=raw)return false;
+  system->delayMillis(15);if(decoder.getTime()!=h7||decoder.rawElapsed()!=raw)return false;
+  decoder.pauseVideo(false);
+  const uint32 rawBefore=decoder.rawElapsed();const uint32 value=decoder.getTime();const uint32 rawAfter=decoder.rawElapsed();
+  const uint32 e0=h57+(rawBefore-raw),e1=h57+(rawAfter-raw);
+  const bool audio=(e0&&value>=h58+e0&&value<=h58+e1);
+  const bool fallback=(!e0&&value>=h7&&value<=h7+30);
+  const bool crossing=(!e0&&e1&&value>=h58+1&&value<=h58+e1);
+  if(!audio&&!fallback&&!crossing){debug("P523 timeline immediate FAIL row%u warm%u value%u raw%u/%u/%u",row,warm,value,raw,rawBefore,rawAfter);return false;}
+  system->delayMillis(80);
+  const uint32 laterRaw=decoder.rawElapsed();const uint32 later=decoder.getTime();const uint32 laterAfter=decoder.rawElapsed();
+  if(laterRaw<=raw||later<h58+h57+laterRaw-raw||later>h58+h57+laterAfter-raw)return false;
+  decoder.pauseVideo(true);
+  // An ordinary seek to exactly the same frame must clear the imported epoch.
+  for(uint repeated=0;repeated<2;++repeated){
+   if(!decoder.importClock(17029,0,17010)||!decoder.seekToFrame(0)||decoder.getTime()>30)return false;
+   decoder.pauseVideo(false);if(decoder.getTime()>50)return false;decoder.pauseVideo(true);
+  }
+  decoder.setRate(Common::Rational(2,1));const uint32 wrongRateTime=decoder.getTime(),wrongBase=decoder.baseMillis();
+  if(decoder.importClock(7,0,0)||decoder.getTime()!=wrongRateTime||decoder.baseMillis()!=wrongBase)return false;
+  decoder.setRate(Common::Rational(1,1));
+  debug("P523 original timeline cell: PASS (row%u,warm%u,sourceSystem%u,sourceBase%u,sourceElapsed%u,newRaw%u,immediate%u,later%u,repeated same-frame epoch reset,wrong-rate/oversize/stopped refusal)",row,warm,h7,h58,h57,raw,value,later);
+ }
+ for(uint action=0;action<4;++action){
+  P523TimelineQuickTime decoder;Common::File *file=new Common::File();
+  if(!file->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P523/DANGERS.MOV")))){delete file;return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);}
+  if(!decoder.loadStream(file)||!decoder.seekToFrame(0)||!decoder.decodeNextFrame())return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  decoder.pauseVideo(true);decoder.start();if(!decoder.importClock(17029,0,17010))return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  if(action==0){decoder.stop();decoder.pauseVideo(true);decoder.start();}
+  else if(action==1)decoder.setEndTime(Audio::Timestamp(180000));
+  else if(action==2)decoder.setRate(Common::Rational(2,1));
+  else if(!decoder.isRewindable()||!decoder.rewind())return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  const uint32 lower=action==3?0:17000,upper=action==3?100:17100;
+  if(decoder.baseMillis()<lower||decoder.baseMillis()>upper)return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  decoder.pauseVideo(false);const uint32 time=decoder.getTime();
+  if(time<lower||time>upper+100)return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  system->delayMillis(40);if(decoder.getTime()<lower||decoder.getTime()>upper+200)return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  debug("P523 original timeline lifecycle: PASS (action%u,base%u,immediate%u,no retained/doubled imported epoch,original rewind supported through seek)",action,decoder.baseMillis(),time);
+ }
+ {
+  P523TimelineQuickTime decoder;Common::File *file=new Common::File();
+  if(!file->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P523/DANGERS.MOV")))){delete file;return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);}
+  if(!decoder.loadStream(file)||!decoder.seekToFrame(2091)||!decoder.decodeNextFrame())return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  decoder.start();for(uint n=0;n<50&&!decoder.audioEnded();++n)system->delayMillis(20);
+  if(!decoder.audioEnded())return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);decoder.pauseVideo(true);
+  const uint32 time=decoder.getTime(),base=decoder.baseMillis();
+  if(decoder.importClock(20074,20066,0)||decoder.getTime()!=time||decoder.baseMillis()!=base)return (debug("P523 timeline lifecycle refusal line%d",__LINE__),false);
+  debug("P523 original timeline ended refusal: PASS (actual original terminal audio,clock roles unchanged)");
+ }
+ debug("P523 original timeline verification: PASS (6 actual MOV cells; represented milliseconds only,no PCM cursor/imported engine state)");return true;
+}
+
 Common::Error AstronomicaEngine::run() {
  Graphics::PixelFormat format = _system->getSupportedFormats().front();
  initGraphics(640, 480, &format);
  if (_system->getScreenFormat().bytesPerPixel < 2)
   return Common::Error(Common::kUnsupportedColorMode);
  _screen.create(640, 480, _system->getScreenFormat());
+ if(ConfMan.hasKey("astronomica_verify_p523_timeline")&&ConfMan.getBool("astronomica_verify_p523_timeline")){const bool ok=verifyP523Timeline(_system);_screen.free();quitGame();return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 timeline test failed");}
+
+ if (ConfMan.hasKey("astronomica_verify_p523_paused_gate") && ConfMan.getBool("astronomica_verify_p523_paused_gate")) {
+  const bool ok=verifyP523PausedGate(_mixer,_system);_screen.free();quitGame();
+  return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 paused startup gate failed");
+ }
  // Supply a visible engine cursor; the backend hides the OS cursor in-game.
  CursorMan.setDefaultArrowCursor();
  CursorMan.showMouse(true);
@@ -11895,9 +13072,23 @@ Common::Error AstronomicaEngine::run() {
  _runner.resetGlobals();
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
+ if(ConfMan.hasKey("astronomica_verify_p523_recorded")&&ConfMan.getBool("astronomica_verify_p523_recorded")){
+  const bool ok=testP523RecordedPackets();_background.free();_screen.free();quitGame();
+  return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 recorded packet replay failed");
+ }
+ if(ConfMan.hasKey("astronomica_verify_p523_recipients")&&ConfMan.getBool("astronomica_verify_p523_recipients")){
+  const bool ok=testP523PacketRecipients();_background.free();_screen.free();quitGame();
+  return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 recipient matrix failed");
+ }
+ PauseToken p523StartupPause;
+ if(ConfMan.hasKey("astronomica_verify_p523_fresh_physical")&&ConfMan.getBool("astronomica_verify_p523_fresh_physical"))p523StartupPause=pauseEngine();
  if (ConfMan.hasKey("save_slot") && ConfMan.getInt("save_slot") >= 0) {
   const Common::Error result = loadGameState(ConfMan.getInt("save_slot"));
   if (result.getCode() != Common::kNoError) { _background.free(); _screen.free(); return result; }
+ }
+ if(ConfMan.hasKey("astronomica_verify_p523_fresh_physical")&&ConfMan.getBool("astronomica_verify_p523_fresh_physical")){
+  const bool ok=testP523FreshPhysical(p523StartupPause);_background.free();_screen.free();quitGame();
+  return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 fresh physical verification failed");
  }
  if (ConfMan.hasKey("astronomica_verify_p525_fresh_physical") && ConfMan.getBool("astronomica_verify_p525_fresh_physical")) {
   const bool ok = testP525FreshPhysical();
@@ -12175,6 +13366,10 @@ Common::Error AstronomicaEngine::run() {
   const bool ok = verifyMentors();
   _background.free(); _screen.free(); quitGame();
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Mentors verification failed");
+ }
+ if(ConfMan.hasKey("astronomica_verify_p523_normal_entry")&&ConfMan.getBool("astronomica_verify_p523_normal_entry")){
+  const bool ok=testP523NormalEntry();_background.free();_screen.free();quitGame();
+  return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 normal entry observation failed");
  }
  if (ConfMan.hasKey("astronomica_verify_p523") && ConfMan.getBool("astronomica_verify_p523")) {
   ConfMan.setBool("astronomica_audio",true); ConfMan.setBool("astronomica_animation",true);

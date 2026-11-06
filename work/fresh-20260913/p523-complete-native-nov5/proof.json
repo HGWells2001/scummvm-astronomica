@@ -1,0 +1,44 @@
+{
+  "status": "P523_ASVM31_COMPLETE_PHYSICAL_NATIVE_PASS",
+  "candidate_exe_sha256": "f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182",
+  "stage_sha256": {
+    "astronomica.cpp": "8bfec95958e8789a865ea93f1c6067e0728160bdc8319cd15949b85a3b51fe11",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "log_sha256": "c08ce17181eb6dea44cb5b6b63269b580eccb4175e78b917c84d3b0995e27a0c",
+  "config_sha256": "63db4e6fac9d5ff5cf2fd1b030add809ed60646304c21fbb59a52ac0e5f1df22",
+  "driver_sha256": "51ccf7fb0a211b87d84c3a290a3e19e792a7865c74367e89d09e2e288e52bca4",
+  "slots": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\p523-recipients-nov5-stage\\complete-build\\p523-physical-slots",
+  "physical_files_sha256": {
+    "astro-verify.041": "ea8dd065d4eb36184f9f7bb736d81f40be1891333c79d363af98df8f639088e3",
+    "astro-verify.041.expected": "d12b88007e7a1764cd5115e5778c83fd41c96f61e3829659e71260f57c1cf448",
+    "astro-verify.042": "2951febd569b7e2cdacfca9c84849f31405905715e9706683c119e47549e212d",
+    "astro-verify.042.expected": "356bcb7cd8d347833e66468f5bc4aa630eb45413518a50e138a1d7ed1739ce1a",
+    "astro-verify.043": "2af3c50433a7c5f2939b7e8a0f9d4321c25459c3dbc9616706419138a5d2a3f5",
+    "astro-verify.043.expected": "141c7a2dff1615d2ba68da92e38c3f2660c1c70d292d4f183ce3f3db04f33a4b"
+  },
+  "physical_slots": [
+    41,
+    42,
+    43
+  ],
+  "packet_words": 2139,
+  "native_bytes": 8564,
+  "transport_truncations": 8564,
+  "transport_byte_flips": 8564,
+  "public_parser_refusals": 17128,
+  "semantic_refusals": 183,
+  "metadata_query_list_thumbnail": true,
+  "candidate_public_dispatch": true,
+  "main_public_support": false,
+  "audio_driver": "wasapi",
+  "muted": true,
+  "limits": [
+    "Physical writing verified; source-independent fresh loading has separate proof",
+    "Bounded quiet active P523 states only, not every possible help/history/motion state"
+  ]
+}

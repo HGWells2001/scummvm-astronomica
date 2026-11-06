@@ -194,6 +194,67 @@ private:
  void applyDangerStep(const DangerStep &step);
  void runDangerEvent(int event);
  void dangerCustom(int operation, int mode);
+ struct P523Capture {
+  const AstronomicaEngine*sourceOwner=nullptr;
+  Scene scene;ScriptRunner runner;Graphics::Surface background,frame,composed;
+  Common::Array<uint32>header,values,sprites,privateState;Common::String displayedName;bool ready=false;
+  P523Capture()=default;P523Capture(const P523Capture&)=delete;P523Capture&operator=(const P523Capture&)=delete;
+  ~P523Capture();void clearOwned();bool vacantOwners()const;
+ };
+ bool captureP523Active(P523Capture&out)const;
+ bool testP523ActiveCapture(uint row,const char*tag);
+ bool testP523NormalEntry();
+// Proposed private Engine declarations. Not a file schema or activation API.
+struct P523DetachedMedia {
+ Video::QuickTimeDecoder*decoder=nullptr;
+ Graphics::Surface current,presented,background,composed;
+ Common::Array<uint32>sourceHeader,sourceResumePlan,preparedResumePlan;
+ uint32 independentPcmSample=0;
+ bool ready=false;
+ P523DetachedMedia()=default;
+ P523DetachedMedia(const P523DetachedMedia&)=delete;
+ P523DetachedMedia&operator=(const P523DetachedMedia&)=delete;
+ P523DetachedMedia(P523DetachedMedia&&)=delete;
+ P523DetachedMedia&operator=(P523DetachedMedia&&)=delete;
+ ~P523DetachedMedia();void clearOwned();bool empty()const;
+};
+bool prepareP523DetachedMedia(const P523Capture&source,uint32 independentPcmSample,P523DetachedMedia&out);
+bool testP523DetachedPreparation(const P523Capture&source,uint row);
+bool testP523PausedResumePreparation(const P523Capture&source,uint row);
+bool prepareP523SameCaptureMedia(const P523Capture&source,const Common::Array<uint32>&plan,P523DetachedMedia&out);
+bool installP523SameCaptureMedia(const P523Capture&source,const Common::Array<uint32>&plan,P523DetachedMedia&out);
+bool testP523SameCaptureExchange(const P523Capture&source,uint row);
+struct P523TrustedPrepared {
+ const AstronomicaEngine*sourceOwner=nullptr;
+ P523DetachedMedia media;Scene scene;ScriptRunner runner;
+ Common::Array<uint32>header,mapping,values,sprites,privateState;Common::String displayedName;bool ready=false;
+ P523TrustedPrepared()=default;P523TrustedPrepared(const P523TrustedPrepared&)=delete;P523TrustedPrepared&operator=(const P523TrustedPrepared&)=delete;
+ ~P523TrustedPrepared();void clearOwned();bool empty()const;
+};
+bool prepareP523TrustedState(const P523Capture&source,const Common::Array<uint32>&mapping,P523TrustedPrepared&out);
+void applyP523CapturedScalars(const Common::Array<uint32>&header,const Common::Array<uint32>&privateState);
+bool commitP523TrustedState(P523TrustedPrepared&prepared);
+bool testP523TrustedState(const P523Capture&source,uint row);
+bool rebuildP523OriginalCapture(const P523Capture&source,P523Capture&out);
+bool testP523OriginalRebuild(const P523Capture&source,uint row);
+bool encodeP523Packet(const P523Capture&source,const Common::Array<uint32>&mapping,Common::Array<uint32>&out)const;
+bool writeP523Packet(Common::WriteStream*stream,const Common::Array<uint32>&words)const;
+bool readP523Packet(Common::SeekableReadStream*stream,Common::Array<uint32>&out)const;
+bool testP523Packet(const P523Capture&source,uint row);
+bool validateP523Packet(const Common::Array<uint32>&words)const;
+bool prepareP523Packet(const Common::Array<uint32>&words,P523TrustedPrepared&out);
+bool testP523PacketSemantics(const P523Capture&source,uint row);
+bool canSaveP523();
+Common::Error saveP523(Common::WriteStream*stream);
+Common::Error loadP523(Common::SeekableReadStream*stream);
+bool commitP523Packet(P523TrustedPrepared&prepared);
+bool captureP523Physical(const P523Capture&source,uint row);
+bool testP523FreshPhysical(PauseToken&startup);
+bool testP523RecordedPackets();
+bool testP523PacketRecipients();
+
+
+
  bool verifyP523Puzzle();
  bool verifyMentors();
  int _dangerChannels[3] = {33,33,33}, _dangerButtons = 0;

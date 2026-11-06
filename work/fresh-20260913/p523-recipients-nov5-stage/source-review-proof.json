@@ -1,0 +1,117 @@
+{
+  "status": "P523_ASVM31_INVERSE_SOURCE_COMPLETE_BUILD_REVIEW_PASS",
+  "reviewed_at": "2026-11-05T19:49:54.056146+00:00",
+  "reviewer_sha256": "696551eb58c471afe5d7f1de539f2a2d97971a47c997b3904307699b0a1f8e99",
+  "candidate_exe_sha256": "f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182",
+  "stage_sha256": {
+    "astronomica.cpp": "8bfec95958e8789a865ea93f1c6067e0728160bdc8319cd15949b85a3b51fe11",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "engine_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "8bfec95958e8789a865ea93f1c6067e0728160bdc8319cd15949b85a3b51fe11",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "lineage": [
+    {
+      "stage": "p523-packet-nov5-stage",
+      "patch_sha256": "770aea924b669d1c47b3eb9dab1e66dd16669aa65118a0481c29367c1df5c1d8",
+      "stage_sha256": {
+        "astronomica.cpp": "9c460c3debf2445bed0fbf4c4c4babdc833b5412c7fa7dba701e6572670b2989",
+        "astronomica.h": "aa75af93d1eba60347aeeb60af1a1e648c9c726b46d6138a331610cd9ea66f5a",
+        "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+        "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+        "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+        "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+      }
+    },
+    {
+      "stage": "p523-semantic-nov5-stage",
+      "patch_sha256": "76a8e9d44166c338c1bc6e4ba2325b132308cb4b4ae12ece32abf3c67842b1a5",
+      "stage_sha256": {
+        "astronomica.cpp": "c54b4cb38622d584b10d34221267406bca2b63f74af86182821852181c9c3883",
+        "astronomica.h": "dbc3ca795ebc9e17d8bced9b7102ce3fd26d84c2a519866df36c565e134eb00f",
+        "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+        "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+        "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+        "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+      }
+    },
+    {
+      "stage": "p523-file-nov5-stage",
+      "patch_sha256": "e8b0764d821b40d7df7bdaffb3c98668423b1c4ff387ae3b5083e77ea58a32cf",
+      "stage_sha256": {
+        "astronomica.cpp": "f7186450e7b07ce89181e96b4db9b024e0abe24ef2bd8bc47c096e7918bbbffc",
+        "astronomica.h": "bc8c3560b9a067c1f8ffb908357e571d5736f554c58f9da9280127033ee10bdb",
+        "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+        "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+        "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+        "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+      }
+    },
+    {
+      "stage": "p523-file-replay-nov5-stage",
+      "patch_sha256": "55e56c622fcc457cd27a28802e7194fbd40462158e2c867041f13fd1fb85ee44",
+      "stage_sha256": {
+        "astronomica.cpp": "e20db4cf4036c4c1077fe3b8299c6ae52839fa7bead1a760018bb89447abf794",
+        "astronomica.h": "3c69a82189727d56409a9105479c82df6dfcb19b22e440604771740e03b10ccc",
+        "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+        "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+        "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+        "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+      }
+    },
+    {
+      "stage": "p523-recipients-nov5-stage",
+      "patch_sha256": "de14a20269566d451652193c34a3dab8a41a87eba4b0095bb8865890c99d8c03",
+      "stage_sha256": {
+        "astronomica.cpp": "8bfec95958e8789a865ea93f1c6067e0728160bdc8319cd15949b85a3b51fe11",
+        "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+        "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+        "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+        "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+        "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+      }
+    }
+  ],
+  "complete_build_proof_sha256": "9ee7b13346a6e28cc06b12df19f498f247e743f1e915f07075c18164df4ec7f8",
+  "compiled_translation_units": 410,
+  "tracked_compiler_inputs": 521,
+  "stock_video_header_consumed": false,
+  "legacy_public_dispatch_preserved": true,
+  "source_owners_serialized": false,
+  "untrusted_validation_before_receiver_pause": true,
+  "all_fallible_work_before_owner_commit": true,
+  "previous_main_preserved_before_integration": true,
+  "main_public_support": false,
+  "limits": [
+    "Source/build closure only; final native same-executable and compatibility gates remain separate",
+    "Strict bounded quiet P523 source profile; no arbitrary pending/source voices or inactive-family motion histories",
+    "Declared floor-to-sample PCM policy, not original mixer/resampler phase recovery",
+    "Retired timing-dependent forced-seek diagnostic failure remains preserved and is not a PASS"
+  ]
+}

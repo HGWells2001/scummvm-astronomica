@@ -122,6 +122,7 @@ public:
  bool exportP525SettledState(Common::Array<uint32>&words)const;
  bool importP525SettledState(const Common::Array<uint32>&words);
  bool testP525SettledState(const ScriptRunner&prepared,const Scene&scene,uint32 now)const;
+ bool p523PreparedEquivalent(const ScriptRunner&source)const;
  bool p525Capabilities(GameStateHandler*g,SoundHandler*s,SuccessHandler*success,const Scene&scene)const;
  void p525AuditExport(Common::Array<uint32>&words)const;
  void p525AuditPending(uint row,uint32 now)const;

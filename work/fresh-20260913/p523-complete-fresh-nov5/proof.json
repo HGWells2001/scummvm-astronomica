@@ -1,0 +1,123 @@
+{
+  "status": "P523_ASVM31_COMPLETE_SIX_FRESH_PROCESSES_PASS",
+  "candidate_exe_sha256": "f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182",
+  "stage_sha256": {
+    "astronomica.cpp": "8bfec95958e8789a865ea93f1c6067e0728160bdc8319cd15949b85a3b51fe11",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "producer_exe_sha256": "f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182",
+  "source_physical_proof_sha256": "c1f6e42ff6ae8761620ca1c86f6aef9740b9a0b6939861057c8a16ad74dba7bc",
+  "cases": {
+    "slot41-true": {
+      "status": "PASS",
+      "slot": 41,
+      "entry_scripts": true,
+      "log_sha256": "3bd429efe8a682405b71de050b959be01c8609ebca7d001ea727254d4b17888c",
+      "config_sha256": "5dcff1eec473c8348c8b6bcb14be678a8c99970c0b2538fdeae59e94c745974f",
+      "source_file_sha256": "ea8dd065d4eb36184f9f7bb736d81f40be1891333c79d363af98df8f639088e3",
+      "expected_sha256": "d12b88007e7a1764cd5115e5778c83fd41c96f61e3829659e71260f57c1cf448",
+      "exit_code": 0,
+      "pid": 29752,
+      "natural_callbacks": 3,
+      "destination": 117,
+      "source_owners_available": false,
+      "source_startup_replayed": false
+    },
+    "slot41-false": {
+      "status": "PASS",
+      "slot": 41,
+      "entry_scripts": false,
+      "log_sha256": "bf153a81ff1e2f12f68157bd1073351fc2d769ee71d3f2b6ef99218ef3bd14dc",
+      "config_sha256": "04dfcd904309a24310a5e9af3d27b98ee12dc24a937629b7ac5afa1b1bd2c009",
+      "source_file_sha256": "ea8dd065d4eb36184f9f7bb736d81f40be1891333c79d363af98df8f639088e3",
+      "expected_sha256": "d12b88007e7a1764cd5115e5778c83fd41c96f61e3829659e71260f57c1cf448",
+      "exit_code": 0,
+      "pid": 28932,
+      "natural_callbacks": 3,
+      "destination": 117,
+      "source_owners_available": false,
+      "source_startup_replayed": false
+    },
+    "slot42-false": {
+      "status": "PASS",
+      "slot": 42,
+      "entry_scripts": false,
+      "log_sha256": "b7b72890d7a757d6e330513159c1492c8943ca7f652959fac1ff80fd525ef4bf",
+      "config_sha256": "a45da2530d1e75a2b10dd9a18d3671bd2a905234deb90ddf4b2180306083637e",
+      "source_file_sha256": "2951febd569b7e2cdacfca9c84849f31405905715e9706683c119e47549e212d",
+      "expected_sha256": "356bcb7cd8d347833e66468f5bc4aa630eb45413518a50e138a1d7ed1739ce1a",
+      "exit_code": 0,
+      "pid": 33948,
+      "natural_callbacks": 2,
+      "destination": 117,
+      "source_owners_available": false,
+      "source_startup_replayed": false
+    },
+    "slot42-true": {
+      "status": "PASS",
+      "slot": 42,
+      "entry_scripts": true,
+      "log_sha256": "934d07f8d43828d767826f00fd586cdf3ec8d8ee6043d5794df5c9a598ff1625",
+      "config_sha256": "1f2cc3823c00b066be659d8b184a57a559ddf161aa2949a2566cca4519735b07",
+      "source_file_sha256": "2951febd569b7e2cdacfca9c84849f31405905715e9706683c119e47549e212d",
+      "expected_sha256": "356bcb7cd8d347833e66468f5bc4aa630eb45413518a50e138a1d7ed1739ce1a",
+      "exit_code": 0,
+      "pid": 10184,
+      "natural_callbacks": 2,
+      "destination": 117,
+      "source_owners_available": false,
+      "source_startup_replayed": false
+    },
+    "slot43-true": {
+      "status": "PASS",
+      "slot": 43,
+      "entry_scripts": true,
+      "log_sha256": "ce09b6c66cee91030cdb62516690e1cbcdb60cc1bcac8f50686d4527a99cc309",
+      "config_sha256": "480b6487207969047f1c81b913533fc13ac7167ca16c1a8ca49df9b9d87582f7",
+      "source_file_sha256": "2af3c50433a7c5f2939b7e8a0f9d4321c25459c3dbc9616706419138a5d2a3f5",
+      "expected_sha256": "141c7a2dff1615d2ba68da92e38c3f2660c1c70d292d4f183ce3f3db04f33a4b",
+      "exit_code": 0,
+      "pid": 35428,
+      "natural_callbacks": 1,
+      "destination": 117,
+      "source_owners_available": false,
+      "source_startup_replayed": false
+    },
+    "slot43-false": {
+      "status": "PASS",
+      "slot": 43,
+      "entry_scripts": false,
+      "log_sha256": "d0ab6d1c6a14115454881999d59104603f12418c0779ad6a91c95ad246ea0c52",
+      "config_sha256": "83070363ee4d2d14a1a2296ac407b4329eeeeb23bd4e5d44ed33a6358bd18160",
+      "source_file_sha256": "2af3c50433a7c5f2939b7e8a0f9d4321c25459c3dbc9616706419138a5d2a3f5",
+      "expected_sha256": "141c7a2dff1615d2ba68da92e38c3f2660c1c70d292d4f183ce3f3db04f33a4b",
+      "exit_code": 0,
+      "pid": 28496,
+      "natural_callbacks": 1,
+      "destination": 117,
+      "source_owners_available": false,
+      "source_startup_replayed": false
+    }
+  },
+  "physical_slots": [
+    41,
+    42,
+    43
+  ],
+  "fresh_processes": 6,
+  "entry_true_false": true,
+  "original_inputs_unchanged": true,
+  "actual_audio_driver": "wasapi",
+  "muted": true,
+  "main_public_support": false,
+  "driver_sha256": "edb9b8094883ef444987d57f0fc2803c70fcb5b3d278241a2537ba08ebc083bc",
+  "limits": [
+    "Three genuine ordinary first-failure states only; not every route or source state",
+    "Real WASAPI with mute; no listening or original mixer-phase claim",
+    "Framework/full regression/source review remain separate gates before promotion"
+  ]
+}
