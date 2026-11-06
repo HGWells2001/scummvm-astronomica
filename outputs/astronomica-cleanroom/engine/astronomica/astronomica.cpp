@@ -13054,6 +13054,13 @@ static bool verifyP523Timeline(OSystem *system) {
 
 Common::Error AstronomicaEngine::run() {
  Graphics::PixelFormat format = _system->getSupportedFormats().front();
+ // The launcher can leave a 16-bit screen as the backend's first choice.
+ // Prefer an advertised lossless RGB format for the original pictures/movies.
+ for (const Graphics::PixelFormat &candidate : _system->getSupportedFormats()) {
+  if (candidate.bytesPerPixel >= 3 && candidate.rBits() == 8 && candidate.gBits() == 8 && candidate.bBits() == 8) {
+   format = candidate; break;
+  }
+ }
  initGraphics(640, 480, &format);
  if (_system->getScreenFormat().bytesPerPixel < 2)
   return Common::Error(Common::kUnsupportedColorMode);

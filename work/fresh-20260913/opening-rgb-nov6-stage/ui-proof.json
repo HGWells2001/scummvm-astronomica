@@ -1,0 +1,26 @@
+{
+  "status": "OPENING_RGB_GUI_MENU_INTRO_AND_P27_OBSERVED",
+  "observed_at": "2026-11-06T19:23:09.797645+00:00",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "baseline_exe_sha256": "f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182",
+  "baseline_observation": "Starting f286 from ScummVM launcher produced black P1/menu and opening; clicks and native transition clocks continued; observed backend screen formatRGB565; sampled engine framebuffer614400bytes allzero",
+  "candidate_observations": [
+    "Launcher Start rendered original colored P1title/menu and buttons",
+    "Mouse The Quest displayed the original restart-Windows notice",
+    "P2opening movie visibly rendered original picture in its window",
+    "P3credit cards were visibly colored and readable",
+    "Natural P4thenP27navigation arrival rendered original room"
+  ],
+  "isolated_profile": true,
+  "user_config_unchanged": true,
+  "test_windows_closed": true,
+  "keyboard_delivery_verified": false,
+  "gameplay_manual_complete": false,
+  "audio_listening_verified": false,
+  "limits": [
+    "No direct root-cause attribution beyond reproduced16bit-selection trigger and successful lossless-format preference",
+    "Standalone framework converts original P1toRGB565 successfully; no generic decoder defect claimed",
+    "F5/CtrlF5automation did not establish keyboard delivery",
+    "A09human complete audiovisual playthrough remains open"
+  ]
+}

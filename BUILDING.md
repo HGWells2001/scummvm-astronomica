@@ -34,7 +34,7 @@ Install the dependencies described by the pinned ScummVM build documentation and
 make -j2
 ```
 
-This is build guidance, not a claim of Linux/macOS validation. The recorded Windows x64 build used MSVC v145, the Windows SDK and SDL 2.32.6; 410 translation units were compiled freshly (402 framework, seven engine and one detection). On Windows, generate fresh Visual Studio projects with ScummVM's `devtools/create_project` and build all required projects. The recorded local builder has machine-specific dependency paths and is not a portable installation command.
+This is build guidance, not a claim of Linux/macOS validation. The clean ASVM31 foundation used MSVC v145, the Windows SDK and SDL 2.32.6; 410 translation units were compiled freshly (402 framework, seven engine and one detection). The latest output-format correction recompiled one engine unit and linked 409 hash-verified foundation objects with unchanged headers/ABI. This is not a second fresh 410-unit build. On Windows, generate fresh Visual Studio projects with ScummVM's `devtools/create_project` and build all required projects. The recorded local builder has machine-specific dependency paths and is not a portable installation command.
 
 No game data is needed to compile. To play, add your original Astronomica directory in the resulting ScummVM launcher. Runtime resources come directly from those original files.
 
@@ -42,6 +42,6 @@ No game data is needed to compile. To play, add your original Astronomica direct
 
 `tools/verify_export.py` checks the exported source hashes and mandatory source pairing. It does not rerun gameplay tests. `SCUMMVM_BASE.json` identifies the reviewed executable and source hashes; recorded ASVM31 proof JSONs are under `work/fresh-20260913/`. Their local paths and fixture references are provenance, not distributed input files or portable tests.
 
-The Windows executable passed eleven same-binary gates, including the general native suite, six genuine fresh ASVM31 loads, 185 newly serialized recorded-state loads/rewrites, 21 recipient cases, 32 genuine old-save processes v14–30, and real WASAPI audio/timeline checks. The declared PCM restart mapping does not recover the original backend/resampler phase. No new genuine v1–13 fixtures or manual whole-game completion are claimed. See `outputs/astronomica-cleanroom/P523-SAVE-FORMAT.md` for supported boundaries and exact packet semantics.
+The Windows executable passed eleven same-binary gates, including the general native suite, six genuine fresh ASVM31 loads, 185 newly serialized recorded-state loads/rewrites, 21 recipient cases, 32 genuine old-save processes v14â€“30, and real WASAPI audio/timeline checks. The declared PCM restart mapping does not recover the original backend/resampler phase. No new genuine v1â€“13 fixtures or manual whole-game completion are claimed. See `outputs/astronomica-cleanroom/P523-SAVE-FORMAT.md` for supported boundaries and exact packet semantics.
 
 Earlier research drivers require original game files, local fixtures and machine-specific dependencies. Do not run historical patch-generation/checkpoint scripts as setup; they can replace current sources. The paired canonical engine and core overlay are authoritative. No original game media, compiler dependencies, executables or user saves are distributed in this source repository.

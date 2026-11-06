@@ -1,0 +1,19 @@
+{
+  "status": "P523_INSTALLED_ASVM31_NATIVE_SMOKE_PASS",
+  "verified_at": "2026-11-06T19:39:33.817088+00:00",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "log_sha256": "f41911fe9265766ee0ce0b9d03467f3d7ea9b999e793fda60649268c9894756a",
+  "config_sha256": "65bae5e173a55ed35af6289713061e46e45722db2bac44ed09a094242dcfc32c",
+  "integration_sha256": "372169f53f25f80797bb6f0ae90b922b81263e3ceaf533d9db30b4fdd3ff7a62",
+  "genuine_slot": 41,
+  "natural_callbacks": [
+    13,
+    1,
+    3
+  ],
+  "destination": 117,
+  "full_state_pixels_and_clock": true,
+  "source_files_unchanged": true,
+  "user_profile_unchanged": true,
+  "main_publication_pending": true
+}

@@ -1,0 +1,142 @@
+{
+  "status": "P523_ASVM31_COMPLETE_CROSS_SCENE_21_RECIPIENTS_PASS",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "stage_sha256": {
+    "astronomica.cpp": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "log_sha256": "714e0acda700a55579aa0dd9a6d3a172c05df6d96cc8ed3208bd37fc905e8b95",
+  "config_sha256": "2b4c835b984de7be963c0fd3d3ad076a8337e31e447f4461abb862af51d6d279",
+  "driver_sha256": "6e725f6971355d845be3c1a4a0c0002ee34126240862e3bdb206e8e03f217a1e",
+  "source_physical_sha256": "8f90d1c9e4af9d4a168d50718d21019d669db035bb8ef5b12f37dc364c34595d",
+  "rows": [
+    [
+      "1",
+      "0",
+      "1"
+    ],
+    [
+      "1",
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "2",
+      "1"
+    ],
+    [
+      "117",
+      "0",
+      "0"
+    ],
+    [
+      "117",
+      "1",
+      "0"
+    ],
+    [
+      "117",
+      "2",
+      "0"
+    ],
+    [
+      "519",
+      "0",
+      "3"
+    ],
+    [
+      "519",
+      "1",
+      "3"
+    ],
+    [
+      "519",
+      "2",
+      "3"
+    ],
+    [
+      "510",
+      "0",
+      "4"
+    ],
+    [
+      "510",
+      "1",
+      "4"
+    ],
+    [
+      "510",
+      "2",
+      "4"
+    ],
+    [
+      "512",
+      "0",
+      "6"
+    ],
+    [
+      "512",
+      "1",
+      "6"
+    ],
+    [
+      "512",
+      "2",
+      "6"
+    ],
+    [
+      "525",
+      "0",
+      "5"
+    ],
+    [
+      "525",
+      "1",
+      "5"
+    ],
+    [
+      "525",
+      "2",
+      "5"
+    ],
+    [
+      "523",
+      "0",
+      "1"
+    ],
+    [
+      "523",
+      "1",
+      "1"
+    ],
+    [
+      "523",
+      "2",
+      "1"
+    ]
+  ],
+  "actual_public_load_commits": 21,
+  "atomic_invalid_refusals": 42,
+  "active_receiver_movies": 12,
+  "receiver_original_scripts_queued": true,
+  "receiver_foreground_pending_image_hover_retired": true,
+  "caller_pause_levels": [
+    0,
+    1,
+    2
+  ],
+  "recipient_preferences_retained": true,
+  "recipient_telemetry_retained": true,
+  "audio_driver": "wasapi",
+  "muted": true,
+  "main_modified": false,
+  "limits": [
+    "Explicit native active-recipient ownership fixtures, not ordinary gameplay in every recipient",
+    "Physical source comes from the earlier actual public ASVM31 producer; producer/consumer executable identities are separate"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "status": "P523_COMPLETE_BUILD_REAL_PAUSED_START_GATE_WASAPI_PASS",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "stage_sha256": {
+    "astronomica.cpp": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "framework_delta_sha256": {
+    "video/video_decoder.cpp": "ac9832663151200cbc6e2c802171b88f0a45ddc469ea25d3b24ad1d6efcdf26d",
+    "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
+  },
+  "log_sha256": "3ecc87f4cb5b0b8520b5c9c772fcc6761a8511ac16cb6054befa63b234ab6169",
+  "config_sha256": "181e34d05b75eaf14e7534c4305e152dad62b68c6c946b24fc32a2c590ae7a3c",
+  "source_driver_sha256": "bb8dd034aa860a89677634ae50efadef3d07bde898b3391ff2f0abbae14e686d",
+  "audio_driver": "wasapi",
+  "muted": true,
+  "video_surface": "dummy",
+  "raw_and_limited_paths": true,
+  "nested_channel_pause": true,
+  "allocation_refusals": 3,
+  "direct_prearm_silence_samples": 1024,
+  "video_decoder_layout_changed": true,
+  "clock_import_implemented": true,
+  "source_pcm_cursor_captured": false,
+  "public_save_support": false,
+  "limits": [
+    "Gate arithmetic/ownership and actual mixer startup tests; no active P523 media installation",
+    "Pre-arm silence may already be buffered; this is zero original-source consumption, not exact backend phase",
+    "General and real original-media regressions separate"
+  ]
+}

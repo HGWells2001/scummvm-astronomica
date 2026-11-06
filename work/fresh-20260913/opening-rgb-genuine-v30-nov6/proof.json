@@ -1,0 +1,113 @@
+{
+  "status": "P523_COMPLETE_GENUINE_ASVM30_EIGHT_PROCESSES_PASS",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "stage_sha256": {
+    "astronomica.cpp": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "producer_exe_sha256": "b20721ee19d08ec5aa91d31e7de8bb42fe79f2e510004e2815d3f7539934cbc7",
+  "producer_commit": "5bb0b627b57ff7c0860ddfdce840dab15f0b891e",
+  "producer_snapshot_manifest_sha256": "de47133f2f06505e5aa2eb84af63b7ee5186c39ad116e37c70570a6f309e47b0",
+  "original_metadata_reader_sha256": "1ba84ed4d8698aa9f13f8141cbfe2e89544906c178c660f512d6f36afec7acc7",
+  "frozen_inputs_sha256": {
+    "astro-verify.031": "bab474e5eb59f8b8f575694fda75b88f9de6f0995aa894792c8d5a74e9ccd36a",
+    "astro-verify.031.expected": "c7013efe4b5596d19a5873edbe8ab5389e5275e3c4189285e5cd52b43247bb13",
+    "astro-verify.032": "1d600abf8fcced30f1238297206db8a748f3a242c3732d2efcef8591d23c4965",
+    "astro-verify.032.expected": "6dadbbb0e6f56b50b0e477c677bea0bbe947c92d5b175821f3b4dabb8f6c8e11",
+    "astro-verify.033": "dadb92546018164ba413691034c7d1f59ac5fc92ecffbe4bf58991368d71c312",
+    "astro-verify.033.expected": "ce4362206295383981c8c6b09648b39d6bb1430d2fca3edc1e5c09c855ff61bf",
+    "astro-verify.034": "2d7c9ad2ba10f8bc7b5e21c8e60a635143df7aaa5c84ef4d678d58b1a5d4bba6",
+    "astro-verify.034.expected": "7dab3e467faefa300211abc72a3ccf4fb07d0842faf5602f688ec489a1545b7e"
+  },
+  "cases": [
+    {
+      "label": "slot31-false",
+      "slot": 31,
+      "entry_scripts": false,
+      "log_sha256": "97e553b5db564ebf4c38470bef7e93abd3420472382690f63b40e8471046892d",
+      "config_sha256": "870ca0f27b861dd5232f013589e2413348c4ec8ef1a667b83d0927f99a3d733e",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot31-true",
+      "slot": 31,
+      "entry_scripts": true,
+      "log_sha256": "0774ef1997abb036f9745056476f14b0baa1e5a213665acf9d941f6c18a58823",
+      "config_sha256": "056d9fad892e98f98a861007c2438e2547abb033d88f7a555002f4590cc1818f",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot32-false",
+      "slot": 32,
+      "entry_scripts": false,
+      "log_sha256": "7370329ad9cd46278575ca745299b5b427c08d9bfe07dcfd9093d00cac539717",
+      "config_sha256": "870ca0f27b861dd5232f013589e2413348c4ec8ef1a667b83d0927f99a3d733e",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot32-true",
+      "slot": 32,
+      "entry_scripts": true,
+      "log_sha256": "0d84ab57ac66c6c61ecf2e88e7349b9c1061d6155292656303337312198484c6",
+      "config_sha256": "056d9fad892e98f98a861007c2438e2547abb033d88f7a555002f4590cc1818f",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot33-false",
+      "slot": 33,
+      "entry_scripts": false,
+      "log_sha256": "61ad4fe342e376f8175f7c78157b37deb097fe4285d0dba460b99d3a2d0e3e06",
+      "config_sha256": "870ca0f27b861dd5232f013589e2413348c4ec8ef1a667b83d0927f99a3d733e",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot33-true",
+      "slot": 33,
+      "entry_scripts": true,
+      "log_sha256": "94f89f3e0464385a971d2b616ef3190916241a7008f71f8188ea58b1296f1b08",
+      "config_sha256": "056d9fad892e98f98a861007c2438e2547abb033d88f7a555002f4590cc1818f",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot34-false",
+      "slot": 34,
+      "entry_scripts": false,
+      "log_sha256": "225d4abcb0aeb38af3f85d3109f9e0b75c67d119d15ad3cac85f9a525ec737d5",
+      "config_sha256": "870ca0f27b861dd5232f013589e2413348c4ec8ef1a667b83d0927f99a3d733e",
+      "original_selector_successor": true
+    },
+    {
+      "label": "slot34-true",
+      "slot": 34,
+      "entry_scripts": true,
+      "log_sha256": "467f02e1fccc2ed32ba81f0f6d6b0212a3fde86ed7b1d0e9588e17fb128b677f",
+      "config_sha256": "056d9fad892e98f98a861007c2438e2547abb033d88f7a555002f4590cc1818f",
+      "original_selector_successor": true
+    }
+  ],
+  "physical_slots": [
+    31,
+    32,
+    33,
+    34
+  ],
+  "fresh_processes": 8,
+  "entry_true_false": true,
+  "payload_version": 30,
+  "original_selector_successor": true,
+  "full_original_packet_and_rgb": true,
+  "metadata_validated": true,
+  "original_inputs_unchanged": true,
+  "audio_driver": "wasapi",
+  "muted": true,
+  "main_modified": false,
+  "driver_sha256": "a6e2a303b54ca6df8b717a62c13b139ec8e9301c8e93a5cf05e82fb6fcdda85f",
+  "limits": [
+    "Genuine four sealed ASVM30 files, initial/postvideo with/without S0; S0 restarts from beginning as original supported policy",
+    "Silent real-device continuation checks; no listening or sample-phase parity"
+  ]
+}

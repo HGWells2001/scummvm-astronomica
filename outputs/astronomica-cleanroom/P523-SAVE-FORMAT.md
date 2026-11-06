@@ -1,3 +1,7 @@
+# RGB opening update, 6 November 2026
+
+Current executable 89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41 repeats all eleven native gates and installed smoke after a one-file output-format preference fix. All ASVM31 payload semantics and limits below are unchanged; f286 is the clean 410-unit foundation.
+
 # P523 native save contract: ASVM31
 
 The local installed engine now supports bounded active P523 saves. The packet is8564bytes: ASCII ASVM, little-endian version31, then2139little-endian DWORDs. Offsets in words:67raw diagnostic/game header,4separate effective-clock mapping,605persistent script values,1320mutable sprite words,142private-family words,1checksum. The checksum starts2166136261 and applies `(hash XOR word)*16777619` modulo32bits to the2138data words. ScummVM metadata, date, description and thumbnail follow; the parser consumes exactly8564bytes and leaves that footer unread.

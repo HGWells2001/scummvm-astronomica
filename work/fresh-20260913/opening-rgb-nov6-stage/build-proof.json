@@ -1,0 +1,11 @@
+{
+  "status": "OPENING_RGB_ENGINE_DELTA_BUILD_PASS",
+  "built_at": "2026-11-06T19:13:17.111051+00:00",
+  "base_exe_sha256": "f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "candidate_cpp_sha256": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+  "reused_verified_full_build_objects": 409,
+  "compiled_engine_translation_units": 1,
+  "abi_unchanged": true,
+  "main_unchanged": true
+}

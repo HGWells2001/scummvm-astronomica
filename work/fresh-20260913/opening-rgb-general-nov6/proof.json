@@ -1,0 +1,28 @@
+{
+  "status": "OPENING_RGB_GENERAL_NATIVE_PASS",
+  "completed_at": "2026-11-06T19:34:27.807047+00:00",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "stage_sha256": {
+    "astronomica.cpp": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "compile_source_scope_proof_sha256": "154f26363d0374c2b46f00768bcf48fc57d7cebc91d5b53706b12a4003dbd817",
+  "log_sha256": "d4fde52ab62f83c15dc97128648f6621490241bd8ef2839945b7a80e1dbfb22d",
+  "config_sha256": "098b9dca0a750869423fcd8ff6693d22cbb9c10cc1746476c6bb4a77fbfe6317",
+  "audio_driver": "wasapi",
+  "mute": true,
+  "frozen_aliases_unchanged": {
+    "astro-verify.098": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+    "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
+  },
+  "main_modified": false,
+  "public_support": false,
+  "limitations": [
+    "Existing general verifier only; no genuine all-version fixture compatibility claim",
+    "No manual whole-game audiovisual or release claim"
+  ]
+}

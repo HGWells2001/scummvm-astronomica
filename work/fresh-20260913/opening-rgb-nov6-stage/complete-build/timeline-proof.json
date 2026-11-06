@@ -1,0 +1,53 @@
+{
+  "status": "P523_COMPLETE_BUILD_ORIGINAL_MOV_TIMELINE_WASAPI_PASS",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "stage_sha256": {
+    "astronomica.cpp": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "script.cpp": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b"
+  },
+  "framework_delta_sha256": {
+    "video/video_decoder.cpp": "ac9832663151200cbc6e2c802171b88f0a45ddc469ea25d3b24ad1d6efcdf26d",
+    "video/video_decoder.h": "6dc1d443164cf0dc7b666175851883188050ece5030995fa3e7ff4e3f2c9d416",
+    "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
+  },
+  "log_sha256": "dc208018d0fbe7e4899f2e6d95a930ec5b2a93a8e6aed07c8f505d2eea1aa42b",
+  "config_sha256": "656214fff9dfff09a12a1416b4d1762139366a329022d3926e8485f611e3f217",
+  "source_driver_sha256": "7a87c783140dba6500a9340036e2719abad4edfcefbdcac5e8c67fc7449291b4",
+  "audio_driver": "wasapi",
+  "muted": true,
+  "video_surface": "dummy",
+  "original_mov_cells": 6,
+  "source_clock_roles": [
+    [
+      7,
+      0,
+      0
+    ],
+    [
+      17029,
+      0,
+      17010
+    ],
+    [
+      20074,
+      20066,
+      0
+    ]
+  ],
+  "fresh_and_nonzero_new_mixer_elapsed": true,
+  "repeated_same_frame_seeks": 12,
+  "stopped_wrong_rate_oversize_refusal": true,
+  "video_implementations_rebuilt": 16,
+  "video_decoder_layout_changed": true,
+  "source_pcm_cursor_captured": false,
+  "public_save_support": false,
+  "limits": [
+    "Represented millisecond clock roles only, not raw old mixer state or rational timestamp",
+    "No source PCM seek policy or active engine state installation",
+    "Default clock/lifecycle/general/old-format closure still required"
+  ]
+}

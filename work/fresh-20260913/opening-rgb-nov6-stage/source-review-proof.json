@@ -1,0 +1,12 @@
+{
+  "status": "OPENING_RGB_ONLY_DELTA_REVIEW_PASS",
+  "candidate_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "reviewed_at": "2026-11-06T19:18:17.760246+00:00",
+  "source_delta": "Only advertised lossless RGB output format preference in run(); inverse reproduces exact frozen f286 source",
+  "abi_unchanged": true,
+  "all_headers_unchanged": true,
+  "all_410_base_objects_unchanged": true,
+  "base_build_proof_sha256": "9ee7b13346a6e28cc06b12df19f498f247e743f1e915f07075c18164df4ec7f8",
+  "build_proof_sha256": "9252d496a819a6eacc1e67c55ee1b8c036cc7d16e812ee9d7ff49397962a16ab",
+  "first_driver_failure": "Tlog collector mistakenly joined seven compile commands; compiler D8036 refused before compilation. Corrected first-block extraction and isolated output assertions; all410 original objects rechecked unchanged."
+}

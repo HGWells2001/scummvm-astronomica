@@ -1,0 +1,33 @@
+{
+  "status": "PINNED_FRAMEWORK_ORIGINAL_P1_CONVERSION_DIAGNOSTIC_PASS",
+  "original_file_sha256": "8ada5f1f10f4cb88d945a5451cb4d0f0d2d4414cd21e087084f8cc884c617feb",
+  "source_sha256": "3e68858454f8ae991460a660c09a637b8faf132995b10a8adab3668efe814b63",
+  "native_log_sha256": "25cef726b01e17f9a6a8552ae357f46a0d2fc3383ce7c783c70c9590e210e5e9",
+  "rows": [
+    {
+      "index": 0,
+      "bpp": 2,
+      "nonblack": 186213,
+      "rgb_hash": "d36cf4dd"
+    },
+    {
+      "index": 1,
+      "bpp": 2,
+      "nonblack": 186213,
+      "rgb_hash": "db94486c"
+    },
+    {
+      "index": 2,
+      "bpp": 3,
+      "nonblack": 186213,
+      "rgb_hash": "8985d2c8"
+    },
+    {
+      "index": 3,
+      "bpp": 4,
+      "nonblack": 186213,
+      "rgb_hash": "8985d2c8"
+    }
+  ],
+  "gameplay_renderer_certified": false
+}
