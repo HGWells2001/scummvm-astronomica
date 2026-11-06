@@ -1,0 +1,32 @@
+{
+  "status": "ORIGINAL_LINK_CONTROL_REAL_NATIVE_RUNNER_COMPARISON_PASS",
+  "completed_at": "2026-11-06T19:52:56.609337+00:00",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "analytical_replay_proof_sha256": "fa0b4f4e518054d8595e28fb9b520060896204d07b9ff6f8c8e762c0836bf151",
+  "fixture_sha256": "017f9d6b679c4fe146ec46f09b3961dcadd00b349fa18c5b5f2057118093daf1",
+  "probe_source_sha256": "f451204a7a0b511b692554a4361f1968294c422e0a152b3040f5ec59a0a50863",
+  "native_runner_source_sha256": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+  "native_engine_library_sha256": "80209118b6bd65197ca20ccefd439be3e2059491d46229b8af1abb7a33d9455d",
+  "probe_exe_sha256": "6fab6b8a2b172e4a713f3a644f91f7785a05dac19c72774c68199f3ebaa71200",
+  "installed_main_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "native_log_sha256": "7954d37d164a1b6aa0cac43d1d92d47503eef989c3899ff02267b398f225b52d",
+  "nonempty_scripts": 936,
+  "control_cases": 5997,
+  "original_command_positions": 10316,
+  "original_condition_tests": 1392,
+  "native_aggregate": "1ee292f2",
+  "main_and_originals_unchanged": true,
+  "gameplay_complete": false,
+  "A03_complete": false,
+  "limits": [
+    "Original Win16program not run; this is bounded instruction interpretation",
+    "Resource operand-copy calls omitted after independent exact-byte inventory verification",
+    "Allocator returns deterministic distinct modeled far pointers; clock API returns0",
+    "Comparison predicates supplied from uniform controlled values using the declared comparison policy; original predicate machine body is not replayed",
+    "Noncontrol commands replaced by sound-action trace markers with no sound handler; original gameplay effects are not executed",
+    "All command delays normalized to-1 for topology only; no original timer fidelity claim",
+    "Uniform threshold cases are not exhaustive real gameplay states and do not close A03",
+    "Native comparison runs the real ScriptRunner from the verified current engine library in a console test entry point, not the full game main executable",
+    "No original input, game source, core source, user preferences or personal save is modified"
+  ]
+}

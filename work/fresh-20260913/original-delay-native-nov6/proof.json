@@ -1,0 +1,27 @@
+{
+  "status": "ORIGINAL_DELAY_REAL_NATIVE_RUNNER_COMPARISON_PASS",
+  "completed_at": "2026-11-06T20:12:22.496005+00:00",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "oracle_proof_sha256": "cabcb4036a15bd8aa2495727a6ae35ce1f387062f53eeb8976ef2e1fde1b07d2",
+  "fixture_sha256": "ea71a2ebb64f4fd6a9f41374864f0a7ec255835046fee0a01f6266b8a52d34df",
+  "probe_source_sha256": "cd0db842c5d42cdaea0363009e32ec31ab88e956757171703853452230e99440",
+  "native_runner_source_sha256": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+  "native_engine_library_sha256": "80209118b6bd65197ca20ccefd439be3e2059491d46229b8af1abb7a33d9455d",
+  "probe_exe_sha256": "d2921e126d86edbd3f921ac0229624deab631ba7a925934289bf709d860fae33",
+  "installed_main_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "native_log_sha256": "db10c2ca8dd7eda609037be9aded9baa25999bf125bec764ac2e07adb355bb0c",
+  "distinct_original_delays": 83,
+  "positive_original_delay_occurrences": 1593,
+  "cases": 3290,
+  "native_aggregate": "6eaf8f86",
+  "deferred_zero_continuation": true,
+  "main_and_originals_unchanged": true,
+  "A03_complete": false,
+  "limits": [
+    "Only the due/not-due predicate is replayed; original Windows program not run",
+    "Clock and command-field values are controlled inputs; no real audio or complete timed-gameplay claim",
+    "Queue ownership/cancellation and actual native effects remain outside this predicate test",
+    "Half-range and wrap cases test the original signed32bit arithmetic policy, not reachable game states",
+    "Comparison uses the real ScriptRunner in a separate native console test entry point; no replacement game interpreter"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "status": "ORIGINAL_WIN16_LINK_AND_CONTROL_REPLAY_FIXTURE_READY",
+  "created_at": "2026-11-06T19:50:41.422532+00:00",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "author_sha256": "0aa16be0c50670ab1197692fd837c925dbd5ec93e3682923bd667309caf0aa79",
+  "capstone_version": "5.0.7",
+  "fixture_sha256": "017f9d6b679c4fe146ec46f09b3961dcadd00b349fa18c5b5f2057118093daf1",
+  "nonempty_scripts": 936,
+  "control_cases": 5997,
+  "original_commands": 10316,
+  "condition_tests": 1392,
+  "reader_link_model_matches": true,
+  "executed_instruction_steps": 1845464,
+  "instruction_sites": 147,
+  "modeled_calls": [
+    {
+      "kind": "execute",
+      "address": "0x1669",
+      "count": 29610
+    },
+    {
+      "kind": "execute",
+      "address": "0x16c3",
+      "count": 10302
+    },
+    {
+      "kind": "execute",
+      "address": "0x1730",
+      "count": 3288
+    },
+    {
+      "kind": "reader",
+      "address": "0x34a2",
+      "count": 9380
+    }
+  ],
+  "reader_ranges": [
+    [
+      "9:3289",
+      "9:3295"
+    ],
+    [
+      "9:3337",
+      "9:334b"
+    ],
+    [
+      "9:334e",
+      "9:3357"
+    ],
+    [
+      "9:335d",
+      "9:3366"
+    ],
+    [
+      "9:3436",
+      "9:34fe"
+    ],
+    [
+      "9:3507",
+      "9:3521"
+    ]
+  ],
+  "execute_ranges": [
+    [
+      "15:0e81",
+      "15:0e99"
+    ],
+    [
+      "15:1636",
+      "15:1799"
+    ]
+  ],
+  "limits": [
+    "Original Win16program not run; this is bounded instruction interpretation",
+    "Resource operand-copy calls omitted after independent exact-byte inventory verification",
+    "Allocator returns deterministic distinct modeled far pointers; clock API returns0",
+    "Comparison predicates supplied from uniform controlled values using the declared comparison policy; original predicate machine body is not replayed",
+    "Noncontrol commands replaced by sound-action trace markers with no sound handler; original gameplay effects are not executed",
+    "All command delays normalized to-1 for topology only; no original timer fidelity claim",
+    "Uniform threshold cases are not exhaustive real gameplay states and do not close A03"
+  ],
+  "full_local_proof_sha256": "fa0b4f4e518054d8595e28fb9b520060896204d07b9ff6f8c8e762c0836bf151"
+}

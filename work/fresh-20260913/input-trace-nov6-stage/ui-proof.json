@@ -1,0 +1,25 @@
+{
+  "status": "INPUT_TRACE_DIAGNOSTIC_OBSERVATION_COMPLETE",
+  "diagnostic_exe_sha256": "bdacb5765f74193bde4617026fdd2fbf2c489641c9b11c3cca769b93dc6be650",
+  "installed_main_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "observed_at": "2026-11-06T20:08:39.392463+00:00",
+  "trace_log_sha256": "3a7772ddfdca1f7823547c02383d55940e4034bd06d8e02e242e3b39bbdac5f8",
+  "injected_letter_a": {
+    "keycode": 0,
+    "ascii": 97,
+    "key_down_up_observed": true
+  },
+  "injected_F5_event_observed": false,
+  "injected_Escape_event_observed": false,
+  "mouse_click_observed": true,
+  "original_copyright_to_P425_credits_observed": true,
+  "test_windows_closed": true,
+  "user_profile_unchanged": true,
+  "diagnostic_only_not_integrated": true,
+  "physical_keyboard_verified": false,
+  "limits": [
+    "Automation delivered letter a with unknown keycode; this does not establish a physical keyboard defect",
+    "F5/Escape physical-key delivery remains for manual verification; no speculative input workaround installed",
+    "P425credit pictures were visibly observed; no complete credits/whole-game playthrough claim"
+  ]
+}
