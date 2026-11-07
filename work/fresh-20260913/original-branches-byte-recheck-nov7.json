@@ -1,0 +1,24 @@
+{
+  "status": "ORIGINAL_HYP_SYNTAX_BYTE_VERIFICATION_PASS",
+  "verified_at": "2026-11-07T18:24:46.837008+00:00",
+  "inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "verifier_sha256": "58d3816e9a4c7954d5f6d412b4e72ed84eb7181b5b2bba77828aeb2db6b9b029",
+  "original_files": 421,
+  "parsed_scenes": 420,
+  "commands_verified": 10316,
+  "nonempty_script_terminators": 936,
+  "raw_opcode_operands_delay_verified": true,
+  "original_inputs_match_september_inventory": true,
+  "original_execution_observed": false,
+  "condition_semantics_verified": false,
+  "acceptance_A03_complete": false,
+  "whole_game_completion_percent": null,
+  "limits": [
+    "Syntactic denominator only; no reachability, alternative route completeness or playability claim",
+    "Literal31/45/42markers are inventoried without imposing nested-if semantics; the engine uses a single last-condition pointer and original link semantics need separate evidence",
+    "Custom native callbacks, timeouts, failure choices and dynamically generated destinations are not enumerated by HYP operands alone",
+    "Every command begins execution_verified=false; no component test is silently attributed to individual source branches",
+    "Opaque tails retained by hash; no historical purpose inferred",
+    "Does not complete fixed acceptance gateA03; no whole-game percentage"
+  ]
+}

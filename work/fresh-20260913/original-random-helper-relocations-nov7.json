@@ -1,0 +1,36 @@
+{
+  "status": "ORIGINAL_RANDOM_HANDLER_MATH_RELOCATIONS_PASS",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "runtime_sha256": "c507feb53847e86d6d596ae3ca668fb3e3e9fb0259bfcbcbb544b44fac4c5809",
+  "author_sha256": "c1c63bfcf0a2072e9446038445ea2ba7d59c7df926041b99ee7ece59f32581b3",
+  "data_segment": 20,
+  "original_radix_float": 2.0,
+  "pow_export": "_pow",
+  "relocations": {
+    "0f67": "BC40RTL.ordinal632._pow",
+    "0f6f": "internal.1:15c3.FTOL@",
+    "0fcc": "BC40RTL.ordinal632._pow",
+    "0fd4": "internal.1:15c3.FTOL@",
+    "101b": "BC40RTL.ordinal632._pow",
+    "1023": "internal.1:15c3.FTOL@",
+    "108e": "BC40RTL.ordinal632._pow",
+    "1096": "internal.1:15c3.FTOL@",
+    "10f5": "BC40RTL.ordinal632._pow",
+    "10fd": "internal.1:15c3.FTOL@",
+    "1145": "BC40RTL.ordinal632._pow",
+    "114d": "internal.1:15c3.FTOL@",
+    "12d4": "BC40RTL.ordinal632._pow",
+    "12dc": "internal.1:15c3.FTOL@",
+    "135c": "BC40RTL.ordinal632._pow",
+    "1364": "internal.1:15c3.FTOL@",
+    "13e9": "BC40RTL.ordinal632._pow",
+    "13f1": "internal.1:15c3.FTOL@",
+    "1449": "BC40RTL.ordinal632._pow",
+    "1451": "internal.1:15c3.FTOL@",
+    "1d40": "internal.1:0b6b.rand"
+  },
+  "limits": [
+    "Relocation identity and original constant checked; no original math helper body or Windows execution",
+    "The subsequent oracle models only exact powers for admitted integer bit indices0..30"
+  ]
+}

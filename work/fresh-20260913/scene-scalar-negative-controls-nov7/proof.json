@@ -1,0 +1,29 @@
+{
+  "status": "NATIVE_SCALAR_TRACE_RNG_NEGATIVE_CONTROLS_PASS",
+  "probe_exe_sha256": "cf289994aae18ae10d7f2c7e1c6d9047d02e2d64584ee161304d7208447cedb0",
+  "positive_proof_sha256": "09227da01eee54082fc4d412669cd024160ff886bc0c60bec5b2cc12ce45a85a",
+  "single_case_only": true,
+  "cases": [
+    {
+      "label": "scalar",
+      "exit_code": 10,
+      "fixture_sha256": "257f2ab212850b3b625528a7562ff291c8936100b2747049cbdfe0a7c109df04",
+      "log_sha256": "b8e30c81cdfc0e573fe85591ee41b37c68bb4b1646cbde7d768730609bad9e2b"
+    },
+    {
+      "label": "trace",
+      "exit_code": 6,
+      "fixture_sha256": "f5c49f0c03dfa5cdd6d7c07387dc03ed1e0e4b5ea8e7d63b75d5d08d50fb4d7b",
+      "log_sha256": "046e7af8b6c5363da2b965d9f456544b015a481d32dc8bd9238154e7fe3f3f59"
+    },
+    {
+      "label": "rng",
+      "exit_code": 11,
+      "fixture_sha256": "bde0a3a234210723e131c076f045eddbb863d00f4ba0df7ccd9150992ddb0990",
+      "log_sha256": "2ac62570ecb654a6b38306b93f4bbf6e5f913371515da602a109dd244b3bd083"
+    }
+  ],
+  "limits": [
+    "Deliberate expectation corruptions are test failures as required; no corrupt game save or original file is loaded"
+  ]
+}
