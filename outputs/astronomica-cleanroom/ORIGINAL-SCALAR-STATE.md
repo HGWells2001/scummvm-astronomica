@@ -32,3 +32,7 @@ python work/fresh-20260913/check_scene_scalar_negative_controls_nov7.py
 Output directories must be new; preserve the accepted receipts. The console helper links the current real engine library and does not replace the game executable. The runtime engine and paired video core are unchanged. Prior complete native gameplay/save gates remain historical evidence for the same installed binary; they are not presented as newly rerun here.
 
 Fixed acceptance stays **7/10 (70%)**, with 35/35 documented bounded save profiles. A03 still needs real gameplay effects, custom/timed branches and reachability; exact help typography and a human full audiovisual playthrough also remain open. Whole-game completion is unmeasured.
+
+## All admitted widths
+
+A separate synthetic sweep passes **4,368 cases in 248 sequences** across every admitted width 1..31, both scalar scopes, indices 0/99 and same/different destinations. It includes exhausted masks and free edge bits, and compares all 200 final words and the next random draw. This does not enumerate the entire mask space or add original gameplay sequences. See `all-scalar-widths-nov7/proof.json`. The native helper is the same verified scene-metadata test executable.
