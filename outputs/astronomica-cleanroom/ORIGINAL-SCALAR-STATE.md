@@ -36,3 +36,7 @@ Fixed acceptance stays **7/10 (70%)**, with 35/35 documented bounded save profil
 ## All admitted widths
 
 A separate synthetic sweep passes **4,368 cases in 248 sequences** across every admitted width 1..31, both scalar scopes, indices 0/99 and same/different destinations. It includes exhausted masks and free edge bits, and compares all 200 final words and the next random draw. This does not enumerate the entire mask space or add original gameplay sequences. See `all-scalar-widths-nov7/proof.json`. The native helper is the same verified scene-metadata test executable.
+
+## Measured condition outcomes
+
+An instrumented replay rechecks every result against the accepted fixture for the **13,866 original-script cases**, excluding synthetic sequences. Of 1,392 original condition positions, **1,179 show both outcomes, 180 only false, 16 only true, and 17 are unvisited** in this reduced matrix. These are instruction-replay measurements tied to the native-equivalent fixture, not a real gameplay coverage claim. The 17 unvisited and 196 one-sided conditions are the next investigation targets; they are not established defects or unreachable original branches. Full per-command details stay local.

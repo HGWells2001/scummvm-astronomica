@@ -1,0 +1,31 @@
+{
+  "status": "ACCEPTED_SCALAR_MATRIX_ORIGINAL_BRANCH_MEASUREMENT_PASS",
+  "template_sha256": "55675d82a3bead94819e717479f6834cf028b90e40f38e471e8ed38f71436725",
+  "author_sha256": "45df2dcd95a2897f0a48c9acccfe773563e720f032511674d9fcfe325c8806bc",
+  "accepted_fixture_sha256": "eaa85946c73cf19158d4c45db4c0089886561109aa8da8769b8b94bcac63ec52",
+  "local_detail_sha256": "4cc5d65f13adce12982affed424592abd593dcf108ee16e975b09d3a79cf8b77",
+  "original_sequences": 936,
+  "original_controlled_cases": 13866,
+  "condition_positions": 1392,
+  "categories": {
+    "both": 1179,
+    "false_only": 180,
+    "true_only": 16,
+    "unvisited": 17
+  },
+  "visited_retained_positions_by_opcode": {
+    "31": 1375,
+    "32": 649,
+    "42": 395,
+    "45": 915,
+    "46": 75,
+    "40": 3,
+    "39": 19,
+    "33": 37
+  },
+  "limits": [
+    "Only coverage of the accepted reduced scalar matrix; effects and gameplay reachability remain outside scope",
+    "Unvisited or one-sided conditions are follow-up targets, not proven engine defects or unreachable game branches",
+    "Per-command original detail stays local; no whole-game completion percentage"
+  ]
+}
