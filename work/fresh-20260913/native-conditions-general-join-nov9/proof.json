@@ -1,0 +1,76 @@
+{
+  "status": "NATIVE_ROUTE_AND_ORIGINAL_PREDICATE_COVERAGE_JOIN_PASS",
+  "completed_at": "2026-11-09T21:37:30.501557+00:00",
+  "author_sha256": "acb0c04ca250afceedcf5f8c2423fd80ea7368acde4c7529e8969a74fad63058",
+  "baseline_sha256": "4cc5d65f13adce12982affed424592abd593dcf108ee16e975b09d3a79cf8b77",
+  "inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "instruction_compared_cases": 5730,
+  "accepted_native_evaluations": 92890,
+  "original_condition_positions": 1392,
+  "previous_unvisited": 17,
+  "newly_observed": 16,
+  "combined_categories": {
+    "both": 1269,
+    "false_only": 110,
+    "true_only": 12,
+    "unvisited": 1
+  },
+  "remaining_unvisited": [
+    {
+      "scene": 536,
+      "script": 14,
+      "command": 16
+    }
+  ],
+  "groups": {
+    "builder": {
+      "observations_sha256": "9cb491e13cb15988d5d6abf5fff60f83381620ff03cabcb3c2691848f4fe636c",
+      "instruction_comparison_sha256": "a430748e0c7c42ddde5d423b9f57c2352172374f3c56c5773206550a1e352bcb",
+      "cases": 904,
+      "accepted_native_evaluations": 904
+    },
+    "endings": {
+      "observations_sha256": "3918478358429c6f9de49729f2e919fdefb576af7dd04c0d2e488aaf798e147d",
+      "instruction_comparison_sha256": "1174f59a652261d2d683c39d4e04ef52825c454df5a5bb95336bcdd74f00894f",
+      "cases": 145,
+      "accepted_native_evaluations": 145
+    },
+    "transitions": {
+      "observations_sha256": "bc37ec2b6e24ca2749e81998477a2fde12c8edf96c2723e4719b087b1e5542b0",
+      "instruction_comparison_sha256": "469151bf0aa0733652dbbdfdbf85b23a458d252970f2d97fd7d9688ffa442dc7",
+      "cases": 196,
+      "accepted_native_evaluations": 196
+    },
+    "game-state": {
+      "observations_sha256": "71d6de268d9f258f5d64a07d1264bc305233124dfcdf52eb3c329eac56eef246",
+      "instruction_comparison_sha256": "ecbfa00635a3b0418d66924feb8572ac0fa751b2240bf4ec84c460940cc093fe",
+      "cases": 52,
+      "accepted_native_evaluations": 52
+    },
+    "p510-start": {
+      "observations_sha256": "9c5723679f8b0bd58618f8832c0a843a600e3b535150f8224b37e0e0cf11c1d6",
+      "instruction_comparison_sha256": "5d4a95fa82ecd7d65456175c8bb491b35822e54c1674a2fd4671fa7be1f4c954",
+      "cases": 11,
+      "accepted_native_evaluations": 11
+    },
+    "builder-default": {
+      "observations_sha256": "84e28b487904e24ea93a16882c96e39f55174536031e19bdb686cd332a534903",
+      "instruction_comparison_sha256": "607185c2f40d4af9dc3f7d2f9b370bfe5fce51b5d7e2e8256d43fe3a87352c03",
+      "cases": 160,
+      "accepted_native_evaluations": 160
+    },
+    "general": {
+      "observations_sha256": "503374f1774611febeb179f0a51960a62784a1afd6ed1975a3ee07cc5a3cbb50",
+      "instruction_comparison_sha256": "a99fb13ddc9944b17297ce09c1f6899aa7a1adb61687fa672c034e59e8812a2b",
+      "cases": 4262,
+      "accepted_native_evaluations": 91422
+    }
+  },
+  "local_details_sha256": "18123a955626b288f8c1f8007d489dde2d57d4436521320800d7c703f9d64c81",
+  "whole_game_completion_percent": null,
+  "limits": [
+    "Reduced scalar matrix plus controlled real-engine observations; no complete required-gameplay scope",
+    "General native traces may include copied diagnostic states; only globally unique source signatures assigned",
+    "An unobserved outcome does not establish a defect or unreachable branch"
+  ]
+}

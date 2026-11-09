@@ -8,13 +8,15 @@ Only astronomica.cpp changes; headers, paired video core and ASVM layouts are un
 
 Fixed acceptance remains **7/10 (70%)**, with **35/35 documented bounded save profiles**. Whole-game completion remains unmeasured. The notes below retain their historical versions.
 
+Additional source verification: [timed scalar queues](outputs/astronomica-cleanroom/ORIGINAL-SCALAR-QUEUES.md) passes810cases/12,150ticks and3independent negative controls. [General native predicate observations](outputs/astronomica-cleanroom/GENERAL-NATIVE-CONDITIONS.md) conservatively maps completed native traces back to original instructions, explicitly excluding ambiguous signatures. Runtime sources remain unchanged.
+
 ---
 
 # Current update: ordinary-launcher opening restored (6 November 2026)
 
 Starting the game from ScummVM's launcher now selects an advertised lossless RGB format instead of inheriting the launcher's first 16-bit format. The original menu, opening movie, credit cards and natural P27arrival were observed in a separate profile. User preferences and personal saves were preserved. The change is limited to output-format selection; ASVM31 packets, gameplay and video-core layout are unchanged.
 
-The exact Windows executable 89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41 passed all eleven native gates again, including the general suite, six fresh ASVM31 loads, 185 recorded-state replays, 21 recipient cases, 32 genuine prior-save processes v14ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“30, real WASAPI gates and P281. Installed-path smoke also passed. Build scope is one recompiled engine unit plus 409 hash-verified objects from the full 410-unit f286base; no new full rebuild is claimed for this one-file delta. Source installation still requires the paired core and a full clean build.
+The exact Windows executable 89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41 passed all eleven native gates again, including the general suite, six fresh ASVM31 loads, 185 recorded-state replays, 21 recipient cases, 32 genuine prior-save processes v14ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ30, real WASAPI gates and P281. Installed-path smoke also passed. Build scope is one recompiled engine unit plus 409 hash-verified objects from the full 410-unit f286base; no new full rebuild is claimed for this one-file delta. Source installation still requires the paired core and a full clean build.
 
 The fixed acceptance index is **7/10 (70%)**, with **35/35 inventoried route scenes** supporting documented useful save boundaries. These are different measures; whole-game completion remains unmeasured. Original branch inventory, exact help typography and a human audiovisual playthrough remain open. Keyboard delivery in the automated UI checks is still unverified.
 
@@ -32,7 +34,7 @@ Native saves now cover **35/35 inventoried route scenes**, each within its docum
 
 **Build requirement changed:** install the paired three-file video-core overlay with the 23 engine files and perform a full clean rebuild. The current preparation tools apply and verify that pair. Read [BUILDING.md](BUILDING.md); old no-core-change statements below describe earlier versions.
 
-The reviewed Windows executable f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182 was freshly built from 410 translation units. Eleven same-binary gates passed, including six fresh ASVM31 loads, 185 recorded-state loads/rewrites, 21 active recipient cases, 32 genuine prior-save processes (v14ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“30), the general suite, and real WASAPI movie-clock/audio gates. The 185 packets are newly encoded recorded native states, not historical ASVM31 save files. Original mixer/resampler phase is not recovered. No new genuine v1ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“13 compatibility claim is made.
+The reviewed Windows executable f286eece070cd192fe90855ff48b0fe9953e63fda89f4592b3a23a1a58d51182 was freshly built from 410 translation units. Eleven same-binary gates passed, including six fresh ASVM31 loads, 185 recorded-state loads/rewrites, 21 active recipient cases, 32 genuine prior-save processes (v14ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ30), the general suite, and real WASAPI movie-clock/audio gates. The 185 packets are newly encoded recorded native states, not historical ASVM31 save files. Original mixer/resampler phase is not recovered. No new genuine v1ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ13 compatibility claim is made.
 
 Source publication is independently checked before and after pushing. Current manual audiovisual playthrough, exhaustive original-branch inventory and exact help typography remain outstanding. Historical reports below retain their producing versions and limitations.
 

@@ -1,0 +1,20 @@
+{
+  "status": "ORIGINAL_QUEUE_REAL_NATIVE_COMPARISON_PASS",
+  "completed_at": "2026-11-09T21:23:19.562734+00:00",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "fixture_sha256": "3db3a8d38b961dad1b81672885f2af4caa0e1e7f83915d6902cde4c30374eb3b",
+  "oracle_proof_sha256": "53d6b993930bd55dfbea6dd8046bd544a3c0081910d92417eeadb3f957c61ebe",
+  "probe_source_sha256": "89ed1ec14e65c8683a4197a654ff30c636b28a168e10dbe04e6ffadb5fdbed1c",
+  "probe_exe_sha256": "defc19ffdb143b00b19a8a34305770d0a253e1dcc8955d3ae283ed4a4841c6cf",
+  "installed_main_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "native_log_sha256": "e2dfda5ef978c26c2f878a28b6fe629d568595395ff24732326494b104b884f1",
+  "cases": 810,
+  "ticks": 12150,
+  "aggregate": "4cdb607d",
+  "runtime_unchanged": true,
+  "limits": [
+    "Original queue/copy/control/wrapper bodies replayed; allocator,free and clock modeled",
+    "Only31/32/33/39/40/41/42/45/46retain effects; others are timed trace markers; exact integer pow/FTOL helpers modeled for bits0..30",
+    "No original Windows execution or complete scene gameplay claim"
+  ]
+}

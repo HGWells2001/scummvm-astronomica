@@ -1,0 +1,28 @@
+{
+  "status": "SCALAR_QUEUE_REAL_ENGINE_LIBRARY_OBJECT_CLOSURE_PASS",
+  "verified_at": "2026-11-09T21:26:15.586049+00:00",
+  "author_sha256": "3b6e3e87cad27aafa89599b8a6a6ea62fe5711658faa50f04809fc034a8dff7f",
+  "engine_build_proof_sha256": "14c4eeb3dfb7189e0cafb9873233ca02cf5ee174ef80e2c1bd0b242d2ff22418",
+  "foundation_proof_sha256": "9ee7b13346a6e28cc06b12df19f498f247e743f1e915f07075c18164df4ec7f8",
+  "native_proof_sha256": "3bdaffe3961590059bacea08210993e91eb4ffdee98801bff9a2864f5d767886",
+  "library_sha256": "8a40d86ca66ee1c96eaf4cf8c6ab9a9053054738171e5f6b7923f16673b73d5a",
+  "library_rsp_sha256": "d54c78d4bbb70c6cf7cf483a372a7845d63f3422fd924b568a1de346d2d7f590",
+  "helper_link_rsp_sha256": "947bc5cbe36aef90f1d2c8b1b0f5e1568b314177a311d1a14b6a29e9da73f153",
+  "archive_members_checked": 7,
+  "fresh_astronomica_object_sha256": "135926911a903a0bf8064ca68bad22fa5033990fa0d021dc9a1d81bcdcf3ff31",
+  "script_runner_source_sha256": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+  "members": {
+    "0006-sprites.obj": "c21a34059e7289be0e5b6d31fd10c4109852cac0604fac83d5af02820806cf08",
+    "0005-script.obj": "c0dfbd8f79940a7220a7b79a38ad186a7d285660b02954a5652480e2b72a445f",
+    "0004-help.obj": "7c858b79c3d578c0b6cbf1e507ff80658e4b961776bc4795dea0d6e3c0fa0b91",
+    "0003-resource.obj": "4214140c07f473d6307fe6876eec56bb565ff077fb2e1d8a064e49bfa9eed98d",
+    "0002-metaengine.obj": "f892de4f9c41d8bdc9450172ff368089a651854ac1077cc0b63f0e39e02227ba",
+    "0001-conditions_test.obj": "02b5bf3f8f0706e09f8f5f8b6bf7db9e5ebdefbde94ea71019c45ab066a8cfb9",
+    "astronomica.obj": "135926911a903a0bf8064ca68bad22fa5033990fa0d021dc9a1d81bcdcf3ff31"
+  },
+  "installed_main_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "limits": [
+    "Exact archive contents and current link response, not a new full compiler rebuild",
+    "Foundation build provenance retained in its original input manifest"
+  ]
+}

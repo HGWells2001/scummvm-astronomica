@@ -1,0 +1,64 @@
+{
+  "status": "ORIGINAL_QUEUE_INSTRUCTION_FIXTURE_READY",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "template_sha256": "55675d82a3bead94819e717479f6834cf028b90e40f38e471e8ed38f71436725",
+  "author_sha256": "16d7b9c9b6532c196940ae7b6285fae98c7442904e8f1e0403f944d5dde2a3f6",
+  "fixture_sha256": "3db3a8d38b961dad1b81672885f2af4caa0e1e7f83915d6902cde4c30374eb3b",
+  "cases": 810,
+  "ticks": 12150,
+  "initial_queue_sizes": [
+    1,
+    2,
+    3
+  ],
+  "clock_epochs": [
+    100,
+    2147483632,
+    4294967280
+  ],
+  "instruction_steps": 13991613,
+  "metadata_checks": [
+    {
+      "scene": 423,
+      "source_sha256": "6ee92009e0a281480d026a3581d987f76354c5e4c55578bd723092a13e9b68d8",
+      "condition_table_sha256": "a445a3b28f0c30a569150f2abe16594f38fe3488a82862765935587d896b6343"
+    },
+    {
+      "scene": 429,
+      "source_sha256": "057319427eeebff12aaee8977c81e772cca087c97b6aeb9b08737e352d3a291e",
+      "condition_table_sha256": "09f5bbc028bf5049869be4ac718cb10b70eb9067670c115631db779544dd39b7"
+    },
+    {
+      "scene": 510,
+      "source_sha256": "c02ffb9b00da37a0d6d081746250b38b84b3be970ea942009baaf2c349ee97b0",
+      "condition_table_sha256": "2fe40f0005b938fa68c90e7fbea7c93810bb23face1594e1ad687483458fa7f7"
+    },
+    {
+      "scene": 515,
+      "source_sha256": "d740db8e67a1ca6d600df71f0f1b6ed3b9e703ac2f2659c0ceba74a8fbd20360",
+      "condition_table_sha256": "62355151ef62b510126877b3dbe368975831b479d03e17f7a7e9d57474edbef5"
+    },
+    {
+      "scene": 536,
+      "source_sha256": "2427a16a916e53affdf0c7a7590f858f96492784d11eb1a7b3632b804e35d554",
+      "condition_table_sha256": "5704561dd2558988bd52aa2af433e67161bd38fa228d2ae6a6df1f13f0ddf87e"
+    }
+  ],
+  "random_next_draw_at_every_tick": true,
+  "retained_opcodes": [
+    31,
+    32,
+    33,
+    39,
+    40,
+    41,
+    42,
+    45,
+    46
+  ],
+  "limits": [
+    "Original queue/copy/control/wrapper bodies replayed; allocator,free and clock modeled",
+    "Only31/32/33/39/40/41/42/45/46retain effects; others are timed trace markers; exact integer pow/FTOL helpers modeled for bits0..30",
+    "No original Windows execution or complete scene gameplay claim"
+  ]
+}

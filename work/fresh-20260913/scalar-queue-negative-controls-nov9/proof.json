@@ -1,0 +1,33 @@
+{
+  "status": "NATIVE_SCALAR_QUEUE_NEGATIVE_CONTROLS_PASS",
+  "completed_at": "2026-11-09T21:23:55.583200+00:00",
+  "author_sha256": "59334685dfe61b8e89276161125a426ca2dc9a30222f783ca459b3a16f8b0041",
+  "positive_proof_sha256": "3bdaffe3961590059bacea08210993e91eb4ffdee98801bff9a2864f5d767886",
+  "positive_fixture_sha256": "3db3a8d38b961dad1b81672885f2af4caa0e1e7f83915d6902cde4c30374eb3b",
+  "probe_exe_sha256": "defc19ffdb143b00b19a8a34305770d0a253e1dcc8955d3ae283ed4a4841c6cf",
+  "independent_expected_corruptions_rejected": 3,
+  "results": [
+    {
+      "label": "executed-count",
+      "byte_offset": 1452,
+      "exit_code": 6,
+      "native_log_sha256": "b5ee23b803cd28c482e1e5884853fe2c77e2dd6aee5ac7b9a6e4fc08519a45dd",
+      "fixture_sha256": "244c3e24200523b6e4f63a72c2082e445422e758d5b4503892fd9934ced8dae0"
+    },
+    {
+      "label": "scalar-word",
+      "byte_offset": 1468,
+      "exit_code": 7,
+      "native_log_sha256": "33a10436208e46c38cf2a24cebf5258a4cb6c6f1ac86685203ad64427f2976e8",
+      "fixture_sha256": "6d6b4eec6e6cbb9d1a1b7b3376dbdd3711b7a9f97c50070ca4672f8ecaf4baaa"
+    },
+    {
+      "label": "next-rng-draw",
+      "byte_offset": 2268,
+      "exit_code": 8,
+      "native_log_sha256": "41b14df2e2b88d4b63e2817b492db3ce1c2db52c65e84794e4767027a261cae8",
+      "fixture_sha256": "01bed8384ca64b914a73ef1804f2db9940437b5d26bba8cf9241fe2dc7c5cb21"
+    }
+  ],
+  "engine_runtime_changed": false
+}
