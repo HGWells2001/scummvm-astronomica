@@ -1,0 +1,131 @@
+{
+  "status": "ORIGINAL_BUILDER_PHASE_MASK_CLOSURE_PASS",
+  "author_sha256": "1fa4ff15e5e4744c15743ba06b3da46ca135ff6aa0c2a1ee4f939d11a3e420f6",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "scenes": [
+    {
+      "scene": 515,
+      "original_hyp_sha256": "d740db8e67a1ca6d600df71f0f1b6ed3b9e703ac2f2659c0ceba74a8fbd20360",
+      "initial_scenario": 0,
+      "initial_mask": 24,
+      "reset_mask": 7,
+      "closed_masks": [
+        7,
+        15,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "selected_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "serialized_writers": [
+        {
+          "opcode": 39,
+          "operation": "OR-selected-free-bit;store-1-based-index-in-local1"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        },
+        {
+          "opcode": 39,
+          "operation": "OR-selected-free-bit;store-1-based-index-in-local1"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        }
+      ],
+      "custom_commands": [
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "scene": 536,
+      "original_hyp_sha256": "2427a16a916e53affdf0c7a7590f858f96492784d11eb1a7b3632b804e35d554",
+      "initial_scenario": 2,
+      "initial_mask": 7,
+      "reset_mask": 7,
+      "closed_masks": [
+        7,
+        15,
+        23,
+        31
+      ],
+      "selected_indices": [
+        4,
+        5
+      ],
+      "serialized_writers": [
+        {
+          "opcode": 39,
+          "operation": "OR-selected-free-bit;store-1-based-index-in-local1"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        },
+        {
+          "opcode": 39,
+          "operation": "OR-selected-free-bit;store-1-based-index-in-local1"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        },
+        {
+          "opcode": 32,
+          "operation": "reset-to-original-reserved-mask"
+        }
+      ],
+      "custom_commands": [
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "custom25_dispatch": {
+    "515": "no handler",
+    "536": "global31 success handler"
+  },
+  "limits": [
+    "Serialized scene scalar writers and original success dispatch verified; no original Windows execution",
+    "Imported native states must separately enforce this normal-play invariant; this does not prove every branch unreachable"
+  ]
+}

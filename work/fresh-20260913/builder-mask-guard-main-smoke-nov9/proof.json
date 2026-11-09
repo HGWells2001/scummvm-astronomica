@@ -1,0 +1,18 @@
+{
+  "status": "INSTALLED_BUILDER_MASK_GUARD_GENUINE_CONTINUATION_PASS",
+  "completed_at": "2026-11-09T20:55:56.856932+00:00",
+  "producer_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "consumer_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "genuine_slot_sha256": "7166e27f0845ea2b8851aa092b0d31e55b4b886aa7cfefa1c32d322392adecfe",
+  "source_and_loaded_fingerprint": "d6e10777",
+  "native_log_sha256": "b1f4849608710c2bcb609c8b6018fbddb70916a5e384bde358b5913a59186f77",
+  "final_scene": 510,
+  "final_global31": 1,
+  "final_completed": 11,
+  "variant_round2_preserved": true,
+  "physical_file_unchanged": true,
+  "limits": [
+    "One genuine old-main physical builder save at the declared P536/design5/partial-parts boundary",
+    "Actual public startup load and ordinary remaining controls; not all historical ASVM versions or all builder boundaries"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "status": "BASELINE_BUILDER_PUBLIC_CODEC_MASK_COUNTEREXAMPLES_OBSERVED",
+  "completed_at": "2026-11-09T20:22:23.664073+00:00",
+  "candidate_exe_sha256": "58eb1bd10be1f33fe40057fd123b6c9f89162f3b4f0d626f46ba609f82596ceb",
+  "build_proof_sha256": "0196664a6d5f33b338df4dc36351075b85f7c86ca89e4fd3fce64f7f49f26cf6",
+  "native_log_sha256": "ed10961d0523b61719bcba0386a454fe9f2667ca5033e6d418173ffe3210a322",
+  "phase_results": [
+    [
+      515,
+      21,
+      0,
+      11
+    ],
+    [
+      536,
+      28,
+      0,
+      4
+    ]
+  ],
+  "variant99_fixture_sha256": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d",
+  "invalid_mask_packets_accepted": 49,
+  "valid_mask_packets_accepted": 15,
+  "natural_builder_save_suite": "PASS",
+  "user_preferences_unchanged": true,
+  "candidate_installed": false,
+  "limits": [
+    "Baseline intentionally expects acceptance to establish the overly broad current guard",
+    "Rehashed mutations of a valid in-memory native ASVM13 packet via public loadGameStream; not52physical files",
+    "Original mask closure verified separately; no production guard changed yet"
+  ]
+}

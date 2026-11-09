@@ -1,0 +1,46 @@
+{
+  "status": "BUILDER_MASK_GUARD_PUBLIC_CODEC_AND_WRITER_PASS",
+  "completed_at": "2026-11-09T20:22:21.563029+00:00",
+  "candidate_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "build_proof_sha256": "14c4eeb3dfb7189e0cafb9873233ca02cf5ee174ef80e2c1bd0b242d2ff22418",
+  "native_log_sha256": "57ed00e7f591f0fcca4091fc4f1793e87efdfc83b4e4edfc65061816af4c0f9e",
+  "phase_results": [
+    [
+      515,
+      0,
+      21,
+      11
+    ],
+    [
+      536,
+      0,
+      28,
+      4
+    ]
+  ],
+  "variant99_fixture_sha256": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d",
+  "invalid_mask_packets_rejected_atomically": 49,
+  "invalid_live_states_zero_byte_writes": 49,
+  "writer_results": [
+    [
+      515,
+      11,
+      21
+    ],
+    [
+      536,
+      4,
+      28
+    ]
+  ],
+  "original_phase_mask_proof_sha256": "5693b057b0f22a48cf2906b37f9ba2f9798d248a3ec99032773823dc3c5ae04e",
+  "valid_mask_packets_accepted": 15,
+  "natural_builder_save_suite": "PASS",
+  "user_preferences_unchanged": true,
+  "candidate_installed": false,
+  "limits": [
+    "All49previously accepted invariant counterexamples now refused before replacing receiver state",
+    "Rehashed mutations of a valid in-memory native ASVM13 packet via public loadGameStream; not49physical files",
+    "Original mask closure verified separately; guard candidate remains isolated until all required regressions pass"
+  ]
+}

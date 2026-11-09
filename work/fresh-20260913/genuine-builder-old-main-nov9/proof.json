@@ -1,0 +1,18 @@
+{
+  "status": "GENUINE_OLD_MAIN_BUILDER_ASVM13_PRODUCED",
+  "produced_at": "2026-11-09T20:30:32.698640+00:00",
+  "producer_exe_sha256": "89fdd9016b3c38e17f12835a65c7516a88ac2918112c415391aa340e1d94ac41",
+  "slot_sha256": "7166e27f0845ea2b8851aa092b0d31e55b4b886aa7cfefa1c32d322392adecfe",
+  "slot_bytes": 47436,
+  "native_payload_bytes": 8960,
+  "version": 13,
+  "scene": 536,
+  "source_fingerprint": "d6e10777",
+  "native_log_sha256": "6e855be7976c480d39372ddc6e498945cfcb28bd67425ff1aab1459a0305a124",
+  "variant99_sha256": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d",
+  "limits": [
+    "Exact installed pre-fix main generated the physical file through saveGameState12",
+    "Owned process intentionally stopped after completed save; no full producer-suite completion claim",
+    "File and embedded thumbnail remain local"
+  ]
+}

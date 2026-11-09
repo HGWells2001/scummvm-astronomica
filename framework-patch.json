@@ -11,7 +11,7 @@
   },
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "830c5417186d55450d73719829be9f1dad691984b28a61af6d51f3d84c15ff5e",
+    "astronomica.cpp": "2e8ca1413f6e017a5b2f7ae1c979f74476409704e2d585f522ef87be51bc6d44",
     "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
     "conditions_test.cpp": "189c56d54fbdb452a08b44219cff2f44f8c6b6e519b405f3754caa1a496964d4",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",

@@ -1,3 +1,15 @@
+# Current update: builder selection masks (9 November 2026)
+
+Builder saves now reject component-selection masks that the original P515/P536 scripts cannot produce. Exhaustive public-codec checks cover 49 invalid masks, 49 zero-byte writer refusals and 15 positive component masks. Early Launch, P536 initial project 2 and all existing project ranges are preserved. The general native suite, a genuine previous-main ASVM13 continuation and installed-path smoke pass on executable 51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943. See [the guard and compatibility scope](outputs/astronomica-cleanroom/BUILDER-SELECTION-MASK-GUARD.md).
+
+Only astronomica.cpp changes; headers, paired video core and ASVM layouts are unchanged. Local build scope is one fresh engine unit and 409 hash-verified foundation objects. Source installation still requires the paired core and a full clean build.
+
+[Original queues and live predicates](outputs/astronomica-cleanroom/ORIGINAL-QUEUES-AND-LIVE-BRANCHES.md) adds 630 controlled queue cases/9,450 ticks and 1,308 live native predicate comparisons with original instruction bodies. Effects and timing assumptions are explicit. These checks do not execute the original Windows application or certify every gameplay branch.
+
+Fixed acceptance remains **7/10 (70%)**, with **35/35 documented bounded save profiles**. Whole-game completion remains unmeasured. The notes below retain their historical versions.
+
+---
+
 # Current update: ordinary-launcher opening restored (6 November 2026)
 
 Starting the game from ScummVM's launcher now selects an advertised lossless RGB format instead of inheriting the launcher's first 16-bit format. The original menu, opening movie, credit cards and natural P27arrival were observed in a separate profile. User preferences and personal saves were preserved. The change is limited to output-format selection; ASVM31 packets, gameplay and video-core layout are unchanged.

@@ -100,12 +100,21 @@ int builderImageId(const Common::String &name) {
  if (name.equalsIgnoreCase("pad")) return 2;
  return -1;
 }
-bool validBuilderState(const Common::Array<uint32> &state) {
- if (!ScriptRunner::validPersistentState(state)) return false;
+bool validBuilderState(const Common::Array<uint32> &state, int place) {
+ if (!builderScene(place) || !ScriptRunner::validPersistentState(state)) return false;
  const uint widths[] = {5,5,5,6,7,1,1,1,1,1,1,1,1};
  for (uint i = 0; i < 100; ++i) {
   if (state[i*3+2] != 1 || state[300+i*3+2] != (i < 13 ? 1U : 0U) || state[301+i*3] != (i < 13 ? widths[i] : 0U)) return false;
   if (i >= 5 && i < 13 && state[300+i*3] > 1) return false;
+ }
+ // P515 starts with mask24, but its original selection/early-Launch
+ // scripts may reset it to7. P536 starts and resets to7. Opcode39 only
+ // adds a free bit, so a native import must retain one of these pools.
+ const uint32 mask = state[300];
+ if (place == 515) {
+  if ((mask & 24U) != 24U && (mask & 7U) != 7U) return false;
+ } else {
+  if ((mask & 7U) != 7U) return false;
  }
  return state[300] <= 31 && state[303] <= 5 && state[306] <= 5 &&
   (state[309] == 0 || state[309] == 4 || state[309] == 5 || state[309] == 6) && state[312] <= 6;
@@ -2102,7 +2111,7 @@ bool AstronomicaEngine::canSaveBuilder() const {
      !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites;
- if (!_runner.exportPersistentState(state) || !validBuilderState(state) || builderImageId(_displayedImageName) < 0) return false;
+ if (!_runner.exportPersistentState(state) || !validBuilderState(state,_place) || builderImageId(_displayedImageName) < 0) return false;
  for (const HoverTarget &h : _hoverSprites) if (h.entered) return false;
  for (const HoverTarget &h : _hoverRects) if (h.entered) return false;
  for (const Sprite &s : _scene.sprites) {
@@ -2136,7 +2145,7 @@ Common::Error AstronomicaEngine::loadBuilder(Common::SeekableReadStream *stream)
  Common::Array<uint32> sprites,state; sprites.resize(60*27); state.resize(ScriptRunner::kPersistentStateWords);
  for (uint32 &v : sprites) v = word();
  for (uint32 &v : state) v = word();
- if (stream->readUint32LE() != hash || stream->err() || !validBuilderState(state) || !builderScene(header[0]) ||
+ if (stream->readUint32LE() != hash || stream->err() || !validBuilderState(state,header[0]) || !builderScene(header[0]) ||
      (header[3] > 537 && header[3] != 0xffffffffU) || (header[4] != 0 && header[4] != 0xffffffffU) ||
      header[5] > 1 || header[7] > 1 || (header[7] && (header[4] != 0 || !header[5])) || header[8] > 2 || header[9] < 1 || header[9] > 12 || header[10] > 12 || header[11]) return Common::kReadingFailed;
  Common::File file;
@@ -4934,6 +4943,7 @@ bool AstronomicaEngine::verifyRocketBoundaries() {
 }
 
 bool AstronomicaEngine::verifyBuilderSaves() {
+ uint32 phaseImportProbeSeen = 0;
  const uint32 seeds[] = {1,32,64,1,1,64};
  const int parts[5][11] = {{48,54,58,60,59,52,0},{46,47,53,58,57,56,45,44,50,0},
   {48,54,58,60,49,52,0},{48,54,58,45,43,51,0},{46,47,53,58,57,56,55,45,43,51,0}};
@@ -5007,7 +5017,7 @@ bool AstronomicaEngine::verifyBuilderSaves() {
  auto roundTrip = [&](uint control, bool physical = false) {
   if (!canSaveBuilder()) {
    Common::Array<uint32> state; _runner.exportPersistentState(state);
-   debug("Builder save boundary rejected: P%d control%u boundary%u idle%d history%d image%d state%d",_place,control,boundaries,_runner.scriptsIdle(),_builderHistoryValid,builderImageId(_displayedImageName),validBuilderState(state));
+   debug("Builder save boundary rejected: P%d control%u boundary%u idle%d history%d image%d state%d",_place,control,boundaries,_runner.scriptsIdle(),_builderHistoryValid,builderImageId(_displayedImageName),validBuilderState(state,_place));
    for (uint i = 0; i < _scene.sprites.size(); ++i) {
     const Sprite &s = _scene.sprites[i]; debug("Builder sprite%u visible%d frame%d stored%d,%d render%d,%d",i,s.visible,s.selectedFrame,s.x,s.y,s.renderX,s.renderY);
    }
@@ -5023,6 +5033,57 @@ bool AstronomicaEngine::verifyBuilderSaves() {
   }
   if (_place == 515) seen515 |= 1U << state[303]; else seen536 |= 1U << state[303];
   const uint32 before = fingerprint(),savedNow = now;
+
+  const uint phaseBit = _place == 515 ? 1U : 2U;
+  if (!(phaseImportProbeSeen & phaseBit)) {
+   phaseImportProbeSeen |= phaseBit;
+   if (bytes.size() != 8960 || READ_LE_UINT32(&bytes[4]) != 13) return false;
+   const uint allowed515[] = {7,15,23,24,25,26,27,28,29,30,31}, allowed536[] = {7,15,23,31};
+   uint acceptedInvalid = 0, rejectedInvalid = 0, acceptedValid = 0, validWrites = 0, rejectedWrites = 0;
+   const uint phase = _place;
+   auto attempt = [&](uint stateWord, uint replacement, bool allowed) {
+    Common::Array<byte> changed = bytes;
+    const uint offset = 8+(12+60*27+stateWord)*4;
+    for (uint n = 0; n < 4; ++n) changed[offset+n] = byte(replacement>>(8*n));
+    uint32 hash = 2166136261U;
+    for (uint n = 8; n < changed.size()-4; n += 4) hash = (hash^READ_LE_UINT32(&changed[n]))*16777619U;
+    for (uint n = 0; n < 4; ++n) changed[changed.size()-4+n] = byte(hash>>(8*n));
+    if (true) {
+     Common::Array<uint32> live = state; live[stateWord] = replacement;
+     if (!_runner.importPersistentState(live)) return false;
+     const uint32 beforeWrite = fingerprint();
+     const bool advertised = canSaveBuilder();
+     Common::MemoryWriteStreamDynamic encoded(DisposeAfterUse::YES);
+     const bool written = saveGameStream(&encoded).getCode() == Common::kNoError;
+     const bool unchanged = fingerprint() == beforeWrite;
+     if (!restore(bytes) || fingerprint() != before) return false;
+     if (advertised != allowed || written != allowed || !unchanged || (allowed ? encoded.size() != bytes.size() : encoded.size() != 0)) return false;
+     if (allowed) ++validWrites; else ++rejectedWrites;
+    }
+    const uint sounds = _soundsStarted;
+    const bool accepted = restore(changed);
+    if (accepted && allowed) ++acceptedValid;
+    if (accepted && !allowed) ++acceptedInvalid;
+    if (!accepted && !allowed) ++rejectedInvalid;
+    const bool expected = true ? allowed : true;
+    const bool atomic = accepted || (fingerprint() == before && _soundsStarted == sounds);
+    if (!restore(bytes) || fingerprint() != before) return false;
+    if (accepted != expected || !atomic) {
+     debug("Builder phase probe mismatch: P%u word%u value%u allowed%d accepted%d atomic%d",phase,stateWord,replacement,allowed,accepted,atomic);
+     return false;
+    }
+    return true;
+   };
+   for (uint mask = 0; mask < 32; ++mask) {
+    bool allowed = false;
+    if (phase == 515) { for (uint v : allowed515) allowed |= mask == v; }
+    else { for (uint v : allowed536) allowed |= mask == v; }
+    if (!attempt(300,mask,allowed)) return false;
+   }
+   debug("Builder phase import probe: P%u accepted_invalid=%u rejected_invalid=%u accepted_valid=%u",phase,acceptedInvalid,rejectedInvalid,acceptedValid);
+   if (true) debug("Builder phase writer probe: P%u valid=%u zero_byte_rejected=%u",phase,validWrites,rejectedWrites);
+  }
+
   if (physical) {
    fixture = bytes;
    if (saveGameState(12,"Builder continuation regression").getCode() != Common::kNoError) return false;

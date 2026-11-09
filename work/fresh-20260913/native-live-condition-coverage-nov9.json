@@ -1,0 +1,32 @@
+{
+  "status": "NATIVE_ROUTE_AND_ORIGINAL_PREDICATE_COVERAGE_JOIN_PASS",
+  "native_predicate_evaluations": 1308,
+  "original_condition_positions": 1392,
+  "previous_unvisited": 17,
+  "newly_observed": 16,
+  "combined_categories": {
+    "both": 1215,
+    "false_only": 164,
+    "true_only": 12,
+    "unvisited": 1
+  },
+  "remaining_unvisited": [
+    {
+      "scene": 536,
+      "script": 14,
+      "command": 16
+    }
+  ],
+  "observation_detail_sha256": {
+    "condition-trace-nov9-stage/builder-run": "9cb491e13cb15988d5d6abf5fff60f83381620ff03cabcb3c2691848f4fe636c",
+    "condition-trace-nov9-stage/endings-run": "3918478358429c6f9de49729f2e919fdefb576af7dd04c0d2e488aaf798e147d",
+    "condition-trace-nov9-stage/transitions-run": "bc37ec2b6e24ca2749e81998477a2fde12c8edf96c2723e4719b087b1e5542b0",
+    "condition-trace-nov9-stage/game-state-run": "71d6de268d9f258f5d64a07d1264bc305233124dfcdf52eb3c329eac56eef246",
+    "p510-start-condition-nov9-stage/native-run": "9c5723679f8b0bd58618f8832c0a843a600e3b535150f8224b37e0e0cf11c1d6"
+  },
+  "whole_game_completion_percent": null,
+  "limits": [
+    "Joined reduced scalar cases and controlled real-engine original-asset routes",
+    "Not a human playthrough or proof of all gameplay effects; remaining unvisited condition not classified as a defect or unreachable"
+  ]
+}

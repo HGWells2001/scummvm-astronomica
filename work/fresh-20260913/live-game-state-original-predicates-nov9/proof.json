@@ -1,0 +1,24 @@
+{
+  "status": "LIVE_ORIGINAL_ASSET_PREDICATE_COMPARISON_PASS",
+  "observations": 52,
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "template_sha256": "55675d82a3bead94819e717479f6834cf028b90e40f38e471e8ed38f71436725",
+  "author_sha256": "ecc690913de6fc4021aa00dea1c9e3f2ed896d68a3884df0e9ed20dc5677ac5b",
+  "observation_proof_sha256": "3a659655749a6a48ee241e0f2ec6f36c2567ef408cc47ac9b694972730abbf27",
+  "observations_sha256": "71d6de268d9f258f5d64a07d1264bc305233124dfcdf52eb3c329eac56eef246",
+  "observed_distinct_conditions": 42,
+  "previously_unvisited_now_observed": 0,
+  "combined_matrix_and_live_categories": {
+    "both": 1183,
+    "false_only": 176,
+    "true_only": 16,
+    "unvisited": 17
+  },
+  "executed_original_predicate_steps": 2319,
+  "local_new_detail_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+  "limits": [
+    "Actual native engine observed values compared with bounded original predicate instructions; not original Windows execution",
+    "Combined counts join reduced scalar cases with five real builder routes; they do not certify all gameplay",
+    "Temporary diagnostic candidate not installed; offsets/details and resources remain local"
+  ]
+}
