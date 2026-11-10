@@ -1,0 +1,207 @@
+{
+  "status": "P281_RETAINED_SERIALIZED_RNG_FUTURES_PASS",
+  "verified_at": "2026-11-10T14:20:40.456826+00:00",
+  "candidate_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "original_executable_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "original_custom17_handler_sha256": "dac98f7349de7f31cbca7a790340f56851b8154cf382a8c21feaa3717dd02d4b",
+  "original_rng_multiplier": 22695477,
+  "fresh_proof_sha256": "3689bf3f5a55abe48aee32392e02e9b5b4b6de32162e9e650a7fd376c844cc25",
+  "cases": [
+    {
+      "slot": 41,
+      "initial_entry_scripts": false,
+      "serialized_rng_state": 1180771710,
+      "initial_round": 1,
+      "initial_mask": 8,
+      "predicted_original_range_draws": [
+        22485,
+        30240
+      ],
+      "predicted_selected_scenes": [
+        534,
+        535
+      ],
+      "actual_selected_scenes": [
+        534,
+        535
+      ],
+      "log_sha256": "3bb4bd7768e0f08b225083df444e9ec4b3d4be90ef369e3e8597324be4d8e03c"
+    },
+    {
+      "slot": 41,
+      "initial_entry_scripts": true,
+      "serialized_rng_state": 1180771710,
+      "initial_round": 1,
+      "initial_mask": 8,
+      "predicted_original_range_draws": [
+        22485,
+        30240
+      ],
+      "predicted_selected_scenes": [
+        534,
+        535
+      ],
+      "actual_selected_scenes": [
+        534,
+        535
+      ],
+      "log_sha256": "b6376b8cdf688c71a57dd8e7fcf62225d86307e403abb64e18e1ec09194b068e"
+    },
+    {
+      "slot": 42,
+      "initial_entry_scripts": false,
+      "serialized_rng_state": 3621070615,
+      "initial_round": 2,
+      "initial_mask": 24,
+      "predicted_original_range_draws": [
+        30240
+      ],
+      "predicted_selected_scenes": [
+        535
+      ],
+      "actual_selected_scenes": [
+        535
+      ],
+      "log_sha256": "e0d06c041950737377836628c827fe261bcbd74cf7c776dd450c9041a5c2968d"
+    },
+    {
+      "slot": 42,
+      "initial_entry_scripts": true,
+      "serialized_rng_state": 3621070615,
+      "initial_round": 2,
+      "initial_mask": 24,
+      "predicted_original_range_draws": [
+        30240
+      ],
+      "predicted_selected_scenes": [
+        535
+      ],
+      "actual_selected_scenes": [
+        535
+      ],
+      "log_sha256": "5fe4f86d2b59f3cc0ddca9ab306bb9685f2f152b743af3ada0feb52620fcb01d"
+    },
+    {
+      "slot": 43,
+      "initial_entry_scripts": false,
+      "serialized_rng_state": 1981815236,
+      "initial_round": 3,
+      "initial_mask": 56,
+      "predicted_original_range_draws": [],
+      "predicted_selected_scenes": [],
+      "actual_selected_scenes": [],
+      "log_sha256": "062968bf3930d20b2d668ea6267f2a78cc64f1944a087a3e419b4973516b54a3"
+    },
+    {
+      "slot": 43,
+      "initial_entry_scripts": true,
+      "serialized_rng_state": 1981815236,
+      "initial_round": 3,
+      "initial_mask": 56,
+      "predicted_original_range_draws": [],
+      "predicted_selected_scenes": [],
+      "actual_selected_scenes": [],
+      "log_sha256": "bb9be410b946470d153bcd47e26f405d9ae189b720453e233652f881d5af62ae"
+    },
+    {
+      "slot": 44,
+      "initial_entry_scripts": false,
+      "serialized_rng_state": 1203467187,
+      "initial_round": 1,
+      "initial_mask": 8,
+      "predicted_original_range_draws": [
+        22269,
+        8323
+      ],
+      "predicted_selected_scenes": [
+        534,
+        531
+      ],
+      "actual_selected_scenes": [
+        534,
+        531
+      ],
+      "log_sha256": "445a9df8ddc767684ac14f30c2afbb484d2e8c833517ff7a452fcaa479e51461"
+    },
+    {
+      "slot": 44,
+      "initial_entry_scripts": true,
+      "serialized_rng_state": 1203467187,
+      "initial_round": 1,
+      "initial_mask": 8,
+      "predicted_original_range_draws": [
+        22269,
+        8323
+      ],
+      "predicted_selected_scenes": [
+        534,
+        531
+      ],
+      "actual_selected_scenes": [
+        534,
+        531
+      ],
+      "log_sha256": "2774e4c9ec6924b8b0117b94010d9afad0b7a439caa69dc71a1544cae32dd2d7"
+    },
+    {
+      "slot": 45,
+      "initial_entry_scripts": false,
+      "serialized_rng_state": 1459453456,
+      "initial_round": 2,
+      "initial_mask": 24,
+      "predicted_original_range_draws": [
+        8323
+      ],
+      "predicted_selected_scenes": [
+        531
+      ],
+      "actual_selected_scenes": [
+        531
+      ],
+      "log_sha256": "9ae63d2b5b1f4faf75eb9ca845104a7c160c3214a3644a6b528be173ba7151f6"
+    },
+    {
+      "slot": 45,
+      "initial_entry_scripts": true,
+      "serialized_rng_state": 1459453456,
+      "initial_round": 2,
+      "initial_mask": 24,
+      "predicted_original_range_draws": [
+        8323
+      ],
+      "predicted_selected_scenes": [
+        531
+      ],
+      "actual_selected_scenes": [
+        531
+      ],
+      "log_sha256": "446136f3d58ea54d3c036a6117e9b9e9649f2130441c6ee9ecd122fc6170c399"
+    },
+    {
+      "slot": 46,
+      "initial_entry_scripts": false,
+      "serialized_rng_state": 2693003601,
+      "initial_round": 3,
+      "initial_mask": 26,
+      "predicted_original_range_draws": [],
+      "predicted_selected_scenes": [],
+      "actual_selected_scenes": [],
+      "log_sha256": "fab04ae441542bb1ab2dc15d66cadfc63952e80515bc1feabfb34b2b2dda2c5e"
+    },
+    {
+      "slot": 46,
+      "initial_entry_scripts": true,
+      "serialized_rng_state": 2693003601,
+      "initial_round": 3,
+      "initial_mask": 26,
+      "predicted_original_range_draws": [],
+      "predicted_selected_scenes": [],
+      "actual_selected_scenes": [],
+      "log_sha256": "3300f0c465d52c262ad109b7b41a12d0412bdbf71c955331bf007c3bcef9aded"
+    }
+  ],
+  "limits": [
+    "Independent bounded selection model from original custom17/RNG instructions; not original Windows execution",
+    "Only six physical saved states/twelve continuations; no whole-game coverage claim"
+  ]
+}

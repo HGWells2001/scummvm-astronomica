@@ -19,3 +19,8 @@ Il supporto resta in sviluppo. Le verifiche automatiche non sostituiscono
 una partita audiovisiva integrale. Questo collegamento richiede la build
 locale e non e un nuovo pacchetto del gioco. Non pubblicare `userdata/`,
 eseguibili o file originali del gioco nel repository dei sorgenti.
+
+
+## Salvataggi al ritorno da un puzzle variante,10 novembre2026
+
+Dopo aver lasciato incompleto un puzzle della sequenza, nella schermata di accesso P281 attendere che il comando precedente sia terminato. Con F5 si apre il menu di ScummVM: ora e possibile salvare anche dopo il primo, secondo o terzo ritorno. Ricaricando, il gioco conserva le scelte gia estratte e riprende quelle rimanenti. Durante la voce o la selezione del varco, attendere prima di salvare. I salvataggi personali e le preferenze conservano i percorsi indicati sopra.

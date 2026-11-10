@@ -1,3 +1,13 @@
+# Current update: retained P281 rounds (10 November 2026)
+
+Native saving now works at the idle gateway after leaving an unfinished variant puzzle. It preserves the visited variants and random state across restart. Active gateway actions still require waiting. [Verified scope and remaining limits](outputs/astronomica-cleanroom/P281-RETAINED-SAVES.md).
+
+Exact locally verified executable: `1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255`. Six physical files/twelve fresh continuations, atomic rejection checks, unchanged round0 ASVM2, general native suite and installed-path smoke passed. Seven fresh engine units plus403 verified foundation objects; full source installation needs a clean rebuild.
+
+Fixed acceptance remains **7/10 (70%)**; **whole-game completion remains unmeasured**. Historical updates follow.
+
+---
+
 # Current update: P512 weather voice ordering (10 November 2026)
 
 The weather puzzle now updates its answer result after a synchronous error voice returns, matching the original instructions. Previously the callback saw an already-cleared result. Sound selection, final answer result, video core and save layouts are unchanged. See [the original comparison and verified scope](outputs/astronomica-cleanroom/WEATHER-VOICE-ORDER.md).

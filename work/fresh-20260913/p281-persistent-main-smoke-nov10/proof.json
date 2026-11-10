@@ -1,0 +1,25 @@
+{
+  "status": "P281_ASVM32_INSTALLED_PATH_CONTINUATION_PASS",
+  "completed_at": "2026-11-10T14:32:03.707149+00:00",
+  "candidate_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "producer_proof_sha256": "eee6be4aa99ea083d9eb53d3415987dda4251549333e7ba64b2b04674180d41c",
+  "cases": [
+    {
+      "slot": 41,
+      "initial_entry_scripts": false,
+      "round": 1,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "9e27fa6ec00bd175102a5af658058b51508862cf744ce85fb281077020fbbd2d",
+      "physical_save_sha256": "45e4642b4eb48710ea56a6082155ce50e13ddc8cd6cdf7508c0a8501020316b3"
+    }
+  ],
+  "original_controls": true,
+  "no_repeated_variant": true,
+  "first_repeated_completion": true,
+  "source_files_unchanged": true,
+  "limits": [
+    "One genuine physical ASVM32 file through installed path; no all-version compatibility claim",
+    "Initial entry flag tested both ways; standalone verifier enables it for subsequent original gateway controls"
+  ]
+}

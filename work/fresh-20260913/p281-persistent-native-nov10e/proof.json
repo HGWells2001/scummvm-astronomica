@@ -1,0 +1,74 @@
+{
+  "status": "P281_RETAINED_ROUND_ASVM32_NATIVE_CODEC_PASS",
+  "completed_at": "2026-11-10T14:13:08.596969+00:00",
+  "candidate_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "build_proof_sha256": "21db541a69833fa2c4518cdd206b3d750049ac81016c624309b8e31d7ace0ac6",
+  "native_log_sha256": "4ba265f91c59b588d3d6c91f3bacfeb77e6a45ee1af9b593b21c07cbec3503a3",
+  "native_payload_bytes": 2652,
+  "physical_slots": {
+    "41": {
+      "sha256": "45e4642b4eb48710ea56a6082155ce50e13ddc8cd6cdf7508c0a8501020316b3",
+      "bytes": 41124,
+      "route": 0,
+      "round": 1,
+      "mask": 8,
+      "fingerprint": "fbce069b"
+    },
+    "42": {
+      "sha256": "1c1ff23da5b42ea1bf1c69a01575b81ac28c72c1e4f6aa2d94c18cb97489243c",
+      "bytes": 41124,
+      "route": 0,
+      "round": 2,
+      "mask": 24,
+      "fingerprint": "b2f71f95"
+    },
+    "43": {
+      "sha256": "7dd063552eb185a016bfb17c8f0970e004bcc3cc287140084775705f82a38fa4",
+      "bytes": 41124,
+      "route": 0,
+      "round": 3,
+      "mask": 56,
+      "fingerprint": "e481bb86"
+    },
+    "44": {
+      "sha256": "86729f4bb4a6b2c23cdd7f785341c79bf1e6f1265f9db7a74abed44b7013f39d",
+      "bytes": 41124,
+      "route": 1,
+      "round": 1,
+      "mask": 8,
+      "fingerprint": "eabb1753"
+    },
+    "45": {
+      "sha256": "3ce10325763c59dd3e7bfeed9cef105c369436514f4f0ead92961bf746db0493",
+      "bytes": 41124,
+      "route": 1,
+      "round": 2,
+      "mask": 24,
+      "fingerprint": "68109708"
+    },
+    "46": {
+      "sha256": "495f901cc0b0b9b4cc81f1bca11fe787fe10a7b82354c2df6e3339157d358c4f",
+      "bytes": 41124,
+      "route": 1,
+      "round": 3,
+      "mask": 26,
+      "fingerprint": "eb2a23ad"
+    }
+  },
+  "actual_original_unsolved_returns": 6,
+  "legacy_idle_v2_roundtrips": 2,
+  "pending_gateway_zero_byte_refusals": 8,
+  "atomic_truncations": 2652,
+  "atomic_single_byte_corruptions": 2652,
+  "foreign_decoder_nested_pause_recipient": true,
+  "pending_old_gateway_retired": true,
+  "first_repeated_completion": true,
+  "audio_driver": "wasapi",
+  "muted": true,
+  "candidate_installed": false,
+  "limits": [
+    "Idle P281 round1..3 with original static sprite and no foreground sound; active gateway remains unsavable",
+    "Round1/2/3 produced by original unsolved controls; second route additionally seeds valid dormant dimension/comet cache values",
+    "Fresh physical process continuation is a separate gate"
+  ]
+}

@@ -394,6 +394,11 @@ bool testP523PacketRecipients();
  bool verifyP512Puzzle();
  bool verifyP281Gateway();
  bool verifyP281ReturnRounds();
+ bool canSaveP281Persistent()const;
+ Common::Error saveP281Persistent(Common::WriteStream*stream);
+ Common::Error loadP281Persistent(Common::SeekableReadStream*stream);
+ bool verifyP281PersistentBoundary(uint route,uint round);
+ bool verifyP281PersistentFile();
  struct P512Prepared {
   Scene scene;ScriptRunner runner;Graphics::Surface background,displayed,composed;
   Video::QuickTimeDecoder*decoder=nullptr;Audio::AudioStream*ambient=nullptr;Common::Array<uint32>packet;bool ready=false;
