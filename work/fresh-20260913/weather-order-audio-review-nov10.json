@@ -1,0 +1,28 @@
+{
+  "status": "REAL_WEATHER_MOVIE_AUDIO_BEFORE_AFTER_SOURCE_CLOSURE_PASS",
+  "verified_at": "2026-11-10T13:05:06.740867+00:00",
+  "author_sha256": "caba27a6459eb35edaf01f4662b84199d24642a4674ba80e42fb317788c49d76",
+  "source_injector_sha256": "23121244fff5c44862f4cdd36c18e9847903f37d1a55b86703aac498ba0f8b06",
+  "shipping_exe_sha256": "4468c9063a7b8e07c57fb15a29fb9ac186688719e2795cd6ab4f7a529ea1f100",
+  "results": {
+    "baseline": {
+      "build_proof_sha256": "fa638399d32baac20736b61f9b468aa9f9436e529172d552001096d0c391f796",
+      "native_proof_sha256": "72ba9901af71be804b359d7b63bf2e9907c64b9272740df6991421abebc98cc9",
+      "candidate_exe_sha256": "319fe4fc2c9e69594808c0809e59d26b264d43a6599c1a55afa3257bd2ec3d05",
+      "script_sha256": "c2ed7b464a834548bebab0955444a0ce6da2c86b2e6fbbdf5844dadd0fcd5eab",
+      "observed_result_at_voice": 0
+    },
+    "fixed": {
+      "build_proof_sha256": "bb9549ede4375186f33099e1bfd3a8f99f8aa2204d774a4627d3d95dc0da4e08",
+      "native_proof_sha256": "6209be87b392f154321ca4c994223542b085d461b37e3dab1198e1e7bf953be2",
+      "candidate_exe_sha256": "c8692c39b2051934866d6693581037eae368fffad3dd5807806c36d9df45d7f2",
+      "script_sha256": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+      "observed_result_at_voice": 1
+    }
+  },
+  "main_unchanged": true,
+  "limits": [
+    "Only private diagnostic method and voice logging added to ASTRO; full shipping ScriptRunner source exactly matched",
+    "Actual original movie and WAV; prior accepted result is a controlled input, not a complete natural UI-history proof"
+  ]
+}

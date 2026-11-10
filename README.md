@@ -1,3 +1,15 @@
+# Current update: P512 weather voice ordering (10 November 2026)
+
+The weather puzzle now updates its answer result after a synchronous error voice returns, matching the original instructions. Previously the callback saw an already-cleared result. Sound selection, final answer result, video core and save layouts are unchanged. See [the original comparison and verified scope](outputs/astronomica-cleanroom/WEATHER-VOICE-ORDER.md).
+
+The exact installed executable4468c9063a7b8e07c57fb15a29fb9ac186688719e2795cd6ab4f7a529ea1f100 passes the general native suite, genuine old-main ASVM29 continuation and installed-path smoke. Its verified engine library also passes61,648 original-instruction cases/123,296 sound modes and three negative controls. A separate actual-movie/voice comparison confirms the old/new ordering with exact shared ScriptRunner sources. Only script.cpp and the permanent conditions regression change; headers/core remain paired and unchanged. Local build scope is three fresh current units plus407 hash-verified foundation objects. Source installation still requires a full clean rebuild.
+
+[Original completion effects](outputs/astronomica-cleanroom/ORIGINAL-COMPLETION-EFFECTS.md) additionally records600 calls and44 actual voices on the pre-weather-fix real engine, without relabeling that historical receipt as a run of the later binary.
+
+Fixed acceptance remains **7/10 (70%)**, with **35/35 documented bounded save profiles**. Whole-game completion remains unmeasured. Historical versions follow.
+
+---
+
 # Current update: builder selection masks (9 November 2026)
 
 Builder saves now reject component-selection masks that the original P515/P536 scripts cannot produce. Exhaustive public-codec checks cover 49 invalid masks, 49 zero-byte writer refusals and 15 positive component masks. Early Launch, P536 initial project 2 and all existing project ranges are preserved. The general native suite, a genuine previous-main ASVM13 continuation and installed-path smoke pass on executable 51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943. See [the guard and compatibility scope](outputs/astronomica-cleanroom/BUILDER-SELECTION-MASK-GUARD.md).

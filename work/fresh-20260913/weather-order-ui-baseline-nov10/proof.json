@@ -1,0 +1,15 @@
+{
+  "status": "ORIGINAL_UI_WEATHER_CALLBACK_ORDER_COUNTEREXAMPLE_OBSERVED",
+  "parent_oracle_proof_sha256": "29b64cb6a1d4cfb4e21aa2e5a49cbab97b34f37630b457c31cb5a7ff790dd8f7",
+  "parent_fixture_sha256": "376e89ffc39c37e5f076bec422c5516be40c0435a5a7f9b6d988c3a4f5a63608",
+  "subset_fixture_sha256": "024284711ca37f1f60492cc8f8f5abcedd94f20651504fa1285fa73352ced3fa",
+  "subset_rule": "retain only original scenario1..6 and all three settings0..15; retain both initial result0/1",
+  "subset_cases": 49152,
+  "probe_exe_sha256": "7cda421af22d6837be4256d2cbd3d0e0bee1c712b7af12ba7e6fb00254728c78",
+  "native_log_sha256": "45b55bce9a8db689ee9d78af8125a81da6d84516bf2331729f8eea8e84dc9f2e",
+  "counterexample": "FAIL weather voice order row1 scenario1 settings0,0,0 initial1: observed0/1 sound10/10",
+  "runtime_unchanged": true,
+  "limits": [
+    "Original UI numeric domain, controlled prior result; not yet a full natural interaction replay"
+  ]
+}

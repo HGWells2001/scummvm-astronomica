@@ -1,0 +1,28 @@
+{
+  "status": "GENUINE_PRE_FIX_MAIN_P512_ASVM29_NORMAL_ROUTES_PASS",
+  "completed_at": "2026-11-10T13:06:20.781050+00:00",
+  "producer_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "native_log_sha256": "03c3fccc163c5af10885b4a40bf1f478e69597695ce9a6d6920626314e5e993f",
+  "physical_slots": {
+    "29": {
+      "sha256": "10dcb05382b91a97709c9c5b975a78d7086c890bc20e79ed506d3696a673aeeb",
+      "bytes": 48400,
+      "version": 29,
+      "scene": 512
+    },
+    "30": {
+      "sha256": "bca58778e9aaabcf8b17ab280bc8d20aadfd7094331f8b3bf3785081ff3eecad",
+      "bytes": 48403,
+      "version": 29,
+      "scene": 512
+    }
+  },
+  "all12_original_natural_questions_pass": true,
+  "first_and_repeated_completion": true,
+  "actual_audio_driver": "wasapi",
+  "muted": true,
+  "limits": [
+    "Exact pre-fix installed main produced these actual physical files",
+    "Declared final-question stopped boundaries with ordinary active S0; not all historical saves or every P512 boundary"
+  ]
+}

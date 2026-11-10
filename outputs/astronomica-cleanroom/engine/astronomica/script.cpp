@@ -3112,11 +3112,13 @@ void ScriptRunner::execute(const Script &script, uint index, uint32 now) {
    } else if (c.args[0] == 24) {
     if (c.args[1] == 0) {
      const int sound = weatherAnswer(_values[1][4],_values[1][0],_values[1][1],_values[1][2]);
-     if (sound != -2) _values[1][5] = sound == -1;
      if (sound >= 0) {
       if (_soundHandler->isBlockingSound(sound)) now = _soundHandler->onBlockingSound(sound,now);
       else { Action response = {9,sound,0,0}; _actions.push_back(response); }
      }
+     // Original custom24/0 stores local5 after the error voice returns.
+     // A synchronous voice must still observe the preceding answer result.
+     if (sound != -2) _values[1][5] = sound == -1;
     } else {
      Action movie = {23,24,c.args[1],0}; _actions.push_back(movie);
     }

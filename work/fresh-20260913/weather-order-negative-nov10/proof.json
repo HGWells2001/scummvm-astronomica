@@ -1,0 +1,30 @@
+{
+  "status": "WEATHER_ORDER_NATIVE_NEGATIVE_CONTROLS_PASS",
+  "completed_at": "2026-11-10T13:05:06.509800+00:00",
+  "author_sha256": "f0f276e1cc6847324163e81746efd1c2802bc0b12e5e0c5213d2f59ba18f7447",
+  "positive_proof_sha256": "9def96e1349a4b16f3de2cefde4c10e3e4c570b30c8578dcad017026a9167a02",
+  "fixture_sha256": "376e89ffc39c37e5f076bec422c5516be40c0435a5a7f9b6d988c3a4f5a63608",
+  "probe_exe_sha256": "4da35c6485fa1d07a6b452b2fb6e58dee262b75ab85ee358ec0dcc7ecad605a6",
+  "independent_expected_corruptions_rejected": 3,
+  "results": [
+    {
+      "label": "final-result",
+      "byte_offset": 32,
+      "exit_code": 7,
+      "native_log_sha256": "01a9e05d5a8cfdf03cd9ebdabb7084211b1aaa0bc043b5b0b9fcf74de16325dd"
+    },
+    {
+      "label": "voice-prior-result",
+      "byte_offset": 29384,
+      "exit_code": 8,
+      "native_log_sha256": "024decd69f78baafcbcf4c53ee178b9f38a078be1cd8e3f13aa64d9c54f8f0a0"
+    },
+    {
+      "label": "selected-sound",
+      "byte_offset": 29380,
+      "exit_code": 4,
+      "native_log_sha256": "eb7e93c6fa9c8214aa2c81e78fb16cfafdd9484384286a49e20b6a24df60f757"
+    }
+  ],
+  "main_unchanged": true
+}

@@ -1,0 +1,57 @@
+{
+  "status": "WEATHER_ORDER_CANDIDATE_SOURCE_AND_LIBRARY_CLOSURE_PASS",
+  "verified_at": "2026-11-10T12:57:21.974698+00:00",
+  "author_sha256": "894cfd04475cfe5821648d6353c7b396e204a7cb60ce760362b1276f27ddc530",
+  "source_transform_sha256": "b92610a1ea9b0511332e1fc797de3179b473f84e2f0b34cd7af084c3e49310ea",
+  "build_proof_sha256": "805f5ede4fb7fc4591582673e338eceb71b7dad9ddcfe0f3eeeef2b1431cff10",
+  "candidate_exe_sha256": "4468c9063a7b8e07c57fb15a29fb9ac186688719e2795cd6ab4f7a529ea1f100",
+  "changed_engine_files": [
+    "conditions_test.cpp",
+    "script.cpp"
+  ],
+  "engine_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "2e8ca1413f6e017a5b2f7ae1c979f74476409704e2d585f522ef87be51bc6d44",
+    "astronomica.h": "e453b6cd821c22e98c7861d8ddea376e8fb935c74dc0949019658037248e5510",
+    "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "framework_sha256": {
+    "video/video_decoder.cpp": "ac9832663151200cbc6e2c802171b88f0a45ddc469ea25d3b24ad1d6efcdf26d",
+    "video/video_decoder.h": "6dc1d443164cf0dc7b666175851883188050ece5030995fa3e7ff4e3f2c9d416",
+    "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
+  },
+  "headers_unchanged": true,
+  "save_layouts_unchanged": true,
+  "compiled_translation_units": 3,
+  "reused_verified_foundation_objects": 407,
+  "archive_members_checked": 7,
+  "fresh_object_sha256": {
+    "astronomica": "51bfc30c5626c922ba9f2b909223e31597184350ed4af819c92e7dd59f40be3c",
+    "conditions_test": "675abf3788a1994e775cc169c2bd2132d750a32940135f506e8c6bbf614c3328",
+    "script": "79ae51530d0d15d64e8c0ba2de8bfd7d1c0be36da63b54ecfbfee93b236f3be2"
+  },
+  "library_sha256": "e6b9c8ad3584750c259f149fd91d7ea457ad237106c2e77f0f118ae59112528d",
+  "historical_before_metadata_field_mislabeled": true,
+  "historical_before_metadata_sha256": "b902e2fed7d8a1b08ab73552f620cb27ccacbe5bfa6ac9e35c47794e31b1b7c6",
+  "before_metadata_erratum": "candidate_astronomica_sha256 mislabeled the last modified conditions_test source; full candidate_engine_sha256 and actual compiler/library inputs independently verified",
+  "main_unchanged": true
+}

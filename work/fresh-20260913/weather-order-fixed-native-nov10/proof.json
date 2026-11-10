@@ -1,0 +1,22 @@
+{
+  "status": "ORIGINAL_WEATHER_VOICE_ORDER_REAL_NATIVE_PASS",
+  "completed_at": "2026-11-10T12:54:27.930503+00:00",
+  "oracle_proof_sha256": "29b64cb6a1d4cfb4e21aa2e5a49cbab97b34f37630b457c31cb5a7ff790dd8f7",
+  "probe_source_sha256": "f477a7f49825f77a72c67ab12950bcae35a84d88eddf1d48bd7d35ddecc7396d",
+  "probe_exe_sha256": "4da35c6485fa1d07a6b452b2fb6e58dee262b75ab85ee358ec0dcc7ecad605a6",
+  "native_library_sha256": "e6b9c8ad3584750c259f149fd91d7ea457ad237106c2e77f0f118ae59112528d",
+  "fixture_sha256": "376e89ffc39c37e5f076bec422c5516be40c0435a5a7f9b6d988c3a4f5a63608",
+  "installed_main_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "native_log_sha256": "3ce025c17ca48ffbffd9af713ba7f6963e1aad0a90975fd7d01175d5240cb153",
+  "cases": 61648,
+  "blocking_and_async_modes": 123296,
+  "aggregate": "918e40e1",
+  "all200_final_scalars_checked": true,
+  "candidate_installed": false,
+  "limits": [
+    "Original mode0 validator and empty in_custom helper body; original voice call reduced to sound ID and result snapshot",
+    "Other media operations and OS playback not executed; no original Windows run",
+    "Controlled initial result/settings include values outside ordinary UI; natural play reachability not claimed",
+    "Real ScriptRunner with recording sound handler; actual playback tested separately"
+  ]
+}

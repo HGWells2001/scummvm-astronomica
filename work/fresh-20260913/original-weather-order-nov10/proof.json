@@ -1,0 +1,23 @@
+{
+  "status": "ORIGINAL_WEATHER_VOICE_ORDER_INSTRUCTION_FIXTURE_READY",
+  "author_sha256": "ecb79ccb8e54f444fbb95504b217bc209feb1ddff36723712190be6f7deeb918",
+  "template_sha256": "55675d82a3bead94819e717479f6834cf028b90e40f38e471e8ed38f71436725",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "original_p512_sha256": "0a870dea63fae0ea1732f40c627a63bc659a2c88d1a4cc2edfab4497d814c952",
+  "fixture_sha256": "376e89ffc39c37e5f076bec422c5516be40c0435a5a7f9b6d988c3a4f5a63608",
+  "cases": 61648,
+  "distinct_input_settings": 30824,
+  "original_ui_domain_included": true,
+  "result_initial_values": [
+    0,
+    1
+  ],
+  "signed_extremes_included": true,
+  "instruction_steps": 2446040,
+  "voice_cases": 59976,
+  "limits": [
+    "Original mode0 validator and empty in_custom helper body; original voice call reduced to sound ID and result snapshot",
+    "Other media operations and OS playback not executed; no original Windows run",
+    "Controlled initial result/settings include values outside ordinary UI; natural play reachability not claimed"
+  ]
+}

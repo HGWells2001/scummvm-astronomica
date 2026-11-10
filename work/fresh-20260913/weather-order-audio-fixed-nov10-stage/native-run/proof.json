@@ -1,0 +1,31 @@
+{
+  "status": "REAL_WEATHER_MOVIE_AUDIO_ORIGINAL_ORDER_PASS",
+  "completed_at": "2026-11-10T13:02:43.085724+00:00",
+  "candidate_exe_sha256": "c8692c39b2051934866d6693581037eae368fffad3dd5807806c36d9df45d7f2",
+  "build_proof_sha256": "bb9549ede4375186f33099e1bfd3a8f99f8aa2204d774a4627d3d95dc0da4e08",
+  "original_ui_subset_proof_sha256": "9028b7b10af0ba09be49665d2756fa29ed5df3a7e2456d9251eca663c15fafb5",
+  "original_ui_case": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    10,
+    1
+  ],
+  "native_log_sha256": "de9e7b994b0093f0bfcd86258ebc0cbbf00beb36c33dd0f43a0b878c323e92a3",
+  "actual_blocking_sound": 10,
+  "observed_result_at_voice": 1,
+  "original_expected_result_at_voice": 1,
+  "final_result": 0,
+  "actual_original_movie_active": true,
+  "decoder_resumed": true,
+  "audio_driver": "wasapi",
+  "muted": true,
+  "candidate_installed": false,
+  "limits": [
+    "Controlled prior result1 and UI-domain settings, original HYP movie entry and original mode0 command actually executed",
+    "Actual decoder and blocking WAV playback; not a complete natural UI history or human audiovisual review"
+  ]
+}

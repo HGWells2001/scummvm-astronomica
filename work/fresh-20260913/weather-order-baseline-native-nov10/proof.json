@@ -1,0 +1,19 @@
+{
+  "status": "ORIGINAL_WEATHER_VOICE_ORDER_BASELINE_COUNTEREXAMPLE_OBSERVED",
+  "completed_at": "2026-11-10T12:50:24.791875+00:00",
+  "oracle_proof_sha256": "29b64cb6a1d4cfb4e21aa2e5a49cbab97b34f37630b457c31cb5a7ff790dd8f7",
+  "probe_source_sha256": "f477a7f49825f77a72c67ab12950bcae35a84d88eddf1d48bd7d35ddecc7396d",
+  "probe_exe_sha256": "7cda421af22d6837be4256d2cbd3d0e0bee1c712b7af12ba7e6fb00254728c78",
+  "native_library_sha256": "8a40d86ca66ee1c96eaf4cf8c6ab9a9053054738171e5f6b7923f16673b73d5a",
+  "fixture_sha256": "376e89ffc39c37e5f076bec422c5516be40c0435a5a7f9b6d988c3a4f5a63608",
+  "installed_main_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "native_log_sha256": "b17a6e58e1f33608ee1984dfb6b7d0962d3467b9ba3eb6f04f43c0d1ce7a1ec8",
+  "exit_code": 8,
+  "counterexample": "FAIL weather voice order row385 scenario1 settings-2147483648,-2147483648,-2147483648 initial1: observed0/1 sound10/10",
+  "runtime_unchanged": true,
+  "limits": [
+    "Original mode0 validator and empty in_custom helper body; original voice call reduced to sound ID and result snapshot",
+    "Other media operations and OS playback not executed; no original Windows run",
+    "Controlled initial result/settings include values outside ordinary UI; natural play reachability not claimed"
+  ]
+}
