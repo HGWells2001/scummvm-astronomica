@@ -3720,19 +3720,19 @@ void AstronomicaEngine::animateSpritesAt(uint32 now) {
   if (s.standardMotion && s.autoMove) {
    if (!motionFile.isOpen()) motionFile.open(Common::FSNode(ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/MEGAFILE.HYP",_place)))));
    const Frame *frame = staticSpriteFrame(_scene,i);
-   Graphics::Surface *bmp = motionFile.isOpen() && frame ? decodeSpriteBitmap(motionFile,frame->image,_screen.format) : nullptr;
-   if (bmp) {
+   int frameWidth, frameHeight;
+   if (motionFile.isOpen() && frame && spriteImageDimensions(motionFile,frame->image,frameWidth,frameHeight)) {
     if (_place == 516 && i == 12) {
      const int x = int16(s.renderX+16)-48, y = int16(s.renderY+16)-48;
-     const int result = advanceJupiter(_scene,_jupiterWidths,_jupiterHeights,bmp->w,bmp->h,now);
+     const int result = advanceJupiter(_scene,_jupiterWidths,_jupiterHeights,frameWidth,frameHeight,now);
      dirty = result != 0 || dirty;
      if (result & 6) _runner.defineValue(1,2,1);
      for (int bit = 2; bit <= 4; bit *= 2) if (result & bit) { cycleExplosion(23,x,y,now); playSound(9,now); }
     } else if (_place == 516 && _comet.kind[i]) {
-     dirty = advanceComet(_scene,_comet,i,bmp->w,bmp->h,0,now) || dirty;
+     dirty = advanceComet(_scene,_comet,i,frameWidth,frameHeight,0,now) || dirty;
     } else if (supportsComet(_scene,_place) && _comet.kind[i]) {
      int32 target = 0; _runner.getValue(1,2,target);
-     dirty = advanceComet(_scene,_comet,i,bmp->w,bmp->h,target,now) || dirty;
+     dirty = advanceComet(_scene,_comet,i,frameWidth,frameHeight,target,now) || dirty;
      if (_comet.sound >= 0) playSound(_comet.sound,now);
      if (_comet.explosion) {
       const int id = _comet.explosion;
@@ -3746,7 +3746,7 @@ void AstronomicaEngine::animateSpritesAt(uint32 now) {
       }
      }
     } else if (_place == 501 && i == 24 && _ball.scenario) {
-     const int result = advanceBall(s,_ball,bmp->w,bmp->h,now);
+     const int result = advanceBall(s,_ball,frameWidth,frameHeight,now);
      dirty = result != 0 || dirty;
      if (result == 2) {
       queueBallCommand(15,26,4,0,now); queueBallCommand(15,26,5,833,now); queueBallCommand(15,26,6,1667,now);
@@ -3755,7 +3755,7 @@ void AstronomicaEngine::animateSpritesAt(uint32 now) {
      int32 setting = 0; _runner.getValue(1,0,setting);
      dirty = advancePhoton(_scene,setting,now) || dirty;
     } else if (_place == 518 && s.planetMotion) {
-     const int result = advancePlanet(s,_scene.sprites[8],bmp->w,bmp->h,now);
+     const int result = advancePlanet(s,_scene.sprites[8],frameWidth,frameHeight,now);
      dirty = result != 0 || dirty;
      if (result >= 2) {
       playSound(result == 3 ? 10 : 9,now);
@@ -3770,7 +3770,7 @@ void AstronomicaEngine::animateSpritesAt(uint32 now) {
      _runner.defineValue(1,1,state);
     } else if (_place == 514) {
      const bool wasMoving = s.autoMove;
-     dirty = advanceRendezvous(_scene,i,bmp->w,bmp->h,now) || dirty;
+     dirty = advanceRendezvous(_scene,i,frameWidth,frameHeight,now) || dirty;
      if (i == 13 && wasMoving && !s.autoMove) {
       _runner.defineValue(1,7,1);
       Script exit; Command go; go.opcode = 5; go.args.push_back(388); go.delay = 1000; exit.push_back(go);
@@ -3778,9 +3778,8 @@ void AstronomicaEngine::animateSpritesAt(uint32 now) {
      }
     } else if (_place == 526 && s.orbitMotion) {
      int32 scenario = 0; _runner.getValue(1,2,scenario);
-     dirty = advanceOrbit(_scene,i,bmp->w,bmp->h,scenario,now) || dirty;
-    } else if (advanceSpriteMove(s,bmp->w,bmp->h,now) && s.visible) dirty = true;
-    bmp->free(); delete bmp;
+     dirty = advanceOrbit(_scene,i,frameWidth,frameHeight,scenario,now) || dirty;
+    } else if (advanceSpriteMove(s,frameWidth,frameHeight,now) && s.visible) dirty = true;
    }
   }
  }
@@ -9887,7 +9886,7 @@ bool AstronomicaEngine::verifyP514Puzzle() {
 
 bool AstronomicaEngine::verifyHitGeometry() {
  // Frozen pre-cache algorithm: retain the old decoder path as a test oracle.
- auto uncached = [&](int x, int y) -> int { 
+ auto uncached = [&](int x, int y) -> int {
  Common::File file;
  const Common::Path path = ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/MEGAFILE.HYP", _place)));
  if (!file.open(Common::FSNode(path))) return -2;

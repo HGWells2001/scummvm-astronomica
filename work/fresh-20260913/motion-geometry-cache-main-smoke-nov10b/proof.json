@@ -1,0 +1,24 @@
+{
+  "status": "INSTALLED_MOTION_GEOMETRY_FROZEN_ASVM27_FUTURE_PASS",
+  "completed_at": "2026-11-10T20:00:44.000684+00:00",
+  "candidate_exe_sha256": "576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f",
+  "cases": [
+    {
+      "version": 27,
+      "scene": 501,
+      "initial_entry_scripts": false,
+      "producing_exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+      "frozen_slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "origin_receipt_sha256": "4ab3f90733d3f373d195c825c464fc7fca06fecd84e33b342ce26ee40dd29d03",
+      "native_log_sha256": "17cc3a15f2ef85d0d3d3760af2dce00ec5211d270be0453467f0e513dd245546",
+      "full_future_asserted": true
+    }
+  ],
+  "source_files_unchanged": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "One frozen physical file produced by accepted earlier cleanroom engine verifiers, not original Windows save files",
+    "One installed-path fresh process with existing actual-control full-future assertions",
+    "No arbitrary all-version/all-history or manual whole-game playthrough claim"
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "status": "MOTION_GEOMETRY_SEVEN_REAL_ENGINE_PATH_PAIRS_PASS",
+  "completed_at": "2026-11-10T19:44:56.611130+00:00",
+  "shipping_exe_sha256": "576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f",
+  "cases": [
+    {
+      "puzzle": "comet",
+      "exact_geometry_and_tick_trace_sha256": "c53d30d9ed173db0379375add61d57b787c795730b3b1ad2b862962686e56116",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "820aab0445b97a5f022e9e07269cd2e31002a354f197ffff536a0125873818e6",
+        "rows": 104096,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 31.23160949999874,
+        "scenes": [
+          502,
+          503,
+          504
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "cb8815edd1c4410c901ca927eee4e79af6d42445025a891058736ed37d09b179",
+        "rows": 104096,
+        "geometry_cache_misses": 107,
+        "elapsed_seconds": 29.311650499999814,
+        "scenes": [
+          502,
+          503,
+          504
+        ]
+      }
+    },
+    {
+      "puzzle": "ball",
+      "exact_geometry_and_tick_trace_sha256": "6930c86dbe27fa75e0c973b0a5d55ba8d029888a6e00b8b02b2eb0e0627f8a1f",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "9233de9b08b3ce006d075a9e81b228b09292079e94e12841f633f3341791b936",
+        "rows": 6899,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 9.521947699999146,
+        "scenes": [
+          501
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "46d88cddfbedc19c33e9f7536f9f23b5a00ae6271a1c11d82e77d3c98089b68e",
+        "rows": 6899,
+        "geometry_cache_misses": 12,
+        "elapsed_seconds": 8.975293300001795,
+        "scenes": [
+          501
+        ]
+      }
+    },
+    {
+      "puzzle": "jupiter",
+      "exact_geometry_and_tick_trace_sha256": "6151ca5d79cb5f9be2edb950ddc98fcf811c3c2ca77bbc086b1db1e03c3b07ce",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "6caa539aec10cdcbef4a10b130bb21dee361ce3826cc946523db124b85492afd",
+        "rows": 30862,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 10.402188500000193,
+        "scenes": [
+          516
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "b97e345cae12b4bb07d405218e17ff2b13f607dbb98550215d0c0e8088fff817",
+        "rows": 30862,
+        "geometry_cache_misses": 32,
+        "elapsed_seconds": 9.869526999998925,
+        "scenes": [
+          516
+        ]
+      }
+    },
+    {
+      "puzzle": "photon",
+      "exact_geometry_and_tick_trace_sha256": "2ac1b7f54ebb3f17c16cf51d731fb766f38c276059b00c00d766dbbff1a1ad01",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "6599ec831614b25558985bcdfc1bff512f53f4200a57fc13821bf40cdffa2ff2",
+        "rows": 756,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 4.617859900001349,
+        "scenes": [
+          513
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "4ae5d40204aad0deb43438d0d63dd5a704ff93ff52d8aa1238fbf3666c6282b4",
+        "rows": 756,
+        "geometry_cache_misses": 1,
+        "elapsed_seconds": 4.624514199997066,
+        "scenes": [
+          513
+        ]
+      }
+    },
+    {
+      "puzzle": "probe",
+      "exact_geometry_and_tick_trace_sha256": "b74438596bc43cce6ead616580238fe70243ce9c1c939d0b56fd3cf4e2bdbb81",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "94be022e152a1517529c5ad3cbf81978bf1e5506e3087a09ab7fa6766ae191d6",
+        "rows": 21519,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 13.234915100001672,
+        "scenes": [
+          522
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "ef06543f1b7bd9dc0696916312f8db5d3f06acde3a79f70ea7383665111352ec",
+        "rows": 21519,
+        "geometry_cache_misses": 92,
+        "elapsed_seconds": 12.97803500000009,
+        "scenes": [
+          522
+        ]
+      }
+    },
+    {
+      "puzzle": "rendezvous",
+      "exact_geometry_and_tick_trace_sha256": "ba37970865bef0a1e39bca55cef431435663846d650d7e39c417b1fbfb4eb4cd",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "07e1d0f928d5e78ccbb25869e722f4f94c6296d5120b1597d39e5d35650e7bc3",
+        "rows": 27704,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 11.149172000001272,
+        "scenes": [
+          514
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "1f45119d78c20b5d5c1fe8d3a45271369bb42b1c5bc73061990c66fcd8bf34a7",
+        "rows": 27704,
+        "geometry_cache_misses": 50,
+        "elapsed_seconds": 10.635659999999916,
+        "scenes": [
+          514
+        ]
+      }
+    },
+    {
+      "puzzle": "orbit",
+      "exact_geometry_and_tick_trace_sha256": "88001afe903c4854742ac22af8dfa667eeadbcbeb10ef01d7c8ab3bcac5f2959",
+      "baseline": {
+        "exe_sha256": "c1835fd76876604eb3f1d8d139aff2b149f633e9e18f04e4e3e47098556b9fae",
+        "log_sha256": "7b9a766ce97860722e5c6b83b3fff6c5d4ce5c806f55dcfa32f144463d4d187f",
+        "rows": 34465,
+        "geometry_cache_misses": 0,
+        "elapsed_seconds": 26.477951199998643,
+        "scenes": [
+          526
+        ]
+      },
+      "cached": {
+        "exe_sha256": "bb0d191e884230e6b3b6945790d6c61055e55044a9d54a045a15ed65cd4c5143",
+        "log_sha256": "80897d30d9a040856a55bc7344bed3659f598e1446b17f68692ffb56084e9064",
+        "rows": 34465,
+        "geometry_cache_misses": 75,
+        "elapsed_seconds": 25.13717430000179,
+        "scenes": [
+          526
+        ]
+      }
+    }
+  ],
+  "total_motion_geometry_requests": 226301,
+  "total_motion_cache_misses": 369,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Two diagnostic real-engine builds; exact production-source binding is checked separately",
+    "Existing original-resource interaction verifiers include documented controlled edge/composition cases; not a manual natural whole-game playthrough",
+    "Exact source-image reference/dimensions/logical-tick sequence compared; trajectories and completion additionally asserted by the existing verifiers",
+    "Elapsed times are descriptive, not a controlled benchmark or FPS guarantee"
+  ]
+}

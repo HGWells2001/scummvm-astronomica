@@ -1,3 +1,7 @@
+# Current verified source update: animation geometry cache,10 November2026B
+
+Current source pair targets executable576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f. Read MOTION-GEOMETRY-CACHE.md and exported current source/native/general/seven animation pairs/frozen26-27/installed receipts. Previousfb8238input-cache and1927P281 receipts are historical. Engine23/core3pair in SCUMMVM_BASE.json; full clean rebuild required. Header/save schemas unchanged fromfb8238. Current fixed7/10acceptance/35boundedprofiles, whole-gamepercentunmeasured. P536target350661stillunobserved; no unreachable/defect claim. Original media/excluded attempts remain excluded. Historical checkpoints below.
+
 # Current verified source update: hit geometry cache,10 November2026B
 
 Current source pair targets executablefb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa. Read HIT-GEOMETRY-CACHE.md and the exported current source/native/general/genuine32/graph/menu/installed receipts. Previous1927/P281 source and receipts are historical. Engine23/core3pair is pinned in SCUMMVM_BASE.json; private engine cache fields require full clean rebuild. Current macro acceptance7/10,35 bounded profiles, whole-game completion unmeasured. P536target350661still unobserved; investigate without inferring a defect or unreachability. No excluded attempts or original media. Historical local checkpoints below.

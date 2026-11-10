@@ -1,3 +1,13 @@
+# Current update: reuse dimensions during animation (10 November2026)
+
+The real engine now reuses decoded dimensions in its motion loop as well as input hit testing, preserving original trajectories/collisions and drawing. [Verified scope](outputs/astronomica-cleanroom/MOTION-GEOMETRY-CACHE.md).
+
+Verified executable: `576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f`. Seven old/new puzzle-animation traces match exactly; 226,301 requests need 369 geometry decodes in these cases. Complete general suite, old ASVM26/27 futures and installed-path checks pass. Only astronomica.cpp changes relative to the preceding cache; headers/core/save layouts stay unchanged. Seven fresh engine units plus403 verified foundation objects; clean full source rebuild required.
+
+Fixed acceptance remains **7/10 (70%)**; whole-game completion remains unmeasured. Historical updates follow.
+
+---
+
 # Current update: cache decoded click dimensions (10 November2026)
 
 The real engine now reuses decoded image dimensions during input hit testing, preserving the original rectangles, hidden input regions and frame checks. [Verified scope and limits](outputs/astronomica-cleanroom/HIT-GEOMETRY-CACHE.md).

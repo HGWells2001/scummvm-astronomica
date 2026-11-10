@@ -1,0 +1,54 @@
+{
+  "status": "MOTION_GEOMETRY_FROZEN_ASVM26_27_FUTURES_PASS",
+  "completed_at": "2026-11-10T19:44:34.862214+00:00",
+  "candidate_exe_sha256": "576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f",
+  "cases": [
+    {
+      "version": 27,
+      "scene": 501,
+      "initial_entry_scripts": false,
+      "producing_exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+      "frozen_slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "origin_receipt_sha256": "4ab3f90733d3f373d195c825c464fc7fca06fecd84e33b342ce26ee40dd29d03",
+      "native_log_sha256": "fc11476a67985f0d50e2c74d5d9d896413fad09bd4f767ec0974aaa10343c989",
+      "full_future_asserted": true
+    },
+    {
+      "version": 27,
+      "scene": 501,
+      "initial_entry_scripts": true,
+      "producing_exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+      "frozen_slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "origin_receipt_sha256": "4ab3f90733d3f373d195c825c464fc7fca06fecd84e33b342ce26ee40dd29d03",
+      "native_log_sha256": "28003918d6294f209cf80ffcccf31de82d51b98ed909e78ce90d7e02049932e5",
+      "full_future_asserted": true
+    },
+    {
+      "version": 26,
+      "scene": 504,
+      "initial_entry_scripts": false,
+      "producing_exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+      "frozen_slot_sha256": "4aaf608d8ac4d18002db155344665cdcea70c0eea7e08637ba2a700bad392e77",
+      "origin_receipt_sha256": "5536532ba1750adc87c857cc16dd980533f6c2481071327b3026e4099e954fbd",
+      "native_log_sha256": "82d6ee36333831985447b60c28a5121dff9cd5e53586108d65cf9553c023011f",
+      "full_future_asserted": true
+    },
+    {
+      "version": 26,
+      "scene": 504,
+      "initial_entry_scripts": true,
+      "producing_exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+      "frozen_slot_sha256": "4aaf608d8ac4d18002db155344665cdcea70c0eea7e08637ba2a700bad392e77",
+      "origin_receipt_sha256": "5536532ba1750adc87c857cc16dd980533f6c2481071327b3026e4099e954fbd",
+      "native_log_sha256": "83c66f179dc0767324caa4e5d239b2cad669e39d5e0dd1d221016f88d62a512d",
+      "full_future_asserted": true
+    }
+  ],
+  "source_files_unchanged": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Two frozen physical files produced by accepted earlier cleanroom engine verifiers, not original Windows save files",
+    "Four fresh processes/entry configurations with existing actual-control full-future assertions",
+    "No arbitrary all-version/all-history or manual whole-game playthrough claim"
+  ]
+}
