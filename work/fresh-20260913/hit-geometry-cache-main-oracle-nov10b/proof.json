@@ -1,0 +1,273 @@
+{
+  "status": "INSTALLED_HIT_GEOMETRY_NATIVE_ORACLE_PASS",
+  "completed_at": "2026-11-10T19:35:19.244674+00:00",
+  "candidate_exe_sha256": "fb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa",
+  "previous_main_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "build_proof_sha256": "224540093fc8aec71fa5861c4b3fcfc1451421ebb0e3984500b58b9112d1fb68",
+  "native_log_sha256": "1aca4bb53a27908462c9160c961e810492c4f952519d1dd195928ef6cb080c4a",
+  "elapsed_seconds": 3.681312799999432,
+  "original_scenes": 41,
+  "oracle_queries": 2953,
+  "hidden_controls": 35,
+  "unknown_frame_tests": 227,
+  "unsupported_states": 264,
+  "warm_queries_without_decode": 1312,
+  "reload_invalidates": true,
+  "missing_file_still_refused": true,
+  "failed_decode_not_cached": true,
+  "rows": [
+    {
+      "scene": 1,
+      "cache_entries": 11,
+      "queries_total": 58,
+      "decode_attempts_total": 11
+    },
+    {
+      "scene": 2,
+      "cache_entries": 0,
+      "queries_total": 61,
+      "decode_attempts_total": 11
+    },
+    {
+      "scene": 27,
+      "cache_entries": 1,
+      "queries_total": 73,
+      "decode_attempts_total": 12
+    },
+    {
+      "scene": 29,
+      "cache_entries": 0,
+      "queries_total": 76,
+      "decode_attempts_total": 12
+    },
+    {
+      "scene": 281,
+      "cache_entries": 2,
+      "queries_total": 90,
+      "decode_attempts_total": 14
+    },
+    {
+      "scene": 501,
+      "cache_entries": 12,
+      "queries_total": 165,
+      "decode_attempts_total": 26
+    },
+    {
+      "scene": 502,
+      "cache_entries": 23,
+      "queries_total": 256,
+      "decode_attempts_total": 49
+    },
+    {
+      "scene": 503,
+      "cache_entries": 20,
+      "queries_total": 339,
+      "decode_attempts_total": 69
+    },
+    {
+      "scene": 504,
+      "cache_entries": 19,
+      "queries_total": 422,
+      "decode_attempts_total": 88
+    },
+    {
+      "scene": 505,
+      "cache_entries": 6,
+      "queries_total": 458,
+      "decode_attempts_total": 94
+    },
+    {
+      "scene": 506,
+      "cache_entries": 20,
+      "queries_total": 549,
+      "decode_attempts_total": 114
+    },
+    {
+      "scene": 508,
+      "cache_entries": 10,
+      "queries_total": 614,
+      "decode_attempts_total": 124
+    },
+    {
+      "scene": 509,
+      "cache_entries": 18,
+      "queries_total": 705,
+      "decode_attempts_total": 142
+    },
+    {
+      "scene": 510,
+      "cache_entries": 18,
+      "queries_total": 796,
+      "decode_attempts_total": 160
+    },
+    {
+      "scene": 511,
+      "cache_entries": 20,
+      "queries_total": 887,
+      "decode_attempts_total": 180
+    },
+    {
+      "scene": 512,
+      "cache_entries": 13,
+      "queries_total": 978,
+      "decode_attempts_total": 193
+    },
+    {
+      "scene": 513,
+      "cache_entries": 16,
+      "queries_total": 1069,
+      "decode_attempts_total": 209
+    },
+    {
+      "scene": 514,
+      "cache_entries": 16,
+      "queries_total": 1160,
+      "decode_attempts_total": 225
+    },
+    {
+      "scene": 515,
+      "cache_entries": 36,
+      "queries_total": 1243,
+      "decode_attempts_total": 261
+    },
+    {
+      "scene": 516,
+      "cache_entries": 17,
+      "queries_total": 1330,
+      "decode_attempts_total": 278
+    },
+    {
+      "scene": 517,
+      "cache_entries": 8,
+      "queries_total": 1391,
+      "decode_attempts_total": 286
+    },
+    {
+      "scene": 518,
+      "cache_entries": 14,
+      "queries_total": 1471,
+      "decode_attempts_total": 300
+    },
+    {
+      "scene": 519,
+      "cache_entries": 8,
+      "queries_total": 1518,
+      "decode_attempts_total": 308
+    },
+    {
+      "scene": 520,
+      "cache_entries": 0,
+      "queries_total": 1521,
+      "decode_attempts_total": 308
+    },
+    {
+      "scene": 521,
+      "cache_entries": 17,
+      "queries_total": 1612,
+      "decode_attempts_total": 325
+    },
+    {
+      "scene": 522,
+      "cache_entries": 17,
+      "queries_total": 1703,
+      "decode_attempts_total": 342
+    },
+    {
+      "scene": 523,
+      "cache_entries": 11,
+      "queries_total": 1794,
+      "decode_attempts_total": 353
+    },
+    {
+      "scene": 524,
+      "cache_entries": 21,
+      "queries_total": 1885,
+      "decode_attempts_total": 374
+    },
+    {
+      "scene": 525,
+      "cache_entries": 10,
+      "queries_total": 1943,
+      "decode_attempts_total": 384
+    },
+    {
+      "scene": 526,
+      "cache_entries": 10,
+      "queries_total": 2001,
+      "decode_attempts_total": 394
+    },
+    {
+      "scene": 527,
+      "cache_entries": 17,
+      "queries_total": 2092,
+      "decode_attempts_total": 411
+    },
+    {
+      "scene": 528,
+      "cache_entries": 14,
+      "queries_total": 2172,
+      "decode_attempts_total": 425
+    },
+    {
+      "scene": 529,
+      "cache_entries": 14,
+      "queries_total": 2252,
+      "decode_attempts_total": 439
+    },
+    {
+      "scene": 530,
+      "cache_entries": 18,
+      "queries_total": 2335,
+      "decode_attempts_total": 457
+    },
+    {
+      "scene": 531,
+      "cache_entries": 21,
+      "queries_total": 2426,
+      "decode_attempts_total": 478
+    },
+    {
+      "scene": 532,
+      "cache_entries": 19,
+      "queries_total": 2517,
+      "decode_attempts_total": 497
+    },
+    {
+      "scene": 533,
+      "cache_entries": 19,
+      "queries_total": 2608,
+      "decode_attempts_total": 516
+    },
+    {
+      "scene": 534,
+      "cache_entries": 24,
+      "queries_total": 2699,
+      "decode_attempts_total": 540
+    },
+    {
+      "scene": 535,
+      "cache_entries": 19,
+      "queries_total": 2790,
+      "decode_attempts_total": 559
+    },
+    {
+      "scene": 536,
+      "cache_entries": 36,
+      "queries_total": 2873,
+      "decode_attempts_total": 595
+    },
+    {
+      "scene": 537,
+      "cache_entries": 14,
+      "queries_total": 2953,
+      "decode_attempts_total": 609
+    }
+  ],
+  "main_unchanged": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Frozen pre-cache native decoder algorithm is the comparison oracle; original rectangular geometry rules were established separately",
+    "Controlled scene/frame/unsupported-state tests on exact original resources; no manual whole-game playthrough",
+    "No wall-clock speed threshold or original Windows execution claim"
+  ]
+}

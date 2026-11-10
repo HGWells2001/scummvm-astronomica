@@ -1,0 +1,22 @@
+{
+  "status": "P536_REAL_ENGINE_DEFAULT_SETTLED_GRAPH_OBSERVATION_PASS",
+  "completed_at": "2026-11-10T19:15:09.095532+00:00",
+  "candidate_exe_sha256": "a8ee85af8a91d89782637a30145f5a2c893c36580c0256d46de973aa59ddc133",
+  "installed_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "native_log_sha256": "ef233536389141f8bdc930dba5fd7f6c0d1162825fb8f57fde9d533daaa3ace8",
+  "observations_sha256": "6ea79eee72babd086c6b1ef6ce3ad1ebfd2e728792d18d625f9baeb493f5cd2d",
+  "observations": 1902,
+  "settled_nodes": 8,
+  "original_control_edges": 120,
+  "selected_project_terminals": 24,
+  "target_observations": [],
+  "native_target_observed": false,
+  "main_unchanged": true,
+  "preferences_unchanged": true,
+  "limits": [
+    "Actual real engine settled control graph; reached node paths replayed from original startup, no local injection; inclusive original rectangular hit geometry with visibility ignored",
+    "No scalar local mutation; global reset and deterministic seed isolate cases",
+    "Program-load epoch and inert sprite frame/move epochs normalized; no original Windows or arbitrary timing proof",
+    "Exact original instruction comparison of the observed path is a separate gate"
+  ]
+}

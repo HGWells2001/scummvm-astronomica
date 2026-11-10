@@ -1,0 +1,125 @@
+{
+  "status": "HIT_GEOMETRY_CACHE_GENUINE_ASVM32_CONTINUATION_PASS",
+  "completed_at": "2026-11-10T19:24:20.159753+00:00",
+  "candidate_exe_sha256": "fb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa",
+  "producer_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "producer_proof_sha256": "eee6be4aa99ea083d9eb53d3415987dda4251549333e7ba64b2b04674180d41c",
+  "cases": [
+    {
+      "slot": 41,
+      "initial_entry_scripts": false,
+      "round": 1,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "a8e2c85af36342abaaf1d7391bc48401740630f9cc0ae08a0366995900b7a3fd",
+      "physical_save_sha256": "45e4642b4eb48710ea56a6082155ce50e13ddc8cd6cdf7508c0a8501020316b3"
+    },
+    {
+      "slot": 41,
+      "initial_entry_scripts": true,
+      "round": 1,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "29b7eba716797bc7ea1c51d998db801ff21f544d2449bb224e2f81e340f84487",
+      "physical_save_sha256": "45e4642b4eb48710ea56a6082155ce50e13ddc8cd6cdf7508c0a8501020316b3"
+    },
+    {
+      "slot": 42,
+      "initial_entry_scripts": false,
+      "round": 2,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "64b4066763f8fcda187f25040a706287db25e017aec1815d16fe1cd5d207e544",
+      "physical_save_sha256": "1c1ff23da5b42ea1bf1c69a01575b81ac28c72c1e4f6aa2d94c18cb97489243c"
+    },
+    {
+      "slot": 42,
+      "initial_entry_scripts": true,
+      "round": 2,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "3ac6847d960d09005362090bbab40157f35644634e46136679e9c7b87b7e39a3",
+      "physical_save_sha256": "1c1ff23da5b42ea1bf1c69a01575b81ac28c72c1e4f6aa2d94c18cb97489243c"
+    },
+    {
+      "slot": 43,
+      "initial_entry_scripts": false,
+      "round": 3,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "8a4b2e7382408e90af4206cb65e680c262b8278b9dd9447952e03c0d67511cbf",
+      "physical_save_sha256": "7dd063552eb185a016bfb17c8f0970e004bcc3cc287140084775705f82a38fa4"
+    },
+    {
+      "slot": 43,
+      "initial_entry_scripts": true,
+      "round": 3,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "2f4f43545747e124cfdebb5e5fdc6fa265d7acb40e0d432f6a62bf93280d036c",
+      "physical_save_sha256": "7dd063552eb185a016bfb17c8f0970e004bcc3cc287140084775705f82a38fa4"
+    },
+    {
+      "slot": 44,
+      "initial_entry_scripts": false,
+      "round": 1,
+      "prior_solved": 1,
+      "final_count": 1,
+      "log_sha256": "38e07be82f8e078350aebe63a57643da6a58e07806906fe9bae461913210a7e4",
+      "physical_save_sha256": "86729f4bb4a6b2c23cdd7f785341c79bf1e6f1265f9db7a74abed44b7013f39d"
+    },
+    {
+      "slot": 44,
+      "initial_entry_scripts": true,
+      "round": 1,
+      "prior_solved": 1,
+      "final_count": 1,
+      "log_sha256": "2504b2e8b1a22dc00d11ce40e063233c3dbf03dd9e0431a3c2c3b7f8e783c7c5",
+      "physical_save_sha256": "86729f4bb4a6b2c23cdd7f785341c79bf1e6f1265f9db7a74abed44b7013f39d"
+    },
+    {
+      "slot": 45,
+      "initial_entry_scripts": false,
+      "round": 2,
+      "prior_solved": 1,
+      "final_count": 1,
+      "log_sha256": "773d3c4c2e2f5c5043301ec8e2345c57a655deca2ea3528e05c8ee1219b467d9",
+      "physical_save_sha256": "3ce10325763c59dd3e7bfeed9cef105c369436514f4f0ead92961bf746db0493"
+    },
+    {
+      "slot": 45,
+      "initial_entry_scripts": true,
+      "round": 2,
+      "prior_solved": 1,
+      "final_count": 1,
+      "log_sha256": "2484f97696711a22cd2e54d697a9189e8269c0e3b7649c72ef1b48eae732da77",
+      "physical_save_sha256": "3ce10325763c59dd3e7bfeed9cef105c369436514f4f0ead92961bf746db0493"
+    },
+    {
+      "slot": 46,
+      "initial_entry_scripts": false,
+      "round": 3,
+      "prior_solved": 1,
+      "final_count": 1,
+      "log_sha256": "bbdb076d506fe945b9d45cc43ae24788a35dcd4db4a37230d4c884039b086274",
+      "physical_save_sha256": "495f901cc0b0b9b4cc81f1bca11fe787fe10a7b82354c2df6e3339157d358c4f"
+    },
+    {
+      "slot": 46,
+      "initial_entry_scripts": true,
+      "round": 3,
+      "prior_solved": 1,
+      "final_count": 1,
+      "log_sha256": "8e4ca3ebcc1cf9edd79760898e715805738d3e24c01f86e631bad95ab210a0f7",
+      "physical_save_sha256": "495f901cc0b0b9b4cc81f1bca11fe787fe10a7b82354c2df6e3339157d358c4f"
+    }
+  ],
+  "original_controls": true,
+  "no_repeated_variant": true,
+  "first_repeated_completion": true,
+  "source_files_unchanged": true,
+  "limits": [
+    "Six real physical files; no all-version compatibility claim",
+    "Initial entry flag tested both ways; standalone verifier enables it for subsequent original gateway controls"
+  ]
+}

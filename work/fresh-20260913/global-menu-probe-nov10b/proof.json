@@ -1,0 +1,59 @@
+{
+  "status": "GLOBAL_MENU_POSITIVE_NATIVE_PASS",
+  "completed_at": "2026-11-10T19:21:36.109839+00:00",
+  "diagnostic_exe_sha256": "3ff5264096e9b9d36862c01dad47b2381a161c0ed4f3e512ca692c32107f6af4",
+  "shipping_exe_sha256": "fb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa",
+  "cases": [
+    {
+      "language": "en",
+      "disable_fixed_scaling": false,
+      "exit_code": 0,
+      "passed": true,
+      "font_probe": [
+        "Global menu font probe: big1 named1 same1 height12"
+      ],
+      "log_sha256": "8ae94eb92b0a2c31b0626a6c17fcf150ae051ac7a14da24fa3ddf695b3194012",
+      "font_load_failure": false
+    },
+    {
+      "language": "en",
+      "disable_fixed_scaling": true,
+      "exit_code": 0,
+      "passed": true,
+      "font_probe": [
+        "Global menu font probe: big1 named1 same1 height12"
+      ],
+      "log_sha256": "7adfeb819c57f56705147b2f5d1dce1a00c71a49d5a69022bf10d60e9945573e",
+      "font_load_failure": false
+    },
+    {
+      "language": "C",
+      "disable_fixed_scaling": false,
+      "exit_code": 0,
+      "passed": true,
+      "font_probe": [
+        "Global menu font probe: big1 named1 same1 height12"
+      ],
+      "log_sha256": "6e1612349c5f117af63cff973b75b58c959e93c0c6c745f28ef50e842fc8db1c",
+      "font_load_failure": false
+    },
+    {
+      "language": "C",
+      "disable_fixed_scaling": true,
+      "exit_code": 0,
+      "passed": true,
+      "font_probe": [
+        "Global menu font probe: big1 named1 same1 height12"
+      ],
+      "log_sha256": "8cc6f9d513cd7fc4a96a5628b1c3e4df2752218e8038e13805343d835f0331ab",
+      "font_load_failure": false
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "main_unchanged": true,
+  "limits": [
+    "Actual Engine global-menu dialog with queued Escape; no human visual review",
+    "SDL dummy video/WASAPI muted and isolated GUI profiles",
+    "Diagnostic real-engine build shares shipping production source; global-menu instrumentation only"
+  ]
+}

@@ -2692,6 +2692,31 @@ static Graphics::Surface *decodeSpriteBitmap(Common::SeekableReadStream &stream,
  if (!ok || !decoder.getSurface() || decoder.getSurface()->w > 640 || decoder.getSurface()->h > 480) return nullptr;
  return decoder.getSurface()->convertTo(format, decoder.getPalette().data(), decoder.getPalette().size());
 }
+
+bool AstronomicaEngine::spriteImageDimensions(Common::SeekableReadStream &file, const BitmapRef &image, int &width, int &height) {
+ if (_hitGeometryPlace != _place) {
+  _hitGeometry.clear();
+  _hitGeometryPlace = _place;
+ }
+ for (const HitGeometry &entry : _hitGeometry) {
+  if (entry.offset == image.offset && entry.size == image.size) {
+   width = entry.width; height = entry.height;
+   return true;
+  }
+ }
+ ++_hitGeometryDecodes;
+ Graphics::Surface *bmp = decodeSpriteBitmap(file, image, _screen.format);
+ if (!bmp) return false;
+ width = bmp->w; height = bmp->h;
+ bmp->free(); delete bmp;
+ // The cache owns only dimensions, never resource streams or pixel buffers.
+ if (_hitGeometry.size() < 4096) {
+  HitGeometry entry = {image.offset, image.size, width, height};
+  _hitGeometry.push_back(entry);
+ }
+ return true;
+}
+
 uint AstronomicaEngine::renderStaticSprites(Common::SeekableReadStream &stream, const Scene &scene, Graphics::Surface &target) {
  // SpriteWorld appends layers and sprites; draw in that same order.
  if (!supportsSpriteLayers(scene)) return 0;
@@ -2810,6 +2835,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _builderHistoryValid = true;
  _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
+ _hitGeometry.clear(); _hitGeometryPlace = -1;
  _questionSaveBaseline.clear(); if (place == 281 || place == 501 || place == 504 || place == 503 || place == 502 || place == 527 || place == 516 || place == 511 || place == 509 || place == 521 || place == 518 || place == 514 || place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
  _rocket = RocketMotion();
  _probe = ProbeMotion(); _probeAssetsValid = false;
@@ -3251,10 +3277,10 @@ int AstronomicaEngine::spriteAt(int x, int y) {
   for (uint f = 0; f < count; ++f) {
    if (s.selectedFrame >= 0 && uint(s.selectedFrame) != f) continue;
    const Frame *frame = spriteFrameAt(_scene, i, f);
-   Graphics::Surface *bmp = frame ? decodeSpriteBitmap(file, frame->image, _screen.format) : nullptr;
-   if (!bmp) return -2;
-   const bool mismatch = width >= 0 && (width != bmp->w || height != bmp->h);
-   width = bmp->w; height = bmp->h; bmp->free(); delete bmp;
+   int frameWidth, frameHeight;
+   if (!frame || !spriteImageDimensions(file, frame->image, frameWidth, frameHeight)) return -2;
+   const bool mismatch = width >= 0 && (width != frameWidth || height != frameHeight);
+   width = frameWidth; height = frameHeight;
    if (mismatch) return -2;
   }
   if (width < 0) return -2;
@@ -9858,6 +9884,76 @@ bool AstronomicaEngine::verifyP514Puzzle() {
  debug("Astronomica P514 interaction verification: %s (224 original collision cases, queue cancellation, three speeds, clamped controls, docking, fuel exhaustion, unsolved exit, repeated success)",ok ? "PASS" : "FAIL");
  return ok;
 }
+
+bool AstronomicaEngine::verifyHitGeometry() {
+ // Frozen pre-cache algorithm: retain the old decoder path as a test oracle.
+ auto uncached = [&](int x, int y) -> int { 
+ Common::File file;
+ const Common::Path path = ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/MEGAFILE.HYP", _place)));
+ if (!file.open(Common::FSNode(path))) return -2;
+ for (uint i = 0; i < _scene.sprites.size(); ++i) {
+  const Sprite &s = _scene.sprites[i];
+  if (!s.clickEnabled && !s.dragEnabled) continue;
+  // Until their changing geometry is reconstructed, do not guess a hit.
+  if (!supportsSpriteLayers(_scene) || s.layer != 1 || s.autoMove || s.autoFrame) return -2;
+  const uint count = spriteFrameCount(_scene, i);
+  if (!count) return -2;
+  int width = -1, height = -1;
+  // With no selected preview frame, accept only invariant frame dimensions.
+  for (uint f = 0; f < count; ++f) {
+   if (s.selectedFrame >= 0 && uint(s.selectedFrame) != f) continue;
+   const Frame *frame = spriteFrameAt(_scene, i, f);
+   Graphics::Surface *bmp = frame ? decodeSpriteBitmap(file, frame->image, _screen.format) : nullptr;
+   if (!bmp) return -2;
+   const bool mismatch = width >= 0 && (width != bmp->w || height != bmp->h);
+   width = bmp->w; height = bmp->h; bmp->free(); delete bmp;
+   if (mismatch) return -2;
+  }
+  if (width < 0) return -2;
+  // Original hit test ignores visibility and mask pixels.
+  if (pointInSprite(s, width, height, x, y)) return int(i);
+ }
+ return -1;
+ };
+ uint queries=0, hidden=0, unknownFrames=0, unsupported=0;
+ const int places[]={1,2,27,29,281,501,502,503,504,505,506,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537};
+ for(int place:places){
+  ConfMan.setBool("astronomica_entry_scripts",false);
+  if(!loadPlace(place,false,true))return false;
+  if(!_hitGeometry.empty()||_hitGeometryPlace!=-1)return false;
+  auto compare=[&](int x,int y){const int expected=uncached(x,y),actual=spriteAt(x,y);++queries;if(actual!=expected){debug("Hit geometry mismatch: P%d xy%d,%d expected%d actual%d",place,x,y,expected,actual);return false;}return true;};
+  for(Common::Point p:{Common::Point(0,0),Common::Point(320,240),Common::Point(639,479)})if(!compare(p.x,p.y))return false;
+  uint selected=0;
+  for(uint i=0;i<_scene.sprites.size()&&selected<8;++i){
+   Sprite&s=_scene.sprites[i];if(!s.clickEnabled&&!s.dragEnabled)continue;++selected;if(!s.visible)++hidden;
+   Common::File f;if(!f.open(Common::FSNode(ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/MEGAFILE.HYP",place))))))return false;
+   const Frame*frame=staticSpriteFrame(_scene,i);Graphics::Surface*bmp=frame?decodeSpriteBitmap(f,frame->image,_screen.format):nullptr;if(!bmp)continue;const int width=bmp->w,height=bmp->h;bmp->free();delete bmp;
+   const int left=s.renderX,top=s.renderY,right=int16(left+width),bottom=int16(top+height);
+   for(Common::Point p:{Common::Point(left,top),Common::Point(right,top),Common::Point(left,bottom),Common::Point(right,bottom),Common::Point(left-1,top),Common::Point(right+1,bottom),Common::Point(left,top-1),Common::Point(right,bottom+1)})if(!compare(p.x,p.y))return false;
+   if(spriteFrameCount(_scene,i)>1){const int saved=s.selectedFrame;s.selectedFrame=-1;if(!compare(left,top))return false;++unknownFrames;s.selectedFrame=spriteFrameCount(_scene,i)-1;if(!compare(right,bottom))return false;s.selectedFrame=saved;}
+   const bool saved=s.autoFrame;s.autoFrame=true;if(!compare(left,top))return false;s.autoFrame=saved;++unsupported;
+  }
+  const int expected=spriteAt(320,240);const uint32 decoded=_hitGeometryDecodes;
+  for(uint repeat=0;repeat<32;++repeat)if(spriteAt(320,240)!=expected)return false;
+  if(_hitGeometryDecodes!=decoded)return false;
+  debug("Hit geometry scene: PASS (P%d,cache%u,queries%u,decodeAttempts%u)",place,_hitGeometry.size(),queries,_hitGeometryDecodes);
+ }
+ // Cache entries must neither make a missing file hittable nor survive a reload.
+ if(!loadPlace(536,false,true))return false;
+ const int expected=spriteAt(320,240);const uint32 warmed=_hitGeometryDecodes;const Common::Path root=ConfMan.getPath("path");
+ const Common::Path absent=root.join("__astronomica_no_such_hit_geometry_root__");if(Common::FSNode(absent).exists())return false;
+ ConfMan.setPath("path",absent);const int missing=spriteAt(320,240);ConfMan.setPath("path",root);if(missing!=-2||spriteAt(320,240)!=expected||_hitGeometryDecodes!=warmed)return false;
+ if(!loadPlace(536,false,true)||!_hitGeometry.empty()||_hitGeometryPlace!=-1)return false;
+ if(spriteAt(320,240)!=expected||_hitGeometryDecodes==warmed)return false;
+ Common::File file;if(!file.open(Common::FSNode(root.join("PLACES/P536/MEGAFILE.HYP"))))return false;
+ const Frame*first=spriteFrameAt(_scene,0,0);if(!first)return false;const BitmapRef good=first->image;int width,height;
+ if(!spriteImageDimensions(file,good,width,height))return false;const uint size=_hitGeometry.size();
+ for(uint mode=0;mode<3;++mode){BitmapRef bad=good;if(!mode)bad.size=0;else if(mode==1)bad.size=16*1024*1024+1;else bad.offset=uint32(file.size());const uint32 before=_hitGeometryDecodes;for(uint repeat=0;repeat<2;++repeat)if(spriteImageDimensions(file,bad,width,height))return false;if(_hitGeometry.size()!=size||_hitGeometryDecodes-before!=2)return false;}
+ if(!spriteImageDimensions(file,good,width,height)||_hitGeometry.size()!=size)return false;
+ debug("Hit geometry verification: PASS (%u original scenes,%u oracle queries,%u hidden controls,%u unknown-frame cases,%u unsupported states;warm repeats,reload,missing file,unpoisoned failures)",uint(ARRAYSIZE(places)),queries,hidden,unknownFrames,unsupported);
+ return true;
+}
+
 bool AstronomicaEngine::verifyBuilderPuzzle() {
  bool ok = true; uint seen = 0;
  const uint32 seeds[] = {1,32,64,1,1,64};
@@ -13622,6 +13718,9 @@ Common::Error AstronomicaEngine::run() {
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Builder verification failed");
  }
 
+ if(ConfMan.hasKey("astronomica_verify_hit_geometry")&&ConfMan.getBool("astronomica_verify_hit_geometry")) {
+  const bool ok=verifyHitGeometry();_background.free();_screen.free();quitGame();return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Hit geometry verification failed");
+ }
  if(ConfMan.hasKey("astronomica_verify_p281_saves")&&ConfMan.getBool("astronomica_verify_p281_saves")) {
   ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_animation",true);ConfMan.setBool("astronomica_sprite_input",true);ConfMan.setBool("astronomica_entry_scripts",true);
   const bool fresh=ConfMan.hasKey("save_slot")&&ConfMan.getInt("save_slot")>=41&&ConfMan.getInt("save_slot")<=46;

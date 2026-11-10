@@ -1,0 +1,26 @@
+{
+  "status": "INSTALLED_HIT_GEOMETRY_GENUINE_ASVM32_CONTINUATION_PASS",
+  "completed_at": "2026-11-10T19:36:00.075558+00:00",
+  "candidate_exe_sha256": "fb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa",
+  "producer_exe_sha256": "1927d9cd4c09ddc8d125cf8cf2d1bd1873908435bfe659b9e1c9fd7c96e6b255",
+  "producer_proof_sha256": "eee6be4aa99ea083d9eb53d3415987dda4251549333e7ba64b2b04674180d41c",
+  "cases": [
+    {
+      "slot": 41,
+      "initial_entry_scripts": false,
+      "round": 1,
+      "prior_solved": 0,
+      "final_count": 1,
+      "log_sha256": "a8b1799423cbf5fd05c4372f41eaef1281b44f6c19f246bb32f4cd6cd7c6bb48",
+      "physical_save_sha256": "45e4642b4eb48710ea56a6082155ce50e13ddc8cd6cdf7508c0a8501020316b3"
+    }
+  ],
+  "original_controls": true,
+  "no_repeated_variant": true,
+  "first_repeated_completion": true,
+  "source_files_unchanged": true,
+  "limits": [
+    "Six real physical files; no all-version compatibility claim",
+    "Initial entry flag tested both ways; standalone verifier enables it for subsequent original gateway controls"
+  ]
+}

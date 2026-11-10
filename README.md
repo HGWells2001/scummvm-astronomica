@@ -1,3 +1,13 @@
+# Current update: cache decoded click dimensions (10 November2026)
+
+The real engine now reuses decoded image dimensions during input hit testing, preserving the original rectangles, hidden input regions and frame checks. [Verified scope and limits](outputs/astronomica-cleanroom/HIT-GEOMETRY-CACHE.md).
+
+Verified local executable: `fb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa`. The41scene/2,953query old/new oracle, unchanged8node/120edge P536 graph, actual menu checks, full general suite, twelve genuine ASVM32 continuations and installed-path checks pass. Seven fresh engine units plus403 verified foundation objects; header layout changed, clean complete rebuild required. No new save version or video-core change.
+
+Fixed acceptance remains **7/10 (70%)**; whole-game completion remains unmeasured. Historical updates follow.
+
+---
+
 # Current update: retained P281 rounds (10 November 2026)
 
 Native saving now works at the idle gateway after leaving an unfinished variant puzzle. It preserves the visited variants and random state across restart. Active gateway actions still require waiting. [Verified scope and remaining limits](outputs/astronomica-cleanroom/P281-RETAINED-SAVES.md).

@@ -41,6 +41,12 @@ private:
  bool verifyHelp();
  struct HoverTarget { int width = 0, height = 0; bool ready = false, entered = false; };
  Common::Array<HoverTarget> _hoverSprites, _hoverRects;
+ struct HitGeometry { uint32 offset, size; int width, height; };
+ Common::Array<HitGeometry> _hitGeometry;
+ int _hitGeometryPlace = -1;
+ uint32 _hitGeometryDecodes = 0;
+ bool spriteImageDimensions(Common::SeekableReadStream &file, const BitmapRef &image, int &width, int &height);
+ bool verifyHitGeometry();
  void configureHover();
  void hoverAtTime(int x, int y, uint32 now);
  bool verifyHover();

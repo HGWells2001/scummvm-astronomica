@@ -1,0 +1,24 @@
+{
+  "status": "HIT_GEOMETRY_P536_ORIGINAL_CONTROL_GRAPH_EQUIVALENCE_PASS",
+  "verified_at": "2026-11-10T19:18:46.638190+00:00",
+  "shipping_candidate_exe_sha256": "fb8238c96dff7c815039006979f06bf71bfa065c05cf6530109b40553405fdaa",
+  "baseline_diagnostic_exe_sha256": "a8ee85af8a91d89782637a30145f5a2c893c36580c0256d46de973aa59ddc133",
+  "cached_diagnostic_exe_sha256": "0b177a8433e47d1b202b32b5800b7e8dca2730dce1bbae7c80f3d1bbd2e6a689",
+  "nodes": 8,
+  "original_exposed_control_edges": 120,
+  "selected_project_or_scene_exit_terminals": 24,
+  "predicate_evaluations": 1902,
+  "graph_rows": 128,
+  "graph_sha256": "74bc52c5807d3ab87cb2179c2582e9f2394b206841d834e99c2aa7b9ed5f4548",
+  "baseline_proof_sha256": "17748d4f1317cfadfcd0c250c574d805e1a4d06f4295d596f742cdd01db04dd7",
+  "cached_proof_sha256": "3a9065d16b49fdf5d41251d0f4c709f06927e0df60aa2cf3595978034bc887bf",
+  "baseline_log_seconds": 269.0,
+  "cached_log_seconds": 40.0,
+  "target_still_unobserved": true,
+  "limits": [
+    "Two real-engine diagnostic builds share the shipping production sources; only graph/condition instrumentation differs",
+    "Settled default-design paths; idle program/frame epochs normalized, not an exhaustive arbitrary-timing proof",
+    "Wall-clock spans are descriptive and not a controlled benchmark or FPS guarantee",
+    "No original Windows execution or natural unreachability claim"
+  ]
+}
