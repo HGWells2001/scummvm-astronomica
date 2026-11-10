@@ -1,3 +1,9 @@
+# Current update: respect script locks for keyboard navigation
+
+Verified executable: `dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214`. P27 lock bypass fixed; diagnostic letter/scene cycling shortcuts default off. Complete general suite and installed keyboard checks pass. See [verified scope](outputs/astronomica-cleanroom/PLAYER-KEYBOARD.md). Fixed acceptance7/10 (70%); whole-game completion unmeasured. Original assets and excluded attempts remain excluded.
+
+---
+
 # Current update: reuse dimensions during animation (10 November2026)
 
 The real engine now reuses decoded dimensions in its motion loop as well as input hit testing, preserving original trajectories/collisions and drawing. [Verified scope](outputs/astronomica-cleanroom/MOTION-GEOMETRY-CACHE.md).

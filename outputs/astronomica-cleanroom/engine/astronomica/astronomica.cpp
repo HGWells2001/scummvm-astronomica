@@ -9953,6 +9953,64 @@ bool AstronomicaEngine::verifyHitGeometry() {
  return true;
 }
 
+void AstronomicaEngine::handleGameKey(const Common::KeyState &key) {
+ if(key.keycode==Common::KEYCODE_F5){openMainMenuDialog();return;}
+ if(key.keycode==Common::KEYCODE_ESCAPE){quitGame();return;}
+ if((key.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META))||_runner.clicksBlocked())return;
+ const bool diagnostic=ConfMan.hasKey("astronomica_debug_controls")&&ConfMan.getBool("astronomica_debug_controls");
+ if(!diagnostic&&(key.keycode==Common::KEYCODE_v||key.keycode==Common::KEYCODE_m||key.keycode==Common::KEYCODE_r||key.keycode==Common::KEYCODE_c||key.keycode==Common::KEYCODE_f||key.keycode==Common::KEYCODE_PAGEUP||key.keycode==Common::KEYCODE_PAGEDOWN))return;
+   switch (key.keycode) {
+   case Common::KEYCODE_v: if (_place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
+   case Common::KEYCODE_m:
+    if (_place == 517 && _scene.sprites.size() >= 7) demoMovement(_scene.sprites[6].x == 447 ? 477 : 447);
+    else if (_place == 510) demoOffset();
+    break;
+   case Common::KEYCODE_r: if (_place == 510) changePlace(510); break;
+   case Common::KEYCODE_c: if (_place == 510) demoOffset(9); break;
+   case Common::KEYCODE_f: if (_place == 510 && _scene.sprites.size() >= 10) demoFrame(_scene.sprites[9].selectedFrame == 1 ? 0 : 1); break;
+   case Common::KEYCODE_PAGEDOWN: stepPlace(1); break;
+   case Common::KEYCODE_PAGEUP: stepPlace(-1); break;
+   case Common::KEYCODE_LEFT: if (_nav[0] > 0) changePlace(_nav[0]); break;
+   case Common::KEYCODE_UP: if (_nav[1] > 0) changePlace(_nav[1]); break;
+   case Common::KEYCODE_RIGHT: if (_nav[2] > 0) changePlace(_nav[2]); break;
+   default: break;
+   }
+}
+
+
+bool AstronomicaEngine::verifyKeyboardRouting() {
+ auto quiet=[&](int place){ConfMan.setBool("astronomica_entry_scripts",false);return loadPlace(place,false,true);};
+ ConfMan.removeKey("astronomica_debug_controls",ConfMan.getActiveDomainName());
+ // Enter the actual original P27 sprite click and execute its first block command.
+ if(!quiet(27)||_scene.sprites.empty())return false;
+ Common::File file;if(!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P27/MEGAFILE.HYP"))))return false;
+ const Frame*frame=staticSpriteFrame(_scene,0);Graphics::Surface*bmp=frame?decodeSpriteBitmap(file,frame->image,_screen.format):nullptr;if(!bmp)return false;
+ const int x=_scene.sprites[0].renderX+bmp->w/2,y=_scene.sprites[0].renderY+bmp->h/2;bmp->free();delete bmp;
+ if(spriteAt(x,y)!=0)return false;clickAtTime(x,y,scriptClock());runScriptsAt(scriptClock());
+ if(!_runner.clicksBlocked()||!_runner.pendingCount())return false;
+ const Common::KeyCode blocked[]={Common::KEYCODE_LEFT,Common::KEYCODE_UP,Common::KEYCODE_RIGHT,Common::KEYCODE_PAGEUP,Common::KEYCODE_PAGEDOWN,Common::KEYCODE_v,Common::KEYCODE_m,Common::KEYCODE_r,Common::KEYCODE_c,Common::KEYCODE_f};
+ {PauseToken pause=pauseEngine();const uint32 before=p510WholeLiveHash();for(bool diagnostic:{false,true}){ConfMan.setBool("astronomica_debug_controls",diagnostic);for(Common::KeyCode key:blocked){handleGameKey(Common::KeyState(key));if(p510WholeLiveHash()!=before)return false;}}}
+ debug("Player keyboard blocked: PASS (20 keys,actual original P27 block/pending queue,all live game state preserved)");
+ // Global menu remains usable during the original lock and preserves its queue.
+ const uint32 runner=_runner.p510CompleteHash(),pixels=screenRGBHash(_screen);Common::Event escape;escape.type=Common::EVENT_KEYDOWN;escape.kbd.keycode=Common::KEYCODE_ESCAPE;_eventMan->pushEvent(escape);
+ handleGameKey(Common::KeyState(Common::KEYCODE_F5));if(_place!=27||_runner.p510CompleteHash()!=runner||screenRGBHash(_screen)!=pixels||!_runner.clicksBlocked()||_clockPaused||shouldQuit())return false;
+ debug("Player keyboard menu: PASS (F5 during original lock,actual dialog closes,queue/pixels preserved)");
+ struct Check {int place;Common::KeyCode key;};const Check diagnosticKeys[]={{29,Common::KEYCODE_v},{517,Common::KEYCODE_m},{510,Common::KEYCODE_m},{510,Common::KEYCODE_r},{510,Common::KEYCODE_c},{510,Common::KEYCODE_f},{103,Common::KEYCODE_PAGEUP},{103,Common::KEYCODE_PAGEDOWN}};
+ for(uint present=0;present<2;++present){if(present)ConfMan.setBool("astronomica_debug_controls",false);else ConfMan.removeKey("astronomica_debug_controls",ConfMan.getActiveDomainName());for(const Check&c:diagnosticKeys){if(!quiet(c.place))return false;PauseToken pause=pauseEngine();const uint32 before=p510WholeLiveHash();handleGameKey(Common::KeyState(c.key));if(p510WholeLiveHash()!=before)return false;}}
+ debug("Player keyboard diagnostics: PASS (16 absent/false option cases,no scene skip/demonstration in player mode)");
+ ConfMan.setBool("astronomica_debug_controls",false);
+ const Common::KeyCode arrows[]={Common::KEYCODE_LEFT,Common::KEYCODE_UP,Common::KEYCODE_RIGHT};
+ for(uint i=0;i<3;++i){if(!quiet(103))return false;const int expected=_nav[i]>0?_nav[i]:103;handleGameKey(Common::KeyState(arrows[i]));if(_place!=expected)return false;}
+ for(byte modifier:{byte(Common::KBD_CTRL),byte(Common::KBD_ALT),byte(Common::KBD_META)})for(Common::KeyCode key:arrows){if(!quiet(103))return false;PauseToken pause=pauseEngine();const uint32 before=p510WholeLiveHash();handleGameKey(Common::KeyState(key,0,modifier));if(p510WholeLiveHash()!=before)return false;}
+ debug("Player keyboard navigation: PASS (three original nav targets,nine modified arrows ignored)");
+ // Explicit development opt-in keeps the old visibility diagnostic available.
+ ConfMan.setBool("astronomica_debug_controls",true);if(!quiet(29))return false;const bool visible=_scene.sprites[1].visible;
+ handleGameKey(Common::KeyState(Common::KEYCODE_v));for(uint i=0;i<8&&_runner.pendingCount();++i)runScriptsAt(scriptClock()+1000+i);
+ if(bool(_scene.sprites[1].visible)==visible)return false;ConfMan.setBool("astronomica_debug_controls",false);
+ handleGameKey(Common::KeyState(Common::KEYCODE_ESCAPE));if(!shouldQuit())return false;
+ debug("Player keyboard verification: PASS (original block,diagnostics opt-in,nav,modified keys,F5 and Escape)");return true;
+}
+
 bool AstronomicaEngine::verifyBuilderPuzzle() {
  bool ok = true; uint seen = 0;
  const uint32 seeds[] = {1,32,64,1,1,64};
@@ -13717,6 +13775,10 @@ Common::Error AstronomicaEngine::run() {
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Builder verification failed");
  }
 
+ if(ConfMan.hasKey("astronomica_verify_keyboard")&&ConfMan.getBool("astronomica_verify_keyboard")) {
+  const bool ok=verifyKeyboardRouting();debug("Player keyboard native result: %s",ok?"PASS":"FAIL");_background.free();_screen.free();quitGame();return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Keyboard verification failed");
+ }
+
  if(ConfMan.hasKey("astronomica_verify_hit_geometry")&&ConfMan.getBool("astronomica_verify_hit_geometry")) {
   const bool ok=verifyHitGeometry();_background.free();_screen.free();quitGame();return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Hit geometry verification failed");
  }
@@ -14930,24 +14992,7 @@ Common::Error AstronomicaEngine::run() {
     _system->warpMouse(event.mouse.x,_worldMovieCursorBottom);
    if (event.type == Common::EVENT_LBUTTONDOWN) { clickAt(event.mouse.x, event.mouse.y); continue; }
    if (event.type != Common::EVENT_KEYDOWN) continue;
-   switch (event.kbd.keycode) {
-   case Common::KEYCODE_F5: openMainMenuDialog(); break;
-   case Common::KEYCODE_ESCAPE: quitGame(); break;
-   case Common::KEYCODE_v: if (_place == 29 && _scene.sprites.size() >= 2) demoVisibility(!_scene.sprites[1].visible); break;
-   case Common::KEYCODE_m:
-    if (_place == 517 && _scene.sprites.size() >= 7) demoMovement(_scene.sprites[6].x == 447 ? 477 : 447);
-    else if (_place == 510) demoOffset();
-    break;
-   case Common::KEYCODE_r: if (_place == 510) changePlace(510); break;
-   case Common::KEYCODE_c: if (_place == 510) demoOffset(9); break;
-   case Common::KEYCODE_f: if (_place == 510 && _scene.sprites.size() >= 10) demoFrame(_scene.sprites[9].selectedFrame == 1 ? 0 : 1); break;
-   case Common::KEYCODE_PAGEDOWN: stepPlace(1); break;
-   case Common::KEYCODE_PAGEUP: stepPlace(-1); break;
-   case Common::KEYCODE_LEFT: if (_nav[0] > 0) changePlace(_nav[0]); break;
-   case Common::KEYCODE_UP: if (_nav[1] > 0) changePlace(_nav[1]); break;
-   case Common::KEYCODE_RIGHT: if (_nav[2] > 0) changePlace(_nav[2]); break;
-   default: break;
-   }
+   handleGameKey(event.kbd);
   }
   runScripts();
   const Common::Point mouse = _eventMan->getMousePos();

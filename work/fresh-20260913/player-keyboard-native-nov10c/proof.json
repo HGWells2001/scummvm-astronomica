@@ -1,0 +1,39 @@
+{
+  "status": "PLAYER_KEYBOARD_ORIGINAL_LOCK_GUARD_NATIVE_PASS",
+  "completed_at": "2026-11-10T20:20:27.418225+00:00",
+  "candidate_exe_sha256": "dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214",
+  "baseline_exe_sha256": "17f348315002287a48156eb9a6ea89ac6316caec9e864769dd8719aa251c6f80",
+  "cases": [
+    {
+      "variant": "baseline",
+      "exe_sha256": "17f348315002287a48156eb9a6ea89ac6316caec9e864769dd8719aa251c6f80",
+      "native_log_sha256": "c0c16c4699e43ab28ed08fb4a4fc21abf930f2a1ed3a6e27081d6e0e2e13aa40",
+      "blocked": true,
+      "original_pending": 1,
+      "start_scene": 27,
+      "arrow_target": 30,
+      "actual_scene": 30,
+      "meaning": "Pre-fix native ScummVM handler; not original Windows execution"
+    },
+    {
+      "variant": "guard",
+      "exe_sha256": "dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214",
+      "native_log_sha256": "c9550d68566bf705bfe20db2b63de53204ac1125fb3cb7d7c0882ac7abbe2c65",
+      "blocked_no_mutation_cases": 20,
+      "diagnostic_default_off_cases": 16,
+      "unblocked_original_nav_targets": 3,
+      "modified_arrow_no_mutation_cases": 9,
+      "actual_F5_during_original_lock": true,
+      "explicit_diagnostic_opt_in": true,
+      "Escape_quits": true
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "main_unchanged": true,
+  "limits": [
+    "Real engine original P27 click establishes its serialized opcode28 lock,then the actual key handler is invoked",
+    "The baseline reproduces the previous native engine bug,not an original Windows bug",
+    "Permanent whole-live-state checks freeze the engine clock using caller-owned pause tokens; F5 is tested through an actual menu dialog",
+    "No manual whole-game playthrough claim"
+  ]
+}

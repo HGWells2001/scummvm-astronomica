@@ -1,0 +1,19 @@
+{
+  "status": "PLAYER_KEYBOARD_BASELINE_GUARD_CAUSAL_PAIR_PASS",
+  "verified_at": "2026-11-10T20:29:11.345186+00:00",
+  "candidate_exe_sha256": "dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214",
+  "baseline_exe_sha256": "17f348315002287a48156eb9a6ea89ac6316caec9e864769dd8719aa251c6f80",
+  "previous_main_exe_sha256": "576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f",
+  "both_archive_closures_verified": true,
+  "both_source_transforms_verified": true,
+  "evidence_sha256": {
+    "player-keyboard-baseline-source-review-nov10c.json": "e73dda7f6816f7f70184a97142c7051c9b9787fb5f7d43639737492dabf78199",
+    "player-keyboard-source-review-nov10c.json": "898acfd804ea59c0b5a39ff85a819cb1df894fbcabd8e594f844835777de1e4d",
+    "player-keyboard-native-nov10c/proof.json": "d393694cbf8e302e8d940158af2c3a144bad27a0623a7f3bb7cef526191a5d1c"
+  },
+  "limits": [
+    "Baseline preserves the previous native key switch and adds only a private dispatch/test path",
+    "Counterexample is the previous cleanroom engine behavior,not original Windows behavior",
+    "No whole-game completeness inference"
+  ]
+}

@@ -3,6 +3,7 @@
 #ifndef ASTRONOMICA_ASTRONOMICA_H
 #define ASTRONOMICA_ASTRONOMICA_H
 #include "engines/engine.h"
+#include "common/keyboard.h"
 #include "audio/mixer.h"
 namespace Video { class QuickTimeDecoder; }
 namespace Audio { class SeekableAudioStream; class AudioStream; }
@@ -47,6 +48,8 @@ private:
  uint32 _hitGeometryDecodes = 0;
  bool spriteImageDimensions(Common::SeekableReadStream &file, const BitmapRef &image, int &width, int &height);
  bool verifyHitGeometry();
+ void handleGameKey(const Common::KeyState &key);
+ bool verifyKeyboardRouting();
  void configureHover();
  void hoverAtTime(int x, int y, uint32 now);
  bool verifyHover();

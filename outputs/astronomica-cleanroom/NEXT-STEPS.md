@@ -1,3 +1,9 @@
+# Current verified update: guarded player keyboard
+
+Verified executable: `dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214`. P27 lock bypass fixed; diagnostic letter/scene cycling shortcuts default off. Complete general suite and installed keyboard checks pass. See [verified scope](PLAYER-KEYBOARD.md). Fixed acceptance7/10 (70%); whole-game completion unmeasured. Original assets and excluded attempts remain excluded.
+
+---
+
 # Current verified source update: animation geometry cache,10 November2026B
 
 Current source pair targets executable576bbfc9739ac89ecc9c9b92fcaed52579d722e119771463bedaac26c6d6f01f. Read MOTION-GEOMETRY-CACHE.md and exported current source/native/general/seven animation pairs/frozen26-27/installed receipts. Previousfb8238input-cache and1927P281 receipts are historical. Engine23/core3pair in SCUMMVM_BASE.json; full clean rebuild required. Header/save schemas unchanged fromfb8238. Current fixed7/10acceptance/35boundedprofiles, whole-gamepercentunmeasured. P536target350661stillunobserved; no unreachable/defect claim. Original media/excluded attempts remain excluded. Historical checkpoints below.

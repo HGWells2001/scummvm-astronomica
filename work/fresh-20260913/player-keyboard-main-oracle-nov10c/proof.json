@@ -1,0 +1,12 @@
+{
+  "status": "INSTALLED_PLAYER_KEYBOARD_NATIVE_PASS",
+  "completed_at": "2026-11-10T20:40:12.632079+00:00",
+  "candidate_exe_sha256": "dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214",
+  "native_log_sha256": "ba97fc82dad31e8c098831768d980dc3147d757d51467dfb187ef6f093c4d8fa",
+  "user_preferences_unchanged": true,
+  "blocked_no_mutation_cases": 20,
+  "diagnostic_default_off_cases": 16,
+  "unblocked_original_nav_targets": 3,
+  "modified_arrow_no_mutation_cases": 9,
+  "actual_F5_during_original_lock": true
+}
