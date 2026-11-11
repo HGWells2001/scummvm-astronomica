@@ -1,0 +1,15 @@
+{
+  "status": "EXPORTED_EDGE_ROUTE_DIAGNOSTIC_BRANCH_EXACT_PASS",
+  "candidate_exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+  "shipping_cpp_sha256": "ef1a06a69f3b8ea5451b54a70be13004902cb4efbd9a1ab9b515a97998ea3e27",
+  "diagnostic_cpp_sha256": "c7daa72c0ba4ccf09b9ff0906d9ec38e39d835b226ce1c23fd6972c49adde3b5",
+  "diagnostic_branch_sha256": "cdf075a67c75d6cdaa40b9fc6c0f3f62521056ff33aba28b2a15994c3813636a",
+  "native_route_receipt_sha256": "da57b06011b3fcbe30e800002062d3f3bb8d5ed4fb6359b7c41c28faf1d0dda5",
+  "engine_class_and_all_other22files_unchanged": true,
+  "original_media_or_disassembly_exported": false,
+  "limits": [
+    "Insert supplied diagnostic branch before the named verify_edge_navigation condition in run,and perform a clean rebuild to repeat optional760reference probe",
+    "Branch contains derived room IDs/NAVfacts and verifier code,not original binary/resource payloads",
+    "Diagnostic branch is not part of installed production executable"
+  ]
+}

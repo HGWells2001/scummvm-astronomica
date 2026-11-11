@@ -1,0 +1,70 @@
+{
+  "status": "EDGE_NAVIGATION_VERIFIED_LOCAL_INTEGRATION_PASS",
+  "integrated_at": "2026-11-11T18:18:12.778635+00:00",
+  "candidate_exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+  "previous_exe_sha256": "dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214",
+  "engine_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "ef1a06a69f3b8ea5451b54a70be13004902cb4efbd9a1ab9b515a97998ea3e27",
+    "astronomica.h": "ac33da76ffb02d53cc7d98deb123ca206249d1b4341dc6796f2d7bbca4b4b2e5",
+    "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "framework_sha256": {
+    "video/video_decoder.cpp": "ac9832663151200cbc6e2c802171b88f0a45ddc469ea25d3b24ad1d6efcdf26d",
+    "video/video_decoder.h": "6dc1d443164cf0dc7b666175851883188050ece5030995fa3e7ff4e3f2c9d416",
+    "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
+  },
+  "snapshot": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\verified-checkpoints\\edge-navigation-ba32b4f54d5d",
+  "snapshot_manifest_sha256": "eb199776a008e5324898c2515e3cd31f5ef4cdbd3344a6825f1379e6c9fe497c",
+  "gates": {
+    "edge-navigation-pair-review-nov11.json": {
+      "status": "EDGE_NAVIGATION_ORIGINAL_SOURCE_BEFORE_AFTER_PAIR_PASS",
+      "sha256": "45db56c2fe8f887b39f1a284609f8b4771b91aa7522824473b9a1f8032841040"
+    },
+    "edge-navigation-guard-source-review-nov11b.json": {
+      "status": "EDGE_NAVIGATION_GUARD_SOURCE_AND_LIBRARY_CLOSURE_PASS",
+      "sha256": "ae01086c03d6caa8a524f9ef2443694aeee4f31131f679095fc9a90cca661fb7"
+    },
+    "edge-navigation-native-nov11d/proof.json": {
+      "status": "EDGE_NAVIGATION_BEFORE_AFTER_NATIVE_AND_KEYBOARD_PASS",
+      "sha256": "47d098b4f4da27356aa82aeee100261e606e61b908d79374dbf381c6c8b46ce8"
+    },
+    "edge-navigation-general-nov11/proof.json": {
+      "status": "EDGE_NAVIGATION_GENERAL_NATIVE_PASS",
+      "sha256": "0950bc0ee8de8a3e0797269ed61137566ac3fda76f930466dedc67c0531cc5ed"
+    },
+    "edge-navigation-routes-native-nov11/proof.json": {
+      "status": "EDGE_NAVIGATION_ORIGINAL_REFERENCE_MOUSE_KEY_PARITY_PASS",
+      "sha256": "da57b06011b3fcbe30e800002062d3f3bb8d5ed4fb6359b7c41c28faf1d0dda5"
+    }
+  },
+  "user_preferences_unchanged": true,
+  "source_publication_pending": true,
+  "limits": [
+    "Original mode1 mouse edge exits after sprite and rectangle consumption; script locks preserved",
+    "Original SetRect constants/serialized left-top-right order/dispatch pinned from original bytes; independent current Windows PtInRect oracle307200points",
+    "760original NAVreferences checked separately in actual diagnostic; only observed unobstructed sampled routes claimed,explicit untested cases retained",
+    "No fields,class layout,core or save schema changes; seven fresh engine units plus403verified foundation objects",
+    "Previous native missing edge exits reproduced; source/geometry and all-process natural-exit receipts retained",
+    "No original Windows execution,human whole-game playthrough or whole-game completion percentage claim"
+  ]
+}

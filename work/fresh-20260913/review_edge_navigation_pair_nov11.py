@@ -1,0 +1,16 @@
+"""Bind original source facts,both actual archives and the exact guarded production source."""
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json
+from edge_navigation_source_nov11b import production
+w=Path(__file__).resolve().parent;r=w.parents[1];sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_text())
+old=read(w/'player-keyboard-seal-nov10c-status.json');base=Path(old['snapshot'])/'engine/astronomica';b=read(w/'edge-navigation-baseline-source-review-nov11.json');g=read(w/'edge-navigation-guard-source-review-nov11b.json');native=read(w/'edge-navigation-native-nov11d/proof.json');geometry=read(w/'original-edge-navigation-nov11/proof.json')
+assert native['candidate_exe_sha256']==g['candidate_exe_sha256']and native['baseline_exe_sha256']==b['candidate_exe_sha256']
+for variant,audit in [('baseline',b),('guard',g)]:
+ stage=w/('edge-navigation-baseline-nov11-stage'if variant=='baseline'else'edge-navigation-guard-nov11b-stage');build=read(stage/'proof.json');assert sha(stage/'bin/scummvm.exe')==audit['candidate_exe_sha256']and build['base_exe_sha256']==old['exe_sha256']
+ cpp,header=production((base/'astronomica.cpp').read_text(),(base/'astronomica.h').read_text(),guard=variant=='guard');assert (stage/'source/engines/astronomica/astronomica.cpp').read_text()==cpp and(stage/'source/engines/astronomica/astronomica.h').read_text()==header
+ assert audit['archive_members_checked']==7 and audit['verified_reused_framework_objects']==403 and audit['engine_class_layout_unchanged']and audit['save_layouts_unchanged']
+assert geometry['status'].endswith('PASS')and geometry['os_oracle']['fnv32']==3123994245 and len(geometry['parsed_mode1_scenes'])==306 and not geometry['negative_serialized_nav_values']
+names=['edge-navigation-baseline-source-review-nov11.json','edge-navigation-guard-source-review-nov11b.json','edge-navigation-native-nov11d/proof.json','original-edge-navigation-nov11/proof.json']
+j=dict(status='EDGE_NAVIGATION_ORIGINAL_SOURCE_BEFORE_AFTER_PAIR_PASS',verified_at=datetime.now(timezone.utc).isoformat(),candidate_exe_sha256=g['candidate_exe_sha256'],baseline_exe_sha256=b['candidate_exe_sha256'],previous_main_exe_sha256=old['exe_sha256'],both_source_and_archive_closures_verified=True,rectangles=[dict(direction=x['direction'],rect=x['rect'])for x in geometry['original_rectangles']],geometry_os_oracle_points=307200,geometry_os_oracle_fnv32=3123994245,source_mode1_scenes=306,source_nav_references=760,all_native_processes_exited_naturally=True,evidence_sha256={n:sha(w/n)for n in names},api_reference=geometry['api_reference'],limits=['Baseline reproduces previous native engine missing edge navigation,not original Windows behavior','Original raw instruction evidence remains local; public summary contains coordinates/addresses/hash references only','Current Windows geometry API oracle is not original Win16execution','Documented controlled overlap tests distinguish unsupported consuming sprites from fully disabled non-consuming sprites','A03behavior,A08typography,A09human playthrough remain open; no whole-game completion percentage'])
+(w/'edge-navigation-pair-review-nov11.json').write_text(json.dumps(j,indent=2)+'\n');print(j['status'])

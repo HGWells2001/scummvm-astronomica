@@ -1,3 +1,11 @@
+# Current update: original mouse exits at room edges
+
+Verified executable: `ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0`. Original left/top/right mouse zones restored after sprite/rectangle consumption and script locks.760original NAVreferences in306mode1scenes agree with keyboard exits on destination/100globals;full general suite and installed verifier pass. [Verified scope](outputs/astronomica-cleanroom/EDGE-NAVIGATION.md). Fixed acceptance7/10(70%);whole-game completion unmeasured.
+
+Current local continuation: development-20261111.json and suite-poweroff-nov11-control.json only. Suites must exit naturally;never kill them at quota/error/timeout. New original72table/736case static routing analysis remains local and does not resolve P406scope by itself. Historical checkpoints below.
+
+---
+
 # Current update: respect script locks for keyboard navigation
 
 Verified executable: `dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214`. P27 lock bypass fixed; diagnostic letter/scene cycling shortcuts default off. Complete general suite and installed keyboard checks pass. See [verified scope](outputs/astronomica-cleanroom/PLAYER-KEYBOARD.md). Fixed acceptance7/10 (70%); whole-game completion unmeasured. Original assets and excluded attempts remain excluded.

@@ -1,0 +1,56 @@
+{
+  "status": "EDGE_NAVIGATION_ORIGINAL_SOURCE_BEFORE_AFTER_PAIR_PASS",
+  "verified_at": "2026-11-11T18:08:11.094671+00:00",
+  "candidate_exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+  "baseline_exe_sha256": "f67e5f34c795a383a6d0ca2dca11e25e953a3089b5b073535ffb6206207474f6",
+  "previous_main_exe_sha256": "dc4fece462ed23df8c6b027935b7961f1dea3806a5325ae52044705694567214",
+  "both_source_and_archive_closures_verified": true,
+  "rectangles": [
+    {
+      "direction": 0,
+      "rect": [
+        -20,
+        50,
+        50,
+        270
+      ]
+    },
+    {
+      "direction": 1,
+      "rect": [
+        50,
+        -20,
+        590,
+        50
+      ]
+    },
+    {
+      "direction": 2,
+      "rect": [
+        590,
+        50,
+        660,
+        270
+      ]
+    }
+  ],
+  "geometry_os_oracle_points": 307200,
+  "geometry_os_oracle_fnv32": 3123994245,
+  "source_mode1_scenes": 306,
+  "source_nav_references": 760,
+  "all_native_processes_exited_naturally": true,
+  "evidence_sha256": {
+    "edge-navigation-baseline-source-review-nov11.json": "243cfe9ef7e9e24a6c1d05d2233d8eccd9d3a1e4c7d32f2de906b0e1dae44630",
+    "edge-navigation-guard-source-review-nov11b.json": "ae01086c03d6caa8a524f9ef2443694aeee4f31131f679095fc9a90cca661fb7",
+    "edge-navigation-native-nov11d/proof.json": "47d098b4f4da27356aa82aeee100261e606e61b908d79374dbf381c6c8b46ce8",
+    "original-edge-navigation-nov11/proof.json": "fb7a2e266b64be5c56d4358bb8c811b4adeb69b7e4ab9cfbae9be87a5da58a0b"
+  },
+  "api_reference": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-ptinrect",
+  "limits": [
+    "Baseline reproduces previous native engine missing edge navigation,not original Windows behavior",
+    "Original raw instruction evidence remains local; public summary contains coordinates/addresses/hash references only",
+    "Current Windows geometry API oracle is not original Win16execution",
+    "Documented controlled overlap tests distinguish unsupported consuming sprites from fully disabled non-consuming sprites",
+    "A03behavior,A08typography,A09human playthrough remain open; no whole-game completion percentage"
+  ]
+}

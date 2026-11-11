@@ -48,6 +48,7 @@ private:
  uint32 _hitGeometryDecodes = 0;
  bool spriteImageDimensions(Common::SeekableReadStream &file, const BitmapRef &image, int &width, int &height);
  bool verifyHitGeometry();
+ bool verifyEdgeNavigation();
  void handleGameKey(const Common::KeyState &key);
  bool verifyKeyboardRouting();
  void configureHover();

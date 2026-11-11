@@ -1,0 +1,6867 @@
+{
+  "status": "EDGE_NAVIGATION_ORIGINAL_REFERENCE_MOUSE_KEY_PARITY_PASS",
+  "completed_at": "2026-11-11T18:05:40.348950+00:00",
+  "candidate_exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+  "diagnostic_exe_sha256": "44f5fead7fd50b3ff41881b6a436852c90e4773ec3f4947c4b8d21b9e95c7dbb",
+  "original_mode1_scenes": 306,
+  "nav_references": 760,
+  "matched_routes": 760,
+  "untested_routes": 0,
+  "source_loads": 760,
+  "rows": [
+    {
+      "scene": 101,
+      "axis": 0,
+      "target": 93,
+      "actual": 93,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 101,
+      "axis": 1,
+      "target": 110,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 101,
+      "axis": 2,
+      "target": 103,
+      "actual": 103,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 103,
+      "axis": 0,
+      "target": 101,
+      "actual": 101,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 103,
+      "axis": 2,
+      "target": 98,
+      "actual": 98,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 106,
+      "axis": 0,
+      "target": 107,
+      "actual": 107,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 106,
+      "axis": 1,
+      "target": 108,
+      "actual": 108,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 106,
+      "axis": 2,
+      "target": 107,
+      "actual": 107,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 107,
+      "axis": 0,
+      "target": 106,
+      "actual": 106,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 107,
+      "axis": 1,
+      "target": 252,
+      "actual": 252,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 107,
+      "axis": 2,
+      "target": 106,
+      "actual": 106,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 108,
+      "axis": 0,
+      "target": 109,
+      "actual": 109,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 108,
+      "axis": 1,
+      "target": 112,
+      "actual": 112,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 108,
+      "axis": 2,
+      "target": 110,
+      "actual": 110,
+      "x": 615,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 109,
+      "axis": 0,
+      "target": 111,
+      "actual": 111,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 109,
+      "axis": 1,
+      "target": 96,
+      "actual": 96,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 109,
+      "axis": 2,
+      "target": 108,
+      "actual": 108,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 110,
+      "axis": 0,
+      "target": 108,
+      "actual": 108,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 110,
+      "axis": 1,
+      "target": 129,
+      "actual": 129,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 110,
+      "axis": 2,
+      "target": 111,
+      "actual": 111,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 111,
+      "axis": 0,
+      "target": 110,
+      "actual": 110,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 111,
+      "axis": 1,
+      "target": 107,
+      "actual": 107,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 111,
+      "axis": 2,
+      "target": 109,
+      "actual": 109,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 112,
+      "axis": 0,
+      "target": 113,
+      "actual": 113,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 112,
+      "axis": 1,
+      "target": 262,
+      "actual": 262,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 112,
+      "axis": 2,
+      "target": 113,
+      "actual": 113,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 113,
+      "axis": 0,
+      "target": 112,
+      "actual": 112,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 113,
+      "axis": 1,
+      "target": 111,
+      "actual": 111,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 113,
+      "axis": 2,
+      "target": 112,
+      "actual": 112,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 114,
+      "axis": 0,
+      "target": 115,
+      "actual": 115,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 114,
+      "axis": 2,
+      "target": 120,
+      "actual": 120,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 115,
+      "axis": 0,
+      "target": 122,
+      "actual": 122,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 115,
+      "axis": 1,
+      "target": 117,
+      "actual": 117,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 115,
+      "axis": 2,
+      "target": 114,
+      "actual": 114,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 117,
+      "axis": 0,
+      "target": 122,
+      "actual": 122,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 117,
+      "axis": 2,
+      "target": 114,
+      "actual": 114,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 120,
+      "axis": 0,
+      "target": 114,
+      "actual": 114,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 120,
+      "axis": 1,
+      "target": 144,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 120,
+      "axis": 2,
+      "target": 122,
+      "actual": 122,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 122,
+      "axis": 0,
+      "target": 120,
+      "actual": 120,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 122,
+      "axis": 2,
+      "target": 115,
+      "actual": 115,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 125,
+      "axis": 0,
+      "target": 128,
+      "actual": 128,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 125,
+      "axis": 1,
+      "target": 150,
+      "actual": 150,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 125,
+      "axis": 2,
+      "target": 129,
+      "actual": 129,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 128,
+      "axis": 0,
+      "target": 130,
+      "actual": 130,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 128,
+      "axis": 1,
+      "target": 109,
+      "actual": 109,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 128,
+      "axis": 2,
+      "target": 125,
+      "actual": 125,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 129,
+      "axis": 0,
+      "target": 125,
+      "actual": 125,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 129,
+      "axis": 2,
+      "target": 130,
+      "actual": 130,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 130,
+      "axis": 0,
+      "target": 129,
+      "actual": 129,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 130,
+      "axis": 1,
+      "target": 146,
+      "actual": 146,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 130,
+      "axis": 2,
+      "target": 128,
+      "actual": 128,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 131,
+      "axis": 0,
+      "target": 134,
+      "actual": 134,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 131,
+      "axis": 2,
+      "target": 139,
+      "actual": 139,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 134,
+      "axis": 0,
+      "target": 141,
+      "actual": 141,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 134,
+      "axis": 1,
+      "target": 136,
+      "actual": 136,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 134,
+      "axis": 2,
+      "target": 131,
+      "actual": 131,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 136,
+      "axis": 0,
+      "target": 141,
+      "actual": 141,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 136,
+      "axis": 2,
+      "target": 131,
+      "actual": 131,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 139,
+      "axis": 0,
+      "target": 131,
+      "actual": 131,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 139,
+      "axis": 1,
+      "target": 151,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 139,
+      "axis": 2,
+      "target": 141,
+      "actual": 141,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 141,
+      "axis": 0,
+      "target": 139,
+      "actual": 139,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 141,
+      "axis": 2,
+      "target": 134,
+      "actual": 134,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 144,
+      "axis": 0,
+      "target": 145,
+      "actual": 145,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 144,
+      "axis": 2,
+      "target": 146,
+      "actual": 146,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 145,
+      "axis": 0,
+      "target": 147,
+      "actual": 147,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 145,
+      "axis": 1,
+      "target": 125,
+      "actual": 125,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 145,
+      "axis": 2,
+      "target": 144,
+      "actual": 144,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 146,
+      "axis": 0,
+      "target": 144,
+      "actual": 144,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 146,
+      "axis": 1,
+      "target": 184,
+      "actual": 184,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 146,
+      "axis": 2,
+      "target": 147,
+      "actual": 147,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 147,
+      "axis": 0,
+      "target": 146,
+      "actual": 146,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 147,
+      "axis": 1,
+      "target": 115,
+      "actual": 115,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 147,
+      "axis": 2,
+      "target": 145,
+      "actual": 145,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 148,
+      "axis": 0,
+      "target": 149,
+      "actual": 149,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 148,
+      "axis": 1,
+      "target": 134,
+      "actual": 134,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 148,
+      "axis": 2,
+      "target": 150,
+      "actual": 150,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 149,
+      "axis": 0,
+      "target": 151,
+      "actual": 151,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 149,
+      "axis": 1,
+      "target": 130,
+      "actual": 130,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 149,
+      "axis": 2,
+      "target": 148,
+      "actual": 148,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 150,
+      "axis": 0,
+      "target": 148,
+      "actual": 148,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 150,
+      "axis": 1,
+      "target": 167,
+      "actual": 167,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 150,
+      "axis": 2,
+      "target": 151,
+      "actual": 151,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 151,
+      "axis": 0,
+      "target": 150,
+      "actual": 150,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 151,
+      "axis": 2,
+      "target": 149,
+      "actual": 149,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 152,
+      "axis": 0,
+      "target": 155,
+      "actual": 155,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 152,
+      "axis": 2,
+      "target": 160,
+      "actual": 160,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 155,
+      "axis": 0,
+      "target": 162,
+      "actual": 162,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 155,
+      "axis": 1,
+      "target": 157,
+      "actual": 157,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 155,
+      "axis": 2,
+      "target": 152,
+      "actual": 152,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 157,
+      "axis": 0,
+      "target": 162,
+      "actual": 162,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 157,
+      "axis": 2,
+      "target": 152,
+      "actual": 152,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 160,
+      "axis": 0,
+      "target": 152,
+      "actual": 152,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 160,
+      "axis": 1,
+      "target": 168,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 160,
+      "axis": 2,
+      "target": 162,
+      "actual": 162,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 162,
+      "axis": 0,
+      "target": 160,
+      "actual": 160,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 162,
+      "axis": 2,
+      "target": 155,
+      "actual": 155,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 165,
+      "axis": 0,
+      "target": 166,
+      "actual": 166,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 165,
+      "axis": 1,
+      "target": 155,
+      "actual": 155,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 165,
+      "axis": 2,
+      "target": 167,
+      "actual": 167,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 166,
+      "axis": 0,
+      "target": 168,
+      "actual": 168,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 166,
+      "axis": 1,
+      "target": 149,
+      "actual": 149,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 166,
+      "axis": 2,
+      "target": 165,
+      "actual": 165,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 167,
+      "axis": 0,
+      "target": 165,
+      "actual": 165,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 167,
+      "axis": 2,
+      "target": 168,
+      "actual": 168,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 168,
+      "axis": 0,
+      "target": 167,
+      "actual": 167,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 168,
+      "axis": 2,
+      "target": 166,
+      "actual": 166,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 169,
+      "axis": 0,
+      "target": 172,
+      "actual": 172,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 169,
+      "axis": 2,
+      "target": 177,
+      "actual": 177,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 172,
+      "axis": 0,
+      "target": 179,
+      "actual": 179,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 172,
+      "axis": 1,
+      "target": 174,
+      "actual": 174,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 172,
+      "axis": 2,
+      "target": 169,
+      "actual": 169,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 174,
+      "axis": 0,
+      "target": 179,
+      "actual": 179,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 174,
+      "axis": 2,
+      "target": 169,
+      "actual": 169,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 177,
+      "axis": 0,
+      "target": 169,
+      "actual": 169,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 177,
+      "axis": 1,
+      "target": 182,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 177,
+      "axis": 2,
+      "target": 179,
+      "actual": 179,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 179,
+      "axis": 0,
+      "target": 177,
+      "actual": 177,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 179,
+      "axis": 2,
+      "target": 172,
+      "actual": 172,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 182,
+      "axis": 0,
+      "target": 183,
+      "actual": 183,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 182,
+      "axis": 2,
+      "target": 184,
+      "actual": 184,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 183,
+      "axis": 0,
+      "target": 185,
+      "actual": 185,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 183,
+      "axis": 1,
+      "target": 145,
+      "actual": 145,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 183,
+      "axis": 2,
+      "target": 182,
+      "actual": 182,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 184,
+      "axis": 0,
+      "target": 182,
+      "actual": 182,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 184,
+      "axis": 2,
+      "target": 185,
+      "actual": 185,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 185,
+      "axis": 0,
+      "target": 184,
+      "actual": 184,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 185,
+      "axis": 1,
+      "target": 172,
+      "actual": 172,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 185,
+      "axis": 2,
+      "target": 183,
+      "actual": 183,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 186,
+      "axis": 0,
+      "target": 187,
+      "actual": 187,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 186,
+      "axis": 1,
+      "target": 190,
+      "actual": 190,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 186,
+      "axis": 2,
+      "target": 188,
+      "actual": 188,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 187,
+      "axis": 0,
+      "target": 189,
+      "actual": 189,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 187,
+      "axis": 2,
+      "target": 186,
+      "actual": 186,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 188,
+      "axis": 0,
+      "target": 186,
+      "actual": 186,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 188,
+      "axis": 2,
+      "target": 189,
+      "actual": 189,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 189,
+      "axis": 0,
+      "target": 188,
+      "actual": 188,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 189,
+      "axis": 1,
+      "target": 200,
+      "actual": 200,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 189,
+      "axis": 2,
+      "target": 187,
+      "actual": 187,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 190,
+      "axis": 0,
+      "target": 191,
+      "actual": 191,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 190,
+      "axis": 2,
+      "target": 192,
+      "actual": 192,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 191,
+      "axis": 0,
+      "target": 193,
+      "actual": 193,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 191,
+      "axis": 2,
+      "target": 190,
+      "actual": 190,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 192,
+      "axis": 0,
+      "target": 190,
+      "actual": 190,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 192,
+      "axis": 1,
+      "target": 202,
+      "actual": 202,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 192,
+      "axis": 2,
+      "target": 193,
+      "actual": 193,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 193,
+      "axis": 0,
+      "target": 192,
+      "actual": 192,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 193,
+      "axis": 1,
+      "target": 189,
+      "actual": 189,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 193,
+      "axis": 2,
+      "target": 191,
+      "actual": 191,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 194,
+      "axis": 0,
+      "target": 195,
+      "actual": 195,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 194,
+      "axis": 1,
+      "target": 186,
+      "actual": 186,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 194,
+      "axis": 2,
+      "target": 196,
+      "actual": 196,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 195,
+      "axis": 0,
+      "target": 200,
+      "actual": 200,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 195,
+      "axis": 2,
+      "target": 194,
+      "actual": 194,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 196,
+      "axis": 0,
+      "target": 194,
+      "actual": 194,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 196,
+      "axis": 1,
+      "target": 205,
+      "actual": 205,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 196,
+      "axis": 2,
+      "target": 200,
+      "actual": 200,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 197,
+      "axis": 0,
+      "target": 194,
+      "actual": 194,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 197,
+      "axis": 2,
+      "target": 203,
+      "actual": 203,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 200,
+      "axis": 0,
+      "target": 196,
+      "actual": 196,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 200,
+      "axis": 2,
+      "target": 195,
+      "actual": 195,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 201,
+      "axis": 0,
+      "target": 202,
+      "actual": 202,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 201,
+      "axis": 1,
+      "target": 191,
+      "actual": 191,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 201,
+      "axis": 2,
+      "target": 202,
+      "actual": 202,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 202,
+      "axis": 0,
+      "target": 201,
+      "actual": 201,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 202,
+      "axis": 1,
+      "target": 341,
+      "actual": 341,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 202,
+      "axis": 2,
+      "target": 201,
+      "actual": 201,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 203,
+      "axis": 0,
+      "target": 204,
+      "actual": 204,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 203,
+      "axis": 1,
+      "target": 215,
+      "actual": 215,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 203,
+      "axis": 2,
+      "target": 205,
+      "actual": 205,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 204,
+      "axis": 0,
+      "target": 206,
+      "actual": 206,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 204,
+      "axis": 1,
+      "target": 195,
+      "actual": 195,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 204,
+      "axis": 2,
+      "target": 203,
+      "actual": 203,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 205,
+      "axis": 0,
+      "target": 203,
+      "actual": 203,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 205,
+      "axis": 1,
+      "target": 217,
+      "actual": 217,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 205,
+      "axis": 2,
+      "target": 206,
+      "actual": 206,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 206,
+      "axis": 0,
+      "target": 205,
+      "actual": 205,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 206,
+      "axis": 1,
+      "target": 208,
+      "actual": 208,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 206,
+      "axis": 2,
+      "target": 204,
+      "actual": 204,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 207,
+      "axis": 0,
+      "target": 208,
+      "actual": 208,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 207,
+      "axis": 1,
+      "target": 203,
+      "actual": 203,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 207,
+      "axis": 2,
+      "target": 208,
+      "actual": 208,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 208,
+      "axis": 0,
+      "target": 207,
+      "actual": 207,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 208,
+      "axis": 2,
+      "target": 207,
+      "actual": 207,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 209,
+      "axis": 0,
+      "target": 210,
+      "actual": 210,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 209,
+      "axis": 2,
+      "target": 211,
+      "actual": 211,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 210,
+      "axis": 0,
+      "target": 212,
+      "actual": 212,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 210,
+      "axis": 1,
+      "target": 191,
+      "actual": 191,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 210,
+      "axis": 2,
+      "target": 209,
+      "actual": 209,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 211,
+      "axis": 0,
+      "target": 209,
+      "actual": 209,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 211,
+      "axis": 2,
+      "target": 212,
+      "actual": 212,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 212,
+      "axis": 0,
+      "target": 211,
+      "actual": 211,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 212,
+      "axis": 1,
+      "target": 218,
+      "actual": 218,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 212,
+      "axis": 2,
+      "target": 210,
+      "actual": 210,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 213,
+      "axis": 0,
+      "target": 214,
+      "actual": 214,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 213,
+      "axis": 1,
+      "target": 340,
+      "actual": 340,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 213,
+      "axis": 2,
+      "target": 214,
+      "actual": 214,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 214,
+      "axis": 0,
+      "target": 213,
+      "actual": 213,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 214,
+      "axis": 1,
+      "target": 218,
+      "actual": 218,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 214,
+      "axis": 2,
+      "target": 213,
+      "actual": 213,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 215,
+      "axis": 0,
+      "target": 216,
+      "actual": 216,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 215,
+      "axis": 1,
+      "target": 213,
+      "actual": 213,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 215,
+      "axis": 2,
+      "target": 217,
+      "actual": 217,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 216,
+      "axis": 0,
+      "target": 218,
+      "actual": 218,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 216,
+      "axis": 2,
+      "target": 215,
+      "actual": 215,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 217,
+      "axis": 0,
+      "target": 215,
+      "actual": 215,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 217,
+      "axis": 2,
+      "target": 218,
+      "actual": 218,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 218,
+      "axis": 0,
+      "target": 217,
+      "actual": 217,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 218,
+      "axis": 1,
+      "target": 206,
+      "actual": 206,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 218,
+      "axis": 2,
+      "target": 216,
+      "actual": 216,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 219,
+      "axis": 0,
+      "target": 220,
+      "actual": 220,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 219,
+      "axis": 2,
+      "target": 221,
+      "actual": 221,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 220,
+      "axis": 0,
+      "target": 223,
+      "actual": 223,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 220,
+      "axis": 2,
+      "target": 219,
+      "actual": 219,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 221,
+      "axis": 0,
+      "target": 219,
+      "actual": 219,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 221,
+      "axis": 1,
+      "target": 243,
+      "actual": 243,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 221,
+      "axis": 2,
+      "target": 223,
+      "actual": 223,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 222,
+      "axis": 0,
+      "target": 221,
+      "actual": 221,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 223,
+      "axis": 0,
+      "target": 221,
+      "actual": 221,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 223,
+      "axis": 1,
+      "target": 222,
+      "actual": 222,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 223,
+      "axis": 2,
+      "target": 220,
+      "actual": 220,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 224,
+      "axis": 1,
+      "target": 225,
+      "actual": 225,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 225,
+      "axis": 0,
+      "target": 226,
+      "actual": 226,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 225,
+      "axis": 1,
+      "target": 229,
+      "actual": 229,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 225,
+      "axis": 2,
+      "target": 227,
+      "actual": 227,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 226,
+      "axis": 0,
+      "target": 228,
+      "actual": 228,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 226,
+      "axis": 2,
+      "target": 225,
+      "actual": 225,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 227,
+      "axis": 0,
+      "target": 225,
+      "actual": 225,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 227,
+      "axis": 2,
+      "target": 228,
+      "actual": 228,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 228,
+      "axis": 0,
+      "target": 227,
+      "actual": 227,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 228,
+      "axis": 2,
+      "target": 226,
+      "actual": 226,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 229,
+      "axis": 0,
+      "target": 230,
+      "actual": 230,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 229,
+      "axis": 1,
+      "target": 233,
+      "actual": 233,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 229,
+      "axis": 2,
+      "target": 231,
+      "actual": 231,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 230,
+      "axis": 0,
+      "target": 232,
+      "actual": 232,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 230,
+      "axis": 2,
+      "target": 229,
+      "actual": 229,
+      "x": 593,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 231,
+      "axis": 0,
+      "target": 229,
+      "actual": 229,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 231,
+      "axis": 2,
+      "target": 232,
+      "actual": 232,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 232,
+      "axis": 0,
+      "target": 231,
+      "actual": 231,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 232,
+      "axis": 1,
+      "target": 228,
+      "actual": 228,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 232,
+      "axis": 2,
+      "target": 230,
+      "actual": 230,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 233,
+      "axis": 0,
+      "target": 234,
+      "actual": 234,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 233,
+      "axis": 2,
+      "target": 235,
+      "actual": 235,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 234,
+      "axis": 0,
+      "target": 236,
+      "actual": 236,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 234,
+      "axis": 2,
+      "target": 233,
+      "actual": 233,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 235,
+      "axis": 0,
+      "target": 233,
+      "actual": 233,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 235,
+      "axis": 2,
+      "target": 236,
+      "actual": 236,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 236,
+      "axis": 0,
+      "target": 235,
+      "actual": 235,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 236,
+      "axis": 1,
+      "target": 232,
+      "actual": 232,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 236,
+      "axis": 2,
+      "target": 234,
+      "actual": 234,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 237,
+      "axis": 0,
+      "target": 238,
+      "actual": 238,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 237,
+      "axis": 1,
+      "target": 241,
+      "actual": 241,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 237,
+      "axis": 2,
+      "target": 239,
+      "actual": 239,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 238,
+      "axis": 0,
+      "target": 240,
+      "actual": 240,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 238,
+      "axis": 1,
+      "target": 222,
+      "actual": 222,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 238,
+      "axis": 2,
+      "target": 237,
+      "actual": 237,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 239,
+      "axis": 0,
+      "target": 237,
+      "actual": 237,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 239,
+      "axis": 2,
+      "target": 240,
+      "actual": 240,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 240,
+      "axis": 0,
+      "target": 239,
+      "actual": 239,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 240,
+      "axis": 2,
+      "target": 238,
+      "actual": 238,
+      "x": 615,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 241,
+      "axis": 0,
+      "target": 242,
+      "actual": 242,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 241,
+      "axis": 1,
+      "target": 245,
+      "actual": 245,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 241,
+      "axis": 2,
+      "target": 243,
+      "actual": 243,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 242,
+      "axis": 0,
+      "target": 244,
+      "actual": 244,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 242,
+      "axis": 1,
+      "target": 220,
+      "actual": 220,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 242,
+      "axis": 2,
+      "target": 241,
+      "actual": 241,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 243,
+      "axis": 0,
+      "target": 241,
+      "actual": 241,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 243,
+      "axis": 1,
+      "target": 251,
+      "actual": 251,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 243,
+      "axis": 2,
+      "target": 244,
+      "actual": 244,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 244,
+      "axis": 0,
+      "target": 243,
+      "actual": 243,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 244,
+      "axis": 1,
+      "target": 240,
+      "actual": 240,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 244,
+      "axis": 2,
+      "target": 242,
+      "actual": 242,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 245,
+      "axis": 0,
+      "target": 246,
+      "actual": 246,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 245,
+      "axis": 2,
+      "target": 247,
+      "actual": 247,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 246,
+      "axis": 0,
+      "target": 248,
+      "actual": 248,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 246,
+      "axis": 2,
+      "target": 245,
+      "actual": 245,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 247,
+      "axis": 0,
+      "target": 245,
+      "actual": 245,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 247,
+      "axis": 2,
+      "target": 248,
+      "actual": 248,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 248,
+      "axis": 0,
+      "target": 247,
+      "actual": 247,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 248,
+      "axis": 1,
+      "target": 244,
+      "actual": 244,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 248,
+      "axis": 2,
+      "target": 246,
+      "actual": 246,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 249,
+      "axis": 0,
+      "target": 250,
+      "actual": 250,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 249,
+      "axis": 2,
+      "target": 251,
+      "actual": 251,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 250,
+      "axis": 0,
+      "target": 410,
+      "actual": 410,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 250,
+      "axis": 1,
+      "target": 242,
+      "actual": 242,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 250,
+      "axis": 2,
+      "target": 249,
+      "actual": 249,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 251,
+      "axis": 0,
+      "target": 249,
+      "actual": 249,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 251,
+      "axis": 2,
+      "target": 410,
+      "actual": 410,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 252,
+      "axis": 0,
+      "target": 253,
+      "actual": 253,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 252,
+      "axis": 1,
+      "target": 254,
+      "actual": 254,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 252,
+      "axis": 2,
+      "target": 253,
+      "actual": 253,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 253,
+      "axis": 0,
+      "target": 252,
+      "actual": 252,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 253,
+      "axis": 1,
+      "target": 106,
+      "actual": 106,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 253,
+      "axis": 2,
+      "target": 252,
+      "actual": 252,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 254,
+      "axis": 0,
+      "target": 261,
+      "actual": 261,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 254,
+      "axis": 1,
+      "target": 260,
+      "actual": 260,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 254,
+      "axis": 2,
+      "target": 255,
+      "actual": 255,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 255,
+      "axis": 0,
+      "target": 254,
+      "actual": 254,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 255,
+      "axis": 1,
+      "target": 258,
+      "actual": 258,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 255,
+      "axis": 2,
+      "target": 256,
+      "actual": 256,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 256,
+      "axis": 0,
+      "target": 255,
+      "actual": 255,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 256,
+      "axis": 1,
+      "target": 253,
+      "actual": 253,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 256,
+      "axis": 2,
+      "target": 261,
+      "actual": 261,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 257,
+      "axis": 0,
+      "target": 261,
+      "actual": 261,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 257,
+      "axis": 1,
+      "target": 297,
+      "actual": 297,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 257,
+      "axis": 2,
+      "target": 258,
+      "actual": 258,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 258,
+      "axis": 0,
+      "target": 257,
+      "actual": 257,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 258,
+      "axis": 1,
+      "target": 294,
+      "actual": 294,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 258,
+      "axis": 2,
+      "target": 259,
+      "actual": 259,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 259,
+      "axis": 0,
+      "target": 258,
+      "actual": 258,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 259,
+      "axis": 1,
+      "target": 291,
+      "actual": 291,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 259,
+      "axis": 2,
+      "target": 261,
+      "actual": 261,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 260,
+      "axis": 0,
+      "target": 262,
+      "actual": 262,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 260,
+      "axis": 1,
+      "target": 113,
+      "actual": 113,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 260,
+      "axis": 2,
+      "target": 262,
+      "actual": 262,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 261,
+      "axis": 0,
+      "target": 256,
+      "actual": 256,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 261,
+      "axis": 1,
+      "target": 362,
+      "actual": 362,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 261,
+      "axis": 2,
+      "target": 254,
+      "actual": 254,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 262,
+      "axis": 0,
+      "target": 260,
+      "actual": 260,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 262,
+      "axis": 1,
+      "target": 256,
+      "actual": 256,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 262,
+      "axis": 2,
+      "target": 260,
+      "actual": 260,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 263,
+      "axis": 0,
+      "target": 266,
+      "actual": 266,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 263,
+      "axis": 2,
+      "target": 271,
+      "actual": 271,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 266,
+      "axis": 0,
+      "target": 273,
+      "actual": 273,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 266,
+      "axis": 1,
+      "target": 268,
+      "actual": 268,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 266,
+      "axis": 2,
+      "target": 263,
+      "actual": 263,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 268,
+      "axis": 0,
+      "target": 273,
+      "actual": 273,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 268,
+      "axis": 2,
+      "target": 263,
+      "actual": 263,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 27,
+      "axis": 0,
+      "target": 28,
+      "actual": 28,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 27,
+      "axis": 2,
+      "target": 30,
+      "actual": 30,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 271,
+      "axis": 0,
+      "target": 263,
+      "actual": 263,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 271,
+      "axis": 1,
+      "target": 298,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 271,
+      "axis": 2,
+      "target": 273,
+      "actual": 273,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 273,
+      "axis": 0,
+      "target": 271,
+      "actual": 271,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 273,
+      "axis": 2,
+      "target": 266,
+      "actual": 266,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 276,
+      "axis": 0,
+      "target": 279,
+      "actual": 279,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 276,
+      "axis": 2,
+      "target": 284,
+      "actual": 284,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 279,
+      "axis": 0,
+      "target": 286,
+      "actual": 286,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 279,
+      "axis": 1,
+      "target": 281,
+      "actual": 281,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 279,
+      "axis": 2,
+      "target": 276,
+      "actual": 276,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 28,
+      "axis": 1,
+      "target": 29,
+      "actual": 29,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 28,
+      "axis": 2,
+      "target": 27,
+      "actual": 27,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 281,
+      "axis": 0,
+      "target": 286,
+      "actual": 286,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 281,
+      "axis": 2,
+      "target": 276,
+      "actual": 276,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 284,
+      "axis": 0,
+      "target": 276,
+      "actual": 276,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 284,
+      "axis": 1,
+      "target": 289,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 284,
+      "axis": 2,
+      "target": 286,
+      "actual": 286,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 286,
+      "axis": 0,
+      "target": 284,
+      "actual": 284,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 286,
+      "axis": 2,
+      "target": 279,
+      "actual": 279,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 289,
+      "axis": 0,
+      "target": 290,
+      "actual": 290,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 289,
+      "axis": 2,
+      "target": 291,
+      "actual": 291,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 29,
+      "axis": 2,
+      "target": 27,
+      "actual": 27,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 290,
+      "axis": 0,
+      "target": 292,
+      "actual": 292,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 290,
+      "axis": 1,
+      "target": 257,
+      "actual": 257,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 290,
+      "axis": 2,
+      "target": 289,
+      "actual": 289,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 291,
+      "axis": 0,
+      "target": 289,
+      "actual": 289,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 291,
+      "axis": 1,
+      "target": 331,
+      "actual": 331,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 291,
+      "axis": 2,
+      "target": 292,
+      "actual": 292,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 292,
+      "axis": 0,
+      "target": 291,
+      "actual": 291,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 292,
+      "axis": 1,
+      "target": 279,
+      "actual": 279,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 292,
+      "axis": 2,
+      "target": 290,
+      "actual": 290,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 293,
+      "axis": 0,
+      "target": 294,
+      "actual": 294,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 293,
+      "axis": 1,
+      "target": 261,
+      "actual": 261,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 293,
+      "axis": 2,
+      "target": 294,
+      "actual": 294,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 294,
+      "axis": 0,
+      "target": 293,
+      "actual": 293,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 294,
+      "axis": 2,
+      "target": 293,
+      "actual": 293,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 295,
+      "axis": 0,
+      "target": 296,
+      "actual": 296,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 295,
+      "axis": 1,
+      "target": 266,
+      "actual": 266,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 295,
+      "axis": 2,
+      "target": 297,
+      "actual": 297,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 296,
+      "axis": 0,
+      "target": 298,
+      "actual": 298,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 296,
+      "axis": 1,
+      "target": 259,
+      "actual": 259,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 296,
+      "axis": 2,
+      "target": 295,
+      "actual": 295,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 297,
+      "axis": 0,
+      "target": 295,
+      "actual": 295,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 297,
+      "axis": 1,
+      "target": 413,
+      "actual": 413,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 297,
+      "axis": 2,
+      "target": 298,
+      "actual": 298,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 298,
+      "axis": 0,
+      "target": 297,
+      "actual": 297,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 298,
+      "axis": 2,
+      "target": 296,
+      "actual": 296,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 299,
+      "axis": 0,
+      "target": 302,
+      "actual": 302,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 299,
+      "axis": 2,
+      "target": 307,
+      "actual": 307,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 30,
+      "axis": 0,
+      "target": 27,
+      "actual": 27,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 302,
+      "axis": 0,
+      "target": 309,
+      "actual": 309,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 302,
+      "axis": 1,
+      "target": 304,
+      "actual": 304,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 302,
+      "axis": 2,
+      "target": 299,
+      "actual": 299,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 304,
+      "axis": 0,
+      "target": 309,
+      "actual": 309,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 304,
+      "axis": 2,
+      "target": 299,
+      "actual": 299,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 307,
+      "axis": 0,
+      "target": 299,
+      "actual": 299,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 307,
+      "axis": 1,
+      "target": 414,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 307,
+      "axis": 2,
+      "target": 309,
+      "actual": 309,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 309,
+      "axis": 0,
+      "target": 307,
+      "actual": 307,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 309,
+      "axis": 2,
+      "target": 302,
+      "actual": 302,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 312,
+      "axis": 0,
+      "target": 313,
+      "actual": 313,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 312,
+      "axis": 1,
+      "target": 337,
+      "actual": 337,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 312,
+      "axis": 2,
+      "target": 314,
+      "actual": 314,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 313,
+      "axis": 0,
+      "target": 315,
+      "actual": 315,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 313,
+      "axis": 2,
+      "target": 312,
+      "actual": 312,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 314,
+      "axis": 0,
+      "target": 312,
+      "actual": 312,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 314,
+      "axis": 2,
+      "target": 315,
+      "actual": 315,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 315,
+      "axis": 0,
+      "target": 314,
+      "actual": 314,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 315,
+      "axis": 1,
+      "target": 335,
+      "actual": 335,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 315,
+      "axis": 2,
+      "target": 313,
+      "actual": 313,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 316,
+      "axis": 0,
+      "target": 319,
+      "actual": 319,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 316,
+      "axis": 2,
+      "target": 324,
+      "actual": 324,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 319,
+      "axis": 0,
+      "target": 326,
+      "actual": 326,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 319,
+      "axis": 1,
+      "target": 321,
+      "actual": 321,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 319,
+      "axis": 2,
+      "target": 316,
+      "actual": 316,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 32,
+      "axis": 0,
+      "target": 33,
+      "actual": 33,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 32,
+      "axis": 1,
+      "target": 36,
+      "actual": 36,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 32,
+      "axis": 2,
+      "target": 34,
+      "actual": 34,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 321,
+      "axis": 0,
+      "target": 326,
+      "actual": 326,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 321,
+      "axis": 2,
+      "target": 316,
+      "actual": 316,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 324,
+      "axis": 0,
+      "target": 316,
+      "actual": 316,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 324,
+      "axis": 1,
+      "target": 329,
+      "actual": 429,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 324,
+      "axis": 2,
+      "target": 326,
+      "actual": 326,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 326,
+      "axis": 0,
+      "target": 324,
+      "actual": 324,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 326,
+      "axis": 2,
+      "target": 319,
+      "actual": 319,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 329,
+      "axis": 0,
+      "target": 330,
+      "actual": 330,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 329,
+      "axis": 2,
+      "target": 331,
+      "actual": 331,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 33,
+      "axis": 0,
+      "target": 35,
+      "actual": 35,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 33,
+      "axis": 2,
+      "target": 32,
+      "actual": 32,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 330,
+      "axis": 0,
+      "target": 332,
+      "actual": 332,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 330,
+      "axis": 1,
+      "target": 290,
+      "actual": 290,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 330,
+      "axis": 2,
+      "target": 329,
+      "actual": 329,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 331,
+      "axis": 0,
+      "target": 329,
+      "actual": 329,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 331,
+      "axis": 2,
+      "target": 332,
+      "actual": 332,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 332,
+      "axis": 0,
+      "target": 331,
+      "actual": 331,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 332,
+      "axis": 1,
+      "target": 319,
+      "actual": 319,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 332,
+      "axis": 2,
+      "target": 330,
+      "actual": 330,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 333,
+      "axis": 0,
+      "target": 334,
+      "actual": 334,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 333,
+      "axis": 2,
+      "target": 335,
+      "actual": 335,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 334,
+      "axis": 0,
+      "target": 336,
+      "actual": 336,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 334,
+      "axis": 1,
+      "target": 312,
+      "actual": 312,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 334,
+      "axis": 2,
+      "target": 333,
+      "actual": 333,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 335,
+      "axis": 0,
+      "target": 333,
+      "actual": 333,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 335,
+      "axis": 1,
+      "target": 345,
+      "actual": 345,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 335,
+      "axis": 2,
+      "target": 336,
+      "actual": 336,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 336,
+      "axis": 0,
+      "target": 335,
+      "actual": 335,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 336,
+      "axis": 2,
+      "target": 334,
+      "actual": 334,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 337,
+      "axis": 0,
+      "target": 416,
+      "actual": 416,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 337,
+      "axis": 1,
+      "target": 341,
+      "actual": 341,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 337,
+      "axis": 2,
+      "target": 338,
+      "actual": 338,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 338,
+      "axis": 0,
+      "target": 337,
+      "actual": 337,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 338,
+      "axis": 2,
+      "target": 415,
+      "actual": 415,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 339,
+      "axis": 0,
+      "target": 340,
+      "actual": 340,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 339,
+      "axis": 2,
+      "target": 341,
+      "actual": 341,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 34,
+      "axis": 0,
+      "target": 32,
+      "actual": 32,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 34,
+      "axis": 1,
+      "target": 48,
+      "actual": 48,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 34,
+      "axis": 2,
+      "target": 35,
+      "actual": 35,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 340,
+      "axis": 0,
+      "target": 342,
+      "actual": 342,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 340,
+      "axis": 1,
+      "target": 415,
+      "actual": 415,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 340,
+      "axis": 2,
+      "target": 339,
+      "actual": 339,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 341,
+      "axis": 0,
+      "target": 339,
+      "actual": 339,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 341,
+      "axis": 1,
+      "target": 348,
+      "actual": 348,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 341,
+      "axis": 2,
+      "target": 342,
+      "actual": 342,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 342,
+      "axis": 0,
+      "target": 341,
+      "actual": 341,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 342,
+      "axis": 2,
+      "target": 340,
+      "actual": 340,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 343,
+      "axis": 0,
+      "target": 344,
+      "actual": 344,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 343,
+      "axis": 2,
+      "target": 345,
+      "actual": 345,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 344,
+      "axis": 0,
+      "target": 417,
+      "actual": 417,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 344,
+      "axis": 1,
+      "target": 334,
+      "actual": 334,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 344,
+      "axis": 2,
+      "target": 343,
+      "actual": 343,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 345,
+      "axis": 0,
+      "target": 343,
+      "actual": 343,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 345,
+      "axis": 1,
+      "target": 346,
+      "actual": 346,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 345,
+      "axis": 2,
+      "target": 417,
+      "actual": 417,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 346,
+      "axis": 0,
+      "target": 346,
+      "actual": 346,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 346,
+      "axis": 1,
+      "target": 340,
+      "actual": 340,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 346,
+      "axis": 2,
+      "target": 418,
+      "actual": 418,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 347,
+      "axis": 0,
+      "target": 348,
+      "actual": 348,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 347,
+      "axis": 2,
+      "target": 346,
+      "actual": 346,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 348,
+      "axis": 0,
+      "target": 418,
+      "actual": 418,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 348,
+      "axis": 1,
+      "target": 344,
+      "actual": 344,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 348,
+      "axis": 2,
+      "target": 347,
+      "actual": 347,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 349,
+      "axis": 0,
+      "target": 350,
+      "actual": 350,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 349,
+      "axis": 1,
+      "target": 351,
+      "actual": 351,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 349,
+      "axis": 2,
+      "target": 350,
+      "actual": 350,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 35,
+      "axis": 0,
+      "target": 34,
+      "actual": 34,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 35,
+      "axis": 2,
+      "target": 33,
+      "actual": 33,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 350,
+      "axis": 0,
+      "target": 349,
+      "actual": 349,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 350,
+      "axis": 1,
+      "target": 45,
+      "actual": 45,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 350,
+      "axis": 2,
+      "target": 349,
+      "actual": 349,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 351,
+      "axis": 0,
+      "target": 404,
+      "actual": 404,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 351,
+      "axis": 1,
+      "target": 354,
+      "actual": 354,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 351,
+      "axis": 2,
+      "target": 352,
+      "actual": 352,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 352,
+      "axis": 0,
+      "target": 351,
+      "actual": 351,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 352,
+      "axis": 1,
+      "target": 419,
+      "actual": 419,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 352,
+      "axis": 2,
+      "target": 353,
+      "actual": 353,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 353,
+      "axis": 0,
+      "target": 352,
+      "actual": 352,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 353,
+      "axis": 1,
+      "target": 350,
+      "actual": 350,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 353,
+      "axis": 2,
+      "target": 404,
+      "actual": 404,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 354,
+      "axis": 0,
+      "target": 355,
+      "actual": 355,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 354,
+      "axis": 1,
+      "target": 356,
+      "actual": 356,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 354,
+      "axis": 2,
+      "target": 355,
+      "actual": 355,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 355,
+      "axis": 0,
+      "target": 354,
+      "actual": 354,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 355,
+      "axis": 1,
+      "target": 353,
+      "actual": 353,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 355,
+      "axis": 2,
+      "target": 354,
+      "actual": 354,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 356,
+      "axis": 0,
+      "target": 357,
+      "actual": 357,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 356,
+      "axis": 2,
+      "target": 357,
+      "actual": 357,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 357,
+      "axis": 0,
+      "target": 356,
+      "actual": 356,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 357,
+      "axis": 1,
+      "target": 355,
+      "actual": 355,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 357,
+      "axis": 2,
+      "target": 356,
+      "actual": 356,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 358,
+      "axis": 0,
+      "target": 359,
+      "actual": 359,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 358,
+      "axis": 2,
+      "target": 419,
+      "actual": 419,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 359,
+      "axis": 0,
+      "target": 360,
+      "actual": 360,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 359,
+      "axis": 1,
+      "target": 404,
+      "actual": 404,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 359,
+      "axis": 2,
+      "target": 358,
+      "actual": 358,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 36,
+      "axis": 0,
+      "target": 37,
+      "actual": 37,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 36,
+      "axis": 1,
+      "target": 40,
+      "actual": 40,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 36,
+      "axis": 2,
+      "target": 38,
+      "actual": 38,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 360,
+      "axis": 0,
+      "target": 419,
+      "actual": 419,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 360,
+      "axis": 2,
+      "target": 359,
+      "actual": 359,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 361,
+      "axis": 0,
+      "target": 362,
+      "actual": 362,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 361,
+      "axis": 1,
+      "target": 365,
+      "actual": 365,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 361,
+      "axis": 2,
+      "target": 363,
+      "actual": 363,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 362,
+      "axis": 0,
+      "target": 364,
+      "actual": 364,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 362,
+      "axis": 2,
+      "target": 361,
+      "actual": 361,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 363,
+      "axis": 0,
+      "target": 361,
+      "actual": 361,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 363,
+      "axis": 1,
+      "target": 255,
+      "actual": 255,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 363,
+      "axis": 2,
+      "target": 361,
+      "actual": 361,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 364,
+      "axis": 0,
+      "target": 363,
+      "actual": 363,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 364,
+      "axis": 1,
+      "target": 373,
+      "actual": 373,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 364,
+      "axis": 2,
+      "target": 362,
+      "actual": 362,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 365,
+      "axis": 0,
+      "target": 366,
+      "actual": 366,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 365,
+      "axis": 1,
+      "target": 383,
+      "actual": 383,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 366,
+      "axis": 0,
+      "target": 368,
+      "actual": 368,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 366,
+      "axis": 2,
+      "target": 365,
+      "actual": 365,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 367,
+      "axis": 1,
+      "target": 364,
+      "actual": 364,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 367,
+      "axis": 2,
+      "target": 368,
+      "actual": 368,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 368,
+      "axis": 0,
+      "target": 367,
+      "actual": 367,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 368,
+      "axis": 1,
+      "target": 371,
+      "actual": 371,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 368,
+      "axis": 2,
+      "target": 366,
+      "actual": 366,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 369,
+      "axis": 0,
+      "target": 370,
+      "actual": 370,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 369,
+      "axis": 1,
+      "target": 365,
+      "actual": 365,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 369,
+      "axis": 2,
+      "target": 420,
+      "actual": 420,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 37,
+      "axis": 0,
+      "target": 39,
+      "actual": 39,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 37,
+      "axis": 2,
+      "target": 36,
+      "actual": 36,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 370,
+      "axis": 0,
+      "target": 371,
+      "actual": 371,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 370,
+      "axis": 2,
+      "target": 369,
+      "actual": 369,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 371,
+      "axis": 0,
+      "target": 420,
+      "actual": 420,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 371,
+      "axis": 1,
+      "target": 373,
+      "actual": 373,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 371,
+      "axis": 2,
+      "target": 370,
+      "actual": 370,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 372,
+      "axis": 0,
+      "target": 374,
+      "actual": 374,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 372,
+      "axis": 1,
+      "target": 369,
+      "actual": 369,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 372,
+      "axis": 2,
+      "target": 375,
+      "actual": 375,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 373,
+      "axis": 1,
+      "target": 381,
+      "actual": 381,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 373,
+      "axis": 2,
+      "target": 374,
+      "actual": 374,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 374,
+      "axis": 0,
+      "target": 373,
+      "actual": 373,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 374,
+      "axis": 2,
+      "target": 372,
+      "actual": 372,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 375,
+      "axis": 0,
+      "target": 372,
+      "actual": 372,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 375,
+      "axis": 1,
+      "target": 361,
+      "actual": 361,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 376,
+      "axis": 0,
+      "target": 377,
+      "actual": 377,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 376,
+      "axis": 2,
+      "target": 378,
+      "actual": 378,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 377,
+      "axis": 0,
+      "target": 379,
+      "actual": 379,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 377,
+      "axis": 2,
+      "target": 376,
+      "actual": 376,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 378,
+      "axis": 0,
+      "target": 376,
+      "actual": 376,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 378,
+      "axis": 1,
+      "target": 382,
+      "actual": 382,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 378,
+      "axis": 2,
+      "target": 379,
+      "actual": 379,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 379,
+      "axis": 0,
+      "target": 378,
+      "actual": 378,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 379,
+      "axis": 2,
+      "target": 377,
+      "actual": 377,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 38,
+      "axis": 0,
+      "target": 36,
+      "actual": 36,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 38,
+      "axis": 2,
+      "target": 39,
+      "actual": 39,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 380,
+      "axis": 0,
+      "target": 381,
+      "actual": 381,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 380,
+      "axis": 2,
+      "target": 382,
+      "actual": 382,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 381,
+      "axis": 1,
+      "target": 386,
+      "actual": 386,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 381,
+      "axis": 2,
+      "target": 380,
+      "actual": 380,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 382,
+      "axis": 0,
+      "target": 380,
+      "actual": 380,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 382,
+      "axis": 1,
+      "target": 372,
+      "actual": 372,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 383,
+      "axis": 0,
+      "target": 385,
+      "actual": 385,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 383,
+      "axis": 1,
+      "target": 389,
+      "actual": 389,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 384,
+      "axis": 1,
+      "target": 368,
+      "actual": 368,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 384,
+      "axis": 2,
+      "target": 385,
+      "actual": 385,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 385,
+      "axis": 0,
+      "target": 384,
+      "actual": 384,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 385,
+      "axis": 2,
+      "target": 383,
+      "actual": 383,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 386,
+      "axis": 0,
+      "target": 387,
+      "actual": 387,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 386,
+      "axis": 1,
+      "target": 384,
+      "actual": 384,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 386,
+      "axis": 2,
+      "target": 388,
+      "actual": 388,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 387,
+      "axis": 0,
+      "target": 389,
+      "actual": 389,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 387,
+      "axis": 2,
+      "target": 386,
+      "actual": 386,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 388,
+      "axis": 0,
+      "target": 386,
+      "actual": 386,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 388,
+      "axis": 2,
+      "target": 389,
+      "actual": 389,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 389,
+      "axis": 0,
+      "target": 388,
+      "actual": 388,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 389,
+      "axis": 1,
+      "target": 382,
+      "actual": 382,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 389,
+      "axis": 2,
+      "target": 387,
+      "actual": 387,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 39,
+      "axis": 0,
+      "target": 38,
+      "actual": 38,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 39,
+      "axis": 1,
+      "target": 35,
+      "actual": 35,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 39,
+      "axis": 2,
+      "target": 37,
+      "actual": 37,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 40,
+      "axis": 0,
+      "target": 41,
+      "actual": 41,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 40,
+      "axis": 1,
+      "target": 44,
+      "actual": 44,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 40,
+      "axis": 2,
+      "target": 42,
+      "actual": 42,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 403,
+      "axis": 0,
+      "target": 60,
+      "actual": 60,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 403,
+      "axis": 2,
+      "target": 58,
+      "actual": 58,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 404,
+      "axis": 0,
+      "target": 353,
+      "actual": 353,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 404,
+      "axis": 2,
+      "target": 351,
+      "actual": 351,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 405,
+      "axis": 0,
+      "target": 86,
+      "actual": 86,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 405,
+      "axis": 2,
+      "target": 87,
+      "actual": 87,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 407,
+      "axis": 0,
+      "target": 239,
+      "actual": 239,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 41,
+      "axis": 0,
+      "target": 43,
+      "actual": 43,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 41,
+      "axis": 2,
+      "target": 40,
+      "actual": 40,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 410,
+      "axis": 0,
+      "target": 251,
+      "actual": 251,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 410,
+      "axis": 2,
+      "target": 250,
+      "actual": 250,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 411,
+      "axis": 0,
+      "target": 414,
+      "actual": 414,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 411,
+      "axis": 1,
+      "target": 296,
+      "actual": 296,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 411,
+      "axis": 2,
+      "target": 412,
+      "actual": 412,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 412,
+      "axis": 0,
+      "target": 411,
+      "actual": 411,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 412,
+      "axis": 1,
+      "target": 302,
+      "actual": 302,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 412,
+      "axis": 2,
+      "target": 413,
+      "actual": 413,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 413,
+      "axis": 0,
+      "target": 412,
+      "actual": 412,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 413,
+      "axis": 2,
+      "target": 414,
+      "actual": 414,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 414,
+      "axis": 0,
+      "target": 413,
+      "actual": 413,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 414,
+      "axis": 2,
+      "target": 411,
+      "actual": 411,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 415,
+      "axis": 0,
+      "target": 338,
+      "actual": 338,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 415,
+      "axis": 1,
+      "target": 315,
+      "actual": 315,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 415,
+      "axis": 2,
+      "target": 416,
+      "actual": 416,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 416,
+      "axis": 0,
+      "target": 415,
+      "actual": 415,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 416,
+      "axis": 2,
+      "target": 337,
+      "actual": 337,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 417,
+      "axis": 0,
+      "target": 345,
+      "actual": 345,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 417,
+      "axis": 2,
+      "target": 344,
+      "actual": 344,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 418,
+      "axis": 0,
+      "target": 345,
+      "actual": 345,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 418,
+      "axis": 2,
+      "target": 344,
+      "actual": 344,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 419,
+      "axis": 0,
+      "target": 358,
+      "actual": 358,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 419,
+      "axis": 2,
+      "target": 360,
+      "actual": 360,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 42,
+      "axis": 0,
+      "target": 40,
+      "actual": 40,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 42,
+      "axis": 1,
+      "target": 91,
+      "actual": 91,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 42,
+      "axis": 2,
+      "target": 43,
+      "actual": 43,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 420,
+      "axis": 0,
+      "target": 369,
+      "actual": 369,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 420,
+      "axis": 2,
+      "target": 371,
+      "actual": 371,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 421,
+      "axis": 0,
+      "target": 44,
+      "actual": 44,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 421,
+      "axis": 2,
+      "target": 43,
+      "actual": 43,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 43,
+      "axis": 0,
+      "target": 42,
+      "actual": 42,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 43,
+      "axis": 1,
+      "target": 39,
+      "actual": 39,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 43,
+      "axis": 2,
+      "target": 41,
+      "actual": 41,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 430,
+      "axis": 0,
+      "target": 43,
+      "actual": 43,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 430,
+      "axis": 2,
+      "target": 44,
+      "actual": 44,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 44,
+      "axis": 0,
+      "target": 430,
+      "actual": 430,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 44,
+      "axis": 2,
+      "target": 421,
+      "actual": 421,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 45,
+      "axis": 0,
+      "target": 349,
+      "actual": 349,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 45,
+      "axis": 1,
+      "target": 43,
+      "actual": 43,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 45,
+      "axis": 2,
+      "target": 349,
+      "actual": 349,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 46,
+      "axis": 0,
+      "target": 47,
+      "actual": 47,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 46,
+      "axis": 2,
+      "target": 48,
+      "actual": 48,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 47,
+      "axis": 0,
+      "target": 49,
+      "actual": 49,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 47,
+      "axis": 1,
+      "target": 33,
+      "actual": 33,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 47,
+      "axis": 2,
+      "target": 46,
+      "actual": 46,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 48,
+      "axis": 0,
+      "target": 46,
+      "actual": 46,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 48,
+      "axis": 1,
+      "target": 52,
+      "actual": 52,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 48,
+      "axis": 2,
+      "target": 49,
+      "actual": 49,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 49,
+      "axis": 0,
+      "target": 48,
+      "actual": 48,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 49,
+      "axis": 2,
+      "target": 47,
+      "actual": 47,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 50,
+      "axis": 0,
+      "target": 51,
+      "actual": 51,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 50,
+      "axis": 2,
+      "target": 52,
+      "actual": 52,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 51,
+      "axis": 0,
+      "target": 53,
+      "actual": 53,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 51,
+      "axis": 1,
+      "target": 47,
+      "actual": 47,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 51,
+      "axis": 2,
+      "target": 50,
+      "actual": 50,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 52,
+      "axis": 0,
+      "target": 50,
+      "actual": 50,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 52,
+      "axis": 1,
+      "target": 56,
+      "actual": 56,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 52,
+      "axis": 2,
+      "target": 53,
+      "actual": 53,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 53,
+      "axis": 0,
+      "target": 52,
+      "actual": 52,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 53,
+      "axis": 2,
+      "target": 51,
+      "actual": 51,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 54,
+      "axis": 0,
+      "target": 55,
+      "actual": 55,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 54,
+      "axis": 1,
+      "target": 58,
+      "actual": 58,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 54,
+      "axis": 2,
+      "target": 56,
+      "actual": 56,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 55,
+      "axis": 0,
+      "target": 57,
+      "actual": 57,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 55,
+      "axis": 1,
+      "target": 51,
+      "actual": 51,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 55,
+      "axis": 2,
+      "target": 54,
+      "actual": 54,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 56,
+      "axis": 0,
+      "target": 54,
+      "actual": 54,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 56,
+      "axis": 2,
+      "target": 57,
+      "actual": 57,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 57,
+      "axis": 0,
+      "target": 56,
+      "actual": 56,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 57,
+      "axis": 2,
+      "target": 55,
+      "actual": 55,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 58,
+      "axis": 0,
+      "target": 403,
+      "actual": 403,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 58,
+      "axis": 1,
+      "target": 77,
+      "actual": 77,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 58,
+      "axis": 2,
+      "target": 59,
+      "actual": 59,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 59,
+      "axis": 0,
+      "target": 58,
+      "actual": 58,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 59,
+      "axis": 2,
+      "target": 60,
+      "actual": 60,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 60,
+      "axis": 0,
+      "target": 59,
+      "actual": 59,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 60,
+      "axis": 1,
+      "target": 57,
+      "actual": 57,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 60,
+      "axis": 2,
+      "target": 403,
+      "actual": 403,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 61,
+      "axis": 0,
+      "target": 62,
+      "actual": 62,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 61,
+      "axis": 2,
+      "target": 62,
+      "actual": 62,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 62,
+      "axis": 0,
+      "target": 61,
+      "actual": 61,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 62,
+      "axis": 1,
+      "target": 59,
+      "actual": 59,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 62,
+      "axis": 2,
+      "target": 61,
+      "actual": 61,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 63,
+      "axis": 0,
+      "target": 64,
+      "actual": 64,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 63,
+      "axis": 2,
+      "target": 64,
+      "actual": 64,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 64,
+      "axis": 0,
+      "target": 63,
+      "actual": 63,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 64,
+      "axis": 1,
+      "target": 59,
+      "actual": 59,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 64,
+      "axis": 2,
+      "target": 63,
+      "actual": 63,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 65,
+      "axis": 0,
+      "target": 66,
+      "actual": 66,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 65,
+      "axis": 1,
+      "target": 73,
+      "actual": 73,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 65,
+      "axis": 2,
+      "target": 67,
+      "actual": 67,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 66,
+      "axis": 0,
+      "target": 68,
+      "actual": 68,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 66,
+      "axis": 2,
+      "target": 65,
+      "actual": 65,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 67,
+      "axis": 0,
+      "target": 65,
+      "actual": 65,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 67,
+      "axis": 2,
+      "target": 68,
+      "actual": 68,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 68,
+      "axis": 0,
+      "target": 67,
+      "actual": 67,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 68,
+      "axis": 1,
+      "target": 72,
+      "actual": 72,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 68,
+      "axis": 2,
+      "target": 66,
+      "actual": 66,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 69,
+      "axis": 0,
+      "target": 70,
+      "actual": 70,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 69,
+      "axis": 1,
+      "target": 65,
+      "actual": 65,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 69,
+      "axis": 2,
+      "target": 71,
+      "actual": 71,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 70,
+      "axis": 0,
+      "target": 72,
+      "actual": 72,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 70,
+      "axis": 2,
+      "target": 69,
+      "actual": 69,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 71,
+      "axis": 0,
+      "target": 69,
+      "actual": 69,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 71,
+      "axis": 2,
+      "target": 72,
+      "actual": 72,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 72,
+      "axis": 0,
+      "target": 71,
+      "actual": 71,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 72,
+      "axis": 2,
+      "target": 70,
+      "actual": 70,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 73,
+      "axis": 0,
+      "target": 74,
+      "actual": 74,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 73,
+      "axis": 2,
+      "target": 75,
+      "actual": 75,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 74,
+      "axis": 0,
+      "target": 76,
+      "actual": 76,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 74,
+      "axis": 2,
+      "target": 73,
+      "actual": 73,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 75,
+      "axis": 0,
+      "target": 73,
+      "actual": 73,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 75,
+      "axis": 2,
+      "target": 76,
+      "actual": 76,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 76,
+      "axis": 0,
+      "target": 75,
+      "actual": 75,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 76,
+      "axis": 1,
+      "target": 68,
+      "actual": 68,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 76,
+      "axis": 2,
+      "target": 74,
+      "actual": 74,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 77,
+      "axis": 0,
+      "target": 78,
+      "actual": 78,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 77,
+      "axis": 2,
+      "target": 79,
+      "actual": 79,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 78,
+      "axis": 0,
+      "target": 80,
+      "actual": 80,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 78,
+      "axis": 1,
+      "target": 82,
+      "actual": 82,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 78,
+      "axis": 2,
+      "target": 77,
+      "actual": 77,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 79,
+      "axis": 0,
+      "target": 77,
+      "actual": 77,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 79,
+      "axis": 2,
+      "target": 80,
+      "actual": 80,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 80,
+      "axis": 0,
+      "target": 79,
+      "actual": 79,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 80,
+      "axis": 1,
+      "target": 60,
+      "actual": 60,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 80,
+      "axis": 2,
+      "target": 78,
+      "actual": 78,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 81,
+      "axis": 0,
+      "target": 82,
+      "actual": 82,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 81,
+      "axis": 2,
+      "target": 83,
+      "actual": 83,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 82,
+      "axis": 0,
+      "target": 84,
+      "actual": 84,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 82,
+      "axis": 1,
+      "target": 86,
+      "actual": 86,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 82,
+      "axis": 2,
+      "target": 81,
+      "actual": 81,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 83,
+      "axis": 0,
+      "target": 81,
+      "actual": 81,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 83,
+      "axis": 1,
+      "target": 79,
+      "actual": 79,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 83,
+      "axis": 2,
+      "target": 84,
+      "actual": 84,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 84,
+      "axis": 0,
+      "target": 83,
+      "actual": 83,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 84,
+      "axis": 2,
+      "target": 82,
+      "actual": 82,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 85,
+      "axis": 0,
+      "target": 86,
+      "actual": 86,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 85,
+      "axis": 2,
+      "target": 87,
+      "actual": 87,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 86,
+      "axis": 0,
+      "target": 88,
+      "actual": 88,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 86,
+      "axis": 1,
+      "target": 90,
+      "actual": 90,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 86,
+      "axis": 2,
+      "target": 85,
+      "actual": 85,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 87,
+      "axis": 0,
+      "target": 85,
+      "actual": 85,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 87,
+      "axis": 1,
+      "target": 83,
+      "actual": 83,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 87,
+      "axis": 2,
+      "target": 88,
+      "actual": 88,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 88,
+      "axis": 0,
+      "target": 87,
+      "actual": 87,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 88,
+      "axis": 2,
+      "target": 86,
+      "actual": 86,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 89,
+      "axis": 0,
+      "target": 90,
+      "actual": 90,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 89,
+      "axis": 2,
+      "target": 91,
+      "actual": 91,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 90,
+      "axis": 0,
+      "target": 92,
+      "actual": 92,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 90,
+      "axis": 1,
+      "target": 41,
+      "actual": 41,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 90,
+      "axis": 2,
+      "target": 89,
+      "actual": 89,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 91,
+      "axis": 0,
+      "target": 89,
+      "actual": 89,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 91,
+      "axis": 1,
+      "target": 87,
+      "actual": 87,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 91,
+      "axis": 2,
+      "target": 92,
+      "actual": 92,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 92,
+      "axis": 0,
+      "target": 91,
+      "actual": 91,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 92,
+      "axis": 2,
+      "target": 90,
+      "actual": 90,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 93,
+      "axis": 0,
+      "target": 96,
+      "actual": 96,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 93,
+      "axis": 2,
+      "target": 101,
+      "actual": 101,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 96,
+      "axis": 0,
+      "target": 103,
+      "actual": 103,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 96,
+      "axis": 1,
+      "target": 98,
+      "actual": 98,
+      "x": 50,
+      "y": 0,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 96,
+      "axis": 2,
+      "target": 93,
+      "actual": 93,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 98,
+      "axis": 0,
+      "target": 103,
+      "actual": 103,
+      "x": 0,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    },
+    {
+      "scene": 98,
+      "axis": 2,
+      "target": 93,
+      "actual": 93,
+      "x": 590,
+      "y": 50,
+      "globals_fnv32": "e5464095"
+    }
+  ],
+  "untested_reasons": [],
+  "native_log_sha256": "3fddb545d6001d7eb08c87df4a1a7b2745e08166b9944786a99d1150d4df5023",
+  "diagnostic_source_audit_sha256": "7ae334375be0b59e8063a9558118e4bcd0315570b99340b676eb2a62750ef458",
+  "shipping_source_recovered_exactly_after_removing_test_branch": true,
+  "all_other22engine_files_match_shipping": true,
+  "original_resources_unchanged": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true,
+  "limits": [
+    "Original room resources,default controlled globals/RNG,entry scripts disabled; mouse exits compared with existing keyboard exits and unchanged transition resolver",
+    "Original sprite/rectangle obstruction respected;sparse clear-point sampling is not a proof that an untested edge is unreachable",
+    "Only destination and100global values compared; no audiovisual/full-future/human playthrough claim",
+    "The diagnostic is the real engine with one added test branch; it is not installed"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "EDGE_NAVIGATION_BEFORE_AFTER_NATIVE_AND_KEYBOARD_PASS",
+  "completed_at": "2026-11-11T17:58:23.829316+00:00",
+  "candidate_exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+  "baseline_exe_sha256": "f67e5f34c795a383a6d0ca2dca11e25e953a3089b5b073535ffb6206207474f6",
+  "cases": [
+    {
+      "variant": "baseline",
+      "exe_sha256": "f67e5f34c795a383a6d0ca2dca11e25e953a3089b5b073535ffb6206207474f6",
+      "log_sha256": "4bbae4d1684a4875d3e474332020a3b5e5eed74ed6011088234a53e51e0feed8",
+      "markers": [
+        "Edge navigation pre-fix counterexample: PASS"
+      ],
+      "exited_naturally": true,
+      "exit_code": 0
+    },
+    {
+      "variant": "guard",
+      "exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+      "log_sha256": "bc8823a636070db6f884f5acda600a523599c616085b8bb5b2c7c2a6ed36fd79",
+      "markers": [
+        "Edge navigation geometry: PASS",
+        "Edge navigation live routes: PASS",
+        "Edge navigation input lock: PASS",
+        "Edge navigation priority: PASS",
+        "Edge navigation transition gates: PASS",
+        "Edge navigation verification: PASS",
+        "Edge navigation native result: PASS"
+      ],
+      "exited_naturally": true,
+      "exit_code": 0
+    },
+    {
+      "variant": "keyboard",
+      "exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+      "log_sha256": "fe223cf19467e15e438800a6d9988d8aead6ea247ddcabc50db09fe4f3ab3764",
+      "markers": [
+        "Player keyboard verification: PASS",
+        "Player keyboard native result: PASS"
+      ],
+      "exited_naturally": true,
+      "exit_code": 0
+    }
+  ],
+  "source_geometry_proof_sha256": "fb7a2e266b64be5c56d4358bb8c811b4adeb69b7e4ab9cfbae9be87a5da58a0b",
+  "all_native_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "main_unchanged": true,
+  "limits": [
+    "Previous native engine baseline,not original Windows execution",
+    "Actual engine navigation and script paths; rectangle/sprite overlap flags deliberately controlled in documented diagnostic cases",
+    "Current Windows geometry oracle,not original Win16runtime; no human whole-game playthrough"
+  ]
+}

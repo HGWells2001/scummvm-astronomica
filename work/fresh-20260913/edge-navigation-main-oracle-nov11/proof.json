@@ -1,0 +1,12 @@
+{
+  "status": "INSTALLED_EDGE_NAVIGATION_NATIVE_PASS",
+  "completed_at": "2026-11-11T18:18:15.487161+00:00",
+  "candidate_exe_sha256": "ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0",
+  "native_log_sha256": "80003e81bfead491350b5339b4faf9d5b173e853fc764f7af0395c08d0a9e85b",
+  "user_preferences_unchanged": true,
+  "original_geometry_os_oracle_points": 307200,
+  "live_exit_directions": 3,
+  "input_lock_and_sprite_rectangle_priority": true,
+  "transition_gates": true,
+  "native_exited_naturally": true
+}
