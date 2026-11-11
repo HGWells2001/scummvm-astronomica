@@ -1,3 +1,9 @@
+# Additional verification: actual Windows player loop
+
+[Windows mouse/key/menu/portal/save checks in three native processes](WINDOWS-PLAYER-LOOP.md). Exact optional audited diagnostic;installed engine unchanged. All suites finished naturally. Fixed acceptance7/10;whole-game completion unmeasured.
+
+---
+
 # Current verification: original command admission
 
 [Audit of936original lists/10316commands in420readable scenes](INPUT-SUPPORT-AUDIT.md). Sole fresh-session rejection is the availability-gated original Resume button;isolated runner controls confirm it. Installed engine remains unchanged from the contextual pointer release. Admission is not runtime or whole-game completion. Fixed acceptance7/10;whole-game completion unmeasured.
