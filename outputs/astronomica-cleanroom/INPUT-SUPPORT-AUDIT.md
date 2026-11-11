@@ -1,0 +1,11 @@
+# Original command admission audit — 11 November 2026
+
+The current real engine's admission checks were applied to936nonempty original script lists containing10316commands across420readable scenes. This covers scene programs,sprite click/enter/leave handlers and rectangle click/enter/leave handlers. The sole unreadable scene remains P406;its required scope remains unresolved.
+
+In a fresh session935lists pass. The remaining list is the original P1Resume button,which requires a usable original GAMESTATsave. No such file is present in the tested game directory. The same exact list passes when that availability flag is enabled in an isolated copy of the real runner,and fails again when disabled. The live runner stays unchanged. This classifies a context-dependent admission gate;it does not demonstrate a new missing command or claim that a fabricated save was loaded.
+
+The diagnostic adds only the supplied optional fragment to the exact current engine source. All22otherengine files,including the class header,match. All7engine units were freshly compiled,and the archive plus403reused foundation objects were checked. The diagnostic is not installed. The installed executable remains995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56cwith the contextual portal pointer already verified by the full general suite,installed-path test and actual SDLWindows backend.
+
+Admission is an initial structural check. It does not prove that every script executes correctly,natural reachability,input geometry,audio,timing or whole-game completion. This audit executes no inspected scripts and writes no saves. Fixed acceptance remains7/10(70%),with35bounded native save profiles;whole-game completion remains unmeasured. Complete required behavior,exact help typography and human audiovisual playthrough remain open.
+
+For reproduction insert the optional fragment at the beginning of verifyBuilderPuzzle,perform a clean rebuild and enable astronomica_verify_builder plus astronomica_verify_input_support_inventory. Use an isolated savepath. The optional diagnostic source is separate from the installed player. Original game assets,raw disassembly,cursor pixels,physical saves and binaries are not distributed.

@@ -1,3 +1,11 @@
+# Current verification: original command admission
+
+[Audit of936original lists/10316commands in420readable scenes](INPUT-SUPPORT-AUDIT.md). Sole fresh-session rejection is the availability-gated original Resume button;isolated runner controls confirm it. Installed engine remains unchanged from the contextual pointer release. Admission is not runtime or whole-game completion. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Next:joint original P536project/phase/height invariant across pending interleavings,P406required scope,exact help typography and human audiovisual playthrough. Preserve local Nov11research and wait every suite naturally before shutdown.
+
+---
+
 # Current update: original contextual portal pointer
 
 Verified executable `995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c`. Original down pointer restored in P44/P340/P341 using the exact original contextual zone. GUI,input,physical save,full general and installed verification pass;script timing/core/save formats unchanged. [Verified scope](CONTEXTUAL-CURSOR.md). Fixed acceptance7/10;whole-game completion unmeasured.

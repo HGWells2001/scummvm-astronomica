@@ -1,0 +1,15 @@
+{
+  "status": "EXPORTED_INPUT_SUPPORT_OBSERVER_EXACT_PASS",
+  "shipping_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "shipping_cpp_sha256": "86445e290c6e261298a334215f6bd188ac2c506c8e0c9513117a26833453bc18",
+  "diagnostic_cpp_sha256": "411a161273b5581e313617ed7f71f27753fa47ef66bf6e51086b0baa5b2c357e",
+  "observer_sha256": "0f86c1f309af3fffb81339938b1e16cd071f7abc942fbf7e30240e2cdf21ed6f",
+  "all_other22engine_files_and_header_identical": true,
+  "native_proof_sha256": "fc896af48f2be7812cdc6098a3680a8048af9f353d15c11625e2160dbba62000",
+  "limits": [
+    "Insert exact optional fragment at start of verifyBuilderPuzzle,clean rebuild and enable both astronomica_verify_builder and astronomica_verify_input_support_inventory",
+    "Uses original resources read-only,isolated savepath,does not execute inspected scripts",
+    "Availability positive/negative control toggles only a copied runner;does not fabricate or load a legacy save",
+    "Diagnostic not installed;original assets/disassembly/physical saves excluded"
+  ]
+}

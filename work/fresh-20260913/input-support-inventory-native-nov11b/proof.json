@@ -1,0 +1,37 @@
+{
+  "status": "REAL_ENGINE_INPUT_SUPPORT_ADMISSION_INVENTORY_PASS",
+  "completed_at": "2026-11-11T19:39:17.728574+00:00",
+  "shipping_candidate_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "diagnostic_exe_sha256": "2961f769e9b3c7f4b49d688792c41b948d49e1da24eeaddbf64bbf4c3be6a3de",
+  "shipping_source_recovered_exactly": true,
+  "all_other22engine_files_and_header_identical": true,
+  "scenes": 420,
+  "rejected_scenes": [
+    "406"
+  ],
+  "script_lists": 936,
+  "commands": 10316,
+  "unsupported_lists": 1,
+  "sole_rejection_classified_as_original_resume_availability": true,
+  "isolated_runner_gate_negative_and_positive_controls": true,
+  "unsupported": [
+    {
+      "scene": 1,
+      "owner": "sprite-click",
+      "index": 2,
+      "commands": 8,
+      "accepted": false,
+      "first_offset": 337525
+    }
+  ],
+  "native_log_sha256": "bb2ff7fde1a855f4aa6fcb7c87ab7b843c8efdb69b67ebe59da6acd9f8ed5281",
+  "lists_sha256": "1a7e1f991263276738397e6ec6583c59ac99b0d139027089ff31a55b33f08952",
+  "native_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Actual canRun preflight on each scene-configured real engine;original scripts are not executed by this inventory",
+    "Admission does not prove correct runtime semantics,reachable input geometry,timing,audio or natural whole-game completion",
+    "Original P406data rejected separately;not declared unused/unreachable",
+    "Diagnostic not installed;no save files written"
+  ]
+}
