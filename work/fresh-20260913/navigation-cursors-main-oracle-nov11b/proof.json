@@ -1,0 +1,11 @@
+{
+  "status": "INSTALLED_NAVIGATION_CURSOR_NATIVE_PASS",
+  "completed_at": "2026-11-11T19:02:10.713878+00:00",
+  "candidate_exe_sha256": "3982e629267b34a0bea0f1e2a648ed91e577a098eeea78faf8e402a826dee4fd",
+  "native_log_sha256": "493ef13521d32cd982d18084461c4ee067702f34ab497a304b7833070a1742e9",
+  "user_preferences_unchanged": true,
+  "original_cursor_resources": 3,
+  "canonical_original_pixels": 3072,
+  "GUI_visibility_and_ownership": true,
+  "native_exited_naturally": true
+}

@@ -1,0 +1,17 @@
+"""Join original resource facts and exact source/GUI/event/file evidence for the UI delta."""
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json
+from navigation_cursor_source_nov11 import production
+w=Path(__file__).resolve().parent;sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_text())
+old=read(w/'edge-navigation-seal-nov11-status.json');build=read(w/'navigation-cursors-nov11-stage/proof.json');audit=read(w/'navigation-cursors-source-review-nov11.json');native=read(w/'navigation-cursors-native-nov11/proof.json');loop=read(w/'navigation-cursor-loop-native-nov11/proof.json');facts=read(w/'original-navigation-cursors-nov11/proof.json');base=Path(old['snapshot'])/'engine/astronomica';stage=w/'navigation-cursors-nov11-stage'
+assert build['base_exe_sha256']==old['exe_sha256']and audit['candidate_exe_sha256']==native['candidate_exe_sha256']==loop['candidate_exe_sha256']==build['candidate_exe_sha256']==sha(stage/'bin/scummvm.exe')
+cpp,header=production((base/'astronomica.cpp').read_text(),(base/'astronomica.h').read_text());assert (stage/'source/engines/astronomica/astronomica.cpp').read_text()==cpp and(stage/'source/engines/astronomica/astronomica.h').read_text()==header
+assert audit['fresh_translation_units']==7 and audit['archive_members_checked']==7 and audit['verified_reused_framework_objects']==403 and not audit['engine_class_layout_unchanged']and audit['private_derived_cache_fields_added']and audit['save_layouts_unchanged']
+assert len(native['cases'])==6 and native['native_gui_profiles']==4 and native['all_processes_exited_naturally']and len(loop['cases'])==3 and loop['all_processes_exited_naturally']
+assert sum(c['old_fixture']is not None for c in loop['cases'])==2 and all(c['new_physical_save_version']==2 for c in loop['cases'])
+selected=[next(c for c in facts['cursors']if c['group_id']==i)for i in(2,1,3)]
+assert [c['canonical_class_fnv32']for c in selected]==[0x8cf023af,0x565522f7,0x11480b87]
+names=['navigation-cursors-source-review-nov11.json','navigation-cursors-native-nov11/proof.json','navigation-cursor-loop-native-nov11/proof.json','original-navigation-cursors-nov11/proof.json']
+j=dict(status='ORIGINAL_NAVIGATION_CURSOR_SOURCE_GUI_EVENT_FILE_REVIEW_PASS',verified_at=datetime.now(timezone.utc).isoformat(),candidate_exe_sha256=build['candidate_exe_sha256'],previous_exe_sha256=old['exe_sha256'],original_exe_bytes=facts['original_exe_bytes'],original_exe_fnv32=facts['original_exe_fnv32'],groups_by_left_top_right=[2,1,3],cursor_facts=[dict(group_id=c['group_id'],width=c['width'],height=c['height'],hotspot=c['hotspot'],canonical_class_fnv32=c['canonical_class_fnv32'],class_counts=c['canonical_and_xor_class_counts'])for c in selected],derived_private_ui_fields_added=True,all7engine_units_fresh=True,framework_and_save_schemas_unchanged=True,evidence_sha256={n:sha(w/n)for n in names},limits=['Original cursor bitmaps,NEbytes and raw disassembly remain local; public facts are IDs,dimensions,hotspots,counts/hash summaries only','SDLdummy actual CursorMan/menu/event-loop calls;no manual hardware pointer inspection','Three physical new ASVM2roundtrips,two frozen accepted-engine ASVM26/27loads;not original Windows saves or all-history full futures','No whole-game completion or original Win16execution claim'])
+(w/'navigation-cursors-review-nov11.json').write_text(json.dumps(j,indent=2)+'\n');print(j['status'])

@@ -1,3 +1,11 @@
+# Current verified update: original navigation cursors
+
+Verified executable: `3982e629267b34a0bea0f1e2a648ed91e577a098eeea78faf8e402a826dee4fd`. Original left/top/right navigation arrows now load from existing game resources,with fallback and visibility preserved. Four GUIprofiles,actual event-loop mouse/key/menu/file checks,full general suite and installed verification pass. [Verified scope](NAVIGATION-CURSORS.md). All7engine units rebuilt for derived UIowner fields;clean full source rebuild required. Core/save schemas unchanged. Fixed acceptance7/10(70%);whole-game completion unmeasured.
+
+Continue development-20261111.json and SESSION-20261111.md. Only current Nov11shutdown control;all suites must exit naturally before shutdown. Original raw routing/cursor research remains local. Historical checkpoints below.
+
+---
+
 # Current verified update: original mouse edge navigation
 
 Verified executable: `ba32b4f54d5d204a8a402dfa9838f0dbe0f634f1cc0b168e3824a95d111de7b0`. Original left/top/right mouse zones restored after sprite/rectangle consumption and script locks.760original NAVreferences in306mode1scenes agree with keyboard exits on destination/100globals;full general suite and installed verifier pass. [Verified scope](EDGE-NAVIGATION.md). Fixed acceptance7/10(70%);whole-game completion unmeasured.

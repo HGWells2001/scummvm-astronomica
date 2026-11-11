@@ -1,0 +1,75 @@
+{
+  "status": "ORIGINAL_NAVIGATION_CURSOR_DECODE_GUI_AND_INPUT_NATIVE_PASS",
+  "completed_at": "2026-11-11T18:30:48.475538+00:00",
+  "candidate_exe_sha256": "3982e629267b34a0bea0f1e2a648ed91e577a098eeea78faf8e402a826dee4fd",
+  "cases": [
+    {
+      "profile": "cursor-en-true",
+      "gui_language": "en",
+      "disable_fixed_font_scaling": "true",
+      "option": "astronomica_verify_navigation_cursors",
+      "native_log_sha256": "3390c38b84376c396ea75af5131aad8fe0417ffec6ff445704429c3a3ba33b77",
+      "exited_naturally": true
+    },
+    {
+      "profile": "cursor-en-false",
+      "gui_language": "en",
+      "disable_fixed_font_scaling": "false",
+      "option": "astronomica_verify_navigation_cursors",
+      "native_log_sha256": "ff140220a50da197952641a55e1791a5634774bcb2daf8095f1fe6b2d3149c33",
+      "exited_naturally": true
+    },
+    {
+      "profile": "cursor-C-true",
+      "gui_language": "C",
+      "disable_fixed_font_scaling": "true",
+      "option": "astronomica_verify_navigation_cursors",
+      "native_log_sha256": "80e4f04695d4bca391f763572033f03e101c1ffd590acbc8513251567b995104",
+      "exited_naturally": true
+    },
+    {
+      "profile": "cursor-C-false",
+      "gui_language": "C",
+      "disable_fixed_font_scaling": "false",
+      "option": "astronomica_verify_navigation_cursors",
+      "native_log_sha256": "8d7fc81f748e99e88abe82960f79a0f1db70e74d3bcee611bdca597656067a20",
+      "exited_naturally": true
+    },
+    {
+      "profile": "edges",
+      "gui_language": "en",
+      "disable_fixed_font_scaling": "true",
+      "option": "astronomica_verify_edge_navigation",
+      "native_log_sha256": "1e1a4579a81b19903565928974b66d8656f03b01d8a23cd603da0e77c6e7677d",
+      "exited_naturally": true
+    },
+    {
+      "profile": "keyboard",
+      "gui_language": "en",
+      "disable_fixed_font_scaling": "true",
+      "option": "astronomica_verify_keyboard",
+      "native_log_sha256": "7c9b55f890eeb44ba16bbf7967b3a8772d6a1ebfbed57f6908050dc2d1966ce4",
+      "exited_naturally": true
+    }
+  ],
+  "original_cursor_fact_sha256": "985d2cd81943ecef1951ea55991cfa26172563d0a67eab871b67e2b95a7ace44",
+  "original_groups_by_axis": [
+    2,
+    1,
+    3
+  ],
+  "canonical_class_hashes": [
+    "8cf023af",
+    "565522f7",
+    "11480b87"
+  ],
+  "native_gui_profiles": 4,
+  "edge_and_keyboard_regressions": true,
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Original cursor resource classes/hotspots verified against independent offline bit decoder",
+    "Actual CursorMan/menu calls on SDL dummy,not manual physical hardware pointer inspection",
+    "Controlled rectangle overlaps/fallback path and ownership cycles;no original Win16execution or human whole-game playthrough"
+  ]
+}

@@ -6,6 +6,7 @@
 #include "common/keyboard.h"
 #include "audio/mixer.h"
 namespace Video { class QuickTimeDecoder; }
+namespace Graphics { struct WinCursorGroup; }
 namespace Audio { class SeekableAudioStream; class AudioStream; }
 #include "graphics/surface.h"
 #include "astronomica/resource.h"
@@ -28,6 +29,13 @@ public:
  Common::Error saveGameStream(Common::WriteStream *stream, bool isAutosave = false) override;
  Common::Error loadGameStream(Common::SeekableReadStream *stream) override;
 private:
+ Graphics::WinCursorGroup *_navigationCursors[3] = {};
+ bool _navigationCursorAttempted = false;
+ int _navigationCursorIndex = -1;
+ bool ensureNavigationCursors();
+ void clearNavigationCursors();
+ void updateNavigationCursor(int x,int y);
+ bool verifyNavigationCursors();
  LegacySaveState _legacyState;
  bool _legacyChecked = false, _legacyAvailable = false;
  void prepareLegacyResume();

@@ -1,0 +1,18 @@
+{
+  "status": "EXPORTED_ORIGINAL_CURSOR_LOOP_OBSERVERS_EXACT_PASS",
+  "candidate_exe_sha256": "3982e629267b34a0bea0f1e2a648ed91e577a098eeea78faf8e402a826dee4fd",
+  "shipping_cpp_sha256": "ffcf9ee84ea255e3015b7aaeaf607fc8329252a100c2ad95f48f0ac5e0df6ffd",
+  "diagnostic_cpp_sha256": "b508544ec1c3849ed3e03fc6f68c1e41af46f0c87300a89c410e377d920c38d1",
+  "observer_fragment_sha256": {
+    "navigation-cursor-loop-setup-nov11.inc": "d3b844666d1ca77a8242893aaf94a37b20d380559a6f30264842f4f5aad6e4ef",
+    "navigation-cursor-loop-observer-nov11.inc": "3acbe623ff8ee777b73ccde2fda2dfc3aa794d3fcf1ec0233ef449f130a933dd"
+  },
+  "native_receipt_sha256": "06b7c76b32ea4a3bca0f9ae8d6316bc442d0d0954ac4d3a7673dbdcb606af96e",
+  "all_other22files_and_class_header_identical": true,
+  "original_resources_or_save_binaries_exported": false,
+  "limits": [
+    "Insert SETUPbefore actual run-loop,OBSERVERafter updateScreen in that loop,clean rebuild and enable verify_navigation_cursor_loop to repeat optional diagnostic",
+    "Optional historical native slot/scene settings require your own compatible native files;fixtures not distributed",
+    "Test writes fresh native slot60 in its isolated savepath;source resources are read only;diagnostic observers not installed"
+  ]
+}
