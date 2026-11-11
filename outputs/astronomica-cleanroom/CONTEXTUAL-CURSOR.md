@@ -1,0 +1,11 @@
+# Original contextual down pointer — 11 November 2026
+
+The real engine now uses original cursor group4 over the contextual portal zone in P44,P340 and P341. The original _dnav rectangle is [192,252,414,320),with right and bottom boundaries excluded. This indicator overrides ordinary rectangle hover in these three scenes. It does not add a fourth ordinary NAVdirection or change portal click scripts. The existing original ASTRO.EXE supplies the pixels;no game artwork is bundled.
+
+Independent Windows rectangle checks cover307200viewport points,15096inside. Four cursor resources match their original pixel-class hashes and hotspots. Four native GUIprofiles,an additional actual SDLWindows backend run with F5menu/cursor-manager checks,existing edge/keyboard regressions and921600scene-specific hover checks pass. The optional exact-source event-loop diagnostic checks16/17/17phases plus separately counted WAITframes,including raw clicks through all three original portal scripts,new physical ASVM2save roundtrips,F5menu and two frozen earlier accepted-engine ASVM26/27file loads. These are controlled native tests,not a human playthrough or original Windows saves. Historical full futures are not claimed by these load checks.
+
+The first diagnostic wrongly required a portal transition after one tick. Its natural failure exposed the test assumption:zero-delay continuations execute on a subsequent tick. Corrected tests wait the original pending queue;production script timing remains unchanged. Failed receipts remain separate. All suites and their native children finish naturally;no elapsed-time or quota kill is used. The complete general suite and separately installed-path verification pass before publication.
+
+The existing derived UIcursor array expands from3to4. All7engine units were freshly compiled with403verified foundation objects. Core3 and save schemas are unchanged;clean full source rebuild required. The optional observer fragments are test code and are not installed. Original bytes,disassembly,pixels,previews,game media,binaries and physical save fixtures remain excluded from this source export.
+
+Fixed acceptance remains7/10(70%),with35bounded native save profiles. Whole-game completion remains unmeasured. Complete required behavior,exact help typography and human audiovisual playthrough remain open.

@@ -1,0 +1,11 @@
+{
+  "status": "INSTALLED_CONTEXTUAL_CURSOR_NATIVE_PASS",
+  "completed_at": "2026-11-11T19:35:54.844338+00:00",
+  "candidate_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "native_log_sha256": "1dc60dd2234b641d6dc736c8c8393095ade551dde46b6dbd544edbba41b896a9",
+  "user_preferences_unchanged": true,
+  "original_cursor_resources": 4,
+  "canonical_original_pixels": 4096,
+  "GUI_visibility_and_ownership": true,
+  "native_exited_naturally": true
+}

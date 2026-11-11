@@ -1,0 +1,316 @@
+{
+  "status": "ORIGINAL_CONTEXTUAL_CURSOR_REAL_EVENT_LOOP_AND_PHYSICAL_SAVES_PASS",
+  "completed_at": "2026-11-11T19:18:21.435949+00:00",
+  "candidate_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "diagnostic_exe_sha256": "523b2d1f0816df1ced97fb4bc864978627e174ab69f403f77ae462381a19a494",
+  "shipping_source_recovered_exactly_after_removing_observers": true,
+  "all_other22engine_files_identical": true,
+  "diagnostic_source_review_sha256": "d3bede630c6030b1720ae58e4d418fd1cc541816dd793730b86e92f721f9b214",
+  "cases": [
+    {
+      "profile": "new-room-only",
+      "frames": [
+        [
+          "0",
+          "103",
+          "0"
+        ],
+        [
+          "1",
+          "103",
+          "2"
+        ],
+        [
+          "2",
+          "103",
+          "-1"
+        ],
+        [
+          "3",
+          "106",
+          "1"
+        ],
+        [
+          "4",
+          "108",
+          "1"
+        ],
+        [
+          "5",
+          "110",
+          "1"
+        ],
+        [
+          "6",
+          "44",
+          "3"
+        ],
+        [
+          "7",
+          "349",
+          "-1"
+        ],
+        [
+          "8",
+          "340",
+          "3"
+        ],
+        [
+          "9",
+          "201",
+          "-1"
+        ],
+        [
+          "10",
+          "341",
+          "3"
+        ],
+        [
+          "11",
+          "214",
+          "-1"
+        ],
+        [
+          "12",
+          "103",
+          "0"
+        ],
+        [
+          "13",
+          "103",
+          "0"
+        ],
+        [
+          "14",
+          "501",
+          "-1"
+        ],
+        [
+          "15",
+          "103",
+          "0"
+        ]
+      ],
+      "new_physical_save_version": 2,
+      "new_room_save_sha256": "e86c95fac4230bab2590174384261dc7144d69feef86cf4827143ba6fc50d306",
+      "original_ne_cursor_owners_retained": true,
+      "old_fixture": null,
+      "native_log_sha256": "bcd285dbebf2af0f1b1085400a79c9ac13c5a3ce30928f2bf182af9565e9a51e",
+      "exited_naturally": true
+    },
+    {
+      "profile": "old-v27-p501",
+      "frames": [
+        [
+          "0",
+          "103",
+          "0"
+        ],
+        [
+          "1",
+          "103",
+          "2"
+        ],
+        [
+          "2",
+          "103",
+          "-1"
+        ],
+        [
+          "3",
+          "106",
+          "1"
+        ],
+        [
+          "4",
+          "108",
+          "1"
+        ],
+        [
+          "5",
+          "110",
+          "1"
+        ],
+        [
+          "6",
+          "44",
+          "3"
+        ],
+        [
+          "7",
+          "349",
+          "-1"
+        ],
+        [
+          "8",
+          "340",
+          "3"
+        ],
+        [
+          "9",
+          "201",
+          "-1"
+        ],
+        [
+          "10",
+          "341",
+          "3"
+        ],
+        [
+          "11",
+          "214",
+          "-1"
+        ],
+        [
+          "12",
+          "103",
+          "0"
+        ],
+        [
+          "13",
+          "103",
+          "0"
+        ],
+        [
+          "14",
+          "501",
+          "-1"
+        ],
+        [
+          "15",
+          "103",
+          "0"
+        ],
+        [
+          "16",
+          "501",
+          "-1"
+        ]
+      ],
+      "new_physical_save_version": 2,
+      "new_room_save_sha256": "75c21ab97f07cd6830b0fab21ced278d2939e04d8f86e66b34f2bd2cc6f75b8e",
+      "original_ne_cursor_owners_retained": true,
+      "old_fixture": {
+        "source_file": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\verified-checkpoints\\p501-025e82d8bd3b\\frozen-slot26\\astro-verify.026",
+        "version": 27,
+        "scene": 501,
+        "slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+        "producing_exe_sha256": "025e82d8bd3b8e267bccec7d4c3e044d37d87049dbeeadd9b4158187573d91d3",
+        "origin_receipt_sha256": "4ab3f90733d3f373d195c825c464fc7fca06fecd84e33b342ce26ee40dd29d03"
+      },
+      "native_log_sha256": "1142f557bb642d10f1668c5041999da47ccdcca619410e4cb59f6033d64fdc7e",
+      "exited_naturally": true
+    },
+    {
+      "profile": "old-v26-p504",
+      "frames": [
+        [
+          "0",
+          "103",
+          "0"
+        ],
+        [
+          "1",
+          "103",
+          "2"
+        ],
+        [
+          "2",
+          "103",
+          "-1"
+        ],
+        [
+          "3",
+          "106",
+          "1"
+        ],
+        [
+          "4",
+          "108",
+          "1"
+        ],
+        [
+          "5",
+          "110",
+          "1"
+        ],
+        [
+          "6",
+          "44",
+          "3"
+        ],
+        [
+          "7",
+          "349",
+          "-1"
+        ],
+        [
+          "8",
+          "340",
+          "3"
+        ],
+        [
+          "9",
+          "201",
+          "-1"
+        ],
+        [
+          "10",
+          "341",
+          "3"
+        ],
+        [
+          "11",
+          "214",
+          "-1"
+        ],
+        [
+          "12",
+          "103",
+          "0"
+        ],
+        [
+          "13",
+          "103",
+          "0"
+        ],
+        [
+          "14",
+          "501",
+          "-1"
+        ],
+        [
+          "15",
+          "103",
+          "0"
+        ],
+        [
+          "16",
+          "504",
+          "-1"
+        ]
+      ],
+      "new_physical_save_version": 2,
+      "new_room_save_sha256": "4d9f2c5a3cd00225e99717ea1873d2592779bf8cfe305bb377ae9db00925e944",
+      "original_ne_cursor_owners_retained": true,
+      "old_fixture": {
+        "source_file": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\verified-checkpoints\\p504-2a305b134662\\frozen-slot25\\astro-verify.025",
+        "version": 26,
+        "scene": 504,
+        "slot_sha256": "4aaf608d8ac4d18002db155344665cdcea70c0eea7e08637ba2a700bad392e77",
+        "producing_exe_sha256": "2a305b13466244f84cfd092bfa20774ea0bcfe2f91dbef77decddb850a3a727c",
+        "origin_receipt_sha256": "5536532ba1750adc87c857cc16dd980533f6c2481071327b3026e4099e954fbd"
+      },
+      "native_log_sha256": "5b37337fe26b1bfef4fd36695dcad504808d53a8b9b1ada54652e66b7cc7a4b2",
+      "exited_naturally": true
+    }
+  ],
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Actual production pollEvent/main loop/per-frame cursor update/raw mouse exit/raw keyboard exit/actual F5dialog",
+    "Three new physical ordinary ASVM2room roundtrips,two frozen earlier accepted-engine ASVM26/27file loads;historical full futures not claimed here",
+    "Controlled scene setup and synthetic input events;no human full-game physical pointer/audio validation",
+    "Diagnostic observers are not installed;no original Windows executable run"
+  ]
+}

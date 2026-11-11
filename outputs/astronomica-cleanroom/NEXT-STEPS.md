@@ -1,3 +1,11 @@
+# Current update: original contextual portal pointer
+
+Verified executable `995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c`. Original down pointer restored in P44/P340/P341 using the exact original contextual zone. GUI,input,physical save,full general and installed verification pass;script timing/core/save formats unchanged. [Verified scope](CONTEXTUAL-CURSOR.md). Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261111.md and development-20261111.json. Wait every suite naturally before shutdown using only the current Nov11watcher.
+
+---
+
 # Current verified update: original navigation cursors
 
 Verified executable: `3982e629267b34a0bea0f1e2a648ed91e577a098eeea78faf8e402a826dee4fd`. Original left/top/right navigation arrows now load from existing game resources,with fallback and visibility preserved. Four GUIprofiles,actual event-loop mouse/key/menu/file checks,full general suite and installed verification pass. [Verified scope](NAVIGATION-CURSORS.md). All7engine units rebuilt for derived UIowner fields;clean full source rebuild required. Core/save schemas unchanged. Fixed acceptance7/10(70%);whole-game completion unmeasured.

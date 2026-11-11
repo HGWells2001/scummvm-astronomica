@@ -1,0 +1,17 @@
+{
+  "status": "EXPORTED_CONTEXTUAL_CURSOR_LOOP_OBSERVERS_EXACT_PASS",
+  "candidate_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "shipping_cpp_sha256": "86445e290c6e261298a334215f6bd188ac2c506c8e0c9513117a26833453bc18",
+  "diagnostic_cpp_sha256": "d2f99125f3b77fa2294328f7a93f881d8203fbfbfdd1b447059d4fee78ab15d6",
+  "observer_fragment_sha256": {
+    "contextual-cursor-loop-setup-nov11.inc": "7ab4d27d0edb250caecab99f1985bafcd2c04989be1c07a3d10317af770fa17d",
+    "contextual-cursor-loop-observer-nov11.inc": "35f173a61bf62c399d02512c0389a22a1dcd6e1a71f308372f0a65ad6ef72b54"
+  },
+  "all_other22files_and_class_header_identical": true,
+  "original_resources_or_save_binaries_exported": false,
+  "limits": [
+    "Insert SETUPbefore normal loop and OBSERVERafter updateScreen,clean rebuild,enable astronomica_verify_navigation_cursor_loop",
+    "16/17/17checked phases plus explicit deferred WAITframes;terminal legacy frame label does not count waits",
+    "Fresh isolated native slot60;optional historical native saves not distributed"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "CONTEXTUAL_CURSOR_ACTUAL_WINDOWS_BACKEND_PASS",
+  "completed_at": "2026-11-11T19:33:14.064280+00:00",
+  "candidate_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "native_log_sha256": "9d3746c068a8649f8866fb2604fbd5de62a922c7946d6f6369ad2b1e91057933",
+  "video_driver": "windows",
+  "audio_driver": "wasapi",
+  "original_groups": 4,
+  "native_exited_naturally": true,
+  "forced_termination": false,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Actual SDLWindows graphics backend and actual F5menu/GUI/cursor-manager API calls,not SDLdummy",
+    "Controlled internal cursor samples,not a human physical pointer/audiovisual inspection;no human-playthrough criterion claimed"
+  ]
+}

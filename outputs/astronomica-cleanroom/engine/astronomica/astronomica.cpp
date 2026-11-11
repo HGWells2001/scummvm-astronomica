@@ -3305,11 +3305,11 @@ static int navigationDirectionAt(int x,int y) {
 
 void AstronomicaEngine::clearNavigationCursors() {
  if(_navigationCursorIndex>=0)CursorMan.setDefaultArrowCursor();
- for(uint i=0;i<3;++i){delete _navigationCursors[i];_navigationCursors[i]=nullptr;}
+ for(uint i=0;i<4;++i){delete _navigationCursors[i];_navigationCursors[i]=nullptr;}
  _navigationCursorIndex=-1;_navigationCursorAttempted=false;
 }
 bool AstronomicaEngine::ensureNavigationCursors() {
- if(_navigationCursorAttempted)return _navigationCursors[0]&&_navigationCursors[1]&&_navigationCursors[2];
+ if(_navigationCursorAttempted)return _navigationCursors[0]&&_navigationCursors[1]&&_navigationCursors[2]&&_navigationCursors[3];
  _navigationCursorAttempted=true;
  Common::Path exe=ConfMan.getPath("path").join("ASTRO.EXE");
  if(!universeFileIdentity(exe,418376,1628467759U))exe=ConfMan.getPath("path").join("SETUP/ASTRO.EXE");
@@ -3317,15 +3317,15 @@ bool AstronomicaEngine::ensureNavigationCursors() {
  Common::File*file=new Common::File();if(!file->open(Common::FSNode(exe))){delete file;return false;}
  Common::NEResources resources;if(!resources.loadFromEXE(file))return false;
  // _do_place9:00f0-012b loads handles; _place_loop selects2left/1top/3right.
- const uint32 groupIds[]={2,1,3};Graphics::WinCursorGroup*groups[3]={};bool valid=true;
- for(uint i=0;i<3&&valid;++i){
+ const uint32 groupIds[]={2,1,3,4};Graphics::WinCursorGroup*groups[4]={};bool valid=true;
+ for(uint i=0;i<4&&valid;++i){
   groups[i]=Graphics::WinCursorGroup::createCursorGroup(&resources,Common::WinResourceID(groupIds[i]));
   if(!groups[i]||groups[i]->cursors.size()!=1){valid=false;break;}
   const Graphics::Cursor*c=groups[i]->cursors[0].cursor;
   valid=c&&c->getSurface()&&c->getPalette()&&c->getWidth()==32&&c->getHeight()==32&&c->getHotspotX()<32&&c->getHotspotY()<32;
  }
- if(!valid){for(uint i=0;i<3;++i)delete groups[i];return false;}
- for(uint i=0;i<3;++i)_navigationCursors[i]=groups[i];return true;
+ if(!valid){for(uint i=0;i<4;++i)delete groups[i];return false;}
+ for(uint i=0;i<4;++i)_navigationCursors[i]=groups[i];return true;
 }
 void AstronomicaEngine::updateNavigationCursor(int x,int y) {
  int direction=-1;
@@ -3335,6 +3335,8 @@ void AstronomicaEngine::updateNavigationCursor(int x,int y) {
   bool rectangle=false;for(const MouseRect&r:_scene.mouseRects)if(!r.click.empty()&&x>=r.rect[0]&&y>=r.rect[1]&&x<r.rect[2]&&y<r.rect[3]){rectangle=true;break;}
   if(!rectangle){const int hit=navigationDirectionAt(x,y);if(hit>=0&&_nav[hit]!=0)direction=hit;}
  }
+ // _place_loop9:0f50-0fc8: contextual down arrow follows ordinary NAVhover.
+ if((_place==44||_place==340||_place==341)&&x>=192&&x<414&&y>=252&&y<320)direction=3;
  if(direction>=0&&!ensureNavigationCursors())direction=-1;
  if(direction==_navigationCursorIndex)return;
  if(direction>=0)CursorMan.replaceCursor(_navigationCursors[direction]->cursors[0].cursor);
@@ -10118,8 +10120,8 @@ bool AstronomicaEngine::verifyEdgeNavigation() {
 
 bool AstronomicaEngine::verifyNavigationCursors() {
  if(!ensureNavigationCursors())return false;
- const uint expectedHotX[]={0,6,31},expectedHotY[]={6,0,6};const uint32 expectedHash[]={0x8cf023afU,0x565522f7U,0x11480b87U};
- for(uint i=0;i<3;++i){
+ const uint expectedHotX[]={0,6,31,6},expectedHotY[]={6,0,6,31};const uint32 expectedHash[]={0x8cf023afU,0x565522f7U,0x11480b87U,0x51cc9907U};
+ for(uint i=0;i<4;++i){
   const Graphics::Cursor*c=_navigationCursors[i]->cursors[0].cursor;if(c->getWidth()!=32||c->getHeight()!=32||c->getHotspotX()!=expectedHotX[i]||c->getHotspotY()!=expectedHotY[i]||c->getPaletteCount()<2)return false;
   const byte*palette=c->getPalette();for(uint j=0;j<6;++j)if(palette[j]!=(j<3?0:255))return false;
   const byte*pixels=c->getSurface(),*mask=c->getMask();uint32 hash=2166136261U,counts[4]={};
@@ -10145,10 +10147,21 @@ bool AstronomicaEngine::verifyNavigationCursors() {
  debug("Navigation cursor original rules: PASS (nonempty rectangle hover consumption,empty rectangle arrow,hover during original lock,mode guard)");
  // Isolated save directory has no EXE; no original file or user preference is changed.
  const Common::Path original=ConfMan.getPath("path");clearNavigationCursors();ConfMan.setPath("path",ConfMan.getPath("savepath"));const bool refused=!ensureNavigationCursors();ConfMan.setPath("path",original);const bool retainedFailure=!ensureNavigationCursors();clearNavigationCursors();if(!refused||!retainedFailure||!ensureNavigationCursors())return false;
- for(uint pass=0;pass<3;++pass){clearNavigationCursors();for(uint i=0;i<3;++i)if(_navigationCursors[i])return false;if(!ensureNavigationCursors())return false;}
+ for(uint pass=0;pass<3;++pass){clearNavigationCursors();for(uint i=0;i<4;++i)if(_navigationCursors[i])return false;if(!ensureNavigationCursors())return false;}
  updateNavigationCursor(100,0);if(CursorMan.isVisible()!=initiallyVisible)return false;
  debug("Navigation cursor ownership: PASS (missing-file fallback,cached failed attempt,three clear/reload cycles,groups own pixels after NE release)");
- debug("Navigation cursor verification: PASS (three exact original resources,selection,GUI,visibility,mode and lifetime)");return true;
+
+ const int portalScenes[]={44,340,341},portalTargets[]={349,201,214};
+ for(uint scene=0;scene<3;++scene){
+  if(!quiet(portalScenes[scene]))return false;uint32 hash=2166136261U,count=0;
+  {PauseToken pause=pauseEngine();const uint32 before=p510WholeLiveHash();for(int y=0;y<480;++y)for(int x=0;x<640;++x){updateNavigationCursor(x,y);const uint value=_navigationCursorIndex==3;count+=value;hash=(hash^value)*16777619U;}if(p510WholeLiveHash()!=before)return false;}
+  if(hash!=706905629U||count!=15096)return false;
+  updateNavigationCursor(300,300);if(_navigationCursorIndex!=3)return false;clickAtTime(300,300,scriptClock());const uint32 at=scriptClock();for(uint tick=0;tick<16&&_place==portalScenes[scene];++tick)runScriptsAt(at+tick);if(_place!=portalTargets[scene]){debug("Contextual portal test: FAIL (source%d,target%d,actual%d,pending%u,blocked%d)",portalScenes[scene],portalTargets[scene],_place,_runner.pendingCount(),_runner.clicksBlocked());return false;}updateNavigationCursor(300,300);if(_navigationCursorIndex==3)return false;
+ }
+ for(int other:{103,106,117}){if(!quiet(other))return false;updateNavigationCursor(300,300);if(_navigationCursorIndex==3)return false;}
+ debug("Contextual down cursor verification: PASS (three original scenes,921600 OS-oracle points,exact _dnav zone,three original portal scripts,other-room fallback,no fourth NAVaxis)");
+
+ debug("Navigation cursor verification: PASS (four exact original resources,selection,GUI,visibility,mode and lifetime)");return true;
 }
 
 bool AstronomicaEngine::verifyBuilderPuzzle() {

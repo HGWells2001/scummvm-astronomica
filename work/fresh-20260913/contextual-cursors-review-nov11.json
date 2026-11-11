@@ -1,0 +1,60 @@
+{
+  "status": "ORIGINAL_CONTEXTUAL_CURSOR_SOURCE_GUI_EVENT_FILE_REVIEW_PASS",
+  "verified_at": "2026-11-11T19:35:50.470228+00:00",
+  "candidate_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "previous_exe_sha256": "3982e629267b34a0bea0f1e2a648ed91e577a098eeea78faf8e402a826dee4fd",
+  "original_scene_ids": [
+    44,
+    340,
+    341
+  ],
+  "original_rect": [
+    192,
+    252,
+    414,
+    320
+  ],
+  "original_cursor_group": 4,
+  "original_context_global": "cb8",
+  "ordinary_NAV_axis_added": false,
+  "original_deferred_script_timing_unchanged": true,
+  "all7engine_units_fresh": true,
+  "framework_and_save_schemas_unchanged": true,
+  "loop_observations": [
+    {
+      "profile": "new-room-only",
+      "checked_phases": 16,
+      "deferred_wait_frames": 3,
+      "observed_loop_iterations": 19,
+      "log_sha256": "bcd285dbebf2af0f1b1085400a79c9ac13c5a3ce30928f2bf182af9565e9a51e"
+    },
+    {
+      "profile": "old-v27-p501",
+      "checked_phases": 17,
+      "deferred_wait_frames": 3,
+      "observed_loop_iterations": 20,
+      "log_sha256": "1142f557bb642d10f1668c5041999da47ccdcca619410e4cb59f6033d64fdc7e"
+    },
+    {
+      "profile": "old-v26-p504",
+      "checked_phases": 17,
+      "deferred_wait_frames": 3,
+      "observed_loop_iterations": 20,
+      "log_sha256": "5b37337fe26b1bfef4fd36695dcad504808d53a8b9b1ada54652e66b7cc7a4b2"
+    }
+  ],
+  "evidence_sha256": {
+    "original-down-cursor-nov11/proof.json": "674a1d36a654fb22d00000033ac23cfaa918d03ea926dbc42e8b57a68768f189",
+    "original-navigation-cursors-nov11/proof.json": "985d2cd81943ecef1951ea55991cfa26172563d0a67eab871b67e2b95a7ace44",
+    "contextual-cursors-source-review-nov11b.json": "a624644506af392a4291997f140ee2b22fafe3d32766c503f14a5fbae656e640",
+    "contextual-cursors-native-nov11b/proof.json": "64cf3f535d835b83f74bda8f00d4d5d60657664083be4163b6435e0e1ac878c0",
+    "contextual-cursor-loop-native-nov11b/proof.json": "e2526093116d044c1a7f8c5ffc13d98a2043b61a98f4dcf4cbf5423413acdd00"
+  },
+  "limits": [
+    "Original NEbytes,pixels,disassembly and previews local only",
+    "16/17/17checked phases plus separately counted deferred WAITframes;legacy diagnostic terminal frame label is not a total frame count",
+    "SDLdummy controlled native input and CursorMan calls;not manual hardware pointer or human whole-game validation",
+    "Two frozen earlier accepted-engine ASVM26/27file loads;not original Windows saves or all-history full futures",
+    "Fixed acceptance7/10;whole-game completion unmeasured"
+  ]
+}

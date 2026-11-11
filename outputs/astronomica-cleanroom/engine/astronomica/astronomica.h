@@ -29,7 +29,7 @@ public:
  Common::Error saveGameStream(Common::WriteStream *stream, bool isAutosave = false) override;
  Common::Error loadGameStream(Common::SeekableReadStream *stream) override;
 private:
- Graphics::WinCursorGroup *_navigationCursors[3] = {};
+ Graphics::WinCursorGroup *_navigationCursors[4] = {};
  bool _navigationCursorAttempted = false;
  int _navigationCursorIndex = -1;
  bool ensureNavigationCursors();
