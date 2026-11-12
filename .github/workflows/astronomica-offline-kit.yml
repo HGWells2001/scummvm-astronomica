@@ -66,6 +66,8 @@ jobs:
           INSTALLED_MSYS2: ${{ steps.msys.outputs.msys2-location }}
         run: |
           $ErrorActionPreference = "Stop"
+          # Robocopy exit codes 1-7 are successful file-copy results, not exceptions.
+          $PSNativeCommandUseErrorActionPreference = $false
           $kit = Join-Path $env:GITHUB_WORKSPACE "offline_kit"
           $msysDestination = Join-Path $kit "msys64"
           $source = Join-Path $env:GITHUB_WORKSPACE "work\fresh-20260913\scummvm"
