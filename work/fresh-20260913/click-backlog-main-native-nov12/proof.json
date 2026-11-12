@@ -1,0 +1,12 @@
+{
+  "status": "INSTALLED_CLICK_BACKLOG_NATIVE_PASS",
+  "completed_at": "2026-11-12T18:48:38.713924+00:00",
+  "candidate_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+  "native_log_sha256": "7b7142ceacb01dfe62d9b52088af2a86ffc08a1c94254586a007ef73fd2856ef",
+  "first_click_matches": 12,
+  "global_values_checked": 100,
+  "local_values_checked": 13,
+  "host_keyboard_menu_quit_preserved": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true
+}

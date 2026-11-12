@@ -1,3 +1,11 @@
+# Current update: pending mouse clicks
+
+Verified executable `b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29`. Only the first gameplay mouse-down in each pending poll batch is handled;host keyboard/menu/quit remain available. Original queue facts,baseline/candidate native comparisons including Windows,old physical saves,genuine ASVM29 continuations,P512 clock regression,new full general and installed checks pass. [Verified scope](outputs/astronomica-cleanroom/CLICK-BACKLOG.md). CPP/header private helper only;no fields,core or save schema changes. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261112C.md and development-20261112.json. Never force-end suites. DO NOT SHUT DOWN THE COMPUTER. Historical checkpoints below.
+
+---
+
 # Current update:stopped P512 replay and mapped navigation
 
 Verified executable `5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0`. Exhausted stopped segments replay despite an independently saved clock before the range end. Midrange and active behavior are preserved. Mapped keypad directions share existing arrow transitions. Causal native regression,18range-edge cells,760navigation routes,genuine old ASVM29 continuations,physical ASVM2/26/27roundtrips,new full general and installed checks pass. [Verified scope](outputs/astronomica-cleanroom/P512-REPLAY-AND-NAVIGATION.md). ASTRO.cpp only;no fields,core or save schema changes. Fixed acceptance7/10;whole-game completion unmeasured.

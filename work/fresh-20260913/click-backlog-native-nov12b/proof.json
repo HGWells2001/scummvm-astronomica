@@ -1,0 +1,53 @@
+{
+  "status": "CLICK_BACKLOG_POLLED_NATIVE_PASS",
+  "completed_at": "2026-11-12T18:28:59.928175+00:00",
+  "candidate_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+  "baseline_diagnostic_exe_sha256": "cbdb1c61eb5af5847684d873541ef988d5cd26182785df94873fbb2f46bd71ed",
+  "cases": [
+    {
+      "profile": "baseline-batched-clicks",
+      "role": "baseline",
+      "video_driver": "dummy",
+      "cases": 12,
+      "differences_from_first_click": 12,
+      "all100_globals_and13locals_checked": true,
+      "keyboard_menu_and_quit_preserved": true,
+      "native_log_sha256": "9a88275800576bcf490eed545ef663c962cd110b4bf63806c9b61a1b972de0b9",
+      "native_exe_sha256": "cbdb1c61eb5af5847684d873541ef988d5cd26182785df94873fbb2f46bd71ed",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "candidate-first-click",
+      "role": "candidate",
+      "video_driver": "dummy",
+      "cases": 12,
+      "differences_from_first_click": 0,
+      "all100_globals_and13locals_checked": true,
+      "keyboard_menu_and_quit_preserved": true,
+      "native_log_sha256": "16ab28adcba470df0746fb9c8879139511ad70fa89c5c4870b3ee0fe86dad9ec",
+      "native_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "candidate-first-click-windows",
+      "role": "candidate",
+      "video_driver": "windows",
+      "cases": 12,
+      "differences_from_first_click": 0,
+      "all100_globals_and13locals_checked": true,
+      "keyboard_menu_and_quit_preserved": true,
+      "native_log_sha256": "e9ef8c061c1b49c8c626a0dc5d31f03f897e4a059177db910c298960f5aafcb9",
+      "native_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+      "native_exited_naturally": true
+    }
+  ],
+  "original_hyp_sha256": "2427a16a916e53affdf0c7a7590f858f96492784d11eb1a7b3632b804e35d554",
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Same extracted real pollPlayerInput and exact optional observer in baseline and candidate;actual native EventSource batches,not direct click-only calls",
+    "Twelve original P536 control bursts per profile compare the first-click reference and all100globals/13locals;Windows included",
+    "ScummVM keyboard/menu/quit remain processed;original Win16 removal of every window message is adapted to mouse clicks",
+    "No original Windows execution or whole-game completion claim;native quit event ends the completed diagnostic normally"
+  ]
+}

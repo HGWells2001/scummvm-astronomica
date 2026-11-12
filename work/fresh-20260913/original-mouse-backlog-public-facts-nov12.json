@@ -1,0 +1,28 @@
+{
+  "status": "ORIGINAL_MOUSE_BACKLOG_SANITIZED_FACTS_PASS",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "local_raw_receipt_sha256": "c7110a020711c51a216a73b3d242105ad2939d2e4e2d1b4e1fd26cd7ea2e4ff2",
+  "facts": [
+    "Message513calls do_mouse,while515double-click case jumps directly to the common exit",
+    "do_mouse first loops USER ordinal109 with current window,min0,max0,remove1 until no message remains",
+    "This queue drain precedes paused/input-disabled checks,button pulse and enqueueing the clicked sprite command",
+    "The button pulse uses do_command immediately;the sprite user script uses pend_command. Existing port pulse order already matches"
+  ],
+  "external_api_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/wine-mirror/wine/master/dlls/user.exe16/user.exe16.spec",
+      "claim": "Win16 USER109 is PeekMessage"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-peekmessagea",
+      "claim": "Zero filters retrieve all message types and remove1 removes queued messages;modern documentation used only for named API semantics"
+    }
+  ],
+  "limits": [
+    "Source-level original Win16 import/CFG facts;not an original Windows runtime trace",
+    "A ScummVM adaptation should preserve host quit/menu handling rather than reproduce discarding every Windows message",
+    "The60direct-click-handler burst observations bypass this original queue drain and cannot establish human input equivalence or global P536 reachability",
+    "Raw original instruction contexts stay local;no production source changed by this inventory"
+  ],
+  "raw_instructions_excluded": true
+}

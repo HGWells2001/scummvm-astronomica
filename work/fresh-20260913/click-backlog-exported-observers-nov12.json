@@ -1,0 +1,14 @@
+{
+  "status": "CLICK_BACKLOG_EXPORTED_OBSERVERS_EXACT_PASS",
+  "candidate_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+  "shipping_cpp_sha256": "334ebd6e7f4d406f8e9a75df2a3ae16890881e392aec0494f6fbe127f71a9512",
+  "clock_diagnostic_cpp_sha256": "6f1ae0a2c64e372af6b53a9a1f7186633af1ff925a4285442ef573e5712181fb",
+  "clock_helper_sha256": "a19a8c33a386536b461670e9b34d5cfc638ebae3faf0e8aec7e2ebc435837b94",
+  "clock_native_receipt_sha256": "eece694ad22315660195eae48222465bbb75c41fac50d13486005304a928973f",
+  "physical_observer_sha256": "fbb7e93dbb6a924a3a9dc7c97b1c07e96c16fa3b5891b80ed11b5c9c280751f5",
+  "limits": [
+    "Optional diagnostic transforms apply exactly to shipping source;rebuild separately",
+    "Clock observer changes only a validated diagnostic packet clock to end-minus8",
+    "Original resources,raw instruction contexts,binaries and physical native fixtures excluded"
+  ]
+}

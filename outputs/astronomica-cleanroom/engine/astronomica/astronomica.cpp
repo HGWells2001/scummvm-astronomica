@@ -10053,6 +10053,18 @@ void AstronomicaEngine::pauseForPlayer() {
  runDialog(dialog);
 }
 
+void AstronomicaEngine::pollPlayerInput() {
+  bool mouseClickConsumed=false;
+  Common::Event event;
+  while (_eventMan->pollEvent(event)) {
+   if (_worldMovieCursorBottom >= 0 && event.type == Common::EVENT_MOUSEMOVE && event.mouse.y < _worldMovieCursorBottom)
+    _system->warpMouse(event.mouse.x,_worldMovieCursorBottom);
+   if (event.type == Common::EVENT_LBUTTONDOWN) { if(!mouseClickConsumed){mouseClickConsumed=true;clickAt(event.mouse.x,event.mouse.y);} continue; }
+   if (event.type != Common::EVENT_KEYDOWN) continue;
+   handleGameKey(event.kbd);
+  }
+}
+
 void AstronomicaEngine::handleGameKey(const Common::KeyState &key) {
  if(key.keycode==Common::KEYCODE_F5){openMainMenuDialog();return;}
  if(key.keycode==Common::KEYCODE_SPACE&&!(key.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META))){pauseForPlayer();return;}
@@ -13599,6 +13611,41 @@ Common::Error AstronomicaEngine::run() {
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
 
+ if(ConfMan.hasKey("astronomica_verify_input_backlog")&&ConfMan.getBool("astronomica_verify_input_backlog")){
+  const bool expected=ConfMan.getBool("astronomica_input_backlog_expected");
+  for(const char*key:{"astronomica_audio","astronomica_animation","astronomica_sprite_input"})ConfMan.setBool(key,true);
+  ConfMan.setBool("astronomica_entry_scripts",false);
+  class BatchEvents:public Common::EventSource {
+  public:Common::Array<Common::Event>events;uint at=0;bool&paused;bool sawPause=false;
+   explicit BatchEvents(bool&p):paused(p){}
+   bool allowMapping()const override{return false;}
+   bool pollEvent(Common::Event&e)override{if(paused)sawPause=true;if(at>=events.size())return false;e=events[at++];return true;}
+   void click(int x,int y){Common::Event e;e.type=Common::EVENT_LBUTTONDOWN;e.mouse=Common::Point(x,y);events.push_back(e);}
+   void key(Common::KeyCode key){Common::Event e;e.type=Common::EVENT_KEYDOWN;e.kbd=Common::KeyState(key);events.push_back(e);}
+  };
+  uint32 now=0;bool ok=true;uint cases=0,differences=0;
+  auto settle=[&](){for(uint tick=0;tick<20000&&_place==536&&_runner.pendingCount();++tick){runScriptsAt(now);animateSpritesAt(now);now+=50;}return _place!=536||(!_runner.pendingCount()&&!_runner.clicksBlocked());};
+  auto quiet=[&](bool warm){_runner.resetGlobals();_runner.seedRandom(1);_puzzlesCompleted=0;if(!loadPlace(536,false,true))return false;now=scriptClock();if(_runner.enqueueStartup(_scene.scripts,now,true)!=7)return false;return !warm||settle();};
+  auto point=[&](uint id,Common::Point&out){if(id<1||id>_scene.sprites.size())return false;const Sprite&s=_scene.sprites[id-1];Common::File file;if(!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P536/MEGAFILE.HYP"))))return false;const Frame*f=staticSpriteFrame(_scene,id-1);Graphics::Surface*bmp=f?decodeSpriteBitmap(file,f->image,_screen.format):nullptr;if(!bmp)return false;const int right=int16(s.renderX+bmp->w),bottom=int16(s.renderY+bmp->h);bmp->free();delete bmp;for(int y=MAX(0,int(s.renderY));y<=MIN(479,bottom);++y)for(int x=MAX(0,int(s.renderX));x<=MIN(639,right);++x)if(spriteAt(x,y)==int(id)-1){out=Common::Point(x,y);return true;}return false;};
+  auto scalars=[&](){Common::Array<int32>values;values.push_back(_place);values.push_back(_puzzlesCompleted);values.push_back(_runner.clicksBlocked());values.push_back(_runner.pendingCount());for(int scope=0;scope<2;++scope)for(int id=0;id<(scope?13:100);++id){int32 v=0;const bool defined=_runner.getValue(scope,id,v);values.push_back(defined);values.push_back(v);}return values;};
+  const uint paths[][3]={{8,5,6},{5,8,6},{8,6,5},{8,5,8},{5,6,8},{5,5,8}};
+  for(bool warm:{false,true})for(uint path=0;path<ARRAYSIZE(paths);++path){
+   if(!quiet(warm)){ok=false;break;}Common::Point first;if(!point(paths[path][0],first)){ok=false;break;}clickAtTime(first.x,first.y,scriptClock());if(!settle()){ok=false;break;}const Common::Array<int32>reference=scalars();
+   if(!quiet(warm)){ok=false;break;}BatchEvents batch(_clockPaused);for(uint id:paths[path]){Common::Point p;if(!point(id,p)){ok=false;break;}batch.click(p.x,p.y);}
+   _eventMan->getEventDispatcher()->registerSource(&batch,false);pollPlayerInput();_eventMan->getEventDispatcher()->unregisterSource(&batch);
+   const bool settled=settle(),same=scalars()==reference;differences+=!same;ok=batch.at==3&&settled&&(!expected||same)&&ok;
+   debug("Click backlog original burst: %s (expected%d,warm%d,path%u,consumed%u,sameFirst%d,place%d)",ok?"PASS":"FAIL",int(expected),int(warm),path,batch.at,int(same),_place);++cases;
+  }
+  ok=cases==12&&(expected?differences==0:differences>0)&&ok;
+  // Host keyboard/menu/quit events remain available after a mouse event.
+  if(!loadPlace(103,false,true))ok=false;BatchEvents keys(_clockPaused);keys.click(-30,-30);keys.key(Common::KEYCODE_RIGHT);_eventMan->getEventDispatcher()->registerSource(&keys,false);pollPlayerInput();_eventMan->getEventDispatcher()->unregisterSource(&keys);const bool keyboard=_place==98&&keys.at==2;ok=keyboard&&ok;
+  BatchEvents menu(_clockPaused);menu.click(-30,-30);menu.key(Common::KEYCODE_F5);menu.key(Common::KEYCODE_ESCAPE);_eventMan->getEventDispatcher()->registerSource(&menu,false);pollPlayerInput();_eventMan->getEventDispatcher()->unregisterSource(&menu);const bool menuOK=menu.sawPause&&!_clockPaused&&!shouldQuit();ok=menuOK&&ok;
+  BatchEvents quitEvents(_clockPaused);quitEvents.click(-30,-30);Common::Event quit;quit.type=Common::EVENT_QUIT;quitEvents.events.push_back(quit);_eventMan->getEventDispatcher()->registerSource(&quitEvents,false);pollPlayerInput();_eventMan->getEventDispatcher()->unregisterSource(&quitEvents);const bool quitOK=shouldQuit();ok=quitOK&&ok;
+  debug("Click backlog host controls: %s (keyboard%d,menu%d,quit%d)",keyboard&&menuOK&&quitOK?"PASS":"FAIL",int(keyboard),int(menuOK),int(quitOK));
+  debug("Click backlog native result: %s (expected%d,cases%u,differences%u)",ok?"PASS":"FAIL",int(expected),cases,differences);_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
  if(ConfMan.hasKey("astronomica_verify_mapped_navigation")&&ConfMan.getBool("astronomica_verify_mapped_navigation")){
   const bool expected=ConfMan.getBool("astronomica_mapped_navigation_expected");bool ok=true;
   Common::KeymapArray maps=getMetaEngine()->initKeymaps(ConfMan.getActiveDomainName().c_str());
@@ -15347,14 +15394,7 @@ Common::Error AstronomicaEngine::run() {
   return scriptsOK && loaded == 420 && bitmaps == 3625 && commands == 10316 && tails == 4 ? Common::kNoError : Common::Error(Common::kReadingFailed, "Resource or script verification failed");
  }
  while (!shouldQuit()) {
-  Common::Event event;
-  while (_eventMan->pollEvent(event)) {
-   if (_worldMovieCursorBottom >= 0 && event.type == Common::EVENT_MOUSEMOVE && event.mouse.y < _worldMovieCursorBottom)
-    _system->warpMouse(event.mouse.x,_worldMovieCursorBottom);
-   if (event.type == Common::EVENT_LBUTTONDOWN) { clickAt(event.mouse.x, event.mouse.y); continue; }
-   if (event.type != Common::EVENT_KEYDOWN) continue;
-   handleGameKey(event.kbd);
-  }
+  pollPlayerInput();
   runScripts();
   const Common::Point mouse = _eventMan->getMousePos();
   hoverAtTime(mouse.x,mouse.y,scriptClock());

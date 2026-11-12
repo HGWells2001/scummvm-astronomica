@@ -1,0 +1,28 @@
+{
+  "status": "CLICK_BACKLOG_ORIGINAL_QUEUE_AND_NATIVE_REVIEW_PASS",
+  "verified_at": "2026-11-12T18:48:33.654009+00:00",
+  "candidate_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+  "previous_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+  "baseline_diagnostic_exe_sha256": "cbdb1c61eb5af5847684d873541ef988d5cd26182785df94873fbb2f46bd71ed",
+  "class_layout_unchanged": true,
+  "private_nonvirtual_method_added": true,
+  "core_and_save_schemas_unchanged": true,
+  "original_queue_evidence_sha256": "c7110a020711c51a216a73b3d242105ad2939d2e4e2d1b4e1fd26cd7ea2e4ff2",
+  "evidence_sha256": {
+    "click-backlog-candidate-source-review-nov12b.json": "1fd94c2fc7dc3fac115b1fc7a49f47047dd7be1fbe91fc5430361ca6880059aa",
+    "click-backlog-baseline-source-review-nov12b.json": "ed2e43f20316aab115f783cf8b26b03feb461f5e8876decb8fc94f2d9a7e4f4e",
+    "click-backlog-native-nov12b/proof.json": "19afa595a9e13f5507f2d23fb56d38e989603749c4bf3a185db35801da7e44b7",
+    "click-backlog-physical-saves-native-nov12/proof.json": "426ee388775cf8e98c7c557ed93f3a647767221368bc0a40e87e3bdcdb82f01e",
+    "click-backlog-genuine-nov12/proof.json": "b88d21110edb5de2e26fdb3d4c09e90c3450f054bc2f315a30abe2685a64b166",
+    "click-backlog-p512-clock-native-nov12/proof.json": "eece694ad22315660195eae48222465bbb75c41fac50d13486005304a928973f"
+  },
+  "exact_optional_clock_observer_recovered": true,
+  "limits": [
+    "Original do_mouse drains queued window messages before handling the current click;ScummVM adapts the mouse backlog while retaining host keys/menu/quit",
+    "Actual extracted production poll loop baseline/candidate,12original P536bursts/100globals/13locals per profile,including Windows;candidate matches single-click reference in every case",
+    "No fields,class layout,core or save-schema changes;all7engine units fresh/403foundation verified",
+    "Four old ASVM2/26/27roundtrips,four genuine ASVM29fresh continuations and all12P512end-minus8futures PASS",
+    "Separate full general on exact candidate still required before promotion",
+    "Old failed general remains untouched;no original Windows runtime/global P536reachability/whole-game completion claim"
+  ]
+}
