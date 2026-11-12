@@ -79,10 +79,16 @@ jobs:
           # Preserve installed libraries/licenses/toolchain. No cache or per-user state.
           $exclusions = @((Join-Path $env:INSTALLED_MSYS2 "var\cache\pacman\pkg"), (Join-Path $env:INSTALLED_MSYS2 "var\log"), (Join-Path $env:INSTALLED_MSYS2 "home"), (Join-Path $env:INSTALLED_MSYS2 "tmp"))
           & robocopy $env:INSTALLED_MSYS2 $msysDestination /E /R:1 /W:1 /NP /XD $exclusions | Out-Null
-          if ($LASTEXITCODE -gt 7) { throw "MSYS2 portable copy failed: $LASTEXITCODE" }
+          $copyExit = $LASTEXITCODE
+          Write-Host "MSYS2 robocopy exit code: $copyExit"
+          if ($copyExit -gt 7) { throw "MSYS2 portable copy failed: $copyExit" }
+          $global:LASTEXITCODE = 0
 
           & robocopy $source $sourceDestination /E /R:1 /W:1 /NP /XD (Join-Path $source ".git") | Out-Null
-          if ($LASTEXITCODE -gt 7) { throw "ScummVM source copy failed: $LASTEXITCODE" }
+          $copyExit = $LASTEXITCODE
+          Write-Host "Source robocopy exit code: $copyExit"
+          if ($copyExit -gt 7) { throw "ScummVM source copy failed: $copyExit" }
+          $global:LASTEXITCODE = 0
 
           foreach ($name in @("COMPILA.cmd", "GIOCA.cmd", "GUIDA-COMPILAZIONE-OFFLINE.md", "GUIDA-AVVIO-WINDOWS.md")) {
             Copy-Item -LiteralPath (Join-Path $env:GITHUB_WORKSPACE $name) -Destination $kit
