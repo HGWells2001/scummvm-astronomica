@@ -1,0 +1,68 @@
+{
+  "status": "DOUBLE_CLICK_VERIFIED_LOCAL_INTEGRATION_PASS",
+  "integrated_at": "2026-11-12T19:11:18.427814+00:00",
+  "candidate_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "previous_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+  "engine_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "5243acf1f326a6edc13f2b7b82d305436e3845583753c4b642a481ef1b48b9a7",
+    "astronomica.h": "c09b549b82d426517a68b2c061e91a63403434983b090e59e65c95ef945d16ba",
+    "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "framework_sha256": {
+    "video/video_decoder.cpp": "ac9832663151200cbc6e2c802171b88f0a45ddc469ea25d3b24ad1d6efcdf26d",
+    "video/video_decoder.h": "6dc1d443164cf0dc7b666175851883188050ece5030995fa3e7ff4e3f2c9d416",
+    "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
+  },
+  "snapshot": "C:\\Users\\mgian\\Documents\\Codex\\2026-09-13\\d-astro-2\\work\\fresh-20260913\\verified-checkpoints\\double-click-71c2bc4f1e6f",
+  "snapshot_manifest_sha256": "0483001076a93951f6326ad13ac94c6d6308ddfd88493933b5d56a3d052e71bb",
+  "gates": {
+    "double-click-review-nov12.json": {
+      "status": "DOUBLE_CLICK_ORIGINAL_CLASS_AND_NATIVE_REVIEW_PASS",
+      "sha256": "0d5811344f24264ada82a2189013f2ea41b23851cb0044e7cecff497fe48b3c7"
+    },
+    "double-click-candidate-source-review-nov12.json": {
+      "status": "DOUBLE_CLICK_SOURCE_AND_LIBRARY_CLOSURE_PASS",
+      "sha256": "f7e8bf5febf32f20b5d3c174e3e1045cb97059483b354fc5e68d7d5d89beed6e"
+    },
+    "double-click-native-nov12/proof.json": {
+      "status": "DOUBLE_CLICK_REAL_POLLS_NATIVE_PASS",
+      "sha256": "7ba51be0889fd560a4d5e453591ca525eccc6c41fea2704a9ef5288fe2b6317a"
+    },
+    "double-click-general-nov12/proof.json": {
+      "status": "DOUBLE_CLICK_GENERAL_NATIVE_PASS",
+      "sha256": "8d5b55063a39860cfe9252edb063924af5763f92c125f50a44caf06d252da450"
+    }
+  },
+  "user_preferences_unchanged": true,
+  "source_publication_pending": true,
+  "limits": [
+    "Original main window class8=CS_DBLCLKS and handler ignores message515;static file/import evidence,not original Windows runtime",
+    "Normal gameplay pairs rapid nearby downs using the backend configured interval,500ms fallback and portable virtual tolerance ABS(dx/dy)<3;arbitrary historical host rectangle settings are not reconstructed",
+    "Three private derived UI fields are not serialized;class layout changes,all7engine objects rebuilt against403verified foundation objects",
+    "Six original P517 pairs compare100globals/two locals and gauge positions;third press is new,delayed/different-position clicks preserved,including Windows video",
+    "Accepted12P536batch comparisons and real keyboard/menu/quit remain PASS;four old ASVM2/26/27roundtrips,four genuine ASVM29continuations and12P512clock futures PASS",
+    "Exact full general still required before installation;intro/menu physical mouse history and physical hardware double-click trace not exhaustively tested",
+    "Old failed general remains untouched;no new whole-game percentage",
+    "Exact full general on shipping candidate passes before integration"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "INSTALLED_DOUBLE_CLICK_NATIVE_PASS",
+  "completed_at": "2026-11-12T19:11:21.656486+00:00",
+  "candidate_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "native_log_sha256": "fa0b4edcf6c23aaa42f49553e51d88e021bd2eeba500af9aba1cca41801225be",
+  "first_click_matches": 6,
+  "global_values_checked": 100,
+  "local_values_checked": 2,
+  "third_click_and_delayed_distinct_presses_preserved": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true
+}

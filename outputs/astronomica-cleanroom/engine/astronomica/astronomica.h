@@ -29,6 +29,10 @@ public:
  Common::Error saveGameStream(Common::WriteStream *stream, bool isAutosave = false) override;
  Common::Error loadGameStream(Common::SeekableReadStream *stream) override;
 private:
+ bool playerClickIsDouble(const Common::Point &position,uint32 now);
+ Common::Point _playerClickPosition;
+ uint32 _playerClickTime=0;
+ bool _playerClickPending=false;
  void pollPlayerInput();
  void pauseForPlayer();
  bool _introductionActive = false; // Derived UIguard;not serialized.

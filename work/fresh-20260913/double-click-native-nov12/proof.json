@@ -1,0 +1,55 @@
+{
+  "status": "DOUBLE_CLICK_REAL_POLLS_NATIVE_PASS",
+  "completed_at": "2026-11-12T18:53:04.742219+00:00",
+  "candidate_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "cases": [
+    {
+      "name": "baseline",
+      "role": "baseline",
+      "video": "dummy",
+      "kind": "double",
+      "exe_sha256": "a2fb3129a7bc48d6fe12aba666f178ee1b6fbd24a1054f74331fc6f1bf6a9302",
+      "log_sha256": "648f6883f1868835edfddc9f5cf900e3060f1be7efc09c8086ecbee11ed38291",
+      "native_exited_naturally": true
+    },
+    {
+      "name": "candidate",
+      "role": "candidate",
+      "video": "dummy",
+      "kind": "double",
+      "exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+      "log_sha256": "4850e8ccebd38ea77ac8105c298632019d986270f86e269a272bd3f21e1174f5",
+      "native_exited_naturally": true
+    },
+    {
+      "name": "candidate-windows",
+      "role": "candidate",
+      "video": "windows",
+      "kind": "double",
+      "exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+      "log_sha256": "13b9ea26bffe2788d1ea8a23d9443b3237e1fa14216cd89e652db9e061ad2f40",
+      "native_exited_naturally": true
+    },
+    {
+      "name": "candidate-backlog",
+      "role": "candidate",
+      "video": "dummy",
+      "kind": "backlog",
+      "exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+      "log_sha256": "e15d045a6ef48090ab292e3884099ac9d1600dd3303b17740821f018048b25b7",
+      "native_exited_naturally": true
+    }
+  ],
+  "baseline_double_actions_reproduced": 6,
+  "candidate_pairs_match_first_only": 6,
+  "candidate_third_click_is_new": 6,
+  "delayed_and_separate_clicks_preserved": true,
+  "accepted_backlog_and_host_controls_preserved": true,
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Actual P517 original scripts,100globals and two original locals/gauge positions;finite six pairs per double-click profile",
+    "Configured isolated double-click interval and portable virtual-pixel tolerance;not identical arbitrary host rectangle settings",
+    "No original Windows runtime or whole-game completion claim"
+  ]
+}

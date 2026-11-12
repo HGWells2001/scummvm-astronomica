@@ -1,0 +1,23 @@
+{
+  "status": "ORIGINAL_DOUBLE_CLICK_SANITIZED_FACTS_PASS",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "local_raw_receipt_sha256": "c0131e5728a292806ece194594d627f88e0ae142756274333dc167a67befd9ce",
+  "facts": [
+    "Main game window registers CS_DBLCLKS=8,background class registers0",
+    "The second press of a qualifying Windows double click is message515 and is ignored instead of invoking do_mouse again",
+    "Current ScummVM Event has mouse-down/up but no double-click count;backlog suppression alone only covers one pending batch"
+  ],
+  "primary_sources": [
+    "https://raw.githubusercontent.com/wine-mirror/wine/master/dlls/user.exe16/user.exe16.spec",
+    "https://learn.microsoft.com/en-us/windows/win32/winmsg/window-class-styles",
+    "https://learn.microsoft.com/en-us/windows/win32/inputdev/wm-lbuttondblclk"
+  ],
+  "class_style": 8,
+  "main_class_proc": "ZMESSAGEHANDLER",
+  "limits": [
+    "Static pinned original instructions/imports and primary API semantics;not original Windows runtime",
+    "Original system time and rectangle settings are not stored in the game",
+    "No production source changed by this inventory;raw original contexts remain local"
+  ],
+  "raw_instructions_excluded": true
+}

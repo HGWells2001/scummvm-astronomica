@@ -1,0 +1,31 @@
+{
+  "status": "DOUBLE_CLICK_ORIGINAL_CLASS_AND_NATIVE_REVIEW_PASS",
+  "verified_at": "2026-11-12T19:11:16.975888+00:00",
+  "candidate_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "previous_exe_sha256": "b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29",
+  "engine_class_layout_changed": true,
+  "transient_mouse_pair_fields_added": 3,
+  "all7engine_units_rebuilt": true,
+  "core_and_save_schemas_unchanged": true,
+  "original_evidence_sha256": "c0131e5728a292806ece194594d627f88e0ae142756274333dc167a67befd9ce",
+  "evidence_sha256": {
+    "double-click-candidate-source-review-nov12.json": "f7e8bf5febf32f20b5d3c174e3e1045cb97059483b354fc5e68d7d5d89beed6e",
+    "double-click-baseline-source-review-nov12.json": "3041a70e19e203bde1c0fd78d15c8993ace9f0bbdd5123b5a8f2f20cfdf0995f",
+    "double-click-native-nov12/proof.json": "7ba51be0889fd560a4d5e453591ca525eccc6c41fea2704a9ef5288fe2b6317a",
+    "double-click-physical-saves-native-nov12/proof.json": "9966ad6ad0ae29643e907f43fc1c8dd5de9c05fe61e27ee5379ad69281cc5606",
+    "double-click-genuine-nov12/proof.json": "f702d40419e936904683d3493c5da77d8c082a1c122ed98a45bef8b74383253b",
+    "double-click-p512-clock-native-nov12/proof.json": "afe9b135e4d731bfb83a25e0fb544b695f76b9d62b1525c1a9e76cd6319620ee",
+    "double-pair-batches-native-nov12/proof.json": "3852342a3185b85fba1b031d5367df6e14afdd53867341c6366d541aafe352f7",
+    "double-pair-batches-source-review-nov12.json": "a5e15968f502a3048ace229ae6963b57763a3e5e2ee368df4a47ffecd9ce6c23"
+  },
+  "exact_optional_clock_observer_recovered": true,
+  "limits": [
+    "Original main window class8=CS_DBLCLKS and handler ignores message515;static file/import evidence,not original Windows runtime",
+    "Normal gameplay pairs rapid nearby downs using the backend configured interval,500ms fallback and portable virtual tolerance ABS(dx/dy)<3;arbitrary historical host rectangle settings are not reconstructed",
+    "Three private derived UI fields are not serialized;class layout changes,all7engine objects rebuilt against403verified foundation objects",
+    "Six original P517 pairs compare100globals/two locals and gauge positions;third press is new,delayed/different-position clicks preserved,including Windows video",
+    "Accepted12P536batch comparisons and real keyboard/menu/quit remain PASS;four old ASVM2/26/27roundtrips,four genuine ASVM29continuations and12P512clock futures PASS",
+    "Exact full general still required before installation;intro/menu physical mouse history and physical hardware double-click trace not exhaustively tested",
+    "Old failed general remains untouched;no new whole-game percentage"
+  ]
+}

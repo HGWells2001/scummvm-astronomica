@@ -1,0 +1,30 @@
+{
+  "status": "DOUBLE_PAIR_BATCHES_NATIVE_PASS",
+  "completed_at": "2026-11-12T19:09:31.598487+00:00",
+  "shipping_candidate_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "diagnostic_exe_sha256": "7d4c068291307bce08b0b8efac547785c0a508de58ba56ee63691aa8b0d033d1",
+  "profiles": [
+    {
+      "video": "dummy",
+      "cases": 4,
+      "log_sha256": "347b0ce060bba24510517cba4d5a7e0aad7ece08f6608ad24b1ce5ced19475f8",
+      "native_exited_naturally": true
+    },
+    {
+      "video": "windows",
+      "cases": 4,
+      "log_sha256": "f0db41bf20aa0a5391818a69180e7e69011dc0f8b6b6e792ef102dcc1e9b2d20",
+      "native_exited_naturally": true
+    }
+  ],
+  "exact_original_controls": true,
+  "third_click_after_ignored_second_admitted": true,
+  "discarded_presses_update_pairing": true,
+  "configured_and_zero_fallback_intervals": true,
+  "user_preferences_unchanged": true,
+  "all_processes_exited_naturally": true,
+  "limits": [
+    "Four finite actual poll sequences per profile,original P517 controls/locals;not all physical hardware timings",
+    "Optional observer only;production source and installed main unchanged"
+  ]
+}

@@ -1,3 +1,11 @@
+# Current update: original-style gameplay double clicks
+
+Verified executable `71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86`. Rapid nearby second presses are ignored;third presses start a new pair. The backend interval and portable virtual-pixel tolerance adapt original CS_DBLCLKS input. Native baseline/candidate including Windows,accepted backlog/host controls,old physical saves,genuine ASVM29,P512 clock futures,new full general and installed checks pass. [Verified scope](DOUBLE-CLICK.md). Three transient UI fields change engine class layout;all7units fresh,core/save schemas unchanged. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261112D.md and development-20261112.json. Never force-end suites. DO NOT SHUT DOWN THE COMPUTER. Historical checkpoints below.
+
+---
+
 # Current update: pending mouse clicks
 
 Verified executable `b0bc79755f628486f332002df76740257225a6549a59563693aad6491a683d29`. Only the first gameplay mouse-down in each pending poll batch is handled;host keyboard/menu/quit remain available. Original queue facts,baseline/candidate native comparisons including Windows,old physical saves,genuine ASVM29 continuations,P512 clock regression,new full general and installed checks pass. [Verified scope](CLICK-BACKLOG.md). CPP/header private helper only;no fields,core or save schema changes. Fixed acceptance7/10;whole-game completion unmeasured.
