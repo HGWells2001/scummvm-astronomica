@@ -17,7 +17,17 @@ if [[ "${ASTRO_OFFLINE_CHECK:-0}" == "1" ]]; then
   exit 0
 fi
 echo "Configuring pinned ScummVM for custom Astronomica engine (offline)..."
-./configure --disable-all-engines --enable-engine=astronomica
+# MSYS2 needs a writable /tmp, which was intentionally left out of the archive.
+mkdir -p /tmp
+printf 'int main(){return 0;}\n' > /tmp/astronomica-compiler-smoke.cpp
+g++ -std=c++14 /tmp/astronomica-compiler-smoke.cpp -o /tmp/astronomica-compiler-smoke.exe
+/tmp/astronomica-compiler-smoke.exe
+rm -f /tmp/astronomica-compiler-smoke.cpp /tmp/astronomica-compiler-smoke.exe
+if ! ./configure --disable-all-engines --enable-engine=astronomica; then
+  echo "ScummVM configure failed, diagnostics:" >&2
+  if [[ -f config.log ]]; then tail -n 120 config.log >&2; fi
+  exit 1
+fi
 # Pinned configure appends -std=c++11 even after environment CXXFLAGS.
 # This exact ASVM31 MinGW compatibility build requires C++14.
 sed -i 's/-std=c++11/-std=c++14/g; s/-std=gnu++11/-std=gnu++14/g' config.mk
