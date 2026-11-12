@@ -1,0 +1,11 @@
+{
+  "status": "INSTALLED_INTRO_MENU_AND_BUSY_GUARD_NATIVE_PASS",
+  "completed_at": "2026-11-12T13:52:16.565969+00:00",
+  "candidate_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "native_log_sha256": "fdcf0410e6faf30cbcb9d3b4562ec5cc76628f972240fdb0ac304488db93e064",
+  "all_four_gameplay_keys_absent": true,
+  "cursor_fallback_and_visibility": true,
+  "complete_original_voice_natural_end": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true
+}

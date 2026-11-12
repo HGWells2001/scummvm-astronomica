@@ -1,0 +1,74 @@
+{
+  "status": "INTRODUCTION_F5_MENU_AUDIO_PAUSE_AND_BUSY_GUARD_NATIVE_PASS",
+  "completed_at": "2026-11-12T13:31:36.967021+00:00",
+  "candidate_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "baseline_diagnostic_exe_sha256": "643e973327f3633855683dc16b60e741a5837e5ae95bb01b7b8efc78191e3d99",
+  "cases": [
+    {
+      "profile": "baseline-swallowed-F5",
+      "role": "baseline",
+      "video_driver": "dummy",
+      "expected_menu": false,
+      "saw_actual_engine_pause": false,
+      "save_blocked_during_intro": false,
+      "load_blocked_during_intro": false,
+      "paused_millis": 0,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 283,
+      "wall_millis": 14443,
+      "cursor_during_intro": 0,
+      "cursor_visible": true,
+      "original_pending_after_intro": 1,
+      "native_log_sha256": "b9c7f1c05d09f40e7dba12f453cb7ad04044a329e889672ea0b33de5ee01516a",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "paused-original-voice",
+      "role": "candidate",
+      "video_driver": "dummy",
+      "expected_menu": true,
+      "saw_actual_engine_pause": true,
+      "save_blocked_during_intro": true,
+      "load_blocked_during_intro": true,
+      "paused_millis": 302,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 0,
+      "wall_millis": 14726,
+      "cursor_during_intro": -1,
+      "cursor_visible": true,
+      "original_pending_after_intro": 1,
+      "native_log_sha256": "fb241be6aca999083703002f8c084097eea45d0dfa4609d4ddbd39f82e781c38",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "paused-original-voice-windows",
+      "role": "candidate",
+      "video_driver": "windows",
+      "expected_menu": true,
+      "saw_actual_engine_pause": true,
+      "save_blocked_during_intro": true,
+      "load_blocked_during_intro": true,
+      "paused_millis": 9565,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 0,
+      "wall_millis": 23998,
+      "cursor_during_intro": -1,
+      "cursor_visible": true,
+      "original_pending_after_intro": 1,
+      "native_log_sha256": "2f316c20ff99aa02bf9d02d064b15316cdf8c0935c010369b6665cb220b95d7e",
+      "native_exited_naturally": true
+    }
+  ],
+  "original_resources_sha256": {
+    "PLACES/P501/MEGAFILE.HYP": "fe46b4707b6c4bb1f8df9e31fed8b7af103e3839702d88c5e30c331f71877b41",
+    "PLACES/P501/S302.WAV": "59fccfa4c29aa14d24d3114b92f27f122a91381e257d2cb4d1b95893d79cefd4"
+  },
+  "user_preferences_unchanged": true,
+  "all_processes_exited_naturally": true,
+  "limits": [
+    "Actual EventSource/native F5menu,real Engine/mixer pause and complete original P501S302playback,including Windows backend;mute is enabled",
+    "ESCcloses only the test menu after300ms;does not stop the original voice or terminate the native process",
+    "Save/load deliberately unavailable until introduction ends to prevent reentrant scene restoration/startup replay;derived UIflag is not serialized",
+    "Not a human audiovisual playthrough or global completion claim"
+  ]
+}

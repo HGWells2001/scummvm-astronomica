@@ -1,0 +1,47 @@
+{
+  "status": "INTRO_GLOBAL_MENU_REENTRANT_LOAD_GUARD_CAUSAL_NATIVE_PASS",
+  "completed_at": "2026-11-12T13:46:01.774363+00:00",
+  "candidate_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "candidate_diagnostic_exe_sha256": "48a80cf4bbf271c00fe7f80dbf75b39890379fc64ee4a0cfb2a0e6253ab4b08e",
+  "baseline_diagnostic_exe_sha256": "00e946cdd85a267181253200fe7cfcb0862f8f4cdb7e5fd5decc8ca2d2eac1e6",
+  "cases": [
+    {
+      "role": "baseline",
+      "global_menu_paused": true,
+      "load_blocked_during_intro": false,
+      "save_blocked_during_intro": true,
+      "held_millis": 303,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 0,
+      "cursor_during_intro": 0,
+      "voice_completed_naturally": true,
+      "valid_native_slot_present_but_not_loaded": true,
+      "fixture_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "native_log_sha256": "d1c95cd7d2b3ab15c186be365bf49d91e9543f939e76df6da80c397af8d975d5",
+      "native_exited_naturally": true
+    },
+    {
+      "role": "candidate",
+      "global_menu_paused": true,
+      "load_blocked_during_intro": true,
+      "save_blocked_during_intro": true,
+      "held_millis": 300,
+      "audio_millis_at_pause": 2,
+      "audio_millis_at_escape": 2,
+      "cursor_during_intro": -1,
+      "voice_completed_naturally": true,
+      "valid_native_slot_present_but_not_loaded": true,
+      "fixture_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "native_log_sha256": "985dcaa0d6c424cce082fc64a23aece687be908146f418eef1d57ca270472383",
+      "native_exited_naturally": true
+    }
+  ],
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Standard EVENT_MAINMENUhandled by actual core event manager,corresponding to global CtrlF5/controller menu;not an engine-only F5shortcut",
+    "Valid physical earlier engine ASVM27slot present;unsafe baseline permission observed but no load selected and no file changed",
+    "Baseline global menu already pauses audio,but permits reentrant loading and retains previous exit arrow;candidate gates loading/saving and resets cursor",
+    "Observer-only diagnostic variants,not installed;both original voices run to natural end;no human/global completion claim"
+  ]
+}

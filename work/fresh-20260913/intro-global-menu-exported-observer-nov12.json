@@ -1,0 +1,14 @@
+{
+  "status": "EXPORTED_GLOBAL_MENU_OBSERVER_EXACT_PASS",
+  "candidate_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "shipping_cpp_sha256": "5d3a18e15c5d21a4ce16c4cc9f77c2d9f664d3ba4d0941180d7c6faabb68b1d9",
+  "diagnostic_cpp_sha256": "0ef959912d4d5efd5991b6e53c470637af412abae5d62a7d780e3428b152ab02",
+  "observer_sha256": "13e63c865538c3a847e3bfa1b54be088a76292f731f674d0c5b56fdc104fad70",
+  "all_other22engine_files_and_header_identical": true,
+  "native_receipt_sha256": "9793e470ea2ab453cbc05d5736f4a76da789d16193328f367dbf01b7b594c6f7",
+  "limits": [
+    "Replace the permanent intro test observer with this optional exact block and clean rebuild;use astronomica_verify_intro_menu and expected=true for candidate",
+    "Emits standard EVENT_MAINMENU rather than engine F5;the actual core event manager opens the menu",
+    "Requires your own compatible native save if reproducing the nonempty-slot profile;no fixture distributed"
+  ]
+}

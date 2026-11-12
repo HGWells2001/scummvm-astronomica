@@ -1,3 +1,11 @@
+# Current update:safe menu during spoken introductions
+
+Verified executable `5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703`. F5 pauses the original introduction,closing resumes it without a skip,and the cursor reflects the new scene. Save/load wait until scene initialization is complete. Baseline/candidate full-voice/UIchecks,Windows backend,four post-intro physical native file roundtrips,controlled full general and installed-path checks pass. [Verified scope](outputs/astronomica-cleanroom/INTRODUCTION-MENU.md). New derived UIflag;all seven engine units rebuilt,core/save schemas unchanged. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261112.md/development-20261112.json.Never force-end suites.DO NOT SHUT DOWN THE COMPUTER. The Nov12 registry has no poweroff capability. Historical checkpoints below.
+
+---
+
 # Current update:playable fresh-target defaults
 
 Verified executable `a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae`. Audio,animation,sprite input and original entry scripts now work with a freshly added ScummVMtarget;explicit false remains respected.24native configuration profiles,4fresh-config physical native save roundtrips,full controlled general regression and installed-path checks pass. [Verified scope](outputs/astronomica-cleanroom/STARTUP-DEFAULTS.md). ASTRO.cpp only;class/core/save layouts unchanged. Fixed acceptance7/10;whole-game completion unmeasured.

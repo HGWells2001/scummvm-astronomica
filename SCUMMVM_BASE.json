@@ -2,11 +2,11 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae",
+  "validated_executable_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "198ba4d7de43aaa9860f8e7db8f5603baa318c35bdd0cf542e55a4a8942904ee",
-    "astronomica.h": "a0962ae7f5f4782cd0d519e83399d996120270e2417ae0c315029551b734907f",
+    "astronomica.cpp": "5d3a18e15c5d21a4ce16c4cc9f77c2d9f664d3ba4d0941180d7c6faabb68b1d9",
+    "astronomica.h": "199bb37b190c2809b42d94b95dc2e081bc53c89df50bb7e7d772ace0c21c0683",
     "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
     "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
@@ -35,5 +35,5 @@
     "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
   },
   "clean_rebuild_required": true,
-  "build_scope": "Normal gameplay defaults for fresh targets;explicit false/preferences preserved. ASTRO.cpp only,no header/class/core/save schema change. All7engine units freshly rebuilt,403verified foundation objects reused;clean source rebuild required."
+  "build_scope": "Safe F5menu and cursor selection during original spoken introductions;derived private busy flag changes engine class layout. All7engine units freshly rebuilt,403 verified foundation objects reused. The three paired core files and native save schemas unchanged;full clean source rebuild required."
 }

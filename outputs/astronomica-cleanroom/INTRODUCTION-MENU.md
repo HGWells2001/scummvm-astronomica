@@ -1,0 +1,17 @@
+# Safe menu during spoken introductions — 12 November 2026
+
+F5now opens the ScummVM menu while an original spoken scene introduction is playing. The existing Engine pause mechanism pauses both audio and the game clock;closing the menu resumes the same voice through its natural end. It does not skip or shorten the original introduction. The cursor also updates to the newly loaded scene before speech,so an exit arrow from the preceding room does not remain visible over a puzzle introduction. Cursor visibility ownership is preserved.
+
+Saving and loading are unavailable until the introduction finishes. Loading here would reenter a scene loader that has not returned yet,with a risk of replaying startup after restoration. Both menu availability and the stream save/load entrypoints enforce this transient guard. The player-facing reason is simply to wait for the introduction to finish. Loading becomes available again afterwards.
+
+## Verified scope
+
+An accepted-source baseline with the exact same timed EventSourceobserver reproduces swallowed F5and a stale previous-room exit arrow. The corrected source passes full original P501 S302 voice playback with an actual F5menu,300msEngine pause,stable mixer elapsed time,save/load busy gates,normal cursor and recovered load availability. The original pending entry program is retained. Both dummy and actual SDL Windows backends pass. A separate causal test uses the standard global menu event (Ctrl+F5/controller path) with a valid native save present. The old source allows loading during the unfinished introduction; the corrected source blocks it. No unsafe baseline load is selected. Both menus pause the audio, and both original voices finish naturally. ESC closes only the test menu;every voice and native process ends naturally.
+
+Four additional real-engine processes play the complete original introduction first,verify its busy guard has cleared,then load,resave and reload earlier accepted-engine physical ASVM 2 / P103,ASVM 27 / P501and ASVM 26 / P504files,including Windows P501. All four gameplay option keys remain absent,using the previously fixed normal defaults. Scene,all 100 globals and completion count roundtrip;source fixture files and aliases remain unchanged. These tests do not claim all historical full futures or original Windows save compatibility.
+
+The controlled full general suite and installed-path intro/menu check pass on the exact candidate. The source/archive audit checks seven freshly compiled engine units and403 verified foundation objects. An initial observer compilation failed because a temporary member name collided with ScummVM's forbidden system macro;it produced no native process. Corrected observer receipts remain distinct. No test process is forcibly ended,and no computer shutdown is authorized.
+
+The new private introduction flag is derived UIstate and is not serialized. The class layout changes,so all seven engine units are rebuilt together. The three paired core files and every native save schema remain unchanged. Full clean source rebuild required. The optional file observer is exported exactly;it is not installed. Original media,raw executable bytes/disassembly,pixels,native save fixtures and binaries remain excluded.
+
+Fixed acceptance remains7/10 (70%), with 35 bounded native save profiles. Whole-game completion remains unmeasured. Complete required behavior,exact help typography and a human audiovisual playthrough remain open. Muted automated audio/backend checks do not replace a human listening test.

@@ -1,0 +1,14 @@
+{
+  "status": "EXPORTED_POST_INTRO_PHYSICAL_SAVE_OBSERVER_EXACT_PASS",
+  "candidate_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "shipping_cpp_sha256": "5d3a18e15c5d21a4ce16c4cc9f77c2d9f664d3ba4d0941180d7c6faabb68b1d9",
+  "diagnostic_cpp_sha256": "c52e400b147ad4821b259bff5f0e2be3d35f4fd9db19019cd6e770b232a9edf8",
+  "observer_sha256": "fbb7e93dbb6a924a3a9dc7c97b1c07e96c16fa3b5891b80ed11b5c9c280751f5",
+  "all_other22engine_files_and_header_identical": true,
+  "native_receipt_sha256": "9c484697463c0e490b36622f4757947ffe6270dcbc0342402d2fe426f462fd65",
+  "limits": [
+    "Insert optional fragment after initial loadPlaceinrun(),clean rebuild,enable astronomica_verify_default_save_load and supply compatible slot/expected scene",
+    "Plays the complete original P501introduction,checks transient busy guard released,then loads/resaves/reloads the requested native file in isolated slot60",
+    "All four gameplay option keys absent;original media,physical fixtures and binaries not distributed;not all historical futures"
+  ]
+}

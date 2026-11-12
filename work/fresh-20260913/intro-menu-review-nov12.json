@@ -1,0 +1,27 @@
+{
+  "status": "INTRO_MENU_SOURCE_CAUSAL_AUDIO_CURSOR_AND_FILE_REVIEW_PASS",
+  "verified_at": "2026-11-12T13:51:57.781080+00:00",
+  "candidate_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "previous_exe_sha256": "a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae",
+  "baseline_diagnostic_exe_sha256": "643e973327f3633855683dc16b60e741a5837e5ae95bb01b7b8efc78191e3d99",
+  "private_derived_introduction_busy_flag_added": true,
+  "save_and_load_public_and_stream_entrypoints_guarded": true,
+  "cursor_updated_before_original_spoken_intro_loop": true,
+  "all7engine_units_fresh": true,
+  "framework_and_save_schemas_unchanged": true,
+  "evidence_sha256": {
+    "intro-global-menu-native-nov12/proof.json": "9793e470ea2ab453cbc05d5736f4a76da789d16193328f367dbf01b7b594c6f7",
+    "intro-menu-candidate-source-review-nov12c.json": "d46cdcdb44bc3011b273d0123459353922fcbffaa7bcb4d68bf86df00cc6835e",
+    "intro-menu-baseline-source-review-nov12c.json": "62c1488e6541759e8ebacad96f33a3aef7da3f9cf5057cf280b374c5a3b99bb9",
+    "intro-menu-native-nov12c/proof.json": "db996b63f610b13121abb8696fff6d5866c6c474ed4df271933d6730a5c8ccc4",
+    "intro-menu-physical-saves-source-review-nov12c.json": "5920c6f91c422ad2d34c04f8fc58007eee0b9e1b9be7fa4309d1d0da74f273d0",
+    "intro-menu-physical-saves-native-nov12c/proof.json": "9c484697463c0e490b36622f4757947ffe6270dcbc0342402d2fe426f462fd65"
+  },
+  "limits": [
+    "Same timed EventSourceobserver in accepted baseline/candidate;original P501S302runs completely in every case",
+    "Real F5menu/Enginepause/mixer elapsed time/busy save-load gates and previous exit-cursor fallback checked,including actual Windows backend",
+    "Four old accepted-engine physical ASVM2/26/27roundtrips run after complete original voice and busy-guard release;not all historical full futures",
+    "Derived UIflag is not serialized;class layout changes and all7engine units are rebuilt together",
+    "No original Windows program run,no original asset/save fixture/binary distribution,no human playthrough/global completion claim"
+  ]
+}
