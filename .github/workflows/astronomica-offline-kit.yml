@@ -1,0 +1,141 @@
+name: Astronomica ASVM31 offline compilation kit
+
+on:
+  push:
+    branches:
+      - feat/asvm31-windows-portable-20261112
+    paths:
+      - '.github/workflows/astronomica-offline-kit.yml'
+      - 'tools/compile_offline.ps1'
+      - 'tools/build_offline.sh'
+      - 'tools/collect_mingw_dlls.py'
+      - 'tools/mingw_preview_compat.py'
+      - 'COMPILA.cmd'
+      - 'GIOCA.cmd'
+      - 'GUIDA-COMPILAZIONE-OFFLINE.md'
+      - 'GUIDA-AVVIO-WINDOWS.md'
+      - 'outputs/astronomica-cleanroom/engine/astronomica/**'
+      - 'framework-overlay/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: astronomica-offline-kit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-kit:
+    runs-on: windows-2022
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install offline toolchain components (only online preparation step)
+        id: msys
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            git make diffutils
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-SDL2
+            mingw-w64-x86_64-pkgconf
+            mingw-w64-x86_64-python
+            mingw-w64-x86_64-zlib
+            mingw-w64-x86_64-libpng
+
+      - name: Check exact ASVM31 source export
+        shell: msys2 {0}
+        run: python tools/verify_export.py
+
+      - name: Install reviewed engine and video patch in pinned upstream ScummVM checkout
+        shell: msys2 {0}
+        run: |
+          python tools/prepare_scummvm.py
+          python tools/mingw_preview_compat.py
+          pacman -Q > offline-msys2-packages.txt
+          test -f work/fresh-20260913/scummvm/engines/astronomica/astronomica.cpp
+          test -f work/fresh-20260913/scummvm/video/paused_audio_gate.h
+
+      - name: Assemble self-contained compiler/source tree
+        shell: pwsh
+        env:
+          INSTALLED_MSYS2: ${{ steps.msys.outputs.msys2-location }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $kit = Join-Path $env:GITHUB_WORKSPACE "offline_kit"
+          $msysDestination = Join-Path $kit "msys64"
+          $source = Join-Path $env:GITHUB_WORKSPACE "work\fresh-20260913\scummvm"
+          $sourceDestination = Join-Path $kit "scummvm"
+          New-Item -ItemType Directory -Force -Path (Join-Path $kit "tools") | Out-Null
+
+          if (-not (Test-Path (Join-Path $env:INSTALLED_MSYS2 "usr\bin\bash.exe"))) { throw "MSYS2 root not found" }
+
+          # Preserve installed libraries/licenses/toolchain. No cache or per-user state.
+          $exclusions = @((Join-Path $env:INSTALLED_MSYS2 "var\cache\pacman\pkg"), (Join-Path $env:INSTALLED_MSYS2 "var\log"), (Join-Path $env:INSTALLED_MSYS2 "home"), (Join-Path $env:INSTALLED_MSYS2 "tmp"))
+          & robocopy $env:INSTALLED_MSYS2 $msysDestination /E /R:1 /W:1 /NP /XD $exclusions | Out-Null
+          if ($LASTEXITCODE -gt 7) { throw "MSYS2 portable copy failed: $LASTEXITCODE" }
+
+          & robocopy $source $sourceDestination /E /R:1 /W:1 /NP /XD (Join-Path $source ".git") | Out-Null
+          if ($LASTEXITCODE -gt 7) { throw "ScummVM source copy failed: $LASTEXITCODE" }
+
+          foreach ($name in @("COMPILA.cmd", "GIOCA.cmd", "GUIDA-COMPILAZIONE-OFFLINE.md", "GUIDA-AVVIO-WINDOWS.md")) {
+            Copy-Item -LiteralPath (Join-Path $env:GITHUB_WORKSPACE $name) -Destination $kit
+          }
+          foreach ($name in @("compile_offline.ps1", "build_offline.sh", "collect_mingw_dlls.py", "play_astronomica.ps1")) {
+            Copy-Item -LiteralPath (Join-Path $env:GITHUB_WORKSPACE "tools\$name") -Destination (Join-Path $kit "tools")
+          }
+          Copy-Item -LiteralPath "offline-msys2-packages.txt" -Destination (Join-Path $kit "offline-msys2-packages.txt")
+          $hash = (Get-FileHash -Algorithm SHA256 (Join-Path $sourceDestination "engines\astronomica\astronomica.cpp")).Hash
+          @(
+            "Astronomica ASVM31 offline compiler bundle"
+            "Bundle commit: $env:GITHUB_SHA"
+            "Pinned ScummVM commit: 2085bcb368c19bc90f0190efcd56b9d58cd7fb5a"
+            "Engine source SHA-256 (GCC compatibility copy): $hash"
+            "MSYS2 installed package list: offline-msys2-packages.txt"
+            "MSYS2 homepage: https://www.msys2.org/"
+            "ScummVM source: https://github.com/scummvm/scummvm"
+            "No original game assets included."
+          ) | Set-Content -Encoding UTF8 (Join-Path $kit "ORIGINE-BUILD.txt")
+          if (-not (Test-Path (Join-Path $kit "msys64\mingw64\bin\g++.exe"))) { throw "Portable GCC compiler not copied" }
+          if (-not (Test-Path (Join-Path $kit "scummvm\configure"))) { throw "ScummVM configure script missing" }
+
+      - name: Test relocated toolchain without network or external compiler
+        shell: pwsh
+        run: |
+          $env:PATH = "$env:SystemRoot\System32;$env:SystemRoot"
+          & .\offline_kit\COMPILA.cmd -CheckOnly
+          if ($LASTEXITCODE -ne 0) { throw "Offline toolchain preflight failed" }
+
+      - name: Prove full native ScummVM build using only bundled source/compiler
+        shell: pwsh
+        run: |
+          $env:PATH = "$env:SystemRoot\System32;$env:SystemRoot"
+          & .\offline_kit\COMPILA.cmd -Jobs 2
+          if ($LASTEXITCODE -ne 0) { throw "Offline build did not finish" }
+          if (-not (Test-Path "offline_kit\bin\scummvm.exe")) { throw "Offline EXE not produced" }
+
+      - name: Compress offline package and record SHA-256
+        shell: pwsh
+        run: |
+          $archive = "Astronomica-ASVM31-Offline-Kit.7z"
+          & 7z a -t7z -mx=5 -mmt=on $archive ".\offline_kit\*" | Out-Null
+          if ($LASTEXITCODE -ne 0) { throw "Archive creation failed" }
+          $actual = (Get-FileHash -Algorithm SHA256 $archive).Hash.ToLowerInvariant()
+          "$actual  $archive" | Set-Content -Encoding ASCII "Astronomica-ASVM31-Offline-Kit.sha256"
+          Write-Host "Offline artifact SHA-256: $actual"
+          Write-Host "Archive size: $((Get-Item $archive).Length) bytes"
+
+      - name: Publish offline kit as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Astronomica-ASVM31-Offline-Kit
+          path: |
+            Astronomica-ASVM31-Offline-Kit.7z
+            Astronomica-ASVM31-Offline-Kit.sha256
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
