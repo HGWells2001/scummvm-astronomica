@@ -49,11 +49,15 @@ jobs:
         shell: msys2 {0}
         run: python tools/prepare_scummvm.py
 
+      - name: Apply narrow GCC compatibility to the temporary checkout
+        shell: msys2 {0}
+        run: python tools/mingw_preview_compat.py
+
       - name: Compile fresh Windows x64 executable
         shell: msys2 {0}
         run: |
           cd work/fresh-20260913/scummvm
-          ./configure --disable-all-engines --enable-engine=astronomica
+          CXXFLAGS="-std=gnu++14" ./configure --disable-all-engines --enable-engine=astronomica
           make -j2
           ./scummvm.exe --list-engines | grep -i astronomica
 
