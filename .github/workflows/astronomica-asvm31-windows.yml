@@ -57,7 +57,12 @@ jobs:
         shell: msys2 {0}
         run: |
           cd work/fresh-20260913/scummvm
-          CXXFLAGS="-std=gnu++14" ./configure --disable-all-engines --enable-engine=astronomica
+          ./configure --disable-all-engines --enable-engine=astronomica
+          # This pinned configure forcibly appends -std=c++11 after user CXXFLAGS.
+          # ASVM31 aggregate initializers need C++14 on GCC. Keep all other flags.
+          grep -q -- "-std=c++11" config.mk
+          sed -i "s/-std=c++11/-std=c++14/g" config.mk
+          grep -q -- "-std=c++14" config.mk
           make -j2
           ./scummvm.exe --list-engines | grep -i astronomica
 
