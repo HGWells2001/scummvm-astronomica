@@ -16,4 +16,15 @@ count = source.count(old)
 if count != 5:
     raise SystemExit(f'Unexpected ASVM31 audio track references: {count}; refusing to patch')
 path.write_text(source.replace(old, new), encoding='utf-8')
-print(f'MinGW preview audio-track name qualification PASS: {count} references; only temporary checkout modified')
+# ScummVM Common::Array has multiple push_back overloads; GCC cannot infer
+# the intended value type from an untyped braced-list on this pinned revision.
+# Preserve the exact action data and sequence by making the value type explicit.
+danger_path = path.with_name('danger.h')
+danger = danger_path.read_text(encoding='utf-8')
+old_push = 'result.actions.push_back({'
+push_count = danger.count(old_push)
+if push_count != 161:
+    raise SystemExit(f'Unexpected original danger action count: {push_count}; refusing patch')
+danger_path.write_text(danger.replace(old_push, 'result.actions.push_back(DangerAction{'), encoding='utf-8')
+print(f'MinGW compatibility PASS: {count} QuickTime track references, {push_count} explicit DangerAction values. Only temporary checkout modified.')
+
