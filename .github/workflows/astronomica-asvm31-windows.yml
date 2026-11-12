@@ -1,0 +1,110 @@
+name: Astronomica ASVM31 Windows x64 preview
+
+on:
+  push:
+    branches:
+      - feat/asvm31-windows-portable-20261112
+  pull_request:
+    paths:
+      - '.github/workflows/astronomica-asvm31-windows.yml'
+      - 'GIOCA.cmd'
+      - 'tools/play_astronomica.ps1'
+      - 'GUIDA-AVVIO-WINDOWS.md'
+      - 'outputs/astronomica-cleanroom/engine/astronomica/**'
+      - 'framework-overlay/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: astronomica-asvm31-preview
+  cancel-in-progress: true
+
+jobs:
+  windows-x64:
+    runs-on: windows-2022
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare MSYS2 compiler and dependencies
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            git make
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-SDL2
+            mingw-w64-x86_64-pkgconf
+            mingw-w64-x86_64-python
+            mingw-w64-x86_64-zlib
+            mingw-w64-x86_64-libpng
+
+      - name: Verify canonical ASVM31 engine and paired video overlay
+        shell: msys2 {0}
+        run: python tools/verify_export.py
+
+      - name: Install pinned ScummVM source and custom engine
+        shell: msys2 {0}
+        run: python tools/prepare_scummvm.py
+
+      - name: Compile fresh Windows x64 executable
+        shell: msys2 {0}
+        run: |
+          cd work/fresh-20260913/scummvm
+          ./configure --disable-all-engines --enable-engine=astronomica
+          make -j2
+          ./scummvm.exe --list-engines | grep -i astronomica
+
+      - name: Package EXE, Windows runtime DLLs, and launcher (no game assets)
+        shell: msys2 {0}
+        run: |
+          mkdir -p dist/tools
+          cp work/fresh-20260913/scummvm/scummvm.exe dist/
+          cp GIOCA.cmd GUIDA-AVVIO-WINDOWS.md dist/
+          cp tools/play_astronomica.ps1 dist/tools/
+          python - <<'PY'
+          from collections import deque
+          from pathlib import Path
+          import re
+          import shutil
+          import subprocess
+
+          dist = Path('dist')
+          queue = deque([dist / 'scummvm.exe'])
+          seen = set()
+          mingw_bin = Path(shutil.which('g++')).parent
+          while queue:
+              binary = queue.popleft()
+              result = subprocess.run(['objdump', '-p', str(binary)], capture_output=True, text=True, check=True)
+              for dependency in re.findall(r'DLL Name:\s*([^\r\n]+)', result.stdout, re.I):
+                  name = dependency.strip()
+                  key = name.casefold()
+                  source = mingw_bin / name
+                  if source.is_file() and key not in seen:
+                      seen.add(key)
+                      target = dist / name
+                      shutil.copy2(source, target)
+                      queue.append(target)
+          print('Bundled MSYS2 runtime libraries:', sorted(seen))
+          PY
+          ./dist/scummvm.exe --list-engines | grep -i astronomica
+
+      - name: Smoke test real Windows launcher without copyrighted files
+        shell: msys2 {0}
+        run: |
+          mkdir -p dist/game_data/PLACES
+          printf 'only-a-structure-smoke-test' > dist/game_data/PLACES/GAMEDATA
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(cygpath -w dist/tools/play_astronomica.ps1)" -CheckOnly
+          rm -rf dist/game_data
+          test ! -e dist/game_data
+          test ! -e dist/userdata
+
+      - name: Upload Windows preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Astronomica-ASVM31-Windows-x64
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
