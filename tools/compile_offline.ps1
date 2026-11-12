@@ -26,8 +26,15 @@ try {
     $env:ASTRO_OFFLINE_JOBS = "$Jobs"
     $env:ASTRO_OFFLINE_CHECK = if ($CheckOnly) { "1" } else { "0" }
 
-    # Use bundled bash (not an external Git Bash). No pacman or network calls.
-    & $bash --login -c 'bash "$(cygpath -u "$ASTRO_OFFLINE_ROOT")/tools/build_offline.sh"'
+    # Pass a single POSIX script path; nested -c quoting is fragile on Windows.
+    $posixRoot = $root.Replace("\", "/")
+    if ($posixRoot -match "^([A-Za-z]):/(.*)$") {
+        $posixRoot = "/" + $Matches[1].ToLowerInvariant() + "/" + $Matches[2]
+    } else {
+        throw "Percorso offline non supportato: $root"
+    }
+    $posixScript = "$posixRoot/tools/build_offline.sh"
+    & $bash --login $posixScript
     if ($LASTEXITCODE -ne 0) { throw "Compilazione offline fallita (codice $LASTEXITCODE)" }
     if (-not $CheckOnly) {
         Write-Host "Compilazione terminata: $(Join-Path $root 'bin\scummvm.exe')"
