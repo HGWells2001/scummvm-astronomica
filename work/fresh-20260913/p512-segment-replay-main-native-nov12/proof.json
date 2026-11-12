@@ -1,0 +1,12 @@
+{
+  "status": "INSTALLED_P512_SEGMENT_REPLAY_NATIVE_PASS",
+  "completed_at": "2026-11-12T18:15:26.314363+00:00",
+  "candidate_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+  "native_log_sha256": "d829f9242b94ce238c84ab021ba4481670ca3b14149e0fe913d0333cbdefb9fb",
+  "original_scenes": 306,
+  "original_routes": 760,
+  "stock_keymap_events_checked": true,
+  "actual_P27_input_lock_and_modifiers_preserved": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true
+}

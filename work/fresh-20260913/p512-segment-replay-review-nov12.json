@@ -1,0 +1,33 @@
+{
+  "status": "P512_SEGMENT_REPLAY_AND_CONTROLLER_SOURCE_REVIEW_PASS",
+  "verified_at": "2026-11-12T18:15:18.023800+00:00",
+  "candidate_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+  "previous_exe_sha256": "50036fd9f6d2aafae38832beb20a8e6dfa1e496ab3fb7fabf556b7b202b78076",
+  "intermediate_unpublished_exe_sha256": "b88f554c56b042ce44045293d42fecb69cee0373d11bf552a941817b81cca883",
+  "changed_engine_files": [
+    "astronomica.cpp"
+  ],
+  "class_layout_unchanged": true,
+  "core_and_native_save_schemas_unchanged": true,
+  "all7engine_units_fresh": true,
+  "evidence_sha256": {
+    "p512-segment-replay-source-review-nov12.json": "fc14ee3fc6b6d239ee664c200a49d918dc24be2a809de4b03b7100b118eff23d",
+    "p512-memory-refusal-native-nov12g/proof.json": "a92af0a19eeedd7e1acb5a7f48eb4babc27149e7758db9b27cf323ae2af9a51a",
+    "p512-replay-edges-native-nov12/proof.json": "ba53490e36901b5b8c86a3e80535374ad0d996dc4f100471470be2acae5e6810",
+    "p512-replay-navigation-native-nov12/proof.json": "319fe7439c72c3fee8ff2c1d5d16d845a8be58b34152db6bee45991d0e69e85b",
+    "p512-replay-physical-saves-native-nov12/proof.json": "db8884ea71efbf1baaf153f493c624b287a0725f88401b87eb14659c19376e52",
+    "p512-replay-genuine-nov12/proof.json": "e5521891792f8c2abf9e7e68494b9be48b7ed352458401632d0532eca72ff1aa"
+  },
+  "baseline_refusal_proof_sha256": "35a934431862e22c73ee39887b5bfa3af3163467406d71568ab569a5ab154a19",
+  "optional_regression_source_recovered_exactly": true,
+  "optional_edges_source_recovered_exactly": true,
+  "limits": [
+    "The actual failed baseline saved a stopped clock before its range limit;controlled accepted packet clock=end-8reproduces missing seek deterministically",
+    "Existing source guard used stopped clock and endOfVideo;the latter ignores video range end while stopped. Next video frame records segment exhaustion independently",
+    "New no-field decoder helper used for both fresh and prepared P512 movies;only stopped exhausted ranges rewind,midrange and active cases preserved across6ranges/18cells",
+    "Baseline failure and corrected12edge-clock futures use exact same optional observer;original resources/commands/delays unchanged",
+    "760original navigation references/306scenes including Windows;four ASVM2/26/27post-intro roundtrips;four genuine old-main ASVM29 fresh continuations",
+    "Old failed general remains untouched in debugger;this review does not make that run pass. New exact candidate full general must independently pass before promotion",
+    "No original media,binaries,raw disassembly or native fixtures for public distribution;no whole-game completion claim"
+  ]
+}

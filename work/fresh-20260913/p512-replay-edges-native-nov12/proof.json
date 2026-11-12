@@ -1,0 +1,21 @@
+{
+  "status": "P512_REPLAY_SEGMENT_EDGE_NATIVE_PASS",
+  "completed_at": "2026-11-12T17:58:47.957843+00:00",
+  "diagnostic_exe_sha256": "45b87a2ae871ae6472a2aaf8af64b35097dc5924464b9347b1270fa0f47e2c2a",
+  "shipping_candidate_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+  "native_log_sha256": "c2abefa06c1747029d436399072e1f0fbcc873321060413a774861e4eb1b55f0",
+  "detail_lines": [],
+  "native_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "fixtures_unchanged": {
+    "astro-verify.098": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+    "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
+  },
+  "production_installed": false,
+  "release_gate_satisfied": false,
+  "limits": [
+    "Additional isolated observation;cannot replace failed full general on exact candidate",
+    "No checks weakened;new diagnostic reports failure and returns normally instead of entering debugger",
+    "Original stalled general/native38244left untouched;no process termination or computer shutdown"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "P512_REPLAY_EXPORTED_OBSERVERS_EXACT_PASS",
+  "candidate_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+  "shipping_cpp_sha256": "ac9939ff3f9693c37bef519483c128fb0ba1430734ab891ef9341bff31a58f31",
+  "observers": [
+    {
+      "label": "under-end-clock",
+      "diagnostic_cpp_sha256": "66699478bacb5ca06e8c4e1c33703234bb5428d646b492faee2fb8d96040a106",
+      "native_receipt_sha256": "a92af0a19eeedd7e1acb5a7f48eb4babc27149e7758db9b27cf323ae2af9a51a"
+    },
+    {
+      "label": "range-edges",
+      "diagnostic_cpp_sha256": "7b2a31a784816f2ebd534da24c7ecc9ccda3379502c7c06249aa3138702e2717",
+      "native_receipt_sha256": "ba53490e36901b5b8c86a3e80535374ad0d996dc4f100471470be2acae5e6810"
+    }
+  ],
+  "physical_observer_sha256": "fbb7e93dbb6a924a3a9dc7c97b1c07e96c16fa3b5891b80ed11b5c9c280751f5",
+  "all_other22engine_files_unchanged": true,
+  "limits": [
+    "Apply the exported regression or edge transform to current shipping source and clean rebuild;these observers are optional and not installed",
+    "The under-end test changes only a validated diagnostic packet clock to end-minus8;no original resource or file fixture is modified",
+    "Physical earlier-engine native fixtures,original media,binaries and raw original instruction contexts remain excluded"
+  ]
+}

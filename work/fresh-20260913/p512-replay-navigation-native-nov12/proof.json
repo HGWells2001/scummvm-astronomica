@@ -1,0 +1,68 @@
+{
+  "status": "MAPPED_NAVIGATION_NATIVE_PASS",
+  "completed_at": "2026-11-12T17:57:42.323655+00:00",
+  "candidate_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+  "baseline_diagnostic_exe_sha256": "a8902695af4cd9962843c9bf5fcd852a4c42c745292bfdccecf11b87252e589c",
+  "cases": [
+    {
+      "profile": "baseline-ignored-directions",
+      "role": "baseline",
+      "video_driver": "dummy",
+      "expected_direction_support": false,
+      "original_scenes": 306,
+      "original_routes": 760,
+      "route_digest": "edd1573c",
+      "stock_keymap_events_checked": true,
+      "all100_globals_match_arrow_reference": false,
+      "actual_P27_input_lock_preserved": true,
+      "ctrl_alt_meta_ignored": true,
+      "native_exe_sha256": "a8902695af4cd9962843c9bf5fcd852a4c42c745292bfdccecf11b87252e589c",
+      "native_log_sha256": "3d15140fd5879641e7fb7308fa4e83eb12a6fbf47c5b03a74dd48864fe80c67e",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "candidate-directions",
+      "role": "candidate",
+      "video_driver": "dummy",
+      "expected_direction_support": true,
+      "original_scenes": 306,
+      "original_routes": 760,
+      "route_digest": "ac12eacf",
+      "stock_keymap_events_checked": true,
+      "all100_globals_match_arrow_reference": true,
+      "actual_P27_input_lock_preserved": true,
+      "ctrl_alt_meta_ignored": true,
+      "native_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+      "native_log_sha256": "bf321c06a08e43ab9468c7264954046c2e6496364f497725d3fc35043a526ac1",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "candidate-windows-directions",
+      "role": "candidate",
+      "video_driver": "windows",
+      "expected_direction_support": true,
+      "original_scenes": 306,
+      "original_routes": 760,
+      "route_digest": "ac12eacf",
+      "stock_keymap_events_checked": true,
+      "all100_globals_match_arrow_reference": true,
+      "actual_P27_input_lock_preserved": true,
+      "ctrl_alt_meta_ignored": true,
+      "native_exe_sha256": "5c506670702a81cfa83342c696632f548770b66ed5ac0942a3f2192f36270cd0",
+      "native_log_sha256": "647d7f76930940744e476d905dcf6c413a4759b78e50fae05659fe3267de8d9a",
+      "native_exited_naturally": true
+    }
+  ],
+  "original_resource_sha256": {
+    "P27": "25a91a84aa37773c7ce4c2a337547d0b62b8da06ac33e373c797c747ef838bb3",
+    "P103": "d6168dff8c27264e9ce4a9d1044a52d4c952c59c7a53215e968f75f35bd1e896",
+    "P106": "ea45c8c03afa633df5c97dd7890ac6c96e32115dae8341dbcd04b9fa6c803ec9"
+  },
+  "user_preferences_unchanged": true,
+  "all_processes_exited_naturally": true,
+  "limits": [
+    "Actual MetaEngine standard keymap action events and JOY direction defaults checked;no claim of physical controller hardware testing",
+    "760original NAV routes in306scenes compare mapped keypad events with existing arrow destination/all100globals;not complete game or puzzle coverage",
+    "Original P27 script input lock and modified directional keys checked;no game state or save schema changes"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "P512_ISOLATED_MEMORY_REFUSAL_REPRODUCED",
+  "completed_at": "2026-11-12T17:52:24.920913+00:00",
+  "diagnostic_exe_sha256": "c42191fae2938093dcb41950314035c67be67efecedd13552cfdb5ab80916a59",
+  "shipping_candidate_exe_sha256": "b88f554c56b042ce44045293d42fecb69cee0373d11bf552a941817b81cca883",
+  "native_log_sha256": "3ab647bef34c8b3b9f36ef6b07239c1f88366e6cf54094037f49bbf36cb69505",
+  "detail_lines": [
+    "[2026-11-12 18:52:21] P512 memory refusal detail line10495",
+    "[2026-11-12 18:52:24] P512 isolated diagnostic result: FAIL"
+  ],
+  "native_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "fixtures_unchanged": {
+    "astro-verify.098": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+    "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
+  },
+  "production_installed": false,
+  "release_gate_satisfied": false,
+  "limits": [
+    "Additional isolated observation;cannot replace failed full general on exact candidate",
+    "No checks weakened;new diagnostic reports failure and returns normally instead of entering debugger",
+    "Original stalled general/native38244left untouched;no process termination or computer shutdown"
+  ]
+}
