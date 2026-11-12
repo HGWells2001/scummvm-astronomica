@@ -1,0 +1,10 @@
+{
+  "status": "INSTALLED_STARTUP_DEFAULTS_FRESH_TARGET_NATIVE_PASS",
+  "completed_at": "2026-11-12T13:15:44.267523+00:00",
+  "candidate_exe_sha256": "a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae",
+  "native_log_sha256": "6443b687620edeeb95b6711c9d04fbc3209cb6028a81a4869772a937d5e926b0",
+  "no_gameplay_keys_created": true,
+  "original_entry_animation_input_and_audio_dispatch": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true
+}

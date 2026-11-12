@@ -1,0 +1,291 @@
+{
+  "status": "STARTUP_DEFAULTS_CAUSAL_NATIVE_AND_EXPLICIT_PREFERENCES_PASS",
+  "completed_at": "2026-11-12T12:56:08.640891+00:00",
+  "candidate_exe_sha256": "a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae",
+  "baseline_diagnostic_exe_sha256": "398acee10fcc9ef7874e550b865e0518f15655edbf9d4048fade5f353965a109",
+  "original_installed_base_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "cases": [
+    {
+      "profile": "baseline-fresh",
+      "role": "baseline",
+      "observed_mask": 0,
+      "explicit_mask": 0,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "e71a4804799d938024b14e1b56878103e238cb77bd717337fc0f69b0bc9e5f7b",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "fresh-defaults",
+      "role": "candidate",
+      "observed_mask": 15,
+      "explicit_mask": 0,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "d563332969e69085ff16a2d6e8a7cb503182d9de2947d268842f90bf53738de4",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-0",
+      "role": "candidate",
+      "observed_mask": 0,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "60c39532ef37c4b689828db9919113eb87e68a6f0a52245b24b5c06cc0e047fd",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-1",
+      "role": "candidate",
+      "observed_mask": 1,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "da9d6e989fa285516c69fcd3c3061220f8a4bbbe553b0a54eb566c8628aee290",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-2",
+      "role": "candidate",
+      "observed_mask": 2,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "fac2ec48225eb267b73fabe1fa81fb38a15e1b7a8949770f8a8dbe60e7656609",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-3",
+      "role": "candidate",
+      "observed_mask": 3,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "2970b5ec42572cd4438357f9fa5dee552a98a91815348be15cb3f81ba25fb8a3",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-4",
+      "role": "candidate",
+      "observed_mask": 4,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "40b385b23874c2b0e12a09fcfce47c8a67ef45777a1466576e5dd247406734d4",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-5",
+      "role": "candidate",
+      "observed_mask": 5,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "fd41fdddd4d4204587eb4d85023132b9c035c74f703b9463ac3f3d62aa974e9b",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-6",
+      "role": "candidate",
+      "observed_mask": 6,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "958c25320739455044b92a149dbf97e40c08a4d4c5335b567744dcc5307c5c12",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-7",
+      "role": "candidate",
+      "observed_mask": 7,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "8eb6113f1a67ef75c17f24950e2775ea3f67be83f8c0222902a5f45cc4222769",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-8",
+      "role": "candidate",
+      "observed_mask": 8,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "8e13ca24030d308091961a197d98e12186a619065ef668f1818960c0e35fb5c5",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-9",
+      "role": "candidate",
+      "observed_mask": 9,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "79483d44433aa5d7b279f6e74b7af732afb29605d7095671620cf4b62939c345",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-10",
+      "role": "candidate",
+      "observed_mask": 10,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "420c431fc3ad13b9ca23b80cd621684bd5cc0db0c81f426c9b6b6081e4486a9e",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-11",
+      "role": "candidate",
+      "observed_mask": 11,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "11a7fbb61dd2a43eddd8951587eccdf6a3c80458a809e1a25f31a5e6e029af39",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-12",
+      "role": "candidate",
+      "observed_mask": 12,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "10da1ecf31df04525387c5be3b10ea4330b447e7704804dd05eb3802ada7ce0c",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-13",
+      "role": "candidate",
+      "observed_mask": 13,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "6a614c5d4c856b496938a9ad3857c6c1f9916ef9bf15b6f21b747d212ba67840",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-14",
+      "role": "candidate",
+      "observed_mask": 14,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "f66d6d16dd4d84412b510d84db15944fe50e00628e206cd8d9f6312ce47ed629",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-15",
+      "role": "candidate",
+      "observed_mask": 15,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "016174f445c4064fb690ed63ebc49af6d45306da6808caf43640620eb7dc6000",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "application-off-0",
+      "role": "candidate",
+      "observed_mask": 14,
+      "explicit_mask": 1,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "0c647ae2cada6ca00b8320de677c67a7241c460e33bb44ea5cc87003d3318518",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "application-off-1",
+      "role": "candidate",
+      "observed_mask": 13,
+      "explicit_mask": 2,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "5e3ab3d8448eb44eaadaa34485c365b74be5a5903f06d7ac0dbf5a20b74f7722",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "application-off-2",
+      "role": "candidate",
+      "observed_mask": 11,
+      "explicit_mask": 4,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "c964677a6e4a369c300a125f81fa7f8b9833680b22beeab0053d75795909d61d",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "application-off-3",
+      "role": "candidate",
+      "observed_mask": 7,
+      "explicit_mask": 8,
+      "initial_original_P1_queue": 0,
+      "video_driver": "dummy",
+      "native_log_sha256": "45738ebe644de1a2a0446431929b24c8b3ecb4ce2bd9d315d3d0fae33077e2a4",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "game-overrides-application",
+      "role": "candidate",
+      "observed_mask": 15,
+      "explicit_mask": 15,
+      "initial_original_P1_queue": 1,
+      "video_driver": "dummy",
+      "native_log_sha256": "dfa86981271a126602096143f3e7678f0724835166e68573d42f6e72a862c171",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "fresh-windows",
+      "role": "candidate",
+      "observed_mask": 15,
+      "explicit_mask": 0,
+      "initial_original_P1_queue": 1,
+      "video_driver": "windows",
+      "native_log_sha256": "c4cb5241f2ad1b5bd0db20b16885d95aade22349bfab8fe120f687cc7dbd4eba",
+      "gameplay_feature_keys_unchanged": true,
+      "native_exited_naturally": true
+    }
+  ],
+  "fresh_baseline_missing_gameplay_reproduced": true,
+  "fresh_candidate_original_entry_input_audio_and_animation_pass": true,
+  "all16explicit_feature_masks_preserved": true,
+  "application_and_game_precedence_preserved": true,
+  "windows_backend_fresh_profile_pass": true,
+  "original_resource_sha256": {
+    "PLACES/P1/MEGAFILE.HYP": "8ada5f1f10f4cb88d945a5451cb4d0f0d2d4414cd21e087084f8cc884c617feb",
+    "PLACES/P27/MEGAFILE.HYP": "25a91a84aa37773c7ce4c2a337547d0b62b8da06ac33e373c797c747ef838bb3",
+    "PLACES/P27/S0.WAV": "ce810e10b319f0ef6fe1f93b61b868baa1446506d008a9e6569628f8f37f313f"
+  },
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Baseline contains exact same optional verification branch added to the accepted engine;candidate adds actual production defaults/guard fix",
+    "Original P1entry queue,P27selected sprite frame,actual original P27click lock and S0mixer submission checked;not a human audio inspection",
+    "Explicit false remains a deliberate override. ScummVM may normalize its isolated test INI/core metadata;all four gameplay key presences/values preserved and real user preferences/original resources unchanged",
+    "No original Win16execution or global completion percentage claim"
+  ]
+}

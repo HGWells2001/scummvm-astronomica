@@ -1,0 +1,38 @@
+{
+  "status": "STARTUP_DEFAULTS_SOURCE_CAUSAL_CONFIG_AND_PHYSICAL_SAVE_REVIEW_PASS",
+  "verified_at": "2026-11-12T13:15:39.876252+00:00",
+  "candidate_exe_sha256": "a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae",
+  "previous_exe_sha256": "995281e4b79b0d5ec4ecb375c5e9feecdc10a80fb91bd5106e0850e5e92fd56c",
+  "baseline_diagnostic_exe_sha256": "398acee10fcc9ef7874e550b865e0518f15655edbf9d4048fade5f353965a109",
+  "removed_default_excluding_presence_guards": {
+    "astronomica_audio": 20,
+    "astronomica_animation": 25,
+    "astronomica_sprite_input": 21,
+    "astronomica_entry_scripts": 1
+  },
+  "registered_gameplay_defaults_true": [
+    "astronomica_audio",
+    "astronomica_animation",
+    "astronomica_sprite_input",
+    "astronomica_entry_scripts"
+  ],
+  "explicit_keys_not_created": true,
+  "all16_feature_masks_and_domain_precedence_verified": true,
+  "all7engine_units_fresh": true,
+  "engine_class_layout_framework_and_save_schemas_unchanged": true,
+  "evidence_sha256": {
+    "startup-defaults-candidate-source-review-nov12c.json": "a8852e83d1d13d21056d6209f8b24bbe58a9754b07a3fd05d0d8b17ad3b40277",
+    "startup-defaults-baseline-source-review-nov12c.json": "bffd8b3ad079230ce5cb944497d2b4f320a19a681c4762ad9aacdb395f2c416b",
+    "startup-defaults-native-nov12d/proof.json": "8a96e2e3c9dda4654ce3ed0645629473be75681b555a869811c5b757c7c201e3",
+    "defaults-physical-saves-source-review-nov12.json": "b22c4f3a083aa83b20bebb3663fc94a58c3622279e77413b89dcd62825ec7f9d",
+    "defaults-physical-saves-native-nov12b/proof.json": "84be6c7693e9bd8ba8cad77fa79a2cf3ae3a2565bb48d54cfe4a878e704c24a9"
+  },
+  "limits": [
+    "Stock ConfigManagerhasKey intentionally excludes defaults;registered getBoolvalues now control all four features consistently",
+    "Same optional verifier branch in accepted baseline reproduces missing initial entry queue/animation/input/audio dispatch;candidate fixes them",
+    "ScummVM may normalize isolated INImetadata;feature presence/values and actual user preferences remain unchanged",
+    "Physical ASVM2/26/27load/resave/reload plus100globals/completion checks are bounded;not all-version full futures or human playthrough",
+    "Failed test assumptions/file/INIreceipts preserved separately;no native process forcibly ended",
+    "Fixed acceptance7/10;whole-game completion unmeasured"
+  ]
+}

@@ -594,7 +594,7 @@ Common::Error AstronomicaEngine::loadQuestion(Common::SeekableReadStream *stream
      (header[3] > 537 && header[3] != 0xffffffffU) || header[4] >= (1U << profile.sprites) || header[5] >= (1U << profile.sprites) ||
      (header[6] != 0 && header[6] != 0xffffffffU) || header[7] > 1 || header[9] > 1 ||
      (header[9] && (header[6] != 0 || !header[7])) || (hover[0] & ~0x55U) || (hover[1] & ~0x3ffU)) return Common::kReadingFailed;
- if (version == 4 && (!ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input"))) return Common::kReadingFailed;
+ if (version == 4 && (!ConfMan.getBool("astronomica_sprite_input"))) return Common::kReadingFailed;
  // Preflight the original question image and its invariant footprint before
  // changing any live state. Each scene replaces one complete rectangle.
  Common::File file;
@@ -666,7 +666,7 @@ Common::Error AstronomicaEngine::saveP519(Common::WriteStream *stream) {
 }
 Common::Error AstronomicaEngine::loadP519(Common::SeekableReadStream *stream) {
  if (stream->size()-stream->pos() < (kP519Words+1)*4 ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[13], frames[27], hash = 2166136261U;
  auto word = [&]() { const uint32 value = stream->readUint32LE(); hash = (hash ^ value)*16777619U; return value; };
  for (uint32 &value : header) value = word();
@@ -752,7 +752,7 @@ Common::Error AstronomicaEngine::saveP524(Common::WriteStream *stream) {
 }
 Common::Error AstronomicaEngine::loadP524(Common::SeekableReadStream *stream) {
  if (stream->size()-stream->pos() < (kP524Words+1)*4 ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[15], frames[32], hash = 2166136261U;
  auto word = [&]() { const uint32 value = stream->readUint32LE(); hash = (hash ^ value)*16777619U; return value; };
  for (uint32 &value : header) value = word();
@@ -792,8 +792,8 @@ Common::Error AstronomicaEngine::loadP524(Common::SeekableReadStream *stream) {
 bool AstronomicaEngine::canSaveP526() const {
  if (_place != 526 || !_runner.idle() || _pendingImage.w || _movie || !validP526Scene(_scene) ||
      _questionSaveBaseline.size() != 23 || _hoverSprites.size() != 23 || _hoverRects.size() != 6 ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) ||
      (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state;
@@ -827,8 +827,8 @@ Common::Error AstronomicaEngine::saveP526(Common::WriteStream *stream) {
  return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadP526(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kP526Words+1)*4 || !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kP526Words+1)*4 || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12], hash = 2166136261U;
  auto word = [&]() { const uint32 value = stream->readUint32LE(); hash = (hash ^ value)*16777619U; return value; };
  for (uint32 &value : header) value = word();
@@ -869,9 +869,9 @@ Common::Error AstronomicaEngine::loadP526(Common::SeekableReadStream *stream) {
 bool AstronomicaEngine::canSaveP528() const {
  if (_place != 528 || !_runner.idle() || _pendingImage.w || _movie || !validP528Scene(_scene) || _questionSaveBaseline.size() != 9 ||
      !_p528HistoryValid ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) ||
      (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state, sprites;
@@ -901,9 +901,9 @@ Common::Error AstronomicaEngine::saveP528(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadP528(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kP528Words+1)*4 || !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kP528Words+1)*4 || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12],hash = 2166136261U;
  auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word();
@@ -945,9 +945,9 @@ Common::Error AstronomicaEngine::loadP528(Common::SeekableReadStream *stream) {
 }
 bool AstronomicaEngine::canSaveP530() const {
  if (_place != 530 || !_runner.idle() || _pendingImage.w || _movie || !validP530Scene(_scene) || _questionSaveBaseline.size() != 29 || !_p530HistoryValid ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) ||
      (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites;
@@ -976,9 +976,9 @@ Common::Error AstronomicaEngine::saveP530(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadP530(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kP530Words+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kP530Words+1)*4 || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12],hash = 2166136261U;
  auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word();
@@ -1008,9 +1008,9 @@ Common::Error AstronomicaEngine::loadP530(Common::SeekableReadStream *stream) {
 }
 bool AstronomicaEngine::canSaveP513() const {
  if (_place != 513 || !_runner.idle() || _pendingImage.w || _movie || !validP513Scene(_scene) || _questionSaveBaseline.size() != 32 || !_p513HistoryValid ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites;
  if (!_runner.exportIdleState(state) || !validP513State(state) || p513ImageId(_displayedImageName) != int(state[300])) return false;
@@ -1038,9 +1038,9 @@ Common::Error AstronomicaEngine::saveP513(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadP513(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kP513Words+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kP513Words+1)*4 || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12],hash = 2166136261U;
  auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word();
@@ -1069,9 +1069,9 @@ Common::Error AstronomicaEngine::loadP513(Common::SeekableReadStream *stream) {
 }
 bool AstronomicaEngine::canSaveP517() const {
  if (_place != 517 || !_runner.idle() || _pendingImage.w || _movie || !validP517Scene(_scene) || _questionSaveBaseline.size() != 11 || !_p517HistoryValid ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites;
  if (!_runner.exportIdleState(state) || !validP517State(state) || p517ImageId(_displayedImageName) != int(state[300])) return false;
@@ -1099,9 +1099,9 @@ Common::Error AstronomicaEngine::saveP517(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadP517(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kP517Words+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kP517Words+1)*4 || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12],hash = 2166136261U;
  auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word();
@@ -2065,8 +2065,8 @@ Common::Error AstronomicaEngine::loadUniverse(Common::SeekableReadStream *stream
 bool AstronomicaEngine::canSaveRocket() const {
  if (_place != 537 || _comet.frame < 1 || _comet.frame > 12 || _comet.previousFrame < 0 || _comet.previousFrame > 12 || !_runner.scriptsIdle() || _rocket.kind != RocketMotion::kStopped || _pendingImage.w || !_displayedImageName.empty() || _movie ||
      !validRocketScene(_scene) || _questionSaveBaseline.size() != 48 ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") || !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_audio") || !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites; if (!_runner.exportPersistentState(state)) return false;
  for (const HoverTarget &h : _hoverSprites) if (h.entered) return false;
@@ -2086,8 +2086,8 @@ Common::Error AstronomicaEngine::saveRocket(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadRocket(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kRocketWords+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") || !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kRocketWords+1)*4 || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[16],hash = 2166136261U; auto word = [&]() { uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word(); Common::Array<uint32> sprites,state; sprites.resize(48*27); state.resize(ScriptRunner::kPersistentStateWords);
  for (uint32 &v : sprites) v = word(); for (uint32 &v : state) v = word();
@@ -2108,9 +2108,9 @@ Common::Error AstronomicaEngine::loadRocket(Common::SeekableReadStream *stream) 
 bool AstronomicaEngine::canSaveBuilder() const {
  if (_comet.frame < 1 || _comet.frame > 12 || _comet.previousFrame < 0 || _comet.previousFrame > 12) return false;
  if (!builderScene(_place) || !_runner.scriptsIdle() || _pendingImage.w || _movie || !validBuilderScene(_scene) || _questionSaveBaseline.size() != 60 || !_builderHistoryValid ||
-     !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites;
  if (!_runner.exportPersistentState(state) || !validBuilderState(state,_place) || builderImageId(_displayedImageName) < 0) return false;
@@ -2138,9 +2138,9 @@ Common::Error AstronomicaEngine::saveBuilder(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadBuilder(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < (kBuilderWords+1)*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < (kBuilderWords+1)*4 || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12],hash = 2166136261U;
  auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word();
@@ -2228,9 +2228,9 @@ Common::Error AstronomicaEngine::loadP281Persistent(Common::SeekableReadStream*s
 bool AstronomicaEngine::canSaveVariant() const {
  const VariantSaveProfile *p = variantProfile(_place);
  if (!p || !_runner.variantIdle() || _pendingImage.w || !_displayedImageName.empty() || _movie || !validVariantScene(_scene,*p) ||
-     _questionSaveBaseline.size() != p->sprites || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return false;
+     _questionSaveBaseline.size() != p->sprites || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return false;
  if ((_loopSound != -1 && _loopSound != 0) || (_mixer->isSoundHandleActive(_soundHandle) && (_lastSound != _loopSound || !_loopEnabled))) return false;
  Common::Array<uint32> state,sprites;
  if (!_runner.exportVariantState(state) || !validVariantValues(state,*p)) return false;
@@ -2258,9 +2258,9 @@ Common::Error AstronomicaEngine::saveVariant(Common::WriteStream *stream) {
  stream->writeUint32LE(hash); return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadVariant(Common::SeekableReadStream *stream) {
- if (stream->size()-stream->pos() < 12*4 || !ConfMan.hasKey("astronomica_audio") || !ConfMan.getBool("astronomica_audio") ||
-     !ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") ||
-     !ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
+ if (stream->size()-stream->pos() < 12*4 || !ConfMan.getBool("astronomica_audio") ||
+     !ConfMan.getBool("astronomica_animation") ||
+     !ConfMan.getBool("astronomica_sprite_input")) return Common::kReadingFailed;
  uint32 header[12],hash = 2166136261U;
  auto word = [&]() { const uint32 v = stream->readUint32LE(); hash = (hash ^ v)*16777619U; return v; };
  for (uint32 &v : header) v = word();
@@ -2511,7 +2511,7 @@ void AstronomicaEngine::configureMovie() {
     durations.push_back(_movie->getDuration().totalNumberOfFrames());
     // P523 starts playback before custom5 selects the first active segment.
     if (world || danger || interlude) _movie->setEndTime(_movie->getDuration());
-    _movie->setVolume(ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio") ? 255 : 0);
+    _movie->setVolume(ConfMan.getBool("astronomica_audio") ? 255 : 0);
     debug("Astronomica P%d movie: %ux%u, scale %u, duration %u",_place,_movie->getWidth(),_movie->getHeight(),_movie->getTimeScale(),durations[0]);
    } else closeMovie();
   } else delete file;
@@ -2775,7 +2775,7 @@ bool AstronomicaEngine::changePlace(int place) {
  for (int i = 0; i < 100; ++i) _runner.getValue(0,i,globals[i]);
  const PlaceTransition transition = resolvePlaceTransition(_place,place,globals);
  _runner.defineValue(0,57,transition.permit);
- const bool audio = ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio");
+ const bool audio = ConfMan.getBool("astronomica_audio");
  // Denial voice starts before reloading the old scene in _do_place. Preserve
  // that foreground sound while the scene loader replaces its other state.
  const bool keepSound = audio && transition.immediateSound && playSound(transition.immediateSound,scriptClock());
@@ -2808,7 +2808,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  if (!ok) { candidate.free(); return false; }
  closeMovie();
  _background.copyFrom(candidate);
- if (ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation") && supportsSpriteLayers(parsed)) {
+ if (ConfMan.getBool("astronomica_animation") && supportsSpriteLayers(parsed)) {
   // _SWAddFrame selects frames[0]; _CreateSpriteFromBmpMem sets range 0..n-1.
   for (uint i = 0; i < parsed.sprites.size(); ++i) {
    Sprite &s = parsed.sprites[i];
@@ -2863,7 +2863,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _runner.setP509PendingSupport(place==509&&_scene.sprites.size()==19&&_scene.conditions.size()==17&&universeFileIdentity(ConfMan.getPath("path").join("PLACES/P509/MEGAFILE.HYP"),713948,3651436523U));
  _runner.setGameStateHandler(this);
  _runner.setRocketSupport(place == 537 && supportsRocket(_scene) &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation"));
+  ConfMan.getBool("astronomica_animation"));
  Common::Array<uint> targets;
  for (uint i = 0; i < _scene.sprites.size(); ++i) {
   const Sprite &s = _scene.sprites[i];
@@ -2873,24 +2873,24 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _runner.setEclipseSupport(place == 528 && _scene.layers == 1 && _scene.sprites.size() == 9 && spriteFrameCount(_scene,8) == 1);
  _runner.setPlanetSupport(place == 518 && _scene.layers == 1 && _scene.sprites.size() == 32 && _scene.sprites[8].standardMotion);
  _runner.setOrbitHandler(place == 526 && _scene.layers == 1 && _scene.sprites.size() == 23 && spriteFrameCount(_scene,17) == 12 &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation") ? this : nullptr);
+  ConfMan.getBool("astronomica_animation") ? this : nullptr);
  // P515 is absent from custom25's original dispatch table. Preserve its
  // no-op even if out-of-order controls reach the shared success branch.
  _runner.setNoopSuccess(place == 515 && _scene.layers == 1 && _scene.sprites.size() == 60);
  _runner.setResumeSupport(place == 524 && _scene.layers == 1 && _scene.sprites.size() == 32,_place == 408);
  _runner.setZodiacSupport(place == 507 && _scene.layers == 1 && _scene.sprites.size() == 30);
  _runner.setPhotonSupport(place == 513 && _scene.layers == 1 && _scene.sprites.size() == 32 &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation"));
+  ConfMan.getBool("astronomica_animation"));
  _runner.setBallHandler(place == 501 && _scene.layers == 1 && _scene.sprites.size() == 27 &&
   spriteFrameCount(_scene,24) == 6 && spriteFrameCount(_scene,25) == 12 &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation") ? this : nullptr);
+  ConfMan.getBool("astronomica_animation") ? this : nullptr);
  _runner.setJupiterSupport(place == 516 && supportsJupiter(_scene));
  _runner.setCometHandler((supportsComet(_scene,place) || (place == 516 && supportsJupiter(_scene))) &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation") ? this : nullptr);
+  ConfMan.getBool("astronomica_animation") ? this : nullptr);
  _runner.setProbeHandler(place == 522 && _scene.layers == 1 && _scene.sprites.size() == 18 &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation") ? this : nullptr);
+  ConfMan.getBool("astronomica_animation") ? this : nullptr);
  _runner.setRendezvousHandler(place == 514 && _scene.layers == 1 && _scene.sprites.size() == 20 &&
-  ConfMan.hasKey("astronomica_animation") && ConfMan.getBool("astronomica_animation") ? this : nullptr);
+  ConfMan.getBool("astronomica_animation") ? this : nullptr);
  _runner.setPrograms(_scene.scripts, scriptClock());
  if (place == 1) _runner.resetGlobals();
  _previousPlace = _place;
@@ -2906,10 +2906,10 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  presentScene();
  debug("Astronomica resource explorer: P%d; nav %d,%d,%d", place, nav[0], nav[1], nav[2]);
  if (spritesDrawn) debug("Astronomica static sprites: P%d, %u drawn", place, spritesDrawn);
- if (!restoring && ConfMan.hasKey("astronomica_entry_scripts") && ConfMan.getBool("astronomica_entry_scripts")) {
+ if (!restoring && ConfMan.getBool("astronomica_entry_scripts")) {
   // Reconstructed mode-0 audio lifecycle (_load_place 9:156b, 1c45,
   // 2f22). Other scene modes have separate global ambience rules.
-  if (_scene.mode == 0 && ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio")) {
+  if (_scene.mode == 0 && ConfMan.getBool("astronomica_audio")) {
    Audio::SeekableAudioStream *music = openSound(0);
    if (music) { _loopSound = 0; delete music; }
    // Intro IDs are direct file IDs, not serialized command operands.
@@ -3012,7 +3012,7 @@ void AstronomicaEngine::displayBackgroundImage() {
 void AstronomicaEngine::configureSounds() {
  Common::Array<bool> targets; targets.resize(923);
  for (uint i = 0; i < targets.size(); ++i) targets[i] = false;
- if (ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio")) {
+ if (ConfMan.getBool("astronomica_audio")) {
   Common::FSList files;
   const Common::Path folder = ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d", _place)));
   Common::FSNode(folder).getChildren(files, Common::FSNode::kListFilesOnly);
@@ -3046,8 +3046,8 @@ void AstronomicaEngine::configureSounds() {
   if(original&&targets[912]&&targets[922]){_runner.setSuccessHandler(this,281);_runner.setVariantSupport(true);}
  }
  if (_place == 513) _runner.setSuccessHandler(this,_place); // Counter only; no global S12 dependency.
- if (ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio")) _runner.setSoundHandler(this);
- if (ScriptRunner::successGlobalForPlace(_place) >= 0 && ConfMan.hasKey("astronomica_audio") && ConfMan.getBool("astronomica_audio")) {
+ if (ConfMan.getBool("astronomica_audio")) _runner.setSoundHandler(this);
+ if (ScriptRunner::successGlobalForPlace(_place) >= 0 && ConfMan.getBool("astronomica_audio")) {
   Common::File successFile;
   const Common::Path successPath = ConfMan.getPath("path").join(Common::Path("SOUNDS/S12.WAV"));
   int size, rate; byte flags; uint16 type;
@@ -3350,7 +3350,7 @@ void AstronomicaEngine::clickAtTime(int x, int y, uint32 now) {
  // Original _do_mouse 9:11f7 stores the last click before hit dispatch.
  if (_place == 507) _runner.setZodiacRegion(astrologyRegion(x,y,444,165,122,30));
  if (!_scene.sprites.empty()) {
-  if (!ConfMan.hasKey("astronomica_sprite_input") || !ConfMan.getBool("astronomica_sprite_input")) return;
+  if (!ConfMan.getBool("astronomica_sprite_input")) return;
   const int hit = spriteAt(x, y);
   if (hit == -2) { warning("Astronomica: sprite input geometry incomplete in P%d", _place); return; }
   if (hit >= 0) {
@@ -3377,7 +3377,7 @@ void AstronomicaEngine::clickAtTime(int x, int y, uint32 now) {
   const MouseRect &r = _scene.mouseRects[i];
   if (x >= r.rect[0] && y >= r.rect[1] && x < r.rect[2] && y < r.rect[3]) {
    rectangleHit = true;
-   if (!_runner.enqueue(r.click, now, ConfMan.hasKey("astronomica_sprite_input") && ConfMan.getBool("astronomica_sprite_input")) && !r.click.empty())
+   if (!_runner.enqueue(r.click, now, ConfMan.getBool("astronomica_sprite_input")) && !r.click.empty())
     warning("Astronomica: unsupported click script in P%d, rectangle %u", _place, i);
   }
  }
@@ -3771,7 +3771,7 @@ void AstronomicaEngine::onProbe(int mode, int id) {
  if (id == 17) _probeAssetsValid = validProbeSaveScene(_scene) && universeFileIdentity(ConfMan.getPath("path").join("PLACES/P522/MEGAFILE.HYP"),483379,0x6015e215U);
 }
 void AstronomicaEngine::animateSpritesAt(uint32 now) {
- if (!ConfMan.hasKey("astronomica_animation") || !ConfMan.getBool("astronomica_animation") || !supportsSpriteLayers(_scene)) return;
+ if (!ConfMan.getBool("astronomica_animation") || !supportsSpriteLayers(_scene)) return;
  bool dirty = false;
  Common::File motionFile;
  for (int layer = 1; layer <= _scene.layers; ++layer)
@@ -13527,6 +13527,13 @@ static bool verifyP523Timeline(OSystem *system) {
 }
 
 Common::Error AstronomicaEngine::run() {
+ // Gameplay works when added through the stock launcher with a fresh target.
+ // ConfigManager::hasKey intentionally excludes the defaults domain;read the registered values.
+ ConfMan.registerDefault("astronomica_audio",true);
+ ConfMan.registerDefault("astronomica_animation",true);
+ ConfMan.registerDefault("astronomica_sprite_input",true);
+ ConfMan.registerDefault("astronomica_entry_scripts",true);
+
  Graphics::PixelFormat format = _system->getSupportedFormats().front();
  // The launcher can leave a 16-bit screen as the backend's first choice.
  // Prefer an advertised lossless RGB format for the original pictures/movies.
@@ -13553,6 +13560,31 @@ Common::Error AstronomicaEngine::run() {
  _runner.resetGlobals();
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
+
+ if(ConfMan.hasKey("astronomica_verify_startup_defaults")&&ConfMan.getBool("astronomica_verify_startup_defaults")) {
+  const char*keys[]={"astronomica_audio","astronomica_animation","astronomica_sprite_input","astronomica_entry_scripts"};uint observed=0,explicitMask=0;
+  for(uint i=0;i<4;++i){if(ConfMan.hasKey(keys[i]))explicitMask|=1U<<i;if(!ConfMan.get(keys[i]).empty()&&ConfMan.getBool(keys[i]))observed|=1U<<i;}
+  const uint expected=ConfMan.getInt("astronomica_expected_startup_mask"),expectedExplicit=ConfMan.getInt("astronomica_expected_explicit_mask");
+  const uint initialPending=_runner.pendingCount();bool ok=_place==1&&observed==expected&&explicitMask==expectedExplicit;
+  if(expected==15)ok=initialPending==1&&ok;else if(!expected)ok=!initialPending&&ok;
+  debug("Startup defaults configuration: %s (observed%u,expected%u,explicit%u,expectedExplicit%u,P1pending%u)",ok?"PASS":"FAIL",observed,expected,explicitMask,expectedExplicit,initialPending);
+  ok=loadPlace(27,false,true)&&!_scene.sprites.empty()&&ok;
+  if(!_scene.sprites.empty()){
+   const int selected=_scene.sprites[0].selectedFrame;ok=selected==((expected&2)?0:-1)&&ok;
+   debug("Startup defaults animation: %s (P27sprite1frame%d)",selected==((expected&2)?0:-1)?"PASS":"FAIL",selected);
+   Common::File file;bool geometry=file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P27/MEGAFILE.HYP")));
+   const Frame*frame=geometry?staticSpriteFrame(_scene,0):nullptr;Graphics::Surface*bmp=frame?decodeSpriteBitmap(file,frame->image,_screen.format):nullptr;
+   if(bmp){const int x=_scene.sprites[0].renderX+bmp->w/2,y=_scene.sprites[0].renderY+bmp->h/2;bmp->free();delete bmp;
+    if(expected==15||!expected){const uint32 now=scriptClock();clickAtTime(x,y,now);runScriptsAt(now);const bool active=_runner.clicksBlocked()&&_runner.pendingCount();ok=active==bool(expected)&&ok;debug("Startup defaults actual input: %s (P27blocked%d,pending%u)",active==bool(expected)?"PASS":"FAIL",int(_runner.clicksBlocked()),_runner.pendingCount());}
+   }else ok=false;
+  }
+  ok=loadPlace(27,false,true)&&ok;const int oldSound=_lastSound;Command note;note.opcode=9;note.args.push_back(1);Script audio;audio.push_back(note);
+  const bool admitted=_runner.canRun(audio,true),dispatched=_runner.start(audio,scriptClock(),true);applyScriptActions(scriptClock());const bool sound=_lastSound==0;
+  ok=admitted==bool(expected&1)&&dispatched==bool(expected&1)&&sound==bool(expected&1)&&ok;if(!sound)ok=_lastSound==oldSound&&ok;_mixer->stopHandle(_soundHandle);
+  debug("Startup defaults actual audio: %s (S0played%d)",sound==bool(expected&1)?"PASS":"FAIL",int(sound));
+  debug("Startup defaults native result: %s",ok?"PASS":"FAIL");_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
  if(ConfMan.hasKey("astronomica_verify_p523_recorded")&&ConfMan.getBool("astronomica_verify_p523_recorded")){
   const bool ok=testP523RecordedPackets();_background.free();_screen.free();quitGame();
   return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"P523 recorded packet replay failed");

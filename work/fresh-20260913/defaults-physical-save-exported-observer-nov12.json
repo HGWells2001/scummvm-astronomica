@@ -1,0 +1,14 @@
+{
+  "status": "EXPORTED_FRESH_DEFAULT_SAVE_OBSERVER_EXACT_PASS",
+  "candidate_exe_sha256": "a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae",
+  "shipping_cpp_sha256": "198ba4d7de43aaa9860f8e7db8f5603baa318c35bdd0cf542e55a4a8942904ee",
+  "diagnostic_cpp_sha256": "fc97eee5b94c55af5664d5c3b942c6470afb900de76c813af2157d8ffaff8b21",
+  "observer_sha256": "628aab816cda7f36511d617c2eac51430609b67e546ebfad6639010f14e08c29",
+  "all_other22engine_files_and_header_identical": true,
+  "native_receipt_sha256": "84be6c7693e9bd8ba8cad77fa79a2cf3ae3a2565bb48d54cfe4a878e704c24a9",
+  "limits": [
+    "Insert exact optional fragment after initial loadPlaceinrun(),clean rebuild and enable astronomica_verify_default_save_load",
+    "Requires your own compatible physical native file in selected slot,and expected scene via astronomica_default_save_slot/scene;test writes slot60in isolated savepath",
+    "All four gameplay option keys must be absent. Native fixtures not distributed. No historical full-future claim"
+  ]
+}

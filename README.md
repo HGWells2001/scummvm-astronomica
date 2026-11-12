@@ -1,3 +1,11 @@
+# Current update:playable fresh-target defaults
+
+Verified executable `a2ea1186e1356a033a5dc386db0b13729edaa0f13cb0c5f56bc356d8a2c968ae`. Audio,animation,sprite input and original entry scripts now work with a freshly added ScummVMtarget;explicit false remains respected.24native configuration profiles,4fresh-config physical native save roundtrips,full controlled general regression and installed-path checks pass. [Verified scope](outputs/astronomica-cleanroom/STARTUP-DEFAULTS.md). ASTRO.cpp only;class/core/save layouts unchanged. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261112.md/development-20261112.json. Never force-end suites.DO NOTSHUT DOWN THE COMPUTER. Current registryNov12has no poweroff capability. Historical checkpoints below.
+
+---
+
 # Additional verification: actual Windows player loop
 
 [Windows mouse/key/menu/portal/save checks in three native processes](outputs/astronomica-cleanroom/WINDOWS-PLAYER-LOOP.md). Exact optional audited diagnostic;installed engine unchanged. All suites finished naturally. Fixed acceptance7/10;whole-game completion unmeasured.
