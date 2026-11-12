@@ -1,3 +1,11 @@
+# Current update:standard Space pause
+
+Verified executable `50036fd9f6d2aafae38832beb20a8e6dfa1e496ab3fb7fabf556b7b202b78076`. Space now pauses audio and game time in rooms,puzzle locks and spoken introductions. Space,Escape or Resume continues. Full original voice comparison,Windows backend,room and locked-puzzle state preservation,four physical save roundtrips,fresh-config full general suite and installed checks pass. [Verified scope](SPACE-PAUSE.md). Class/core/save layouts unchanged;seven fresh engine units. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261112.md/development-20261112.json. Never force-end suites. DO NOT SHUT DOWN THE COMPUTER. Historical checkpoints below.
+
+---
+
 # Current update:safe menu during spoken introductions
 
 Verified executable `5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703`. F5 pauses the original introduction,closing resumes it without a skip,and the cursor reflects the new scene. Save/load wait until scene initialization is complete. Baseline/candidate full-voice/UIchecks,Windows backend,four post-intro physical native file roundtrips,controlled full general and installed-path checks pass. [Verified scope](INTRODUCTION-MENU.md). New derived UIflag;all seven engine units rebuilt,core/save schemas unchanged. Fixed acceptance7/10;whole-game completion unmeasured.

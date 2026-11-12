@@ -1,0 +1,13 @@
+{
+  "status": "EXPORTED_SPACE_PHYSICAL_SAVE_OBSERVER_EXACT_PASS",
+  "candidate_exe_sha256": "50036fd9f6d2aafae38832beb20a8e6dfa1e496ab3fb7fabf556b7b202b78076",
+  "shipping_cpp_sha256": "06a719acae9fe04ce07a09a1b3557d44dfabc9b2cab40c520e6059b4d37f8e8a",
+  "diagnostic_cpp_sha256": "d55451ab24fbda10ed7a839aa89dad602a3d3c7f2b8fe9a4d439bcb230631f8e",
+  "observer_sha256": "fbb7e93dbb6a924a3a9dc7c97b1c07e96c16fa3b5891b80ed11b5c9c280751f5",
+  "all_other22engine_files_and_header_identical": true,
+  "native_receipt_sha256": "30abc3a17f73bd54a4b219fc7db6a470d01878eeb61ecf55b3fd59749ac13728",
+  "limits": [
+    "Reuse the exact exported intro physical save fragment after initial loadPlace;clean rebuild and enable astronomica_verify_default_save_load with own compatible slot/expected scene",
+    "All four gameplay options absent;original media,physical fixtures and binaries excluded;not all historical futures"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "SPACE_PAUSE_SOURCE_CAUSAL_AUDIO_AND_FILE_REVIEW_PASS",
+  "verified_at": "2026-11-12T14:24:35.947726+00:00",
+  "candidate_exe_sha256": "50036fd9f6d2aafae38832beb20a8e6dfa1e496ab3fb7fabf556b7b202b78076",
+  "previous_exe_sha256": "5fd5cfde7a13709cb749b47ed293c47d35f43c29013ff011934b0c158635c703",
+  "baseline_diagnostic_exe_sha256": "5845685e5efd8f5913ec54284aaf7469a1ea3f87353fbe68b55bffb11db1dbb5",
+  "class_layout_unchanged": true,
+  "all7engine_units_fresh": true,
+  "framework_and_save_schemas_unchanged": true,
+  "evidence_sha256": {
+    "space-pause-candidate-source-review-nov12.json": "e495e25a1cf3a501335deda8e61d6094beabb1579afdac31c3bd5eda9b631b34",
+    "space-pause-baseline-source-review-nov12.json": "efd5acd18e8971524a9ddec6d5a1ed61f9b250d423e79c83f39e3b9f64166b09",
+    "space-pause-native-nov12/proof.json": "220ea8088e4e7d34ef81691709945d93356b99be9a4eccf1e34455d71b6cff97",
+    "space-pause-physical-saves-source-review-nov12.json": "76452d5f41ab3261fb3cd98c5693ba1fa2448d8d541b99a5485228f79a9c817b",
+    "space-pause-physical-saves-native-nov12/proof.json": "30abc3a17f73bd54a4b219fc7db6a470d01878eeb61ecf55b3fd59749ac13728"
+  },
+  "limits": [
+    "Same timed EventSource in accepted baseline and candidate;complete original P501 voice;actual Windows backend",
+    "P103 room and P27 actual click-locked pending program preserve full runner hash,screen RGB,cursor and game clock across actual pause",
+    "Ctrl/Alt/Meta Space remain unhandled by the engine pause action",
+    "Four old physical ASVM2/26/27 roundtrips after complete introduction;not all historical futures",
+    "No original Windows program run,original asset distribution,human listening test or whole-game completion claim"
+  ]
+}

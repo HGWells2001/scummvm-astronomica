@@ -1,0 +1,124 @@
+{
+  "status": "SPACE_PAUSE_NATIVE_PASS",
+  "completed_at": "2026-11-12T14:05:40.295932+00:00",
+  "candidate_exe_sha256": "50036fd9f6d2aafae38832beb20a8e6dfa1e496ab3fb7fabf556b7b202b78076",
+  "baseline_diagnostic_exe_sha256": "5845685e5efd8f5913ec54284aaf7469a1ea3f87353fbe68b55bffb11db1dbb5",
+  "cases": [
+    {
+      "room_checks": [
+        [
+          "103",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "27",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "profile": "baseline-unhandled-space",
+      "role": "baseline",
+      "video_driver": "dummy",
+      "expected_menu": false,
+      "saw_actual_engine_pause": false,
+      "save_blocked_during_intro": false,
+      "load_blocked_during_intro": false,
+      "paused_millis": 0,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 302,
+      "wall_millis": 14427,
+      "cursor_during_intro": -1,
+      "cursor_visible": true,
+      "original_pending_after_intro": 1,
+      "native_log_sha256": "5f67da872defda236d0435e7cfba269bc54303a4360b0f80784a5589f5f1f763",
+      "native_exited_naturally": true
+    },
+    {
+      "room_checks": [
+        [
+          "103",
+          "1",
+          "1",
+          "304",
+          "0"
+        ],
+        [
+          "27",
+          "1",
+          "1",
+          "302",
+          "0"
+        ]
+      ],
+      "profile": "paused-original-voice",
+      "role": "candidate",
+      "video_driver": "dummy",
+      "expected_menu": true,
+      "saw_actual_engine_pause": true,
+      "save_blocked_during_intro": true,
+      "load_blocked_during_intro": true,
+      "paused_millis": 303,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 0,
+      "wall_millis": 14729,
+      "cursor_during_intro": -1,
+      "cursor_visible": true,
+      "original_pending_after_intro": 1,
+      "native_log_sha256": "ca3b435285745bc6ad1bbd98732295a972216212e8e275dcf53c8c73e8e5f8d7",
+      "native_exited_naturally": true
+    },
+    {
+      "room_checks": [
+        [
+          "103",
+          "1",
+          "1",
+          "303",
+          "0"
+        ],
+        [
+          "27",
+          "1",
+          "1",
+          "303",
+          "0"
+        ]
+      ],
+      "profile": "paused-original-voice-windows",
+      "role": "candidate",
+      "video_driver": "windows",
+      "expected_menu": true,
+      "saw_actual_engine_pause": true,
+      "save_blocked_during_intro": true,
+      "load_blocked_during_intro": true,
+      "paused_millis": 302,
+      "audio_millis_at_pause": 0,
+      "audio_millis_at_escape": 0,
+      "wall_millis": 14730,
+      "cursor_during_intro": -1,
+      "cursor_visible": true,
+      "original_pending_after_intro": 1,
+      "native_log_sha256": "0a0c6aab459678478b8e6f6f9c0181859e24c6dae37bce7baf477c88cd53aac1",
+      "native_exited_naturally": true
+    }
+  ],
+  "original_resources_sha256": {
+    "PLACES/P501/MEGAFILE.HYP": "fe46b4707b6c4bb1f8df9e31fed8b7af103e3839702d88c5e30c331f71877b41",
+    "PLACES/P501/S302.WAV": "59fccfa4c29aa14d24d3114b92f27f122a91381e257d2cb4d1b95893d79cefd4",
+    "PLACES/P27/MEGAFILE.HYP": "25a91a84aa37773c7ce4c2a337547d0b62b8da06ac33e373c797c747ef838bb3",
+    "PLACES/P103/MEGAFILE.HYP": "d6168dff8c27264e9ce4a9d1044a52d4c952c59c7a53215e968f75f35bd1e896"
+  },
+  "user_preferences_unchanged": true,
+  "all_processes_exited_naturally": true,
+  "limits": [
+    "Actual EventSource/native F5menu,real Engine/mixer pause and complete original P501S302playback,including Windows backend;mute is enabled",
+    "Space resumes the real pause dialog after300ms;complete original voice ends naturally",
+    "Save/load deliberately unavailable until introduction ends to prevent reentrant scene restoration/startup replay;derived UIflag is not serialized",
+    "Not a human audiovisual playthrough or global completion claim"
+  ]
+}

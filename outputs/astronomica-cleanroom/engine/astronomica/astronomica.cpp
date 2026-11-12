@@ -22,6 +22,8 @@
 #include "common/system.h"
 #include "common/random.h"
 #include "graphics/font.h"
+#include "gui/message.h"
+#include "common/translation.h"
 #include "graphics/cursorman.h"
 #include "graphics/wincursor.h"
 #include "common/formats/winexe_ne.h"
@@ -2929,6 +2931,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
      while (_system->getEventManager()->pollEvent(event)) {
       if (event.type == Common::EVENT_QUIT) quitGame();
       else if(event.type==Common::EVENT_KEYDOWN&&event.kbd.keycode==Common::KEYCODE_F5)openMainMenuDialog();
+      else if(event.type==Common::EVENT_KEYDOWN&&event.kbd.keycode==Common::KEYCODE_SPACE&&!(event.kbd.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META)))pauseForPlayer();
      }
      _system->updateScreen();
      _system->delayMillis(5);
@@ -10024,8 +10027,21 @@ bool AstronomicaEngine::verifyHitGeometry() {
  return true;
 }
 
+
+void AstronomicaEngine::pauseForPlayer() {
+ class PlayerPauseDialog:public GUI::MessageDialog {
+ public:PlayerPauseDialog():GUI::MessageDialog(_("Game paused"),_("Resume")){}
+ protected:void handleKeyDown(Common::KeyState key)override{
+  if(key.keycode==Common::KEYCODE_SPACE&&!(key.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META)))close();
+  else GUI::MessageDialog::handleKeyDown(key);
+ }
+ } dialog;
+ runDialog(dialog);
+}
+
 void AstronomicaEngine::handleGameKey(const Common::KeyState &key) {
  if(key.keycode==Common::KEYCODE_F5){openMainMenuDialog();return;}
+ if(key.keycode==Common::KEYCODE_SPACE&&!(key.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META))){pauseForPlayer();return;}
  if(key.keycode==Common::KEYCODE_ESCAPE){quitGame();return;}
  if((key.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META))||_runner.clicksBlocked())return;
  const bool diagnostic=ConfMan.hasKey("astronomica_debug_controls")&&ConfMan.getBool("astronomica_debug_controls");
@@ -13570,6 +13586,53 @@ Common::Error AstronomicaEngine::run() {
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
 
+ if(ConfMan.hasKey("astronomica_verify_space_pause")&&ConfMan.getBool("astronomica_verify_space_pause")) {
+  class IntroKeys:public Common::EventSource {
+  public:
+   OSystem*hostSystem;Audio::Mixer*mixer;Audio::SoundHandle&handle;bool&paused;AstronomicaEngine*engine;int&place;int&cursorIndex;int cursorDuringIntro=-99;bool cursorVisible=false;
+   bool first=false,escape=false,sawPause=false,saveBlocked=false,loadBlocked=false;uint32 sentAt=0,audioAtPause=0,audioAtEscape=0;
+   IntroKeys(OSystem*s,Audio::Mixer*m,Audio::SoundHandle&h,bool&p,AstronomicaEngine*e,int&pl,int&ci):hostSystem(s),mixer(m),handle(h),paused(p),engine(e),place(pl),cursorIndex(ci){}
+   bool allowMapping()const override{return false;}
+   bool pollEvent(Common::Event&e)override{
+    if(place!=501||!mixer->isSoundHandleActive(handle))return false;
+    const uint32 now=hostSystem->getMillis();
+    if(paused&&!sawPause){sawPause=true;audioAtPause=mixer->getSoundElapsedTime(handle);saveBlocked=!engine->canSaveGameStateCurrently();loadBlocked=!engine->canLoadGameStateCurrently();}
+    if(!first){first=true;cursorDuringIntro=cursorIndex;cursorVisible=CursorMan.isVisible();sentAt=now;e.type=Common::EVENT_KEYDOWN;e.kbd=Common::KeyState(Common::KEYCODE_SPACE);return true;}
+    if(!escape&&uint32(now-sentAt)>=300){escape=true;audioAtEscape=mixer->getSoundElapsedTime(handle);e.type=Common::EVENT_KEYDOWN;e.kbd=Common::KeyState(Common::KEYCODE_SPACE);return true;}
+    return false;
+   }
+  } keys(_system,_mixer,_soundHandle,_clockPaused,this,_place,_navigationCursorIndex);
+  const bool prepared=loadPlace(103,false,true);updateNavigationCursor(0,100);if(!prepared||_navigationCursorIndex!=0){debug("Introduction cursor preparation: FAIL");quitGame();return Common::kNoError;}
+  const bool expected=ConfMan.getBool("astronomica_space_pause_expected");const uint32 pausedBefore=_pausedMillis,wallBefore=_system->getMillis();
+  _eventMan->getEventDispatcher()->registerSource(&keys,false);const bool loaded=loadPlace(501);_eventMan->getEventDispatcher()->unregisterSource(&keys);
+  const uint32 held=_pausedMillis-pausedBefore;bool ok=loaded&&_place==501&&keys.first&&keys.escape&&!_clockPaused&&!shouldQuit()&&!_mixer->isSoundHandleActive(_soundHandle)&&canLoadGameStateCurrently();
+  if(expected)ok=keys.cursorDuringIntro==-1&&keys.cursorVisible&&keys.sawPause&&keys.saveBlocked&&keys.loadBlocked&&held>=100&&keys.audioAtEscape>=keys.audioAtPause&&keys.audioAtEscape-keys.audioAtPause<50&&ok;
+  else ok=keys.cursorDuringIntro==-1&&keys.cursorVisible&&!keys.sawPause&&!held&&ok;
+  debug("Space spoken pause: %s (expected%d,paused%d,saveBlocked%d,loadBlocked%d,held%u,audio%u/%u,wall%u,cursor%d,visible%d,pending%u)",ok?"PASS":"FAIL",int(expected),int(keys.sawPause),int(keys.saveBlocked),int(keys.loadBlocked),held,keys.audioAtPause,keys.audioAtEscape,_system->getMillis()-wallBefore,keys.cursorDuringIntro,int(keys.cursorVisible),_runner.pendingCount());
+
+  class ResumeSpace:public Common::EventSource {
+   OSystem*hostSystem;bool&paused;uint32 since=0;
+  public:bool saw=false,sent=false;
+   ResumeSpace(OSystem*s,bool&p):hostSystem(s),paused(p){}
+   bool allowMapping()const override{return false;}
+   bool pollEvent(Common::Event&e)override{if(!paused)return false;if(!saw){saw=true;since=hostSystem->getMillis();}if(!sent&&uint32(hostSystem->getMillis()-since)>=300){sent=true;e.type=Common::EVENT_KEYDOWN;e.kbd=Common::KeyState(Common::KEYCODE_SPACE);return true;}return false;}
+  };
+  auto normalPause=[&](int scene,bool locked){
+   if(!loadPlace(scene,false,true))return false;updateNavigationCursor(0,100);
+   if(locked){Common::File file;if(!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P27/MEGAFILE.HYP"))))return false;const Frame*f=staticSpriteFrame(_scene,0);Graphics::Surface*bmp=f?decodeSpriteBitmap(file,f->image,_screen.format):nullptr;if(!bmp)return false;const int x=_scene.sprites[0].renderX+bmp->w/2,y=_scene.sprites[0].renderY+bmp->h/2;bmp->free();delete bmp;const uint32 now=scriptClock();clickAtTime(x,y,now);runScriptsAt(now);if(!_runner.clicksBlocked()||!_runner.pendingCount())return false;}
+   const uint32 runner=_runner.p510CompleteHash(),pixels=screenRGBHash(_screen);const int cursor=_navigationCursorIndex;const bool visible=CursorMan.isVisible();bool modifiers=true;
+   for(byte flag:{byte(Common::KBD_CTRL),byte(Common::KBD_ALT),byte(Common::KBD_META)}){ResumeSpace fallback(_system,_clockPaused);const uint32 before=_pausedMillis;_eventMan->getEventDispatcher()->registerSource(&fallback,false);handleGameKey(Common::KeyState(Common::KEYCODE_SPACE,' ',flag));_eventMan->getEventDispatcher()->unregisterSource(&fallback);modifiers=!fallback.saw&&_pausedMillis==before&&modifiers;}
+   ResumeSpace resume(_system,_clockPaused);const uint32 epoch=_pausedMillis,clock=scriptClock();_eventMan->getEventDispatcher()->registerSource(&resume,false);handleGameKey(Common::KeyState(Common::KEYCODE_SPACE));_eventMan->getEventDispatcher()->unregisterSource(&resume);
+   const uint32 held=_pausedMillis-epoch,clockDelta=scriptClock()-clock;const bool stable=_place==scene&&_runner.p510CompleteHash()==runner&&screenRGBHash(_screen)==pixels&&_navigationCursorIndex==cursor&&CursorMan.isVisible()==visible&&!_clockPaused&&!shouldQuit();
+   const bool result=modifiers&&stable&&clockDelta<100&&resume.saw==expected&&(expected?held>=100:held==0);
+   debug("Space room pause: %s (P%d,expected%d,paused%d,held%u,clock%u,modifiers%d,stable%d)",result?"PASS":"FAIL",scene,int(expected),int(resume.saw),held,clockDelta,int(modifiers),int(stable));return result;
+  };
+  ok=normalPause(103,false)&&ok;ok=normalPause(27,true)&&ok;
+  debug("Space pause native result: %s",ok?"PASS":"FAIL");
+  _background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
  if(ConfMan.hasKey("astronomica_verify_intro_menu")&&ConfMan.getBool("astronomica_verify_intro_menu")) {
   class IntroKeys:public Common::EventSource {
   public:
@@ -14039,6 +14102,11 @@ Common::Error AstronomicaEngine::run() {
   return ok ? Common::kNoError : Common::Error(Common::kReadingFailed,"Variant verification failed");
  }
  if (ConfMan.hasKey("astronomica_verify") && ConfMan.getBool("astronomica_verify")) {
+  // Establish this diagnostic's initial render-only contract;normal gameplay defaults stay enabled.
+  ConfMan.setBool("astronomica_audio",false);
+  ConfMan.setBool("astronomica_animation",false);
+  ConfMan.setBool("astronomica_sprite_input",false);
+  ConfMan.setBool("astronomica_entry_scripts",false);
   bool scriptsOK = verifyScriptRunner() && verifyConditions() && verifySpriteComposition();
   const bool cursorInitiallyVisible = CursorMan.isVisible();
   int loaded = 0; uint32 bitmaps = 0, commands = 0, tails = 0;
