@@ -1,6 +1,6 @@
 # Kit di compilazione completamente offline: Astronomica ASVM31 (Windows x64)
 
-Il workflow GitHub Actions **Astronomica ASVM31 offline compilation kit** assembla un pacchetto portatile con sorgenti e compilatore MSYS2/MinGW. Il workflow scarica e predispone le dipendenze **prima** della creazione del pacchetto. Dopo l'estrazione, COMPILA.cmd non esegue git, pacman o download: ricompila il motore ScummVM personalizzato usando soltanto ciò che è incluso.
+Il workflow GitHub Actions **Astronomica ASVM31 offline compilation kit** pubblica su GitHub Releases un pacchetto portatile con sorgenti e compilatore MSYS2/MinGW. Il workflow scarica e predispone le dipendenze **prima** della creazione del pacchetto. Dopo l'estrazione, COMPILA.cmd non esegue git, pacman o download: ricompila il motore ScummVM personalizzato usando soltanto ciò che è incluso.
 
 ## Contenuto
 
@@ -13,7 +13,7 @@ Il workflow GitHub Actions **Astronomica ASVM31 offline compilation kit** assemb
 
 ## Utilizzo in Windows 11
 
-1. Da GitHub Actions scarica l'artifact **Astronomica-ASVM31-Offline-Kit** e decomprimi lo ZIP. Al suo interno trovi Astronomica-ASVM31-Offline-Kit.7z. Estrai anche il file 7z con 7-Zip (o un estrattore Windows compatibile).
+1. Apri **GitHub Releases**, release **Astronomica ASVM31 - Offline Windows build kit**, e scarica **Astronomica-ASVM31-Offline-Kit.7z** insieme al file di verifica **.sha256**. Estrai direttamente il file .7z con 7-Zip (o un estrattore Windows compatibile). Non serve alcun download di dipendenze.
 2. **Estrai in un percorso breve senza spazi**, per esempio C:\AstronomicaOffline. La radice estratta deve contenere contemporaneamente msys64, scummvm, tools e COMPILA.cmd.
 3. Scollega Internet, fai doppio clic su COMPILA.cmd. L'eseguibile compilato e le DLL raccolte saranno in bin.
 4. Copia i **tuoi dati originali** in game_data, conservando il file game_data\PLACES\GAMEDATA, oppure usa D:\astro. Dal prompt nella cartella del kit, dopo la compilazione esegui:
