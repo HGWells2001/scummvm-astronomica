@@ -143,6 +143,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $false
           $tag = "astronomica-asvm31-offline-kit"
           $archive = "Astronomica-ASVM31-Offline-Kit.7z"
           $checksum = "Astronomica-ASVM31-Offline-Kit.sha256"
@@ -150,6 +151,7 @@ jobs:
           if (-not (Test-Path $archive) -or -not (Test-Path $checksum)) { throw "Offline package missing" }
           gh release view $tag --repo $repo --json url 2>$null | Out-Null
           $exists = ($LASTEXITCODE -eq 0)
+          $global:LASTEXITCODE = 0
           if ($exists) {
             gh release upload $tag $archive $checksum --repo $repo --clobber
           } else {
