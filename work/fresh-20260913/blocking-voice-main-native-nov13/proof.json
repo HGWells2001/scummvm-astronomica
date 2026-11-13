@@ -1,0 +1,12 @@
+{
+  "status": "INSTALLED_BLOCKING_VOICE_NATIVE_PASS",
+  "completed_at": "2026-11-13T18:00:04.262381+00:00",
+  "candidate_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "native_log_sha256": "b0b7e1bf749d522a4c272d96f2e1b6729e5e61b7efcbc3243e1c726da26c30dd",
+  "pause_modes_checked": 2,
+  "global_values_checked": 100,
+  "local_values_checked": 2,
+  "audio_pause_and_stream_guards_verified": true,
+  "user_preferences_unchanged": true,
+  "native_exited_naturally": true
+}

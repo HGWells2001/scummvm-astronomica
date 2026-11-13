@@ -1,3 +1,11 @@
+# Current update: safe pause/menu during synchronous voices
+
+Verified executable `29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2`. F5/Space work during common synchronous voices;save/load wait until the callback stack returns. Paused time is excluded from the script deadline. Native baseline/candidate/Windows,physical/genuine save continuations,P512 clock,new general and installed checks pass. [Verified scope](BLOCKING-VOICES.md). One transient depth counter changes class layout;all7units fresh,core/save schemas unchanged. Fixed acceptance7/10;whole-game completion unmeasured.
+
+Continue SESSION-20261113.md. Never force-end suites. DO NOT SHUT DOWN THE COMPUTER. Historical checkpoints below.
+
+---
+
 # Current update: original-style gameplay double clicks
 
 Verified executable `71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86`. Rapid nearby second presses are ignored;third presses start a new pair. The backend interval and portable virtual-pixel tolerance adapt original CS_DBLCLKS input. Native baseline/candidate including Windows,accepted backlog/host controls,old physical saves,genuine ASVM29,P512 clock futures,new full general and installed checks pass. [Verified scope](DOUBLE-CLICK.md). Three transient UI fields change engine class layout;all7units fresh,core/save schemas unchanged. Fixed acceptance7/10;whole-game completion unmeasured.

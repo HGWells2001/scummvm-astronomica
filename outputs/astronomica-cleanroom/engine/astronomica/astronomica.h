@@ -29,6 +29,7 @@ public:
  Common::Error saveGameStream(Common::WriteStream *stream, bool isAutosave = false) override;
  Common::Error loadGameStream(Common::SeekableReadStream *stream) override;
 private:
+ uint _blockingSoundDepth=0; // Derived stack guard,not serialized.
  bool playerClickIsDouble(const Common::Point &position,uint32 now);
  Common::Point _playerClickPosition;
  uint32 _playerClickTime=0;

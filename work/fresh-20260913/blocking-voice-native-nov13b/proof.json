@@ -1,0 +1,55 @@
+{
+  "status": "BLOCKING_VOICE_NATIVE_MENU_PASS",
+  "completed_at": "2026-11-13T17:41:48.485986+00:00",
+  "candidate_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "cases": [
+    {
+      "name": "baseline",
+      "role": "baseline",
+      "video": "dummy",
+      "kind": "double",
+      "exe_sha256": "8b8890928e50672263692b1fcf0c5dd91bb4b865be9726f1da37a412ef20c85c",
+      "log_sha256": "8123a424ab660d45e88ec31734964c988cedd6896990d666fd86d63448313d40",
+      "native_exited_naturally": true
+    },
+    {
+      "name": "candidate",
+      "role": "candidate",
+      "video": "dummy",
+      "kind": "double",
+      "exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+      "log_sha256": "eeb768af2014dda6fdb294e871b61fdca21b03d637f4eb020bbdbd559c20d2c8",
+      "native_exited_naturally": true
+    },
+    {
+      "name": "candidate-windows",
+      "role": "candidate",
+      "video": "windows",
+      "kind": "double",
+      "exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+      "log_sha256": "3d84eaf0e619ee25cb738d840f7a03003732674132cbf6e0e95aa00db7c9ce65",
+      "native_exited_naturally": true
+    },
+    {
+      "name": "candidate-backlog",
+      "role": "candidate",
+      "video": "dummy",
+      "kind": "backlog",
+      "exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+      "log_sha256": "3ffd007225470880d1eee681365e3820fdcaf32784f9997086e1e886067418fb",
+      "native_exited_naturally": true
+    }
+  ],
+  "baseline_menu_and_pause_ignored": true,
+  "candidate_menu_and_pause_work": true,
+  "save_load_and_streams_guarded": true,
+  "paused_time_excluded_from_script_deadline": true,
+  "accepted_backlog_and_host_controls_preserved": true,
+  "all_processes_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "limits": [
+    "Actual common synchronous sound callback with original SOUNDS/S12 voice;F5/Space,baseline/candidate and Windows;not every script calling it",
+    "Actual mixer pause,menu and message dialog,script runner unchanged,direct save/load stream refusal;no human audio quality assessment",
+    "No original Windows runtime or whole-game completion claim"
+  ]
+}

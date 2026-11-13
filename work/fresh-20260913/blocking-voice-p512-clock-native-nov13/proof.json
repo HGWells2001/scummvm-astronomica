@@ -1,0 +1,23 @@
+{
+  "status": "P512_ISOLATED_MEMORY_DIAGNOSTIC_PASS",
+  "completed_at": "2026-11-13T17:47:27.952681+00:00",
+  "diagnostic_exe_sha256": "77f624f3642c4b1d247c57c4baf4fd6249cecfe16b04c28c8a2a59c615c9608a",
+  "shipping_candidate_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "native_log_sha256": "586cb990d11c88bfeaed01304af122ccf0c8d495a294b5814ede6672f17f18e0",
+  "detail_lines": [
+    "[2026-11-13 18:47:27] P512 isolated diagnostic result: PASS"
+  ],
+  "native_exited_naturally": true,
+  "user_preferences_unchanged": true,
+  "fixtures_unchanged": {
+    "astro-verify.098": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+    "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
+  },
+  "production_installed": false,
+  "release_gate_satisfied": false,
+  "limits": [
+    "Additional isolated observation;cannot replace failed full general on exact candidate",
+    "No checks weakened;new diagnostic reports failure and returns normally instead of entering debugger",
+    "Original stalled general/native38244left untouched;no process termination or computer shutdown"
+  ]
+}

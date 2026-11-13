@@ -1,0 +1,26 @@
+{
+  "status": "BLOCKING_VOICE_SOURCE_AND_NATIVE_REVIEW_PASS",
+  "verified_at": "2026-11-13T17:59:54.799391+00:00",
+  "candidate_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "previous_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "engine_class_layout_changed": true,
+  "transient_voice_stack_depth_added": true,
+  "core_and_save_schemas_unchanged": true,
+  "evidence_sha256": {
+    "blocking-voice-candidate-source-review-nov13.json": "2bf0c648420fa76e16fbc0605b87f96d140118eaaac73a61bb3832d3537582df",
+    "blocking-voice-baseline-source-review-nov13.json": "34859040def0efa87dc8e84aa08178a6798ca8d7fbd76adcdaf2eb90b470ff06",
+    "blocking-voice-native-nov13b/proof.json": "2790708d477f4d998082201509537d5a94835f42118ff9ff11f89ba0350281b2",
+    "blocking-voice-physical-saves-native-nov13/proof.json": "9a3341ec5b0d764dd37a2989b560efbee4569ccf6e31d1958d6267fcfe659a15",
+    "blocking-voice-genuine-nov13/proof.json": "aaaf48247de1ee10640b8b80872ff916b1cf59f3a4d3ae5edcb155b89b6b66c0",
+    "blocking-voice-p512-clock-native-nov13/proof.json": "465396bba4e10a34234a6020f66218b556000d19adf55249e597113067667110"
+  },
+  "limits": [
+    "F5and unmodified Space handled in real common synchronous voice callback;actual original SOUNDS/S12voice,baseline/dummy/Windows",
+    "Actual mixer audio freezes in menu/pause;script deadline excludes held Engine pause time;runner state preserved",
+    "One private transient depth counter guards both public save/load queries and both stream methods;RAII handles nesting;all7engine units fresh/403foundation",
+    "Candidate accepted P536backlog/hostcontrols,4old physicalASVM2/26/27roundtrips,4genuine oldASVM29continuations,12P512clock futures PASS",
+    "Controlled common callback test,not every original caller or human audio quality check;new exact full general required before installation",
+    "Initial test driver targeted a nonexistent old-date stage and started no native process;correctedB uses actual13Novstages;old waiting drivers untouched",
+    "No whole-game completion or new fixed acceptance percentage"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "status": "BLOCKING_VOICE_PHYSICAL_NATIVE_SAVE_ROUNDTRIPS_PASS",
+  "completed_at": "2026-11-13T17:44:57.744731+00:00",
+  "candidate_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "diagnostic_exe_sha256": "5fd9075a9255c53d6fb757e61bb6ead7a420565ac03d3a0a34e6136954caa681",
+  "shipping_source_recovered_exactly": true,
+  "all_other22engine_files_and_header_identical": true,
+  "cases": [
+    {
+      "profile": "room-v2",
+      "scene": 103,
+      "version": 2,
+      "source_slot_sha256": "7c06575ed063cba735f55689834ed6d5da4d24c6eaa3c5763a9a4467fdca003a",
+      "new_slot_sha256": "eed7f95b9addca71eb06ac3725fafb06204397845960419e5a9ab4454f26baf1",
+      "video_driver": "dummy",
+      "all_four_options_absent": true,
+      "introduction_completed_before_old_load": true,
+      "intro_voice_sha256": "59fccfa4c29aa14d24d3114b92f27f122a91381e257d2cb4d1b95893d79cefd4",
+      "all100_globals_and_completion_roundtrip": true,
+      "native_log_sha256": "7a3524e70f0e0889d63ecc1aa6d71ebc80e252e73091124b5a05fe87d483579b",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "p501-v27",
+      "scene": 501,
+      "version": 27,
+      "source_slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "new_slot_sha256": "18e232b2d0252e83f89aeaf49ae0bcc6ab8823e166f8fc04932fcefa8254355a",
+      "video_driver": "dummy",
+      "all_four_options_absent": true,
+      "introduction_completed_before_old_load": true,
+      "intro_voice_sha256": "59fccfa4c29aa14d24d3114b92f27f122a91381e257d2cb4d1b95893d79cefd4",
+      "all100_globals_and_completion_roundtrip": true,
+      "native_log_sha256": "31f283bbfb9bf8c03258fee74e4e24016ffdd2967ee66f796e5f68feba9a0987",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "p504-v26",
+      "scene": 504,
+      "version": 26,
+      "source_slot_sha256": "4aaf608d8ac4d18002db155344665cdcea70c0eea7e08637ba2a700bad392e77",
+      "new_slot_sha256": "e4f8ea1d8cb7e415e426166ea34087b728d155f817a533f173e7a36b6b7efce3",
+      "video_driver": "dummy",
+      "all_four_options_absent": true,
+      "introduction_completed_before_old_load": true,
+      "intro_voice_sha256": "59fccfa4c29aa14d24d3114b92f27f122a91381e257d2cb4d1b95893d79cefd4",
+      "all100_globals_and_completion_roundtrip": true,
+      "native_log_sha256": "f20d17e3a76d8501302d7619d9dbd5cd26bfa2ef9d032a78d5beca217dea05fc",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "p501-windows",
+      "scene": 501,
+      "version": 27,
+      "source_slot_sha256": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+      "new_slot_sha256": "653bed9097d4987a2f5a1430a3d540a668ab7ed20c93a77d29c47396b0c6570c",
+      "video_driver": "windows",
+      "all_four_options_absent": true,
+      "introduction_completed_before_old_load": true,
+      "intro_voice_sha256": "59fccfa4c29aa14d24d3114b92f27f122a91381e257d2cb4d1b95893d79cefd4",
+      "all100_globals_and_completion_roundtrip": true,
+      "native_log_sha256": "834f87d49409f8e486d6cf65a9c431008c2bda6c2b6093cc9006e69ab582bfdb",
+      "native_exited_naturally": true
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "all_processes_exited_naturally": true,
+  "limits": [
+    "Physical earlier accepted-engine ASVM2/26/27loads,resaves and reloads with all four feature keys absent;not original Windows saves",
+    "Compares scene,all100globals and completion count;not all historical full futures or human playthrough",
+    "Optional diagnostic only;not installed. Original source files and fixture aliases unchanged"
+  ]
+}

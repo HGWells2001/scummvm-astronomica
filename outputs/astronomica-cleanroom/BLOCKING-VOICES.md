@@ -1,0 +1,11 @@
+# Menu and pause during synchronous voices - 13 November 2026
+
+F5 and unmodified Space remain usable while the common synchronous voice callback is waiting for playback. The previous engine ignored those keys in that loop, although initial scene introductions already supported them. The menu or pause dialog freezes the mixer through Engine pause. Closing it resumes the voice. The elapsed script deadline excludes the time held in an Engine pause.
+
+A private transient depth counter guards both public save/load availability queries and both stream methods until the synchronous callback stack returns. A local scope object restores nesting on return. This protects the live command stack from replacement while a modal dialog is open. The counter is not serialized. CPP/header change and engine class layout changes:all seven engine objects are freshly compiled against403 verified foundation objects. Paired core files and save schemas remain unchanged.
+
+Native baseline/candidate comparisons call the real shared sound handler with the original SOUNDS/S12 voice. The old loop ignores F5/Space;the new loop opens both real dialogs,holds the audio clock,refuses public and direct stream save/load without writing or consuming stream bytes,and resumes to natural voice completion. The runner remains unchanged. Measured wall time equals logical callback time plus held pause within tolerance. Dummy and actual Windows video pass. This finite common-callback check does not claim every original caller,midclip hardware trace or human audio quality verification.
+
+Accepted mouse backlog/host keyboard/menu/quit checks also pass. Four post-introduction physical ASVM2/26/27 roundtrips,four fresh-process genuine earlier accepted-engine ASVM29 continuations,twelve controlled P512 end-minus8 futures,the new exact full general and installed checks pass. Optional physical and clock observers recover exactly from shipping source. Clean pinned-source installation,independent clone and source export integrity are checked before publication. No original assets,native fixtures,raw executable/disassembly or binaries are included.
+
+Fixed acceptance remains7/10 (70%),with35 bounded native save profiles. Whole-game completion remains unmeasured. Never forcibly terminate suites. Do not shut down the computer.

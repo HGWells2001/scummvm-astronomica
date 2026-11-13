@@ -1,0 +1,11 @@
+{
+  "status": "BLOCKING_VOICE_EXPORTED_OBSERVERS_EXACT_PASS",
+  "candidate_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "shipping_cpp_sha256": "d880f608690b41b2e24dc1fc39881626c32728ed0e525a800876b92679ab1db4",
+  "physical_fragment_sha256": "fbb7e93dbb6a924a3a9dc7c97b1c07e96c16fa3b5891b80ed11b5c9c280751f5",
+  "clock_helper_sha256": "a19a8c33a386536b461670e9b34d5cfc638ebae3faf0e8aec7e2ebc435837b94",
+  "limits": [
+    "Exact optional diagnostic transforms;not installed",
+    "Original resources/native fixtures/raw instructions/binaries excluded"
+  ]
+}

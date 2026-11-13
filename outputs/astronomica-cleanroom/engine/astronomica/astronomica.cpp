@@ -2313,18 +2313,21 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
+ if(_blockingSoundDepth){if(msg)*msg=Common::U32String("Wait until the voice finishes.");return false;}
  if(_introductionActive){if(msg)*msg=Common::U32String("Wait until the introduction finishes.");return false;}
  const bool enabled = canSaveP281Persistent() || canSaveP523() || canSaveP525() || canSaveP512() || canSaveP510() || canSaveP501() || canSaveP504() || canSaveP503() || canSaveP502() || canSaveP527() || canSaveP516() || canSaveP511() || canSaveP509() || canSaveP521() || canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
  if (!enabled && msg) *msg = Common::U32String("Save after the current action finishes, in a supported exploration or puzzle screen.");
  return enabled;
 }
 bool AstronomicaEngine::canLoadGameStateCurrently(Common::U32String *msg) {
+ if(_blockingSoundDepth){if(msg)*msg=Common::U32String("Wait until the voice finishes.");return false;}
  if(_introductionActive){if(msg)*msg=Common::U32String("Wait until the introduction finishes.");return false;}
  const bool enabled = _screen.w && !_runner.clicksBlocked();
  if (!enabled && msg) *msg = Common::U32String("Wait for the current action to finish.");
  return enabled;
 }
 Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, bool) {
+ if(_blockingSoundDepth)return Common::kReadingFailed;
  if(_introductionActive)return Common::kReadingFailed;
  if (_place == 523) return saveP523(stream);
  if (_place == 525) return saveP525(stream);
@@ -2370,6 +2373,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stream) {
+ if(_blockingSoundDepth)return Common::kReadingFailed;
  if(_introductionActive)return Common::kReadingFailed;
  if (!canLoadGameStateCurrently() || stream->size()-stream->pos() < 420) return Common::kReadingFailed;
  if (stream->readUint32BE() != MKTAG('A','S','V','M')) return Common::kReadingFailed;
@@ -3112,24 +3116,28 @@ bool AstronomicaEngine::isBlockingSound(int id) const {
  return id == 912 || id == 922 || _moviePlaying || (_place == 505 && id >= 2 && id <= 10) || (_place == 512 && id == 14);
 }
 uint32 AstronomicaEngine::onBlockingSound(int id, uint32 now) {
+ struct VoiceStackGuard{uint&depth;explicit VoiceStackGuard(uint&d):depth(d){++depth;}~VoiceStackGuard(){--depth;}} voiceStack(_blockingSoundDepth);
  if(ConfMan.hasKey("astronomica_verify_p281_gateway")&&ConfMan.getBool("astronomica_verify_p281_gateway"))debug("P281 original blocking voice: S%d",id);
  applyScriptActions(now);
  // _playSound 9:3b1a/3bda/3c14 pauses active QuickTime playback, waits
  // for the foreground sound, then resumes the remaining selection.
  const bool pauseMovie = _movie && _moviePlaying;
  if (pauseMovie) _movie->pauseVideo(true);
- const uint32 started = _system->getMillis();
+ const uint32 started = _system->getMillis(),pausedBefore=_pausedMillis;
  if (playSound(id,now)) {
   while (_mixer->isSoundHandleActive(_soundHandle) && !shouldQuit()) {
    Common::Event event;
-   while (_system->getEventManager()->pollEvent(event))
+   while (_system->getEventManager()->pollEvent(event)) {
     if (event.type == Common::EVENT_QUIT) quitGame();
+    else if(event.type==Common::EVENT_KEYDOWN&&event.kbd.keycode==Common::KEYCODE_F5)openMainMenuDialog();
+    else if(event.type==Common::EVENT_KEYDOWN&&event.kbd.keycode==Common::KEYCODE_SPACE&&!(event.kbd.flags&(Common::KBD_CTRL|Common::KBD_ALT|Common::KBD_META)))pauseForPlayer();
+   }
    _system->updateScreen();
    _system->delayMillis(5);
   }
  }
  if (pauseMovie && _movie) _movie->pauseVideo(false);
- _lastBlockingSoundEnd = now + uint32(_system->getMillis() - started);
+ _lastBlockingSoundEnd = now + uint32(_system->getMillis()-started)-uint32(_pausedMillis-pausedBefore);
  return _lastBlockingSoundEnd;
 }
 uint32 AstronomicaEngine::onPuzzleSuccess(uint32 now) {
@@ -13618,6 +13626,35 @@ Common::Error AstronomicaEngine::run() {
  _runner.resetGlobals();
  const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
+
+ if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){
+  ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",false);
+  if(!loadPlace(103,false,true)){debug("Blocking voice fixture: FAIL");quitGame();return Common::kNoError;}
+  const bool expected=ConfMan.getBool("astronomica_blocking_voice_expected");bool ok=true;uint cases=0;
+  for(Common::KeyCode key:{Common::KEYCODE_F5,Common::KEYCODE_SPACE}){
+   class VoiceKeys:public Common::EventSource{public:
+    OSystem*host;Audio::Mixer*mixer;Audio::SoundHandle&handle;bool&paused;AstronomicaEngine*engine;Common::KeyCode open;
+    bool first=false,closed=false,sawPause=false,saveBlocked=false,loadBlocked=false,streamBlocked=false;uint32 sent=0,atPause=0,atClose=0;
+    VoiceKeys(OSystem*h,Audio::Mixer*m,Audio::SoundHandle&s,bool&p,AstronomicaEngine*e,Common::KeyCode k):host(h),mixer(m),handle(s),paused(p),engine(e),open(k){}
+    bool allowMapping()const override{return false;}
+    bool pollEvent(Common::Event&e)override{
+     if(!mixer->isSoundHandleActive(handle))return false;uint32 now=host->getMillis();
+     if(paused&&!sawPause){sawPause=true;atPause=mixer->getSoundElapsedTime(handle);saveBlocked=!engine->canSaveGameStateCurrently();loadBlocked=!engine->canLoadGameStateCurrently();Common::MemoryWriteStreamDynamic out(DisposeAfterUse::YES);byte junk[8]={};Common::MemoryReadStream in(junk,sizeof(junk));streamBlocked=engine->saveGameStream(&out,false).getCode()!=Common::kNoError&&out.size()==0&&engine->loadGameStream(&in).getCode()!=Common::kNoError&&in.pos()==0;}
+     if(!first){first=true;sent=now;e.type=Common::EVENT_KEYDOWN;e.kbd=Common::KeyState(open);return true;}
+     if(!closed&&uint32(now-sent)>=300){closed=true;atClose=mixer->getSoundElapsedTime(handle);e.type=Common::EVENT_KEYDOWN;e.kbd=Common::KeyState(Common::KEYCODE_ESCAPE);return true;}return false;
+    }
+   } events(_system,_mixer,_soundHandle,_clockPaused,this,key);
+   const uint32 pauseBefore=_pausedMillis,wallBefore=_system->getMillis(),runnerBefore=_runner.p510CompleteHash();
+   _eventMan->getEventDispatcher()->registerSource(&events,false);const uint32 end=onBlockingSound(912,1000);_eventMan->getEventDispatcher()->unregisterSource(&events);
+   const uint32 wall=_system->getMillis()-wallBefore,held=_pausedMillis-pauseBefore;
+   bool valid=events.first&&events.closed&&!_clockPaused&&!shouldQuit()&&!_mixer->isSoundHandleActive(_soundHandle)&&_runner.p510CompleteHash()==runnerBefore&&_place==103;
+   if(expected)valid=events.sawPause&&events.saveBlocked&&events.loadBlocked&&events.streamBlocked&&held>=200&&events.atClose>=events.atPause&&events.atClose-events.atPause<60&&end>=1000&&uint32(end-1000)+held<=wall+40&&wall<=uint32(end-1000)+held+40&&valid;
+   else valid=!events.sawPause&&!held&&end>=1000&&valid;
+   debug("Blocking voice actual pause: %s (expected%d,key%d,pause%d,save%d,load%d,streams%d,held%u,audio%u/%u,wall%u,logical%u)",valid?"PASS":"FAIL",int(expected),int(key),int(events.sawPause),int(events.saveBlocked),int(events.loadBlocked),int(events.streamBlocked),held,events.atPause,events.atClose,wall,end-1000);ok=valid&&ok;++cases;
+  }
+  debug("Blocking voice menu result: %s (expected%d,cases%u)",ok&&cases==2?"PASS":"FAIL",int(expected),cases);_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
 
  if(ConfMan.hasKey("astronomica_verify_double_click")&&ConfMan.getBool("astronomica_verify_double_click")){
   const bool expected=ConfMan.getBool("astronomica_double_click_expected");
