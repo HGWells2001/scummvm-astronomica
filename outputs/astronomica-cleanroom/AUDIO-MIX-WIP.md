@@ -6,6 +6,6 @@ Requested behavior: shared feedback effects should overlap continuing music; nar
 
 Native targeted tests pass for feedback overlap with retained music, exclusive narration followed by music restart, pause, rejected-load nonmutation and scene cleanup. Seven engine units were freshly compiled. Candidate D SHA256 e8eb0c621251a742c701a1c562326b574b0a773868d757904b506f037a5a5b25.
 
-The full general suite was still running when this checkpoint was published. Save payloads have not intentionally changed, but broad compatibility is not yet qualified. No candidate was installed into the project launcher or the user's all-engine portable installation. No game assets or binaries are included. Main remains the accepted production source.
+The full general suite finished naturally with PASS on 16 November 2026 at 23:52 CET. Its exact candidate-bound receipt is included. Save payloads have not intentionally changed; additional installation, portable-framework and clip-role coverage work remains. No candidate was installed into the project launcher or the user's all-engine portable installation. No game assets or binaries are included. Main remains the accepted production source.
 
 After the existing suites finish, the user requested normal computer shutdown without forcibly terminating suites or programs. This is a one-session request, not a standing future shutdown policy.
