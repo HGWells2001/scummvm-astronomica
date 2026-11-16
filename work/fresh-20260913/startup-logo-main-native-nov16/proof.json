@@ -1,0 +1,22 @@
+{
+  "status": "STARTUP_LOGO_TO_MENU_MUSIC_NATIVE_PASS",
+  "created_at": "2026-11-16T22:07:41.716659+00:00",
+  "exe_sha256": "c787b1ad50ccf33001aea44551eeb6d4a2155eb4e52fca6d1130db1cb4c86a04",
+  "cases": [
+    {
+      "profile": "normal",
+      "log_sha256": "4458a72acbb3d40e834f28e6712fdac1e0ace869e3322bd37c22ea68308304c4",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-menu",
+      "log_sha256": "b09c88cb3064930ffe6efc076a8a98e9f06b5882b2dd676d42ade8b9781eb57c",
+      "native_exited_naturally": true
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "limitations": [
+    "Dummy video/audio backend; music mixer channel verified, not human audibility",
+    "Only P0 HQLOGO and explicit P1 override; other publisher logos unverified"
+  ]
+}

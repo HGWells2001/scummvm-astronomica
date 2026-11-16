@@ -13624,8 +13624,24 @@ Common::Error AstronomicaEngine::run() {
  _runner.seedRandom(uint16(Common::RandomSource::generateNewSeed()));
  // _CreateGame allocates the original game structure with calloc.
  _runner.resetGlobals();
- const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 1;
+ const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 0;
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
+
+
+ if(ConfMan.hasKey("astronomica_verify_startup_sequence")&&ConfMan.getBool("astronomica_verify_startup_sequence")){
+  const int expected=ConfMan.hasKey("astronomica_start_place")?ConfMan.getInt("astronomica_start_place"):0;
+  bool ok=_place==expected;uint frames=0;const uint32 began=_system->getMillis();
+  while(_place==0&&!shouldQuit()){
+   pollPlayerInput();runScripts();updateMovie();resumeLoopAt(scriptClock());
+   if(_movieFramesDrawn>frames)frames=_movieFramesDrawn;
+   _system->updateScreen();_system->delayMillis(10);
+  }
+  runScripts();resumeLoopAt(scriptClock());
+  const bool music=_place==1&&_loopSound==0&&_loopEnabled&&_lastSound==0&&_mixer->isSoundHandleActive(_soundHandle)&&_mixer->hasActiveChannelOfType(Audio::Mixer::kMusicSoundType);
+  ok=ok&&music&&(expected!=0||(frames>10&&uint32(_system->getMillis()-began)>=20000));
+  debug("Startup sequence: %s (expected%d,place%d,frames%u,wall%u,music%d)",ok?"PASS":"FAIL",expected,_place,frames,_system->getMillis()-began,int(music));
+  _background.free();_screen.free();quitGame();return ok?Common::kNoError:Common::Error(Common::kReadingFailed,"Startup sequence failed");
+ }
 
  if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){
   ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",false);

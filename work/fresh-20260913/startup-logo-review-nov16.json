@@ -1,0 +1,26 @@
+{
+  "status": "STARTUP_LOGO_SOURCE_NATIVE_REVIEW_PASS",
+  "created_at": "2026-11-16T22:07:03.234210+00:00",
+  "candidate_exe_sha256": "c787b1ad50ccf33001aea44551eeb6d4a2155eb4e52fca6d1130db1cb4c86a04",
+  "base_exe_sha256": "29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2",
+  "gates": {
+    "startup-logo-native-nov16/proof.json": "2945c870e54a52c1267047878ba30fda240637eb106b322be321e8690f11f730",
+    "startup-logo-wasapi-nov16/proof.json": "f8c7d13e7af573f48faec9dd71dc5a7a2d94e1d6b1bf2e6145ead9fb153cdb96"
+  },
+  "original_resources_sha256": {
+    "PLACES/P0/MEGAFILE.HYP": "72ed533fb48b03ab5eb687d2e60664c45f1ef01250bd4b5f76fef7207c12ec4e",
+    "PLACES/P0/HQLOGO.MOV": "02f7b53996e8f2d3a4a05d84e9b34e2e377e142db61893b7db978d9ad62162c2",
+    "PLACES/P1/MEGAFILE.HYP": "8ada5f1f10f4cb88d945a5451cb4d0f0d2d4414cd21e087084f8cc884c617feb",
+    "PLACES/P1/S0.WAV": "3f053d2f7f3102fc5a41c92e555ed4bc5ba7f829d97f56c14e8047ea55fb7ff8"
+  },
+  "production_delta": "Default initial scene 1 -> 0; explicit override preserved",
+  "class_layout_and_save_payload_unchanged": true,
+  "framework_unchanged": true,
+  "main_unchanged": true,
+  "user_preferences_unchanged": true,
+  "limitations": [
+    "Full general gate still separate",
+    "P0 logo to P1 menu music; puzzle music defect remains under investigation",
+    "Real WASAPI channel observed, not a human listening comparison"
+  ]
+}

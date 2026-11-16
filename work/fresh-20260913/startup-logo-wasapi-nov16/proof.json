@@ -1,0 +1,22 @@
+{
+  "status": "STARTUP_LOGO_TO_MENU_MUSIC_WASAPI_PASS",
+  "created_at": "2026-11-16T21:43:39.835238+00:00",
+  "exe_sha256": "c787b1ad50ccf33001aea44551eeb6d4a2155eb4e52fca6d1130db1cb4c86a04",
+  "cases": [
+    {
+      "profile": "normal",
+      "log_sha256": "52fc07bd5cb3e4e352923a9106c4ed83cbbca60868cab4b25b5b79abc21e27b4",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-menu",
+      "log_sha256": "b64016067683d992f9e6f0d78b34e240aa41189a60eb5ca571565d31c4bb9adf",
+      "native_exited_naturally": true
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "limitations": [
+    "Dummy video with real WASAPI audio; music mixer channel verified, not human audibility",
+    "Only P0 HQLOGO and explicit P1 override; other publisher logos unverified"
+  ]
+}
