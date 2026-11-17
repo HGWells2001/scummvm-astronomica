@@ -1,0 +1,16 @@
+{
+  "status": "REVIEWED_FEEDBACK_PCM_ALIAS_INVENTORY_COMPLETE",
+  "at": "2026-11-17T21:45:23.190280+00:00",
+  "examined_files": 632,
+  "reviewed_file_identities": 8,
+  "reviewed_pcm_identities": 8,
+  "aliases": [],
+  "unreadable": [],
+  "engine_modified": false,
+  "user_installation_ignored": true,
+  "limits": [
+    "Only exact raw PCM equality with identical rate,channels,sample width and frame count qualifies",
+    "Container metadata may differ; unknown nonmatching clips retain unclassified roles",
+    "No waveform similarity,voice recognition,duration-only or subjective classification"
+  ]
+}
