@@ -1,0 +1,1621 @@
+{
+  "status": "VERSIONED_BEHAVIOR_CANDIDATE_REQUIREMENTS_PASS",
+  "schema_version": 1,
+  "at": "2026-11-17T22:10:38.874080+00:00",
+  "syntax_inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "fresh_original_byte_proof_sha256": "2c2b385e0ebf6abc72e687238d69172ad64b547c7e0548579deaa613bd88d40c",
+  "historical_trace_map_sha256": "8bce1607d4dbb07be592242dbc5bdcfeea43556397596eb490609202ee96c7a8",
+  "historical_general_proof_sha256": "f839b24778eb318f9e550dc9d73dc21118a2f3feab296ee16696a72bd8aebaee",
+  "historical_native_log_sha256": "3e8945ee75d6ed24b2067770c84745132f182e8c53720c9758a562e50966a779",
+  "historical_diagnostic_exe_sha256": "e44dac6dfb952fd35581f40db0cde35e28f9ab3fc73aca73ae9f5057c92f274e",
+  "historical_recorded_shipping_exe_sha256": "71c2bc4f1e6f61eb1cf775c7c2ba0691b71fecbfc4bee6a6aa0ce5e5bd9d6e86",
+  "original_files": 421,
+  "readable_scene_prefixes": 420,
+  "original_commands": 10316,
+  "original_script_lists": 936,
+  "matched_historical_command_entrances": 7424,
+  "candidate_requirements_by_kind": {
+    "custom_dispatch_effects": 158,
+    "predicate_outcome": 2784,
+    "timed_dispatch": 1593,
+    "alternative_continuation": 915,
+    "literal_route_outcome": 1124
+  },
+  "candidate_requirements": 6574,
+  "predicate_outcome_cells": 2784,
+  "historical_controlled_native_predicate_cells_observed": 1688,
+  "predicate_cells_without_this_historical_observation": 1096,
+  "per_scene_counts": {
+    "0": {
+      "custom_dispatch_effects": 2,
+      "predicate_outcome": 6,
+      "timed_dispatch": 2,
+      "alternative_continuation": 1,
+      "literal_route_outcome": 1
+    },
+    "1": {
+      "custom_dispatch_effects": 6,
+      "predicate_outcome": 16,
+      "timed_dispatch": 13,
+      "alternative_continuation": 2,
+      "literal_route_outcome": 3
+    },
+    "2": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 2
+    },
+    "3": {
+      "timed_dispatch": 10,
+      "literal_route_outcome": 2
+    },
+    "4": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "27": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "28": {
+      "literal_route_outcome": 2
+    },
+    "29": {
+      "predicate_outcome": 12,
+      "alternative_continuation": 1,
+      "timed_dispatch": 5,
+      "custom_dispatch_effects": 2,
+      "literal_route_outcome": 1
+    },
+    "30": {
+      "literal_route_outcome": 1
+    },
+    "32": {
+      "literal_route_outcome": 3
+    },
+    "33": {
+      "literal_route_outcome": 2
+    },
+    "34": {
+      "literal_route_outcome": 3
+    },
+    "35": {
+      "custom_dispatch_effects": 3,
+      "predicate_outcome": 6,
+      "alternative_continuation": 2,
+      "timed_dispatch": 2,
+      "literal_route_outcome": 3
+    },
+    "36": {
+      "literal_route_outcome": 3
+    },
+    "37": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "38": {
+      "literal_route_outcome": 2
+    },
+    "39": {
+      "literal_route_outcome": 3
+    },
+    "40": {
+      "literal_route_outcome": 3
+    },
+    "41": {
+      "literal_route_outcome": 2
+    },
+    "42": {
+      "literal_route_outcome": 3
+    },
+    "43": {
+      "literal_route_outcome": 3
+    },
+    "44": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "45": {
+      "literal_route_outcome": 3
+    },
+    "46": {
+      "literal_route_outcome": 2
+    },
+    "47": {
+      "literal_route_outcome": 3
+    },
+    "48": {
+      "literal_route_outcome": 3
+    },
+    "49": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "50": {
+      "literal_route_outcome": 2
+    },
+    "51": {
+      "literal_route_outcome": 3
+    },
+    "52": {
+      "literal_route_outcome": 3
+    },
+    "53": {
+      "literal_route_outcome": 2
+    },
+    "54": {
+      "literal_route_outcome": 3
+    },
+    "55": {
+      "literal_route_outcome": 3
+    },
+    "56": {
+      "literal_route_outcome": 2
+    },
+    "57": {
+      "literal_route_outcome": 2
+    },
+    "58": {
+      "literal_route_outcome": 3
+    },
+    "59": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "60": {
+      "literal_route_outcome": 3
+    },
+    "61": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 2
+    },
+    "62": {
+      "literal_route_outcome": 3
+    },
+    "63": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 2
+    },
+    "64": {
+      "literal_route_outcome": 3
+    },
+    "65": {
+      "literal_route_outcome": 3
+    },
+    "66": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "67": {
+      "literal_route_outcome": 2
+    },
+    "68": {
+      "literal_route_outcome": 3
+    },
+    "69": {
+      "literal_route_outcome": 3
+    },
+    "70": {
+      "literal_route_outcome": 2
+    },
+    "71": {
+      "literal_route_outcome": 2
+    },
+    "72": {
+      "literal_route_outcome": 2
+    },
+    "73": {
+      "literal_route_outcome": 2
+    },
+    "74": {
+      "literal_route_outcome": 2
+    },
+    "75": {
+      "literal_route_outcome": 2
+    },
+    "76": {
+      "literal_route_outcome": 3
+    },
+    "77": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "78": {
+      "literal_route_outcome": 3
+    },
+    "79": {
+      "literal_route_outcome": 2
+    },
+    "80": {
+      "literal_route_outcome": 3
+    },
+    "81": {
+      "literal_route_outcome": 2
+    },
+    "82": {
+      "predicate_outcome": 8,
+      "alternative_continuation": 2,
+      "timed_dispatch": 5,
+      "literal_route_outcome": 3
+    },
+    "83": {
+      "literal_route_outcome": 3
+    },
+    "84": {
+      "literal_route_outcome": 2
+    },
+    "85": {
+      "custom_dispatch_effects": 3,
+      "predicate_outcome": 14,
+      "alternative_continuation": 3,
+      "timed_dispatch": 3,
+      "literal_route_outcome": 4
+    },
+    "86": {
+      "literal_route_outcome": 3
+    },
+    "87": {
+      "literal_route_outcome": 3
+    },
+    "88": {
+      "literal_route_outcome": 2
+    },
+    "89": {
+      "literal_route_outcome": 2
+    },
+    "90": {
+      "literal_route_outcome": 3
+    },
+    "91": {
+      "literal_route_outcome": 3
+    },
+    "92": {
+      "literal_route_outcome": 2
+    },
+    "93": {
+      "literal_route_outcome": 3
+    },
+    "94": {
+      "literal_route_outcome": 1
+    },
+    "95": {
+      "literal_route_outcome": 1
+    },
+    "96": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 5
+    },
+    "97": {
+      "literal_route_outcome": 1
+    },
+    "98": {
+      "custom_dispatch_effects": 1,
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 2,
+      "literal_route_outcome": 3
+    },
+    "101": {
+      "literal_route_outcome": 4
+    },
+    "103": {
+      "literal_route_outcome": 3
+    },
+    "104": {
+      "literal_route_outcome": 1
+    },
+    "105": {
+      "literal_route_outcome": 1
+    },
+    "106": {
+      "literal_route_outcome": 3
+    },
+    "107": {
+      "literal_route_outcome": 3
+    },
+    "108": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "109": {
+      "literal_route_outcome": 3
+    },
+    "110": {
+      "literal_route_outcome": 3
+    },
+    "111": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "112": {
+      "literal_route_outcome": 3
+    },
+    "113": {
+      "literal_route_outcome": 3
+    },
+    "114": {
+      "literal_route_outcome": 3
+    },
+    "115": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 6
+    },
+    "116": {
+      "literal_route_outcome": 1
+    },
+    "117": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "120": {
+      "literal_route_outcome": 4
+    },
+    "122": {
+      "literal_route_outcome": 3
+    },
+    "123": {
+      "literal_route_outcome": 1
+    },
+    "124": {
+      "literal_route_outcome": 1
+    },
+    "125": {
+      "literal_route_outcome": 3
+    },
+    "126": {
+      "literal_route_outcome": 1
+    },
+    "128": {
+      "literal_route_outcome": 3
+    },
+    "129": {
+      "literal_route_outcome": 2
+    },
+    "130": {
+      "literal_route_outcome": 3
+    },
+    "131": {
+      "literal_route_outcome": 2
+    },
+    "132": {
+      "literal_route_outcome": 1
+    },
+    "133": {
+      "literal_route_outcome": 1
+    },
+    "134": {
+      "timed_dispatch": 4,
+      "literal_route_outcome": 7
+    },
+    "135": {
+      "literal_route_outcome": 1
+    },
+    "136": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "139": {
+      "literal_route_outcome": 4
+    },
+    "141": {
+      "literal_route_outcome": 3
+    },
+    "142": {
+      "literal_route_outcome": 1
+    },
+    "143": {
+      "literal_route_outcome": 1
+    },
+    "144": {
+      "literal_route_outcome": 2
+    },
+    "145": {
+      "literal_route_outcome": 3
+    },
+    "146": {
+      "literal_route_outcome": 3
+    },
+    "147": {
+      "literal_route_outcome": 3
+    },
+    "148": {
+      "literal_route_outcome": 3
+    },
+    "149": {
+      "literal_route_outcome": 3
+    },
+    "150": {
+      "literal_route_outcome": 3
+    },
+    "151": {
+      "literal_route_outcome": 2
+    },
+    "152": {
+      "literal_route_outcome": 2
+    },
+    "153": {
+      "literal_route_outcome": 1
+    },
+    "154": {
+      "literal_route_outcome": 1
+    },
+    "155": {
+      "literal_route_outcome": 3
+    },
+    "156": {
+      "literal_route_outcome": 1
+    },
+    "157": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "160": {
+      "literal_route_outcome": 4
+    },
+    "162": {
+      "literal_route_outcome": 2
+    },
+    "163": {
+      "literal_route_outcome": 1
+    },
+    "164": {
+      "literal_route_outcome": 1
+    },
+    "165": {
+      "literal_route_outcome": 3
+    },
+    "166": {
+      "literal_route_outcome": 3
+    },
+    "167": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "168": {
+      "literal_route_outcome": 2
+    },
+    "169": {
+      "literal_route_outcome": 3
+    },
+    "170": {
+      "literal_route_outcome": 1
+    },
+    "171": {
+      "literal_route_outcome": 1
+    },
+    "172": {
+      "literal_route_outcome": 4
+    },
+    "173": {
+      "literal_route_outcome": 1
+    },
+    "174": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "177": {
+      "literal_route_outcome": 4
+    },
+    "179": {
+      "literal_route_outcome": 2
+    },
+    "180": {
+      "literal_route_outcome": 1
+    },
+    "181": {
+      "literal_route_outcome": 1
+    },
+    "182": {
+      "literal_route_outcome": 2
+    },
+    "183": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "184": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "185": {
+      "literal_route_outcome": 3
+    },
+    "186": {
+      "literal_route_outcome": 4
+    },
+    "187": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "188": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 4
+    },
+    "189": {
+      "literal_route_outcome": 3
+    },
+    "190": {
+      "literal_route_outcome": 2
+    },
+    "191": {
+      "literal_route_outcome": 2
+    },
+    "192": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "193": {
+      "literal_route_outcome": 3
+    },
+    "194": {
+      "literal_route_outcome": 3
+    },
+    "195": {
+      "literal_route_outcome": 3
+    },
+    "196": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 6
+    },
+    "197": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 5
+    },
+    "200": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "201": {
+      "literal_route_outcome": 3
+    },
+    "202": {
+      "literal_route_outcome": 3
+    },
+    "203": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "204": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "205": {
+      "literal_route_outcome": 3
+    },
+    "206": {
+      "literal_route_outcome": 3
+    },
+    "207": {
+      "literal_route_outcome": 3
+    },
+    "208": {
+      "custom_dispatch_effects": 1,
+      "predicate_outcome": 6,
+      "alternative_continuation": 2,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "209": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "210": {
+      "literal_route_outcome": 4
+    },
+    "211": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 4
+    },
+    "212": {
+      "literal_route_outcome": 3
+    },
+    "213": {
+      "literal_route_outcome": 3
+    },
+    "214": {
+      "literal_route_outcome": 3
+    },
+    "215": {
+      "literal_route_outcome": 3
+    },
+    "216": {
+      "literal_route_outcome": 2
+    },
+    "217": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "218": {
+      "literal_route_outcome": 3
+    },
+    "219": {
+      "literal_route_outcome": 3
+    },
+    "220": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "221": {
+      "literal_route_outcome": 3
+    },
+    "222": {
+      "timed_dispatch": 10,
+      "predicate_outcome": 10,
+      "alternative_continuation": 2,
+      "literal_route_outcome": 2
+    },
+    "223": {
+      "literal_route_outcome": 4
+    },
+    "224": {
+      "literal_route_outcome": 1
+    },
+    "225": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 4
+    },
+    "226": {
+      "literal_route_outcome": 3
+    },
+    "227": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "228": {
+      "predicate_outcome": 4,
+      "timed_dispatch": 2,
+      "alternative_continuation": 1,
+      "literal_route_outcome": 3
+    },
+    "229": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 6
+    },
+    "230": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 2
+    },
+    "231": {
+      "predicate_outcome": 8,
+      "alternative_continuation": 2,
+      "timed_dispatch": 4,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 2
+    },
+    "232": {
+      "literal_route_outcome": 4
+    },
+    "233": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "234": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "235": {
+      "timed_dispatch": 4,
+      "literal_route_outcome": 6
+    },
+    "236": {
+      "literal_route_outcome": 4
+    },
+    "237": {
+      "literal_route_outcome": 3
+    },
+    "238": {
+      "literal_route_outcome": 4
+    },
+    "239": {
+      "literal_route_outcome": 2
+    },
+    "240": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "241": {
+      "literal_route_outcome": 3
+    },
+    "242": {
+      "literal_route_outcome": 3
+    },
+    "243": {
+      "literal_route_outcome": 3
+    },
+    "244": {
+      "literal_route_outcome": 3
+    },
+    "245": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "246": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 4
+    },
+    "247": {
+      "literal_route_outcome": 2
+    },
+    "248": {
+      "literal_route_outcome": 4
+    },
+    "249": {
+      "literal_route_outcome": 2
+    },
+    "250": {
+      "literal_route_outcome": 3
+    },
+    "251": {
+      "timed_dispatch": 2,
+      "literal_route_outcome": 2
+    },
+    "252": {
+      "literal_route_outcome": 3
+    },
+    "253": {
+      "literal_route_outcome": 3
+    },
+    "254": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "255": {
+      "literal_route_outcome": 3
+    },
+    "256": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "257": {
+      "literal_route_outcome": 3
+    },
+    "258": {
+      "literal_route_outcome": 3
+    },
+    "259": {
+      "literal_route_outcome": 3
+    },
+    "260": {
+      "literal_route_outcome": 3
+    },
+    "261": {
+      "literal_route_outcome": 3
+    },
+    "262": {
+      "literal_route_outcome": 3
+    },
+    "263": {
+      "literal_route_outcome": 3
+    },
+    "264": {
+      "literal_route_outcome": 1
+    },
+    "265": {
+      "literal_route_outcome": 1
+    },
+    "266": {
+      "literal_route_outcome": 4
+    },
+    "267": {
+      "literal_route_outcome": 1
+    },
+    "268": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "271": {
+      "literal_route_outcome": 4
+    },
+    "273": {
+      "literal_route_outcome": 3
+    },
+    "274": {
+      "literal_route_outcome": 1
+    },
+    "275": {
+      "literal_route_outcome": 1
+    },
+    "276": {
+      "literal_route_outcome": 2
+    },
+    "277": {
+      "literal_route_outcome": 1
+    },
+    "278": {
+      "literal_route_outcome": 1
+    },
+    "279": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "280": {
+      "literal_route_outcome": 1
+    },
+    "281": {
+      "timed_dispatch": 1,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 2
+    },
+    "284": {
+      "literal_route_outcome": 4
+    },
+    "286": {
+      "literal_route_outcome": 3
+    },
+    "287": {
+      "literal_route_outcome": 1
+    },
+    "288": {
+      "literal_route_outcome": 1
+    },
+    "289": {
+      "literal_route_outcome": 2
+    },
+    "290": {
+      "literal_route_outcome": 3
+    },
+    "291": {
+      "literal_route_outcome": 3
+    },
+    "292": {
+      "literal_route_outcome": 3
+    },
+    "293": {
+      "literal_route_outcome": 3
+    },
+    "294": {
+      "literal_route_outcome": 2
+    },
+    "295": {
+      "literal_route_outcome": 3
+    },
+    "296": {
+      "literal_route_outcome": 3
+    },
+    "297": {
+      "literal_route_outcome": 3
+    },
+    "298": {
+      "literal_route_outcome": 2
+    },
+    "299": {
+      "literal_route_outcome": 2
+    },
+    "300": {
+      "literal_route_outcome": 1
+    },
+    "301": {
+      "literal_route_outcome": 1
+    },
+    "302": {
+      "literal_route_outcome": 4
+    },
+    "303": {
+      "literal_route_outcome": 1
+    },
+    "304": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "307": {
+      "literal_route_outcome": 4
+    },
+    "309": {
+      "literal_route_outcome": 3
+    },
+    "310": {
+      "literal_route_outcome": 1
+    },
+    "311": {
+      "literal_route_outcome": 1
+    },
+    "312": {
+      "literal_route_outcome": 3
+    },
+    "313": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "314": {
+      "literal_route_outcome": 2
+    },
+    "315": {
+      "literal_route_outcome": 3
+    },
+    "316": {
+      "literal_route_outcome": 2
+    },
+    "317": {
+      "literal_route_outcome": 1
+    },
+    "318": {
+      "literal_route_outcome": 1
+    },
+    "319": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "320": {
+      "literal_route_outcome": 1
+    },
+    "321": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "324": {
+      "literal_route_outcome": 4
+    },
+    "326": {
+      "literal_route_outcome": 2
+    },
+    "327": {
+      "literal_route_outcome": 1
+    },
+    "328": {
+      "literal_route_outcome": 1
+    },
+    "329": {
+      "literal_route_outcome": 2
+    },
+    "330": {
+      "literal_route_outcome": 3
+    },
+    "331": {
+      "literal_route_outcome": 2
+    },
+    "332": {
+      "literal_route_outcome": 3
+    },
+    "333": {
+      "literal_route_outcome": 2
+    },
+    "334": {
+      "literal_route_outcome": 3
+    },
+    "335": {
+      "literal_route_outcome": 3
+    },
+    "336": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "337": {
+      "literal_route_outcome": 3
+    },
+    "338": {
+      "literal_route_outcome": 2
+    },
+    "339": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "340": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "341": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 4
+    },
+    "342": {
+      "literal_route_outcome": 2
+    },
+    "343": {
+      "literal_route_outcome": 2
+    },
+    "344": {
+      "literal_route_outcome": 3
+    },
+    "345": {
+      "literal_route_outcome": 3
+    },
+    "346": {
+      "literal_route_outcome": 3
+    },
+    "347": {
+      "literal_route_outcome": 2
+    },
+    "348": {
+      "literal_route_outcome": 3
+    },
+    "349": {
+      "literal_route_outcome": 3
+    },
+    "350": {
+      "literal_route_outcome": 3
+    },
+    "351": {
+      "literal_route_outcome": 3
+    },
+    "352": {
+      "custom_dispatch_effects": 3,
+      "predicate_outcome": 14,
+      "alternative_continuation": 4,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "353": {
+      "literal_route_outcome": 3
+    },
+    "354": {
+      "literal_route_outcome": 3
+    },
+    "355": {
+      "literal_route_outcome": 3
+    },
+    "356": {
+      "custom_dispatch_effects": 1,
+      "predicate_outcome": 6,
+      "alternative_continuation": 2,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "357": {
+      "literal_route_outcome": 3
+    },
+    "358": {
+      "literal_route_outcome": 2
+    },
+    "359": {
+      "custom_dispatch_effects": 3,
+      "predicate_outcome": 8,
+      "alternative_continuation": 2,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "360": {
+      "literal_route_outcome": 2
+    },
+    "361": {
+      "literal_route_outcome": 3
+    },
+    "362": {
+      "literal_route_outcome": 2
+    },
+    "363": {
+      "literal_route_outcome": 3
+    },
+    "364": {
+      "literal_route_outcome": 3
+    },
+    "365": {
+      "literal_route_outcome": 2
+    },
+    "366": {
+      "literal_route_outcome": 2
+    },
+    "367": {
+      "literal_route_outcome": 2
+    },
+    "368": {
+      "literal_route_outcome": 3
+    },
+    "369": {
+      "literal_route_outcome": 3
+    },
+    "370": {
+      "literal_route_outcome": 2
+    },
+    "371": {
+      "literal_route_outcome": 3
+    },
+    "372": {
+      "literal_route_outcome": 3
+    },
+    "373": {
+      "literal_route_outcome": 2
+    },
+    "374": {
+      "literal_route_outcome": 2
+    },
+    "375": {
+      "literal_route_outcome": 2
+    },
+    "376": {
+      "literal_route_outcome": 2
+    },
+    "377": {
+      "literal_route_outcome": 2
+    },
+    "378": {
+      "literal_route_outcome": 3
+    },
+    "379": {
+      "literal_route_outcome": 2
+    },
+    "380": {
+      "literal_route_outcome": 2
+    },
+    "381": {
+      "literal_route_outcome": 2
+    },
+    "382": {
+      "literal_route_outcome": 2
+    },
+    "383": {
+      "literal_route_outcome": 2
+    },
+    "384": {
+      "literal_route_outcome": 2
+    },
+    "385": {
+      "literal_route_outcome": 2
+    },
+    "386": {
+      "literal_route_outcome": 3
+    },
+    "387": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 3
+    },
+    "388": {
+      "custom_dispatch_effects": 8,
+      "predicate_outcome": 48,
+      "timed_dispatch": 19,
+      "alternative_continuation": 15,
+      "literal_route_outcome": 10
+    },
+    "389": {
+      "literal_route_outcome": 3
+    },
+    "390": {
+      "literal_route_outcome": 1
+    },
+    "391": {
+      "literal_route_outcome": 1
+    },
+    "392": {
+      "literal_route_outcome": 1
+    },
+    "393": {
+      "literal_route_outcome": 1
+    },
+    "394": {
+      "literal_route_outcome": 1
+    },
+    "395": {
+      "literal_route_outcome": 1
+    },
+    "396": {
+      "literal_route_outcome": 1
+    },
+    "397": {
+      "literal_route_outcome": 1
+    },
+    "398": {
+      "literal_route_outcome": 1
+    },
+    "399": {
+      "literal_route_outcome": 1
+    },
+    "400": {
+      "literal_route_outcome": 1
+    },
+    "401": {
+      "literal_route_outcome": 1
+    },
+    "402": {
+      "literal_route_outcome": 1
+    },
+    "403": {
+      "predicate_outcome": 8,
+      "alternative_continuation": 2,
+      "timed_dispatch": 2,
+      "literal_route_outcome": 4
+    },
+    "404": {
+      "literal_route_outcome": 2
+    },
+    "405": {
+      "literal_route_outcome": 2
+    },
+    "407": {
+      "timed_dispatch": 11,
+      "predicate_outcome": 24,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 7,
+      "literal_route_outcome": 1
+    },
+    "408": {
+      "timed_dispatch": 13,
+      "custom_dispatch_effects": 6,
+      "predicate_outcome": 20,
+      "alternative_continuation": 5
+    },
+    "409": {
+      "custom_dispatch_effects": 3,
+      "timed_dispatch": 3,
+      "predicate_outcome": 6,
+      "alternative_continuation": 1
+    },
+    "410": {
+      "literal_route_outcome": 2
+    },
+    "411": {
+      "literal_route_outcome": 3
+    },
+    "412": {
+      "literal_route_outcome": 3
+    },
+    "413": {
+      "predicate_outcome": 4,
+      "alternative_continuation": 1,
+      "timed_dispatch": 1,
+      "literal_route_outcome": 3
+    },
+    "414": {
+      "literal_route_outcome": 2
+    },
+    "415": {
+      "literal_route_outcome": 3
+    },
+    "416": {
+      "literal_route_outcome": 2
+    },
+    "417": {
+      "literal_route_outcome": 2
+    },
+    "418": {
+      "literal_route_outcome": 2
+    },
+    "419": {
+      "custom_dispatch_effects": 2,
+      "predicate_outcome": 134,
+      "timed_dispatch": 52,
+      "alternative_continuation": 37,
+      "literal_route_outcome": 2
+    },
+    "420": {
+      "literal_route_outcome": 2
+    },
+    "421": {
+      "literal_route_outcome": 2
+    },
+    "422": {
+      "timed_dispatch": 20,
+      "predicate_outcome": 18,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 4,
+      "literal_route_outcome": 2
+    },
+    "423": {
+      "predicate_outcome": 8,
+      "timed_dispatch": 4,
+      "alternative_continuation": 3,
+      "literal_route_outcome": 4
+    },
+    "424": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "425": {
+      "custom_dispatch_effects": 2,
+      "predicate_outcome": 2,
+      "timed_dispatch": 8,
+      "literal_route_outcome": 2
+    },
+    "426": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 1
+    },
+    "427": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 1
+    },
+    "428": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 1
+    },
+    "429": {
+      "predicate_outcome": 10,
+      "timed_dispatch": 6,
+      "alternative_continuation": 4,
+      "literal_route_outcome": 6
+    },
+    "430": {
+      "literal_route_outcome": 2
+    },
+    "432": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 1
+    },
+    "433": {
+      "timed_dispatch": 3,
+      "literal_route_outcome": 1
+    },
+    "435": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "436": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "437": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "501": {
+      "predicate_outcome": 22,
+      "timed_dispatch": 53,
+      "custom_dispatch_effects": 4,
+      "alternative_continuation": 6,
+      "literal_route_outcome": 3
+    },
+    "502": {
+      "predicate_outcome": 38,
+      "alternative_continuation": 15,
+      "timed_dispatch": 15,
+      "custom_dispatch_effects": 3,
+      "literal_route_outcome": 2
+    },
+    "503": {
+      "predicate_outcome": 58,
+      "alternative_continuation": 23,
+      "timed_dispatch": 20,
+      "custom_dispatch_effects": 3,
+      "literal_route_outcome": 2
+    },
+    "504": {
+      "predicate_outcome": 58,
+      "alternative_continuation": 22,
+      "timed_dispatch": 21,
+      "custom_dispatch_effects": 4,
+      "literal_route_outcome": 3
+    },
+    "505": {
+      "predicate_outcome": 74,
+      "timed_dispatch": 33,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 16,
+      "literal_route_outcome": 12
+    },
+    "506": {
+      "predicate_outcome": 46,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 15,
+      "timed_dispatch": 20,
+      "literal_route_outcome": 8
+    },
+    "507": {
+      "timed_dispatch": 18,
+      "custom_dispatch_effects": 1,
+      "predicate_outcome": 28,
+      "alternative_continuation": 12,
+      "literal_route_outcome": 3
+    },
+    "508": {
+      "predicate_outcome": 70,
+      "custom_dispatch_effects": 1,
+      "timed_dispatch": 22,
+      "alternative_continuation": 26,
+      "literal_route_outcome": 6
+    },
+    "509": {
+      "timed_dispatch": 44,
+      "predicate_outcome": 114,
+      "alternative_continuation": 44,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 4
+    },
+    "510": {
+      "predicate_outcome": 8,
+      "custom_dispatch_effects": 3,
+      "alternative_continuation": 2,
+      "timed_dispatch": 14,
+      "literal_route_outcome": 3
+    },
+    "511": {
+      "predicate_outcome": 68,
+      "timed_dispatch": 16,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 25,
+      "literal_route_outcome": 3
+    },
+    "512": {
+      "predicate_outcome": 130,
+      "alternative_continuation": 52,
+      "custom_dispatch_effects": 5,
+      "timed_dispatch": 17,
+      "literal_route_outcome": 3
+    },
+    "513": {
+      "predicate_outcome": 78,
+      "alternative_continuation": 31,
+      "custom_dispatch_effects": 4,
+      "timed_dispatch": 15,
+      "literal_route_outcome": 5
+    },
+    "514": {
+      "custom_dispatch_effects": 5,
+      "timed_dispatch": 16,
+      "predicate_outcome": 44,
+      "alternative_continuation": 15,
+      "literal_route_outcome": 3
+    },
+    "515": {
+      "predicate_outcome": 224,
+      "timed_dispatch": 180,
+      "alternative_continuation": 73,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 4
+    },
+    "516": {
+      "predicate_outcome": 38,
+      "alternative_continuation": 15,
+      "custom_dispatch_effects": 3,
+      "timed_dispatch": 11,
+      "literal_route_outcome": 3
+    },
+    "517": {
+      "predicate_outcome": 40,
+      "alternative_continuation": 16,
+      "timed_dispatch": 13,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 3
+    },
+    "518": {
+      "predicate_outcome": 44,
+      "alternative_continuation": 17,
+      "custom_dispatch_effects": 5,
+      "timed_dispatch": 13,
+      "literal_route_outcome": 3
+    },
+    "519": {
+      "predicate_outcome": 80,
+      "alternative_continuation": 29,
+      "timed_dispatch": 23,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 3
+    },
+    "520": {
+      "timed_dispatch": 1,
+      "literal_route_outcome": 2
+    },
+    "521": {
+      "timed_dispatch": 76,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 2
+    },
+    "522": {
+      "predicate_outcome": 4,
+      "timed_dispatch": 15,
+      "custom_dispatch_effects": 5,
+      "literal_route_outcome": 3
+    },
+    "523": {
+      "custom_dispatch_effects": 10,
+      "timed_dispatch": 11,
+      "literal_route_outcome": 2
+    },
+    "524": {
+      "custom_dispatch_effects": 3,
+      "predicate_outcome": 122,
+      "alternative_continuation": 38,
+      "timed_dispatch": 45,
+      "literal_route_outcome": 4
+    },
+    "525": {
+      "predicate_outcome": 52,
+      "alternative_continuation": 20,
+      "timed_dispatch": 97,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 3
+    },
+    "526": {
+      "predicate_outcome": 106,
+      "timed_dispatch": 37,
+      "custom_dispatch_effects": 11,
+      "alternative_continuation": 24,
+      "literal_route_outcome": 10
+    },
+    "527": {
+      "predicate_outcome": 12,
+      "timed_dispatch": 18,
+      "alternative_continuation": 3,
+      "custom_dispatch_effects": 2,
+      "literal_route_outcome": 3
+    },
+    "528": {
+      "timed_dispatch": 15,
+      "predicate_outcome": 30,
+      "custom_dispatch_effects": 15,
+      "alternative_continuation": 11,
+      "literal_route_outcome": 3
+    },
+    "529": {
+      "predicate_outcome": 58,
+      "alternative_continuation": 21,
+      "timed_dispatch": 15,
+      "custom_dispatch_effects": 2,
+      "literal_route_outcome": 2
+    },
+    "530": {
+      "predicate_outcome": 204,
+      "timed_dispatch": 98,
+      "custom_dispatch_effects": 2,
+      "alternative_continuation": 70,
+      "literal_route_outcome": 4
+    },
+    "531": {
+      "predicate_outcome": 44,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 13,
+      "timed_dispatch": 19,
+      "literal_route_outcome": 8
+    },
+    "532": {
+      "predicate_outcome": 38,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 11,
+      "timed_dispatch": 20,
+      "literal_route_outcome": 8
+    },
+    "533": {
+      "predicate_outcome": 38,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 11,
+      "timed_dispatch": 16,
+      "literal_route_outcome": 8
+    },
+    "534": {
+      "predicate_outcome": 62,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 21,
+      "timed_dispatch": 28,
+      "literal_route_outcome": 8
+    },
+    "535": {
+      "predicate_outcome": 38,
+      "custom_dispatch_effects": 1,
+      "alternative_continuation": 11,
+      "timed_dispatch": 16,
+      "literal_route_outcome": 8
+    },
+    "536": {
+      "predicate_outcome": 224,
+      "timed_dispatch": 188,
+      "alternative_continuation": 73,
+      "custom_dispatch_effects": 1,
+      "literal_route_outcome": 4
+    },
+    "537": {
+      "predicate_outcome": 46,
+      "alternative_continuation": 18,
+      "timed_dispatch": 15,
+      "custom_dispatch_effects": 2,
+      "literal_route_outcome": 3
+    }
+  },
+  "local_detail_sha256": "e6c93ef039a8b11f4015d64e732d0166f3ff448139608a9ba3581166de077273",
+  "author_sha256": "44db2f4d6ae917caf4198c0b69bc1229bc2bbd6c25507728cf7fa08c9f87bc96",
+  "engine_modified": false,
+  "acceptance_A03_complete": false,
+  "whole_game_completion_percent": null,
+  "limits": [
+    "Candidate syntax-derived requirements; reachability and required behavioral outcomes are not yet classified",
+    "Historical observations retain their original diagnostic executable identity and do not certify the current engine",
+    "Entrances and predicate results do not establish successful action completion,route outcomes or original Windows behavior",
+    "Alternative markers remain unlinked; no nested-if or inferred route model is introduced",
+    "Native callback/generated-queue catalogue remains open; per-command detail stays local",
+    "No completion percentage is inferred from these counts"
+  ]
+}

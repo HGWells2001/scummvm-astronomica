@@ -2,6 +2,8 @@
 
 The two original P513 numeric-selector sounds now play as effects over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P513-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.
 
+Behavior verification now includes a versioned catalogue of 6,574 candidate requirements and links 25 representative historical completion-kernel checks. Reachability and full behavior coverage remain open; fixed acceptance remains 7/10. See outputs/astronomica-cleanroom/BEHAVIOR-REQUIREMENTS.md for the measured scope.
+
 ---
 
 # Current update: P504 speed feedback keeps music
