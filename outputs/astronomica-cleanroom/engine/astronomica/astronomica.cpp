@@ -10513,7 +10513,7 @@ void AstronomicaEngine::commitP512Prepared(P512Prepared&out,Audio::AudioStream**
  // Keep recipient preferences, soundsStarted, help/legacy cache and inactive
  // danger channels/times. Decoder audio remains stopped until original seek.
  _p512RequiredSeekSerial=_p512OriginalSeekSerial;_p512NeedsOriginalSeek=true;
- if(out.ambient){P512AmbientGate*gate=static_cast<P512AmbientGate*>(out.ambient);_mixer->playStream(Audio::Mixer::kMusicSoundType,&_soundHandle,out.ambient);out.ambient=nullptr;if(!_mixer->isSoundHandleActive(_soundHandle))error("P512 ambient mixer allocation failed after commit");_mixer->pauseHandle(_soundHandle,true);gate->arm();++_soundsStarted;if(audit)*audit=gate;}
+ if(out.ambient){P512AmbientGate*gate=static_cast<P512AmbientGate*>(out.ambient);_mixer->playStream(Audio::Mixer::kMusicSoundType,&_soundHandle,out.ambient);_musicHandle=_soundHandle;out.ambient=nullptr;if(!_mixer->isSoundHandleActive(_soundHandle))error("P512 ambient mixer allocation failed after commit");_mixer->pauseHandle(_soundHandle,true);gate->arm();++_soundsStarted;if(audit)*audit=gate;}
  out.clearOwned();assert(out.empty());++_p512MemoryCommits;
 }
 bool AstronomicaEngine::installP512Memory(const Common::Array<uint32>&words,Audio::AudioStream**audit){
@@ -12375,7 +12375,7 @@ bool AstronomicaEngine::installP525StoppedMemory(const Common::Array<uint32>&w,A
  // _movieFrame/pending image/hover/nav already empty; do not clear caches or
  // rewrite recipient-only inactive fields, mixer preferences or input queue.
  Audio::AudioStream*installedAmbient=nullptr;
- if(p.ambient){P525AmbientGate*gate=static_cast<P525AmbientGate*>(p.ambient);_mixer->playStream(Audio::Mixer::kMusicSoundType,&_soundHandle,p.ambient);p.ambient=nullptr;if(!_mixer->isSoundHandleActive(_soundHandle))error("P525 ambient mixer allocation failed after commit");_mixer->pauseHandle(_soundHandle,true);gate->arm();++_soundsStarted;installedAmbient=gate;}
+ if(p.ambient){P525AmbientGate*gate=static_cast<P525AmbientGate*>(p.ambient);_mixer->playStream(Audio::Mixer::kMusicSoundType,&_soundHandle,p.ambient);_musicHandle=_soundHandle;p.ambient=nullptr;if(!_mixer->isSoundHandleActive(_soundHandle))error("P525 ambient mixer allocation failed after commit");_mixer->pauseHandle(_soundHandle,true);gate->arm();++_soundsStarted;installedAmbient=gate;}
  if(audit)*audit=installedAmbient;
  p.clearOwned();if(!p.empty())error("P525 committed holder could not release old owners");
  ownership.clear();
@@ -13652,7 +13652,7 @@ Common::Error AstronomicaEngine::run() {
  _runner.seedRandom(uint16(Common::RandomSource::generateNewSeed()));
  // _CreateGame allocates the original game structure with calloc.
  _runner.resetGlobals();
- const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : 0;
+ const int startPlace = ConfMan.hasKey("astronomica_start_place") ? ConfMan.getInt("astronomica_start_place") : (ConfMan.hasKey("save_slot")&&ConfMan.getInt("save_slot")>=0?1:0);
  if (!loadPlace(startPlace)) { _background.free(); _screen.free(); return Common::Error(Common::kReadingFailed, "Cannot read Astronomica starting scene"); }
 
 
@@ -13724,6 +13724,18 @@ Common::Error AstronomicaEngine::run() {
   }
 
   debug("Effect mix native result: %s",ok?"PASS":"FAIL");_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
+ if(ConfMan.hasKey("astronomica_verify_restored_music_owner")&&ConfMan.getBool("astronomica_verify_restored_music_owner")){
+  const int boot=_place;const bool bootLoaded=loadGameState(32).getCode()==Common::kNoError;
+  debug("Restored music boot admission: scene%d loaded%d",boot,int(bootLoaded));
+  ConfMan.setBool("astronomica_entry_scripts",false);bool menuLoaded=loadPlace(1,false,true)&&loadGameState(32).getCode()==Common::kNoError;
+  const Audio::SoundHandle original=_soundHandle;const bool active=_mixer->isSoundHandleActive(original)&&_mixer->hasActiveChannelOfType(Audio::Mixer::kMusicSoundType);
+  const bool adopted=_musicHandle==original;const bool feedback=menuLoaded&&playSound(2,scriptClock());_system->delayMillis(80);
+  const bool retained=feedback&&_mixer->isSoundHandleActive(original)&&_mixer->hasActiveChannelOfType(Audio::Mixer::kMusicSoundType);
+  debug("Restored music ownership observation: menuLoaded%d active%d adopted%d feedback%d retained%d scene%d",int(menuLoaded),int(active),int(adopted),int(feedback),int(retained),_place);
+  debug("Restored music owner observation complete");_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
  if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){

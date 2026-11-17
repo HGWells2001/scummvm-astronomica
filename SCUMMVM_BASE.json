@@ -2,10 +2,10 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "d1e7f5b2379f8c368f326779a4664e4a92683cfdc738c60241d42623545987b7",
+  "validated_executable_sha256": "8a4ca2bcbd61814cb2588018965831b35dec1e7a03eec819034e9a710e0d9589",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "4e9d16db3d720458941a812a9392a6b745f5e89ea99ca68487d5ec52f5591223",
+    "astronomica.cpp": "6b07e1f420d40f71ed54574c670f58151384f8a17555cb0e53cfb5475167be34",
     "astronomica.h": "27f6413ee6809ebcc1d0bf771d4b925ed0c9a1e9fe6d35059e444338c08a5d51",
     "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
@@ -35,5 +35,5 @@
     "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
   },
   "clean_rebuild_required": true,
-  "build_scope": "Independent music through eight exact shared/numeric-control feedback clips; narration retains foreground policy. Two transient handles change class layout; all7engine units fresh/403verified foundation. Existing save payload methods unchanged except early busy guards. Exact extended full general,Windows/real controls,genuine older-save and installed checks pass. Separate all-engine portable variant is not qualified."
+  "build_scope": "Restored P512/P525 Music handles registered; direct save startup uses menu unless explicitly overridden. Header and60 complete save/load payload methods byte-identical to prior effect-mix release. Fresh7engine units,403verified core. Fullgeneral,Windows feedback/voice,P0logos,genuine older ASVM29/30 and installed checks pass. Actual all-engine portable remains separately unqualified."
 }

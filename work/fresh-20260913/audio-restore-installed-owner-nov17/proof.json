@@ -1,0 +1,17 @@
+{
+  "status": "RESTORED_MUSIC_OWNER_FIXED_NATIVE_PASS",
+  "at": "2026-11-17T15:31:51.458768+00:00",
+  "candidate_exe_sha256": "8a4ca2bcbd61814cb2588018965831b35dec1e7a03eec819034e9a710e0d9589",
+  "fixture_sha256": "a8211d781b6f3da7f9c2bb0ce6c9fd59ad7e2d997b8de02b7768d37c85510e2c",
+  "boot_scene": 1,
+  "boot_loaded": true,
+  "restored_music_adopted": true,
+  "feedback_retains_restored_music": true,
+  "native_log_sha256": "c1bcfa2f1165eae5f990745b2cae4675f7be40f6b7a0f881f7b67a08eeeca4d5",
+  "native_exited_naturally": true,
+  "fixture_unchanged": true,
+  "limits": [
+    "One genuine pre-change P525 ASVM30 active-music file",
+    "Boot and post-menu load tested separately; not all format/source combinations"
+  ]
+}

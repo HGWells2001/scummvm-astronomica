@@ -1,0 +1,22 @@
+{
+  "status": "STARTUP_LOGO_TO_MENU_MUSIC_NATIVE_PASS",
+  "created_at": "2026-11-17T15:23:34.072558+00:00",
+  "exe_sha256": "8a4ca2bcbd61814cb2588018965831b35dec1e7a03eec819034e9a710e0d9589",
+  "cases": [
+    {
+      "profile": "normal",
+      "log_sha256": "238facb8287665e56405f1e54850bf739f52ef8cffd92cc59c1ffbf4fb0e499f",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "explicit-menu",
+      "log_sha256": "c76928061dc7510cb4bc18d6d569d7fee25f4f39b688174390cb056765038fbe",
+      "native_exited_naturally": true
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "limitations": [
+    "Windows/WASAPI startup without saved-slot; explicit menu override retained",
+    "Only P0 HQLOGO and explicit P1 override; other publisher logos unverified"
+  ]
+}
