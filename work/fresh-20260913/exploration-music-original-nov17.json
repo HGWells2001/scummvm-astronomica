@@ -1,0 +1,45 @@
+{
+  "status": "ORIGINAL_EXPLORATION_MUSIC_SELECTOR_PASS",
+  "at": "2026-11-17T20:25:01.734268+00:00",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "selector_bytes_sha256": "e6e40cc2fc51106700dbbc54de4e9b8f6a1ca812b4c44d975d310935a03bf40c",
+  "cases": 45192,
+  "aggregate": "fb5675f65ffde29150cdbf12d88ebdf096b4093f941bd4ae3482a0a1b1ebf70f",
+  "global60_offset": 250,
+  "shared_audio": {
+    "901": {
+      "bytes": 384936,
+      "sha256": "9d7f8b891d23bd6bab3a83caba41f9d02c95f71598bb01413a62f90d1320fb8b",
+      "rate": 11025,
+      "channels": 1,
+      "frames": 384892
+    },
+    "902": {
+      "bytes": 481580,
+      "sha256": "dcd0ba7159bc7b7cce240b8afd71989dfc614e92cd6c09d869548c7ba7539310",
+      "rate": 11025,
+      "channels": 1,
+      "frames": 481536
+    },
+    "903": {
+      "bytes": 255020,
+      "sha256": "a9a030fb227b2c0383171cec4997e7b5f02db5dfed153a559bceb032a0a4bd11",
+      "rate": 11025,
+      "channels": 1,
+      "frames": 254976
+    },
+    "908": {
+      "bytes": 568244,
+      "sha256": "6bd8134c65cc8d709f83d641b6831240a87451951964345b7cd452ddbc6920e5",
+      "rate": 11025,
+      "channels": 1,
+      "frames": 568200
+    }
+  },
+  "limits": [
+    "Bounded original selector instructions with stop-sound calls recorded and NAV reads modeled",
+    "Global60 interpretation uses the accepted current-cleanroom scalar object layout:10-byte header plus100DWORD values",
+    "Not original Windows runtime playback; original bytes and disassembly remain local",
+    "Production change targets mode1 exploration; mode0/mode3 behavior is separately scoped"
+  ]
+}

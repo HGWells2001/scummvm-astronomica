@@ -1,0 +1,17 @@
+{
+  "status": "EXPLORATION_MUSIC_MISSING_BASELINE_REPRODUCED",
+  "at": "2026-11-17T20:26:42.816633+00:00",
+  "candidate_exe_sha256": "f189cef23e526c18686240448a06b69863c58acf45d27f678892615a7ee331e2",
+  "successful_music_entries": 0,
+  "entries": 16,
+  "asvm2_music_restored": false,
+  "narration_exclusive": true,
+  "music_resumed_after_voice": false,
+  "native_log_sha256": "63c18ce3dc901deb9409f117ec417b7a92219412a26bd11dc28c1d82bae50f41",
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "limits": [
+    "Eight actual mode1 rooms with both original global60 branches; no complete manual audiovisual playthrough",
+    "WASAPI mixer/channel observation with isolated muted configuration; no personal configuration or installation access"
+  ]
+}
