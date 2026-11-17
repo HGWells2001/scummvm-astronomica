@@ -1,3 +1,5 @@
+HISTORICAL PROFILE: use only with canonical commit 5b96583532b5593cc24c414fee2881589130b848. Do not combine this overlay with the current engine: its pinned CPP predates the exploration-music fix.
+
 # Verified older-GUI profile
 
 Start with the current23 canonical engine sources, then replace the three files listed in PROFILE.json with engine-overlay. Rebuild all seven engine units against the existing prepared older SDK and its paused-audio core patch. The older GUI uses lostFocusWidget for drag cancellation; the adapter clears the derived and base drag owners. Extra helper declarations are native observers.

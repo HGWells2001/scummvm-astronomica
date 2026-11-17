@@ -1,0 +1,57 @@
+{
+  "status": "EXPLORATION_MUSIC_GENUINE_PRE_FIX_P512_CONTINUATION_PASS",
+  "completed_at": "2026-11-17T20:36:57.017100+00:00",
+  "producer_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "consumer_exe_sha256": "b6cf3995d97720ba276cd6605067ccf5301f446ee2a5a7e35d7181bd5d6ff4b2",
+  "producer_proof_sha256": "9fe80991d32f751779e403e80724e52449300c47d5e563cda818b74730311478",
+  "fresh_processes": 4,
+  "results": [
+    {
+      "slot": 29,
+      "entry_scripts": "true",
+      "prior_global28": 0,
+      "final_scene": 157,
+      "final_counter": 1,
+      "physical_file_sha256": "10dcb05382b91a97709c9c5b975a78d7086c890bc20e79ed506d3696a673aeeb",
+      "native_log_sha256": "e444aaa2e095a4b887c6efccd05bc0acce3c8d8fae858ebe70c53fc271e25eb7",
+      "no_startup_replay": true
+    },
+    {
+      "slot": 29,
+      "entry_scripts": "false",
+      "prior_global28": 0,
+      "final_scene": 157,
+      "final_counter": 1,
+      "physical_file_sha256": "10dcb05382b91a97709c9c5b975a78d7086c890bc20e79ed506d3696a673aeeb",
+      "native_log_sha256": "69fbca701477e1abf65bf823d2e70da50266210a0e03d90df64d138d99a44a72",
+      "no_startup_replay": true
+    },
+    {
+      "slot": 30,
+      "entry_scripts": "true",
+      "prior_global28": 1,
+      "final_scene": 157,
+      "final_counter": 1,
+      "physical_file_sha256": "bca58778e9aaabcf8b17ab280bc8d20aadfd7094331f8b3bf3785081ff3eecad",
+      "native_log_sha256": "f16c4c4e78919793abeb745e9beb474e67f3d5610aa74163802abbed2cbc2977",
+      "no_startup_replay": true
+    },
+    {
+      "slot": 30,
+      "entry_scripts": "false",
+      "prior_global28": 1,
+      "final_scene": 157,
+      "final_counter": 1,
+      "physical_file_sha256": "bca58778e9aaabcf8b17ab280bc8d20aadfd7094331f8b3bf3785081ff3eecad",
+      "native_log_sha256": "e0c6d07e889e48049280a3a9214585056db9b8d94dd5d7ed58dd93c5d4018f01",
+      "no_startup_replay": true
+    }
+  ],
+  "all_processes_exited_naturally": true,
+  "actual_audio_driver": "wasapi",
+  "muted": true,
+  "limits": [
+    "Two genuine exact pre-fix-main final-question ASVM29 files,first/repeated completion and both entry-script configurations",
+    "Declared active ordinary S0 stopped boundary; no all-version or all-boundary compatibility claim"
+  ]
+}

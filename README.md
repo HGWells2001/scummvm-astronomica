@@ -1,3 +1,9 @@
+# Current update: regional exploration music
+
+Exploration now plays the original regional shared music,keeps it through same-zone navigation and resumes it after narration. Saved exploration games restore the correct selection. Full general,Windows,genuine older-save and installed checks pass. See outputs/astronomica-cleanroom/EXPLORATION-MUSIC.md. The older-GUI overlay is historical; personal installations are excluded.
+
+---
+
 # Verified portable profile - 17 November 2026
 
 The older-GUI all-engine full general suite now passes. The qualified source profile is published; the actual user executable has not been changed. The full127-engine inventory is retained; audio settings are unchanged. [Source profile](ports/legacy-gui/README.md). Whole-game completion remains unmeasured; fixed acceptance7/10.

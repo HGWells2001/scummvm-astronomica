@@ -1,3 +1,9 @@
+# Current update: regional exploration music
+
+Exploration now plays the original regional shared music,keeps it through same-zone navigation and resumes it after narration. Saved exploration games restore the correct selection. Full general,Windows,genuine older-save and installed checks pass. See outputs/astronomica-cleanroom/EXPLORATION-MUSIC.md. The older-GUI overlay is historical; personal installations are excluded.
+
+---
+
 # Stato verificato - 17 novembre 2026
 
 Indice di accettazione: 70% (7 criteri su 10), non percentuale del lavoro totale. Salvataggi: 35/35 ambiti documentati ai rispettivi confini, non in qualunque istante. Restano aperti A03 (inventario esaustivo dei rami), A08 (tipografia esatta dell'aiuto), A09 (partita audiovisiva manuale completa registrata). Le nuove correzioni non modificano questi criteri.

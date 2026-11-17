@@ -2855,7 +2855,18 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  const uint spritesDrawn = renderStaticSprites(file, parsed, candidate);
  _screen.copyFrom(candidate);
  candidate.free();
- if (!keepSound) { _mixer->stopHandle(_effectHandle); _mixer->stopHandle(_musicHandle); _mixer->stopHandle(_soundHandle); }
+ int explorationLoop=-1;int32 explorationState=0;
+ if(!restoring&&parsed.mode==1&&ConfMan.getBool("astronomica_audio")&&ConfMan.getBool("astronomica_entry_scripts")){
+  _runner.getValue(0,60,explorationState);
+  explorationLoop=explorationState==1?908:((place>=219&&place<=251)||place==410||place==1?901:((place>=361&&place<=389)||place==420?903:902));
+ }
+ const bool keepMusic=explorationLoop>=0&&_loopSound==explorationLoop&&_mixer->isSoundHandleActive(_musicHandle);
+ if(!keepSound){
+  _mixer->stopHandle(_effectHandle);
+  if(!keepMusic)_mixer->stopHandle(_musicHandle);
+  if(!keepMusic||!(_soundHandle==_musicHandle))_mixer->stopHandle(_soundHandle);
+  if(keepMusic){_soundHandle=_musicHandle;_lastSound=explorationLoop;}
+ }
  _pendingImage.free();
  _pendingImageName.clear(); _displayedImageName.clear();
  _p519LargeImage = _p519SmallImage = 0;
@@ -2865,7 +2876,7 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
  _p513HistoryValid = true;
  _p517HistoryValid = true;
  _builderHistoryValid = true;
- _loopSound = -1; _loopEnabled = true; _lastSoundAt = 0;
+ _loopSound = explorationLoop; _loopEnabled = true; _lastSoundAt = 0;
  _scene = parsed;
  _hitGeometry.clear(); _hitGeometryPlace = -1;
  _questionSaveBaseline.clear(); if (place == 281 || place == 501 || place == 504 || place == 503 || place == 502 || place == 527 || place == 516 || place == 511 || place == 509 || place == 521 || place == 518 || place == 514 || place == 522 || place == 529 || place == 537 || questionProfile(place) || variantProfile(place) || builderScene(place) || place == 517 || place == 513 || place == 519 || place == 524 || place == 526 || place == 528 || place == 530) _questionSaveBaseline = _scene.sprites;
@@ -3117,7 +3128,10 @@ bool AstronomicaEngine::playSound(int id, uint32 now, bool looping) {
  Audio::SeekableAudioStream *stream=openSound(id);if(!stream)return false;
  if(looping){
   _mixer->stopHandle(_soundHandle);_mixer->stopHandle(_musicHandle);
-  _mixer->playStream(Audio::Mixer::kMusicSoundType,&_musicHandle,Audio::makeLoopingAudioStream(stream,0));
+  Audio::AudioStream*loop=Audio::makeLoopingAudioStream(stream,0);
+  if(_clockPaused&&id>=900){
+   if(!Video::playPausedAudioStream(_mixer,Audio::Mixer::kMusicSoundType,&_musicHandle,loop,Audio::Mixer::kMaxChannelVolume,0,DisposeAfterUse::YES,0))return false;
+  }else _mixer->playStream(Audio::Mixer::kMusicSoundType,&_musicHandle,loop);
   _soundHandle=_musicHandle;
  }else{
   const bool feedback=isFeedbackEffect(id);
@@ -12352,7 +12366,7 @@ bool AstronomicaEngine::installP525StoppedMemory(const Common::Array<uint32>&w,A
  if(fromP1){
   if(!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input")||_p525SeekScope||_movie||_moviePlaying||(_mixer->isSoundHandleActive(_soundHandle)&&(_loopSound!=0||!_loopEnabled||_lastSound!=0||!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P1/S0.WAV"),2282024,2465437726U)))||_pendingImage.w||!_pendingImageName.empty()||_scene.mode||_scene.layers!=1||_scene.sprites.size()!=8||_scene.mouseRects.size()!=1||_scene.scripts.size()!=1||_scene.scripts[0].size()!=9||!_scene.movies.empty()||_scene.consumed!=537831||!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P1/MEGAFILE.HYP"),537831,626458829U))return false;
  }else if(fromP117){
-  if(!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input")||_p525SeekScope||_movie||_moviePlaying||_mixer->isSoundHandleActive(_soundHandle)||_pendingImage.w||!_pendingImageName.empty()||_scene.mode!=1||_scene.layers!=1||_scene.sprites.size()!=1||!_scene.mouseRects.empty()||!_scene.scripts.empty()||!_scene.movies.empty()||_scene.consumed!=305583||!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P117/MEGAFILE.HYP"),305583,2192138787U))return false;
+  if(!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input")||_p525SeekScope||_movie||_moviePlaying||(_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==_musicHandle))||_pendingImage.w||!_pendingImageName.empty()||_scene.mode!=1||_scene.layers!=1||_scene.sprites.size()!=1||!_scene.mouseRects.empty()||!_scene.scripts.empty()||!_scene.movies.empty()||_scene.consumed!=305583||!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P117/MEGAFILE.HYP"),305583,2192138787U))return false;
  }else if(fromP519){
   if(!ConfMan.getBool("astronomica_audio")||!ConfMan.getBool("astronomica_animation")||!ConfMan.getBool("astronomica_sprite_input")||_p525SeekScope||_movie||_moviePlaying||_mixer->isSoundHandleActive(_soundHandle)||_scene.mode||_scene.layers!=1||_scene.sprites.size()!=27||_scene.mouseRects.size()!=10||_scene.conditions.size()!=8||_scene.scripts.size()!=3||_scene.scripts[0].size()!=5||_scene.scripts[1].size()!=16||_scene.scripts[2].size()!=51||!_scene.movies.empty()||_scene.consumed!=662444||!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P519/MEGAFILE.HYP"),662444,952275573U))return false;
  }else if(fromActive){
@@ -13791,6 +13805,50 @@ Common::Error AstronomicaEngine::run() {
   }
 
   debug("P525 terminal clock observation complete: %d",int(ok));_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
+ if(ConfMan.hasKey("astronomica_verify_exploration_music")&&ConfMan.getBool("astronomica_verify_exploration_music")){
+  ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",true);_runner.resetGlobals();
+  int observed=0,total=0;bool stable=true;
+  for(int flag:{0,1})for(int place:{103,101,219,220,361,362,410,420}){
+   _runner.defineValue(0,60,flag);const int expected=flag?908:((place>=219&&place<=251)||place==410?901:((place>=361&&place<=389)||place==420?903:902));
+   const int prior=_loopSound;const Audio::SoundHandle old=_musicHandle;const uint starts=_soundsStarted;const bool hadMusic=_mixer->isSoundHandleActive(old);
+   bool loaded=loadPlace(place);resumeLoopAt(scriptClock());_system->delayMillis(35);
+   const bool active=loaded&&_loopSound==expected&&_mixer->isSoundHandleActive(_musicHandle)&&_soundHandle==_musicHandle;
+   const bool continuous=!hadMusic||prior!=expected||(_musicHandle==old&&_mixer->isSoundHandleActive(old));
+   const bool countOK=!active||_soundsStarted==starts+uint(!hadMusic||prior!=expected);
+   debug("Exploration music entry: flag%d P%d expected%d actual%d active%d continuity%d starts%d",flag,place,expected,_loopSound,int(active),int(continuous),int(countOK));
+   observed+=active;stable=stable&&continuous&&countOK;++total;
+  }
+  _runner.defineValue(0,60,0);bool loaded=loadPlace(103);resumeLoopAt(scriptClock());
+  Common::MemoryWriteStreamDynamic saved(DisposeAfterUse::YES);const bool wrote=loaded&&saveGameStream(&saved,false).getCode()==Common::kNoError;
+  _runner.defineValue(0,60,1);loaded=loadPlace(117)&&loaded;resumeLoopAt(scriptClock());
+  Common::MemoryReadStream input(saved.getData(),saved.size());const bool restored=wrote&&loadGameStream(&input).getCode()==Common::kNoError;resumeLoopAt(scriptClock());
+  const bool restoredMusic=restored&&_place==103&&_loopSound==902&&_mixer->isSoundHandleActive(_musicHandle);
+  debug("Exploration music ASVM2 restore: wrote%d restored%d music%d",int(wrote),int(restored),int(restoredMusic));
+  const Audio::SoundHandle music=_musicHandle;const bool started=playSound(911,scriptClock());const bool exclusive=started&&!_mixer->isSoundHandleActive(music);
+  while(_mixer->isSoundHandleActive(_soundHandle)&&!shouldQuit()){pollPlayerInput();_system->delayMillis(10);}
+  resumeLoopAt(scriptClock());const bool resumed=_loopSound==902&&_mixer->isSoundHandleActive(_musicHandle);
+  debug("Exploration music narration: exclusive%d resumed%d",int(exclusive),int(resumed));
+
+  _runner.defineValue(0,60,1);bool pauseLoaded=loadPlace(117);resumeLoopAt(scriptClock());
+  PauseToken paused=pauseEngine();Common::MemoryReadStream pausedInput(saved.getData(),saved.size());
+  pauseLoaded=loadGameStream(&pausedInput).getCode()==Common::kNoError&&pauseLoaded;resumeLoopAt(scriptClock());
+  const Audio::SoundHandle pausedMusic=_musicHandle;const uint32 stoppedAt=_mixer->getSoundElapsedTime(pausedMusic);_system->delayMillis(70);
+  const bool held=pauseLoaded&&_clockPaused&&_mixer->isSoundHandleActive(pausedMusic)&&_mixer->getSoundElapsedTime(pausedMusic)==stoppedAt;
+  paused.clear();_system->delayMillis(220);const bool moving=!_clockPaused&&_mixer->getSoundElapsedTime(pausedMusic)>stoppedAt;
+  debug("Exploration music paused ASVM2: paused%d resumed%d",int(held),int(moving));
+  _runner.defineValue(0,60,0);bool recipient=loadPlace(117);resumeLoopAt(scriptClock());
+  playSound(911,scriptClock());PauseToken voicePause=pauseEngine();const uint32 before=p510WholeLiveHash();
+  const bool refused=loadGameState(32).getCode()!=Common::kNoError;const bool preserved=p510WholeLiveHash()==before&&_place==117;
+  voicePause.clear();while(_mixer->isSoundHandleActive(_soundHandle)&&!shouldQuit()){pollPlayerInput();_system->delayMillis(10);}
+  resumeLoopAt(scriptClock());const bool puzzleLoaded=recipient&&loadGameState(32).getCode()==Common::kNoError;
+  const bool memoryMusic=puzzleLoaded&&_place==525&&_loopSound==0&&_musicHandle==_soundHandle&&_mixer->isSoundHandleActive(_musicHandle);
+  debug("Exploration music P525 recipient: busyRefused%d preserved%d loaded%d music%d",int(refused),int(preserved),int(puzzleLoaded),int(memoryMusic));
+
+  debug("Exploration music observation complete: observed%d total%d stable%d",observed,total,int(stable));
+  _background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
  if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){

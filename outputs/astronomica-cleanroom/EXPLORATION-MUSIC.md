@@ -1,0 +1,9 @@
+# Regional music during exploration
+
+The previous engine configured local S0 ambience for mode0 puzzles but omitted mode1 regional music. The original scene loader selects shared WAV901/902/903 by region,or908 when global60 equals1. A bounded original-instruction comparison covers45192 selector/previous-stream cases. Native before/after comparison reproduces missing music in16/16 entries and correct music in16/16 actual room entries with both state branches.
+
+The same Music handle and start count survive room changes within one region; changing region/state switches the track. Narration remains exclusive and music resumes naturally afterwards. Existing ASVM2 saves already restore scene/globals: their byte-identical loader now recomputes the regional selection. Paused shared-loop admission uses the existing gated core helper. A P117 receiver accepts its owned background Music while still rejecting narration without mutating the live state before loading a genuine older P525 save.
+
+Windows/WASAPI,ASVM2 restore,paused admission/resume,continuity,narration/refusal,genuine older saves,the exact full general suite and installed workspace checks pass. The engine header and all60 complete serialized save/load method bodies remain unchanged. Rebuild the engine units from the paired sources. This change targets mode1 exploration; mode0/menu and mode3 selection are unchanged. There is no complete manual audiovisual or whole-game coverage claim.
+
+The older-GUI source overlay is historical at its explicitly pinned DC1/5b96583 revision and must not replace current engine files. Personal installations/configuration remain excluded. No original media,binaries or physical save fixtures are distributed. Fixed acceptance remains7/10; whole-game completion is unmeasured. No shutdown or forced suite termination is authorized.

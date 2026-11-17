@@ -47,5 +47,8 @@
     "Explicit prior link inputs pinned in the local build proof; implicit system libraries and previous core compilation provenance not reconstructed",
     "This overlay is for the prepared older SDK,not an installation recipe for a stock checkout",
     "No unrelated-engine gameplay or whole-game manual audiovisual certificate"
-  ]
+  ],
+  "historical": true,
+  "canonical_source_commit": "5b96583532b5593cc24c414fee2881589130b848",
+  "compatible_with_current_canonical_engine": false
 }

@@ -1,3 +1,5 @@
+Historical candidate notes. See EXPLORATION-MUSIC.md for the accepted release.
+
 # Exploration music: verified candidate, full suite pending
 
 The original mode1 exploration selector chooses shared Music901/902/903 by region, or908 when global60 equals1. Bounded execution of the original selector agrees in45192 cases, including boundaries and whether the prior stream is stopped. This differs from mode0 puzzle ambience. The previous engine omitted this mode1 lifecycle: native comparison reproduces missing music in16/16 entries and the candidate plays it in16/16, using actual original rooms and WAVs.
