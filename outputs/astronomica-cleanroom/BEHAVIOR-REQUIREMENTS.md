@@ -27,6 +27,16 @@ These checks used controlled global/counter values and normalized each isolated 
 python outputs/astronomica-cleanroom/map_completion_kernel_requirements_nov17.py D:/astro --workspace work/fresh-20260913 --out work/fresh-20260913/completion-kernel-requirements-nov17
 ```
 
+## Current custom-dispatch source catalogue
+
+The current pinned `ScriptRunner::execute` source block is now indexed against all 158 original custom-dispatch commands. The resources use 27 selector families: 26 appear in explicit equality tests, while selector25 uses the generic fallback. The block references nine handler methods. The catalogue preserves exact source lines and hashes, and independently rechecks the original command operands.
+
+This is a static source catalogue. Scene admission, pointer readiness, reachable histories and runtime effects require separate evidence. It does not close the native-callback inventory or A03.
+
+```text
+python outputs/astronomica-cleanroom/inventory_current_custom_dispatch_nov17.py D:/astro --workspace work/fresh-20260913 --out work/fresh-20260913/current-custom-dispatch-nov17
+```
+
 The generator requires the local accepted syntax inventory, historical trace map, native proof and native log. These research inputs are retained in the development workspace. The normal engine installer/build does not invoke this research helper. No original media, text bodies, physical save fixtures or native executable are exported.
 
 ```text

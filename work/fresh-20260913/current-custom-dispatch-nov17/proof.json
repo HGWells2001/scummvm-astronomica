@@ -1,0 +1,473 @@
+{
+  "status": "CURRENT_CUSTOM_DISPATCH_SOURCE_CATALOGUE_PASS",
+  "schema_version": 1,
+  "at": "2026-11-17T22:27:28.701574+00:00",
+  "engine_release_commit": "a5a7545c461b098411a1cc92631293590e8ec932",
+  "script_source_sha256": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+  "execute_normalized_text_sha256": "253950432acd7396af04cc901ea19036a4cee13ff76b71b29e702778001bf720",
+  "custom_dispatch_normalized_text_sha256": "be30ff478c001be0e9537a5d1e8677faab02894fe1d4325e2320497d7c7d3bbe",
+  "custom_dispatch_start_line": 3044,
+  "custom_dispatch_end_line": 3179,
+  "syntax_inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "original_custom_commands": 158,
+  "resource_selector_families": 27,
+  "explicit_selector_equality_families": 26,
+  "selectors_without_explicit_equality": [
+    25
+  ],
+  "selector_rows": [
+    {
+      "selector": 1,
+      "original_commands": 6,
+      "scenes": [
+        523
+      ],
+      "explicit_equality_lines": [
+        3097
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 4,
+      "original_commands": 2,
+      "scenes": [
+        523
+      ],
+      "explicit_equality_lines": [
+        3097
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 5,
+      "original_commands": 1,
+      "scenes": [
+        523
+      ],
+      "explicit_equality_lines": [
+        3097
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 7,
+      "original_commands": 3,
+      "scenes": [
+        501
+      ],
+      "explicit_equality_lines": [
+        3103
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 8,
+      "original_commands": 9,
+      "scenes": [
+        502,
+        503,
+        504
+      ],
+      "explicit_equality_lines": [
+        3101
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 9,
+      "original_commands": 2,
+      "scenes": [
+        516
+      ],
+      "explicit_equality_lines": [
+        3101
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 10,
+      "original_commands": 2,
+      "scenes": [
+        513
+      ],
+      "explicit_equality_lines": [
+        3089
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 11,
+      "original_commands": 1,
+      "scenes": [
+        507
+      ],
+      "explicit_equality_lines": [
+        3083
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 12,
+      "original_commands": 4,
+      "scenes": [
+        518
+      ],
+      "explicit_equality_lines": [
+        3151
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 13,
+      "original_commands": 9,
+      "scenes": [
+        526
+      ],
+      "explicit_equality_lines": [
+        3144
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 14,
+      "original_commands": 1,
+      "scenes": [
+        537
+      ],
+      "explicit_equality_lines": [
+        3157
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 15,
+      "original_commands": 4,
+      "scenes": [
+        522
+      ],
+      "explicit_equality_lines": [
+        3105
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 16,
+      "original_commands": 4,
+      "scenes": [
+        514
+      ],
+      "explicit_equality_lines": [
+        3108
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 17,
+      "original_commands": 7,
+      "scenes": [
+        281,
+        506,
+        531,
+        532,
+        533,
+        534,
+        535
+      ],
+      "explicit_equality_lines": [
+        3125
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 18,
+      "original_commands": 14,
+      "scenes": [
+        528
+      ],
+      "explicit_equality_lines": [
+        3159
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 20,
+      "original_commands": 1,
+      "scenes": [
+        523
+      ],
+      "explicit_equality_lines": [
+        3097
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 21,
+      "original_commands": 5,
+      "scenes": [
+        408
+      ],
+      "explicit_equality_lines": [
+        3071
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 22,
+      "original_commands": 2,
+      "scenes": [
+        1,
+        408
+      ],
+      "explicit_equality_lines": [
+        3047
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 23,
+      "original_commands": 3,
+      "scenes": [
+        510
+      ],
+      "explicit_equality_lines": [
+        3099
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 24,
+      "original_commands": 4,
+      "scenes": [
+        512
+      ],
+      "explicit_equality_lines": [
+        3112
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 25,
+      "original_commands": 30,
+      "scenes": [
+        501,
+        504,
+        505,
+        508,
+        509,
+        511,
+        512,
+        513,
+        514,
+        515,
+        516,
+        517,
+        518,
+        519,
+        521,
+        522,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        536,
+        537
+      ],
+      "explicit_equality_lines": [],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 26,
+      "original_commands": 36,
+      "scenes": [
+        0,
+        1,
+        35,
+        85,
+        98,
+        208,
+        352,
+        356,
+        359,
+        388,
+        407,
+        409,
+        419,
+        422,
+        425
+      ],
+      "explicit_equality_lines": [
+        3063
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 27,
+      "original_commands": 1,
+      "scenes": [
+        409
+      ],
+      "explicit_equality_lines": [
+        3051
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 28,
+      "original_commands": 2,
+      "scenes": [
+        524
+      ],
+      "explicit_equality_lines": [
+        3078
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 29,
+      "original_commands": 3,
+      "scenes": [
+        29,
+        231
+      ],
+      "explicit_equality_lines": [
+        3049
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 32,
+      "original_commands": 1,
+      "scenes": [
+        409
+      ],
+      "explicit_equality_lines": [
+        3059
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    },
+    {
+      "selector": 33,
+      "original_commands": 1,
+      "scenes": [
+        1
+      ],
+      "explicit_equality_lines": [
+        3045
+      ],
+      "admission_verified": false,
+      "runtime_effects_verified": false
+    }
+  ],
+  "handler_method_references": [
+    {
+      "owner": "_ballHandler",
+      "method": "onBall",
+      "lines": [
+        3104
+      ]
+    },
+    {
+      "owner": "_cometHandler",
+      "method": "onComet",
+      "lines": [
+        3102
+      ]
+    },
+    {
+      "owner": "_gameStateHandler",
+      "method": "gameStateContext",
+      "lines": [
+        3052,
+        3069
+      ]
+    },
+    {
+      "owner": "_orbitHandler",
+      "method": "onOrbitAnswer",
+      "lines": [
+        3149
+      ]
+    },
+    {
+      "owner": "_probeHandler",
+      "method": "onProbe",
+      "lines": [
+        3106
+      ]
+    },
+    {
+      "owner": "_rendezvousHandler",
+      "method": "onRendezvous",
+      "lines": [
+        3109
+      ]
+    },
+    {
+      "owner": "_soundHandler",
+      "method": "isBlockingSound",
+      "lines": [
+        3116
+      ]
+    },
+    {
+      "owner": "_soundHandler",
+      "method": "onBlockingSound",
+      "lines": [
+        3116,
+        3130
+      ]
+    },
+    {
+      "owner": "_successHandler",
+      "method": "onPuzzleSuccess",
+      "lines": [
+        3128,
+        3174
+      ]
+    }
+  ],
+  "unique_handler_methods": 9,
+  "local_detail_sha256": "31a1434ea126c478ea0d48783db5e3cefb96d93c54a6f5052dac98d77b25860d",
+  "author_sha256": "74008539d09b94754b827ff5f29610a3ca710b8e96dc3d6c401efcb036a1d471",
+  "engine_modified": false,
+  "framework_modified": false,
+  "native_rerun": false,
+  "acceptance_A03_complete": false,
+  "whole_game_completion_percent": null,
+  "limits": [
+    "Static source references in current ScriptRunner::execute custom-dispatch block only; not callback implementation or original native behavior proof",
+    "A selector mention does not establish scene admission,pointer readiness,reachable histories or completed runtime effects",
+    "Selector25 remains an implicit fallback in this source block; it is not marked as executed by this catalogue",
+    "Other native callbacks and callback-generated queues remain outside this bounded catalogue",
+    "Source lines refer to the pinned current script.cpp; per-command map remains local"
+  ]
+}
