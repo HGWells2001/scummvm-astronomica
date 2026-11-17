@@ -1,0 +1,49 @@
+{
+  "status": "P525_TERMINAL_CLOCK_FIXED_NATIVE_PASS",
+  "at": "2026-11-17T15:57:20.958497+00:00",
+  "candidate_exe_sha256": "7b2c01e025092bd5077471c39b80c7fbecaf97db5c61bcabd23a603ae6cee6bf",
+  "original_movie_sha256": "ff92ff4a4584a75af8cb6db9e1ffeb1a8310d64825d111652d28a29f3efe0684",
+  "frame": 95,
+  "observed_natural_clock": 22080,
+  "last_frame_start": 21100,
+  "next_frame_start": 22100,
+  "range_end": 22066,
+  "cells": [
+    {
+      "clock": 21099,
+      "accepted": 0,
+      "unchanged": 1,
+      "exact": 0
+    },
+    {
+      "clock": 21100,
+      "accepted": 1,
+      "unchanged": 1,
+      "exact": 1
+    },
+    {
+      "clock": 22065,
+      "accepted": 1,
+      "unchanged": 1,
+      "exact": 1
+    },
+    {
+      "clock": 22066,
+      "accepted": 1,
+      "unchanged": 1,
+      "exact": 1
+    },
+    {
+      "clock": 22067,
+      "accepted": 1,
+      "unchanged": 1,
+      "exact": 1
+    }
+  ],
+  "native_log_sha256": "42749eb137ee3d31f1d96571c3e2e887de01abb938678484d62a1a2938b380c9",
+  "native_exited_naturally": true,
+  "limits": [
+    "One genuine original selector4 route with immutable detached packet clock cells",
+    "Detached modified clock cells are not genuine historical save fixtures; original natural log separately records clock22065 below end22066"
+  ]
+}

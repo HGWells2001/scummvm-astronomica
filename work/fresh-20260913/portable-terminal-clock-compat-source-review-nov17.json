@@ -1,0 +1,50 @@
+{
+  "status": "PORTABLE_TERMINAL_CLOCK_SOURCE_AND_LINK_INPUT_AUDIT_PASS",
+  "at": "2026-11-17T15:56:30.313550+00:00",
+  "candidate_exe_sha256": "7b2c01e025092bd5077471c39b80c7fbecaf97db5c61bcabd23a603ae6cee6bf",
+  "parent_exe_sha256": "e647bc902fe12a73870deed1dbb0ecb6ed29def512b9c6955f9a45711a5e9d49",
+  "canonical_release_exe_sha256": "8a4ca2bcbd61814cb2588018965831b35dec1e7a03eec819034e9a710e0d9589",
+  "engine_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "17923716a60200cba48d7c2d4b1eda03bc9affb9217764f1948f2c2f72d91d38",
+    "astronomica.h": "27f6413ee6809ebcc1d0bf771d4b925ed0c9a1e9fe6d35059e444338c08a5d51",
+    "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "595b907e61d9bdbc65d584d34a46ace177e7f7db63f3f232196ca0f8bc7cde94",
+    "help.h": "e9a5164e6893ba52487e096aee8df7b81a3a70c43fdfa9e953df1e8baa2d85ef",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "objects_sha256": {
+    "astronomica": "772644c75ea402f1eef697b5aaf9f773e8bd16d0ed480e34858410d8e4d8e9e6",
+    "conditions_test": "191a1508a5b267356700b10420d3952b6bd3555e49e4c2dd99928cfbf326ca2a",
+    "help": "143f8b27cf8f55fa7f8b4b3a20f6ce4a0cc1790389ac8c4c93197c3969e65dfb",
+    "metaengine": "f9dbf6841c0eb0f35622a468a81a6c6dd46f2fb6a0a0a060d8a16838d919c3dc",
+    "resource": "e70d6c6f2ea7cf0740e9b627cb0b59aa06c8a00d4aa877e8c8701ae9233fa0b1",
+    "script": "c6fd76f848904928d4b7b793aae004ec5b3c82d64fa4f70c7c78e259529f8b1d",
+    "sprites": "445141d93ef3b939697513dba9d110795a2c377bc913daf743c44dd1fe4defc9"
+  },
+  "reviewed_transform_sha256": "3487c531010802839cd81c96c57b1ed78bc7c9f4fe395db8a324550b80a5af03",
+  "observer_transform_sha256": "22292104e97ee6a76b302d52ce287b2d006f93f7e5bddc496ae1741ff858f133",
+  "link_inputs": 832,
+  "selected_portable_unchanged": true,
+  "limits": [
+    "Exact accepted E plus legacy focus adapter and audited F restore transform",
+    "Pins explicit original all-engine link inputs; implicit system libraries and prior compilation provenance are not reconstructed",
+    "Source/link audit is not native fullgeneral or user installation acceptance"
+  ]
+}

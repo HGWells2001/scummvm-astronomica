@@ -1,0 +1,17 @@
+{
+  "status": "EFFECT_MIX_NATIVE_PASS",
+  "created_at": "2026-11-17T15:56:22.863981+00:00",
+  "exe_sha256": "dc1d55611416565fd8c638bdef981acdee418bddcbe55c0ea9a99d0b612509b5",
+  "cases": [
+    {
+      "profile": "feedback-and-voice",
+      "log_sha256": "14307e26d2c7d7d63db77903e63fbcc5d034eca3665a02531446228c6f5d7f4d",
+      "native_exited_naturally": true
+    }
+  ],
+  "user_preferences_unchanged": true,
+  "limitations": [
+    "Windows video with real WASAPI; music/effect overlap and exclusive narration verified",
+    "Eight identified feedback/control clips, original hit-tested P517 numeric controls and S1 voice; other clips retain foreground routing"
+  ]
+}
