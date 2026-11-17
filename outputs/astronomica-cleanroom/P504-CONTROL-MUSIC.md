@@ -1,0 +1,9 @@
+# P504 speed-control feedback preserves music
+
+The original speed-increment button in P504 uses localS10,a distinct clip omitted by the previous8 exact feedback identities. Its original nine-command sequence locks input,plays the clip,increments local1,caps it at15,refreshes the display through custom8,and releases input after150ms. This exact2064byte clip is now the ninth feedback identity. It is not classified by duration. Other25 newly inventoried unknown clip roles remain foreground.
+
+An actual click on original sprite10 changes speed0to1 in both native before/after runs. Before the fix it stops Music. After the fix it plays the effect and retains the exact same owned Music stream,with one additional sound start. Released input is observed separately from P504's intentionally persistent background poll. Narration remains exclusive. The initially mistaken global-idle expectation in the observer was corrected before qualification; no corresponding gameplay change was needed.
+
+Native Windows/WASAPI,regional/scene Music and pause/ASVM2 regression,normal/explicit startup,the exact full general suite,genuine pre-fix ASVM29 continuations and installed workspace checks pass. All7 engine units are fresh with403 verified unchanged core objects. The header,three core files,all60 complete serialized save/load method bodies and full original scene-music selector remain unchanged from the preceding full-scene release.
+
+The prior full-scene music rules remain in effect. The older-GUI overlay remains historical at its pinned revision. Personal installations/configuration are excluded. No original media,game executables,physical save fixtures or compiled binaries are distributed. Qualification processes exit naturally. Fixed acceptance remains7/10;whole-game completion is unmeasured. Human full audiovisual verification remains open.

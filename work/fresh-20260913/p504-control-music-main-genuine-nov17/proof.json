@@ -1,0 +1,27 @@
+{
+  "status": "INSTALLED_P504_CONTROL_MUSIC_GENUINE_P512_CONTINUATION_PASS",
+  "completed_at": "2026-11-17T21:58:52.709904+00:00",
+  "producer_exe_sha256": "51ae19ca62b3b3cdbe24245069c84ae3351c040e19b3217cf28ead99b44f4943",
+  "consumer_exe_sha256": "119312caed18bca766f88c8ff4a38d85b6dcd2f20a3661dfb43045248c9f6f00",
+  "producer_proof_sha256": "9fe80991d32f751779e403e80724e52449300c47d5e563cda818b74730311478",
+  "fresh_processes": 1,
+  "results": [
+    {
+      "slot": 29,
+      "entry_scripts": "false",
+      "prior_global28": 0,
+      "final_scene": 157,
+      "final_counter": 1,
+      "physical_file_sha256": "10dcb05382b91a97709c9c5b975a78d7086c890bc20e79ed506d3696a673aeeb",
+      "native_log_sha256": "e021cf9ec752d9ac90e8b0952dcc91939fff3caf95e42dee11a1ce79e5595925",
+      "no_startup_replay": true
+    }
+  ],
+  "all_processes_exited_naturally": true,
+  "actual_audio_driver": "wasapi",
+  "muted": true,
+  "limits": [
+    "One genuine pre-fix first-completion ASVM29 file through the actual installed executable",
+    "Declared active ordinary S0 stopped boundary; no all-version or all-boundary compatibility claim"
+  ]
+}

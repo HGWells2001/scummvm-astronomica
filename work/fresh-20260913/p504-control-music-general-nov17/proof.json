@@ -1,0 +1,48 @@
+{
+  "status": "P504_CONTROL_MUSIC_GENERAL_NATIVE_PASS",
+  "completed_at": "2026-11-17T21:57:50.399358+00:00",
+  "candidate_exe_sha256": "119312caed18bca766f88c8ff4a38d85b6dcd2f20a3661dfb43045248c9f6f00",
+  "stage_sha256": {
+    "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
+    "astronomica.cpp": "d7e4bdaa6b553335dd6e92c8c66fa0b1d409f7d70e52af0d19bbffa9c37806a3",
+    "astronomica.h": "27f6413ee6809ebcc1d0bf771d4b925ed0c9a1e9fe6d35059e444338c08a5d51",
+    "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
+    "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
+    "countdown.h": "ff23a8fc5e8b06eb5c6d76696e402bfad8a2f19bed431d6cc1cd7184be1bae91",
+    "danger.h": "c743733615ece55cc6edfe106a0b29641ab71cc8e9145d7a68f2456286354188",
+    "detection.cpp": "e817cbc8ceaf186bfc0f3a3efd875ac9ac1d3c1deb307f48ca6cf8952139da1e",
+    "gamestate.h": "8ac40352db6e7c4ec04dbe5b282d1792e4d19af793826a78a69c4d3fc1070ba5",
+    "help.cpp": "d92ba0b2585172716e08964c7e5028b03651c93e6f83e6f1e216fa525fb71e2f",
+    "help.h": "759c9009627154d9de448523b7c75fc464ba033185dee9ee68fe737f8c818a5b",
+    "legacy_save.h": "992dc7300491f7fdb9c3d4f397504554f046753beeb2a740a462f108ed3b9002",
+    "mentors.h": "4f8ce7fa586ed6515a25183c64b6d40f0b179ef926e94ad674af56fdb906c4e3",
+    "metaengine.cpp": "9506753c5b222b1241ac3e4b1a7d4648ba26c2a3b69a1b9b32990316f00a0bcd",
+    "module.mk": "f59fec7aefb0c6f00c320de44ca83c232249c9e9f4b353c706ae74d6caa670a9",
+    "plot.h": "5bf34f168abf9d843b39363259f1e206afadfe2e303264c6c7c9ff9a0e5c9e97",
+    "resource.cpp": "fc2dfdea2b84e91b1a5779af7cf1bbadd2ff721e114492c3a3162189e1c66516",
+    "resource.h": "1b5f4ee33a54f28856c6f8a77bc108b2a8c43c3fd922a01eb59b5723c751a8dc",
+    "script.cpp": "2c3eb00dd14e5ddba1a66c2d6cbf90acd953fa89e19847d408969a05d5038448",
+    "script.h": "ca70930482d73f6be082ffcd2317501db2e1369574f61ae991149188eb2c946f",
+    "sprites.cpp": "f2cd13d02e3b950a6036ecd58afc79ce06ee7b50996d254dc5eec339d00a9ca6",
+    "sprites.h": "3f6bc9590b49d3cdf06472456b47adbf38615f09146e328b80381f7a8742864b",
+    "transitions.h": "93a7eb1f09d85c6396debea7345368d81059d49a5071bb22844d6ff2af7e0823"
+  },
+  "compile_source_scope_proof_sha256": "eb50ca687217474225b96229e6c868236ed1f7a14130cf872d04e3e56b217b83",
+  "log_sha256": "b2760bfeb77ec96a36f32dd59ea905fbfe3ea1206f2c17e1529c4ab955f5387e",
+  "config_sha256": "bc10d012647b6ad0dc611ac8183847b02c18235e4acc1c090ff9022feba0f62e",
+  "audio_driver": "wasapi",
+  "mute": true,
+  "frozen_aliases_unchanged": {
+    "astro-verify.098": "adcc9b9be47d0b7153a94eb3b9883b85a12090fbd64e8793e32e61daeeea81fa",
+    "astro-verify.099": "d5fa8fa75a682aefb0f59b8134d2e22cc892057bcf17b7fc0e108d4d417acc2d"
+  },
+  "main_modified": false,
+  "public_support": false,
+  "native_exited_naturally": true,
+  "forced_termination": false,
+  "diagnostic_feature_keys_absent": true,
+  "limitations": [
+    "Existing general verifier only; no genuine all-version fixture compatibility claim",
+    "No manual whole-game audiovisual or release claim"
+  ]
+}

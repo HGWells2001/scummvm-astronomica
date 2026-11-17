@@ -1,3 +1,5 @@
+Historical candidate notes. See P504-CONTROL-MUSIC.md for the accepted release.
+
 # P504 numeric feedback: candidate under qualification
 
 Accepted main42e060d/full-scene Music remains installed. The original P504 sprite10 speed increment uses localS10,a distinct clip not covered by the previous8 exact feedback identities. Its nine-command locked numeric increment/cap15/custom8 refresh/frame update/150ms release establishes its control-feedback role. Only this exact2064byte clip is added; other25 newly found unknown clip roles are not adopted.

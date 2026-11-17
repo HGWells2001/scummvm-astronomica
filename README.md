@@ -1,3 +1,9 @@
+# Current update: P504 speed feedback keeps music
+
+The original P504 speed-increment sound now plays as an effect over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P504-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.
+
+---
+
 # Current update: original music in close-ups and special scenes
 
 Mode3 close-ups now use their original shared background music. P1 and P422 select their original shared tracks. Regional exploration continuity and narration foreground are retained. See outputs/astronomica-cleanroom/SCENE-MUSIC.md for scope and verification. Personal installations remain excluded.
