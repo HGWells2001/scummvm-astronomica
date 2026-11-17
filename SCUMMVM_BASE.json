@@ -35,5 +35,5 @@
     "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
   },
   "clean_rebuild_required": true,
-  "build_scope": "P525 low clocks admitted using the decoded terminal-frame interval; all previous high-clock saves retain their prior path. Workspace exact fullgeneral,causal matrix,Windows controls,genuine older saves and installed checks pass. Header and60payload methods unchanged. Separate older-GUI portable fullgeneral is pending; actual portable remains unchanged."
+  "build_scope": "P525 low clocks admitted using the decoded terminal-frame interval; all previous high-clock saves retain their prior path. Workspace exact fullgeneral,causal matrix,Windows controls,genuine older saves and installed checks pass. Header and60payload methods unchanged. Separate older-GUI portable fullgeneral is pending; actual portable remains unchanged. Separate prepared older-GUI profile now passes its fullgeneral and retains127engine inventory; see ports/legacy-gui/PROFILE.json."
 }

@@ -1,0 +1,17 @@
+{
+  "status": "WINDOWS_NEW_DEEP_CHECKOUT_AND_PAIRED_INSTALL_PASS",
+  "at": "2026-11-17T16:27:00.303327+00:00",
+  "canonical_exe_sha256": "dc1d55611416565fd8c638bdef981acdee418bddcbe55c0ea9a99d0b612509b5",
+  "upstream_commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
+  "checkout_longest_tracked_path": 318,
+  "local_git_longpaths": true,
+  "global_git_settings_changed": false,
+  "source_export_modified": false,
+  "local_transport_only": true,
+  "prepare_tool_sha256": "608aaeb87787ad3d99de504e80f8e00062c6bade6632d577f3d2a84ed067381f",
+  "log_sha256": "402849fdee8a33410114b8217be39b144088aa9ae119cedfe33e876eba276f43",
+  "limits": [
+    "Fresh source checkout and paired installation only; no native game execution",
+    "Uses a test package with local object transport,not a change to the published upstream metadata"
+  ]
+}

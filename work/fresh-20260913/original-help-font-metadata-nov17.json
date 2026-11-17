@@ -1,0 +1,154 @@
+{
+  "status": "ORIGINAL_HELP_FONT_METADATA_OBSERVATION_COMPLETE",
+  "at": "2026-11-17T16:33:18.916940+00:00",
+  "help_sha256": "ac495a6798969cb66b31087402d388f5426ad2f03da0f247907a33255e73de02",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "styles": [
+    {
+      "index": 0,
+      "flags": 0,
+      "half_points": 20,
+      "family": 3,
+      "face": "Helv",
+      "record_sha256": "bf79e70b904fa5bed718a6cead8087c04d15b3be8882cf5689dd2fb9ed95828c"
+    },
+    {
+      "index": 1,
+      "flags": 1,
+      "half_points": 20,
+      "family": 3,
+      "face": "Helv",
+      "record_sha256": "9d6155114896f675ea38714f51ff5135b83a736fca76b6a8fd3f9ee37d6bf0b3"
+    },
+    {
+      "index": 2,
+      "flags": 4,
+      "half_points": 20,
+      "family": 3,
+      "face": "Helv",
+      "record_sha256": "672c3d79358924c30a82376ddb43c314df350041aec6068cb92725b48c189dca"
+    },
+    {
+      "index": 3,
+      "flags": 0,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "016e0598288757cc778e569fbe981ea79c8e05abdd887e65845a3bdc839665a1"
+    },
+    {
+      "index": 4,
+      "flags": 1,
+      "half_points": 24,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "68cf6343753439e9d1b31a9abe61d3f9df80cca25f7ea0a4f563edaaea08ba6e"
+    },
+    {
+      "index": 5,
+      "flags": 0,
+      "half_points": 24,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "a57b9584c3925b80c13f7c5a286e0cd7092fc820f6a20a0a08046d5d7b8aab85"
+    },
+    {
+      "index": 6,
+      "flags": 2,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "335f17f27554a103da12342a736849892d51a0275eab752a81a634b4e153a3b9"
+    },
+    {
+      "index": 7,
+      "flags": 1,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "9451115b86e6ffe255bcaedb3e79e46a0bba78e208b2d9950482cb47b5b2ac11"
+    },
+    {
+      "index": 8,
+      "flags": 1,
+      "half_points": 16,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "b05eefe0e593f7b6e59fba90a92d1bcd981fe993f1af4ed8395e9fa9b14b8d07"
+    },
+    {
+      "index": 9,
+      "flags": 0,
+      "half_points": 16,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "7e1e8580a5fa759989b5dd1d8562ed12918aadbfb5c58390fe54f7b5032bd3c0"
+    },
+    {
+      "index": 10,
+      "flags": 33,
+      "half_points": 16,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "b895f5f67490666a651935287a647c9e3ef7696e1298820711bad7e40fb2be4c"
+    },
+    {
+      "index": 11,
+      "flags": 33,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "9c14be00878774f26e5f1f50da7f6defa4ae585b8a794fe7f501f4fe10dfd8c6"
+    },
+    {
+      "index": 12,
+      "flags": 3,
+      "half_points": 24,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "ceb833323e2f226ae4ab53fa5dee55b7ce9df76f4d7053741adc2ed887cba35b"
+    },
+    {
+      "index": 13,
+      "flags": 0,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial Super",
+      "record_sha256": "4be2e522c54401e858dcbd6b714372cfb14a3b2cfa5fc0e18e78642bd849e0e7"
+    },
+    {
+      "index": 14,
+      "flags": 3,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "926d87f4f65b28989e1f0e6af03e66d9c45d22d2a01ef2413c3a4f9d5c7d4fa6"
+    },
+    {
+      "index": 15,
+      "flags": 4,
+      "half_points": 22,
+      "family": 3,
+      "face": "Arial",
+      "record_sha256": "ab7c82c7201f90606db62ffaa35323c5574a8ef3d9e6e85413038c7e385c705a"
+    }
+  ],
+  "exponent_style": {
+    "index": 13,
+    "flags": 0,
+    "half_points": 22,
+    "family": 3,
+    "face": "Arial Super",
+    "record_sha256": "4be2e522c54401e858dcbd6b714372cfb14a3b2cfa5fc0e18e78642bd849e0e7"
+  },
+  "standard_ne_font_resources": 0,
+  "standard_ne_font_directory_resources": 0,
+  "standalone_font_files": [],
+  "engine_modified": false,
+  "limits": [
+    "Raw font13 names Arial Super at11points; no inference about original WinHelp font mapping or pixel metrics",
+    "No standalone font files does not exclude compressed installer containers,custom resource payloads or fonts supplied by Windows",
+    "Standard NE resource inventory only; no original program or installer executed",
+    "Typography acceptance A08 remains partial; no speculative Unicode or font substitution applied"
+  ]
+}

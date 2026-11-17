@@ -1,3 +1,9 @@
+# Verified portable profile - 17 November 2026
+
+The older-GUI all-engine full general suite now passes. The qualified source profile is published; the actual user executable has not been changed. The full127-engine inventory is retained; audio settings are unchanged. [Source profile](ports/legacy-gui/README.md). Whole-game completion remains unmeasured; fixed acceptance7/10.
+
+---
+
 # Current update: P525 stopped-clock compatibility
 
 Valid stopped clocks before the nominal video range end now load using the actual final-frame interval, preserving prior high-clock saves. The exact workspace full suite and installed checks pass. [Verified scope](outputs/astronomica-cleanroom/P525-TERMINAL-CLOCK.md). The older-GUI portable candidate is still completing its separate full suite; the actual user installation is unchanged.

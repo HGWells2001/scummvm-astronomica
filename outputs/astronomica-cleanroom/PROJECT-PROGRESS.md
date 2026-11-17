@@ -1,3 +1,11 @@
+# Stato verificato - 17 novembre 2026
+
+Indice di accettazione: 70% (7 criteri su 10), non percentuale del lavoro totale. Salvataggi: 35/35 ambiti documentati ai rispettivi confini, non in qualunque istante. Restano aperti A03 (inventario esaustivo dei rami), A08 (tipografia esatta dell'aiuto), A09 (partita audiovisiva manuale completa registrata). Le nuove correzioni non modificano questi criteri.
+
+La versione sorgente corrente e identificata da SCUMMVM_BASE.json; il profilo portatile separato e in ports/legacy-gui. Le fotografie seguenti sono storiche. Nessuno spegnimento autorizzato; tutte le suite devono terminare naturalmente.
+
+---
+
 # Fotografia pubblicata P512 — 31 ottobre 2026
 
 Indice complessivo verificato: **60% dei criteri di accettazione (6/10)**. Copertura dei salvataggi: **33/35 scene (94,3%)**; restano P523 e P525. Queste due misure hanno denominatori diversi e non vanno sommate. Non è disponibile una percentuale attendibile delle ore o della porzione di gioco completata.

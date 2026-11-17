@@ -1,3 +1,11 @@
+# Stato verificato - 17 novembre 2026
+
+Indice di accettazione: 70% (7 criteri su 10), non percentuale del lavoro totale. Salvataggi: 35/35 ambiti documentati ai rispettivi confini, non in qualunque istante. Restano aperti A03 (inventario esaustivo dei rami), A08 (tipografia esatta dell'aiuto), A09 (partita audiovisiva manuale completa registrata). Le nuove correzioni non modificano questi criteri.
+
+La versione sorgente corrente e identificata da SCUMMVM_BASE.json; il profilo portatile separato e in ports/legacy-gui. Le fotografie seguenti sono storiche. Nessuno spegnimento autorizzato; tutte le suite devono terminare naturalmente.
+
+---
+
 # Current update: restored music and direct saved-game startup (17 November 2026)
 
 Verified executable `8a4ca2bcbd61814cb2588018965831b35dec1e7a03eec819034e9a710e0d9589`, published main `7b4c3627011af8c546f742313c666437d51d4412`. Restored P512/P525 music retains its independent owner, preserving it through reviewed feedback. Implicit saved-game startup chooses the menu restoration boundary; fresh-game logos and explicit start overrides remain. Source/library/payload, Windows controls, genuine ASVM29/30, startup, full general, installed and clean export/installer checks pass. [Verified scope](AUDIO-RESTORE.md).

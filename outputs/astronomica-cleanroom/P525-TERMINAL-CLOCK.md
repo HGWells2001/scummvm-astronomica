@@ -1,3 +1,5 @@
+Current portable status: The qualified source profile is published; the actual user executable has not been changed. Its separate full general suite passes; see ports/legacy-gui.
+
 # P525 stopped-video clock compatibility
 
 A native P525 route ended with clock22065ms while the nominal range end was22066ms. The previous loader rejected that stopped state. A detached matrix on original media reproduces the rejection and identifies frame95 at21100ms with the next frame at22100ms. The new loader accepts low clocks only with an actual exhausted final-frame interval and preserves the exact clock. Existing high-clock saves retain their prior acceptance path because playback may stop on elapsed time before drawing its last frame.
