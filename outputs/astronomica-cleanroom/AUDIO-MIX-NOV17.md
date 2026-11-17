@@ -1,3 +1,5 @@
+Historical checkpoint. See [current qualified workspace scope](AUDIO-MIX.md).
+
 # Audio extension, 17 November 2026
 
 Development resumed. The previous session's one-off shutdown request does not apply to this session. Main remains the accepted startup-logo release while audio candidates are qualified.

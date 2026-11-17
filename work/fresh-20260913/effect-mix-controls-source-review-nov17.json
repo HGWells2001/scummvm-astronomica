@@ -1,6 +1,6 @@
 {
   "status": "EFFECT_MIX_SOURCE_AND_LIBRARY_CLOSURE_PASS",
-  "verified_at": "2026-11-17T14:07:59.433264+00:00",
+  "verified_at": "2026-11-17T14:26:29.351960+00:00",
   "candidate_exe_sha256": "d1e7f5b2379f8c368f326779a4664e4a92683cfdc738c60241d42623545987b7",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",

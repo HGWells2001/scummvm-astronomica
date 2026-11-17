@@ -1,4 +1,4 @@
-"""Build ASVM32 in the real engine: seven fresh engine units and403 verified core objects."""
+"""Build audio mixing with seven fresh engine units and403 verified core objects; save schemas unchanged."""
 from pathlib import Path
 from datetime import datetime,timezone
 import hashlib,json,os,re,shutil,subprocess

@@ -1,3 +1,5 @@
+Historical checkpoint. See [current qualified workspace scope](AUDIO-MIX.md).
+
 # Audio mixing work in progress
 
 Development stopped at the user's request. The installed and accepted engine remains the startup-logo release on main (02ce784). This branch preserves unfinished source changes, not a production audio release.
