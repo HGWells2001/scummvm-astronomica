@@ -1,0 +1,301 @@
+{
+  "status": "ORIGINAL_P513_NUMERIC_CONTROL_EFFECT_EVIDENCE_PASS",
+  "at": "2026-11-17T21:58:50.829210+00:00",
+  "controls": [
+    {
+      "place": 513,
+      "sprite": 7,
+      "sound_id": 8,
+      "hyp_sha256": "ca2219d2a44dbed6f42ff2badccc87613941488c3a2f4ef7e62ff981395dbc87",
+      "audio_sha256": "1cc78cf15ee6af07862b53720fc75dd891d01a08d661cf5ba9d49d7d6405a74f",
+      "bytes": 3306,
+      "fnv1a": 1024666625,
+      "first_command_offset": 343555,
+      "last_command_offset": 348443,
+      "command_count": 55,
+      "opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        42,
+        29
+      ],
+      "numeric_prefix": [
+        {
+          "opcode": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0,
+          "offset": 343555
+        },
+        {
+          "opcode": 9,
+          "args": [
+            9
+          ],
+          "delay": 0,
+          "offset": 343567
+        },
+        {
+          "opcode": 46,
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "delay": 0,
+          "offset": 343579
+        },
+        {
+          "opcode": 31,
+          "args": [
+            1,
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "delay": 0,
+          "offset": 343599
+        },
+        {
+          "opcode": 32,
+          "args": [
+            1,
+            0,
+            9
+          ],
+          "delay": 0,
+          "offset": 343631
+        },
+        {
+          "opcode": 45,
+          "args": [],
+          "delay": -1,
+          "offset": 343651
+        },
+        {
+          "opcode": 31,
+          "args": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "delay": 0,
+          "offset": 343659
+        }
+      ],
+      "local_slot": 0,
+      "numeric_step": 1,
+      "input_release_delay_ms": 200,
+      "image_load_commands": 16,
+      "image_present_commands": 16
+    },
+    {
+      "place": 513,
+      "sprite": 8,
+      "sound_id": 9,
+      "hyp_sha256": "ca2219d2a44dbed6f42ff2badccc87613941488c3a2f4ef7e62ff981395dbc87",
+      "audio_sha256": "c34e45b86f1a6d5a2b5137b3f95cf2385f51073392fc82e001197c80d414ba53",
+      "bytes": 3310,
+      "fnv1a": 1615224938,
+      "first_command_offset": 353819,
+      "last_command_offset": 358707,
+      "command_count": 55,
+      "opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        45,
+        31,
+        20,
+        49,
+        20,
+        49,
+        42,
+        29
+      ],
+      "numeric_prefix": [
+        {
+          "opcode": 28,
+          "args": [
+            -1
+          ],
+          "delay": 0,
+          "offset": 353819
+        },
+        {
+          "opcode": 9,
+          "args": [
+            10
+          ],
+          "delay": 0,
+          "offset": 353831
+        },
+        {
+          "opcode": 46,
+          "args": [
+            1,
+            0,
+            -1
+          ],
+          "delay": 0,
+          "offset": 353843
+        },
+        {
+          "opcode": 31,
+          "args": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "delay": 0,
+          "offset": 353863
+        },
+        {
+          "opcode": 32,
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "delay": 0,
+          "offset": 353895
+        },
+        {
+          "opcode": 45,
+          "args": [],
+          "delay": -1,
+          "offset": 353915
+        },
+        {
+          "opcode": 31,
+          "args": [
+            1,
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          "delay": 0,
+          "offset": 353923
+        }
+      ],
+      "local_slot": 0,
+      "numeric_step": -1,
+      "input_release_delay_ms": 200,
+      "image_load_commands": 16,
+      "image_present_commands": 16
+    }
+  ],
+  "role_basis": "Original locked numeric increment/decrement,explicit boundary stores,eight branches with two image presentations each,and200ms input release; not duration-only classification",
+  "remaining_unclassified_candidate_clips": 23,
+  "user_installation_ignored": true,
+  "limits": [
+    "Two exact clips only; no general unknown sound-role classifier",
+    "Actual original control execution and Music overlap checked separately by native before/after probes"
+  ]
+}

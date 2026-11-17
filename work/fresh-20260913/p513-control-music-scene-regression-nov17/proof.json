@@ -1,0 +1,18 @@
+{
+  "status": "SCENE_MUSIC_NATIVE_PASS",
+  "at": "2026-11-17T22:03:29.812638+00:00",
+  "candidate_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "matched": 18,
+  "total": 18,
+  "original_fixture_sha256": "a8211d781b6f3da7f9c2bb0ce6c9fd59ad7e2d997b8de02b7768d37c85510e2c",
+  "current_and_legacy_menu_music_recipients": true,
+  "narration_rejected_without_mutation": true,
+  "native_log_sha256": "89eb769ae9a6b26a5c4ec2a74d2495a8ab2a0cc61d396d46b3c7a8fa4022e7a9",
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "windows_backend": false,
+  "limits": [
+    "Nine actual scenes at two state values; mode3 close-ups and specialmode0 cases represented",
+    "Native channel/type selection and real older-save admission,not a manual full audiovisual certificate"
+  ]
+}

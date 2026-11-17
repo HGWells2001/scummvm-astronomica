@@ -1,0 +1,26 @@
+{
+  "status": "P504_CONTROL_MUSIC_NATIVE_PASS",
+  "at": "2026-11-17T22:03:31.860536+00:00",
+  "candidate_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "values": {
+    "loaded": 1,
+    "started": 1,
+    "hit": 1,
+    "sound": 1,
+    "setting": 1,
+    "effect": 1,
+    "music": 1,
+    "starts": 1,
+    "idle": 0,
+    "blocked": 0
+  },
+  "native_log_sha256": "4cc9b3b1ade6b525dc2f163821befa3818e9697c053dbfaf25867be5a118081c",
+  "windows_backend": false,
+  "installed_workspace": false,
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "limits": [
+    "Actual original sprite10 speed increment from0to1 while localS0 Music is active; exact same Music handle",
+    "Foreground narration boundary checked; no complete human audio or all-effect catalogue claim"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "P513_CONTROL_MUSIC_INTERRUPTION_REPRODUCED",
+  "at": "2026-11-17T22:03:12.488181+00:00",
+  "candidate_exe_sha256": "ea7a726e90357539cfaa94dbabb1d41b8b514e496e2fcd7ce5b97779cbb54cf4",
+  "cases": [
+    {
+      "sprite": 7,
+      "loaded": 1,
+      "started": 1,
+      "hit": 1,
+      "sound": 1,
+      "setting": 6,
+      "effect": 0,
+      "music": 0,
+      "starts": 1,
+      "blocked": 0
+    },
+    {
+      "sprite": 8,
+      "loaded": 1,
+      "started": 1,
+      "hit": 1,
+      "sound": 1,
+      "setting": 4,
+      "effect": 0,
+      "music": 0,
+      "starts": 1,
+      "blocked": 0
+    }
+  ],
+  "native_log_sha256": "3f4da0dbe2fd0bd7a3824b7146558606cdb733b7488540dd0c4ae3a1204461cf",
+  "windows_backend": false,
+  "installed_workspace": false,
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "limits": [
+    "Actual original sprites7/8 from controlled numeric seed5 to6/4,with owned Music active",
+    "Two exact control clips only; no complete human audiovisual or unknown sound catalogue claim"
+  ]
+}

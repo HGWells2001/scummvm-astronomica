@@ -1,0 +1,40 @@
+{
+  "status": "P513_CONTROL_MUSIC_NATIVE_PASS",
+  "at": "2026-11-17T22:03:30.078141+00:00",
+  "candidate_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "cases": [
+    {
+      "sprite": 7,
+      "loaded": 1,
+      "started": 1,
+      "hit": 1,
+      "sound": 1,
+      "setting": 6,
+      "effect": 1,
+      "music": 1,
+      "starts": 1,
+      "blocked": 0
+    },
+    {
+      "sprite": 8,
+      "loaded": 1,
+      "started": 1,
+      "hit": 1,
+      "sound": 1,
+      "setting": 4,
+      "effect": 1,
+      "music": 1,
+      "starts": 1,
+      "blocked": 0
+    }
+  ],
+  "native_log_sha256": "924d5afee5e18b825d0b53d2358212a45dc0345e65a87289529d7af71ecb3d7a",
+  "windows_backend": true,
+  "installed_workspace": false,
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "limits": [
+    "Actual original sprites7/8 from controlled numeric seed5 to6/4,with owned Music active",
+    "Two exact control clips only; no complete human audiovisual or unknown sound catalogue claim"
+  ]
+}
