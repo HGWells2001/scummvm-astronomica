@@ -1,0 +1,111 @@
+{
+  "status": "ORIGINAL_P504_SPEED_CONTROL_EFFECT_EVIDENCE_PASS",
+  "at": "2026-11-17T21:41:01.682834+00:00",
+  "audio_sha256": "10913e35074e459685caeda03486bc96c92a9202292b6dfa589b54391df429e3",
+  "bytes": 2064,
+  "fnv1a": 21514038,
+  "control": {
+    "place": 504,
+    "sprite": 10,
+    "xy": [
+      373,
+      415
+    ],
+    "hyp_sha256": "dde86ef89aa520e16d006b41ddefece537f81901ad3e8db13c5a3bbe5e6009ba",
+    "audio_path": "PLACES/P504/S10.WAV",
+    "sound_id": 10,
+    "commands": [
+      {
+        "opcode": 28,
+        "args": [
+          -1
+        ],
+        "delay": 0,
+        "offset": 358663
+      },
+      {
+        "opcode": 9,
+        "args": [
+          11
+        ],
+        "delay": 0,
+        "offset": 358675
+      },
+      {
+        "opcode": 46,
+        "args": [
+          1,
+          1,
+          1
+        ],
+        "delay": 0,
+        "offset": 358687
+      },
+      {
+        "opcode": 31,
+        "args": [
+          1,
+          1,
+          16,
+          0,
+          0,
+          0
+        ],
+        "delay": 0,
+        "offset": 358707
+      },
+      {
+        "opcode": 32,
+        "args": [
+          1,
+          1,
+          15
+        ],
+        "delay": 0,
+        "offset": 358739
+      },
+      {
+        "opcode": 42,
+        "args": [],
+        "delay": -1,
+        "offset": 358759
+      },
+      {
+        "opcode": 23,
+        "args": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "delay": 0,
+        "offset": 358767
+      },
+      {
+        "opcode": 41,
+        "args": [
+          1
+        ],
+        "delay": 0,
+        "offset": 358799
+      },
+      {
+        "opcode": 29,
+        "args": [
+          -1
+        ],
+        "delay": 150,
+        "offset": 358811
+      }
+    ]
+  },
+  "unclassified_candidates_not_adopted": 25,
+  "role_basis": "Exact original locked speed increment,local1 capped15,custom8 frame refresh,150ms input release; not duration-only inference",
+  "user_installation_ignored": true,
+  "limits": [
+    "One exact clip/control only; not a complete speech/effect catalogue",
+    "Original asset identities and control semantics only; actual overlap checked by native baseline/candidate"
+  ]
+}

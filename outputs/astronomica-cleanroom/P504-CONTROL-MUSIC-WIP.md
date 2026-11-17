@@ -1,0 +1,7 @@
+# P504 numeric feedback: candidate under qualification
+
+Accepted main42e060d/full-scene Music remains installed. The original P504 sprite10 speed increment uses localS10,a distinct clip not covered by the previous8 exact feedback identities. Its nine-command locked numeric increment/cap15/custom8 refresh/frame update/150ms release establishes its control-feedback role. Only this exact2064byte clip is added; other25 newly found unknown clip roles are not adopted.
+
+The actual original button changes speed0to1 in both native runs. Before the fix it stops Music;after the fix it plays an effect while retaining the same owned Music handle and only one additional sound start. Windows,WASAPI,narration foreground,regional/scene Music regression,startup,source/library and60 unchanged serialized save/load bodies pass. P504 retains a normal background poll;released input is checked separately from global queue idleness. The initial observer's incorrect idle expectation is preserved locally and replaced by this explicit check.
+
+Full general and genuine old-save checks are pending. No engine promotion yet. The source transform and bounded evidence are reviewable here;canonical installation sources retain the accepted full-scene release. No original media,binaries or physical saves are exported. No personal installation access,no forced suite termination and no shutdown. Fixed acceptance7/10; whole-game completion unmeasured.
