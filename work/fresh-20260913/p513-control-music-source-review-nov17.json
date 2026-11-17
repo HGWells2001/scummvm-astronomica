@@ -1,6 +1,6 @@
 {
   "status": "P513_CONTROL_MUSIC_SOURCE_AND_LIBRARY_CLOSURE_PASS",
-  "verified_at": "2026-11-17T22:03:13.885236+00:00",
+  "verified_at": "2026-11-17T22:21:25.436137+00:00",
   "candidate_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",

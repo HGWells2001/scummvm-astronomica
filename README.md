@@ -1,3 +1,9 @@
+# Current update: P513 numeric feedback keeps music
+
+The two original P513 numeric-selector sounds now play as effects over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P513-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.
+
+---
+
 # Current update: P504 speed feedback keeps music
 
 The original P504 speed-increment sound now plays as an effect over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P504-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.

@@ -3127,6 +3127,8 @@ bool AstronomicaEngine::isFeedbackEffect(int id) const {
  if(universeFileIdentity(path,3660U,0xb46c1260U))return true;
  if(universeFileIdentity(path,6254U,0x0f339d0bU))return true;
  if(universeFileIdentity(path,2064U,0x01484736U))return true;
+ if(universeFileIdentity(path,3306U,0x3d132c01U))return true;
+ if(universeFileIdentity(path,3310U,0x6046606aU))return true;
  return false;
 }
 void AstronomicaEngine::synchronizeMusicHandle() {
@@ -13897,6 +13899,24 @@ Common::Error AstronomicaEngine::run() {
   debug("P504 speed music observation: loaded%d started%d hit%d sound%d setting%d effect%d music%d starts%u idle%d blocked%d",int(loaded),int(started),int(hit),int(heard),int(setting),int(effect),int(music),_soundsStarted-before,int(_runner.scriptsIdle()),int(_runner.clicksBlocked()));
   playSound(911,scriptClock());const bool voice=!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle);
   debug("P504 speed narration foreground: %d",int(voice));_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
+ if(ConfMan.hasKey("astronomica_verify_p513_control_music")&&ConfMan.getBool("astronomica_verify_p513_control_music")){
+  ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",false);uint matches=0;
+  for(int index:{6,7}){
+   _runner.resetGlobals();const bool loaded=loadPlace(513);_runner.enqueueStartup(_scene.scripts,scriptClock(),true);
+   const uint32 entry=_system->getMillis();while(_system->getMillis()-entry<500){runScripts();animateSpritesAt(scriptClock());_system->delayMillis(2);}
+   _runner.defineValue(1,0,5);_loopSound=0;_loopEnabled=true;const bool started=playSound(0,scriptClock(),true);const Audio::SoundHandle musicOwner=_musicHandle;
+   const Sprite&button=_scene.sprites[index];const int x=button.renderX+1,y=button.renderY+1;const bool hit=spriteAt(x,y)==index;
+   const uint before=_soundsStarted;clickAtTime(x,y,scriptClock());const uint32 began=_system->getMillis();bool effect=false,heard=false;
+   while(_system->getMillis()-began<400){runScripts();animateSpritesAt(scriptClock());heard=heard||_lastSound==index+2;effect=effect||_mixer->isSoundHandleActive(_effectHandle);_system->delayMillis(2);}
+   int32 setting=-1;_runner.getValue(1,0,setting);const bool music=_musicHandle==musicOwner&&_mixer->isSoundHandleActive(_musicHandle);
+   const bool correct=loaded&&started&&hit&&heard&&setting==(index==6?6:4)&&effect&&music&&_soundsStarted==before+1&&!_runner.clicksBlocked();matches+=correct;
+   debug("P513 numeric music observation: sprite%d loaded%d started%d hit%d sound%d setting%d effect%d music%d starts%u blocked%d",index+1,int(loaded),int(started),int(hit),int(heard),int(setting),int(effect),int(music),_soundsStarted-before,int(_runner.clicksBlocked()));
+  }
+  playSound(911,scriptClock());debug("P513 numeric narration foreground: %d",int(!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle)));
+  debug("P513 numeric music complete: matches%u total2",matches);_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
  if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){
