@@ -1,3 +1,9 @@
+# Current update: original music in close-ups and special scenes
+
+Mode3 close-ups now use their original shared background music. P1 and P422 select their original shared tracks. Regional exploration continuity and narration foreground are retained. See outputs/astronomica-cleanroom/SCENE-MUSIC.md for scope and verification. Personal installations remain excluded.
+
+---
+
 # Current update: regional exploration music
 
 Exploration now plays the original regional shared music,keeps it through same-zone navigation and resumes it after narration. Saved exploration games restore the correct selection. Full general,Windows,genuine older-save and installed checks pass. See outputs/astronomica-cleanroom/EXPLORATION-MUSIC.md. The older-GUI overlay is historical; personal installations are excluded.

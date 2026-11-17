@@ -2,10 +2,10 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "b6cf3995d97720ba276cd6605067ccf5301f446ee2a5a7e35d7181bd5d6ff4b2",
+  "validated_executable_sha256": "47ae78c90f9fa9bd5958751f8d1838f10e121f96c10446b7849796eac64edfa7",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "012432607a578d8c481c4a75ee443edfdf94efed0d39dbfcbec8b4d428b54764",
+    "astronomica.cpp": "4b2762d38c44ae6bee1bf9428afeb12e09d7399044adf1f020a6c72f3214f8a8",
     "astronomica.h": "27f6413ee6809ebcc1d0bf771d4b925ed0c9a1e9fe6d35059e444338c08a5d51",
     "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
@@ -35,5 +35,5 @@
     "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
   },
   "clean_rebuild_required": true,
-  "build_scope": "Original mode1 regional shared Music selection; same-zone stream continuity; narration foreground/resume; ASVM2 music recomputation and paused-loop gate; owned-Music P117-to-P525 recipient. Header/60serialized method bodies unchanged. Exact fullgeneral,Windows native,genuine older saves,installed checks pass. Previous older-GUI overlay is historical and must not be combined with this revision."
+  "build_scope": "Original full scene Music selector for modes0,1,3. Mode3 close-ups use shared900; mode0 P1 uses901 and P422 uses902. Mode1 same-zone continuity retained. Narration remains foreground. Current/legacy P1 Music recipients accept genuine prior saves and reject narration. Header/core/60 serialized method bodies unchanged. Exact general,Windows,startup,genuine older-save and installed checks pass. Older-GUI overlay remains historical at its explicitly pinned revision."
 }

@@ -1,0 +1,11 @@
+# Original music in all three scene modes
+
+This extends the regional exploration fix to the remaining original scene-music defaults. The original scene loader selects shared900 in mode3 close-ups,901 for mode0 P1,and902 for mode0 P422; ordinary mode0 puzzles retain localS0. Mode1 retains regional901/902/903 or908 and uninterrupted same-zone playback. Narration remains foreground,and background music resumes after it. No new save version is introduced.
+
+The original-instruction selector proof covers45192 combinations. The original scene inventory contains306 mode1,57 mode0 and57 mode3 readable scenes; four opaque tails remain bounded by their readable prefixes and full-file hashes,and truncated P406 remains excluded. Mode3 includes static close-ups such as P94,P104 andP126. Native before/after tests cover18 scene/state entries:6 matched before,18 after. This does not claim every scene was manually played.
+
+The selected-asset audit checks840 scene/state cases:808 select present PCM music assets across44 unique WAVs. The remaining32 cases are16 original mode0 scenes without a localS0 file. No replacement track is invented. Every selected shared music asset is present and its hash matches the original inventory. This proves asset availability and format,not audible playback in every scene.
+
+Native Windows/WASAPI tests,normal logo-to-menu startup,explicit menu startup,mode1 continuity/ASVM2/pause/narration regression,the exact general suite and genuine pre-fix ASVM29 continuations pass. Both current shared901 and legacy local0 P1 Music recipients accept a genuine prior P525 save; narration is rejected without live-state mutation. The engine header,three paired core files and all60 complete serialized save/load method bodies remain unchanged from the preceding release.
+
+The historical older-GUI overlay must only be used with its explicitly pinned source revision. Personal installations and configuration are excluded. No original assets,game executable,physical save fixtures or compiled binaries are distributed. No shutdown or forced suite termination. Fixed acceptance remains7/10; whole-game completion is unmeasured. Human whole-game audiovisual verification remains open.
