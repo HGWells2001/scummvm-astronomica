@@ -1,0 +1,24 @@
+{
+  "status": "PORTABLE_TERMINAL_CLOCK_AND_HELP_FOCUS_NATIVE_PASS",
+  "at": "2026-11-17T15:49:49.061641+00:00",
+  "candidate_exe_sha256": "a703dc0d5d924c944ae5e5ed8a2307b8cf2a43f703a2480bac8497a5db6af517",
+  "cases": [
+    {
+      "profile": "audio",
+      "log_sha256": "eab64f7eece3f97bd5c98392889ed651d17139e8911a7bcfaa24fc5c20f91a67",
+      "native_exited_naturally": true
+    },
+    {
+      "profile": "help-focus",
+      "log_sha256": "dec5bfdc618e9fd1964a8d825a19dd110bb4dafc8406e85413cda1388f4538a3",
+      "native_exited_naturally": true
+    }
+  ],
+  "selected_portable_unchanged": true,
+  "user_preferences_unchanged": true,
+  "limitations": [
+    "Bounded audio/control/focus native checks,not entire portable general suite",
+    "Older GUI focus callback adapter is source variant,not yet installed",
+    "No human full-game audiovisual claim"
+  ]
+}

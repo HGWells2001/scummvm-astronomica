@@ -1,4 +1,12 @@
-# Current update: safe pause/menu during synchronous voices
+# Current update: restored music and direct saved-game startup (17 November 2026)
+
+Verified executable `8a4ca2bcbd61814cb2588018965831b35dec1e7a03eec819034e9a710e0d9589`, published main `7b4c3627011af8c546f742313c666437d51d4412`. Restored P512/P525 music retains its independent owner, preserving it through reviewed feedback. Implicit saved-game startup chooses the menu restoration boundary; fresh-game logos and explicit start overrides remain. Source/library/payload, Windows controls, genuine ASVM29/30, startup, full general, installed and clean export/installer checks pass. [Verified scope](AUDIO-RESTORE.md).
+
+Continue `work/fresh-20260913/SESSION-20261117.md` and `audio-restore-seal-nov17.json`. Diagnose separate all-engine portable P525 failure using full-prefix trace; do not deploy it without qualification. User portable remains unchanged. Fixed acceptance7/10; whole-game completion unmeasured. Never terminate suites forcibly. No shutdown authorized today. All sections below are historical.
+
+---
+
+# Historical update: safe pause/menu during synchronous voices
 
 Verified executable `29d295bc25f53b19b6cf0ab5e259d290077f7d99feadbf66ca2cf0d12b18a8b2`. F5/Space work during common synchronous voices;save/load wait until the callback stack returns. Paused time is excluded from the script deadline. Native baseline/candidate/Windows,physical/genuine save continuations,P512 clock,new general and installed checks pass. [Verified scope](BLOCKING-VOICES.md). One transient depth counter changes class layout;all7units fresh,core/save schemas unchanged. Fixed acceptance7/10;whole-game completion unmeasured.
 

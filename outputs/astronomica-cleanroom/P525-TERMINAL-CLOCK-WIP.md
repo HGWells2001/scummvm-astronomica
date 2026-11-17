@@ -1,0 +1,7 @@
+# Candidate: terminal P525 frame with an independent stopped clock
+
+The failed all-engine native run retained media clock22065ms at frame95 after the original453..662 range ended. Existing validation required at least22066ms. A separate original selector4 route and detached packet matrix reproduce the rejection at22065 without mutating the live clock. Actual frame95 begins at21100ms; its next frame begins at22100ms.
+
+The candidate validates the terminal decoded-frame interval: its start precedes the range end, the retained clock is at least its start, and the following frame starts at or beyond the end. It preserves the exact clock. Earlier/later incompatible frames and clocks before the final frame are rejected. Native matrix, wrong-frame rejection, live nonmutation, exact-clock retention and complete memory/future checks pass. Sixty complete save/load payload methods and the engine header are byte-identical to the accepted release; source/library and portable link-input audits pass.
+
+The full general suites are still pending. This branch retains the accepted F engine in the installation directory; the candidate is represented by its source transform and bounded evidence. Main is not advanced by this checkpoint. The user's portable executable remains unchanged. One older failed suite remains in its debugger and has not been forcibly closed. No shutdown is authorized. No binaries, original media or physical save fixtures are exported. Whole-game completion remains unmeasured; fixed acceptance7/10.
