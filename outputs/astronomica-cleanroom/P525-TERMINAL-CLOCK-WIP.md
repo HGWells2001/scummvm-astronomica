@@ -1,3 +1,5 @@
+Historical candidate notes. See [accepted terminal-clock scope](P525-TERMINAL-CLOCK.md).
+
 # Current terminal-clock candidate: preserve the high-clock save domain
 
 The first strict terminal-frame candidate is superseded before promotion. Source review found that playback also stops on elapsed time before necessarily decoding the last frame. A valid older high-clock save may therefore retain an earlier frame. G2 retains the entire existing high-clock acceptance path and requires the exhausted final-frame witness only for the newly admitted low clocks.

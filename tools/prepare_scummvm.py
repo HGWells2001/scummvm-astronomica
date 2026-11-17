@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Fetch the pinned upstream revision and install the paired engine/video core."""
 from pathlib import Path
-import argparse,json,subprocess
+import argparse,json,os,subprocess
 from install_engine import ROOT,install
 
 ap=argparse.ArgumentParser(description=__doc__)
@@ -11,6 +11,10 @@ info=json.loads((ROOT/'SCUMMVM_BASE.json').read_text())
 if not destination.exists():
     destination.mkdir(parents=True)
     subprocess.run(['git','init',str(destination)],check=True)
+    if os.name=='nt':
+        # Upstream has asset paths exceeding MAX_PATH in a deep workspace.
+        # Scope this to the new repository; do not change global Git settings.
+        subprocess.run(['git','-C',str(destination),'config','--local','core.longpaths','true'],check=True)
     subprocess.run(['git','-C',str(destination),'remote','add','origin',info['repository']],check=True)
     subprocess.run(['git','-C',str(destination),'fetch','--depth=1','origin',info['commit']],check=True)
     subprocess.run(['git','-C',str(destination),'checkout','--detach','FETCH_HEAD'],check=True)

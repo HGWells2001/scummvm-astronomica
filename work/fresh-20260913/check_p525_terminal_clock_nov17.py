@@ -2,7 +2,7 @@
 from pathlib import Path
 from datetime import datetime,timezone
 import argparse,hashlib,json,os,re,subprocess,sys
-w=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--stage',default='p525-terminal-clock-baseline-nov17-stage');ap.add_argument('--out',default='p525-terminal-clock-baseline-native-nov17');ap.add_argument('--expected',choices=['baseline','fixed'],default='baseline');ap.add_argument('--portable',action='store_true');a=ap.parse_args();s=w/a.stage;exe=s/'bin/scummvm.exe';out=w/a.out;out.mkdir(exist_ok=False);(out/'saves').mkdir()
+w=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--stage',default='p525-terminal-clock-baseline-nov17-stage');ap.add_argument('--out',default='p525-terminal-clock-baseline-native-nov17');ap.add_argument('--expected',choices=['baseline','fixed'],default='baseline');ap.add_argument('--portable',action='store_true');ap.add_argument('--exe');a=ap.parse_args();s=w/a.stage;exe=Path(a.exe)if a.exe else s/'bin/scummvm.exe';out=w/a.out;out.mkdir(exist_ok=False);(out/'saves').mkdir()
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();pin=json.loads((s/'proof.json').read_text())['candidate_exe_sha256'];assert sha(exe)==pin
 cfg=out/'test.ini';log=out/'native.log';cfg.write_text('[scummvm]\nconfirm_exit=false\nautosave_period=0\nenable_unsupported_game_warning=false\ngui_theme=builtin\ngui_language=en\nmute=true\n[astro-verify]\nengineid=astronomica\ngameid=astronomica\npath=D:/astro\nastronomica_verify_p525_terminal_clock=true\n',encoding='utf-8')
 env={k.upper():v for k,v in os.environ.items()};env.update(SDL_VIDEODRIVER='dummy',SDL_AUDIODRIVER='wasapi')

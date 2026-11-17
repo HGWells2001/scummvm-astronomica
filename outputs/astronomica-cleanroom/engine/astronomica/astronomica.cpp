@@ -12212,7 +12212,7 @@ bool AstronomicaEngine::testP525Initial(uint32 now){
 
 static const uint32 kP525OriginalRanges[][2]={{150,329},{453,662},{900,1352},{1800,2280}};
 static const int32 kP525IndicatorTuples[][3]={{310,100,0},{263,82,0},{270,94,1},{277,110,2},{281,112,3},{282,115,3},{286,125,4},{291,131,5}};
-class P525StoppedQuickTime final:public Video::QuickTimeDecoder{public:void retainStoppedClock(uint32 ms){_lastTimeChange=Audio::Timestamp(ms);}};
+class P525StoppedQuickTime final:public Video::QuickTimeDecoder{public:uint32 nextFrameStartForClockObservation()const{return _nextVideoTrack?_nextVideoTrack->getNextFrameStartTime():0xffffffffU;}void retainStoppedClock(uint32 ms){_lastTimeChange=Audio::Timestamp(ms);}};
 // P525 expanded owned stopped preparation; no installation or file format.
 enum {kP525StoppedHeader=24,kP525StoppedRunner=24,kP525StoppedSprites=629,
  kP525StoppedExtra=1223,kP525StoppedBall=1341,kP525StoppedWords=1347};
@@ -12268,7 +12268,7 @@ bool AstronomicaEngine::prepareP525Stopped(const Common::Array<uint32>&w,P525Sto
  if(w[4]==0&&!universeFileIdentity(ConfMan.getPath("path").join("PLACES/P525/S0.WAV"),22892,2290110781U))return false;
  const bool pristine=w[10]==0xffffffffU;
  if(pristine){if(w[9]||w[12]||w[13])return false;}
- else{bool range=false;for(const auto&pair:kP525OriginalRanges)range|=w[12]==pair[0]&&w[13]==pair[1];if(!range||w[10]>=331||uint64(w[9])<uint64(w[13])*1000/30||w[9]>80066||w[15]!=160||w[16]!=40||w[21]!=1)return false;}
+ else{bool range=false;for(const auto&pair:kP525OriginalRanges)range|=w[12]==pair[0]&&w[13]==pair[1];if(!range||w[10]>=331||w[9]>80066||w[15]!=160||w[16]!=40||w[21]!=1)return false;}
  for(uint i=0;i<100;++i)if(w[kP525StoppedExtra+i])return (debug("P525 stopped prepare rejection line%d",__LINE__),false);if(w[kP525StoppedExtra+100]!=0xffffffffU||w[kP525StoppedExtra+101])return (debug("P525 stopped prepare rejection line%d",__LINE__),false);
  if(w[kP525StoppedBall]||w[kP525StoppedBall+1]||w[kP525StoppedBall+2]||w[kP525StoppedBall+3]!=2||w[kP525StoppedBall+4]!=10)return (debug("P525 stopped prepare rejection line%d",__LINE__),false);
  P525StoppedPrepared p;Common::File file;if(!file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P525/MEGAFILE.HYP"))))return (debug("P525 stopped prepare rejection line%d",__LINE__),false);ResourceReader reader(file);
@@ -12304,7 +12304,16 @@ bool AstronomicaEngine::prepareP525Stopped(const Common::Array<uint32>&w,P525Sto
  bool emptyCache=true;for(uint i=0;i<16;++i)emptyCache&=!w[kP525StoppedExtra+102+i];if(!emptyCache){Common::File jf;if(!jf.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P516/MEGAFILE.HYP"))))return (debug("P525 stopped prepare rejection line%d",__LINE__),false);Scene js;ResourceReader jr(jf);if(!jr.read(js)||!supportsJupiter(js))return (debug("P525 stopped prepare rejection line%d",__LINE__),false);for(uint i=0;i<8;++i){const Frame*f=spriteFrameAt(js,13+i,0);if(!f)return (debug("P525 stopped prepare rejection line%d",__LINE__),false);jf.seek(f->image.offset+18);const int32 width=jf.readSint32LE(),height=jf.readSint32LE();if(width<=0||height<=0||w[kP525StoppedExtra+102+i]!=uint32(width)||w[kP525StoppedExtra+110+i]!=uint32(height))return (debug("P525 stopped prepare rejection line%d",__LINE__),false);}}
  p.comet.frame=w[7];p.comet.previousFrame=w[8];for(uint i=0;i<50;++i){p.comet.kind[i]=int32(w[kP525StoppedExtra+i]);p.comet.partner[i]=int32(w[kP525StoppedExtra+50+i]);}p.comet.sound=int32(w[kP525StoppedExtra+100]);p.comet.explosion=int32(w[kP525StoppedExtra+101]);for(uint i=0;i<8;++i){p.jupiterWidths[i]=w[kP525StoppedExtra+102+i];p.jupiterHeights[i]=w[kP525StoppedExtra+110+i];}p.ball.scenario=w[kP525StoppedBall];p.ball.centerX=w[kP525StoppedBall+1];p.ball.centerY=w[kP525StoppedBall+2];p.ball.side=w[kP525StoppedBall+3];p.ball.period=w[kP525StoppedBall+4];
  file.seek(0);if(file.readSint32LE())return (debug("P525 stopped prepare rejection line%d",__LINE__),false);p.background.create(640,480,_screen.format);p.background.fillRect(Common::Rect(640,480),0);if(!readImage(file,p.background,false)||!readImage(file,p.background,true))return (debug("P525 stopped prepare rejection line%d",__LINE__),false);if(w[21]){Graphics::Surface*sky=openBackgroundImage("sky_b",525);if(!sky)return false;if(sky->w!=640||sky->h!=320){sky->free();delete sky;return false;}p.background.copyRectToSurface(sky->getPixels(),sky->pitch,0,0,sky->w,sky->h);sky->free();delete sky;}p.composed.copyFrom(p.background);renderStaticSprites(file,p.scene,p.composed);
- Common::File*mf=new Common::File();if(!mf->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P525/FSUN.MOV")))){delete mf;return (debug("P525 stopped prepare rejection line%d",__LINE__),false);}p.decoder=new P525StoppedQuickTime();if(!p.decoder->loadStream(mf)||p.decoder->getFrameCount()!=331||p.decoder->getWidth()!=320||p.decoder->getHeight()!=240||p.decoder->getTimeScale()!=30)return (debug("P525 stopped prepare rejection line%d",__LINE__),false);p.decoder->setVolume(w[17]);if(!pristine){if(!p.decoder->seekToFrame(w[10])||!p.decoder->decodeNextFrame()||p.decoder->getCurFrame()!=int32(w[10]))return false;static_cast<P525StoppedQuickTime*>(p.decoder)->retainStoppedClock(w[9]);p.decoder->setEndTime(Audio::Timestamp(0,w[13],30));}
+ Common::File*mf=new Common::File();if(!mf->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P525/FSUN.MOV")))){delete mf;return (debug("P525 stopped prepare rejection line%d",__LINE__),false);}p.decoder=new P525StoppedQuickTime();if(!p.decoder->loadStream(mf)||p.decoder->getFrameCount()!=331||p.decoder->getWidth()!=320||p.decoder->getHeight()!=240||p.decoder->getTimeScale()!=30)return (debug("P525 stopped prepare rejection line%d",__LINE__),false);p.decoder->setVolume(w[17]);if(!pristine){if(!p.decoder->seekToFrame(w[10]))return false;
+ // A stopped clock is independent of the exhausted range. Validate the
+ // decoded final-frame interval rather than requiring clock >= range end.
+ P525StoppedQuickTime*stopped=static_cast<P525StoppedQuickTime*>(p.decoder);
+ const uint32 frameStart=stopped->nextFrameStartForClockObservation(),rangeEnd=Audio::Timestamp(0,w[13],30).msecs();
+ if(!p.decoder->decodeNextFrame()||p.decoder->getCurFrame()!=int32(w[10]))return false;
+ // Preserve prior high-clock saves: playback can stop on elapsed time
+ // before drawing the final frame. Only the newly admitted low clocks
+ // need an exhausted final-frame witness.
+ if(w[9]<rangeEnd&&(frameStart>=rangeEnd||w[9]<frameStart||stopped->nextFrameStartForClockObservation()<rangeEnd))return false;static_cast<P525StoppedQuickTime*>(p.decoder)->retainStoppedClock(w[9]);p.decoder->setEndTime(Audio::Timestamp(0,w[13],30));}
  if(p.decoder->isPlaying()||p.decoder->getCurFrame()!=int32(w[10])||p.decoder->getTime()!=w[9]||p.decoder->getRate()!=Common::Rational(0,1)||p.decoder->getEndTime().convertToFramerate(30).totalNumberOfFrames()!=w[13])return false;
  if(w[22]){
   Common::File*sound=new Common::File();if(!sound->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P525/S0.WAV")))){delete sound;return false;}
@@ -13736,6 +13745,52 @@ Common::Error AstronomicaEngine::run() {
   const bool retained=feedback&&_mixer->isSoundHandleActive(original)&&_mixer->hasActiveChannelOfType(Audio::Mixer::kMusicSoundType);
   debug("Restored music ownership observation: menuLoaded%d active%d adopted%d feedback%d retained%d scene%d",int(menuLoaded),int(active),int(adopted),int(feedback),int(retained),_place);
   debug("Restored music owner observation complete");_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
+ if(ConfMan.hasKey("astronomica_verify_p525_terminal_clock")&&ConfMan.getBool("astronomica_verify_p525_terminal_clock")){
+  for(const char*option:{"astronomica_audio","astronomica_animation","astronomica_sprite_input"})ConfMan.setBool(option,true);
+  ConfMan.setBool("astronomica_entry_scripts",false);_runner.resetGlobals();
+  bool ok=loadPlace(117);_runner.defineValue(0,29,1);ConfMan.setBool("astronomica_entry_scripts",true);ok=loadPlace(525)&&ok;
+  auto pump=[&](){pollPlayerInput();runScripts();animateSpritesAt(scriptClock());resumeLoopAt(scriptClock());updateMovie();_system->updateScreen();_system->delayMillis(5);};
+  auto settle=[&](){const uint32 began=_system->getMillis();while(_place==525&&!shouldQuit()&&(_runner.pendingCount()||_runner.clicksBlocked()||_moviePlaying||(_mixer->isSoundHandleActive(_soundHandle)&&_lastSound!=_loopSound))&&_system->getMillis()-began<90000)pump();return _place==525&&!_runner.pendingCount()&&!_runner.clicksBlocked()&&!_moviePlaying;};
+  ok=settle()&&ok;
+  for(uint step=0;step<4&&ok;++step){clickAtTime(110,385,scriptClock());ok=settle()&&ok;}
+  int32 choice=0;ok=_runner.getValue(1,1,choice)&&choice==4&&ok;if(ok){clickAtTime(358,422,scriptClock());ok=settle()&&ok;}
+  Common::Array<uint32>w;ok=captureP525Stopped(w,scriptClock())&&ok;
+  if(ok){
+   Common::File*f=new Common::File();P525StoppedQuickTime detached;
+   ok=f->open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P525/FSUN.MOV")))&&detached.loadStream(f)&&detached.seekToFrame(w[10]);
+   const uint32 lastStart=detached.nextFrameStartForClockObservation();ok=detached.decodeNextFrame()&&ok;
+   const uint32 nextStart=detached.nextFrameStartForClockObservation(),end=w[13]*1000/30;
+   debug("P525 terminal clock bounds: scene%d frame%u retained%u lastStart%u nextStart%u end%u",_place,w[10],w[9],lastStart,nextStart,end);
+   for(uint32 clock:{lastStart-1,lastStart,end-1,end,end+1}){
+    Common::Array<uint32>cell=w;cell[9]=clock;cell.back()=p525StoppedHash(cell);const uint32 live=p510WholeLiveHash();P525StoppedPrepared prepared;
+    const bool accepted=prepareP525Stopped(cell,prepared),unchanged=p510WholeLiveHash()==live;
+    debug("P525 terminal clock cell: clock%u accepted%d unchanged%d exact%d",clock,int(accepted),int(unchanged),int(accepted&&prepared.decoder->getTime()==clock));ok=unchanged&&ok;
+   }
+  }
+
+  if(ok){
+   for(uint32 frame:{w[10]-1,w[10]+1}){
+    Common::Array<uint32>bad=w;bad[10]=frame;bad[9]=w[13]*1000/30-1;bad.back()=p525StoppedHash(bad);const uint32 live=p510WholeLiveHash();P525StoppedPrepared p;
+    const bool refused=!prepareP525Stopped(bad,p)&&p.empty()&&p510WholeLiveHash()==live;
+    debug("P525 terminal wrong frame refusal: frame%u refused%d",frame,int(refused));ok=refused&&ok;
+   }
+
+   Common::Array<uint32>legacy=w;legacy[10]=w[10]-1;legacy[9]=legacy[13]*1000/30;legacy.back()=p525StoppedHash(legacy);
+   const uint32 oldHash=p510WholeLiveHash();P525StoppedPrepared oldPrepared;
+   const bool admitted=prepareP525Stopped(legacy,oldPrepared)&&oldPrepared.ready&&oldPrepared.decoder->getCurFrame()==int32(legacy[10])&&oldPrepared.decoder->getTime()==legacy[9]&&p510WholeLiveHash()==oldHash;
+   debug("P525 terminal legacy high-clock admission: frame%u admitted%d",legacy[10],int(admitted));ok=admitted&&ok;
+
+   Common::Array<uint32>low=w;low[9]=low[13]*1000/30-1;low.back()=p525StoppedHash(low);
+   ok=installP525StoppedMemory(low)&&ok;
+   Common::Array<uint32>again;ok=captureP525Stopped(again,low[2])&&again==low&&ok;
+   ok=testP525StoppedMemory(scriptClock())&&ok;
+   debug("P525 terminal low-clock memory futures: %s",ok?"PASS":"FAIL");
+  }
+
+  debug("P525 terminal clock observation complete: %d",int(ok));_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
  if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){

@@ -1,0 +1,7 @@
+# P525 stopped-video clock compatibility
+
+A native P525 route ended with clock22065ms while the nominal range end was22066ms. The previous loader rejected that stopped state. A detached matrix on original media reproduces the rejection and identifies frame95 at21100ms with the next frame at22100ms. The new loader accepts low clocks only with an actual exhausted final-frame interval and preserves the exact clock. Existing high-clock saves retain their prior acceptance path because playback may stop on elapsed time before drawing its last frame.
+
+Workspace and actual all-engine native matrices pass, including clock-before-frame and incompatible-frame refusal, high-clock earlier-frame compatibility, live nonmutation, exact clock and complete memory/future checks. The exact workspace full general suite, Windows audio/controls, genuine earlier P512 continuations and installed workspace checks pass. The engine header and all60 complete save/load payload methods are unchanged. No save format or clock clamping is introduced. The prior music-after-load and fresh-game logo fixes remain.
+
+The separately tested older-GUI candidate has bounded native passes, but its full general suite is still pending and it is not yet published as a qualified profile. The user's executable is still unchanged at source publication time; installation and its final native receipts are recorded separately. Earlier strict-candidate results remain historical. Fixed acceptance7/10; whole-game completion unmeasured. No shutdown is authorized and no suite is forcibly terminated.
