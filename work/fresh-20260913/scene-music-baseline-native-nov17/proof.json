@@ -1,0 +1,18 @@
+{
+  "status": "SCENE_MUSIC_DEFAULTS_BASELINE_MISMATCH_REPRODUCED",
+  "at": "2026-11-17T21:10:12.353162+00:00",
+  "candidate_exe_sha256": "8f9198224b745946ec98d10f94e0ca69c18664d0816ce1bb94d135570b42541b",
+  "matched": 6,
+  "total": 18,
+  "original_fixture_sha256": "a8211d781b6f3da7f9c2bb0ce6c9fd59ad7e2d997b8de02b7768d37c85510e2c",
+  "current_and_legacy_menu_music_recipients": true,
+  "narration_rejected_without_mutation": true,
+  "native_log_sha256": "d38799f664e4fce9d5a310af0747ff79256611bf7e447524e951b89f600fafdc",
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "windows_backend": false,
+  "limits": [
+    "Nine actual scenes at two state values; mode3 close-ups and specialmode0 cases represented",
+    "Native channel/type selection and real older-save admission,not a manual full audiovisual certificate"
+  ]
+}
