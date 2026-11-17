@@ -1,0 +1,259 @@
+{
+  "status": "ORIGINAL_NUMERIC_CONTROL_EFFECT_INVENTORY_COMPLETE",
+  "created_at": "2026-11-17T14:04:25.525603+00:00",
+  "controls": [
+    {
+      "scene": 514,
+      "sprite": 5,
+      "xy": [
+        233,
+        415
+      ],
+      "original_script_offset": 323319,
+      "megafile_sha256": "df7e496d2258169662ef23985ed1d8ec99ef5d24a23153903c6d48ba8b173afd",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 7,
+      "audio_path": "PLACES/P514/S7.WAV",
+      "audio_sha256": "fa36c667e41a1e55a049fc9c43f477eab37e4c8643f50aa33041ae94fb00fb74",
+      "bytes": 6254,
+      "fnv1a": 255040779,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 514,
+      "sprite": 6,
+      "xy": [
+        309,
+        415
+      ],
+      "original_script_offset": 326731,
+      "megafile_sha256": "df7e496d2258169662ef23985ed1d8ec99ef5d24a23153903c6d48ba8b173afd",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 6,
+      "audio_path": "PLACES/P514/S6.WAV",
+      "audio_sha256": "166a2e84ef1040a0423dec94b4a92179b8a0add216c25ec9a1772198e993bc5e",
+      "bytes": 3660,
+      "fnv1a": 3026981472,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 516,
+      "sprite": 5,
+      "xy": [
+        289,
+        417
+      ],
+      "original_script_offset": 323319,
+      "megafile_sha256": "fae86ac8d36038046a9d387f8fbc28d822d2cdcacc2cdb0ab4d941d55b58ced6",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 7,
+      "audio_path": "PLACES/P516/S7.WAV",
+      "audio_sha256": "59d4db98c8b0a0fb9c2a4a4b605bed95cd10d95255a52508e7031862563211ab",
+      "bytes": 1420,
+      "fnv1a": 3490832024,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 516,
+      "sprite": 6,
+      "xy": [
+        365,
+        417
+      ],
+      "original_script_offset": 326731,
+      "megafile_sha256": "fae86ac8d36038046a9d387f8fbc28d822d2cdcacc2cdb0ab4d941d55b58ced6",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 6,
+      "audio_path": "PLACES/P516/S6.WAV",
+      "audio_sha256": "0942d33f1c6635725c317ba4fef3cf7144f201a65f252cc80ad69cdfc3c3d3db",
+      "bytes": 1042,
+      "fnv1a": 1942962011,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 517,
+      "sprite": 5,
+      "xy": [
+        318,
+        419
+      ],
+      "original_script_offset": 316039,
+      "megafile_sha256": "e93efcc68f117117b4f64c6b99f20b575e7ed5492098165aa32c1e8b321ec5d1",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 7,
+      "audio_path": "PLACES/P517/S7.WAV",
+      "audio_sha256": "59d4db98c8b0a0fb9c2a4a4b605bed95cd10d95255a52508e7031862563211ab",
+      "bytes": 1420,
+      "fnv1a": 3490832024,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 529,
+      "sprite": 6,
+      "xy": [
+        113,
+        421
+      ],
+      "original_script_offset": 126691,
+      "megafile_sha256": "7a202c3b6f8d11299a20590d01d725ccf068d5c5fff6f6143a25e878b8e32888",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 6,
+      "audio_path": "PLACES/P529/S6.WAV",
+      "audio_sha256": "0942d33f1c6635725c317ba4fef3cf7144f201a65f252cc80ad69cdfc3c3d3db",
+      "bytes": 1042,
+      "fnv1a": 1942962011,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 529,
+      "sprite": 7,
+      "xy": [
+        209,
+        421
+      ],
+      "original_script_offset": 130103,
+      "megafile_sha256": "7a202c3b6f8d11299a20590d01d725ccf068d5c5fff6f6143a25e878b8e32888",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 7,
+      "audio_path": "PLACES/P529/S7.WAV",
+      "audio_sha256": "59d4db98c8b0a0fb9c2a4a4b605bed95cd10d95255a52508e7031862563211ab",
+      "bytes": 1420,
+      "fnv1a": 3490832024,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 537,
+      "sprite": 5,
+      "xy": [
+        77,
+        420
+      ],
+      "original_script_offset": 323319,
+      "megafile_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 6,
+      "audio_path": "PLACES/P537/S6.WAV",
+      "audio_sha256": "0942d33f1c6635725c317ba4fef3cf7144f201a65f252cc80ad69cdfc3c3d3db",
+      "bytes": 1042,
+      "fnv1a": 1942962011,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    },
+    {
+      "scene": 537,
+      "sprite": 6,
+      "xy": [
+        153,
+        420
+      ],
+      "original_script_offset": 326731,
+      "megafile_sha256": "37d5e41c555bf1684ab86828e14a897b3d4d3e673260d660e78cea9f124a2744",
+      "opaque_tail_bytes": 0,
+      "command_opcodes": [
+        28,
+        9,
+        46,
+        31,
+        32,
+        42,
+        41,
+        29
+      ],
+      "sound_id": 6,
+      "audio_path": "PLACES/P537/S6.WAV",
+      "audio_sha256": "0942d33f1c6635725c317ba4fef3cf7144f201a65f252cc80ad69cdfc3c3d3db",
+      "bytes": 1042,
+      "fnv1a": 1942962011,
+      "role_evidence": "Original locked numeric increment/decrement control with frame update and200ms release; not duration-only classification"
+    }
+  ],
+  "unique_audio_sha256": [
+    "0942d33f1c6635725c317ba4fef3cf7144f201a65f252cc80ad69cdfc3c3d3db",
+    "166a2e84ef1040a0423dec94b4a92179b8a0add216c25ec9a1772198e993bc5e",
+    "59d4db98c8b0a0fb9c2a4a4b605bed95cd10d95255a52508e7031862563211ab",
+    "fa36c667e41a1e55a049fc9c43f477eab37e4c8643f50aa33041ae94fb00fb74"
+  ],
+  "limits": [
+    "Only exact reviewed eight-command numeric adjustment pattern",
+    "Does not classify other sounds or prove a complete speech/effect catalogue"
+  ]
+}
