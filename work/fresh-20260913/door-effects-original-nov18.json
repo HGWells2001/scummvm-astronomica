@@ -1,0 +1,163 @@
+{
+  "status": "ORIGINAL_SHARED_DOOR_EFFECTS_EVIDENCE_PASS",
+  "at": "2026-11-18T22:30:33.078520+00:00",
+  "syntax_inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "clips": [
+    {
+      "id": 905,
+      "bytes": 4860,
+      "sha256": "28b3263ccd09b8b0f11b1354e3ef46121cf5e64819edafadc9b6fb30aaab6910",
+      "fnv1a": 3274987907
+    },
+    {
+      "id": 907,
+      "bytes": 5878,
+      "sha256": "f62da4a43fb2664b4ff98723cb6d7449b1049c648666a66c358090355df7ae72",
+      "fnv1a": 2982724363
+    }
+  ],
+  "references": [
+    {
+      "command_id": "P27/sprite/1/click/6",
+      "scene": 27,
+      "offset": 264597,
+      "id": 905,
+      "scene_sha256": "25a91a84aa37773c7ce4c2a337547d0b62b8da06ac33e373c797c747ef838bb3"
+    },
+    {
+      "command_id": "P59/sprite/1/click/6",
+      "scene": 59,
+      "offset": 265077,
+      "id": 905,
+      "scene_sha256": "f2b49e20c717844dc3d68a7ab06253eda7150488894ab90f3d03c1ec1e5fb6e9"
+    },
+    {
+      "command_id": "P66/sprite/1/click/6",
+      "scene": 66,
+      "offset": 231669,
+      "id": 905,
+      "scene_sha256": "4e6374bd9ec3b72e1134f76d7fb8f4255ed3142302dbdbc60f022c5deb737af3"
+    },
+    {
+      "command_id": "P85/rectangle/2/click/5",
+      "scene": 85,
+      "offset": 3202,
+      "id": 905,
+      "scene_sha256": "11fc6c423df8cd6bb8622c481e548a371bbe62118a5b46ac22831923e0ef4627"
+    },
+    {
+      "command_id": "P167/rectangle/1/click/6",
+      "scene": 167,
+      "offset": 206592,
+      "id": 905,
+      "scene_sha256": "1da90155eb2ee74c42ce379ecb2084a71fcbe1674fc68bc3afeae59699257b2a"
+    },
+    {
+      "command_id": "P187/rectangle/1/click/6",
+      "scene": 187,
+      "offset": 206592,
+      "id": 905,
+      "scene_sha256": "5a66ecb3269a69daecb806bb073b55654316a30c61a7ee1bc9587c1a7508af76"
+    },
+    {
+      "command_id": "P208/rectangle/1/click/10",
+      "scene": 208,
+      "offset": 206678,
+      "id": 905,
+      "scene_sha256": "f425f12c78c81f0862623332ab0d186a511a618442292948a65b8e1a6e966af6"
+    },
+    {
+      "command_id": "P217/rectangle/1/click/6",
+      "scene": 217,
+      "offset": 206592,
+      "id": 905,
+      "scene_sha256": "480f12016278b2be32564aacc98f4238eafe8760dd4fa2f7083b29c18220736e"
+    },
+    {
+      "command_id": "P220/rectangle/1/click/5",
+      "scene": 220,
+      "offset": 206321,
+      "id": 905,
+      "scene_sha256": "846f643336eb5202098a7022046125588631eed921ce8d41c34b6114c13dd146"
+    },
+    {
+      "command_id": "P228/sprite/1/click/6",
+      "scene": 228,
+      "offset": 294517,
+      "id": 905,
+      "scene_sha256": "5264333e97285faf29a3f42dcca9e41e57772e477f41f353c84bbcad1bd2951d"
+    },
+    {
+      "command_id": "P233/sprite/1/click/5",
+      "scene": 233,
+      "offset": 307305,
+      "id": 905,
+      "scene_sha256": "77c8095d39432d109dc373edcaa4bfc8c9100644882eba3664298b55138ddd9c"
+    },
+    {
+      "command_id": "P240/sprite/1/click/5",
+      "scene": 240,
+      "offset": 366185,
+      "id": 905,
+      "scene_sha256": "ff3f59bf158366e7f8199da89e2bf8c0a618412dddd2684c5371e67abbf0c66f"
+    },
+    {
+      "command_id": "P313/rectangle/1/click/6",
+      "scene": 313,
+      "offset": 206592,
+      "id": 905,
+      "scene_sha256": "20fae9ed34402efe50fcfe66413a8d9052c52a780bff401c6b81d143cdcc06a2"
+    },
+    {
+      "command_id": "P356/rectangle/1/click/2",
+      "scene": 356,
+      "offset": 206307,
+      "id": 905,
+      "scene_sha256": "1bd7d949979f96a5375a138ed9df05e096586ace9f6b881af222cb313eb9f60a"
+    },
+    {
+      "command_id": "P403/sprite/1/click/6",
+      "scene": 403,
+      "offset": 276597,
+      "id": 905,
+      "scene_sha256": "77c320af02f2b43c01686b0d9271e968995d4ab10ce85a9e3be70197d1395364"
+    },
+    {
+      "command_id": "P403/sprite/2/click/6",
+      "scene": 403,
+      "offset": 345821,
+      "id": 905,
+      "scene_sha256": "77c320af02f2b43c01686b0d9271e968995d4ab10ce85a9e3be70197d1395364"
+    },
+    {
+      "command_id": "P413/rectangle/1/click/6",
+      "scene": 413,
+      "offset": 206592,
+      "id": 905,
+      "scene_sha256": "07b250fefdd790a3967cbc0a2cf410918cb63f6590f724229359018cf6285ce9"
+    },
+    {
+      "command_id": "P85/rectangle/1/click/7",
+      "scene": 85,
+      "offset": 2942,
+      "id": 907,
+      "scene_sha256": "11fc6c423df8cd6bb8622c481e548a371bbe62118a5b46ac22831923e0ef4627"
+    },
+    {
+      "command_id": "P85/rectangle/1/click/13",
+      "scene": 85,
+      "offset": 3034,
+      "id": 907,
+      "scene_sha256": "11fc6c423df8cd6bb8622c481e548a371bbe62118a5b46ac22831923e0ef4627"
+    }
+  ],
+  "role_basis": [
+    "User identified P27 door as the audible effect that interrupts Music",
+    "Original P27 script shows the door,plays shared905,sets local0=1;next click enters P32",
+    "P85 door-control rectangle uses shared907 in its opening/state-transition branches"
+  ],
+  "limits": [
+    "Two exact shared door assets only; shared narration/music IDs remain excluded",
+    "Other unclassified local effects are not inferred from duration or file numbering"
+  ]
+}

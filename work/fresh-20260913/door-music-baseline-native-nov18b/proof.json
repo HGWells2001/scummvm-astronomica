@@ -1,0 +1,44 @@
+{
+  "status": "SHARED_DOOR_MUSIC_INTERRUPTION_REPRODUCED",
+  "at": "2026-11-18T22:33:57.186694+00:00",
+  "candidate_exe_sha256": "74b25ae4cfab62742164c5c20540e05f5cca54ee2dc95cf7a2b0d0f8220e15c4",
+  "build_proof_sha256": "d1bf136d5c0ac61e4bcbac9dc1d2e9db8a13668b71798cd34a85a6a691b759bf",
+  "original_evidence_sha256": "ce46b38145a2900d1843954361b1822f6b75d6f539dd6b3f0695bfe0af5a8f1f",
+  "native_log_sha256": "72e7efa75b1577ba51ae24c88309dbadc38f50064a10fccd2d4439e6bfa0c604",
+  "rows": [
+    [
+      27,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      85,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ]
+  ],
+  "windows_backend": false,
+  "installed_workspace": false,
+  "native_exited_naturally": true,
+  "limits": [
+    "Original hit-tested P27 sprite and P85 rectangle with controlled initial globals",
+    "Music owner and elapsed-position continuity, plus save/load transient guards and P27 second-click traversal",
+    "Narration911 remains foreground; no whole-game speech/effect classification or acoustic recording"
+  ]
+}
