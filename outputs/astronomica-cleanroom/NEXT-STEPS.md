@@ -1,3 +1,9 @@
+# Current update: doors preserve music
+
+P27/P85 shared door effects now overlap the same advancing Music stream. Narration retains foreground handling. See outputs/astronomica-cleanroom/DOOR-MUSIC.md for the exact scope. All earlier checkpoints below are historical.
+
+---
+
 # Current checkpoint — 18 November 2026
 
 Exploration Music is audible in the normal P103 player, confirmed by the user. All306 mode1 rooms pass the actual frame-loop stream sweep. All760 literal NAV references pass1,538 actual arrow/keypad handler cases with active Music and an independent original transition oracle. P419 repeated local foreground playback and navigation cleanup pass separately. See EXPLORATION-VERIFICATION-NOV18.md and work/fresh-20260913/SESSION-20261118.md.

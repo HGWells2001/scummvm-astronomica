@@ -1,0 +1,17 @@
+{
+  "status": "EXPLORATION_MUSIC_NATIVE_PASS",
+  "at": "2026-11-18T22:35:13.609364+00:00",
+  "candidate_exe_sha256": "4f5041e18f71730ee4150d3405779e5a4d75156e0e1fe740c620442223473f5a",
+  "successful_music_entries": 16,
+  "entries": 16,
+  "asvm2_music_restored": true,
+  "narration_exclusive": true,
+  "music_resumed_after_voice": true,
+  "native_log_sha256": "8091bd3ce6829c470905534b9f0267b47f5f1a302eb8780f5c327b8ddb2386bd",
+  "native_exited_naturally": true,
+  "user_installation_ignored": true,
+  "limits": [
+    "Eight actual mode1 rooms with both original global60 branches; no complete manual audiovisual playthrough",
+    "WASAPI mixer/channel observation with isolated muted configuration; no personal configuration or installation access"
+  ]
+}

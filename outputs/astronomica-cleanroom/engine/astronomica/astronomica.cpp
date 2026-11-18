@@ -3116,6 +3116,12 @@ void AstronomicaEngine::configureSounds() {
 
 }
 bool AstronomicaEngine::isFeedbackEffect(int id) const {
+ if(id==905||id==907){
+  if(id==_scene.introSoundId||isBlockingSound(id))return false;
+ if(id==905&&universeFileIdentity(ConfMan.getPath("path").join("SOUNDS/S5.WAV"),4860U,0xc3345983U))return true;
+ if(id==907&&universeFileIdentity(ConfMan.getPath("path").join("SOUNDS/S7.WAV"),5878U,0xb1c8c30bU))return true;
+  return false;
+ }
  if(id<0||id>=300||id==_scene.introSoundId||isBlockingSound(id))return false;
  const Common::Path path=ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/S%d.WAV",_place,id)));
  if(universeFileIdentity(path,3672U,0x3a7c5850U))return true;
@@ -13917,6 +13923,26 @@ Common::Error AstronomicaEngine::run() {
   }
   playSound(911,scriptClock());debug("P513 numeric narration foreground: %d",int(!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle)));
   debug("P513 numeric music complete: matches%u total2",matches);_background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+
+ if(ConfMan.hasKey("astronomica_verify_door_music")&&ConfMan.getBool("astronomica_verify_door_music")){
+  ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",true);uint passed=0;
+  for(int place:{27,85}){
+   _runner.resetGlobals();if(place==85)_runner.defineValue(0,53,1);const bool loaded=loadPlace(place);
+   const uint32 warm=_system->getMillis();while(_system->getMillis()-warm<250){runScripts();animateSpritesAt(scriptClock());resumeLoopAt(scriptClock());_system->delayMillis(2);}
+   const Audio::SoundHandle owner=_musicHandle;const uint32 elapsed=_mixer->getSoundElapsedTime(owner);const bool started=_mixer->isSoundHandleActive(owner);
+   int x=587,y=246;bool hit=true;
+   if(place==27){Common::File file;hit=file.open(Common::FSNode(ConfMan.getPath("path").join("PLACES/P27/MEGAFILE.HYP")));const Frame*f=hit?staticSpriteFrame(_scene,0):nullptr;Graphics::Surface*bmp=f?decodeSpriteBitmap(file,f->image,_screen.format):nullptr;if(bmp){x=_scene.sprites[0].renderX+bmp->w/2;y=_scene.sprites[0].renderY+bmp->h/2;bmp->free();delete bmp;hit=spriteAt(x,y)==0;}else hit=false;}
+   const uint before=_soundsStarted;clickAtTime(x,y,scriptClock());bool heard=false,overlap=false,guard=false;const uint32 began=_system->getMillis();
+   while(_system->getMillis()-began<800){runScripts();animateSpritesAt(scriptClock());resumeLoopAt(scriptClock());heard=heard||_lastSound==(place==27?905:907);const bool effect=_mixer->isSoundHandleActive(_effectHandle);overlap=overlap||(effect&&_mixer->isSoundHandleActive(_musicHandle)&&_musicHandle==owner);guard=guard||(effect&&!canSaveGameStateCurrently()&&!canLoadGameStateCurrently());_system->delayMillis(2);}
+   int32 state=-1;_runner.getValue(1,0,state);const bool music=_mixer->isSoundHandleActive(_musicHandle)&&_musicHandle==owner;const bool advancing=music&&_mixer->getSoundElapsedTime(_musicHandle)>=elapsed+600;
+   const bool correct=loaded&&started&&hit&&heard&&state==1&&overlap&&guard&&music&&advancing&&_soundsStarted==before+1;passed+=correct;
+   debug("Door Music observation: place%d loaded%d started%d hit%d heard%d state%d overlap%d guard%d music%d advancing%d starts%u",place,int(loaded),int(started),int(hit),int(heard),int(state),int(overlap),int(guard),int(music),int(advancing),_soundsStarted-before);
+   if(place==27){clickAtTime(x,y,scriptClock());const uint32 traversedAt=_system->getMillis();while(_system->getMillis()-traversedAt<120){runScripts();resumeLoopAt(scriptClock());_system->delayMillis(2);}const bool destination=_place==32;const bool retained=_musicHandle==owner&&_mixer->isSoundHandleActive(_musicHandle);debug("Door Music traversal: destination%d retained%d",int(destination),int(retained));}
+  }
+  playSound(911,scriptClock());debug("Door Music narration foreground: %d",int(!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle)));
+  debug("Door Music complete: passed%u total2",passed);_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
  if(ConfMan.hasKey("astronomica_verify_blocking_voice_menu")&&ConfMan.getBool("astronomica_verify_blocking_voice_menu")){

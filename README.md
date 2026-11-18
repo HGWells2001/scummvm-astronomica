@@ -8,6 +8,12 @@ Per compilare, seguire [BUILDING.md](BUILDING.md). Se la compilazione produce l'
 
 ---
 
+# Current update: doors preserve music
+
+P27/P85 shared door effects now overlap the same advancing Music stream. Narration retains foreground handling. See outputs/astronomica-cleanroom/DOOR-MUSIC.md for the exact scope. All earlier checkpoints below are historical.
+
+---
+
 # Current update: P513 numeric feedback keeps music
 
 The two original P513 numeric-selector sounds now play as effects over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P513-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.

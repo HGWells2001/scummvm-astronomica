@@ -1,3 +1,5 @@
+Historical candidate notes. See DOOR-MUSIC.md for the qualified engine.
+
 # Shared door effects — candidate qualification
 
 Original P27 door playback uses shared905;P85 uses shared907. Exact assets occur in19 original command references. The candidate classifies those two reviewed identities as effects over Music, preserving its owner and elapsed position. Voice and unknown clips retain foreground handling.

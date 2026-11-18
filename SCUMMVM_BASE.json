@@ -2,10 +2,10 @@
   "repository": "https://github.com/scummvm/scummvm.git",
   "commit": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "engine_directory": "outputs/astronomica-cleanroom/engine/astronomica",
-  "validated_executable_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "validated_executable_sha256": "4f5041e18f71730ee4150d3405779e5a4d75156e0e1fe740c620442223473f5a",
   "engine_sha256": {
     "advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica.cpp": "e604bcdcf7592f833d1429af8330a790ad2c6f866e412de09413d9081923cfe6",
+    "astronomica.cpp": "56e3d1f196cb2aaf6f7f717772b594845c98d000e17cd767afdff567e17e3283",
     "astronomica.h": "27f6413ee6809ebcc1d0bf771d4b925ed0c9a1e9fe6d35059e444338c08a5d51",
     "conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
     "configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
@@ -35,5 +35,5 @@
     "video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4"
   },
   "clean_rebuild_required": true,
-  "build_scope": "Original full scene Music plus eleven exact feedback identities. Both original P513 numeric-selector controls retain the same Music stream,play S8/S9 as effects and release input. The P504 speed-control fix remains intact. Narration remains foreground. Header/core/60serialized payload methods and full scene selector unchanged. Exact fullgeneral,Windows,scene/regional/startup,genuine prior saves,installed and clean paired installer pass. Older-GUI overlay remains historical at its explicitly pinned revision."
+  "build_scope": "Thirteen exact feedback identities, including shared door905/907. Actual P27/P85 clicks preserve Music owner and position; narration remains foreground. Header,three core files,sixty serialized save/load methods and scene selector unchanged. General,Windows,prior-save,regional,close-up and control regression gates pass."
 }
