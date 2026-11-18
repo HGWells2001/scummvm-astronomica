@@ -1,0 +1,23 @@
+{
+  "status": "ALL_MODE1_NORMAL_FRAME_MUSIC_PASS",
+  "at": "2026-11-18T21:37:38.871129+00:00",
+  "observer_exe_sha256": "acd7952432b4348ff9031ac1581cbb82e07b4c2fff5e0a7b425ce69820cf7805",
+  "canonical_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "observer_build_proof_sha256": "13952196946ceaac5cbca740dfa24fc990c7ee4fea7ce809c88ca72ebae12130",
+  "native_log_sha256": "bfcbb66912c4435cc5bcf3031bcab4ff082050b5e2c6261356ac779b5b343dcb",
+  "rooms": 306,
+  "active_and_advancing_streams": 306,
+  "configuration_defaults_used_for_engine_options": true,
+  "normal_frame_pump_preserved": true,
+  "canonical_engine_changed": false,
+  "header_unchanged": true,
+  "native_exited_naturally": true,
+  "mute": true,
+  "music_volume": 128,
+  "audio_driver": "wasapi",
+  "limits": [
+    "Controlled direct room loads followed by the actual frame loop;global60 reset0,mouse at dummy-backend position",
+    "Music stream ownership and elapsed progress;not an acoustic recording or complete route/playthrough certificate",
+    "Only mode1 exploration rooms;observer executable is not deployed as the canonical game build"
+  ]
+}

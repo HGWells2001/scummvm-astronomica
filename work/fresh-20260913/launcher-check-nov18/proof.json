@@ -1,0 +1,18 @@
+{
+  "status": "WORKSPACE_LAUNCHER_NATIVE_AND_FAILURE_PASS",
+  "at": "2026-11-18T21:27:28.914127+00:00",
+  "launcher_sha256": "8d75317fe97fc797607b048125f525c208b4eec9e255ee8ff30b32db1f503a77",
+  "exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "missing_executable_exit_code": 1,
+  "missing_executable_message_held": true,
+  "real_native_exit_code": 0,
+  "path_with_spaces": true,
+  "existing_configuration_preserved": true,
+  "native_startup_log_sha256": "628d0e520e33ccf092630c3ca715294a153a0c9352acd0d96cac9ade7d01b8c3",
+  "console_log_sha256": "c2cce09a337140882fe4d6ffd5c498e02832964fe49b68a0708031c61915e3a1",
+  "source_engine_changed": false,
+  "limits": [
+    "Missing-build error and two real native controlled startup exits;normal interactive exploration is verified separately",
+    "Does not establish the original cause of the reported Explorer double-click failure"
+  ]
+}

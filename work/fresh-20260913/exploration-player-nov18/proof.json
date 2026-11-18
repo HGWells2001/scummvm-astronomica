@@ -1,0 +1,15 @@
+{
+  "status": "INSTALLED_NORMAL_EXPLORATION_PLAYER_PASS",
+  "at": "2026-11-18T21:25:35.177358+00:00",
+  "exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "config_sha256": "0ed17fbb3b7f7f3832e87a19f4de0f8cb4fff31d974d53d612c9ddf016382ba2",
+  "native_log_sha256": "2cf4f24d498f8fca9a3100998493a260556959807ca7543f996cbd078119ceb6",
+  "native_exited_naturally": true,
+  "diagnostic_flags_absent": true,
+  "mute": false,
+  "music_volume": 128,
+  "limits": [
+    "Explicit initial P103,normal interactive run loop and original assets;not a full new-game introduction",
+    "Native stream-start log and visible player only;not an acoustic loopback or complete audiovisual certificate"
+  ]
+}
