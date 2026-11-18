@@ -1,0 +1,13 @@
+{
+  "status": "REPAIRED_DOWNLOAD_NATIVE_STARTUP_PASS",
+  "at": "2026-11-18T22:21:37.572357+00:00",
+  "exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "repair_proof_sha256": "320ceaefb21936156bc7d0750db6d92af31b49a07a9b5cad6a5ce10cceb32e8f",
+  "native_log_sha256": "a669d5d0d80add68c215b20efc7ea5eab5d7f0c357f81fc5ec49cee90f5f6520",
+  "native_exit_code": 0,
+  "native_exited_naturally": true,
+  "isolated_settings_and_saves": true,
+  "limits": [
+    "Controlled native startup verification of the repaired download; not another full game regression"
+  ]
+}

@@ -8,6 +8,8 @@ set "ASTRO_RESULT=1"
 echo Avvio di Astronomica dalla compilazione del progetto.
 if not exist "%ASTRO_EXE%" (
   echo Eseguibile corrente non trovato: "%ASTRO_EXE%"
+  echo Lo ZIP dei sorgenti di GitHub non contiene il programma compilato.
+  echo Per avviarlo occorre aggiungere una compilazione verificata o seguire BUILDING.md.
   goto :errore
 )
 if not exist "D:\astro\" (

@@ -1,3 +1,13 @@
+# Avvio su Windows: ZIP dei sorgenti
+
+**Code > Download ZIP scarica i sorgenti, senza scummvm.exe o SDL2.dll.** Non e' un pacchetto pronto da giocare.
+
+`Avvia-Astronomica.cmd` funziona quando una compilazione verificata e' presente in `work/fresh-20260913/build/Releasex64/`, insieme a `SDL2.dll`. Usa i file originali del gioco in `D:/astro` e conserva impostazioni e salvataggi in `userdata/astronomica/`.
+
+Per compilare, seguire [BUILDING.md](BUILDING.md). Se la compilazione produce l'eseguibile in un'altra cartella, avviare quello ScummVM e aggiungere la cartella del gioco dal suo menu. Scaricare nuovamente lo ZIP dei sorgenti non aggiunge l'eseguibile mancante.
+
+---
+
 # Current update: P513 numeric feedback keeps music
 
 The two original P513 numeric-selector sounds now play as effects over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P513-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.
