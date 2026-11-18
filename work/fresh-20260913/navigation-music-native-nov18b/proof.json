@@ -1,0 +1,32 @@
+{
+  "status": "ORIGINAL_NAVIGATION_ACTIVE_MUSIC_PASS",
+  "at": "2026-11-18T22:12:22.604623+00:00",
+  "observer_exe_sha256": "0ac52ff0e5ec786ccd67b0529d611e48e6580ea138b4d3714fafb06580597586",
+  "canonical_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "observer_build_proof_sha256": "0527b999dbab89302eb039c96003b0b59eac12b372187c2b0cd4a0b9cf4f15e9",
+  "cases_sha256": "5a60193556202a31c15ef5ea2b4cf86541705f63f595f567362ed7de0a1ca8ca",
+  "native_log_sha256": "6fa6e769ee3c28b62073d8f71e4c2107615b2aedc5fe1a986ff29f5c9608baca",
+  "literal_navigation_routes": 760,
+  "source_rooms_with_routes": 305,
+  "mode1_room_without_nav_routes": 31,
+  "keyboard_variants": 2,
+  "extra_permitted_gate_fixtures": 9,
+  "native_cases": 1538,
+  "canonical_engine_changed": false,
+  "normal_frame_pump_preserved": true,
+  "native_exited_naturally": true,
+  "mute": true,
+  "audio_driver": "wasapi",
+  "completed_trace_revalidated_without_native_rerun": true,
+  "failed_parser_sha256": "608954ffb06ba39230717d608b51c2260659d07fc1935d145daf359bb3845888",
+  "preserved_failure_status_sha256": "0d026a2e7e8084aedc6d4d693ec148fed779264559516007a48121b7ab95a310",
+  "native_exit_zero_verified_via_preceding_pinned_driver_assertion": true,
+  "validator_sha256": "00b7973cb9345d1075b64da9d5f99e06d3e04bfd0dda138a456580cdb30db956",
+  "limits": [
+    "Controlled direct source loads and actual arrow/keypad handlers, not natural reachability from a new game",
+    "Selected global57 fixtures, not exhaustive global-state or sprite-click coverage",
+    "Native stream ownership and elapsed progress, not acoustic playback",
+    "Denied P429 gate boundaries checked before complete movie playback",
+    "The original result parser converted no-track sentinel-1 to boolean true; corrected independent validation preserves the completed log and failure record"
+  ]
+}

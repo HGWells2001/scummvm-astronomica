@@ -1,0 +1,27 @@
+{
+  "status": "ORIGINAL_P419_REPEATED_FOREGROUND_NAVIGATION_PASS",
+  "at": "2026-11-18T22:08:38.004324+00:00",
+  "observer_exe_sha256": "5e52955fd1e2c9c1787efb659941a43e355a9059fff58a4e81e5e369e8489cf3",
+  "canonical_exe_sha256": "e7c01fd64cc3e5954c3069bbabc18ff443334af661b9422d7d268f9e8a2184f3",
+  "build_proof_sha256": "8f493b4d082a44bd9f60954350f7c809b8a2f45a66715ea625be50a0e31c0919",
+  "native_log_sha256": "cd04615de9697ec68d8cf9fdcf6f6f2fc98221c11e0fcefa8b994fa1503308b7",
+  "original_scene_sha256": "3d607ca77531dde542a8a355c7a36d806a9f874e66a8db0696fc94fbe23b097b",
+  "original_s1_sha256": "4e0d2d790b821ddeb4d1ff13ca9f89dea3ee74b497b0851daeff1a1abebd8bbd",
+  "global52_cases": [
+    0,
+    1
+  ],
+  "observed_s1_dispatches_in_repeated_case": 7,
+  "actual_navigation_destination": 358,
+  "music_advancing_after_navigation": true,
+  "canonical_engine_changed": false,
+  "normal_frame_pump_preserved": true,
+  "native_exited_naturally": true,
+  "mute": true,
+  "limits": [
+    "S1 is left unclassified as speech or effect; no acoustic recording",
+    "Original entry0 explicitly self-calls with delay100; no one-shot expectation",
+    "Controlled global52 fixtures do not prove natural reachability or exact original Win16 scheduling",
+    "The check validates bounded repeated dispatch and cleanup; not all P419 controls or a new audio fix"
+  ]
+}
