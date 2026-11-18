@@ -42,3 +42,13 @@ The generator requires the local accepted syntax inventory, historical trace map
 ```text
 python outputs/astronomica-cleanroom/inventory_behavior_requirements_nov17.py D:/astro --workspace work/fresh-20260913 --out work/fresh-20260913/original-behavior-requirements-nov17
 ```
+
+## Current navigation Music boundaries
+
+The November18 map links all760 literal navigation candidates to1,538 current-source observer cases using real arrow/keypad handlers and active Music through the ordinary frame loop. Original NAV bytes identify each route; original transition instructions determine the destination and global57 result. The per-case source, controlled permit, expected track and native log line stay local. The exported receipt binds all input hashes and records bounded totals.
+
+The305 source rooms with positive NAV routes cover all760 references; mode1 P31 has no such route. Nine permitted-gate fixtures supplement the normal zero-permit cases. This does not establish natural reachability, sprite-click navigation, exhaustive global/timing histories or the364 script-place outcomes. Candidate requirements remain incomplete as full behavior claims. A03 and full project completion remain unmeasured.
+
+```text
+python outputs/astronomica-cleanroom/map_navigation_music_requirements_nov18.py --workspace work/fresh-20260913 --out work/fresh-20260913/navigation-music-requirements-nov18b
+```

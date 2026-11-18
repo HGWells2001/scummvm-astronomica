@@ -2,9 +2,10 @@
 from pathlib import Path
 import json
 w=Path(__file__).resolve().parent;o=w.parents[1]/'outputs/astronomica-cleanroom'
-assert json.loads((w/'navigation-music-native-nov18b/proof.json').read_text())['status']=='ORIGINAL_NAVIGATION_ACTIVE_MUSIC_PASS'
-assert json.loads((w/'navigation-music-requirements-nov18b/proof.json').read_text())['status']=='CURRENT_NAVIGATION_MUSIC_REQUIREMENT_MAP_PASS'
-assert json.loads((w/'p419-foreground-native-nov18b/proof.json').read_text())['status']=='ORIGINAL_P419_REPEATED_FOREGROUND_NAVIGATION_PASS'
+write=lambda path,text:path.write_text(text,encoding='utf-8')
+assert json.loads((w/'navigation-music-native-nov18b/proof.json').read_text(encoding='utf-8'))['status']=='ORIGINAL_NAVIGATION_ACTIVE_MUSIC_PASS'
+assert json.loads((w/'navigation-music-requirements-nov18b/proof.json').read_text(encoding='utf-8'))['status']=='CURRENT_NAVIGATION_MUSIC_REQUIREMENT_MAP_PASS'
+assert json.loads((w/'p419-foreground-native-nov18b/proof.json').read_text(encoding='utf-8'))['status']=='ORIGINAL_P419_REPEATED_FOREGROUND_NAVIGATION_PASS'
 note='''
 ## Original navigation with active Music — 18 November 2026
 
@@ -16,8 +17,8 @@ P419's original entry0 explicitly self-calls with delay100 when global52 is1, di
 
 All native qualification processes exit naturally. These observer builds are isolated and are not deployed. Receipts export hashes and bounded counts, without original assets or raw logs.
 '''
-p=o/'EXPLORATION-VERIFICATION-NOV18.md';s=p.read_text();assert '## Original navigation with active Music'not in s;p.write_text(s+note)
-p=o/'BEHAVIOR-REQUIREMENTS.md';s=p.read_text();assert '## Current navigation Music boundaries'not in s;p.write_text(s+'''
+p=o/'EXPLORATION-VERIFICATION-NOV18.md';s=p.read_text(encoding='utf-8');assert '## Original navigation with active Music'not in s;write(p,s+note)
+p=o/'BEHAVIOR-REQUIREMENTS.md';s=p.read_text(encoding='utf-8');assert '## Current navigation Music boundaries'not in s;write(p,s+'''
 ## Current navigation Music boundaries
 
 The November18 map links all760 literal navigation candidates to1,538 current-source observer cases using real arrow/keypad handlers and active Music through the ordinary frame loop. Original NAV bytes identify each route; original transition instructions determine the destination and global57 result. The per-case source, controlled permit, expected track and native log line stay local. The exported receipt binds all input hashes and records bounded totals.
@@ -28,7 +29,7 @@ The305 source rooms with positive NAV routes cover all760 references; mode1 P31 
 python outputs/astronomica-cleanroom/map_navigation_music_requirements_nov18.py --workspace work/fresh-20260913 --out work/fresh-20260913/navigation-music-requirements-nov18b
 ```
 ''')
-p=o/'NEXT-STEPS.md';s=p.read_text();p.write_text('''# Current checkpoint — 18 November 2026
+p=o/'NEXT-STEPS.md';s=p.read_text(encoding='utf-8');write(p,'''# Current checkpoint — 18 November 2026
 
 Exploration Music is audible in the normal P103 player, confirmed by the user. All306 mode1 rooms pass the actual frame-loop stream sweep. All760 literal NAV references pass1,538 actual arrow/keypad handler cases with active Music and an independent original transition oracle. P419 repeated local foreground playback and navigation cleanup pass separately. See EXPLORATION-VERIFICATION-NOV18.md and work/fresh-20260913/SESSION-20261118.md.
 
@@ -43,7 +44,7 @@ The latest user request authorizes forced-app shutdown only after the requested 
 # Historical checkpoints follow
 
 '''+s)
-p=w/'SESSION-20261118.md';s=p.read_text();p.write_text(s+'''
+p=w/'SESSION-20261118.md';s=p.read_text(encoding='utf-8');write(p,s+'''
 ## Completed navigation qualification
 
 navigation-music-native-nov18b/proof.json:1,538/1,538 current-source handler cases over760 original NAV references,305 source rooms,9 extra permitted gates,two keyboard variants. P31 has no NAV edges. navigation-music-requirements-nov18b/proof.json links760 candidate route cells without reachability/full-behavior claims.

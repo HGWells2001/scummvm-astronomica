@@ -1,3 +1,17 @@
+# Current checkpoint — 18 November 2026
+
+Exploration Music is audible in the normal P103 player, confirmed by the user. All306 mode1 rooms pass the actual frame-loop stream sweep. All760 literal NAV references pass1,538 actual arrow/keypad handler cases with active Music and an independent original transition oracle. P419 repeated local foreground playback and navigation cleanup pass separately. See EXPLORATION-VERIFICATION-NOV18.md and work/fresh-20260913/SESSION-20261118.md.
+
+Production engine/core/executable are unchanged from the verified P513 release. The workspace launcher now retains launch errors and writes avvio-console.log; its original one-second closure did not reproduce directly. Do not deploy observer executables. Ignore the personal installation.
+
+Next: investigate the364 script-place outcome candidates and natural reachability with primary resource/runtime evidence; do not relabel controlled navigation fixtures as full gameplay coverage. Exact help typography and a recorded full manual audiovisual playthrough remain open. Fixed acceptance7/10 is not a total development percentage.
+
+The latest user request authorizes forced-app shutdown only after the requested quota reserve, GitHub backup and natural completion of every suite. Earlier no-shutdown statements below are historical. Do not reuse the executed November17 shutdown record. Do not forcibly terminate suites or redeem reset credits.
+
+---
+
+# Historical checkpoints follow
+
 # Current update: P513 numeric feedback keeps music
 
 The two original P513 numeric-selector sounds now play as effects over the same music stream. Narration remains foreground. The full-scene exploration/close-up music rules are retained. See outputs/astronomica-cleanroom/P513-CONTROL-MUSIC.md for the exact scope and verified checks. Personal installations remain excluded.
