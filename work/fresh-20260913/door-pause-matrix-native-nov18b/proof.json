@@ -1,0 +1,159 @@
+{
+  "status": "SHARED_DOOR_PAUSE_MATRIX_NATIVE_PASS",
+  "at": "2026-11-18T23:05:50.385310+00:00",
+  "observer_exe_sha256": "d7e63c9d19eed32a6133eafa74a843b91b4d4e5afa7ff69dcea37ba02bd3d668",
+  "canonical_exe_sha256": "4f5041e18f71730ee4150d3405779e5a4d75156e0e1fe740c620442223473f5a",
+  "build_proof_sha256": "fc6a8eed3ca75096ca7be96d38c34acfe810ce0456343c964afa05427db22597",
+  "native_log_sha256": "bf5180450e9699f66a941ab87f91e2f5acff5b042e6efa9caa16f37f9afac264",
+  "controlled_cases": 10,
+  "shared_music_tracks": [
+    900,
+    901,
+    902,
+    903,
+    908
+  ],
+  "door_effects": [
+    905,
+    907
+  ],
+  "rows": [
+    [
+      126,
+      0,
+      900,
+      905,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      126,
+      0,
+      900,
+      907,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      103,
+      0,
+      902,
+      905,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      103,
+      0,
+      902,
+      907,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      219,
+      0,
+      901,
+      905,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      219,
+      0,
+      901,
+      907,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      361,
+      0,
+      903,
+      905,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      361,
+      0,
+      903,
+      907,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      103,
+      1,
+      908,
+      905,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      103,
+      1,
+      908,
+      907,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "native_exited_naturally": true,
+  "production_engine_unchanged": true,
+  "limits": [
+    "Direct native playback API for two reviewed effects across five actual original ambient tracks;not ten natural door interactions",
+    "Actual PauseToken freezes both Music and effect elapsed clocks;same Music owner advances after resume",
+    "Transient save/load refused and narration remains foreground;muted WASAPI is not an acoustic recording"
+  ]
+}

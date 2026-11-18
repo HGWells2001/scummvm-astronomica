@@ -1,0 +1,18 @@
+{
+  "status": "DELIVERED_DOOR_LAUNCHER_NATIVE_AND_FAILURE_PASS",
+  "at": "2026-11-18T22:58:04.263962+00:00",
+  "launcher_sha256": "ffe2fda6d7fdb5694151cf45784b7a909407e30435b49b3f3e6d6c87418edef8",
+  "exe_sha256": "4f5041e18f71730ee4150d3405779e5a4d75156e0e1fe740c620442223473f5a",
+  "missing_executable_exit_code": 1,
+  "missing_executable_message_held": true,
+  "real_native_exit_code": 0,
+  "path_with_spaces": true,
+  "existing_configuration_preserved": true,
+  "native_startup_log_sha256": "30a1d1cd31fad0243eda0e6454897eab9a4839fbb81485cedf03f70212ec55f0",
+  "console_log_sha256": "cfc87f3de109f1911f55f9dad605a774d183fe2a608a476248679f7eb3fe287d",
+  "source_engine_changed": false,
+  "limits": [
+    "Missing-build error and two real native controlled startup exits;normal interactive exploration is verified separately",
+    "The reported source ZIP lacked its executable;this check verifies the repaired layout"
+  ]
+}

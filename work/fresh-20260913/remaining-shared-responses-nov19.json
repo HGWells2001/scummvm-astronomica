@@ -1,0 +1,431 @@
+{
+  "status": "ORIGINAL_UNCLASSIFIED_SHARED_RESPONSES_INVENTORY_PASS",
+  "at": "2026-11-18T23:05:32.207180+00:00",
+  "author_sha256": "8201fbdea7bd564d0d341c5eac9672d2b3e2d79802a6087cf1d22573f6a6014a",
+  "syntax_inventory_sha256": "921dbace8df48f07550bda18661dc3fe50c4e25aae83e32b36201d97e04adcdc",
+  "clips": [
+    {
+      "sound": 904,
+      "bytes": 16300,
+      "sha256": "12ea173f156b688dc6bc2888370cd01c9428df1b75beb03638b4452dc4e8aa0f",
+      "role": "UNCLASSIFIED",
+      "music_overlap_enabled": false
+    },
+    {
+      "sound": 906,
+      "bytes": 5548,
+      "sha256": "e1fa5c0c7abc23c73fd582e3db90a154675da4986cef4bec44d3c033f14421ce",
+      "role": "UNCLASSIFIED",
+      "music_overlap_enabled": false
+    }
+  ],
+  "resource_command_sites": 23,
+  "rows": [
+    {
+      "command_id": "P35/rectangle/1/click/5",
+      "scene": 35,
+      "trigger": "rectangle/1/click",
+      "offset": 206393,
+      "sound": 904,
+      "original_scene_sha256": "32d32f48be320bac15cc9bcf7f5fd2f5e15f8a616fed3d0d8fc3f0a15907f35e",
+      "original_script_opcodes": [
+        28,
+        31,
+        9,
+        45,
+        31,
+        9,
+        23,
+        5,
+        45,
+        31,
+        9,
+        42,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P356/rectangle/1/click/7",
+      "scene": 356,
+      "trigger": "rectangle/1/click",
+      "offset": 206650,
+      "sound": 904,
+      "original_scene_sha256": "1bd7d949979f96a5375a138ed9df05e096586ace9f6b881af222cb313eb9f60a",
+      "original_script_opcodes": [
+        28,
+        31,
+        9,
+        32,
+        45,
+        31,
+        20,
+        9,
+        49,
+        32,
+        45,
+        31,
+        5,
+        42,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P35/rectangle/1/click/2",
+      "scene": 35,
+      "trigger": "rectangle/1/click",
+      "offset": 206341,
+      "sound": 906,
+      "original_scene_sha256": "32d32f48be320bac15cc9bcf7f5fd2f5e15f8a616fed3d0d8fc3f0a15907f35e",
+      "original_script_opcodes": [
+        28,
+        31,
+        9,
+        45,
+        31,
+        9,
+        23,
+        5,
+        45,
+        31,
+        9,
+        42,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P35/rectangle/1/click/10",
+      "scene": 35,
+      "trigger": "rectangle/1/click",
+      "offset": 206489,
+      "sound": 906,
+      "original_scene_sha256": "32d32f48be320bac15cc9bcf7f5fd2f5e15f8a616fed3d0d8fc3f0a15907f35e",
+      "original_script_opcodes": [
+        28,
+        31,
+        9,
+        45,
+        31,
+        9,
+        23,
+        5,
+        45,
+        31,
+        9,
+        42,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P37/rectangle/1/click/1",
+      "scene": 37,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "597044941aa7ca029d2050f3ca7d0d7f9953c07b375c44cd33d2f7518ff57b54",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P49/rectangle/1/click/1",
+      "scene": 49,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "ce82668a6a80b009d62841fe57c4d5ce00928f307640feb40b9a6564429a2ee0",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P77/rectangle/1/click/1",
+      "scene": 77,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "ac797ecf4827b752cf5e4b38927ea6d6383570b84e0cbb494dc30bd103f1d300",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P108/rectangle/1/click/1",
+      "scene": 108,
+      "trigger": "rectangle/1/click",
+      "offset": 205899,
+      "sound": 906,
+      "original_scene_sha256": "837655e7368339161af87add2e045c276eb1a2ce90b846e7cfb04eb225ad260a",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P111/rectangle/1/click/1",
+      "scene": 111,
+      "trigger": "rectangle/1/click",
+      "offset": 205967,
+      "sound": 906,
+      "original_scene_sha256": "69db49dacd40e7e7980f1880c444d069be009de6e055b934b76739f57f726541",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P184/rectangle/1/click/1",
+      "scene": 184,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "5b9d69b6d26f4584db0135c9cfcf307d5fae1429f50aef27d7d31ed1d9bebc98",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P200/rectangle/1/click/1",
+      "scene": 200,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "ba37c7decd9e329d8342a1ab8eb894dd82077ac005ca9ddc990fe3412d9b784f",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P208/rectangle/1/click/3",
+      "scene": 208,
+      "trigger": "rectangle/1/click",
+      "offset": 206303,
+      "sound": 906,
+      "original_scene_sha256": "f425f12c78c81f0862623332ab0d186a511a618442292948a65b8e1a6e966af6",
+      "original_script_opcodes": [
+        28,
+        23,
+        31,
+        9,
+        45,
+        31,
+        5,
+        45,
+        31,
+        20,
+        9,
+        49,
+        32,
+        42,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P209/rectangle/1/click/1",
+      "scene": 209,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "f4de78d362444a980b92b4ac6972e0bcffd002521af0b9db6af765d523da9d72",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P227/rectangle/1/click/1",
+      "scene": 227,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "6c8e2dcc9b1d03afa346edc8686d40a684692f72ab38e4cca2036fe1ac859810",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P230/rectangle/1/click/1",
+      "scene": 230,
+      "trigger": "rectangle/1/click",
+      "offset": 240993,
+      "sound": 906,
+      "original_scene_sha256": "fb6b47aa2c3fd69c25974562120834fe3d532fb4a4c9f1c3e067e300b62c681e",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P245/rectangle/1/click/1",
+      "scene": 245,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "a2432e5be50b92bf1d70be84fabb5110c7d69d111d17a1d215e3792baacba30e",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P251/rectangle/1/click/1",
+      "scene": 251,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "c42b172b0d90bedf06e1cd4cb239af8f452b242be5b7a4d6546e5104de9f7ddb",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P251/rectangle/2/click/1",
+      "scene": 251,
+      "trigger": "rectangle/2/click",
+      "offset": 206305,
+      "sound": 906,
+      "original_scene_sha256": "c42b172b0d90bedf06e1cd4cb239af8f452b242be5b7a4d6546e5104de9f7ddb",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P254/rectangle/1/click/1",
+      "scene": 254,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "144de5b34bfed8939170bd03761c08b00d09d1b47ae2cd810c8cd61b834e4826",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P256/rectangle/1/click/1",
+      "scene": 256,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "4aabeedc836bd0bf1ed2e1dbab9dd7a222f5a2510b80c774a5f970e848033077",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P336/rectangle/1/click/1",
+      "scene": 336,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "d71a14280814799b679e919f4d1a9553b3ce2887d30058c86eb3cc9b2df15050",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P339/rectangle/1/click/1",
+      "scene": 339,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "dcc251e3b93ef0d9e4b595626dbe1cf99d67fb22fcbd93f4ee3aab1a1da4d8c8",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    },
+    {
+      "command_id": "P387/rectangle/1/click/1",
+      "scene": 387,
+      "trigger": "rectangle/1/click",
+      "offset": 206237,
+      "sound": 906,
+      "original_scene_sha256": "f904dde59c8624e573b1d322faf2d112772f7061f4482a99033936f915eb7398",
+      "original_script_opcodes": [
+        28,
+        9,
+        29
+      ],
+      "natural_reachability": "UNCLASSIFIED",
+      "audio_role": "UNCLASSIFIED"
+    }
+  ],
+  "production_engine_changed": false,
+  "limits": [
+    "Two shared clips at23 original resource-command sites,additional to the reviewed905/907 door effects",
+    "Trigger structure is evidence of where playback occurs,not an acoustic speech/effect classification",
+    "No duration or consecutive-ID heuristic;these clips remain foreground until their roles are reviewed",
+    "Native callbacks and a complete sound catalogue are outside this inventory"
+  ]
+}
