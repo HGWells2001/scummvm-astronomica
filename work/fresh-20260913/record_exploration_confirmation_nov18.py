@@ -16,5 +16,5 @@ receipt = dict(status='USER_CONFIRMED_EXPLORATION_MUSIC_AUDIBLE',
     native_log_sha256=p['native_log_sha256'], exe_sha256=p['exe_sha256'],
     limits=['User confirmation of the opened exploration room only; no claim for every visited room',
             'No acoustic recording; no original media or personal configuration exported'])
-(out / 'user-confirmation.json').write_text(json.dumps(receipt, indent=2, ensure_ascii=False)+'\n')
+(out / 'user-confirmation.json').write_text(json.dumps(receipt, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
 print(receipt['status'])
