@@ -13,3 +13,5 @@
 I controlli precedenti di Astronomica e ReelMagic non costituiscono un collaudo completo dei giochi su questo nuovo insieme di motori. Non sono inclusi file commerciali dei giochi.
 
 Aggiornamento: il motore standalone con102 effetti/cue su308 percorsi WAV supera632 casi del mixer,Windows,suite generale e vecchi ASVM29. L'integrazione aggiornata ReelMagic e la generazione di tutti127 progetti sono state nuovamente verificate. La compilazione completa dell'eseguibile combinato resta da eseguire.
+
+Parlato e musica:passano sul motore standalone la matrice5brani,volume normale170/171,pausa,due voci,file mancante,stop,cambio scena,introduzioneP503,voce gia terminata durante l'avvio musica,salvataggi e suite generale. Le due cache di volume sono transitorie e non cambiano il formato dei salvataggi. Il nuovo header richiede ricompilare tutti i file del motore. La build combinata127engine resta da compilare sul computer dell'utente.

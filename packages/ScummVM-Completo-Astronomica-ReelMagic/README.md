@@ -1,6 +1,6 @@
 # ScummVM completo: Astronomica + Return to Zork ReelMagic
 
-Pacchetto autocompilante per Windows x64. Include i sorgenti aggiornati di Astronomica (indicatore dei puzzle e102 effetti/segnali sonori miscelati con la musica compresi) e la procedura di integrazione ReelMagic. Scarica la base ScummVM e le dipendenze ufficiali e compila **tutti gli engine disponibili nella versione fissata**, compresi quelli sperimentali.
+Pacchetto autocompilante per Windows x64. Include i sorgenti aggiornati di Astronomica (indicatore dei puzzle,102 effetti/segnali sonori e musica al50% durante il parlato compresi) e la procedura di integrazione ReelMagic. Scarica la base ScummVM e le dipendenze ufficiali e compila **tutti gli engine disponibili nella versione fissata**, compresi quelli sperimentali.
 
 ## Avvio
 
@@ -13,7 +13,7 @@ Il pacchetto contiene i motori, non i dati commerciali di Astronomica o Return t
 
 ## Cartelle e registri
 
-I sorgenti e le dipendenze vengono preparati in `%LOCALAPPDATA%/ScummVM-Combined-Build-8fab4356b8b3`. I registri restano nella sottocartella `logs`; a compilazione riuscita viene copiata anche `BUILD.log` nell'output. Non vengono cancellati automaticamente sorgenti o output preesistenti.
+I sorgenti e le dipendenze vengono preparati in `%LOCALAPPDATA%/ScummVM-Combined-Build-8a877de90a6f`. I registri restano nella sottocartella `logs`; a compilazione riuscita viene copiata anche `BUILD.log` nell'output. Non vengono cancellati automaticamente sorgenti o output preesistenti.
 
 Per scegliere altre cartelle, aprire PowerShell nella cartella del pacchetto:
 
@@ -34,3 +34,5 @@ Tutti gli engine significa quelli presenti e compilabili per Windows nella revis
 Licenza GPL-3.0-or-later; vedere LICENSE e le intestazioni dei sorgenti. Credits: ScummVM, synacktic e i due progetti HGWells2001.
 
 Questa revisione usa automaticamente una nuova cartella di lavoro,per conservare le compilazioni precedenti. Lo ZIP contiene solo sorgenti; gli output di vecchie compilazioni non vengono inclusi.
+
+Il parlato mantiene la musica in avanzamento a meta del volume precedente;al termine il volume torna esattamente com'era. Le preferenze globali non cambiano. Vedere astronomica/SPEECH-MUSIC-DUCKING.md.
