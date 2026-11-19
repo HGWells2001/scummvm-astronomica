@@ -13,7 +13,7 @@ Il pacchetto contiene i motori, non i dati commerciali di Astronomica o Return t
 
 ## Cartelle e registri
 
-I sorgenti e le dipendenze vengono preparati in `%LOCALAPPDATA%/ScummVM-Combined-Build-8a877de90a6f`. I registri restano nella sottocartella `logs`; a compilazione riuscita viene copiata anche `BUILD.log` nell'output. Non vengono cancellati automaticamente sorgenti o output preesistenti.
+I sorgenti e le dipendenze vengono preparati in `%LOCALAPPDATA%/ScummVM-Combined-Build-6da592575676`. I registri restano nella sottocartella `logs`; a compilazione riuscita viene copiata anche `BUILD.log` nell'output. Non vengono cancellati automaticamente sorgenti o output preesistenti.
 
 Per scegliere altre cartelle, aprire PowerShell nella cartella del pacchetto:
 
@@ -36,3 +36,7 @@ Licenza GPL-3.0-or-later; vedere LICENSE e le intestazioni dei sorgenti. Credits
 Questa revisione usa automaticamente una nuova cartella di lavoro,per conservare le compilazioni precedenti. Lo ZIP contiene solo sorgenti; gli output di vecchie compilazioni non vengono inclusi.
 
 Il parlato mantiene la musica in avanzamento a meta del volume precedente;al termine il volume torna esattamente com'era. Le preferenze globali non cambiano. Vedere astronomica/SPEECH-MUSIC-DUCKING.md.
+
+Il parlato mantiene la musica in avanzamento a meta del volume precedente;al termine il volume torna esattamente com'era. Le preferenze globali non cambiano. Vedere astronomica/SPEECH-MUSIC-DUCKING.md.
+
+Riconoscimento automatico Italiano/Inglese tramite firma della scena iniziale. Per le voci gia aggiunte, impostare Italiano oppure aggiungere di nuovo il gioco. Vedere astronomica/ITALIAN-DETECTION.md.

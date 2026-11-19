@@ -11,11 +11,12 @@
   "all_configured_engine_projects_and_enable_defines_verified": true,
   "full_all_engine_executable_compilation_performed": false,
   "game_data_included": false,
-  "qualified_standalone_engine_commit": "8a877de90a6f1cfc3f0149b3b3d546c682bd3dfc",
+  "qualified_standalone_engine_commit": "6da592575676024011f82ae2928a744d098b2a37",
   "standalone_all_effects_full_general": "PASS",
   "original_wav_mixer_cases": 632,
   "complete_reelmagic_pair_and_127_project_regeneration": "PASS",
-  "standalone_speech_duck_full_general": "PASS",
+  "standalone_speech_duck_full_general": "PASS on unchanged parent runtime library",
   "speech_duck_matrix_music_tracks": 5,
-  "speech_duck_wait_ownership_guard_cases": 2
+  "speech_duck_wait_ownership_guard_cases": 2,
+  "italian_english_actual_detector": "PASS"
 }

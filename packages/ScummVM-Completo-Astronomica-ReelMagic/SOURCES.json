@@ -1,7 +1,7 @@
 {
   "scummvm_base": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
   "astronomica_repository": "https://github.com/HGWells2001/scummvm-astronomica",
-  "astronomica_commit": "8a877de90a6f1cfc3f0149b3b3d546c682bd3dfc",
+  "astronomica_commit": "6da592575676024011f82ae2928a744d098b2a37",
   "reelmagic_repository": "https://github.com/HGWells2001/scummvm-return-to-zork-reelmagic",
   "reelmagic_commit": "4dce7c19a5bb8a503a50438dc67a341e839564a2",
   "frame_pacing": "79d7ee1af3847c28eeee5d90d6cda0252cf5fcb2",
@@ -9,5 +9,6 @@
   "engine_selection": "--enable-all-engines",
   "proprietary_game_data_included": false,
   "distinct_original_effect_identities": 102,
-  "speech_music_duck_percent": 50
+  "speech_music_duck_percent": 50,
+  "italian_edition_detection": true
 }
