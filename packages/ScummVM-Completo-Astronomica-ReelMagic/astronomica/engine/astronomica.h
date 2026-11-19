@@ -1,0 +1,498 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Fresh reverse engineering of D:/astro, 2026-09-13.
+#ifndef ASTRONOMICA_ASTRONOMICA_H
+#define ASTRONOMICA_ASTRONOMICA_H
+#include "engines/engine.h"
+#include "common/keyboard.h"
+#include "audio/mixer.h"
+namespace Video { class QuickTimeDecoder; }
+namespace Graphics { struct WinCursorGroup; }
+namespace Audio { class SeekableAudioStream; class AudioStream; }
+#include "graphics/surface.h"
+#include "astronomica/resource.h"
+#include "astronomica/help.h"
+#include "astronomica/legacy_save.h"
+#include "astronomica/script.h"
+#include "astronomica/sprites.h"
+#include "astronomica/plot.h"
+#include "astronomica/danger.h"
+#include "astronomica/transitions.h"
+namespace Astronomica {
+class AstronomicaEngine : public Engine, public ScriptRunner::GameStateHandler, public ScriptRunner::SuccessHandler, public ScriptRunner::SoundHandler, public ScriptRunner::OrbitHandler, public ScriptRunner::RendezvousHandler, public ScriptRunner::ProbeHandler, public ScriptRunner::BallHandler, public ScriptRunner::CometHandler {
+public:
+ explicit AstronomicaEngine(OSystem *system) : Engine(system), _place(-1), _previousPlace(-1) { _nav[0] = _nav[1] = _nav[2] = 0; }
+ ~AstronomicaEngine() override;
+ Common::Error run() override;
+ bool hasFeature(EngineFeature f) const override { return f == kSupportsSavingDuringRuntime || f == kSupportsLoadingDuringRuntime; }
+ bool canSaveGameStateCurrently(Common::U32String *msg = nullptr) override;
+ bool canLoadGameStateCurrently(Common::U32String *msg = nullptr) override;
+ Common::Error saveGameStream(Common::WriteStream *stream, bool isAutosave = false) override;
+ Common::Error loadGameStream(Common::SeekableReadStream *stream) override;
+private:
+ uint _blockingSoundDepth=0; // Derived stack guard,not serialized.
+ bool playerClickIsDouble(const Common::Point &position,uint32 now);
+ Common::Point _playerClickPosition;
+ uint32 _playerClickTime=0;
+ bool _playerClickPending=false;
+ void pollPlayerInput();
+ void pauseForPlayer();
+ bool _introductionActive = false; // Derived UIguard;not serialized.
+ Graphics::WinCursorGroup *_navigationCursors[4] = {};
+ bool _navigationCursorAttempted = false;
+ int _navigationCursorIndex = -1;
+ bool ensureNavigationCursors();
+ void clearNavigationCursors();
+ void updateNavigationCursor(int x,int y);
+ bool verifyNavigationCursors();
+ LegacySaveState _legacyState;
+ bool _legacyChecked = false, _legacyAvailable = false;
+ void prepareLegacyResume();
+ bool validateLegacyDestination(const LegacySaveState &state) const;
+ bool restoreLegacyState(const LegacySaveState &state);
+ bool verifyLegacySaves();
+ HelpBook _helpBook;
+ bool _helpAttempted = false;
+ uint _helpOpened = 0;
+ bool ensureHelpBook();
+ void openHelpBook();
+ bool verifyHelp();
+ struct HoverTarget { int width = 0, height = 0; bool ready = false, entered = false; };
+ Common::Array<HoverTarget> _hoverSprites, _hoverRects;
+ struct HitGeometry { uint32 offset, size; int width, height; };
+ Common::Array<HitGeometry> _hitGeometry;
+ int _hitGeometryPlace = -1;
+ uint32 _hitGeometryDecodes = 0;
+ bool spriteImageDimensions(Common::SeekableReadStream &file, const BitmapRef &image, int &width, int &height);
+ bool verifyHitGeometry();
+ bool verifyEdgeNavigation();
+ void handleGameKey(const Common::KeyState &key);
+ bool verifyKeyboardRouting();
+ void configureHover();
+ void hoverAtTime(int x, int y, uint32 now);
+ bool verifyHover();
+ bool verifyWorldMovie29();
+ bool verifyWorldMovies(bool continuous);
+ bool verifyIntro();
+ bool verifyLogo(bool actualExit);
+ bool verifyPostCredits();
+ bool verifyEndings();
+ bool verifyAdvice();
+ void updateWorldAt(uint32 now);
+ bool verifySaves();
+ bool canSaveQuestion() const;
+ Common::Error saveQuestion(Common::WriteStream *stream);
+ Common::Error loadQuestion(Common::SeekableReadStream *stream, uint32 version);
+ bool verifyP508Saves();
+ bool verifyP505Saves();
+ bool canSaveP519() const;
+ Common::Error saveP519(Common::WriteStream *stream);
+ Common::Error loadP519(Common::SeekableReadStream *stream);
+ bool verifyP519Saves();
+ bool canSaveP524() const;
+ Common::Error saveP524(Common::WriteStream *stream);
+ Common::Error loadP524(Common::SeekableReadStream *stream);
+ bool verifyP524Saves();
+ bool canSaveP526() const;
+ Common::Error saveP526(Common::WriteStream *stream);
+ Common::Error loadP526(Common::SeekableReadStream *stream);
+ bool verifyP526Saves();
+ bool verifyPresentation();
+ bool verifyAudioChannels();
+ bool canSaveP528() const;
+ Common::Error saveP528(Common::WriteStream *stream);
+ Common::Error loadP528(Common::SeekableReadStream *stream);
+ bool verifyP528Saves();
+ bool canSaveP530() const;
+ Common::Error saveP530(Common::WriteStream *stream);
+ Common::Error loadP530(Common::SeekableReadStream *stream);
+ bool verifyP530Saves();
+ bool canSaveVariant() const;
+ Common::Error saveVariant(Common::WriteStream *stream);
+ Common::Error loadVariant(Common::SeekableReadStream *stream);
+ bool verifyVariantSaves();
+ bool verifySaveEntryHistory();
+ bool canSaveBuilder() const;
+ Common::Error saveBuilder(Common::WriteStream *stream);
+ Common::Error loadBuilder(Common::SeekableReadStream *stream);
+ bool verifyBuilderSaves();
+ bool verifyRocketBoundaries();
+ bool canSaveRendezvous() const;
+ Common::Error saveRendezvous(Common::WriteStream *stream);
+ Common::Error loadRendezvous(Common::SeekableReadStream *stream);
+ bool verifyRendezvousSaves();
+ bool _rendezvousAssetsValid=false;
+ bool canSaveProbe() const;
+ Common::Error saveProbe(Common::WriteStream *stream);
+ Common::Error loadProbe(Common::SeekableReadStream *stream);
+ bool verifyProbeSaves();
+ bool _probeAssetsValid = false;
+ bool canSaveUniverse() const;
+ Common::Error saveUniverse(Common::WriteStream *stream);
+ Common::Error loadUniverse(Common::SeekableReadStream *stream);
+ bool verifyUniverseSaves();
+ bool canSaveRocket() const;
+ Common::Error saveRocket(Common::WriteStream *stream);
+ Common::Error loadRocket(Common::SeekableReadStream *stream);
+ bool verifyRocketSaves();
+ bool canSaveP517() const;
+ Common::Error saveP517(Common::WriteStream *stream);
+ Common::Error loadP517(Common::SeekableReadStream *stream);
+ bool verifyP517Saves();
+ bool canSaveP513() const;
+ Common::Error saveP513(Common::WriteStream *stream);
+ Common::Error loadP513(Common::SeekableReadStream *stream);
+ bool verifyP513Saves();
+ bool verifyGameState();
+ GameStateContext gameStateContext() const override {
+  // Original text GAMESTAT is admitted only after complete validation.
+  // The Win16 free-memory warning has no equivalent in this port.
+  return {int32(_puzzlesCompleted),_legacyAvailable,false,3000000};
+ }
+ void pauseEngineIntern(bool pause) override;
+ bool _clockPaused = false;
+ uint32 _pauseStarted = 0, _pausedMillis = 0;
+ RocketMotion _rocket;
+ ProbeMotion _probe;
+ BallMotion _ball;
+ CometMotion _comet;
+ void onComet(int mode, uint32 now) override;
+ bool verifyP502Saves();
+ bool canSaveP502() const;
+ Common::Error saveP502(Common::WriteStream*stream);
+ Common::Error loadP502(Common::SeekableReadStream*stream);
+ bool _p502AssetsValid=false;
+ bool verifyP503Saves();
+ bool canSaveP503() const;
+ Common::Error saveP503(Common::WriteStream*stream);
+ Common::Error loadP503(Common::SeekableReadStream*stream);
+ bool _p503AssetsValid=false;
+ bool verifyP504Saves();
+ bool canSaveP504() const;
+ Common::Error saveP504(Common::WriteStream*stream);
+ Common::Error loadP504(Common::SeekableReadStream*stream);
+ bool _p504AssetsValid=false;
+ bool verifyCometPuzzles();
+ bool verifyP527Saves();
+ bool canSaveP527() const;
+ Common::Error saveP527(Common::WriteStream*stream);
+ Common::Error loadP527(Common::SeekableReadStream*stream);
+ bool _p527AssetsValid=false;
+ bool verifyP516Saves();
+ bool canSaveP516() const;
+ Common::Error saveP516(Common::WriteStream*stream);
+ Common::Error loadP516(Common::SeekableReadStream*stream);
+ void p516Extra(Common::Array<uint32>&words) const;
+ bool _p516AssetsValid=false;
+ bool verifyP516Puzzle();
+ int _jupiterWidths[8] = {}, _jupiterHeights[8] = {};
+ void cycleExplosion(int id, int x, int y, uint32 now);
+ void onBall(int mode, uint32 now) override;
+ void queueBallCommand(int opcode, int value, int frame, int delay, uint32 now);
+ bool verifyP501Saves();
+ bool canSaveP510() const;
+ Common::Error saveP510(Common::WriteStream*stream);
+ Common::Error loadP510(Common::SeekableReadStream*stream);
+ bool testP510FileSave(uint32 now);
+ bool testP510FreshFile();
+ bool canSaveP501() const;
+ Common::Error saveP501(Common::WriteStream*stream);
+ Common::Error loadP501(Common::SeekableReadStream*stream);
+ bool _p501AssetsValid=false;
+ bool verifyP501Puzzle();
+ void onProbe(int mode, int id) override;
+ bool verifyProbeBoundaries();
+ bool verifyP522Puzzle();
+ bool verifyP524Puzzle();
+ Video::QuickTimeDecoder *_movie = nullptr;
+ Graphics::Surface _movieFrame;
+ int _moviePresentedFrame = -1;
+ uint32 _universeSegmentEnd = 0;
+ bool _universeAssetsValid = false;
+ bool _moviePlaying = false;
+ int _worldMovieCursorBottom = -1;
+ int _movieX = 0, _movieY = 0;
+ uint32 _movieSegmentStart = 0;
+ uint _movieFramesDrawn = 0;
+ void closeMovie();
+ void configureMovie();
+ void updateMovie();
+ void applyPlotStep(const PlotStep &step);
+ void applyDangerStep(const DangerStep &step);
+ void runDangerEvent(int event);
+ void dangerCustom(int operation, int mode);
+ struct P523Capture {
+  const AstronomicaEngine*sourceOwner=nullptr;
+  Scene scene;ScriptRunner runner;Graphics::Surface background,frame,composed;
+  Common::Array<uint32>header,values,sprites,privateState;Common::String displayedName;bool ready=false;
+  P523Capture()=default;P523Capture(const P523Capture&)=delete;P523Capture&operator=(const P523Capture&)=delete;
+  ~P523Capture();void clearOwned();bool vacantOwners()const;
+ };
+ bool captureP523Active(P523Capture&out)const;
+ bool testP523ActiveCapture(uint row,const char*tag);
+ bool testP523NormalEntry();
+// Proposed private Engine declarations. Not a file schema or activation API.
+struct P523DetachedMedia {
+ Video::QuickTimeDecoder*decoder=nullptr;
+ Graphics::Surface current,presented,background,composed;
+ Common::Array<uint32>sourceHeader,sourceResumePlan,preparedResumePlan;
+ uint32 independentPcmSample=0;
+ bool ready=false;
+ P523DetachedMedia()=default;
+ P523DetachedMedia(const P523DetachedMedia&)=delete;
+ P523DetachedMedia&operator=(const P523DetachedMedia&)=delete;
+ P523DetachedMedia(P523DetachedMedia&&)=delete;
+ P523DetachedMedia&operator=(P523DetachedMedia&&)=delete;
+ ~P523DetachedMedia();void clearOwned();bool empty()const;
+};
+bool prepareP523DetachedMedia(const P523Capture&source,uint32 independentPcmSample,P523DetachedMedia&out);
+bool testP523DetachedPreparation(const P523Capture&source,uint row);
+bool testP523PausedResumePreparation(const P523Capture&source,uint row);
+bool prepareP523SameCaptureMedia(const P523Capture&source,const Common::Array<uint32>&plan,P523DetachedMedia&out);
+bool installP523SameCaptureMedia(const P523Capture&source,const Common::Array<uint32>&plan,P523DetachedMedia&out);
+bool testP523SameCaptureExchange(const P523Capture&source,uint row);
+struct P523TrustedPrepared {
+ const AstronomicaEngine*sourceOwner=nullptr;
+ P523DetachedMedia media;Scene scene;ScriptRunner runner;
+ Common::Array<uint32>header,mapping,values,sprites,privateState;Common::String displayedName;bool ready=false;
+ P523TrustedPrepared()=default;P523TrustedPrepared(const P523TrustedPrepared&)=delete;P523TrustedPrepared&operator=(const P523TrustedPrepared&)=delete;
+ ~P523TrustedPrepared();void clearOwned();bool empty()const;
+};
+bool prepareP523TrustedState(const P523Capture&source,const Common::Array<uint32>&mapping,P523TrustedPrepared&out);
+void applyP523CapturedScalars(const Common::Array<uint32>&header,const Common::Array<uint32>&privateState);
+bool commitP523TrustedState(P523TrustedPrepared&prepared);
+bool testP523TrustedState(const P523Capture&source,uint row);
+bool rebuildP523OriginalCapture(const P523Capture&source,P523Capture&out);
+bool testP523OriginalRebuild(const P523Capture&source,uint row);
+bool encodeP523Packet(const P523Capture&source,const Common::Array<uint32>&mapping,Common::Array<uint32>&out)const;
+bool writeP523Packet(Common::WriteStream*stream,const Common::Array<uint32>&words)const;
+bool readP523Packet(Common::SeekableReadStream*stream,Common::Array<uint32>&out)const;
+bool testP523Packet(const P523Capture&source,uint row);
+bool validateP523Packet(const Common::Array<uint32>&words)const;
+bool prepareP523Packet(const Common::Array<uint32>&words,P523TrustedPrepared&out);
+bool testP523PacketSemantics(const P523Capture&source,uint row);
+bool canSaveP523();
+Common::Error saveP523(Common::WriteStream*stream);
+Common::Error loadP523(Common::SeekableReadStream*stream);
+bool commitP523Packet(P523TrustedPrepared&prepared);
+bool captureP523Physical(const P523Capture&source,uint row);
+bool testP523FreshPhysical(PauseToken&startup);
+bool testP523RecordedPackets();
+bool testP523PacketRecipients();
+
+
+
+ bool verifyP523Puzzle();
+ bool verifyMentors();
+ int _dangerChannels[3] = {33,33,33}, _dangerButtons = 0;
+ int _dangerEvent[2] = {};
+ uint32 _dangerTime[2] = {};
+ bool verifyP510Puzzle();
+ bool verifyP510OrdinaryEntry();
+ struct P510Prepared {
+  Scene scene; ScriptRunner runner; Graphics::Surface background,displayed,composed;
+  Video::QuickTimeDecoder *decoder=nullptr; Common::Array<uint32>packet;bool ready=false;
+  P510Prepared()=default;
+  P510Prepared(const P510Prepared&)=delete;P510Prepared&operator=(const P510Prepared&)=delete;
+  P510Prepared(P510Prepared&&)=delete;P510Prepared&operator=(P510Prepared&&)=delete;
+  ~P510Prepared();void clearOwned();bool empty()const;
+ };
+ bool captureP510Packet(Common::Array<uint32>&words,uint32 now)const;
+ bool prepareP510Packet(const Common::Array<uint32>&words,P510Prepared&prepared);
+ bool testP510Combined(uint32 now);
+ bool bindP510Prepared(P510Prepared&prepared);
+ void commitP510Prepared(P510Prepared&prepared);
+ bool installP510Packet(const Common::Array<uint32>&words);
+ uint32 p510WholeLiveHash()const;
+ bool testP510LiveInstall(uint32 now);
+ uint _p510InstallStarts=0,_p510InstallCommits=0;
+
+ int _plotEvent = 0;
+ uint32 _plotTime = 0;
+ int _place;
+ int _previousPlace;
+ int32 _nav[3];
+ Graphics::Surface _screen;
+ Graphics::Surface _background;
+ Scene _scene;
+ Common::Array<Sprite> _questionSaveBaseline;
+ ScriptRunner _runner;
+ Audio::SoundHandle _soundHandle;
+ Audio::SoundHandle _effectHandle;
+ Audio::SoundHandle _musicHandle;
+ void synchronizeMusicHandle();
+ bool isFeedbackEffect(int id) const;
+ uint _soundsStarted = 0;
+ int _lastSound = -1;
+ Audio::SeekableAudioStream *openSound(int id);
+ void configureSounds();
+ void configureImages();
+ Graphics::Surface *openBackgroundImage(const Common::String &name, int place = -1);
+ bool stageBackgroundImage(const Common::String &name, int x, int y);
+ void displayBackgroundImage();
+ Graphics::Surface _pendingImage;
+ Common::String _pendingImageName, _displayedImageName;
+ uint _p519LargeImage = 0, _p519SmallImage = 0;
+ uint _p528EarthImage = 0, _p528MoonImage = 0, _p528TallMoon = 0;
+ bool _p528HistoryValid = true;
+ bool _p530HistoryValid = true;
+ bool _p513HistoryValid = true;
+ bool _p517HistoryValid = true;
+ bool _builderHistoryValid = true;
+ int _pendingImageX = 0, _pendingImageY = 0;
+ bool playSound(int id, uint32 now = 0, bool looping = false);
+ void resumeLoopAt(uint32 now);
+ int _loopSound = -1;
+ bool _loopEnabled = true;
+ uint32 _lastSoundAt = 0;
+ bool verifyAudio();
+ bool verifyAuroraPuzzle();
+ bool verifySpectrumPuzzle();
+ bool verifyMoveFrameCommand();
+ struct P525InitialPrepared {
+  Scene scene;ScriptRunner runner;Graphics::Surface background,composed;Video::QuickTimeDecoder*decoder=nullptr;
+  Common::Array<uint32>packet;CometMotion comet;BallMotion ball;int jupiterWidths[8]={},jupiterHeights[8]={};bool ready=false;
+  P525InitialPrepared()=default;P525InitialPrepared(const P525InitialPrepared&)=delete;P525InitialPrepared&operator=(const P525InitialPrepared&)=delete;
+  P525InitialPrepared(P525InitialPrepared&&)=delete;P525InitialPrepared&operator=(P525InitialPrepared&&)=delete;
+  ~P525InitialPrepared();void clearOwned();bool empty()const;
+ };
+ bool captureP525Initial(Common::Array<uint32>&out,uint32 now)const;
+ bool prepareP525Initial(const Common::Array<uint32>&w,P525InitialPrepared&out);
+ bool testP525Initial(uint32 now);
+ struct P525StoppedPrepared {
+  Scene scene;ScriptRunner runner;Graphics::Surface background,composed;Video::QuickTimeDecoder*decoder=nullptr;Audio::AudioStream*ambient=nullptr;
+  Common::Array<uint32>packet;Common::String displayedName;CometMotion comet;BallMotion ball;int jupiterWidths[8]={},jupiterHeights[8]={};bool ready=false;
+  P525StoppedPrepared()=default;P525StoppedPrepared(const P525StoppedPrepared&)=delete;P525StoppedPrepared&operator=(const P525StoppedPrepared&)=delete;
+  P525StoppedPrepared(P525StoppedPrepared&&)=delete;P525StoppedPrepared&operator=(P525StoppedPrepared&&)=delete;
+  ~P525StoppedPrepared();void clearOwned();bool empty()const;
+ };
+ bool captureP525Stopped(Common::Array<uint32>&out,uint32 now)const;
+ bool prepareP525Stopped(const Common::Array<uint32>&w,P525StoppedPrepared&out);
+ bool testP525Stopped(uint32 now);
+ bool installP525StoppedMemory(const Common::Array<uint32>&words,Audio::AudioStream**audit=nullptr);
+ bool canSaveP525();
+ Common::Error saveP525(Common::WriteStream*stream);
+ Common::Error loadP525(Common::SeekableReadStream*stream);
+ bool testP525FileWriterRefusal();
+ bool testP525FileStream(bool exhaustive);
+ bool captureP525Physical();
+ bool testP525FreshPhysical();
+ bool p525PhysicalSelectorFuture(const Common::Array<uint32>&source,Common::Array<uint32>&future,uint32&pixels,uint32&background);
+ bool testP525StoppedMemory(uint32 now);
+ bool testP525PairedSourceCapture(uint32 now);
+ bool testP525PauseMatrix(uint32 now);
+ bool testP525P1Restore(uint32 now);
+ bool testP525P117Restore(uint32 now);
+ bool testP525P519Restore(uint32 now);
+ bool testP525ActiveRecipients(uint32 now);
+ bool testP525NormalMusic();
+ bool testP525PostvideoMusic();
+ bool testP525P1MusicRecipient(uint32 now);
+ bool _p525SeekScope=false,_p525NeedsSeek=false;
+ uint _p525SeekSerial=0,_p525PlaySerial=0,_p525RequiredSeek=0,_p525AuditSeekBase=0,_p525AuditPlayBase=0,_p525RangesSeen=0;
+ uint32 _p525LastSeekOffset=0;
+ void beginP525SubmitAudit();bool endP525SubmitAudit(uint choice,uint framesBefore,const char*kind);bool testP525SeekFutures(uint32 now);
+ bool testP525RunnerPreflight(uint32 now);
+ bool verifySolarPuzzle();
+ bool verifyUniverseBoundaries();
+ bool verifyUniversePuzzle();
+ bool verifyP530Puzzle();
+ bool verifyEclipsePuzzle();
+ bool verifyP521Puzzle();
+ bool verifyP518Puzzle();
+ bool verifyP511Saves();
+ bool canSaveP511() const;
+ Common::Error saveP511(Common::WriteStream *stream);
+ Common::Error loadP511(Common::SeekableReadStream *stream);
+ bool _p511AssetsValid=false;
+ bool verifyP509Saves();
+ bool canSaveP509() const;
+ Common::Error saveP509(Common::WriteStream *stream);
+ Common::Error loadP509(Common::SeekableReadStream *stream);
+ bool _p509AssetsValid=false;
+ bool verifyP509BoundaryAudit();
+ bool verifyP521Saves();
+ bool canSaveP521() const;
+ Common::Error saveP521(Common::WriteStream *stream);
+ Common::Error loadP521(Common::SeekableReadStream *stream);
+ bool _p521AssetsValid=false;
+ bool verifyPlanetSaves();
+ bool canSavePlanets() const;
+ Common::Error savePlanets(Common::WriteStream *stream);
+ Common::Error loadPlanets(Common::SeekableReadStream *stream);
+ bool _planetAssetsValid=false;
+ bool verifyP526Puzzle();
+ bool verifyP512Puzzle();
+ bool verifyP281Gateway();
+ bool verifyP281ReturnRounds();
+ bool canSaveP281Persistent()const;
+ Common::Error saveP281Persistent(Common::WriteStream*stream);
+ Common::Error loadP281Persistent(Common::SeekableReadStream*stream);
+ bool verifyP281PersistentBoundary(uint route,uint round);
+ bool verifyP281PersistentFile();
+ struct P512Prepared {
+  Scene scene;ScriptRunner runner;Graphics::Surface background,displayed,composed;
+  Video::QuickTimeDecoder*decoder=nullptr;Audio::AudioStream*ambient=nullptr;Common::Array<uint32>packet;bool ready=false;
+  P512Prepared()=default;P512Prepared(const P512Prepared&)=delete;P512Prepared&operator=(const P512Prepared&)=delete;
+  P512Prepared(P512Prepared&&)=delete;P512Prepared&operator=(P512Prepared&&)=delete;
+  Common::String displayedName;
+  ~P512Prepared();void clearOwned();bool empty()const;
+ };
+ bool p512OriginalAssets()const;
+ bool captureP512Stopped(Common::Array<uint32>&out,uint32 now)const;
+ bool prepareP512Stopped(const Common::Array<uint32>&words,P512Prepared&out);
+ bool testP512Stopped(uint32 now);
+ void commitP512Prepared(P512Prepared&prepared,Audio::AudioStream**audit=nullptr);
+ bool installP512Memory(const Common::Array<uint32>&words,Audio::AudioStream**audit=nullptr);
+ bool verifyP512OrdinaryAudio();
+ bool verifyP512NormalRoutes();
+ bool testP512AnswerContinuation();
+ bool testP512StoppedClockDomain();
+ bool testP512FileSave();
+ bool testP512FreshFile();
+ bool canSaveP512()const;
+ Common::Error saveP512(Common::WriteStream*stream);
+ Common::Error loadP512(Common::SeekableReadStream*stream);
+ bool testP512MemoryInstall(uint32 now);
+ bool testP512PauseMatrix(uint32 now);
+ uint _p512MemoryCommits=0,_p512OriginalSeekSerial=0,_p512RequiredSeekSerial=0,_p512OriginalPlays=0,_p512PlayWithoutRequiredSeek=0;
+ bool _p512NeedsOriginalSeek=false;
+
+
+
+ bool verifyBuilderPuzzle();
+ bool verifyP514Puzzle();
+ bool verifyP513Puzzle();
+ bool verifyP507Wheel();
+ bool onRendezvous(int mode, int speed, uint32 now) override;
+ bool onOrbitAnswer(int scenario, int choice, uint32 now) override;
+ bool verifyVariantPuzzles();
+ bool verifyContinuousMovies();
+ bool isBlockingSound(int id) const override;
+ uint32 onBlockingSound(int id, uint32 now) override;
+ uint32 _lastBlockingSoundEnd = 0;
+ uint32 onPuzzleSuccess(uint32 now) override;
+ uint32 _puzzlesCompleted = 0, _lastSuccessEnd = 0;
+ int spriteAt(int x, int y);
+ void clickAt(int x, int y);
+ void clickAtTime(int x, int y, uint32 now);
+ uint32 scriptClock() const;
+ void runScripts();
+ void runScriptsAt(uint32 now);
+ void applyScriptActions(uint32 now);
+ void animateSpritesAt(uint32 now);
+ void queueEntryScripts();
+ void presentScene();
+ void redrawSprites();
+ bool demoVisibility(bool visible);
+ bool demoMovement(int x);
+ bool demoOffset(int spriteId = 8);
+ bool demoFrame(int frame);
+ uint renderStaticSprites(Common::SeekableReadStream &stream, const Scene &scene, Graphics::Surface &target);
+ bool changePlace(int place);
+ bool verifyTransitions();
+ bool loadPlace(int place, bool keepSound = false, bool restoring = false);
+ bool readImage(Common::SeekableReadStream &stream, Graphics::Surface &target, bool control);
+ void stepPlace(int direction);
+};
+}
+#endif

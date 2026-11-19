@@ -1,0 +1,14 @@
+{
+  "status": "COMBINED_PACKAGE_PREPARATION_PASS",
+  "clean_bootstrap": true,
+  "common_base": "2085bcb368c19bc90f0190efcd56b9d58cd7fb5a",
+  "reelmagic_all_stages_and_final_checks": "PASS",
+  "astronomica_exact_engine_core": "PASS",
+  "idempotent_install": true,
+  "incompatible_core_rejected_without_target_changes": true,
+  "create_project_compiled": true,
+  "generated_top_level_engines": 127,
+  "all_configured_engine_projects_and_enable_defines_verified": true,
+  "full_all_engine_executable_compilation_performed": false,
+  "game_data_included": false
+}

@@ -1,0 +1,2 @@
+# Experimental resource explorer, not a playable engine.
+add_engine astronomica "Astronomica (experimental resource explorer)" no "" "" "" ""
