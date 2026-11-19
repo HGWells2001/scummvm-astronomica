@@ -1,3 +1,9 @@
+# Current update: speech over continuous Music
+
+Music continues at half its previous channel volume during speech,then returns to that exact level. Global preferences and save packet layouts are preserved. See outputs/astronomica-cleanroom/SPEECH-MUSIC-DUCKING.md.
+
+---
+
 # Current update: all original WAV effects keep Music
 
 102 exact effect identities across308 original file paths now overlap continuous Music;voices remain foreground. See outputs/astronomica-cleanroom/ALL-SOUND-EFFECTS.md for validation and classification limits.

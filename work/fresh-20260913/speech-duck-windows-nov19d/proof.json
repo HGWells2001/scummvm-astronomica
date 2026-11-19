@@ -1,0 +1,12 @@
+{
+  "status": "SPEECH_DUCK_NATIVE_PASS",
+  "candidate_exe_sha256": "5d495ecc09629cc7cb64aab5da80daa5feedb855ce5ca08eae8aa282058179a5",
+  "matrix_tracks": 5,
+  "normal_channel_volume_preserved": true,
+  "half_music_during_voice": true,
+  "global_preferences_unchanged": true,
+  "natural_completion_and_stop_and_replacement": true,
+  "pause_freezes_both_clocks": true,
+  "scene_transitions_and_intro_and_settled_save_load": true,
+  "native_exited_naturally": true
+}

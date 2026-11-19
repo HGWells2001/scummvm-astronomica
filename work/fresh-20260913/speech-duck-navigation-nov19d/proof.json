@@ -1,0 +1,13 @@
+{
+  "status": "PROGRESS_INDICATOR_NAVIGATION_REGRESSION_PASS",
+  "at": "2026-11-19T19:31:57.618738+00:00",
+  "candidate_exe_sha256": "5d495ecc09629cc7cb64aab5da80daa5feedb855ce5ca08eae8aa282058179a5",
+  "native_log_sha256": "260814c49df0a0825d612a310cc4d31db4a1aea5096005021b1d88c5e7507a70",
+  "scenes": 306,
+  "routes": 760,
+  "native_exited_naturally": true,
+  "limits": [
+    "Existing arrow/keypad,input-lock,modifier tests while the new presentation layer executes",
+    "Controlled source loads,not proof of every route natural reachability"
+  ]
+}

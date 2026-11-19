@@ -2314,7 +2314,7 @@ void AstronomicaEngine::pauseEngineIntern(bool pause) {
  }
 }
 bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
- if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==_musicHandle))){if(msg)*msg=Common::U32String("Wait until the effect finishes.");return false;}
+ if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!(_soundHandle==_musicHandle))){if(msg)*msg=Common::U32String("Wait until the effect finishes.");return false;}
  if(_blockingSoundDepth){if(msg)*msg=Common::U32String("Wait until the voice finishes.");return false;}
  if(_introductionActive){if(msg)*msg=Common::U32String("Wait until the introduction finishes.");return false;}
  const bool enabled = canSaveP281Persistent() || canSaveP523() || canSaveP525() || canSaveP512() || canSaveP510() || canSaveP501() || canSaveP504() || canSaveP503() || canSaveP502() || canSaveP527() || canSaveP516() || canSaveP511() || canSaveP509() || canSaveP521() || canSavePlanets() || canSaveRendezvous() || canSaveProbe() || canSaveUniverse() || canSaveRocket() || canSaveQuestion() || canSaveBuilder() || canSaveP517() || canSaveP513() || canSaveP519() || canSaveP524() || canSaveP526() || canSaveP528() || canSaveP530() || canSaveVariant() || (_place > 1 && _scene.mode == 1 && !_runner.variantRound() && !_runner.clicksBlocked() && !_runner.pendingCount());
@@ -2322,7 +2322,7 @@ bool AstronomicaEngine::canSaveGameStateCurrently(Common::U32String *msg) {
  return enabled;
 }
 bool AstronomicaEngine::canLoadGameStateCurrently(Common::U32String *msg) {
- if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==_musicHandle))){if(msg)*msg=Common::U32String("Wait until the effect finishes.");return false;}
+ if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!(_soundHandle==_musicHandle))){if(msg)*msg=Common::U32String("Wait until the effect finishes.");return false;}
  if(_blockingSoundDepth){if(msg)*msg=Common::U32String("Wait until the voice finishes.");return false;}
  if(_introductionActive){if(msg)*msg=Common::U32String("Wait until the introduction finishes.");return false;}
  const bool enabled = _screen.w && !_runner.clicksBlocked();
@@ -2330,7 +2330,7 @@ bool AstronomicaEngine::canLoadGameStateCurrently(Common::U32String *msg) {
  return enabled;
 }
 Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, bool) {
- if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==_musicHandle)))return Common::kReadingFailed;
+ if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!(_soundHandle==_musicHandle)))return Common::kReadingFailed;
  if(_blockingSoundDepth)return Common::kReadingFailed;
  if(_introductionActive)return Common::kReadingFailed;
  if (_place == 523) return saveP523(stream);
@@ -2377,7 +2377,7 @@ Common::Error AstronomicaEngine::saveGameStream(Common::WriteStream *stream, boo
  return stream->err() ? Common::kWritingFailed : Common::kNoError;
 }
 Common::Error AstronomicaEngine::loadGameStream(Common::SeekableReadStream *stream) {
- if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==_musicHandle)))return Common::kReadingFailed;
+ if(_mixer->isSoundHandleActive(_effectHandle)||(_mixer->isSoundHandleActive(_musicHandle)&&!(_soundHandle==_musicHandle)))return Common::kReadingFailed;
  if(_blockingSoundDepth)return Common::kReadingFailed;
  if(_introductionActive)return Common::kReadingFailed;
  if (!canLoadGameStateCurrently() || stream->size()-stream->pos() < 420) return Common::kReadingFailed;
@@ -2965,11 +2965,14 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
    // The original skips the intro on return from P408 (help).
    // With movies, 9:1c51-1c8f calls sndPlaySound on the same direct
    // intro file with flags 0 (synchronous). It does not skip the voice.
-   if (_scene.introSound && _previousPlace != 408 && _runner.variantRound() <= 1 && playSound(_scene.introSoundId, scriptClock())) {
+   const bool playIntroduction=_scene.introSound&&_previousPlace!=408&&_runner.variantRound()<=1;
+   _introductionActive=playIntroduction;
+   if (playIntroduction && playSound(_scene.introSoundId, scriptClock())) {
     debug("Astronomica P%d introduction: S%d.WAV", _place, _scene.introSoundId);
     _introductionActive=true;
+    const Audio::SoundHandle introVoice=_soundHandle;
     const Common::Point introMouse=_eventMan->getMousePos();updateNavigationCursor(introMouse.x,introMouse.y);
-    while (_mixer->isSoundHandleActive(_soundHandle) && !shouldQuit()) {
+    while (_mixer->isSoundHandleActive(introVoice) && !shouldQuit()) {
      Common::Event event;
      while (_system->getEventManager()->pollEvent(event)) {
       if (event.type == Common::EVENT_QUIT) quitGame();
@@ -2979,12 +2982,14 @@ bool AstronomicaEngine::loadPlace(int place, bool keepSound, bool restoring) {
      _system->updateScreen();
      _system->delayMillis(5);
     }
-    _introductionActive=false;
+    _introductionActive=false;synchronizeMusicHandle();
    }
+   _introductionActive=false;synchronizeMusicHandle();
    _lastSoundAt = 0; // Original resets this after scene loading.
   }
   if (!shouldQuit()) queueEntryScripts();
  }
+ synchronizeMusicHandle();
  return true;
 }
 Audio::SeekableAudioStream *AstronomicaEngine::openSound(int id) {
@@ -3238,38 +3243,61 @@ bool AstronomicaEngine::isFeedbackEffect(int id) const {
  return false;
 }
 void AstronomicaEngine::synchronizeMusicHandle() {
- if(!_mixer->isSoundHandleActive(_soundHandle)&&_mixer->isSoundHandleActive(_musicHandle)){
+ const bool music=_mixer->isSoundHandleActive(_musicHandle);
+ const bool foreground=_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==_musicHandle);
+ const bool speech=foreground&&!(_soundHandle==_effectHandle);
+ if(_unduckedMusicVolume>=0&&(!music||!(_duckedMusicHandle==_musicHandle))){
+  if(_mixer->isSoundHandleActive(_duckedMusicHandle))_mixer->setChannelVolume(_duckedMusicHandle,byte(_unduckedMusicVolume));
+  _unduckedMusicVolume=-1;
+ }
+ if(music){
+  if(speech){
+   if(_unduckedMusicVolume<0){_duckedMusicHandle=_musicHandle;_unduckedMusicVolume=_mixer->getChannelVolume(_musicHandle);}
+   _mixer->setChannelVolume(_musicHandle,byte((_unduckedMusicVolume+1)/2));
+  }else if(_unduckedMusicVolume>=0){
+   _mixer->setChannelVolume(_musicHandle,byte(_unduckedMusicVolume));_unduckedMusicVolume=-1;
+  }
+ }
+ // Blocking/intro loops wait on _soundHandle: never replace their completed
+ // voice handle with the endless Music handle while that wait is on stack.
+ if(!foreground&&music&&!_blockingSoundDepth&&!_introductionActive){
   _soundHandle=_musicHandle;_lastSound=_loopSound;
  }
 }
 bool AstronomicaEngine::playSound(int id, uint32 now, bool looping) {
  Audio::SeekableAudioStream *stream=openSound(id);if(!stream)return false;
+ const bool keepForeground=looping&&!(_soundHandle==_musicHandle)&&(_mixer->isSoundHandleActive(_soundHandle)||_blockingSoundDepth||_introductionActive);
  if(looping){
-  _mixer->stopHandle(_soundHandle);_mixer->stopHandle(_musicHandle);
+  if(!keepForeground)_mixer->stopHandle(_soundHandle);_mixer->stopHandle(_musicHandle);
   Audio::AudioStream*loop=Audio::makeLoopingAudioStream(stream,0);
   if(_clockPaused&&id>=900){
    if(!Video::playPausedAudioStream(_mixer,Audio::Mixer::kMusicSoundType,&_musicHandle,loop,Audio::Mixer::kMaxChannelVolume,0,DisposeAfterUse::YES,0))return false;
   }else _mixer->playStream(Audio::Mixer::kMusicSoundType,&_musicHandle,loop);
-  _soundHandle=_musicHandle;
+  if(!keepForeground)_soundHandle=_musicHandle;
  }else{
   const bool feedback=isFeedbackEffect(id);
-  if(!feedback)_mixer->stopHandle(_musicHandle);
   if(!(_soundHandle==_musicHandle))_mixer->stopHandle(_soundHandle);
   _mixer->playStream(Audio::Mixer::kSFXSoundType,&_soundHandle,stream);
   if(feedback)_effectHandle=_soundHandle;
   _lastSoundAt=now;
  }
- _lastSound=id;++_soundsStarted;return true;
+ if(!keepForeground)_lastSound=id;++_soundsStarted;
+ synchronizeMusicHandle();
+ // Start the selected ambience under an initial voice/effect too. P501's
+ // default S0 is its introduction until an original opcode27 selects Music.
+ if(!looping&&!_mixer->isSoundHandleActive(_musicHandle)&&!_moviePlaying&&_loopEnabled&&_loopSound>=0&&_loopSound!=id&&!(_place==501&&_loopSound==0))
+  playSound(_loopSound,now,true);
+ return true;
 }
 void AstronomicaEngine::resumeLoopAt(uint32 now) {
  synchronizeMusicHandle();
  if(_mixer->isSoundHandleActive(_musicHandle))return;
- // _playLoop 9:3c29 probes with SND_NOSTOP. A playing foreground sound
- // must finish before the loop can resume. Puzzle scenes also wait >5 s.
- if (_moviePlaying || _loopSound < 0 || !_loopEnabled || _mixer->isSoundHandleActive(_soundHandle)) return;
- if (_place >= 500 && _place <= 550 && uint32(now - _lastSoundAt) <= 5000) return;
- if (!playSound(_loopSound, now, true)) _loopSound = -1;
- else debug("Astronomica P%d loop: S%d.WAV", _place, _loopSound);
+ if(_moviePlaying||_loopSound<0||!_loopEnabled)return;
+ const bool foreground=_mixer->isSoundHandleActive(_soundHandle);
+ if(foreground&&(_loopSound==_lastSound||(_place==501&&_loopSound==0)))return;
+ if(!foreground&&_place>=500&&_place<=550&&uint32(now-_lastSoundAt)<=5000)return;
+ if(!playSound(_loopSound,now,true))_loopSound=-1;
+ else debug("Astronomica P%d loop: S%d.WAV",_place,_loopSound);
 }
 bool AstronomicaEngine::isBlockingSound(int id) const {
  // _playSound 9:3bb5-3be9 selects synchronous flags for these local files.
@@ -3285,7 +3313,8 @@ uint32 AstronomicaEngine::onBlockingSound(int id, uint32 now) {
  if (pauseMovie) _movie->pauseVideo(true);
  const uint32 started = _system->getMillis(),pausedBefore=_pausedMillis;
  if (playSound(id,now)) {
-  while (_mixer->isSoundHandleActive(_soundHandle) && !shouldQuit()) {
+  const Audio::SoundHandle blockingVoice=_soundHandle;
+  while (_mixer->isSoundHandleActive(blockingVoice) && !shouldQuit()) {
    Common::Event event;
    while (_system->getEventManager()->pollEvent(event)) {
     if (event.type == Common::EVENT_QUIT) quitGame();
@@ -3296,6 +3325,7 @@ uint32 AstronomicaEngine::onBlockingSound(int id, uint32 now) {
    _system->delayMillis(5);
   }
  }
+ synchronizeMusicHandle();
  if (pauseMovie && _movie) _movie->pauseVideo(false);
  _lastBlockingSoundEnd = now + uint32(_system->getMillis()-started)-uint32(_pausedMillis-pausedBefore);
  return _lastBlockingSoundEnd;
@@ -3796,8 +3826,10 @@ void AstronomicaEngine::applyScriptActions(uint32 now) {
    continue;
   }
   if (action.opcode == 10) {
-   // _stop_sounds ignores its argument and calls sndPlaySound(NULL,1).
-   _mixer->stopHandle(_soundHandle); _mixer->stopHandle(_effectHandle); _mixer->stopHandle(_musicHandle);
+   // Stop the foreground voice/effect. Ambience has its own explicit loop,
+   // scene and movie controls, and must not restart after a voice is stopped.
+   if(!(_soundHandle==_musicHandle))_mixer->stopHandle(_soundHandle);
+   _mixer->stopHandle(_effectHandle);synchronizeMusicHandle();
    continue;
   }
   if (action.opcode == 9) {
@@ -6492,7 +6524,7 @@ bool AstronomicaEngine::verifyAudioChannels() {
    _mixer->isSoundTypeMuted(music) && _mixer->getVolumeForSoundType(music) == 0;
   loops += loopOK;
   const bool foregroundOK = playSound(1,scriptClock()) && _mixer->isSoundHandleActive(_soundHandle) &&
-   _mixer->hasActiveChannelOfType(effects) && !_mixer->hasActiveChannelOfType(music) &&
+   _mixer->hasActiveChannelOfType(effects) && _mixer->hasActiveChannelOfType(music) && _mixer->getChannelVolume(_musicHandle)==128 &&
    !_mixer->isSoundTypeMuted(effects) && _mixer->getVolumeForSoundType(effects) == Audio::Mixer::kMaxMixerVolume &&
    _mixer->isSoundTypeMuted(music) && _mixer->getVolumeForSoundType(music) == 0;
   foregrounds += foregroundOK; ok = loopOK && foregroundOK && ok;
@@ -6504,7 +6536,7 @@ bool AstronomicaEngine::verifyAudioChannels() {
  const bool restored = _mixer->getVolumeForSoundType(music) == oldMusicVolume && _mixer->isSoundTypeMuted(music) == oldMusicMute &&
   _mixer->getVolumeForSoundType(effects) == oldEffectsVolume && _mixer->isSoundTypeMuted(effects) == oldEffectsMute;
  ok = ok && loops == 6 && foregrounds == 6 && restored;
- debug("Astronomica audio channel verification: %s (%u muted music loops, %u foreground replacements, controls %s)",ok ? "PASS" : "FAIL",loops,foregrounds,restored ? "restored" : "FAIL");
+ debug("Astronomica audio channel verification: %s (%u muted music loops, %u speech overlaps, controls %s)",ok ? "PASS" : "FAIL",loops,foregrounds,restored ? "restored" : "FAIL");
  _runner.resetGlobals(); return loadPlace(103) && ok;
 }
 bool AstronomicaEngine::verifyPresentation() {
@@ -13967,10 +13999,10 @@ Common::Error AstronomicaEngine::run() {
   Common::MemoryReadStream input(saved.getData(),saved.size());const bool restored=wrote&&loadGameStream(&input).getCode()==Common::kNoError;resumeLoopAt(scriptClock());
   const bool restoredMusic=restored&&_place==103&&_loopSound==902&&_mixer->isSoundHandleActive(_musicHandle);
   debug("Exploration music ASVM2 restore: wrote%d restored%d music%d",int(wrote),int(restored),int(restoredMusic));
-  const Audio::SoundHandle music=_musicHandle;const bool started=playSound(911,scriptClock());const bool exclusive=started&&!_mixer->isSoundHandleActive(music);
+  const Audio::SoundHandle music=_musicHandle;const bool started=playSound(911,scriptClock());const bool ducked=started&&_musicHandle==music&&_mixer->isSoundHandleActive(music)&&_mixer->getChannelVolume(music)==128;
   while(_mixer->isSoundHandleActive(_soundHandle)&&!shouldQuit()){pollPlayerInput();_system->delayMillis(10);}
   resumeLoopAt(scriptClock());const bool resumed=_loopSound==902&&_mixer->isSoundHandleActive(_musicHandle);
-  debug("Exploration music narration: exclusive%d resumed%d",int(exclusive),int(resumed));
+  debug("Exploration music narration: ducked%d resumed%d",int(ducked),int(resumed));
 
   _runner.defineValue(0,60,1);bool pauseLoaded=loadPlace(117);resumeLoopAt(scriptClock());
   PauseToken paused=pauseEngine();Common::MemoryReadStream pausedInput(saved.getData(),saved.size());
@@ -14025,8 +14057,8 @@ Common::Error AstronomicaEngine::run() {
   int32 setting=-1;_runner.getValue(1,1,setting);
   const bool music=_musicHandle==originalMusic&&_mixer->isSoundHandleActive(_musicHandle);
   debug("P504 speed music observation: loaded%d started%d hit%d sound%d setting%d effect%d music%d starts%u idle%d blocked%d",int(loaded),int(started),int(hit),int(heard),int(setting),int(effect),int(music),_soundsStarted-before,int(_runner.scriptsIdle()),int(_runner.clicksBlocked()));
-  playSound(911,scriptClock());const bool voice=!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle);
-  debug("P504 speed narration foreground: %d",int(voice));_background.free();_screen.free();quitGame();return Common::kNoError;
+  playSound(911,scriptClock());const bool voice=_mixer->isSoundHandleActive(_musicHandle)&&_mixer->getChannelVolume(_musicHandle)==128&&_mixer->isSoundHandleActive(_soundHandle);
+  debug("P504 speed narration ducked: %d",int(voice));_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
 
@@ -14043,7 +14075,7 @@ Common::Error AstronomicaEngine::run() {
    const bool correct=loaded&&started&&hit&&heard&&setting==(index==6?6:4)&&effect&&music&&_soundsStarted==before+1&&!_runner.clicksBlocked();matches+=correct;
    debug("P513 numeric music observation: sprite%d loaded%d started%d hit%d sound%d setting%d effect%d music%d starts%u blocked%d",index+1,int(loaded),int(started),int(hit),int(heard),int(setting),int(effect),int(music),_soundsStarted-before,int(_runner.clicksBlocked()));
   }
-  playSound(911,scriptClock());debug("P513 numeric narration foreground: %d",int(!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle)));
+  playSound(911,scriptClock());debug("P513 numeric narration ducked: %d",int(_mixer->isSoundHandleActive(_musicHandle)&&_mixer->getChannelVolume(_musicHandle)==128&&_mixer->isSoundHandleActive(_soundHandle)));
   debug("P513 numeric music complete: matches%u total2",matches);_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
@@ -14060,15 +14092,76 @@ Common::Error AstronomicaEngine::run() {
    _system->delayMillis(25);const uint32 elapsed=_mixer->getSoundElapsedTime(owner);const uint starts=_soundsStarted;
    const bool played=playSound(id,scriptClock());
    const bool overlap=_musicHandle==owner&&_mixer->isSoundHandleActive(owner)&&_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==owner);
-   const bool exclusive=!_mixer->isSoundHandleActive(owner)&&_mixer->isSoundHandleActive(_soundHandle);
+   const bool ducked=_musicHandle==owner&&_mixer->isSoundHandleActive(owner)&&_mixer->getChannelVolume(owner)==128&&_mixer->isSoundHandleActive(_soundHandle);
    _system->delayMillis(20);resumeLoopAt(scriptClock());
-   const bool continuity=!effect||(_musicHandle==owner&&_mixer->isSoundHandleActive(owner)&&_mixer->getSoundElapsedTime(owner)>=elapsed);
-   const bool correct=loaded&&role&&ambient&&played&&(effect?overlap:exclusive)&&continuity&&_soundsStarted==starts+1;
+   const bool continuity=_musicHandle==owner&&_mixer->isSoundHandleActive(owner)&&_mixer->getSoundElapsedTime(owner)>=elapsed;
+   const bool correct=loaded&&role&&ambient&&played&&(effect?(overlap&&_mixer->getChannelVolume(owner)==255):ducked)&&continuity&&_soundsStarted==starts+1;
    if(correct)++passed;if(effect)++effects;else ++foreground;
-   debug("Audio catalogue row: %u P%d S%d effect%d role%d overlap%d exclusive%d continuous%d result%d",i,place,id,int(effect),int(role),int(overlap),int(exclusive),int(continuity),int(correct));
+   debug("Audio catalogue row: %u P%d S%d effect%d role%d overlap%d ducked%d continuous%d result%d",i,place,id,int(effect),int(role),int(overlap),int(ducked),int(continuity),int(correct));
   }
   debug("Audio catalogue complete: %s (passed%u,total%u,effects%u,foreground%u)",passed==count?"PASS":"FAIL",passed,count,effects,foreground);
   _background.free();_screen.free();quitGame();return Common::kNoError;
+ }
+
+ if(ConfMan.hasKey("astronomica_verify_speech_duck")&&ConfMan.getBool("astronomica_verify_speech_duck")){
+  ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",false);
+  const int oldMusic=_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType),oldSfx=_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType);
+  _mixer->setVolumeForSoundType(Audio::Mixer::kMusicSoundType,77);_mixer->setVolumeForSoundType(Audio::Mixer::kSFXSoundType,91);
+  bool all=true;uint passed=0;
+  for(int song:{900,901,902,903,908}){
+   bool ok=loadPlace(103,false,true);_loopSound=song;_loopEnabled=true;ok=playSound(song,scriptClock(),true)&&ok;
+   const Audio::SoundHandle music=_musicHandle;_mixer->setChannelVolume(music,170);_system->delayMillis(140);const uint32 elapsed=_mixer->getSoundElapsedTime(music);
+   ok=playSound(920,scriptClock())&&ok;const Audio::SoundHandle voice=_soundHandle;
+   ok=ok&&_musicHandle==music&&_mixer->isSoundHandleActive(music)&&_mixer->isSoundHandleActive(voice)&&_mixer->getChannelVolume(music)==85&&_unduckedMusicVolume==170&&!canSaveGameStateCurrently()&&!canLoadGameStateCurrently();
+   _system->delayMillis(150);synchronizeMusicHandle();ok=ok&&_mixer->getSoundElapsedTime(music)>elapsed;
+   PauseToken pause=pauseEngine();const uint32 mp=_mixer->getSoundElapsedTime(music),vp=_mixer->getSoundElapsedTime(voice);_system->delayMillis(100);
+   ok=ok&&_clockPaused&&_mixer->getSoundElapsedTime(music)==mp&&_mixer->getSoundElapsedTime(voice)==vp;pause.clear();_system->delayMillis(140);
+   ok=ok&&!_clockPaused&&_mixer->getSoundElapsedTime(music)>mp&&_mixer->getSoundElapsedTime(voice)>vp&&_mixer->getChannelVolume(music)==85;
+   ok=playSound(921,scriptClock())&&ok;ok=ok&&_musicHandle==music&&_unduckedMusicVolume==170&&_mixer->getChannelVolume(music)==85;
+   const Audio::SoundHandle replacement=_soundHandle;const uint starts=_soundsStarted;
+   ok=!playSound(999,scriptClock())&&ok;ok=ok&&_soundHandle==replacement&&_musicHandle==music&&_soundsStarted==starts&&_mixer->getChannelVolume(music)==85;
+   ok=playSound(905,scriptClock())&&ok;ok=ok&&_musicHandle==music&&_mixer->isSoundHandleActive(music)&&_mixer->getChannelVolume(music)==170&&_unduckedMusicVolume==-1&&_mixer->isSoundHandleActive(_effectHandle);
+   ok=ok&&_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)==77&&_mixer->getVolumeForSoundType(Audio::Mixer::kSFXSoundType)==91;
+   if(ok)++passed;all=ok&&all;debug("Speech duck matrix: song%d result%d",song,int(ok));
+  }
+  bool natural=loadPlace(103,false,true);_loopSound=902;_loopEnabled=true;natural=playSound(902,scriptClock(),true)&&natural;const Audio::SoundHandle naturalMusic=_musicHandle;_mixer->setChannelVolume(naturalMusic,171);natural=playSound(920,scriptClock())&&natural;
+  const Audio::SoundHandle naturalVoice=_soundHandle;const uint naturalStarts=_soundsStarted;const uint32 begin=_system->getMillis();
+  while(_mixer->isSoundHandleActive(naturalVoice)&&_system->getMillis()-begin<5000){resumeLoopAt(scriptClock());_system->delayMillis(5);}
+  resumeLoopAt(scriptClock());natural=natural&&!_mixer->isSoundHandleActive(naturalVoice)&&_musicHandle==naturalMusic&&_soundHandle==naturalMusic&&_mixer->isSoundHandleActive(naturalMusic)&&_mixer->getChannelVolume(naturalMusic)==171&&_unduckedMusicVolume==-1&&_soundsStarted==naturalStarts;
+  all=natural&&all;debug("Speech duck natural completion: %d",int(natural));
+  bool stop=playSound(921,scriptClock());Script script;Command command;command.opcode=10;command.args.push_back(0);script.push_back(command);stop=_runner.enqueue(script,scriptClock())&&stop;runScripts();
+  stop=stop&&_musicHandle==naturalMusic&&_mixer->isSoundHandleActive(naturalMusic)&&_mixer->getChannelVolume(naturalMusic)==171&&_soundHandle==naturalMusic;all=stop&&all;debug("Speech duck stop command: %d",int(stop));
+  ConfMan.setBool("astronomica_entry_scripts",true);_runner.defineValue(0,60,0);
+  bool scene=playSound(921,scriptClock())&&loadPlace(101);scene=scene&&_musicHandle==naturalMusic&&_mixer->isSoundHandleActive(naturalMusic)&&_mixer->getChannelVolume(naturalMusic)==171&&_unduckedMusicVolume==-1;
+  scene=scene&&playSound(921,scriptClock())&&loadPlace(219);resumeLoopAt(scriptClock());scene=scene&&_mixer->isSoundHandleActive(_musicHandle)&&!(_musicHandle==naturalMusic)&&_mixer->getChannelVolume(_musicHandle)==255&&_unduckedMusicVolume==-1;
+  all=scene&&all;debug("Speech duck scene transitions: %d",int(scene));ConfMan.setBool("astronomica_entry_scripts",false);
+  bool blocked=loadPlace(103,false,true);_loopSound=902;_loopEnabled=true;blocked=playSound(902,scriptClock(),true)&&blocked;const Audio::SoundHandle blockingMusic=_musicHandle;_mixer->setChannelVolume(blockingMusic,150);const uint32 clock=scriptClock();onBlockingSound(912,clock);resumeLoopAt(scriptClock());
+  blocked=blocked&&_blockingSoundDepth==0&&_musicHandle==blockingMusic&&_mixer->isSoundHandleActive(blockingMusic)&&_mixer->getChannelVolume(blockingMusic)==150&&_soundHandle==blockingMusic;
+  all=blocked&&all;debug("Speech duck blocking voice: %d",int(blocked));
+  bool bootstrap=loadPlace(103,false,true);_mixer->stopHandle(_musicHandle);_mixer->stopHandle(_soundHandle);_loopSound=902;_loopEnabled=true;const uint bootStarts=_soundsStarted;
+  bootstrap=playSound(920,scriptClock())&&bootstrap;bootstrap=bootstrap&&_mixer->isSoundHandleActive(_soundHandle)&&_mixer->isSoundHandleActive(_musicHandle)&&!(_musicHandle==_soundHandle)&&_lastSound==920&&_mixer->getChannelVolume(_musicHandle)==128&&_soundsStarted==bootStarts+2;
+  all=bootstrap&&all;debug("Speech duck first voice bootstrap: %d",int(bootstrap));
+  loadPlace(103,false,true);ConfMan.setBool("astronomica_entry_scripts",true);const uint introStarts=_soundsStarted;bool intro=loadPlace(503);ConfMan.setBool("astronomica_entry_scripts",false);
+  intro=intro&&!_introductionActive&&_mixer->isSoundHandleActive(_musicHandle)&&_soundHandle==_musicHandle&&_mixer->getSoundElapsedTime(_musicHandle)>5000&&_mixer->getChannelVolume(_musicHandle)==255&&_unduckedMusicVolume==-1&&_soundsStarted==introStarts+2;
+  all=intro&&all;debug("Speech duck real introduction: %d",int(intro));
+  ConfMan.setBool("astronomica_entry_scripts",true);_runner.resetGlobals();loadPlace(103);_loopSound=902;_loopEnabled=true;resumeLoopAt(scriptClock());Common::MemoryWriteStreamDynamic saved(DisposeAfterUse::YES);const bool wrote=saveGameStream(&saved,false).getCode()==Common::kNoError;
+  Common::MemoryReadStream restored(saved.getData(),saved.size());const bool loaded=wrote&&loadGameStream(&restored).getCode()==Common::kNoError;
+  debug("Speech duck payload detail: wrote%d loaded%d bytes%u canSave%d canLoad%d pending%u loop%d music%d sound%d duck%d volume%d",int(wrote),int(loaded),uint(saved.size()),int(canSaveGameStateCurrently()),int(canLoadGameStateCurrently()),_runner.pendingCount(),_loopSound,int(_mixer->isSoundHandleActive(_musicHandle)),int(_mixer->isSoundHandleActive(_soundHandle)),_unduckedMusicVolume,_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType));
+  const bool payload=loaded&&_mixer->isSoundHandleActive(_musicHandle)&&_unduckedMusicVolume==-1&&_mixer->getVolumeForSoundType(Audio::Mixer::kMusicSoundType)==77;
+  all=payload&&all;debug("Speech duck settled save/load: %d",int(payload));ConfMan.setBool("astronomica_entry_scripts",false);
+  bool ended=true;
+  for(uint kind=0;kind<2;++kind){
+   loadPlace(103,false,true);_loopEnabled=false;_loopSound=902;
+   if(kind==0)_introductionActive=true;else ++_blockingSoundDepth;
+   ended=playSound(920,scriptClock())&&ended;const Audio::SoundHandle completed=_soundHandle;_mixer->stopHandle(completed);
+   ended=playSound(902,scriptClock(),true)&&ended;synchronizeMusicHandle();
+   ended=ended&&_soundHandle==completed&&!_mixer->isSoundHandleActive(completed)&&_mixer->isSoundHandleActive(_musicHandle)&&_mixer->getChannelVolume(_musicHandle)==255;
+   if(kind==0)_introductionActive=false;else --_blockingSoundDepth;
+   _loopEnabled=true;synchronizeMusicHandle();ended=ended&&_soundHandle==_musicHandle;
+  }
+  all=ended&&all;debug("Speech duck ended foreground ownership: %d",int(ended));
+  _mixer->setVolumeForSoundType(Audio::Mixer::kMusicSoundType,oldMusic);_mixer->setVolumeForSoundType(Audio::Mixer::kSFXSoundType,oldSfx);
+  debug("Speech duck complete: %s (matrix%u/5)",all?"PASS":"FAIL",passed);_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
  if(ConfMan.hasKey("astronomica_verify_door_music")&&ConfMan.getBool("astronomica_verify_door_music")){
@@ -14086,7 +14179,7 @@ Common::Error AstronomicaEngine::run() {
    debug("Door Music observation: place%d loaded%d started%d hit%d heard%d state%d overlap%d guard%d music%d advancing%d starts%u",place,int(loaded),int(started),int(hit),int(heard),int(state),int(overlap),int(guard),int(music),int(advancing),_soundsStarted-before);
    if(place==27){clickAtTime(x,y,scriptClock());const uint32 traversedAt=_system->getMillis();while(_system->getMillis()-traversedAt<120){runScripts();resumeLoopAt(scriptClock());_system->delayMillis(2);}const bool destination=_place==32;const bool retained=_musicHandle==owner&&_mixer->isSoundHandleActive(_musicHandle);debug("Door Music traversal: destination%d retained%d",int(destination),int(retained));}
   }
-  playSound(911,scriptClock());debug("Door Music narration foreground: %d",int(!_mixer->isSoundHandleActive(_musicHandle)&&_mixer->isSoundHandleActive(_soundHandle)));
+  playSound(911,scriptClock());debug("Door Music narration ducked: %d",int(_mixer->isSoundHandleActive(_musicHandle)&&_mixer->getChannelVolume(_musicHandle)==128&&_mixer->isSoundHandleActive(_soundHandle)));
   debug("Door Music complete: passed%u total2",passed);_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
@@ -15202,19 +15295,20 @@ Common::Error AstronomicaEngine::run() {
   loopOK = _soundsStarted == beforeLoop+1 && _lastSound == 11 && _mixer->isSoundHandleActive(_soundHandle) && loopOK;
   resumeLoopAt(9000);
   loopOK = _soundsStarted == beforeLoop+1 && loopOK;
+  const Audio::SoundHandle continuousLoop=_musicHandle;
   Script foreground; Command fg; fg.opcode = 9; fg.args.push_back(3); foreground.push_back(fg);
   loopOK = _runner.enqueue(foreground,6000) && loopOK; runScriptsAt(6000);
   resumeLoopAt(11001); // Long foreground sound is still active despite elapsed logical time.
-  loopOK = _lastSound == 2 && _soundsStarted == beforeLoop+2 && _lastSoundAt == 6000 && loopOK;
+  loopOK = _lastSound == 2 && _soundsStarted == beforeLoop+2 && _lastSoundAt == 6000 && _musicHandle==continuousLoop && _mixer->isSoundHandleActive(continuousLoop) && _mixer->getChannelVolume(continuousLoop)==128 && loopOK;
   _mixer->stopHandle(_soundHandle); // Simulate foreground completion without a wall-clock wait.
   resumeLoopAt(11000);
   loopOK = _soundsStarted == beforeLoop+2 && loopOK;
   resumeLoopAt(11001);
-  loopOK = _soundsStarted == beforeLoop+3 && _lastSound == 11 && loopOK;
+  loopOK = _soundsStarted == beforeLoop+2 && _lastSound == 11 && _musicHandle==continuousLoop && _mixer->getChannelVolume(continuousLoop)==255 && loopOK;
   loopOK = _runner.enqueue(disableLoop,12000,true) && loopOK; runScriptsAt(12000); resumeLoopAt(20000);
-  loopOK = !_loopEnabled && !_mixer->isSoundHandleActive(_soundHandle) && _soundsStarted == beforeLoop+3 && loopOK;
+  loopOK = !_loopEnabled && !_mixer->isSoundHandleActive(_soundHandle) && _soundsStarted == beforeLoop+2 && loopOK;
   loopOK = _runner.enqueue(enableLoop,20000,true) && loopOK; runScriptsAt(20000); resumeLoopAt(20000);
-  loopOK = _loopEnabled && _soundsStarted == beforeLoop+4 && _mixer->isSoundHandleActive(_soundHandle) && loopOK;
+  loopOK = _loopEnabled && _soundsStarted == beforeLoop+3 && _mixer->isSoundHandleActive(_soundHandle) && loopOK;
   Script badLoop = chooseLoop; badLoop[0].args[0] = 899;
   loopOK = !_runner.enqueue(badLoop,0,true) && _loopSound == 11 && _mixer->isSoundHandleActive(_soundHandle) && loopOK;
   loopOK = loadPlace(103) && loopOK; resumeLoopAt(30000);
@@ -15433,10 +15527,10 @@ Common::Error AstronomicaEngine::run() {
   ConfMan.setBool("astronomica_entry_scripts", true);
   const uint beforeIntro = _soundsStarted;
   bool entryAudioOK = loadPlace(508) && _scene.introSound && _scene.introSoundId == 302 &&
-   _lastSound == 302 && _soundsStarted == beforeIntro+1 && !_mixer->isSoundHandleActive(_soundHandle) &&
+   _lastSound == 0 && _soundsStarted == beforeIntro+2 && _mixer->isSoundHandleActive(_musicHandle) && _mixer->getChannelVolume(_musicHandle)==255 &&
    _loopSound == 0 && _runner.pendingCount() == 3;
   resumeLoopAt(5000);
-  entryAudioOK = _soundsStarted == beforeIntro+1 && entryAudioOK;
+  entryAudioOK = _soundsStarted == beforeIntro+2 && entryAudioOK;
   resumeLoopAt(5001);
   entryAudioOK = _lastSound == 0 && _soundsStarted == beforeIntro+2 && _mixer->isSoundHandleActive(_soundHandle) && entryAudioOK;
   playSound(8,6000);

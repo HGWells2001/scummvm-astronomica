@@ -319,6 +319,8 @@ bool testP523PacketRecipients();
  Audio::SoundHandle _soundHandle;
  Audio::SoundHandle _effectHandle;
  Audio::SoundHandle _musicHandle;
+ Audio::SoundHandle _duckedMusicHandle;
+ int _unduckedMusicVolume = -1; // Transient channel volume, never a saved preference.
  void synchronizeMusicHandle();
  bool isFeedbackEffect(int id) const;
  uint _soundsStarted = 0;

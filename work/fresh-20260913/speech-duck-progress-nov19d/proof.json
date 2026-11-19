@@ -1,0 +1,23 @@
+{
+  "status": "PROGRESS_INDICATOR_NATIVE_PASS",
+  "at": "2026-11-19T19:28:12.316481+00:00",
+  "candidate_exe_sha256": "5d495ecc09629cc7cb64aab5da80daa5feedb855ce5ca08eae8aa282058179a5",
+  "build_proof_sha256": "8a56af37804073b3178d9d796056c7f56b60c1275ce28d9c9446425486ec2b3d",
+  "oracle_proof_sha256": "9c781e379ad3cea0da416eea52961db6a7f6d7f2e29f6a37d18dda4fa433f1ef",
+  "fixture_sha256": "079725468912734d6dbdf62f6a4849aebf19f2a9e8e8648ffb67bf2659b61b18",
+  "native_log_sha256": "178ef55f8b598cbf569f4448a1ed184a9e57485880e7bd0ff38cc4229d51ca77",
+  "backend_pixel_cases": 212,
+  "rgb565_composition_cases": 212,
+  "mode0_and_mode3_excluded": true,
+  "genuine_old_asvm2_flags_restored": true,
+  "asvm2_globals_and_counter_reserialized": true,
+  "internal_pixel_buffers_unchanged": true,
+  "windows_backend": true,
+  "installed_workspace": false,
+  "native_exited_naturally": true,
+  "limits": [
+    "Backend pixel masks follow original instruction outputs,not screenshots alone",
+    "RGB565 composition tested directly;backend run uses advertised lossless RGB format",
+    "Controlled globals and one genuine earlier-engine ASVM2 file,not a whole manual playthrough"
+  ]
+}

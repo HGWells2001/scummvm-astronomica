@@ -1,3 +1,5 @@
+Current audio policy: see SPEECH-MUSIC-DUCKING.md. The scope below is historical.
+
 Current catalogue: see ALL-SOUND-EFFECTS.md. The scope below is historical.
 
 # Shared door effects preserve Music

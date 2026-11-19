@@ -1,0 +1,19 @@
+{
+  "status": "SPEECH_DUCK_CATALOGUE_NATIVE_PASS",
+  "at": "2026-11-19T19:28:56.082902+00:00",
+  "candidate_exe_sha256": "5d495ecc09629cc7cb64aab5da80daa5feedb855ce5ca08eae8aa282058179a5",
+  "catalogue_sha256": "6c36ecf3b89cc6aec79e2d4b799d779461db77a64d04e1f9dd829b9bf2d1c1f4",
+  "fixture_sha256": "078d095e840c96362dda2ddedfd6b0be00e57d536f70b56eae175a0ea5870b71",
+  "native_log_sha256": "cd6b423399ddfaca5ba958425c3c4a80af71fafb6946bf9edd0eced088b0d873",
+  "original_wav_paths": 632,
+  "effect_file_paths": 308,
+  "ducked_file_paths": 324,
+  "distinct_effects": 102,
+  "windows_backend": true,
+  "native_exited_naturally": true,
+  "limits": [
+    "Direct native playback per original WAV path,not every naturally reached gameplay event",
+    "Actual mixer handles/continuity,not an acoustic loopback recording",
+    "Catalogue machine-assisted;ambiguous vocal clips use voice attenuation;no runtime ML"
+  ]
+}

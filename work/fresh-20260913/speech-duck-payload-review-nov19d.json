@@ -1,0 +1,319 @@
+{
+  "status": "SPEECH_DUCK_PAYLOAD_REVIEW_PASS",
+  "at": "2026-11-19T19:28:44.093698+00:00",
+  "candidate_exe_sha256": "5d495ecc09629cc7cb64aab5da80daa5feedb855ce5ca08eae8aa282058179a5",
+  "serialized_methods": 60,
+  "byte_identical_methods": 58,
+  "admission_only_methods": [
+    "saveGameStream",
+    "loadGameStream"
+  ],
+  "methods": [
+    {
+      "method": "saveQuestion",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadQuestion",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP519",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP519",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP524",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP524",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP526",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP526",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP528",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP528",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP530",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP530",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP513",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP513",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP517",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP517",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP509",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP509",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP501",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP501",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP504",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP504",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP503",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP503",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP502",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP502",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP527",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP527",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP516",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP516",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP511",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP511",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP521",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP521",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "savePlanets",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadPlanets",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveRendezvous",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadRendezvous",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveProbe",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadProbe",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveUniverse",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadUniverse",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveRocket",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadRocket",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveBuilder",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadBuilder",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP281Persistent",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP281Persistent",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveVariant",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadVariant",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveGameStream",
+      "byte_identical": false,
+      "admission_only_changed": true
+    },
+    {
+      "method": "loadGameStream",
+      "byte_identical": false,
+      "admission_only_changed": true
+    },
+    {
+      "method": "saveP523",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP523",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP510",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP510",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP512",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP512",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "saveP525",
+      "byte_identical": true,
+      "admission_only_changed": false
+    },
+    {
+      "method": "loadP525",
+      "byte_identical": true,
+      "admission_only_changed": false
+    }
+  ],
+  "transient_fields_not_serialized": true,
+  "two_private_header_fields_only": true,
+  "ambient_selector_and_102_effect_catalogue_identical": true,
+  "packet_layouts_unchanged": true,
+  "engine_units_fresh": 7,
+  "framework_unchanged": true
+}

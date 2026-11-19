@@ -1,3 +1,5 @@
+Current audio policy: see SPEECH-MUSIC-DUCKING.md. The scope below is historical.
+
 # Musica ed effetti in contemporanea
 
 La precedente correzione copriva13 registrazioni precise. Il catalogo ora copre tutti i632 WAV originali:102 effetti distinti (308 file con le copie),205 registrazioni vocali (277 file),27 sottofondi (47 file).
