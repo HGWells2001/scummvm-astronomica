@@ -1,0 +1,31 @@
+{
+  "status": "ITALIAN_ENGLISH_ACTUAL_DETECTOR_PASS",
+  "exe_sha256": "693e41b7a2192595463c5c902981039606181cb8423f18dc9b629d11a948f046",
+  "cases": [
+    {
+      "case": "original-italian",
+      "language": "it",
+      "gameid": "astronomica"
+    },
+    {
+      "case": "original-english",
+      "language": "en",
+      "gameid": "astronomica"
+    },
+    {
+      "case": "neutral-a",
+      "language": "it",
+      "gameid": "astronomica"
+    },
+    {
+      "case": "neutral-b",
+      "language": "en",
+      "gameid": "astronomica"
+    },
+    {
+      "case": "incomplete-common-files",
+      "game_added": false
+    }
+  ],
+  "original_data_modified": false
+}

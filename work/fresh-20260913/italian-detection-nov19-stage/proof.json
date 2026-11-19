@@ -1,0 +1,8 @@
+{
+  "status": "ITALIAN_DETECTION_BUILD_PASS",
+  "exe_sha256": "693e41b7a2192595463c5c902981039606181cb8423f18dc9b629d11a948f046",
+  "detection_sha256": "f03530890f576f9211e7cc3d80ea919863f2a0bd6d07237b46766cb0ee21d06e",
+  "parent_exe_sha256": "5d495ecc09629cc7cb64aab5da80daa5feedb855ce5ca08eae8aa282058179a5",
+  "runtime_engine_archive_sha256": "818055416f766d811ab9c043330c9d7fa122e18946779d55bad6126e8c58caf8",
+  "only_detection_translation_unit_changed": true
+}

@@ -1,3 +1,9 @@
+# Current update: Italian edition recognition
+
+The original opening-scene signature distinguishes Italian from English. Existing speech-over-Music behavior is preserved. See outputs/astronomica-cleanroom/ITALIAN-DETECTION.md.
+
+---
+
 # Current update: speech over continuous Music
 
 Music continues at half its previous channel volume during speech,then returns to that exact level. Global preferences and save packet layouts are preserved. See outputs/astronomica-cleanroom/SPEECH-MUSIC-DUCKING.md.
