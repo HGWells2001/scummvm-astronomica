@@ -1,0 +1,59 @@
+{
+  "status": "ORIGINAL_PROGRESS_INDICATOR_INSTRUCTION_MODEL_PASS",
+  "at": "2026-11-19T14:15:22.684848+00:00",
+  "author_sha256": "add5ce768021eebae380d8c2681fa9c71e08dcd63d8b58de2f2cca663c6b75ee",
+  "original_exe_sha256": "c2b02b97afd77d5e0c68d1fc38e67a700e6b397f9b0bcf90ffbf578aec9f5d0e",
+  "routine": "3:39ca-3adf",
+  "routine_sha256": "e94e52efeb586a59bd5ad0bb88856d16dc6463cae17c5db1efc6261f8b88f6b8",
+  "modeled_instruction_cases": 211,
+  "runs_with_distinct_completion_counter": 422,
+  "global_flag_first": 20,
+  "global_flag_last": 46,
+  "visible_markers_before_final": 26,
+  "visible_markers_after_final": 27,
+  "white_rgb": 16777215,
+  "solved_rectangle_size": [
+    4,
+    4
+  ],
+  "unsolved_rectangle_size": [
+    2,
+    2
+  ],
+  "solved_y": 327,
+  "dot_y": 328,
+  "horizontal_stride": 6,
+  "only_value_one_is_solved": true,
+  "draw_call": "9:1911",
+  "draw_gate": [
+    "_nav_place!=0",
+    "_monitor_status!=0"
+  ],
+  "monitor_initial_value": 1,
+  "original_completion_bindings": [
+    {
+      "scene": 511,
+      "global_flag": 27,
+      "handler": "4:57c6"
+    },
+    {
+      "scene": 522,
+      "global_flag": 38,
+      "handler": "4:5941"
+    },
+    {
+      "scene": 530,
+      "global_flag": 46,
+      "handler": "4:5a64"
+    }
+  ],
+  "screenshot_observations": [],
+  "screenshot_changes": [],
+  "production_engine_changed": false,
+  "limits": [
+    "Original x86 instructions execute in a bounded interpreter;GDI/USER drawing and port calls are modeled,not original Windows runtime execution",
+    "Screenshot segmentation uses the explicitly identified row in these two supplied captures;resampling prevents a full pixel-identical certificate",
+    "Flags identify completion groups,not separate indicators for every stage or every puzzle scene",
+    "Current ScummVM source is inspected separately;no renderer change or native-game regression is claimed"
+  ]
+}

@@ -8,6 +8,12 @@ Per compilare, seguire [BUILDING.md](BUILDING.md). Se la compilazione produce l'
 
 ---
 
+# Current update: original puzzle progress row
+
+Exploration now shows the original26/27dots and squares from existing saved completion flags. See outputs/astronomica-cleanroom/PUZZLE-PROGRESS.md.
+
+---
+
 # Current update: doors preserve music
 
 P27/P85 shared door effects now overlap the same advancing Music stream. Narration retains foreground handling. See outputs/astronomica-cleanroom/DOOR-MUSIC.md for the exact scope. All earlier checkpoints below are historical.

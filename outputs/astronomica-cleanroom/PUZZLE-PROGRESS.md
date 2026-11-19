@@ -1,0 +1,7 @@
+# Original puzzle progress indicator
+
+World exploration now presents the original white dots/squares at x16..176,y327..331. Globals20..45 give26markers;global46==1 adds the27th square. Only value1 is completed. The original instruction oracle covers211states independently of the completion counter. No duplicated counter or save format change.
+
+The row is a derived presentation layer composed over the scene,leaving gameplay and serialized pixel buffers unchanged. It is absent from mode0/menu/puzzles and mode3 close-ups. Native backend pixels match212original-oracle cases,including one genuine older ASVM2 with all100globals/counter reserialized;RGB565 composition,Windows,306scene/760route input and door/regional/close-up Music regressions pass. A normal P27 window was visually inspected with26dots and closed normally. This does not close the manual full-playthrough criterion.
+
+All seven engine units were rebuilt with403 verified unchanged core objects. Header,three core files and60 complete serialized save/load methods remain unchanged. The prior full general applies to the parent engine;this presentation-only release uses focused graphics/state/input/audio checks. Clean paired source installation and an independent clone are verified before main publication. No original media,physical saves,fixture binary or screenshots are distributed. Fixed acceptance remains7/10;whole-project completion unmeasured.
