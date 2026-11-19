@@ -1,0 +1,6 @@
+{
+  "status": "SECOND_RECOGNIZER_COMPLETE",
+  "cases": 19,
+  "model": "openai/whisper-small.en",
+  "revision": "e8727524f962ee844a7319d92be39ac1bd25655a"
+}

@@ -10,5 +10,9 @@
   "generated_top_level_engines": 127,
   "all_configured_engine_projects_and_enable_defines_verified": true,
   "full_all_engine_executable_compilation_performed": false,
-  "game_data_included": false
+  "game_data_included": false,
+  "qualified_standalone_engine_commit": "8fab4356b8b30df98ecbe91733e72f933d4b074f",
+  "standalone_all_effects_full_general": "PASS",
+  "original_wav_mixer_cases": 632,
+  "complete_reelmagic_pair_and_127_project_regeneration": "PASS"
 }

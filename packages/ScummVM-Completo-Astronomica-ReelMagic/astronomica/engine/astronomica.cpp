@@ -3116,25 +3116,125 @@ void AstronomicaEngine::configureSounds() {
 
 }
 bool AstronomicaEngine::isFeedbackEffect(int id) const {
- if(id==905||id==907){
-  if(id==_scene.introSoundId||isBlockingSound(id))return false;
- if(id==905&&universeFileIdentity(ConfMan.getPath("path").join("SOUNDS/S5.WAV"),4860U,0xc3345983U))return true;
- if(id==907&&universeFileIdentity(ConfMan.getPath("path").join("SOUNDS/S7.WAV"),5878U,0xb1c8c30bU))return true;
-  return false;
+ // Original-file catalogue covers effects throughout exploration and puzzles.
+ // Speech and music retain foreground/loop routing; unknown files stay conservative.
+ // Introductions can also be nonverbal effects: the file identity decides the role.
+ if(id<0||id>922||isBlockingSound(id))return false;
+ static const struct { uint32 size; uint32 hash; } effects[] = {
+  {964U,0x04682bdaU},
+  {964U,0x3496e2b7U},
+  {1042U,0x73cf3f5bU},
+  {1420U,0xd011de98U},
+  {1824U,0xa4771c8bU},
+  {1878U,0xed85c544U},
+  {2064U,0x01484736U},
+  {2188U,0x96ce8956U},
+  {2384U,0x6a063209U},
+  {3112U,0x18b66351U},
+  {3272U,0x512eb3cbU},
+  {3306U,0x3d132c01U},
+  {3310U,0x6046606aU},
+  {3480U,0xdf59edf8U},
+  {3592U,0x3145e3efU},
+  {3640U,0x2760d6f8U},
+  {3640U,0xf710055eU},
+  {3660U,0xb46c1260U},
+  {3672U,0x3a7c5850U},
+  {3900U,0x5270428aU},
+  {3928U,0xde6c56d4U},
+  {4088U,0x8ba72cb7U},
+  {4120U,0xb0040e5cU},
+  {4316U,0xbd9208dfU},
+  {4424U,0x15c05a1eU},
+  {4444U,0xf6698592U},
+  {4488U,0x0b1745afU},
+  {4536U,0x5e787952U},
+  {4638U,0x4e4b75b8U},
+  {4642U,0x6dc5d8abU},
+  {4680U,0xeec20680U},
+  {4712U,0x3b335b53U},
+  {4860U,0xc3345983U},
+  {5548U,0xa43de820U},
+  {5878U,0xb1c8c30bU},
+  {5996U,0x68b865ccU},
+  {6254U,0x0f339d0bU},
+  {6788U,0x7a459d03U},
+  {7008U,0xd6f0f0f6U},
+  {7080U,0xe2fc8991U},
+  {7144U,0x3767617bU},
+  {7840U,0x29390a8bU},
+  {8256U,0x612e9472U},
+  {8492U,0x68e20770U},
+  {8622U,0x9e6806a8U},
+  {8820U,0x5467018dU},
+  {9324U,0x7675523fU},
+  {10658U,0xd8e1584eU},
+  {10668U,0xc19104e9U},
+  {10764U,0x18cdd051U},
+  {10828U,0xa3042e5aU},
+  {11212U,0x643e7770U},
+  {11498U,0xbe3b30deU},
+  {11764U,0x449c2025U},
+  {12558U,0x112450c9U},
+  {13800U,0x61284792U},
+  {14042U,0x649ca588U},
+  {14124U,0x1dab5f39U},
+  {14252U,0x89e233b7U},
+  {14380U,0xe57470c2U},
+  {14434U,0xbf207b34U},
+  {15852U,0x4841e32eU},
+  {16300U,0x3fbb9531U},
+  {16710U,0xce011b94U},
+  {17274U,0x9596f36aU},
+  {17452U,0x1c510b49U},
+  {18978U,0xbdb5b473U},
+  {19560U,0xcaed3580U},
+  {21650U,0xdc4c1e3bU},
+  {22362U,0xb3dc31d8U},
+  {22942U,0xf519622fU},
+  {23852U,0xb0c1061aU},
+  {25160U,0x1aa0e59fU},
+  {28296U,0x2697ca94U},
+  {34362U,0x9a63b4f5U},
+  {40988U,0x4988e50eU},
+  {48968U,0x9157fe75U},
+  {49060U,0x47901743U},
+  {50220U,0x2ec501f3U},
+  {52396U,0xc437e200U},
+  {53544U,0x7b6d11cdU},
+  {54658U,0xa088bb2dU},
+  {59436U,0x0ffded4dU},
+  {66064U,0x82c87269U},
+  {92846U,0x0de016d3U},
+  {93682U,0xdff6a8f1U},
+  {96612U,0x0b622152U},
+  {103902U,0x67069ea9U},
+  {107044U,0xd9d9f60cU},
+  {128552U,0x2ca1bdbbU},
+  {132336U,0xf42e4182U},
+  {142922U,0x8aad6a1eU},
+  {158938U,0x000a4424U},
+  {163176U,0x4e3c488aU},
+  {164908U,0xa5075765U},
+  {167980U,0x100b1b53U},
+  {208148U,0xa1f33319U},
+  {317736U,0x7f056b55U},
+  {352424U,0x035c8f5fU},
+  {353064U,0xe71d4eccU},
+  {355144U,0xe5f94071U},
+  {2282024U,0x92f3981eU},
+ };
+ const Common::Path path=ConfMan.getPath("path").join(Common::Path(id>=900?Common::String::format("SOUNDS/S%d.WAV",id-900):Common::String::format("PLACES/P%d/S%d.WAV",_place,id)));
+ Common::File file;if(!file.open(Common::FSNode(path)))return false;
+ bool candidate=false;for(uint i=0;i<ARRAYSIZE(effects);++i)candidate|=file.size()==effects[i].size;
+ if(!candidate)return false;
+ uint32 hash=2166136261U;byte bytes[4096];
+ while(file.pos()<file.size()){
+  const uint count=file.read(bytes,sizeof(bytes));if(!count)return false;
+  for(uint i=0;i<count;++i)hash=(hash^bytes[i])*16777619U;
  }
- if(id<0||id>=300||id==_scene.introSoundId||isBlockingSound(id))return false;
- const Common::Path path=ConfMan.getPath("path").join(Common::Path(Common::String::format("PLACES/P%d/S%d.WAV",_place,id)));
- if(universeFileIdentity(path,3672U,0x3a7c5850U))return true;
- if(universeFileIdentity(path,4316U,0xbd9208dfU))return true;
- if(universeFileIdentity(path,14042U,0x649ca588U))return true;
- if(universeFileIdentity(path,19560U,0xcaed3580U))return true;
- if(universeFileIdentity(path,1042U,0x73cf3f5bU))return true;
- if(universeFileIdentity(path,1420U,0xd011de98U))return true;
- if(universeFileIdentity(path,3660U,0xb46c1260U))return true;
- if(universeFileIdentity(path,6254U,0x0f339d0bU))return true;
- if(universeFileIdentity(path,2064U,0x01484736U))return true;
- if(universeFileIdentity(path,3306U,0x3d132c01U))return true;
- if(universeFileIdentity(path,3310U,0x6046606aU))return true;
+ if(file.err())return false;
+ for(uint i=0;i<ARRAYSIZE(effects);++i)if(file.size()==effects[i].size&&hash==effects[i].hash)return true;
  return false;
 }
 void AstronomicaEngine::synchronizeMusicHandle() {
@@ -13947,6 +14047,29 @@ Common::Error AstronomicaEngine::run() {
   debug("P513 numeric music complete: matches%u total2",matches);_background.free();_screen.free();quitGame();return Common::kNoError;
  }
 
+
+ if(ConfMan.hasKey("astronomica_verify_audio_roles")&&ConfMan.getBool("astronomica_verify_audio_roles")){
+  ConfMan.setBool("astronomica_entry_scripts",false);ConfMan.setBool("astronomica_audio",true);
+  Common::File fixture;if(!fixture.open(Common::FSNode(ConfMan.getPath("astronomica_audio_role_fixture"))))error("Audio catalogue fixture missing");
+  const uint32 count=fixture.readUint32LE();if(count!=632)error("Audio catalogue fixture count");
+  uint passed=0,effects=0,foreground=0;
+  for(uint i=0;i<count;++i){
+   const int place=fixture.readSint32LE(),id=fixture.readSint32LE();const bool effect=fixture.readSint32LE()!=0;
+   _runner.resetGlobals();const bool loaded=loadPlace(place,false,true);const bool role=isFeedbackEffect(id)==effect;
+   _loopSound=900;_loopEnabled=true;const bool ambient=playSound(900,scriptClock(),true);const Audio::SoundHandle owner=_musicHandle;
+   _system->delayMillis(25);const uint32 elapsed=_mixer->getSoundElapsedTime(owner);const uint starts=_soundsStarted;
+   const bool played=playSound(id,scriptClock());
+   const bool overlap=_musicHandle==owner&&_mixer->isSoundHandleActive(owner)&&_mixer->isSoundHandleActive(_soundHandle)&&!(_soundHandle==owner);
+   const bool exclusive=!_mixer->isSoundHandleActive(owner)&&_mixer->isSoundHandleActive(_soundHandle);
+   _system->delayMillis(20);resumeLoopAt(scriptClock());
+   const bool continuity=!effect||(_musicHandle==owner&&_mixer->isSoundHandleActive(owner)&&_mixer->getSoundElapsedTime(owner)>=elapsed);
+   const bool correct=loaded&&role&&ambient&&played&&(effect?overlap:exclusive)&&continuity&&_soundsStarted==starts+1;
+   if(correct)++passed;if(effect)++effects;else ++foreground;
+   debug("Audio catalogue row: %u P%d S%d effect%d role%d overlap%d exclusive%d continuous%d result%d",i,place,id,int(effect),int(role),int(overlap),int(exclusive),int(continuity),int(correct));
+  }
+  debug("Audio catalogue complete: %s (passed%u,total%u,effects%u,foreground%u)",passed==count?"PASS":"FAIL",passed,count,effects,foreground);
+  _background.free();_screen.free();quitGame();return Common::kNoError;
+ }
 
  if(ConfMan.hasKey("astronomica_verify_door_music")&&ConfMan.getBool("astronomica_verify_door_music")){
   ConfMan.setBool("astronomica_audio",true);ConfMan.setBool("astronomica_entry_scripts",true);uint passed=0;

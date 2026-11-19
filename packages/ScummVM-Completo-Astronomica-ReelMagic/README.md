@@ -1,6 +1,6 @@
 # ScummVM completo: Astronomica + Return to Zork ReelMagic
 
-Pacchetto autocompilante per Windows x64. Include i sorgenti aggiornati di Astronomica (indicatore dei puzzle compreso) e la procedura di integrazione ReelMagic. Scarica la base ScummVM e le dipendenze ufficiali e compila **tutti gli engine disponibili nella versione fissata**, compresi quelli sperimentali.
+Pacchetto autocompilante per Windows x64. Include i sorgenti aggiornati di Astronomica (indicatore dei puzzle e102 effetti/segnali sonori miscelati con la musica compresi) e la procedura di integrazione ReelMagic. Scarica la base ScummVM e le dipendenze ufficiali e compila **tutti gli engine disponibili nella versione fissata**, compresi quelli sperimentali.
 
 ## Avvio
 
@@ -13,7 +13,7 @@ Il pacchetto contiene i motori, non i dati commerciali di Astronomica o Return t
 
 ## Cartelle e registri
 
-I sorgenti e le dipendenze vengono preparati in `%LOCALAPPDATA%/ScummVM-Combined-Build`. I registri restano nella sottocartella `logs`; a compilazione riuscita viene copiata anche `BUILD.log` nell'output. Non vengono cancellati automaticamente sorgenti o output preesistenti.
+I sorgenti e le dipendenze vengono preparati in `%LOCALAPPDATA%/ScummVM-Combined-Build-8fab4356b8b3`. I registri restano nella sottocartella `logs`; a compilazione riuscita viene copiata anche `BUILD.log` nell'output. Non vengono cancellati automaticamente sorgenti o output preesistenti.
 
 Per scegliere altre cartelle, aprire PowerShell nella cartella del pacchetto:
 
@@ -32,3 +32,5 @@ Le revisioni esatte sono elencate in `SOURCES.json`. La base comune e quella gia
 Tutti gli engine significa quelli presenti e compilabili per Windows nella revisione fissata, non il supporto a ogni gioco esistente. Astronomica e ReelMagic rimangono supporti sperimentali. Le prove del singolo motore non equivalgono a una partita completa verificata sulla nuova build combinata. Vedere `VALIDAZIONE.md` per le verifiche effettivamente eseguite sul pacchetto.
 
 Licenza GPL-3.0-or-later; vedere LICENSE e le intestazioni dei sorgenti. Credits: ScummVM, synacktic e i due progetti HGWells2001.
+
+Questa revisione usa automaticamente una nuova cartella di lavoro,per conservare le compilazioni precedenti. Lo ZIP contiene solo sorgenti; gli output di vecchie compilazioni non vengono inclusi.

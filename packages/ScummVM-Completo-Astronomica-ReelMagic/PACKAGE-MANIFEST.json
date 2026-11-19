@@ -1,7 +1,9 @@
 {
   "sha256": {
+    "astronomica/ALL-SOUND-EFFECTS.md": "62af0c4cda1c95334d1b44be938e84dbc31c01038915604e9b156a93c5b0fcfd",
+    "astronomica/audio-role-catalogue.json": "6c36ecf3b89cc6aec79e2d4b799d779461db77a64d04e1f9dd829b9bf2d1c1f4",
     "astronomica/engine/advice.h": "fd9bccbc8c4e1c8a9a4debe63fdb925b5bbeeab7f4c335c3e7a98a3cba3fc694",
-    "astronomica/engine/astronomica.cpp": "95c50ad2ecd245b102bfb67236a55f33c5ae6b50e3905747665e733ce806e7dc",
+    "astronomica/engine/astronomica.cpp": "6e3fc5171504132dd0d2e65c74a536c8f963c6bc3343e6498fa14b492c4d48f6",
     "astronomica/engine/astronomica.h": "27f6413ee6809ebcc1d0bf771d4b925ed0c9a1e9fe6d35059e444338c08a5d51",
     "astronomica/engine/conditions_test.cpp": "df8dc7b5fb1b841dc797f7661fffeb39800e149fe2adceb4b13e7114cd547636",
     "astronomica/engine/configure.engine": "3cc08479614e6e90448ccdaa3a07b033e624b78e9e613491c342319045da0394",
@@ -26,17 +28,17 @@
     "astronomica/framework-overlay/video/paused_audio_gate.h": "d795a000592d9376b7f0ea04a9258664c3a73c394e2b1ec2ec867ee0624d42d4",
     "astronomica/framework-overlay/video/video_decoder.cpp": "ac9832663151200cbc6e2c802171b88f0a45ddc469ea25d3b24ad1d6efcdf26d",
     "astronomica/framework-overlay/video/video_decoder.h": "6dc1d443164cf0dc7b666175851883188050ece5030995fa3e7ff4e3f2c9d416",
-    "astronomica/framework-patch.json": "1f10f1dbb23a424b26f6c056af00e571eed02872c3d628f5ffce36542fd2afb5",
-    "astronomica/SCUMMVM_BASE.json": "abc45242bd1a11610d6d582270567e9cdd100fc3d700fe7385cf143087af6980",
+    "astronomica/framework-patch.json": "c7161fa9c17f46e9d4aee22e1c8a7630bd110d07ca61e8aaffd8f8b7749c8a9f",
+    "astronomica/SCUMMVM_BASE.json": "9f5853b1bc95c154d2d54cdfd9b0f58913c9345ae33166eb8172440fa0b530e8",
     "BUILD.cmd": "50e68b2de0c8f0fdd347d862c4f9786657e44abf6a464c8eca91a308e9ec07c0",
-    "build.ps1": "a7ec8fed4a25dac7898e56cc86431d83ad34f71934b8f8e77b294348d47ea28f",
+    "build.ps1": "441e06b2e06ba8f45313237c6734003883150f22267afb6ea603e464eb82eca7",
     "CHANGELOG.md": "a02d32e84dd4b0339b0f4ad95b836301058a21fbc6791f58b745058f347ee629",
     "CONTRIBUTING.md": "9b26b84fbc1d5cf0d9843288ed6323d1aff58b1db70bc62b56afaebb0f6bfbe6",
     "docs/ARCHITECTURE.md": "e0ea729f9c75a4e680ac0bfb6b3422b5c9ebb0142c96755a73e8220aacc22afc",
     "docs/MADERM_GROUND_TRUTH.txt": "2a31d19f86b1bf8e62481c3270398500eec648e41a8ab74726016223b591488d",
     "docs/REELMAGIC_DRIVER_111_NOTES.txt": "b27dc49879355eaae40dfb7f95c7793c7758a93aab34c8457a9daa6de12c3f24",
     "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
-    "README.md": "cd6e8f18ccf5fb0ac4a8d4b0eb3ba044db2996fda34640614f2b84c1c646ea87",
+    "README.md": "bca786f56702d3e47ef766cc278eddb5427507e96a21f40fe5774b074f1013a2",
     "scripts/bootstrap.ps1": "3bc4bcdc8e8bd213870d87663d1159f0cb31ed2c7218f43035a7daae958492ca",
     "scripts/install_astronomica.py": "c1bdb7a80a709fea77d05ccaf192010925c65a053bac4795db4580e153a94949",
     "scripts/stage.ps1": "3fbbe13d6b189ec256726d3028f7425f5bfb230bdd2853b3cfbc5581bee71e13",
@@ -50,7 +52,7 @@
     "scripts/validate_trace.ps1": "c75692c13ab3c5c48c866b5879c6c9bbab096582736db3eb10cd54fd5497d321",
     "scripts/verify_engines.py": "a52a80863c46870f916a1b18c46e90f83af160da09deb6414fa9d8ba3b3dddb0",
     "scripts/verify_package.py": "6ecb116df6d59bd93d5b8d40507a8679185a6424a91aaaeb1227d662ea072b4b",
-    "SOURCES.json": "084695ad0963ce26df3120f5b1b107c653e2a3e3c0fe33d89e7ee30585a06923",
+    "SOURCES.json": "15e74fa53202bfc8a4c5dad4c98841f7d6a187a9097f6d5b34bce473317fe1aa",
     "tests/analyze_rtzrm_scripts.py": "6dcec41eafcc66bfa1885fbff0c168d87205c152ca0e64a7b3f2a816e6fa5367",
     "tests/audit_reelmagic_111.py": "799cee49eda8b033a4ac6c1afbc08d2f0a58404d6e80130d809db7c243684580",
     "tests/repo_check.py": "5916573cf529a80f20274ea372c8230438fae8f69f17ae9904356436cc3c70be",
@@ -62,7 +64,7 @@
     "tests/test_rtzrm_powershell_quoting.py": "f86a09aa653baeb61ddaf315bf39a39fc53f15fe38fb8722e0f0216ca53d8eff",
     "tests/test_rtzrm_space_skip.py": "3c8df5782453052b4e52936ac1d586c7deedaf84cde7162b78fd9123a43a60cb",
     "tests/test_rtzrm_timbre.py": "2e65f0f9128e4d77de42db68224714130d0597e986024f7603f58e8c5edf36bf",
-    "VALIDATION.json": "016fcde0cc45d6ca2bb2fa62113ec57b3f4e00e424b0fda6668c90f0fb7115a9",
-    "VALIDAZIONE.md": "918765bb771abfa97deea2796c846ea7b3469f323617b94bf32be25016180bb4"
+    "VALIDATION.json": "ed6d7e09d9ae3ca6ba773f90ed33835555a45b673980e900f08167f0e2839436",
+    "VALIDAZIONE.md": "1cfc0760f4db1b478486a5d6b03baa4e4ba2c3bdbd1b1e4cb26684ccc07169ae"
   }
 }

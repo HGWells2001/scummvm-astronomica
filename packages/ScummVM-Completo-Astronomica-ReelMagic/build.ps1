@@ -17,7 +17,9 @@ if (-not $WorkRoot) {
     # package extracted under Downloads\Compressed can otherwise exceed legacy
     # Windows path limits in Git, MSBuild or third-party build tools.
     $baseWork = if ($env:LOCALAPPDATA) { $env:LOCALAPPDATA } else { $env:TEMP }
-    $WorkRoot = Join-Path $baseWork "ScummVM-Combined-Build"
+    $sourceRevision = (Get-Content (Join-Path $PackageRoot "SOURCES.json") -Raw | ConvertFrom-Json).astronomica_commit
+    if ($sourceRevision -notmatch '^[0-9a-f]{40}$') { throw "Revisione sorgenti non valida" }
+    $WorkRoot = Join-Path $baseWork ("ScummVM-Combined-Build-" + $sourceRevision.Substring(0,12))
 }
 if (-not $OutputDir) {
     $OutputDir = Join-Path $PackageRoot "BUILD_OUTPUT\ScummVM-Completo-Astronomica-ReelMagic"
