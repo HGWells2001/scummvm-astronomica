@@ -1,0 +1,257 @@
+{
+  "status": "ALL_EFFECTS_PAYLOAD_REVIEW_PASS",
+  "at": "2026-11-19T16:58:13.747041+00:00",
+  "candidate_exe_sha256": "ac88884af1671f58d4d60389815c2a93ee1e935395f69d0aa6cc59414dda7568",
+  "parent_exe_sha256": "85519112b6883508cb81c42c852b0ec93f685e340b1ac014137d4d9f81ec0fdc",
+  "payload_methods": [
+    {
+      "method": "saveQuestion",
+      "unchanged_sha256": "562afebd668054a28dc1193bb660c0590d89492ebdb957e601e5c93d7e73e445"
+    },
+    {
+      "method": "loadQuestion",
+      "unchanged_sha256": "7a63a6f24faac86f62f9b813b1be0f47c02439bd66fd926b28c08a531601b0c8"
+    },
+    {
+      "method": "saveP519",
+      "unchanged_sha256": "ceb367af3f956da5724cee81707a934c1be9eafa68550d25c6a60b110f32a6af"
+    },
+    {
+      "method": "loadP519",
+      "unchanged_sha256": "2e9a1acc3e6712c48c94eb220ab3babfbe9fcf17f7dd2b6231592a9478ba17e4"
+    },
+    {
+      "method": "saveP524",
+      "unchanged_sha256": "119bbada9d1b70d7829d047f82c879f90a4c90cbea98efa49db442067702ad91"
+    },
+    {
+      "method": "loadP524",
+      "unchanged_sha256": "2ee6f2c8056b45a407dc8f3e1ebdb62a2370f0d4b5f4282c069f509a1903f34d"
+    },
+    {
+      "method": "saveP526",
+      "unchanged_sha256": "98335c9d4d7f3275ffbc1e0308ba1bb26a844f8c197ec0574b4fa0c121f21aa1"
+    },
+    {
+      "method": "loadP526",
+      "unchanged_sha256": "ebf7490d76976b760b2128b5a7743833bb6dbd72f66e8109e92e28600ed6bb2d"
+    },
+    {
+      "method": "saveP528",
+      "unchanged_sha256": "af8b603ada55a49a23ae7339973cbcb0170a3353bf70fe6f62a7b5c63b2de528"
+    },
+    {
+      "method": "loadP528",
+      "unchanged_sha256": "f47fcd8bfffc4e140ca6d23d79818d942556b54270f11ce4394a871fc47d8371"
+    },
+    {
+      "method": "saveP530",
+      "unchanged_sha256": "1ae2c04ed38859c20d1609e4e6553d4b098efb919954ed12059be3a255eefdb3"
+    },
+    {
+      "method": "loadP530",
+      "unchanged_sha256": "e3ed11c6a0e53c75748d63770f84d690c352c6584cf04c7b5fbbeabb1900751b"
+    },
+    {
+      "method": "saveP513",
+      "unchanged_sha256": "e4745a4a5322fda07352d5455d53e463e3a2829877fbe6d5575f7588d495e020"
+    },
+    {
+      "method": "loadP513",
+      "unchanged_sha256": "22a1b35217b0c5ed877a0eee276c20171f6771720ef41bad2250cd743917b3fb"
+    },
+    {
+      "method": "saveP517",
+      "unchanged_sha256": "ef8ef76d086b7edb95a950dc139b126bc250694099fdff7e22d9024d9f2fe240"
+    },
+    {
+      "method": "loadP517",
+      "unchanged_sha256": "92be67aa2c59a800a1f37de00ba048c2b11297335a18146c84b436c47416b437"
+    },
+    {
+      "method": "saveP509",
+      "unchanged_sha256": "f4302ae275c8853f8fe9f89dc79c0cc8ff67f861343582f3708cd4f79aa47a20"
+    },
+    {
+      "method": "loadP509",
+      "unchanged_sha256": "191e71dc450fc596c1bb1d9cff67687b92d694ea5ba7037a6ebafd4f8a543ac4"
+    },
+    {
+      "method": "saveP501",
+      "unchanged_sha256": "82e1c213090e0bccf79b055271e2d356bf78f17a05062917afe0cc532e8b64a1"
+    },
+    {
+      "method": "loadP501",
+      "unchanged_sha256": "0f8cb7b129f8dcc3470e40802211cbf286f8d347a0ae89f8c035a9f145ac2612"
+    },
+    {
+      "method": "saveP504",
+      "unchanged_sha256": "e2d78d0be4e725b592b38624efc1d5f348d212ce4dde7020f9d43e557110cfff"
+    },
+    {
+      "method": "loadP504",
+      "unchanged_sha256": "4ecb47113215ddb200c94832f2ae2f29f548e0521fe4d3c673d1cd8e471b5c79"
+    },
+    {
+      "method": "saveP503",
+      "unchanged_sha256": "4609eb3ae6b5a73eada78be5a539eadc7dad9a1436286ecb622d51196283803b"
+    },
+    {
+      "method": "loadP503",
+      "unchanged_sha256": "60a62c985daf65e92ce5f772828de11763be7a7aa396a77cc4a27f8fbb727954"
+    },
+    {
+      "method": "saveP502",
+      "unchanged_sha256": "89c47c829a88378265cc59a32ea48c404e77ee0ca668499aafbbd84abc466032"
+    },
+    {
+      "method": "loadP502",
+      "unchanged_sha256": "160964d22e57bac713deac82b99036021dcb5ca0ae31af8df8e4a5bf8d1a64ca"
+    },
+    {
+      "method": "saveP527",
+      "unchanged_sha256": "0a9e540b5affdd4550cee3dffd0590840dfe22dba84efe12ea0f5151a62b5c3a"
+    },
+    {
+      "method": "loadP527",
+      "unchanged_sha256": "ae99a90c482a81a8806e90ee9379559db482099d8e1c3c8b372a692e612bcf44"
+    },
+    {
+      "method": "saveP516",
+      "unchanged_sha256": "2b0fa0bd01827c9f7118e8678be5ce187155904774d88d52dd982b3c93cb6f8d"
+    },
+    {
+      "method": "loadP516",
+      "unchanged_sha256": "3dbc65ac6fb6eb58ee5167742fea11fcb64d6cecaef71eeb89ff5d73fba15dfd"
+    },
+    {
+      "method": "saveP511",
+      "unchanged_sha256": "887377a87d7c301a7aca82ffb6c3707da6cf00e3f20ca375928b4d56fe9b688d"
+    },
+    {
+      "method": "loadP511",
+      "unchanged_sha256": "3a50d9f5548b97376cce5a31950e483e39ea816330741b74eb94ba4df6e3d298"
+    },
+    {
+      "method": "saveP521",
+      "unchanged_sha256": "78cb627e345fb7d5008c8ecc0e18944061032e84335c00b800fa3e8c70492b4a"
+    },
+    {
+      "method": "loadP521",
+      "unchanged_sha256": "f142e1628c5e071da38b5e426632630bdb0d83182b0b71bdfec8813d13db2002"
+    },
+    {
+      "method": "savePlanets",
+      "unchanged_sha256": "0788619b7e8a1ff9fdf96f3b38556a0db9b7d618a2e8c4c0037681fd223164e3"
+    },
+    {
+      "method": "loadPlanets",
+      "unchanged_sha256": "f030ed9305c1842e1c107b1283f413f699e06e91ec870726fb808b617e50d7d7"
+    },
+    {
+      "method": "saveRendezvous",
+      "unchanged_sha256": "990f5d2e3a49f7a575bf2b3bfb5b91ef19a21ab0bc41ae1d3f8dadfc10a658c9"
+    },
+    {
+      "method": "loadRendezvous",
+      "unchanged_sha256": "30c61dd36a59a972df768825ed25c674595d1372b8a9b8b9127e271290f46c65"
+    },
+    {
+      "method": "saveProbe",
+      "unchanged_sha256": "3ce3daeb9f7c9f653c0b3baa0510c6f0fbaa36ec405a05b74d5b7a918b4b118b"
+    },
+    {
+      "method": "loadProbe",
+      "unchanged_sha256": "95265f94b9b778e56edc1de894f42ea75b5e3042dcdb3445887de6f700dd81c6"
+    },
+    {
+      "method": "saveUniverse",
+      "unchanged_sha256": "089796621b9f6d242b888c646c40e99c538b2aaa1a99e0275661127e057fc6c8"
+    },
+    {
+      "method": "loadUniverse",
+      "unchanged_sha256": "8a1a1c947bddf2d2e44fef4298f62124d28666e8b63efa8c3aab6fde99a10155"
+    },
+    {
+      "method": "saveRocket",
+      "unchanged_sha256": "a5db9ee82b7d26272101c65306948857cd3bb9140001c1fa810ceed9023697d8"
+    },
+    {
+      "method": "loadRocket",
+      "unchanged_sha256": "6cb2db900dd079186abc893c8c4ddebfb9c30923186b13a062a3900c9eacf13d"
+    },
+    {
+      "method": "saveBuilder",
+      "unchanged_sha256": "d6818a87baed3186e8f49e58947e55cad48cf18e5be25c9451fa473dc03ef862"
+    },
+    {
+      "method": "loadBuilder",
+      "unchanged_sha256": "4f4f68db00d6834160446d85dafdc72771a9c3a81dbb3060e191bcba7adbfbab"
+    },
+    {
+      "method": "saveP281Persistent",
+      "unchanged_sha256": "4be49ffd97c8b51b2e0cd433d2e28cf14c438860abf94c7642947968f5ee19c3"
+    },
+    {
+      "method": "loadP281Persistent",
+      "unchanged_sha256": "87fe547bb9feb5166d2fc5366374409a1de61843e56cbcdecaa4ed80009fa334"
+    },
+    {
+      "method": "saveVariant",
+      "unchanged_sha256": "2d1a42a0aad79ff94122d36a6a79aba3fd5b44e4ac3c465693c4e506a125d00b"
+    },
+    {
+      "method": "loadVariant",
+      "unchanged_sha256": "184d6f7b314ef93de9d516a4bea74af4a6759e9e97d20574673a09d4de5c64dc"
+    },
+    {
+      "method": "saveGameStream",
+      "unchanged_sha256": "9f55e849c4edb0e41ae050d22ae6aeb1992051a7a9975a323365e7fc7b6b4adc"
+    },
+    {
+      "method": "loadGameStream",
+      "unchanged_sha256": "261ed759e72f178806683da7a7c85875db69d85901dba42eeaf058f69270357f"
+    },
+    {
+      "method": "saveP523",
+      "unchanged_sha256": "81ed8b9052e118ae6816cc56053039b0a978b609ee7910bbaac58c4e1c6dd561"
+    },
+    {
+      "method": "loadP523",
+      "unchanged_sha256": "ab159bf12e972626744771b59e1b6e2ae465eca7e45457e46538acd55ad452ce"
+    },
+    {
+      "method": "saveP510",
+      "unchanged_sha256": "3d4ac084c321fe7a7b5593e10901ed7da774b59650626d5ab388871d4e71203e"
+    },
+    {
+      "method": "loadP510",
+      "unchanged_sha256": "9136540244a231c6e0060686ad3685ac0e66a0b8af7121811b093aa6fd6b2a81"
+    },
+    {
+      "method": "saveP512",
+      "unchanged_sha256": "bd577f43351aa75cc7e8f8e77254c3476115432b24e28127c5d65bba014498b3"
+    },
+    {
+      "method": "loadP512",
+      "unchanged_sha256": "953d35aa14f49455bd06fc01d5faca5dbe8bd38067dc9611012eea79d29f8aab"
+    },
+    {
+      "method": "saveP525",
+      "unchanged_sha256": "648de622545322c604c4b3652ac804af0ba369aadb44b1985d60cb15bde744a9"
+    },
+    {
+      "method": "loadP525",
+      "unchanged_sha256": "b6decb7dc7e729a8fc83efa9d1107b1fc6010476280c3d28e04a3d00cf7cc26d"
+    }
+  ],
+  "header_byte_identical": true,
+  "serialized_methods_byte_identical": 60,
+  "scene_selector_byte_identical": true,
+  "exact_effect_clip_identities": 102,
+  "user_installation_ignored": true,
+  "limits": [
+    "Catalogue expanded with acoustic/resource review;no runtime inference heuristic",
+    "Actual original controls retain Music; no save-schema or scene-selector change"
+  ]
+}

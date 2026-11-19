@@ -1,0 +1,18 @@
+"""Verify real backend progress pixels, RGB565 composition and genuine old saved flags."""
+from pathlib import Path
+from datetime import datetime,timezone
+import argparse,hashlib,json,os,shutil,subprocess,sys,re
+w=Path(__file__).resolve().parent;ap=argparse.ArgumentParser();ap.add_argument('--out',required=True);ap.add_argument('--windows',action='store_true');ap.add_argument('--installed',action='store_true');a=ap.parse_args();s=w/'all-effects-candidate-nov19-stage';out=w/a.out;out.mkdir(exist_ok=False);(out/'saves').mkdir();read=lambda p:json.loads(p.read_text(encoding='utf-8'));sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+build=read(s/'proof.json');assert build['status']=='ALL_EFFECTS_CANDIDATE_BUILD_PASS';exe=w/'build/Releasex64/scummvm.exe'if a.installed else s/'bin/scummvm.exe';assert sha(exe)==build['candidate_exe_sha256']
+oracle=w/'progress-render-oracle-nov19';p=read(oracle/'proof.json');assert p['status']=='ORIGINAL_PROGRESS_RENDER_FIXTURE_PASS'and sha(oracle/'fixture.bin')==p['fixture_sha256'];old=Path(p['old_world_slot_path']);assert sha(old)==p['old_world_slot_sha256'];shutil.copyfile(old,out/'saves/astro-verify.097')
+cfg=out/'test.ini';log=out/'native.log';cfg.write_text('[scummvm]\nautosave_period=0\nconfirm_exit=false\nenable_unsupported_game_warning=false\ngui_theme=builtin\ngui_language=en\nmute=true\n[astro-verify]\nengineid=astronomica\ngameid=astronomica\npath=D:/astro\nastronomica_verify_progress_indicator=true\nastronomica_progress_fixture='+str(oracle/'fixture.bin')+'\nsavepath='+str(out/'saves')+'\n',encoding='utf-8')
+env={k.upper():v for k,v in os.environ.items()};env.update(SDL_VIDEODRIVER='windows'if a.windows else'dummy',SDL_AUDIODRIVER='wasapi')
+with(out/'console.log').open('w')as console:
+    child=subprocess.Popen([str(exe),'--config='+str(cfg),'--savepath='+str(out/'saves'),'--extrapath='+str(w/'fonts'),'--logfile='+str(log),'--debuglevel=1','astro-verify'],cwd=out,env=env,stdout=console,stderr=subprocess.STDOUT)
+    try:subprocess.run([sys.executable,str(w/'suite_registry_nov12.py'),'register','--pid',str(child.pid),'--label','progress-indicator-backend-pixels','--proof',str(out/'proof.json')],check=True,stdout=subprocess.DEVNULL)
+    finally:code=child.wait()
+text=log.read_text(errors='replace');assert code==0 and 'Progress pixels complete: PASS (host212,rgb565212,old1,payload1,excluded1)'in text and 'FAIL'not in text,text[-3000:]
+assert len(re.findall(r'Progress pixels row: case\d+ kind[01] marks2[67] host1 rgb5651 buffers1',text))==212
+assert sha(old)==sha(out/'saves/astro-verify.097')==p['old_world_slot_sha256']and sha(exe)==build['candidate_exe_sha256']and text.rstrip().endswith('--- Log closed successfully.')
+proof=dict(status='PROGRESS_INDICATOR_NATIVE_PASS',at=datetime.now(timezone.utc).isoformat(),candidate_exe_sha256=sha(exe),build_proof_sha256=sha(s/'proof.json'),oracle_proof_sha256=sha(oracle/'proof.json'),fixture_sha256=sha(oracle/'fixture.bin'),native_log_sha256=sha(log),backend_pixel_cases=212,rgb565_composition_cases=212,mode0_and_mode3_excluded=True,genuine_old_asvm2_flags_restored=True,asvm2_globals_and_counter_reserialized=True,internal_pixel_buffers_unchanged=True,windows_backend=a.windows,installed_workspace=a.installed,native_exited_naturally=True,limits=['Backend pixel masks follow original instruction outputs,not screenshots alone','RGB565 composition tested directly;backend run uses advertised lossless RGB format','Controlled globals and one genuine earlier-engine ASVM2 file,not a whole manual playthrough'])
+(out/'proof.json').write_text(json.dumps(proof,indent=2)+'\n',encoding='utf-8');print(proof['status'])

@@ -1,3 +1,5 @@
+Current catalogue: see ALL-SOUND-EFFECTS.md. The scope below is historical.
+
 # Music and puzzle feedback
 
 At the user's request, reviewed feedback effects now overlap continuing music instead of replacing it. An independent Music handle preserves the actual loop and its clock. The primary foreground handle still represents effects or narration for existing readiness checks. Narration stops the music; after narration it resumes under the existing loop policy. Pause freezes the mixer, scene/movie transitions clear the extra handles, and save/load refuse transient effects or a pending handoff without mutating a rejected request.

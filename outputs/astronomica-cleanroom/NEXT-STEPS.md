@@ -1,3 +1,9 @@
+# Current update: all original WAV effects keep Music
+
+102 exact effect identities across308 original file paths now overlap continuous Music;voices remain foreground. See outputs/astronomica-cleanroom/ALL-SOUND-EFFECTS.md for validation and classification limits.
+
+---
+
 # Current update: original puzzle progress row
 
 Exploration now shows the original26/27dots and squares from existing saved completion flags. See outputs/astronomica-cleanroom/PUZZLE-PROGRESS.md.
@@ -10,7 +16,7 @@ P27/P85 shared door effects now overlap the same advancing Music stream. Narrati
 
 ---
 
-# Current checkpoint — 18 November 2026
+# Current checkpoint â€” 18 November 2026
 
 Exploration Music is audible in the normal P103 player, confirmed by the user. All306 mode1 rooms pass the actual frame-loop stream sweep. All760 literal NAV references pass1,538 actual arrow/keypad handler cases with active Music and an independent original transition oracle. P419 repeated local foreground playback and navigation cleanup pass separately. See EXPLORATION-VERIFICATION-NOV18.md and work/fresh-20260913/SESSION-20261118.md.
 

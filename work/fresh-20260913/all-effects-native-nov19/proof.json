@@ -1,0 +1,19 @@
+{
+  "status": "ALL_EFFECTS_NATIVE_PASS",
+  "at": "2026-11-19T16:58:17.565614+00:00",
+  "candidate_exe_sha256": "ac88884af1671f58d4d60389815c2a93ee1e935395f69d0aa6cc59414dda7568",
+  "catalogue_sha256": "6c36ecf3b89cc6aec79e2d4b799d779461db77a64d04e1f9dd829b9bf2d1c1f4",
+  "fixture_sha256": "078d095e840c96362dda2ddedfd6b0be00e57d536f70b56eae175a0ea5870b71",
+  "native_log_sha256": "b50ffadc26d086443263f7f55bc78de8168c026f5923d9533c6894d80c9af4e0",
+  "original_wav_paths": 632,
+  "effect_file_paths": 308,
+  "exclusive_file_paths": 324,
+  "distinct_effects": 102,
+  "windows_backend": false,
+  "native_exited_naturally": true,
+  "limits": [
+    "Direct native playback per original WAV path,not every naturally reached gameplay event",
+    "Actual mixer handles/continuity,not an acoustic loopback recording",
+    "Catalogue machine-assisted;ambiguous vocal clips remain exclusive;no runtime ML"
+  ]
+}

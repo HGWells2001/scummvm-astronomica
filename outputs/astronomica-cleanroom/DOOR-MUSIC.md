@@ -1,3 +1,5 @@
+Current catalogue: see ALL-SOUND-EFFECTS.md. The scope below is historical.
+
 # Shared door effects preserve Music
 
 The original P27 opening sound uses shared905; P85's door control uses shared907. Their exact files are referenced by19 original commands. Both are now reviewed effects over the existing Music stream. The first P27 click opens the door and the second enters P32 while retaining the same regional Music owner. Unknown recordings, explicit introductions and blocking/movie sounds retain foreground handling. Narration still suspends Music.

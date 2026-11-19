@@ -1,0 +1,44 @@
+{
+  "status": "SHARED_DOOR_MUSIC_NATIVE_PASS",
+  "at": "2026-11-19T16:59:39.415701+00:00",
+  "candidate_exe_sha256": "ac88884af1671f58d4d60389815c2a93ee1e935395f69d0aa6cc59414dda7568",
+  "build_proof_sha256": "895c7e7554b5acce43bd0e9f3e9a7fc347e65cd6d34ad841de75cd4ab2188410",
+  "original_evidence_sha256": "ce46b38145a2900d1843954361b1822f6b75d6f539dd6b3f0695bfe0af5a8f1f",
+  "native_log_sha256": "5b235f5965e90b682957a8bc5f4abe081bfd33d15ffaaa8a28bb4d54e1279cff",
+  "rows": [
+    [
+      27,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      85,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "windows_backend": true,
+  "installed_workspace": false,
+  "native_exited_naturally": true,
+  "limits": [
+    "Original hit-tested P27 sprite and P85 rectangle with controlled initial globals",
+    "Music owner and elapsed-position continuity, plus save/load transient guards and P27 second-click traversal",
+    "Narration911 remains foreground; no whole-game speech/effect classification or acoustic recording"
+  ]
+}
